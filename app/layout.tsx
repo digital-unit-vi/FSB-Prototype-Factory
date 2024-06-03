@@ -3,6 +3,8 @@ import { ReactNode } from "react";
 import "./globals.css";
 import { Providers } from "./providers";
 
+export const runtime = "edge";
+
 const vorwerkFont = localFont({
   preload: true,
   fallback: ["Vorwerk", "system-ui", "arial"],
