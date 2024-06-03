@@ -1,0 +1,13 @@
+.layoutWrapper {
+  background-color: #4d5357;
+}
+
+.childrenWrapper {
+  max-width: 375px;
+  margin: auto;
+  background-color: #23282a;
+
+  @media (width >= 768px) {
+    max-width: 600px;
+  }
+}

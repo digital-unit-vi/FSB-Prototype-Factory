@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+
+  p {
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 27px;
+    color: #23282a;
+    text-wrap: pretty;
+  }
+
+  @media (width >= 768px) {
+    padding: 0 48px;
+  }
+}
+
+.dark.wrapper {
+  p {
+    color: #fff;
+  }
+}
