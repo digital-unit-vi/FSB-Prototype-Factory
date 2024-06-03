@@ -1,0 +1,129 @@
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 0 64px;
+}
+
+.content {
+  z-index: 1;
+  padding: 0 16px 107px;
+
+  @media (width >= 768px) {
+    padding: 0 24px 156px;
+  }
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  height: 210px;
+  margin-top: -83px;
+
+  object-fit: contain;
+
+  @media (width >= 768px) {
+    height: 338px;
+    margin-top: -132px;
+  }
+}
+
+.withBackground {
+  position: relative;
+
+  & + .image {
+    @media (width >= 768px) {
+      margin-top: -200px;
+    }
+  }
+
+  @media (width >= 768px) {
+    height: 600px;
+  }
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 0 64px;
+}
+
+.heroBackgroundImageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 375px;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+      180deg,
+      rgb(0 0 0 / 40%) 50%,
+      rgb(0 0 0 / 0%) 100%
+    );
+    border-radius: 0 0 64px;
+  }
+
+  @media (width >= 768px) {
+    height: 600px;
+  }
+}
+
+.logo {
+  width: 100%;
+  padding: 16px 0 12px;
+}
+
+.textContainer {
+  width: 100%;
+  padding: 24px 0 16px;
+
+  @media (width >= 768px) {
+    padding-top: 40px;
+  }
+}
+
+.light {
+  background-color: #f3f5f3;
+}
+
+.dark {
+  background-color: #3f4447;
+}
+
+.prominentText {
+  font-size: 36px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 50px;
+  color: #00ac46;
+}
+
+.prominentTextOrange {
+  font-size: 36px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 50px;
+  color: #f8b856;
+}
+
+.prominentTextMocha {
+  font-size: 36px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 50px;
+  color: #9b8f7e;
+}

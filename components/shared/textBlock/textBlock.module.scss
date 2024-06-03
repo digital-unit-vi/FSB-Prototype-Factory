@@ -1,0 +1,31 @@
+.headline {
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 30px;
+  color: #23282a;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 27px;
+  color: #23282a;
+}
+
+.container {
+  @media (width >= 768px) {
+    padding: 0 48px;
+  }
+}
+
+.dark {
+  .headline {
+    color: #fff;
+  }
+
+  .text {
+    color: #fff;
+  }
+}

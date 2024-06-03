@@ -1,0 +1,94 @@
+.container {
+  padding: 24px;
+  border: 1px solid #b2b4b5;
+  border-radius: 16px;
+
+  hr {
+    margin: 24px 0;
+    border-top: 1px solid #b2b4b5;
+    border-bottom: none;
+    border-inline: 1px;
+  }
+
+  @media (width >= 768px) {
+    display: flex;
+
+    hr {
+      height: auto;
+      margin: 0 24px;
+
+      border-top: none;
+      border-right: 1px solid #b2b4b5;
+      border-bottom: none;
+      border-left: none;
+      border-inline: none;
+    }
+  }
+}
+
+.cell {
+  display: flex;
+  gap: 16px;
+
+  & > p {
+    display: flex;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 26px;
+    color: #23282a;
+  }
+
+  @media (width >= 768px) {
+    flex: 1;
+    flex-direction: column;
+  }
+}
+
+.dateWrapper {
+  min-width: 86px;
+
+  p {
+    &:first-child {
+      font-size: 56px;
+      font-weight: 300;
+      font-style: normal;
+      line-height: 68px;
+      color: #23282a;
+    }
+
+    &:last-child {
+      margin-top: -6px;
+
+      font-size: 20px;
+      font-weight: 700;
+      font-style: normal;
+      line-height: 24px;
+      color: #23282a;
+    }
+  }
+}
+
+.container.dark {
+  border: 1px solid #707375;
+
+  hr {
+    border-top: 1px solid #707375;
+  }
+
+  .cell {
+    & > p {
+      color: #fff;
+    }
+  }
+
+  .dateWrapper {
+    min-width: 86px;
+
+    p {
+      color: #fff;
+    }
+  }
+}

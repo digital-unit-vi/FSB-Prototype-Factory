@@ -1,0 +1,97 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+
+  padding: 40px;
+
+  background-color: #3f4447;
+}
+
+.mainLogo {
+  width: 155px;
+}
+
+.textContainer {
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.linkText {
+  font-weight: 600;
+  color: #57cd84;
+  text-decoration-line: underline;
+
+  &:hover {
+    color: #82dba3;
+  }
+
+  &:active {
+    color: #ade9c3;
+  }
+}
+
+.logosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logosHeader {
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.logos {
+  display: flex;
+  gap: 16px;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+
+  &:hover path {
+    fill: #edefee;
+  }
+}
+
+.linksContainer {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  justify-content: center;
+}
+
+.linkTextWhite {
+  padding: 12px 0;
+
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 20px;
+  color: #fff;
+  text-decoration-line: underline;
+
+  &:hover {
+    color: #82dba3;
+  }
+
+  &:active {
+    color: #82dba3;
+  }
+}
+
+.link {
+  color: unset;
+  text-decoration: none;
+}

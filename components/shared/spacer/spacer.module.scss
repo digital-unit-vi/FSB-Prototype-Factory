@@ -1,0 +1,8 @@
+.wrapper {
+  @media (width >= 768px) {
+    width: var(--medium-size);
+    min-width: var(--medium-size);
+    height: var(--medium-size);
+    min-height: var(--medium-size);
+  }
+}
