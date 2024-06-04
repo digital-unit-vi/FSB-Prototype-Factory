@@ -8,6 +8,7 @@
 .content {
   z-index: 1;
   padding: 0 16px 107px;
+  text-align: center;
 
   @media (width >= 768px) {
     padding: 0 24px 156px;
@@ -85,6 +86,10 @@
 .logo {
   width: 100%;
   padding: 16px 0 12px;
+}
+
+.logoLink {
+  display: inline-block;
 }
 
 .textContainer {

@@ -1,5 +1,5 @@
-import styles from "./button.module.scss";
 import Link from "next/link";
+import styles from "./button.module.scss";
 
 export default function Button({
   type,
@@ -7,14 +7,18 @@ export default function Button({
   text,
 }: Readonly<{
   type: "center" | "wide";
-  href: string;
+  href?: string;
   text?: string;
 }>) {
   return (
     <div className={`${styles.wrapper} ${styles[type]}`}>
-      <Link href={href} passHref className={styles.link}>
+      {href ? (
+        <Link href={href} passHref className={styles.link}>
+          <button className={styles.button}>{text ?? "Shop now"}</button>
+        </Link>
+      ) : (
         <button className={styles.button}>{text ?? "Shop now"}</button>
-      </Link>
+      )}
     </div>
   );
 }

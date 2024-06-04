@@ -12,12 +12,14 @@ export default function Footer() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.logoContainer}>
-        <Image
-          src={thermomixLogo}
-          width={156}
-          alt="logo"
-          className={styles.mainLogo}
-        />
+        <Link href="#" passHref className={styles.logoLink}>
+          <Image
+            src={thermomixLogo}
+            width={156}
+            alt="logo"
+            className={styles.mainLogo}
+          />
+        </Link>
       </div>
       <div className={styles.textContainer}>
         Whatever the issue, we&apos;re here to help. Contact us directly or

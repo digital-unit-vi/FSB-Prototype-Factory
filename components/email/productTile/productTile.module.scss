@@ -104,3 +104,19 @@
     color: #fff;
   }
 }
+
+.link {
+  text-decoration: none;
+
+  &:hover {
+    button {
+      background-color: #00973d;
+    }
+  }
+
+  &:active {
+    button {
+      background-color: #008134;
+    }
+  }
+}

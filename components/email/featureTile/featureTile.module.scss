@@ -87,15 +87,20 @@
 }
 
 .link {
+  display: flex;
   color: #00ac46;
   text-decoration: none;
 
   &:hover {
-    color: #00973d;
+    .textWide {
+      color: #00973d;
+    }
   }
 
   &:active {
-    color: #008134;
+    .textWide {
+      color: #008134;
+    }
   }
 }
 

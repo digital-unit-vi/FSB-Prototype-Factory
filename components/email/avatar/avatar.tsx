@@ -1,8 +1,12 @@
 import AvatarImage from "@public/email/avatar.png";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./avatar.module.scss";
 
-export default function Avatar({ dark }: Readonly<{ dark?: boolean }>) {
+export default function Avatar({
+  dark,
+  link = "#",
+}: Readonly<{ dark?: boolean; link?: string }>) {
   return (
     <div className={`${styles.wrapper} ${dark ? styles.dark : ""}`}>
       <div className={styles.imageContainer}>
@@ -16,7 +20,9 @@ export default function Avatar({ dark }: Readonly<{ dark?: boolean }>) {
           to help you out with any questions or requests you may have regarding
           the replacement of your Thermomix® TM6 knife.
         </div>
-        <p className={styles.link}>Get in touch with your advisor</p>
+        <Link href={link} passHref className={styles.link}>
+          <p>Get in touch with your advisor</p>
+        </Link>
       </div>
     </div>
   );
