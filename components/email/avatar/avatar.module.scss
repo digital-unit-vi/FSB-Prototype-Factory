@@ -39,6 +39,8 @@
 }
 
 .link {
+  display: inline-block;
+
   padding: 8px 0;
 
   font-size: 16px;
@@ -46,6 +48,15 @@
   font-style: normal;
   line-height: 28px;
   color: #00ac46;
+  text-decoration: none;
+
+  &:hover {
+    color: #00973d;
+  }
+
+  &:active {
+    color: #008134;
+  }
 }
 
 .dark.wrapper {
@@ -58,5 +69,13 @@
 
   .link {
     color: #57cd84;
+
+    &:hover {
+      color: #82dba3;
+    }
+
+    &:active {
+      color: #ade9c3;
+    }
   }
 }

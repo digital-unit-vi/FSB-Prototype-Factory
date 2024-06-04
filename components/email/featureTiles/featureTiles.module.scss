@@ -11,13 +11,17 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
 
-    & > *:not(:last-child) {
+    & > *:not(:last-child) > div {
       padding: 16px 23px;
     }
 
     & > :last-child {
       grid-column: 1 / span 2;
-      padding: 24px;
+
+      & > div {
+        width: 100%;
+        padding: 24px;
+      }
     }
 
     @media (width >= 768px) {
@@ -27,7 +31,10 @@
       & > :last-child {
         grid-column: 2 / span 2;
         grid-row: 2;
-        padding: 24px;
+
+        & > div {
+          padding: 24px;
+        }
       }
     }
   }
