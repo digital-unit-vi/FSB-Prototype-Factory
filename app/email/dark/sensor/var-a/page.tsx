@@ -19,9 +19,9 @@ import Collage1ImgTopLeft from "@public/email/collage/sensor-father-daughter.jpg
 import Collage1ImgTopRight from "@public/email/collage/sensor-standalone.jpg";
 import SensorCleaning from "@public/email/sensor-cleaning.jpg";
 import SensorIntegration from "@public/email/sensor-integration.jpg";
-import ProductTileProductImg from "@public/shared/product/sensor-front.png";
 import HeroProductImg from "@public/shared/product/sensor-hero.png";
 import MediaContainerImg from "@public/shared/product/sensor-parts-dark.png";
+import ProductTileProductImg from "@public/shared/product/sensor-product.png";
 
 import { Metadata } from "next";
 import styles from "./page.module.scss";
