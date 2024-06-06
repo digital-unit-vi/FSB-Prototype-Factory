@@ -41,7 +41,7 @@ export default function SensorVarADark() {
       >
         <p className="heroPrimaryText">Thermomix® Sensor</p>
         <p className="heroPrimaryText">
-          means{" "}
+          means {""}
           <span className="heroProminentTextMutedGreen">full control</span>
         </p>
       </Hero>

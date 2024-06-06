@@ -45,7 +45,7 @@ export default function SensorLightLandingPage() {
         <Spacer size={96} />
         <Heading>
           <p className="heroPrimaryText">
-            Thermomix® Sensor means{" "}
+            Thermomix® Sensor means {""}
             <span className="heroProminentText">full control</span>
           </p>
         </Heading>

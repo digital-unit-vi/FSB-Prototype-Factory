@@ -9,10 +9,10 @@ import Spacer from "@components/shared/spacer/spacer";
 import TextBlock from "@components/shared/textBlock/textBlock";
 
 // Assets
-import Collage2ImgBottomRight from "@public/email/collage/baguette.png";
-import Collage2ImgTopLeft from "@public/email/collage/beef-wellington.png";
-import Collage2ImgBottomLeft from "@public/email/collage/cake.png";
-import Collage2ImgTopRight from "@public/email/collage/fish.png";
+import Collage2ImgBottomLeft from "@public/email/collage/dalgona.png";
+import Collage2ImgTopRight from "@public/email/collage/lasagne.png";
+import Collage2ImgBottomRight from "@public/email/collage/pita.png";
+import Collage2ImgTopLeft from "@public/email/collage/sauce.png";
 import Collage1ImgTopRight from "@public/email/collage/tm6dark-cooking.png";
 import Collage1ImgTopLeft from "@public/email/collage/tm6dark-couple.png";
 import Collage1ImgBottom from "@public/email/collage/tm6dark-pears.png";
@@ -99,10 +99,8 @@ export default function TM6VarBDark() {
         </FeatureTiles>
         <Spacer size={80} />
         <Heading dark>
-          <p className="secondary">
-            Thousands of recipes –{" "}
-            <span className="leadingTaupe">Cookidoo® recipe platform</span>
-          </p>
+          <p className="secondary">Thousands of recipes –</p>
+          <p className="leadingTaupe">Cookidoo® recipe platform</p>
         </Heading>
         <Spacer size={40} />
         <Collage

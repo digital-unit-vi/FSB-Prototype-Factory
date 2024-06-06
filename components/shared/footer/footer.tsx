@@ -23,7 +23,7 @@ export default function Footer() {
       </div>
       <div className={styles.textContainer}>
         Whatever the issue, we&apos;re here to help. Contact us directly or
-        visit our{" "}
+        visit our {""}
         <Link href="#" passHref className={styles.link}>
           <span className={styles.linkText}>support centre</span>
         </Link>

@@ -88,10 +88,8 @@ export default function TM6VarBLight() {
         </FeatureTiles>
         <Spacer size={80} />
         <Heading>
-          <p className="secondary">
-            Thousands of recipes –{" "}
-            <span className="leading"> Cookidoo® recipe platform</span>
-          </p>
+          <p className="secondary">Thousands of recipes –</p>
+          <p className="leading">Cookidoo® recipe platform</p>
         </Heading>
         <Spacer size={40} />
         <Collage
