@@ -88,8 +88,8 @@ export default function CutterDark() {
         <Spacer size={104} sizeMedium={80} />
         <ProductTile
           productImage={ProductTileProductImg}
-          title="Thermomix® Sensor"
-          subtitle="149,00 €"
+          title="Thermomix® Cutter"
+          subtitle="119,00 €"
           dark
         />
         <Spacer size={80} />
@@ -152,8 +152,8 @@ export default function CutterDark() {
         <Spacer size={104} sizeMedium={80} />
         <ProductTile
           productImage={ProductTileProductImg}
-          title="Thermomix® Sensor"
-          subtitle="149,00 €"
+          title="Thermomix® Cutter"
+          subtitle="119,00 €"
           dark
         />
         <Spacer size={64} />
