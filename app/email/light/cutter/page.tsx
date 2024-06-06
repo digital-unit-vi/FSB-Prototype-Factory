@@ -22,27 +22,26 @@ import SensorCleaning from "@public/email/sensor-cleaning.jpg";
 import SensorIntegration from "@public/email/sensor-integration.jpg";
 import ProductTileProductImg from "@public/shared/product/sensor-front.png";
 import HeroProductImg from "@public/shared/product/sensor-hero.png";
-import MediaContainerImg from "@public/shared/product/sensor-parts-dark.png";
+import MediaContainerImg from "@public/shared/product/sensor-parts-light.png";
 
 import { Metadata } from "next";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
-  title: "Sensor Variant B Dark",
+  title: "Cutter Light",
 };
 
-export default function SensorVarBDark() {
+export default function CutterLight() {
   return (
     <main>
       <Hero
         backgroundImage={HeroBackgroundImg}
         logoColor="white"
         productImage={HeroProductImg}
-        dark
       >
-        <p className="heroPrimaryTextWhite">Thermomix® Sensor</p>
+        <p className="heroPrimaryTextWhite">Thermomix® Cutter</p>
         <p className="heroPrimaryTextWhite">
-          means <span className="heroProminentTextPeach">full control</span>
+          means <span className="heroProminentTextOrange">full control</span>
         </p>
       </Hero>
       <section className={styles.mainContainer}>
@@ -51,12 +50,11 @@ export default function SensorVarBDark() {
           headline="Hello Maximilia-Charlotte,"
           p1="It seems you love baking cakes with your Thermomix®  that leave your guests wanting more. The Thermomix® Sensor takes your baking game to the next level."
           p2="This ultimate tool reduces any risk during baking and enables you to serve the most delicious cakes with zero stress. Impress your guests easily and confidently, and let the Thermomix®  Sensor do the rest!"
-          dark
         />
         <Spacer size={80} />
-        <Heading dark oneLineOnMedium>
+        <Heading oneLineOnMedium>
           <p className="secondary">The magic {""}</p>
-          <p className="leadingMutedGreen">inside</p>
+          <p className="leading">inside</p>
         </Heading>
         <Spacer size={40} />
         <FeatureTiles>
@@ -64,39 +62,33 @@ export default function SensorVarBDark() {
             icon="sous-vide"
             headline="Resists up to 275°C"
             paragraph="The sensors heat protection allows it to be used in 275°C hot environments."
-            dark
           />
           <FeatureTile
             icon="bluetooth"
             headline="Bluetooth® 5.0 LE"
             paragraph="Allows to wirelessly connect it to your Thermomix® TM6 and smartphone."
-            dark
           />
           <FeatureTile
             icon="battery"
             headline="Up to 24h battery life"
             paragraph="Once fully charged, the battery life of the sensor is up to a stunning 24 hours."
-            dark
           />
           <FeatureTile
             icon="cleaning"
             headline="100% water resistent"
             paragraph="Due to full water resistance you don't need to worry about water damage."
-            dark
           />
         </FeatureTiles>
         <Spacer size={104} sizeMedium={80} />
         <ProductTile
           productImage={ProductTileProductImg}
-          title="Thermomix® Sensor"
-          subtitle="149,00 €"
-          dark
+          title="Thermomix® Cutter"
+          subtitle="119,00 €"
         />
         <Spacer size={80} />
         <TextBlock
           headline="Unleash new potentials"
           p1="Guaranteed success - the Thermomix® Sensor always keeps an eye on your home-made delicacies. Cakes, breads, meat or fish - the sensor lets you know when they are cooked to perfection. Smartly via app on your smartphone or directly on your TM6."
-          dark
         />
         <Spacer size={32} sizeMedium={48} />
         <Collage
@@ -105,8 +97,8 @@ export default function SensorVarBDark() {
           imgBottom={Collage1ImgBottom}
         />
         <Spacer size={80} />
-        <Heading dark>
-          <p className="leadingMutedGreen">Full control</p>
+        <Heading>
+          <p className="leading">Full control</p>
           <p className="secondary">in your kitchen</p>
         </Heading>
         <Spacer size={24} />
@@ -115,9 +107,9 @@ export default function SensorVarBDark() {
           alt="Sensor parts description"
         />
         <Spacer size={80} />
-        <Heading dark>
+        <Heading>
           <p className="secondary">
-            <span className="leadingMutedGreen">Smart baking</span>, cooking,
+            <span className="leading">Smart baking</span>, cooking,
           </p>
           <p className="secondary">sizzling, braising</p>
         </Heading>
@@ -126,7 +118,6 @@ export default function SensorVarBDark() {
           img={SensorIntegration}
           headline="Seamless integration"
           text="Connected via bluetooth you’ll receive messages on your Thermomix® TM6 and smartphone via the Cooking Centre app."
-          dark
           imageSide="right"
         />
         <Spacer size={56} sizeMedium={48} />
@@ -134,13 +125,12 @@ export default function SensorVarBDark() {
           img={SensorCleaning}
           headline="Easy to clean"
           text="Clean with a little washing-up liquid under running water and dry it. Done. It’s that simple."
-          dark
           imageSide="left"
         />
         <Spacer size={80} />
-        <Heading dark>
+        <Heading>
           <p className="secondary">Discover thousands of</p>
-          <p className="leadingMutedGreen">sensor-ready recipes</p>
+          <p className="leading">sensor-ready recipes</p>
         </Heading>
         <Spacer size={40} />
         <Collage
@@ -152,9 +142,8 @@ export default function SensorVarBDark() {
         <Spacer size={104} sizeMedium={80} />
         <ProductTile
           productImage={ProductTileProductImg}
-          title="Thermomix® Sensor"
-          subtitle="149,00 €"
-          dark
+          title="Thermomix® Cutter"
+          subtitle="119,00 €"
         />
         <Spacer size={64} />
       </section>

@@ -36,7 +36,7 @@ export default function Hero({
     <div className={styles.componentWrapper}>
       <div
         className={`${styles.contentWrapper} ${
-          backgroundColor ? styles[backgroundColor] : styles.withBackground
+          backgroundColor ? styles[backgroundColor] : styles.withImageBackground
         }`}
       >
         {backgroundImage && (

@@ -7,8 +7,11 @@ import Button from "@components/shared/button/button";
 import Heading from "@components/shared/heading/heading";
 import Spacer from "@components/shared/spacer/spacer";
 import TextBlock from "@components/shared/textBlock/textBlock";
-import BladeHero from "@public/shared/product/blade-hero.png";
-import BladeProduct from "@public/shared/product/blade-product3.png";
+
+// Assets
+import HeroProductImg from "@public/shared/product/blade-hero.png";
+import ProductTileProductImg from "@public/shared/product/blade-product.png";
+
 import { Metadata } from "next";
 import styles from "./page.module.scss";
 
@@ -19,7 +22,11 @@ export const metadata: Metadata = {
 export default function BladeLight() {
   return (
     <main>
-      <Hero logoColor="green" productImage={BladeHero} backgroundColor="light">
+      <Hero
+        logoColor="green"
+        productImage={HeroProductImg}
+        backgroundColor="light"
+      >
         <p className="heroPrimaryText">Thermomix® needs a</p>
         <p className="heroProminentText"> new mixing knife</p>
       </Hero>
@@ -66,7 +73,7 @@ export default function BladeLight() {
         </Quotation>
         <Spacer size={80} sizeMedium={60} />
         <ProductTile
-          productImage={BladeProduct}
+          productImage={ProductTileProductImg}
           title="Thermomix® Mixing Knife"
           subtitle="59,00 €"
         />

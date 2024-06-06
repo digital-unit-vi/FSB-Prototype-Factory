@@ -28,10 +28,10 @@ import { Metadata } from "next";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
-  title: "Sensor Variant B Dark",
+  title: "Cutter Dark",
 };
 
-export default function SensorVarBDark() {
+export default function CutterDark() {
   return (
     <main>
       <Hero
@@ -40,7 +40,7 @@ export default function SensorVarBDark() {
         productImage={HeroProductImg}
         dark
       >
-        <p className="heroPrimaryTextWhite">Thermomix® Sensor</p>
+        <p className="heroPrimaryTextWhite">Thermomix® Cutter</p>
         <p className="heroPrimaryTextWhite">
           means <span className="heroProminentTextPeach">full control</span>
         </p>

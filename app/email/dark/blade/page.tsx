@@ -7,8 +7,11 @@ import Button from "@components/shared/button/button";
 import Heading from "@components/shared/heading/heading";
 import Spacer from "@components/shared/spacer/spacer";
 import TextBlock from "@components/shared/textBlock/textBlock";
-import BladeHero from "@public/shared/product/blade-hero.png";
-import BladeProduct from "@public/shared/product/blade-product3.png";
+
+// Assets
+import HeroProductImg from "@public/shared/product/blade-hero.png";
+import ProductTileProductImg from "@public/shared/product/blade-product.png";
+
 import { Metadata } from "next";
 import styles from "./page.module.scss";
 
@@ -21,7 +24,7 @@ export default function BladeDark() {
     <main>
       <Hero
         logoColor="muted-green"
-        productImage={BladeHero}
+        productImage={HeroProductImg}
         backgroundColor="dark"
         dark
       >
@@ -72,7 +75,7 @@ export default function BladeDark() {
         </Quotation>
         <Spacer size={80} sizeMedium={60} />
         <ProductTile
-          productImage={BladeProduct}
+          productImage={ProductTileProductImg}
           title="Thermomix® Mixing Knife"
           subtitle="59,00 €"
           dark
