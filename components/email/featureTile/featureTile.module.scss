@@ -102,6 +102,20 @@
       color: #008134;
     }
   }
+
+  .dark {
+    &:hover {
+      .textWide {
+        color: #82dba3;
+      }
+    }
+
+    &:active {
+      .textWide {
+        color: #ade9c3;
+      }
+    }
+  }
 }
 
 .dark.container,
