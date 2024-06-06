@@ -8,18 +8,21 @@ import ProductTile from "@components/email/productTile/productTile";
 import Heading from "@components/shared/heading/heading";
 import Spacer from "@components/shared/spacer/spacer";
 import TextBlock from "@components/shared/textBlock/textBlock";
-import CollageBaguette from "@public/email/collage/baguette.png";
-import CollageBeefWellington from "@public/email/collage/beef-wellington.png";
-import CollageCake from "@public/email/collage/cake.png";
-import CollageFish from "@public/email/collage/fish.png";
-import Collage1 from "@public/email/collage/sensor1.jpg";
-import Collage2 from "@public/email/collage/sensor2.jpg";
-import Collage3 from "@public/email/collage/sensor3.jpg";
+
+// Assets
+import Collage2ImgBottomRight from "@public/email/collage/baguette.png";
+import Collage2ImgTopLeft from "@public/email/collage/beef-wellington.png";
+import Collage2ImgBottomLeft from "@public/email/collage/cake.png";
+import Collage2ImgTopRight from "@public/email/collage/fish.png";
+import Collage1ImgBottom from "@public/email/collage/sensor-cakes.jpg";
+import Collage1ImgTopLeft from "@public/email/collage/sensor-father-daughter.jpg";
+import Collage1ImgTopRight from "@public/email/collage/sensor-standalone.jpg";
 import SensorCleaning from "@public/email/sensor-cleaning.jpg";
 import SensorIntegration from "@public/email/sensor-integration.jpg";
-import SensorProduct from "@public/shared/product/sensor-front.png";
-import SensorHero from "@public/shared/product/sensor-hero.png";
-import SensorMediaContainer from "@public/shared/product/sensor-parts-light.png";
+import HeroProductImg from "@public/shared/product/sensor-hero.png";
+import MediaContainerImg from "@public/shared/product/sensor-parts-light.png";
+import ProductTileProductImg from "@public/shared/product/sensor-product.png";
+
 import { Metadata } from "next";
 import styles from "./page.module.scss";
 
@@ -30,7 +33,11 @@ export const metadata: Metadata = {
 export default function SensorVarALight() {
   return (
     <main>
-      <Hero logoColor="green" productImage={SensorHero} backgroundColor="light">
+      <Hero
+        logoColor="green"
+        productImage={HeroProductImg}
+        backgroundColor="light"
+      >
         <p className="heroPrimaryText">Thermomix® Sensor</p>
         <p className="heroPrimaryText">
           means <span className="heroProminentText">full control</span>
@@ -73,7 +80,7 @@ export default function SensorVarALight() {
         </FeatureTiles>
         <Spacer size={104} sizeMedium={80} />
         <ProductTile
-          productImage={SensorProduct}
+          productImage={ProductTileProductImg}
           title="Thermomix® Sensor"
           subtitle="149,00 €"
         />
@@ -83,7 +90,11 @@ export default function SensorVarALight() {
           p1="Guaranteed success - the Thermomix® Sensor always keeps an eye on your home-made delicacies. Cakes, breads, meat or fish - the sensor lets you know when they are cooked to perfection. Smartly via app on your smartphone or directly on your TM6."
         />
         <Spacer size={32} sizeMedium={48} />
-        <Collage img1={Collage1} img2={Collage2} img3={Collage3} />
+        <Collage
+          imgTopLeft={Collage1ImgTopLeft}
+          imgTopRight={Collage1ImgTopRight}
+          imgBottom={Collage1ImgBottom}
+        />
         <Spacer size={80} />
         <Heading>
           <p className="leading">Full control</p>
@@ -91,7 +102,7 @@ export default function SensorVarALight() {
         </Heading>
         <Spacer size={24} />
         <MediaContainer
-          img={SensorMediaContainer}
+          img={MediaContainerImg}
           alt="Sensor parts description"
         />
         <Spacer size={80} />
@@ -122,14 +133,14 @@ export default function SensorVarALight() {
         </Heading>
         <Spacer size={40} />
         <Collage
-          img1={CollageBeefWellington}
-          img2={CollageFish}
-          img3={CollageCake}
-          img4={CollageBaguette}
+          imgTopLeft={Collage2ImgTopLeft}
+          imgTopRight={Collage2ImgTopRight}
+          imgBottom={Collage2ImgBottomLeft}
+          imgBottomRight={Collage2ImgBottomRight}
         />
         <Spacer size={104} sizeMedium={80} />
         <ProductTile
-          productImage={SensorProduct}
+          productImage={ProductTileProductImg}
           title="Thermomix® Sensor"
           subtitle="149,00 €"
         />

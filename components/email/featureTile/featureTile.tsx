@@ -40,15 +40,17 @@ export default function FeatureTile({
   const IconComponent = ICON_MAPPING[icon ?? "battery"];
 
   return (
-    <Link href={href} passHref className={styles.link}>
+    <>
       {wide ? (
-        <div className={`${dark ? styles.dark : ""} ${styles.containerWide}`}>
-          <div className={styles.headlineWrapperWide}>
-            <span className={styles.leadingWide}>{leading}</span>
-            <span className={styles.headlineWide}>{headline}</span>
+        <Link href={href} passHref className={styles.link}>
+          <div className={`${dark ? styles.dark : ""} ${styles.containerWide}`}>
+            <div className={styles.headlineWrapperWide}>
+              <span className={styles.leadingWide}>{leading}</span>
+              <span className={styles.headlineWide}>{headline}</span>
+            </div>
+            <span className={styles.textWide}>{paragraph}</span>
           </div>
-          <span className={styles.textWide}>{paragraph}</span>
-        </div>
+        </Link>
       ) : (
         <div className={`${dark ? styles.dark : ""} ${styles.container}`}>
           {icon && (
@@ -62,6 +64,6 @@ export default function FeatureTile({
           <span className={styles.text}>{paragraph}</span>
         </div>
       )}
-    </Link>
+    </>
   );
 }

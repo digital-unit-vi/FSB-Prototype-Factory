@@ -7,8 +7,8 @@ import UserReview from "@components/landingPage/userReview/userReview";
 import Heading from "@components/shared/heading/heading";
 import Spacer from "@components/shared/spacer/spacer";
 import TextBlock from "@components/shared/textBlock/textBlock";
-import CarouselProductImage from "@public/landingPage/carousel/carousel-sensor.png";
-import ProductImage from "@public/shared/product/sensor-front.png";
+import CarouselProductImg from "@public/landingPage/carousel/carousel-sensor.png";
+import ProductTileProductImg from "@public/shared/product/sensor-product.png";
 import { Metadata } from "next";
 import styles from "./page.module.scss";
 
@@ -46,7 +46,7 @@ export default function SensorLightLandingPage() {
         <Spacer size={96} />
         <Heading dark>
           <p className="heroPrimaryText">
-            Thermomix® Sensor means{" "}
+            Thermomix® Sensor means {""}
             <span className="heroProminentTextMutedGreen">full control</span>
           </p>
         </Heading>
@@ -69,7 +69,7 @@ export default function SensorLightLandingPage() {
           </p>
         </Heading>
         <Spacer size={16} />
-        <Carousel productPicture={CarouselProductImage} />
+        <Carousel productPicture={CarouselProductImg} />
         <Spacer size={96} />
         <UserReview
           ratingScore={4.5}
@@ -81,7 +81,7 @@ export default function SensorLightLandingPage() {
         />
         <Spacer size={80} />
         <ProductTile
-          productImage={ProductImage}
+          productImage={ProductTileProductImg}
           title="Thermomix® Sensor"
           subtitle="149,00 €"
           dark

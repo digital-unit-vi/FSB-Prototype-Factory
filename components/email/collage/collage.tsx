@@ -2,47 +2,47 @@ import Image, { StaticImageData } from "next/image";
 import styles from "./collage.module.scss";
 
 export default function Collage({
-  img1,
-  img2,
-  img3,
-  img4,
+  imgTopLeft,
+  imgTopRight,
+  imgBottom,
+  imgBottomRight,
 }: Readonly<{
-  img1: StaticImageData;
-  img2: StaticImageData;
-  img3: StaticImageData;
-  img4?: StaticImageData;
+  imgTopLeft: StaticImageData;
+  imgTopRight: StaticImageData;
+  imgBottom: StaticImageData;
+  imgBottomRight?: StaticImageData;
 }>) {
   return (
     <div
       className={
-        img4
+        imgBottomRight
           ? `${styles.collage} ${styles.collageQuadruple}`
           : `${styles.collage} ${styles.collageTriple}`
       }
     >
-      {img4 ? (
+      {imgBottomRight ? (
         <>
           <div className={`${styles.rowQuadruple} ${styles.rowQuadruple1}`}>
             <Image
-              src={img1}
-              alt="image1"
+              src={imgTopLeft}
+              alt="Collage image 1"
               className={`${styles.collageImage} ${styles.image1}`}
             />
             <Image
-              src={img3}
-              alt="image3"
+              src={imgBottom}
+              alt="Collage image 3"
               className={`${styles.collageImage} ${styles.image3}`}
             />
           </div>
           <div className={`${styles.rowQuadruple} ${styles.rowQuadruple2}`}>
             <Image
-              src={img2}
-              alt="image2"
+              src={imgTopRight}
+              alt="Collage image 2"
               className={`${styles.collageImage} ${styles.image2}`}
             />
             <Image
-              src={img4}
-              alt="image4"
+              src={imgBottomRight}
+              alt="Collage image 4"
               className={`${styles.collageImage} ${styles.image4}`}
             />
           </div>
@@ -50,18 +50,18 @@ export default function Collage({
       ) : (
         <>
           <Image
-            src={img1}
-            alt="image1"
+            src={imgTopLeft}
+            alt="Collage image 1"
             className={`${styles.collageImage} ${styles.image1}`}
           />
           <Image
-            src={img2}
-            alt="image2"
+            src={imgTopRight}
+            alt="Collage image 2"
             className={`${styles.collageImage} ${styles.image2}`}
           />
           <Image
-            src={img3}
-            alt="image3"
+            src={imgBottom}
+            alt="Collage image 3"
             className={`${styles.collageImage} ${styles.image3}`}
           />
         </>

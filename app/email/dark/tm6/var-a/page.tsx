@@ -7,15 +7,18 @@ import Quotation from "@components/email/quotation/quotation";
 import Heading from "@components/shared/heading/heading";
 import Spacer from "@components/shared/spacer/spacer";
 import TextBlock from "@components/shared/textBlock/textBlock";
-import CollageBaguette from "@public/email/collage/baguette.png";
-import CollageBeefWellington from "@public/email/collage/beef-wellington.png";
-import CollageCake from "@public/email/collage/cake.png";
-import CollageFish from "@public/email/collage/fish.png";
-import CollageImg1 from "@public/email/collage/tm6dark1.png";
-import CollageImg2 from "@public/email/collage/tm6dark2.png";
-import CollageImg3 from "@public/email/collage/tm6dark3.png";
-import TM6HeroAccessoriesDark from "@public/shared/product/tm6-hero-accessories-dark.png";
-import TM6ProductDark from "@public/shared/product/tm6-product-dark.png";
+
+// Assets
+import Collage2ImgBottomLeft from "@public/email/collage/dalgona.png";
+import Collage2ImgTopRight from "@public/email/collage/lasagne.png";
+import Collage2ImgBottomRight from "@public/email/collage/pita.png";
+import Collage2ImgTopLeft from "@public/email/collage/sauce.png";
+import Collage1ImgTopRight from "@public/email/collage/tm6dark-cooking.png";
+import Collage1ImgTopLeft from "@public/email/collage/tm6dark-couple.png";
+import Collage1ImgBottom from "@public/email/collage/tm6dark-pears.png";
+import HeroProductImg from "@public/shared/product/tm6-hero-accessories-dark.png";
+import ProductTileProductImg from "@public/shared/product/tm6-product-dark.png";
+
 import { Metadata } from "next";
 import styles from "./page.module.scss";
 
@@ -28,7 +31,7 @@ export default function TM6VarADark() {
     <main>
       <Hero
         logoColor="white"
-        productImage={TM6HeroAccessoriesDark}
+        productImage={HeroProductImg}
         dark
         backgroundColor="dark"
       >
@@ -45,7 +48,11 @@ export default function TM6VarADark() {
           p1="do you love kitchen classics or do you like to try out the latest food trends? Do you pay particular attention to healthy, balanced food? No matter what your personal cooking preferences are - with Thermomix® you'll find the answer."
         />
         <Spacer size={32} />
-        <Collage img1={CollageImg1} img2={CollageImg2} img3={CollageImg3} />
+        <Collage
+          imgTopLeft={Collage1ImgTopLeft}
+          imgTopRight={Collage1ImgTopRight}
+          imgBottom={Collage1ImgBottom}
+        />
         <Spacer size={80} />
         <Heading dark oneLineOnMedium>
           <p className="secondary">One device. {""}</p>
@@ -91,17 +98,15 @@ export default function TM6VarADark() {
         </FeatureTiles>
         <Spacer size={80} />
         <Heading dark>
-          <p className="secondary">
-            Thousands of recipes –{" "}
-            <span className="leadingTaupe">Cookidoo® recipe platform</span>
-          </p>
+          <p className="secondary">Thousands of recipes –</p>
+          <p className="leadingTaupe">Cookidoo® recipe platform</p>
         </Heading>
         <Spacer size={40} />
         <Collage
-          img1={CollageBeefWellington}
-          img2={CollageFish}
-          img3={CollageCake}
-          img4={CollageBaguette}
+          imgTopLeft={Collage2ImgTopLeft}
+          imgTopRight={Collage2ImgTopRight}
+          imgBottom={Collage2ImgBottomLeft}
+          imgBottomRight={Collage2ImgBottomRight}
         />
         <Spacer size={80} />
         <Heading dark oneLineOnMedium>
@@ -130,7 +135,7 @@ export default function TM6VarADark() {
         </Quotation>
         <Spacer size={80} />
         <ProductTile
-          productImage={TM6ProductDark}
+          productImage={ProductTileProductImg}
           title="Thermomix TM6® Sparkling Black"
           subtitle="1.499,00 €"
           dark
