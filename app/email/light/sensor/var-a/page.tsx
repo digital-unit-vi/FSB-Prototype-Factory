@@ -33,11 +33,7 @@ export const metadata: Metadata = {
 export default function SensorVarALight() {
   return (
     <main>
-      <Hero
-        logoColor="green"
-        productImage={HeroProductImg}
-        backgroundColor="light"
-      >
+      <Hero logoColor="green" productImage={HeroProductImg} background="light">
         <p className="heroPrimaryText">Thermomix® Sensor</p>
         <p className="heroPrimaryText">
           means <span className="heroProminentText">full control</span>

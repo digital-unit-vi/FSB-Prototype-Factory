@@ -36,7 +36,7 @@ export default function SensorVarADark() {
       <Hero
         logoColor="white"
         productImage={HeroProductImg}
-        backgroundColor="dark"
+        background="dark"
         dark
       >
         <p className="heroPrimaryText">Thermomix® Sensor</p>

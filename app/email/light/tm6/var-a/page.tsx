@@ -29,11 +29,7 @@ export const metadata: Metadata = {
 export default function TM6VarALight() {
   return (
     <main>
-      <Hero
-        logoColor="green"
-        productImage={HeroProductImg}
-        backgroundColor="light"
-      >
+      <Hero logoColor="green" productImage={HeroProductImg} background="light">
         <p className="heroProminentText">
           The original <span className="heroPrimaryText">–</span>
         </p>

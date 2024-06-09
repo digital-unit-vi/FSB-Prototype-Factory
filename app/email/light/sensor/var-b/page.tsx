@@ -35,7 +35,7 @@ export default function SensorVarBLight() {
   return (
     <main>
       <Hero
-        backgroundImage={HeroBackgroundImg}
+        background={HeroBackgroundImg}
         logoColor="white"
         productImage={HeroProductImg}
       >

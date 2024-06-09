@@ -31,7 +31,7 @@ export default function TM6VarBLight() {
   return (
     <main>
       <Hero
-        backgroundImage={HeroBackgroundImg}
+        background={HeroBackgroundImg}
         logoColor="white"
         productImage={HeroProductImg}
       >

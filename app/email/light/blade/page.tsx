@@ -22,11 +22,7 @@ export const metadata: Metadata = {
 export default function BladeLight() {
   return (
     <main>
-      <Hero
-        logoColor="green"
-        productImage={HeroProductImg}
-        backgroundColor="light"
-      >
+      <Hero logoColor="green" productImage={HeroProductImg} background="light">
         <p className="heroPrimaryText">Thermomix® needs a</p>
         <p className="heroProminentText"> new mixing knife</p>
       </Hero>
