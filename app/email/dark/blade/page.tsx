@@ -25,7 +25,7 @@ export default function BladeDark() {
       <Hero
         logoColor="muted-green"
         productImage={HeroProductImg}
-        backgroundColor="dark"
+        background="dark"
         dark
       >
         <p className="heroPrimaryText">Thermomix® needs a</p>

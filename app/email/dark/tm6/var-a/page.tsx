@@ -33,7 +33,7 @@ export default function TM6VarADark() {
         logoColor="white"
         productImage={HeroProductImg}
         dark
-        backgroundColor="dark"
+        background="dark"
       >
         <p className="heroProminentTextMocha">
           The original <span className="heroPrimaryText">–</span>
