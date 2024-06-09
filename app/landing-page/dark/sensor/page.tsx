@@ -1,20 +1,43 @@
 import BentoBox from "@components/landingPage/bentoBox/bentoBox";
 import Carousel from "@components/landingPage/carousel/carousel";
 import Hero from "@components/landingPage/hero/hero";
+import ImageGallery from "@components/landingPage/imageGallery/imageGallery";
 import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
 import ProductTile from "@components/landingPage/productTile/productTile";
 import UserReview from "@components/landingPage/userReview/userReview";
 import Heading from "@components/shared/heading/heading";
 import Spacer from "@components/shared/spacer/spacer";
 import TextBlock from "@components/shared/textBlock/textBlock";
+import ImageGalleryImg3 from "@public/email/collage/sensor-father-daughter.jpg";
 import CarouselProductImg from "@public/landingPage/carousel/carousel-sensor.png";
+import ImageGalleryImg8 from "@public/landingPage/imageGallery/sensor-app-juice.jpg";
+import ImageGalleryImg5 from "@public/landingPage/imageGallery/sensor-grill.jpg";
+import ImageGalleryImg1 from "@public/landingPage/imageGallery/sensor-loaf.jpg";
+import ImageGalleryImg7 from "@public/landingPage/imageGallery/sensor-man-fish.jpg";
+import ImageGalleryImg6 from "@public/landingPage/imageGallery/sensor-mother-daughter.jpg";
+import ImageGalleryImg9 from "@public/landingPage/imageGallery/sensor-oven-cake.jpg";
+import ImageGalleryImg2 from "@public/landingPage/imageGallery/sensor-pan.jpg";
+import ImageGalleryImg4 from "@public/landingPage/imageGallery/sensor-tm6-cake.jpg";
 import ProductTileProductImg from "@public/shared/product/sensor-product.png";
 import { Metadata } from "next";
+import { StaticImageData } from "next/image";
 import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
   title: "Sensor Variant Dark",
 };
+
+const IMAGE_GALLERY_SLIDES: StaticImageData[] = [
+  ImageGalleryImg1,
+  ImageGalleryImg2,
+  ImageGalleryImg3,
+  ImageGalleryImg4,
+  ImageGalleryImg5,
+  ImageGalleryImg6,
+  ImageGalleryImg7,
+  ImageGalleryImg8,
+  ImageGalleryImg9,
+];
 
 export default function SensorLightLandingPage() {
   return (
@@ -34,8 +57,8 @@ export default function SensorLightLandingPage() {
           </p>
         </Heading>
         <Spacer size={96} />
-        {/* <Placeholder text="GALLERY" dark /> */}
-        {/* <Spacer size={96} /> */}
+        <ImageGallery slides={IMAGE_GALLERY_SLIDES} dark />
+        <Spacer size={96} />
         <TextBlock
           headline="What is the\nThermomix® Sensor?"
           p1="With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time."
