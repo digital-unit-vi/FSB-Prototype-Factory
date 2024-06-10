@@ -6,10 +6,12 @@ export default function Home() {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "40px",
-        height: "100vh",
+        gap: "30px",
         justifyContent: "center",
         alignItems: "center",
+        padding: "30px",
+        maxWidth: "600px",
+        margin: "0 auto",
       }}
     >
       <div>EMAIL TEMPLATES</div>
@@ -18,6 +20,7 @@ export default function Home() {
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gap: "30px",
+          textWrap: "pretty",
         }}
       >
         <Link href="/email/light/tm6/var-a">TM6 Light Variant A</Link>
@@ -30,15 +33,25 @@ export default function Home() {
         <Link href="/email/dark/sensor/var-b">Sensor Dark Variant B</Link>
         <Link href="/email/light/blade">Blade Light</Link>
         <Link href="/email/dark/blade">Blade Dark</Link>
-        <Link href="/email/light/cutter">Cutter Light</Link>
+        <Link href="/email/light/cutter-original">Cutter Light</Link>
+        <Link href="/email/light/cutter-stressed-compromiser">
+          Cutter Stressed Compromiser Light
+        </Link>
+        <Link href="/email/light/cutter-devoted-perfectionist">
+          Cutter Devoted Perfectionist Light
+        </Link>
+        <Link href="/email/light/cutter-health-seeker">
+          Cutter Health Seeker Light
+        </Link>
         <Link href="/email/dark/cutter">Cutter Dark</Link>
       </div>
-      <div>LANDING PAGE TEMPLATES (WIP)</div>
+      <div>LANDING PAGE TEMPLATES</div>
       <div
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gap: "30px",
+          textWrap: "pretty",
         }}
       >
         <Link href="/landing-page/light/tm6/var-a">TM6 Light Variant A</Link>

@@ -32,6 +32,7 @@ export default function Hero({
   productImage,
   dark,
   href = "#",
+  ctaText,
 }: Readonly<{
   background: "light" | "dark" | string | StaticImageData;
   logoColor: "white" | "green" | "muted-green";
@@ -39,6 +40,7 @@ export default function Hero({
   productImage: StaticImageData;
   dark?: boolean;
   href?: string;
+  ctaText?: string;
 }>) {
   const logo = LOGO_MAPPING[logoColor];
   const isImage = typeof background === "object";
@@ -62,7 +64,7 @@ export default function Hero({
         {isImage && (
           <div className={styles.heroBackgroundImageWrapper}>
             <Image
-              src={background as StaticImageData}
+              src={background}
               alt="Background"
               className={styles.backgroundImage}
               priority
@@ -76,7 +78,7 @@ export default function Hero({
           <div className={styles.textContainer}>
             <Heading dark={dark}>{children}</Heading>
           </div>
-          <Button type="center" href="#" />
+          <Button type="center" href="#" text={ctaText} />
         </div>
       </div>
       <Image
