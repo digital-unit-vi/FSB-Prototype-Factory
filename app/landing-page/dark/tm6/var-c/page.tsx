@@ -1,15 +1,32 @@
 import BentoBox from "@components/landingPage/bentoBox/bentoBox";
 import Carousel from "@components/landingPage/carousel/carousel";
 import Hero from "@components/landingPage/hero/hero";
+import ImageGallery from "@components/landingPage/imageGallery/imageGallery";
 import ProductTile from "@components/landingPage/productTile/productTile";
 import ScrollRow from "@components/landingPage/scrollRow/scrollRow";
 import UserReview from "@components/landingPage/userReview/userReview";
 import Heading from "@components/shared/heading/heading";
 import Spacer from "@components/shared/spacer/spacer";
 import CarouselProductImage from "@public/landingPage/carousel/carousel-tm6.png";
+import ImageGalleryImg1 from "@public/landingPage/imageGallery/tm6-app-share.jpg";
+import ImageGalleryImg3 from "@public/landingPage/imageGallery/tm6-dinner.jpg";
+import ImageGalleryImg2 from "@public/landingPage/imageGallery/tm6-family-leisure.jpg";
+import ImageGalleryImg6 from "@public/landingPage/imageGallery/tm6-pear-chocolate.jpg";
+import ImageGalleryImg4 from "@public/landingPage/imageGallery/tm6-woman-pear.jpg";
+import ImageGalleryImg5 from "@public/landingPage/imageGallery/tm6-woman-varoma.jpg";
 import ProductImage from "@public/shared/product/tm6-product-accessories-light.png";
 import { Metadata } from "next";
+import { StaticImageData } from "next/image";
 import styles from "./page.module.scss";
+
+const IMAGE_GALLERY_SLIDES: StaticImageData[] = [
+  ImageGalleryImg1,
+  ImageGalleryImg2,
+  ImageGalleryImg3,
+  ImageGalleryImg4,
+  ImageGalleryImg5,
+  ImageGalleryImg6,
+];
 
 export const metadata: Metadata = {
   title: "TM6 Variant C Light",
@@ -51,8 +68,8 @@ export default function TM6VariantCLightLandingPage() {
         <Spacer size={96} />
         {/* <Placeholder text="FUNCTIONS" dark /> */}
         {/* <Spacer size={96} /> */}
-        {/* <Placeholder text="GALLERY" dark /> */}
-        {/* <Spacer size={96} /> */}
+        <ImageGallery slides={IMAGE_GALLERY_SLIDES} dark />
+        <Spacer size={96} />
         <Heading dark>
           <p className="secondary">New favorite recipes</p>
           <p className="leadingMutedGreen">every day</p>
@@ -84,12 +101,6 @@ export default function TM6VariantCLightLandingPage() {
           subtitle="1.499,00 €"
           dark
         />
-        {/* <Teaser backgroundImage={TeaserBackground}>
-          <p className="heroPrimaryTextWhite">
-            Live product{" "}
-            <span className="heroProminentTextWhite">experience</span>?
-          </p>
-        </Teaser> */}
       </section>
     </main>
   );
