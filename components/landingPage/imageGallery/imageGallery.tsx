@@ -22,21 +22,13 @@ const OPTIONS: EmblaOptionsType = {
   loop: true,
 };
 
-const ImageGallery: React.FC<PropType> = (props) => {
-  const { slides, dark } = props;
+const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(OPTIONS);
   const tweenFactor = useRef(0);
   const tweenNodes = useRef<HTMLElement[]>([]);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
-
-  // const {
-  //   prevBtnDisabled,
-  //   nextBtnDisabled,
-  //   onPrevButtonClick,
-  //   onNextButtonClick,
-  // } = usePrevNextButtons(emblaApi);
 
   const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
     tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
@@ -114,7 +106,7 @@ const ImageGallery: React.FC<PropType> = (props) => {
       <div className={styles.imageGalleryViewport} ref={emblaRef}>
         <div className={styles.imageGalleryContainer}>
           {slides.map((slide, index) => (
-            <div className={styles.imageGallerySlide} key={index}>
+            <div className={styles.imageGallerySlide} key={slide.src}>
               <div className={styles.imageGalleryParallax}>
                 <div className={styles.imageGalleryParallaxLayer}>
                   <Image
@@ -128,13 +120,7 @@ const ImageGallery: React.FC<PropType> = (props) => {
           ))}
         </div>
       </div>
-
       <div className={styles.imageGalleryControls}>
-        {/* <div className={styles.imageGalleryButtons}>
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-        </div> */}
-
         <div className={styles.imageGalleryDots}>
           {scrollSnaps.map((_, index) => (
             <DotButton

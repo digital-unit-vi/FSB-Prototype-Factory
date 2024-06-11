@@ -77,8 +77,6 @@ export default function SensorLightLandingPage() {
         <Spacer size={96} />
         <BentoBox sensor />
         <Spacer size={96} />
-        {/* <Placeholder text="FUNCTIONS" /> */}
-        {/* <Spacer size={96} /> */}
         <Heading>
           <p className="secondary">Don&apos;t miss a single</p>
           <p className="leading">cooking point</p>
