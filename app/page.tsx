@@ -33,7 +33,6 @@ export default function Home() {
         <Link href="/email/dark/sensor/var-b">Sensor Dark Variant B</Link>
         <Link href="/email/light/blade">Blade Light</Link>
         <Link href="/email/dark/blade">Blade Dark</Link>
-        <Link href="/email/light/cutter-original">Cutter Light</Link>
         <Link href="/email/light/cutter-stressed-compromiser">
           Cutter Stressed Compromiser Light
         </Link>
