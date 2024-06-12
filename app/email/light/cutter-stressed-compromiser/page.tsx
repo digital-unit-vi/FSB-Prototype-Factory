@@ -8,7 +8,6 @@ import ProductTile from "@components/email/productTile/productTile";
 import Heading from "@components/shared/heading/heading";
 import Spacer from "@components/shared/spacer/spacer";
 import TextBlock from "@components/shared/textBlock/textBlock";
-
 // Assets
 import Collage2ImgBottomRight from "@public/email/collage/baguette.png";
 import Collage2ImgTopLeft from "@public/email/collage/beef-wellington.png";
@@ -17,13 +16,12 @@ import Collage2ImgTopRight from "@public/email/collage/fish.png";
 import Collage1ImgBottom from "@public/email/collage/sensor-cakes.jpg";
 import Collage1ImgTopLeft from "@public/email/collage/sensor-father-daughter.jpg";
 import Collage1ImgTopRight from "@public/email/collage/sensor-standalone.jpg";
-import HeroBackgroundImg from "@public/email/hero/sensor-hero-background.png";
 import SensorCleaning from "@public/email/sensor-cleaning.jpg";
 import SensorIntegration from "@public/email/sensor-integration.jpg";
+import HeroBackgroundImg from "@public/email/workshop/cutter-applications.jpeg";
 import ProductTileProductImg from "@public/email/workshop/cutter-standalone-product.png";
 import HeroProductImg from "@public/email/workshop/cutter-tm6-standalone.png";
 import MediaContainerImg from "@public/shared/product/sensor-parts-light.png";
-
 import { Metadata } from "next";
 import styles from "./page.module.scss";
 

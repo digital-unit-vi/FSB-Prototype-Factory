@@ -17,12 +17,12 @@ import Collage2ImgTopRight from "@public/email/collage/fish.png";
 import Collage1ImgBottom from "@public/email/collage/sensor-cakes.jpg";
 import Collage1ImgTopLeft from "@public/email/collage/sensor-father-daughter.jpg";
 import Collage1ImgTopRight from "@public/email/collage/sensor-standalone.jpg";
-import HeroBackgroundImg from "@public/email/hero/sensor-hero-background.png";
 import SensorCleaning from "@public/email/sensor-cleaning.jpg";
 import SensorIntegration from "@public/email/sensor-integration.jpg";
-import ProductTileProductImg from "@public/email/workshop/cutter-standalone-product.png";
+import MediaContainerImg from "@public/email/workshop/asian-noodle-soup.jpg";
+import HeroBackgroundImg from "@public/email/workshop/baked-aubergine.jpeg";
+import ProductTileProductImg from "@public/email/workshop/cutter-standalone.png";
 import HeroProductImg from "@public/email/workshop/cutter-tm6-standalone.png";
-import MediaContainerImg from "@public/shared/product/sensor-parts-light.png";
 
 import { Metadata } from "next";
 import styles from "./page.module.scss";
@@ -38,45 +38,50 @@ export default function CutterDevotedPerfectionistLight() {
         background={HeroBackgroundImg}
         logoColor="white"
         productImage={HeroProductImg}
-        ctaText="Shop now"
+        ctaText="Buy Now"
       >
-        <p className="heroPrimaryTextWhite">Thermomix® Cutter</p>
         <p className="heroPrimaryTextWhite">
-          means <span className="heroProminentTextOrange">full control</span>
+          The <span className="heroProminentTextOrange">perfect cut</span>
         </p>
+        <p className="heroPrimaryTextWhite">in no time</p>
       </Hero>
       <section className={styles.mainContainer}>
         <Spacer size={64} />
         <TextBlock
-          headline="Hello Maximilia-Charlotte,"
-          p1="It seems you love baking cakes with your Thermomix®  that leave your guests wanting more. The Thermomix® Sensor takes your baking game to the next level."
-          p2="This ultimate tool reduces any risk during baking and enables you to serve the most delicious cakes with zero stress. Impress your guests easily and confidently, and let the Thermomix®  Sensor do the rest!"
+          headline="Hello Maria,"
+          p1="Elevate your dinner parties to the next level with the Thermomix Cutter! The new accessory enables effortless cutting with impressive results."
+          p2="Amp your creativity and enhance your dishes with a result that speaks for itself. You will have more time for the things that really matter!"
         />
-        <Spacer size={80} />
+        <Spacer size={40} />
+        <MediaContainer
+          img={MediaContainerImg}
+          alt="Sensor parts description"
+        />
+        <Spacer size={40} />
         <Heading oneLineOnMedium>
-          <p className="secondary">The magic {""}</p>
+          <p className="secondary">With perfection {""}</p>
           <p className="leading">inside</p>
         </Heading>
         <Spacer size={40} />
         <FeatureTiles>
           <FeatureTile
             icon="sous-vide"
-            headline="Resists up to 275°C"
+            headline="Save time every time"
             paragraph="The sensors heat protection allows it to be used in 275°C hot environments."
           />
           <FeatureTile
             icon="bluetooth"
-            headline="Bluetooth® 5.0 LE"
+            headline="Try 10'000 new recipes"
             paragraph="Allows to wirelessly connect it to your Thermomix® TM6 and smartphone."
           />
           <FeatureTile
             icon="battery"
-            headline="Up to 24h battery life"
+            headline="100% success"
             paragraph="Once fully charged, the battery life of the sensor is up to a stunning 24 hours."
           />
           <FeatureTile
             icon="cleaning"
-            headline="100% water resistent"
+            headline="Dishwasher friendly"
             paragraph="Due to full water resistance you don't need to worry about water damage."
           />
         </FeatureTiles>
