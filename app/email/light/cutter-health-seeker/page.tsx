@@ -21,7 +21,7 @@ import Collage1ImgBottom from "@public/email/workshop/cutter-applications.jpeg";
 import ProductTileProductImg from "@public/email/workshop/cutter-standalone-product.png";
 import Collage1ImgTopLeft from "@public/email/workshop/cutter-tm5-cutting-board.jpeg";
 import Collage1ImgTopRight from "@public/email/workshop/cutter-tm5-product.png";
-import HeroProductImg from "@public/email/workshop/cutter-tm6-standalone-parts.png";
+import HeroProductImg from "@public/email/workshop/cutter-tm6-standalone-parts-product.png";
 import MediaContainerImg from "@public/shared/product/sensor-parts-light.png";
 
 import { Metadata } from "next";

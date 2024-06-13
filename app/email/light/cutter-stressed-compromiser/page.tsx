@@ -8,6 +8,7 @@ import ProductTile from "@components/email/productTile/productTile";
 import Heading from "@components/shared/heading/heading";
 import Spacer from "@components/shared/spacer/spacer";
 import TextBlock from "@components/shared/textBlock/textBlock";
+
 // Assets
 import Collage2ImgBottomRight from "@public/email/collage/baguette.png";
 import Collage2ImgTopLeft from "@public/email/collage/beef-wellington.png";
@@ -38,17 +39,19 @@ export default function CutterStressedCompromiserLight() {
         productImage={HeroProductImg}
         ctaText="Shop now"
       >
-        <p className="heroPrimaryTextWhite">Thermomix® Cutter</p>
         <p className="heroPrimaryTextWhite">
-          means <span className="heroProminentTextOrange">full control</span>
+          Too much time cooking? Let&apos;s
+        </p>
+        <p className="heroPrimaryTextWhite">
+          <span className="heroProminentTextOrange">cut it!</span>
         </p>
       </Hero>
       <section className={styles.mainContainer}>
         <Spacer size={64} />
         <TextBlock
-          headline="Hello Maximilia-Charlotte,"
-          p1="It seems you love baking cakes with your Thermomix®  that leave your guests wanting more. The Thermomix® Sensor takes your baking game to the next level."
-          p2="This ultimate tool reduces any risk during baking and enables you to serve the most delicious cakes with zero stress. Impress your guests easily and confidently, and let the Thermomix®  Sensor do the rest!"
+          headline="Hello Jasmin,"
+          p1="Being a busy parent can be overwhelming. But your world is about to change."
+          p2="Our new Thermomix® cutter simplifies your kitchen tasks, making meal prep for your family quick and effortless."
         />
         <Spacer size={80} />
         <Heading oneLineOnMedium>
