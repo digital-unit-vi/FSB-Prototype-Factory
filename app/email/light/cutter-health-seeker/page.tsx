@@ -14,14 +14,14 @@ import Collage2ImgBottomRight from "@public/email/collage/baguette.png";
 import Collage2ImgTopLeft from "@public/email/collage/beef-wellington.png";
 import Collage2ImgBottomLeft from "@public/email/collage/cake.png";
 import Collage2ImgTopRight from "@public/email/collage/fish.png";
-import Collage1ImgBottom from "@public/email/collage/sensor-cakes.jpg";
-import Collage1ImgTopLeft from "@public/email/collage/sensor-father-daughter.jpg";
-import Collage1ImgTopRight from "@public/email/collage/sensor-standalone.jpg";
-import HeroBackgroundImg from "@public/email/hero/sensor-hero-background.png";
 import SensorCleaning from "@public/email/sensor-cleaning.jpg";
 import SensorIntegration from "@public/email/sensor-integration.jpg";
+import HeroBackgroundImg from "@public/email/workshop/beetroot-carrot-salad.jpeg";
+import Collage1ImgBottom from "@public/email/workshop/cutter-applications.jpeg";
 import ProductTileProductImg from "@public/email/workshop/cutter-standalone-product.png";
-import HeroProductImg from "@public/email/workshop/cutter-tm6-standalone.png";
+import Collage1ImgTopLeft from "@public/email/workshop/cutter-tm5-cutting-board.jpeg";
+import Collage1ImgTopRight from "@public/email/workshop/cutter-tm5-product.png";
+import HeroProductImg from "@public/email/workshop/cutter-tm6-standalone-parts-product.png";
 import MediaContainerImg from "@public/shared/product/sensor-parts-light.png";
 
 import { Metadata } from "next";
@@ -40,17 +40,19 @@ export default function CutterHealthSeekerLight() {
         productImage={HeroProductImg}
         ctaText="Shop now"
       >
-        <p className="heroPrimaryTextWhite">Thermomix® Cutter</p>
         <p className="heroPrimaryTextWhite">
-          means <span className="heroProminentTextOrange">full control</span>
+          <span className="heroProminentTextOrange">Slice</span> Dice and Create
+        </p>
+        <p className="heroPrimaryTextWhite">
+          <span className="heroProminentTextOrange">Healthy</span> Salads fast
         </p>
       </Hero>
       <section className={styles.mainContainer}>
         <Spacer size={64} />
         <TextBlock
-          headline="Hello Maximilia-Charlotte,"
-          p1="It seems you love baking cakes with your Thermomix®  that leave your guests wanting more. The Thermomix® Sensor takes your baking game to the next level."
-          p2="This ultimate tool reduces any risk during baking and enables you to serve the most delicious cakes with zero stress. Impress your guests easily and confidently, and let the Thermomix®  Sensor do the rest!"
+          headline="Hello Laura,"
+          p1="You have just finished your 99th salad with your TM6. Did you know that you could have saved time cooking with the new Thermomix Cutter? You could have saved 999 minutes to dedicate time to your favorite sports."
+          p2="Discover a new way to elevate your culinary creations with our latest kitchen innovation. Our Thermomix Cutter makes it effortless to create healthy, delicious meals in no time."
         />
         <Spacer size={80} />
         <Heading oneLineOnMedium>

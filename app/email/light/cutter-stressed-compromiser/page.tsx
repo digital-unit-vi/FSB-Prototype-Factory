@@ -17,13 +17,12 @@ import Collage2ImgTopRight from "@public/email/collage/fish.png";
 import Collage1ImgBottom from "@public/email/collage/sensor-cakes.jpg";
 import Collage1ImgTopLeft from "@public/email/collage/sensor-father-daughter.jpg";
 import Collage1ImgTopRight from "@public/email/collage/sensor-standalone.jpg";
-import HeroBackgroundImg from "@public/email/hero/sensor-hero-background.png";
 import SensorCleaning from "@public/email/sensor-cleaning.jpg";
 import SensorIntegration from "@public/email/sensor-integration.jpg";
+import HeroBackgroundImg from "@public/email/workshop/cutter-applications.jpeg";
 import ProductTileProductImg from "@public/email/workshop/cutter-standalone-product.png";
 import HeroProductImg from "@public/email/workshop/cutter-tm6-standalone.png";
 import MediaContainerImg from "@public/shared/product/sensor-parts-light.png";
-
 import { Metadata } from "next";
 import styles from "./page.module.scss";
 
@@ -40,17 +39,19 @@ export default function CutterStressedCompromiserLight() {
         productImage={HeroProductImg}
         ctaText="Shop now"
       >
-        <p className="heroPrimaryTextWhite">Thermomix® Cutter</p>
         <p className="heroPrimaryTextWhite">
-          means <span className="heroProminentTextOrange">full control</span>
+          Too much time cooking? Let&apos;s
+        </p>
+        <p className="heroPrimaryTextWhite">
+          <span className="heroProminentTextOrange">cut it!</span>
         </p>
       </Hero>
       <section className={styles.mainContainer}>
         <Spacer size={64} />
         <TextBlock
-          headline="Hello Maximilia-Charlotte,"
-          p1="It seems you love baking cakes with your Thermomix®  that leave your guests wanting more. The Thermomix® Sensor takes your baking game to the next level."
-          p2="This ultimate tool reduces any risk during baking and enables you to serve the most delicious cakes with zero stress. Impress your guests easily and confidently, and let the Thermomix®  Sensor do the rest!"
+          headline="Hello Jasmin,"
+          p1="Being a busy parent can be overwhelming. But your world is about to change."
+          p2="Our new Thermomix® cutter simplifies your kitchen tasks, making meal prep for your family quick and effortless."
         />
         <Spacer size={80} />
         <Heading oneLineOnMedium>
