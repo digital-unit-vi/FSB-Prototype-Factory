@@ -21,7 +21,7 @@ import SensorCleaning from "@public/email/sensor-cleaning.jpg";
 import SensorIntegration from "@public/email/sensor-integration.jpg";
 import MediaContainerImg from "@public/email/workshop/asian-noodle-soup.jpg";
 import HeroBackgroundImg from "@public/email/workshop/baked-aubergine.jpeg";
-import ProductTileProductImg from "@public/email/workshop/cutter-standalone.png";
+import ProductTileProductImg from "@public/email/workshop/cutter-standalone-product.png";
 import HeroProductImg from "@public/email/workshop/cutter-tm6-standalone.png";
 
 import { Metadata } from "next";
