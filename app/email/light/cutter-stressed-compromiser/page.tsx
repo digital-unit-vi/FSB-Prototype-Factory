@@ -39,11 +39,9 @@ export default function CutterStressedCompromiserLight() {
         productImage={HeroProductImg}
         ctaText="Shop now"
       >
+        <p className="heroPrimaryTextWhite">Too much time cooking?</p>
         <p className="heroPrimaryTextWhite">
-          Too much time cooking? Let&apos;s
-        </p>
-        <p className="heroPrimaryTextWhite">
-          <span className="heroProminentTextOrange">cut it!</span>
+          Let&apos;s <span className="heroProminentTextOrange">cut it!</span>
         </p>
       </Hero>
       <section className={styles.mainContainer}>
