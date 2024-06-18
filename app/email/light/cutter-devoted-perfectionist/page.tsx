@@ -23,6 +23,7 @@ import MediaContainerImg from "@public/email/workshop/asian-noodle-soup.jpg";
 import HeroBackgroundImg from "@public/email/workshop/baked-aubergine.jpeg";
 import ProductTileProductImg from "@public/email/workshop/cutter-standalone-product.png";
 import HeroProductImg from "@public/email/workshop/cutter-tm6-standalone.png";
+import MediaContainerImg2 from "@public/shared/product/sensor-parts-light.png";
 
 import { Metadata } from "next";
 import styles from "./page.module.scss";
@@ -55,7 +56,7 @@ export default function CutterDevotedPerfectionistLight() {
         <Spacer size={40} />
         <MediaContainer
           img={MediaContainerImg}
-          alt="Sensor parts description"
+          alt="Asian food ingredients on the cutting board"
         />
         <Spacer size={40} />
         <Heading oneLineOnMedium>
@@ -109,7 +110,7 @@ export default function CutterDevotedPerfectionistLight() {
         </Heading>
         <Spacer size={24} />
         <MediaContainer
-          img={MediaContainerImg}
+          img={MediaContainerImg2}
           alt="Sensor parts description"
         />
         <Spacer size={80} />
