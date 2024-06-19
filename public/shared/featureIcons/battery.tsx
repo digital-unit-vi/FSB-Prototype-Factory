@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function BatteryIcon({
   className,
 }: Readonly<{ className: string }>) {
@@ -15,5 +17,5 @@ export default function BatteryIcon({
         fill="#919394"
       />
     </svg>
-  );
+  ) as React.ReactSVGElement;
 }
