@@ -3,6 +3,7 @@
 import { FunctionsTab as FunctionsTabLib } from "@components/build-assets/libraryExport";
 import BatteryIcon from "@public/shared/featureIcons/battery";
 import React from "react";
+import styles from "./functionsTab.module.scss";
 
 const items: {
   id: number;
@@ -79,9 +80,9 @@ const items: {
 
 const FunctionsTab = () => {
   return (
-    <>
+    <div className={styles.functionsTabWrapper}>
       <FunctionsTabLib items={items} />
-    </>
+    </div>
   );
 };
 
