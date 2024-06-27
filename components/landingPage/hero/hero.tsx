@@ -72,7 +72,6 @@ const Hero: React.FC<HeroProps> = ({
           loop
           muted
           playsInline
-          webkit-playsinline="true"
           preload="auto"
           disableRemotePlayback
         >

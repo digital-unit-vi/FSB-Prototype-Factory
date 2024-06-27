@@ -35,8 +35,8 @@ const ProductAnimation = ({ dark }: { dark?: boolean }) => {
         defaults: { duration: 1, ease: "power2.inOut" },
         scrollTrigger: {
           trigger: container,
-          start: "top-=100 center",
-          end: "bottom+=50 center",
+          start: "top center",
+          end: "bottom center",
           scrub: true,
           onEnter: () => {
             video.play();
@@ -82,7 +82,7 @@ const ProductAnimation = ({ dark }: { dark?: boolean }) => {
         src={
           dark
             ? "/landingPage/sensorAnimation/3d_rotation-dark.mp4"
-            : "/landingPage/sensorAnimation/3d_rotation-light.mp4"
+            : "/landingPage/sensorAnimation/sensor-light-mobile.mp4"
         }
         playsInline
         webkit-playsinline="true"
