@@ -21,17 +21,7 @@ const ProductAnimation = ({ dark }: { dark?: boolean }) => {
 
       if (!video || !container) return;
 
-      // Type definition for the once function
-      const once = (el: EventTarget, event: string, fn: (e: Event) => void) => {
-        const onceFn = (e: Event) => {
-          el.removeEventListener(event, onceFn);
-          fn(e);
-        };
-        el.addEventListener(event, onceFn);
-        return onceFn;
-      };
-
-      const tl = gsap.timeline({
+      gsap.timeline({
         defaults: { duration: 1, ease: "power2.inOut" },
         scrollTrigger: {
           trigger: container,
@@ -45,10 +35,6 @@ const ProductAnimation = ({ dark }: { dark?: boolean }) => {
             video.play();
           },
         },
-      });
-
-      once(video, "loadedmetadata", () => {
-        tl.fromTo(video, { scale: 1 }, { scale: 1.1 });
       });
     },
     { scope: containerRef }
@@ -85,7 +71,6 @@ const ProductAnimation = ({ dark }: { dark?: boolean }) => {
             : "/landingPage/sensorAnimation/sensor-light-mobile.mp4"
         }
         playsInline
-        webkit-playsinline="true"
         preload="auto"
         muted
         className={styles.video}
