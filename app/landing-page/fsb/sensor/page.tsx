@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
-
 "use client";
 
 import {
@@ -33,7 +30,7 @@ const HeroComponent = dynamic(
   { ssr: false }
 );
 
-const HaderComponent = dynamic(
+const HeaderComponent = dynamic(
   () =>
     import("@components/build-assets/libraryExport").then((mod) => mod.Header),
   { ssr: false }
@@ -42,7 +39,7 @@ const HaderComponent = dynamic(
 export default function SensorLightLandingPageFSB() {
   return (
     <main>
-      <HaderComponent
+      <HeaderComponent
         isLandingPage={true}
         landingPageLogo={
           <a href="#">
