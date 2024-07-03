@@ -9033,29 +9033,29 @@ const Zp = ({
   cta: s,
   type: o = "imageFill",
   backgroundColor: a = "lightGrey",
-  isLandingPage: l = !1
+  isLandingPage: l = !1,
+  icon: c
 }) => {
-  const d = tt()[0] >= Number(nt.l.replace("px", ""));
-  console.log(l);
-  const f = l ? Q8 : "", u = o === "colorFill" ? G8[a] : "";
-  return /* @__PURE__ */ i.jsxs("div", { className: A(Y8[o], u, f), children: [
+  const f = tt()[0] >= Number(nt.l.replace("px", "")), u = l ? Q8 : "", h = o === "colorFill" ? G8[a] : "";
+  return /* @__PURE__ */ i.jsxs("div", { className: A(Y8[o], h, u), children: [
     /* @__PURE__ */ i.jsxs("div", { className: X8[o], children: [
       o === "imageFill" && t && /* @__PURE__ */ i.jsx("div", { children: t }),
       e
     ] }),
-    /* @__PURE__ */ i.jsxs("div", { className: A(K8[o], f), children: [
+    /* @__PURE__ */ i.jsxs("div", { className: A(K8[o], u), children: [
       /* @__PURE__ */ i.jsx("div", { children: n }),
-      /* @__PURE__ */ i.jsx("div", { children: Ne.map(s, (h) => Rt(h) ? ht(h, {
-        layout: d ? "horizontal" : "vertical",
-        children: Ne.map(h.props.children, (p) => Rt(p) ? ht(p, {
-          size: d ? "large" : "medium"
-        }) : p)
-      }) : h) }),
+      /* @__PURE__ */ i.jsx("div", { children: Ne.map(s, (p) => Rt(p) ? ht(p, {
+        layout: f ? "horizontal" : "vertical",
+        children: Ne.map(p.props.children, (v) => Rt(v) ? ht(v, {
+          size: f ? "large" : "medium",
+          icon: c
+        }) : v)
+      }) : p) }),
       r && /* @__PURE__ */ i.jsx("div", { className: J8, children: r })
     ] })
   ] });
 };
-var ef = "bb4ht01", tf = "bb4ht03", nf = "bb4ht0c", rf = "bb4ht00", sf = { default: "bb4ht0e bb4ht0d", additional: "bb4ht0f bb4ht0d" }, of = { green: "bb4ht04", blue: "bb4ht05", purple: "bb4ht06", red: "bb4ht07", orange: "bb4ht08", yellow: "bb4ht09", anthracite: "bb4ht0a", white: "bb4ht0b" }, af = "bb4ht02";
+var e9 = "bb4ht01", t9 = "bb4ht03", n9 = "bb4ht0c", r9 = "bb4ht00", s9 = { default: "bb4ht0e bb4ht0d", additional: "bb4ht0f bb4ht0d" }, i9 = { green: "bb4ht04", blue: "bb4ht05", purple: "bb4ht06", red: "bb4ht07", orange: "bb4ht08", yellow: "bb4ht09", anthracite: "bb4ht0a", white: "bb4ht0b" }, o9 = "bb4ht02";
 const Bp = ({
   children: e,
   eyebrowLine: t,
@@ -9063,61 +9063,61 @@ const Bp = ({
   spaceBelow: r,
   strongColor: s = "green"
 }) => {
-  const o = r ? sf[r] : "", a = n ? nf : "", l = of[s];
-  return /* @__PURE__ */ i.jsxs("div", { className: A(o, rf, l), children: [
-    t && /* @__PURE__ */ i.jsx("p", { className: ef, children: t }),
+  const o = r ? s9[r] : "", a = n ? n9 : "", l = i9[s];
+  return /* @__PURE__ */ i.jsxs("div", { className: A(o, r9, l), children: [
+    t && /* @__PURE__ */ i.jsx("p", { className: e9, children: t }),
     /* @__PURE__ */ i.jsx(
       "div",
       {
-        className: A(tf, a),
+        className: A(t9, a),
         children: e
       }
     ),
-    n && /* @__PURE__ */ i.jsx("p", { className: af, children: n })
+    n && /* @__PURE__ */ i.jsx("p", { className: o9, children: n })
   ] });
 };
-var lf = "zjytp2", cf = "zjytp1", uf = "zjytp0";
+var a9 = "zjytp2", l9 = "zjytp1", c9 = "zjytp0";
 const Dp = ({
   logo: e,
   text: t,
   images: n
-}) => /* @__PURE__ */ i.jsxs("div", { className: A(Fe, uf), children: [
-  /* @__PURE__ */ i.jsxs("div", { className: cf, children: [
+}) => /* @__PURE__ */ i.jsxs("div", { className: A(Fe, c9), children: [
+  /* @__PURE__ */ i.jsxs("div", { className: l9, children: [
     e,
     /* @__PURE__ */ i.jsx("div", { children: t })
   ] }),
-  /* @__PURE__ */ i.jsx("div", { className: lf, children: n })
+  /* @__PURE__ */ i.jsx("div", { className: a9, children: n })
 ] });
-var df = "_1llv8oz1", ff = { spacingVertical: "_1llv8oz2 _1llv8oz0", spacingBottom: "_1llv8oz3 _1llv8oz0" };
+var u9 = "_1llv8oz1", d9 = { spacingVertical: "_1llv8oz2 _1llv8oz0", spacingBottom: "_1llv8oz3 _1llv8oz0" };
 const Np = ({
   children: e,
   variant: t = "spacingVertical",
   borderBottom: n
 }) => {
-  const r = n ? df : "";
+  const r = n ? u9 : "";
   return /* @__PURE__ */ i.jsx(
     "section",
     {
       className: A(
-        ff[t],
+        d9[t],
         r
       ),
       children: /* @__PURE__ */ i.jsx(I4, { children: e })
     }
   );
 };
-var hf = "qtlqkt0";
-const Op = ({ children: e }) => /* @__PURE__ */ i.jsx("div", { className: A(hf, Fe), children: e });
-var pf = "_1u0x3zt0";
-const $p = ({ children: e }) => /* @__PURE__ */ i.jsx("div", { className: A(pf, Fe), children: e });
-var mf = "_19agmar2", vf = "_19agmar1", gf = "_19agmar0";
+var f9 = "qtlqkt0";
+const Op = ({ children: e }) => /* @__PURE__ */ i.jsx("div", { className: A(f9, Fe), children: e });
+var h9 = "_1u0x3zt0";
+const $p = ({ children: e }) => /* @__PURE__ */ i.jsx("div", { className: A(h9, Fe), children: e });
+var p9 = "_19agmar2", m9 = "_19agmar1", v9 = "_19agmar0";
 const Ip = ({
   headline: e,
   button: t
-}) => /* @__PURE__ */ i.jsxs("div", { className: A(Fe, gf), children: [
-  /* @__PURE__ */ i.jsx("div", { className: vf, children: e }),
-  /* @__PURE__ */ i.jsx("div", { className: mf, children: t })
-] }), xf = (e) => /* @__PURE__ */ i.jsx(
+}) => /* @__PURE__ */ i.jsxs("div", { className: A(Fe, v9), children: [
+  /* @__PURE__ */ i.jsx("div", { className: m9, children: e }),
+  /* @__PURE__ */ i.jsx("div", { className: p9, children: t })
+] }), g9 = (e) => /* @__PURE__ */ i.jsx(
   "svg",
   {
     xmlns: "http://www.w3.org/2000/svg",
@@ -9134,9 +9134,9 @@ const Ip = ({
     )
   }
 );
-var wf = "_16ls4wa1", yf = "_16ls4wa0", Cf = "_16ls4wa4", bf = "_16ls4wa9", _f = "_16ls4wa3", jf = "_16ls4wa8", Sf = "_16ls4wa5", Mf = "_16ls4wa2", Lf = "_16ls4waa", Tf = "_16ls4wa6", Vf = "_16ls4wa7";
+var x9 = "_16ls4wa1", w9 = "_16ls4wa0", y9 = "_16ls4wa4", C9 = "_16ls4wa9", b9 = "_16ls4wa3", _9 = "_16ls4wa8", j9 = "_16ls4wa5", S9 = "_16ls4wa2", M9 = "_16ls4waa", L9 = "_16ls4wa6", T9 = "_16ls4wa7";
 let pa = 0;
-const Pf = ({
+const V9 = ({
   children: e,
   isActive: t,
   setIsActive: n,
@@ -9150,7 +9150,7 @@ const Pf = ({
     children: [
       /* @__PURE__ */ i.jsxs(he.Container, { children: [
         /* @__PURE__ */ i.jsx(he.Header, { children: /* @__PURE__ */ i.jsx(Ki, {}) }),
-        /* @__PURE__ */ i.jsx(he.Content, { children: /* @__PURE__ */ i.jsx(Mr, { children: /* @__PURE__ */ i.jsx("div", { className: bf, children: e }) }) })
+        /* @__PURE__ */ i.jsx(he.Content, { children: /* @__PURE__ */ i.jsx(Mr, { children: /* @__PURE__ */ i.jsx("div", { className: C9, children: e }) }) })
       ] }),
       /* @__PURE__ */ i.jsx(he.Backdrop, { onTap: () => n(!1) })
     ]
@@ -9166,8 +9166,8 @@ const Pf = ({
       }, 200)), n(a);
     },
     children: [
-      /* @__PURE__ */ i.jsx(li, { className: _f }),
-      /* @__PURE__ */ i.jsx(In, { className: wf, children: /* @__PURE__ */ i.jsx(Mr, { children: /* @__PURE__ */ i.jsxs("div", { className: Mf, children: [
+      /* @__PURE__ */ i.jsx(li, { className: b9 }),
+      /* @__PURE__ */ i.jsx(In, { className: x9, children: /* @__PURE__ */ i.jsx(Mr, { children: /* @__PURE__ */ i.jsxs("div", { className: S9, children: [
         /* @__PURE__ */ i.jsx(
           Ka,
           {
@@ -9194,7 +9194,7 @@ const Pf = ({
         return l(!1);
     };
     window.addEventListener("keydown", f);
-  }, []), /* @__PURE__ */ i.jsxs("div", { className: yf, children: [
+  }, []), /* @__PURE__ */ i.jsxs("div", { className: w9, children: [
     e,
     /* @__PURE__ */ i.jsxs(
       "button",
@@ -9202,15 +9202,15 @@ const Pf = ({
         onClick: () => {
           c || l(!a);
         },
-        className: Lf,
+        className: M9,
         children: [
-          /* @__PURE__ */ i.jsx(xf, {}),
+          /* @__PURE__ */ i.jsx(g9, {}),
           /* @__PURE__ */ i.jsx(Ce, { variant: "paragraph16", fontWeight: "medium", children: t })
         ]
       }
     ),
     /* @__PURE__ */ i.jsxs(
-      Pf,
+      V9,
       {
         isActive: a,
         setIsActive: l,
@@ -9221,22 +9221,22 @@ const Pf = ({
             {
               component: "h3",
               fontWeight: "bold",
-              className: jf,
+              className: _9,
               children: n
             }
           ),
-          /* @__PURE__ */ i.jsxs("div", { className: Cf, children: [
+          /* @__PURE__ */ i.jsxs("div", { className: y9, children: [
             /* @__PURE__ */ i.jsx(
               Ce,
               {
                 variant: "paragraph12",
                 fontWeight: "regular",
-                className: Vf,
+                className: T9,
                 children: s
               }
             ),
-            (r == null ? void 0 : r.length) > 0 && /* @__PURE__ */ i.jsx("div", { className: Tf, children: r.map((f, u) => /* @__PURE__ */ i.jsx("div", { children: f }, u)) }),
-            /* @__PURE__ */ i.jsx("div", { className: Sf, children: o == null ? void 0 : o.map((f, u) => /* @__PURE__ */ i.jsx("div", { children: f }, u)) })
+            (r == null ? void 0 : r.length) > 0 && /* @__PURE__ */ i.jsx("div", { className: L9, children: r.map((f, u) => /* @__PURE__ */ i.jsx("div", { children: f }, u)) }),
+            /* @__PURE__ */ i.jsx("div", { className: j9, children: o == null ? void 0 : o.map((f, u) => /* @__PURE__ */ i.jsx("div", { children: f }, u)) })
           ] })
         ]
       }
@@ -9419,13 +9419,13 @@ const Pf = ({
     )
   }
 );
-var Ef = "_12sdaeq0", Rf = "_12sdaeq1";
-const Yp = ({ children: e }) => /* @__PURE__ */ i.jsx("div", { className: A(Ef, Fe), children: e }), Xp = ({
+var P9 = "_12sdaeq0", E9 = "_12sdaeq1";
+const Yp = ({ children: e }) => /* @__PURE__ */ i.jsx("div", { className: A(P9, Fe), children: e }), Xp = ({
   header: e,
   links: t
 }) => (
   // <DarkTheme>
-  /* @__PURE__ */ i.jsxs("div", { className: A(Rf, ja), children: [
+  /* @__PURE__ */ i.jsxs("div", { className: A(E9, ja), children: [
     e,
     t && /* @__PURE__ */ i.jsx("ul", { children: t.map((n, r) => /* @__PURE__ */ i.jsx("li", { children: n }, r)) })
   ] })
@@ -9457,8 +9457,8 @@ const Yp = ({ children: e }) => /* @__PURE__ */ i.jsx("div", { className: A(Ef, 
     ]
   }
 );
-var Hf = "_1l2267a0", Af = "_1l2267a1", De = { two: "_1l2267a2", three: "_1l2267a3", four: "_1l2267a4", five: "_1l2267a5", six: "_1l2267a6", seven: "_1l2267a7", eight: "_1l2267a8", nine: "_1l2267a9", ten: "_1l2267aa", eleven: "_1l2267ab", twelve: "_1l2267ac" };
-const Qp = ({ children: e }) => /* @__PURE__ */ i.jsx("div", { className: Hf, children: e }), em = ({
+var R9 = "_1l2267a0", H9 = "_1l2267a1", De = { two: "_1l2267a2", three: "_1l2267a3", four: "_1l2267a4", five: "_1l2267a5", six: "_1l2267a6", seven: "_1l2267a7", eight: "_1l2267a8", nine: "_1l2267a9", ten: "_1l2267aa", eleven: "_1l2267ab", twelve: "_1l2267ac" };
+const Qp = ({ children: e }) => /* @__PURE__ */ i.jsx("div", { className: R9, children: e }), em = ({
   children: e,
   columns: t = 1,
   className: n = ""
@@ -9502,7 +9502,7 @@ const Qp = ({ children: e }) => /* @__PURE__ */ i.jsx("div", { className: Hf, ch
       r = "";
       break;
   }
-  return /* @__PURE__ */ i.jsx("div", { className: A(Af, r, n), children: e });
+  return /* @__PURE__ */ i.jsx("div", { className: A(H9, r, n), children: e });
 }, tm = ({
   shadowType: e,
   children: t,
@@ -9511,7 +9511,7 @@ const Qp = ({ children: e }) => /* @__PURE__ */ i.jsx("div", { className: Hf, ch
   const r = Dr[e];
   return /* @__PURE__ */ i.jsx("div", { className: A(r, n), children: t });
 };
-var ma = "_1gbfig05", kf = { inGrid: "_1gbfig01 _1gbfig00", fullWidth: "_1gbfig02 _1gbfig00" }, Zf = { left: "_1gbfig03", right: "_1gbfig04" }, Bf = "_1gbfig06", Df = "_1gbfig07";
+var ma = "_1gbfig05", A9 = { inGrid: "_1gbfig01 _1gbfig00", fullWidth: "_1gbfig02 _1gbfig00" }, k9 = { left: "_1gbfig03", right: "_1gbfig04" }, Z9 = "_1gbfig06", B9 = "_1gbfig07";
 const nm = ({
   layout: e = "inGrid",
   mediaAlignment: t = "left",
@@ -9523,8 +9523,8 @@ const nm = ({
   "div",
   {
     className: A(
-      kf[e],
-      Zf[t],
+      A9[e],
+      k9[t],
       e === "inGrid" ? Fe : ""
     ),
     children: [
@@ -9533,12 +9533,12 @@ const nm = ({
         {
           className: A(
             ma,
-            e === "fullWidth" ? Df : ""
+            e === "fullWidth" ? B9 : ""
           ),
           children: n
         }
       ),
-      /* @__PURE__ */ i.jsxs("div", { className: A(ma, Bf), children: [
+      /* @__PURE__ */ i.jsxs("div", { className: A(ma, Z9), children: [
         /* @__PURE__ */ i.jsxs("div", { children: [
           r,
           s
@@ -9548,8 +9548,8 @@ const nm = ({
     ]
   }
 );
-var Nf = { purple: "_1mubyh30", green: "_1mubyh31", yellow: "_1mubyh32", orange: "_1mubyh33", red: "_1mubyh34", blue: "_1mubyh35" }, Of = "_1mubyh39", $f = { "5 degrees": "_1mubyh36", "-5 degrees": "_1mubyh37", none: "_1mubyh38" }, If = { small: "_1mubyh3b", medium: "_1mubyh3c", large: "_1mubyh3d" }, zf = "_1mubyh3a";
-const Ff = ({
+var D9 = { purple: "_1mubyh30", green: "_1mubyh31", yellow: "_1mubyh32", orange: "_1mubyh33", red: "_1mubyh34", blue: "_1mubyh35" }, N9 = "_1mubyh39", O9 = { "5 degrees": "_1mubyh36", "-5 degrees": "_1mubyh37", none: "_1mubyh38" }, $9 = { small: "_1mubyh3b", medium: "_1mubyh3c", large: "_1mubyh3d" }, I9 = "_1mubyh3a";
+const z9 = ({
   firstLine: e,
   secondLine: t,
   thirdLine: n,
@@ -9561,17 +9561,17 @@ const Ff = ({
   "div",
   {
     className: A(
-      Of,
-      Nf[s],
-      If[a]
+      N9,
+      D9[s],
+      $9[a]
     ),
     style: r ? { "--eyecatcherButtonSize": r } : {},
     children: /* @__PURE__ */ i.jsxs(
       "div",
       {
         className: A(
-          zf,
-          $f[o]
+          I9,
+          O9[o]
         ),
         children: [
           e && /* @__PURE__ */ i.jsx(Ce, { variant: "paragraph16", fontWeight: "regular", children: e }),
@@ -9582,19 +9582,19 @@ const Ff = ({
     )
   }
 );
-var qf = { "3/2": "_8a58ly1", "1/1": "_8a58ly2", "4/3": "_8a58ly3", "16/9": "_8a58ly4", "2/1": "_8a58ly5", "21/9": "_8a58ly6", "3/1": "_8a58ly7", "4/1": "_8a58ly8", "n/a": "_8a58ly9" }, Wf = "_8a58ly0";
-const Uf = ({
+var F9 = { "3/2": "_8a58ly1", "1/1": "_8a58ly2", "4/3": "_8a58ly3", "16/9": "_8a58ly4", "2/1": "_8a58ly5", "21/9": "_8a58ly6", "3/1": "_8a58ly7", "4/1": "_8a58ly8", "n/a": "_8a58ly9" }, q9 = "_8a58ly0";
+const W9 = ({
   children: e,
   aspectRatio: t
 }) => /* @__PURE__ */ i.jsx(
   "div",
   {
-    className: A(qf[t], Wf),
+    className: A(F9[t], q9),
     children: e
   }
 );
-var Gf = "_1wj0mv72", Kf = "_1wj0mv70", Yf = { small: "_1wj0mv74 _1wj0mv73", medium: "_1wj0mv75 _1wj0mv73", large: "_1wj0mv76 _1wj0mv73" }, Xf = "_1wj0mv77", Jf = "_1wj0mv71";
-const Qf = ({
+var U9 = "_1wj0mv72", G9 = "_1wj0mv70", K9 = { small: "_1wj0mv74 _1wj0mv73", medium: "_1wj0mv75 _1wj0mv73", large: "_1wj0mv76 _1wj0mv73" }, Y9 = "_1wj0mv77", X9 = "_1wj0mv71";
+const J9 = ({
   size: e = "medium",
   stock: t,
   price: n,
@@ -9602,15 +9602,15 @@ const Qf = ({
   basePrice: s,
   vat: o,
   delivery: a
-}) => /* @__PURE__ */ i.jsxs("div", { className: Kf, children: [
-  /* @__PURE__ */ i.jsxs("div", { className: Jf, children: [
-    /* @__PURE__ */ i.jsx("span", { className: Yf[e], children: n }),
+}) => /* @__PURE__ */ i.jsxs("div", { className: G9, children: [
+  /* @__PURE__ */ i.jsxs("div", { className: X9, children: [
+    /* @__PURE__ */ i.jsx("span", { className: K9[e], children: n }),
     r && /* @__PURE__ */ i.jsx(
       Ce,
       {
         variant: "paragraph12",
         component: "span",
-        className: Gf,
+        className: U9,
         children: r
       }
     )
@@ -9620,7 +9620,7 @@ const Qf = ({
     {
       variant: "paragraph10",
       fontWeight: "bold",
-      className: Xf,
+      className: Y9,
       children: t
     }
   ) : /* @__PURE__ */ i.jsxs("div", { children: [
@@ -9629,32 +9629,32 @@ const Qf = ({
     a && /* @__PURE__ */ i.jsx(Ce, { variant: "paragraph10", fontWeight: "regular", children: a })
   ] })
 ] });
-var e9 = "_19xwol23", t9 = "_19xwol22", n9 = "_19xwol21", r9 = "_19xwol20";
+var Q9 = "_19xwol23", ef = "_19xwol22", tf = "_19xwol21", nf = "_19xwol20";
 const rm = ({
   image: e,
   button: t,
   price: n,
   title: r
-}) => /* @__PURE__ */ i.jsx("div", { className: r9, children: /* @__PURE__ */ i.jsxs("div", { className: n9, children: [
-  /* @__PURE__ */ i.jsxs("div", { className: e9, children: [
+}) => /* @__PURE__ */ i.jsx("div", { className: nf, children: /* @__PURE__ */ i.jsxs("div", { className: tf, children: [
+  /* @__PURE__ */ i.jsxs("div", { className: Q9, children: [
     e,
     /* @__PURE__ */ i.jsx(Ce, { component: "h6", fontWeight: "bold", children: r })
   ] }),
-  /* @__PURE__ */ i.jsxs("div", { className: t9, children: [
+  /* @__PURE__ */ i.jsxs("div", { className: ef, children: [
     n,
     t
   ] })
-] }) }), s9 = "_bentoBoxTiles_u1djx_1", i9 = "_bentoBoxTile_u1djx_1", o9 = "_darkMode_u1djx_16", a9 = "_tileIcon_u1djx_46", l9 = "_tileTitle_u1djx_57", c9 = "_tileText_u1djx_65", u9 = "_tileContent_u1djx_74", d9 = "_tileImageContainer_u1djx_78", f9 = "_tileImageBottom_u1djx_85", h9 = "_tileBig_u1djx_155", Ge = {
-  bentoBoxTiles: s9,
-  bentoBoxTile: i9,
-  darkMode: o9,
-  tileIcon: a9,
-  tileTitle: l9,
-  tileText: c9,
-  tileContent: u9,
-  tileImageContainer: d9,
-  tileImageBottom: f9,
-  tileBig: h9
+] }) }), rf = "_bentoBoxTiles_u1djx_1", sf = "_bentoBoxTile_u1djx_1", of = "_darkMode_u1djx_16", af = "_tileIcon_u1djx_46", lf = "_tileTitle_u1djx_57", cf = "_tileText_u1djx_65", uf = "_tileContent_u1djx_74", df = "_tileImageContainer_u1djx_78", ff = "_tileImageBottom_u1djx_85", hf = "_tileBig_u1djx_155", Ge = {
+  bentoBoxTiles: rf,
+  bentoBoxTile: sf,
+  darkMode: of,
+  tileIcon: af,
+  tileTitle: lf,
+  tileText: cf,
+  tileContent: uf,
+  tileImageContainer: df,
+  tileImageBottom: ff,
+  tileBig: hf
 }, sm = ({
   tiles: e,
   darkMode: t
@@ -9665,13 +9665,13 @@ const rm = ({
     /* @__PURE__ */ i.jsx(Ce, { className: Ge.tileTitle, component: "h4", fontWeight: "bold", children: n.title }),
     /* @__PURE__ */ i.jsx("div", { className: Ge.tileText, children: n.text })
   ] })
-] }, r)) }), p9 = "_galleryCarouselWrapper_ke8br_1", m9 = "_swiper__dots_ke8br_5", v9 = "_swiper__dot_ke8br_5", g9 = "_swiper__dotSelected_ke8br_31", x9 = "_swiper__dotContinuePrev_ke8br_39", w9 = "_swiper__dotContinueNext_ke8br_44", br = {
-  galleryCarouselWrapper: p9,
-  swiper__dots: m9,
-  swiper__dot: v9,
-  swiper__dotSelected: g9,
-  swiper__dotContinuePrev: x9,
-  swiper__dotContinueNext: w9
+] }, r)) }), pf = "_galleryCarouselWrapper_ke8br_1", mf = "_swiper__dots_ke8br_5", vf = "_swiper__dot_ke8br_5", gf = "_swiper__dotSelected_ke8br_31", xf = "_swiper__dotContinuePrev_ke8br_39", wf = "_swiper__dotContinueNext_ke8br_44", br = {
+  galleryCarouselWrapper: pf,
+  swiper__dots: mf,
+  swiper__dot: vf,
+  swiper__dotSelected: gf,
+  swiper__dotContinuePrev: xf,
+  swiper__dotContinueNext: wf
 };
 var Ec = { exports: {} };
 /*!
@@ -9709,23 +9709,23 @@ var Ec = { exports: {} };
     e.exports ? (n.default = n, e.exports = n) : window.classNames = n;
   })();
 })(Ec);
-var y9 = Ec.exports;
-const sn = /* @__PURE__ */ _a(y9), C9 = "_desktopCarouselWrapper_116f5_1", b9 = "_swiper_116f5_8", _9 = "_swiper__container_116f5_17", j9 = "_swiper__slide_116f5_22", S9 = "_swiper__pagination_116f5_29", M9 = "_swiper__prev_116f5_47", L9 = "_swiper__next_116f5_52", mt = {
-  desktopCarouselWrapper: C9,
-  swiper: b9,
-  swiper__container: _9,
-  swiper__slide: j9,
-  swiper__pagination: S9,
-  swiper__prev: M9,
-  swiper__next: L9
+var yf = Ec.exports;
+const sn = /* @__PURE__ */ _a(yf), Cf = "_desktopCarouselWrapper_116f5_1", bf = "_swiper_116f5_8", _f = "_swiper__container_116f5_17", jf = "_swiper__slide_116f5_22", Sf = "_swiper__pagination_116f5_29", Mf = "_swiper__prev_116f5_47", Lf = "_swiper__next_116f5_52", mt = {
+  desktopCarouselWrapper: Cf,
+  swiper: bf,
+  swiper__container: _f,
+  swiper__slide: jf,
+  swiper__pagination: Sf,
+  swiper__prev: Mf,
+  swiper__next: Lf
 };
-function T9(e) {
+function Tf(e) {
   return Object.prototype.toString.call(e) === "[object Object]";
 }
 function va(e) {
-  return T9(e) || Array.isArray(e);
+  return Tf(e) || Array.isArray(e);
 }
-function V9() {
+function Vf() {
   return !!(typeof window < "u" && window.document && window.document.createElement);
 }
 function Yi(e, t) {
@@ -9741,7 +9741,7 @@ function Yi(e, t) {
 function ga(e) {
   return e.concat().sort((t, n) => t.name > n.name ? 1 : -1).map((t) => t.options);
 }
-function P9(e, t) {
+function Pf(e, t) {
   if (e.length !== t.length)
     return !1;
   const n = ga(e), r = ga(t);
@@ -9771,7 +9771,7 @@ function Qi(e) {
 function Rn(e, t) {
   return ie(e - t);
 }
-function E9(e, t) {
+function Ef(e, t) {
   if (e === 0 || t === 0 || ie(e) <= ie(t))
     return 0;
   const n = Rn(ie(e), ie(t));
@@ -9804,7 +9804,7 @@ function Rc(e, t) {
 function ti(e, t) {
   return typeof t.MouseEvent < "u" && e instanceof t.MouseEvent;
 }
-function R9(e, t) {
+function Rf(e, t) {
   const n = {
     start: r,
     center: s,
@@ -9849,7 +9849,7 @@ function Nn() {
   };
   return r;
 }
-function H9(e, t, n, r) {
+function Hf(e, t, n, r) {
   const s = Nn(), o = 1e3 / 60;
   let a = null, l = 0, c = 0;
   function d() {
@@ -9888,7 +9888,7 @@ function H9(e, t, n, r) {
     render: r
   };
 }
-function A9(e, t) {
+function Af(e, t) {
   const n = t === "rtl", r = e === "y", s = r ? "y" : "x", o = r ? "x" : "y", a = !r && n ? -1 : 1, l = f(), c = u();
   function d(v) {
     const {
@@ -9971,7 +9971,7 @@ function Hc(e, t, n) {
   };
   return u;
 }
-function k9(e, t, n, r, s, o, a, l, c, d, f, u, h, p, v, m, w, x, y) {
+function kf(e, t, n, r, s, o, a, l, c, d, f, u, h, p, v, m, w, x, y) {
   const {
     cross: C,
     direction: _
@@ -10028,7 +10028,7 @@ function k9(e, t, n, r, s, o, a, l, c, d, f, u, h, p, v, m, w, x, y) {
     ye > m && (de = !0), d.useFriction(0.3).useDuration(0.75), l.start(), s.add(_(Le)), P.preventDefault();
   }
   function ee(P) {
-    const oe = f.byDistance(0, !1).index !== u.get(), ae = o.pointerUp(P) * rt(), ye = Ue(_(ae), oe), Me = E9(ae, ye), Le = J - 10 * Me, He = x + Me / 50;
+    const oe = f.byDistance(0, !1).index !== u.get(), ae = o.pointerUp(P) * rt(), ye = Ue(_(ae), oe), Me = Ef(ae, ye), Le = J - 10 * Me, He = x + Me / 50;
     Y = !1, Q = !1, b.clear(), d.useDuration(Le).useFriction(He), c.distance(ye, !v), xe = !1, h.emit("pointerUp");
   }
   function pe(P) {
@@ -10043,7 +10043,7 @@ function k9(e, t, n, r, s, o, a, l, c, d, f, u, h, p, v, m, w, x, y) {
     pointerDown: ne
   };
 }
-function Z9(e, t) {
+function Zf(e, t) {
   let r, s;
   function o(u) {
     return u.timeStamp;
@@ -10072,7 +10072,7 @@ function Z9(e, t) {
     readPoint: a
   };
 }
-function B9() {
+function Bf() {
   function e(n) {
     const {
       offsetTop: r,
@@ -10093,7 +10093,7 @@ function B9() {
     measure: e
   };
 }
-function D9(e) {
+function Df(e) {
   function t(r) {
     return e * (r / 100);
   }
@@ -10101,7 +10101,7 @@ function D9(e) {
     measure: t
   };
 }
-function N9(e, t, n, r, s, o, a) {
+function Nf(e, t, n, r, s, o, a) {
   let l, c, d = [], f = !1;
   function u(m) {
     return s.measureSize(a.measure(m));
@@ -10133,7 +10133,7 @@ function N9(e, t, n, r, s, o, a) {
     destroy: p
   };
 }
-function O9(e, t, n, r, s) {
+function Of(e, t, n, r, s) {
   let o = 0, a = 0, l = r, c = s, d = e.get(), f = 0;
   function u() {
     const j = n.get() - e.get(), M = !l;
@@ -10178,7 +10178,7 @@ function O9(e, t, n, r, s) {
   };
   return _;
 }
-function $9(e, t, n, r, s) {
+function $f(e, t, n, r, s) {
   const o = s.measure(10), a = s.measure(50), l = Zt(0.1, 0.99);
   let c = !1;
   function d() {
@@ -10199,7 +10199,7 @@ function $9(e, t, n, r, s) {
     toggleActive: u
   };
 }
-function I9(e, t, n, r, s) {
+function If(e, t, n, r, s) {
   const o = Zt(-t + e, 0), a = u(), l = f(), c = h();
   function d(v, m) {
     return Rn(v, m) < 1;
@@ -10233,13 +10233,13 @@ function I9(e, t, n, r, s) {
     scrollContainLimit: l
   };
 }
-function z9(e, t, n) {
+function zf(e, t, n) {
   const r = t[0], s = n ? r - e : $e(t);
   return {
     limit: Zt(s, r)
   };
 }
-function F9(e, t, n, r) {
+function Ff(e, t, n, r) {
   const o = t.min + 0.1, a = t.max + 0.1, {
     reachedMin: l,
     reachedMax: c
@@ -10257,7 +10257,7 @@ function F9(e, t, n, r) {
     loop: f
   };
 }
-function q9(e) {
+function qf(e) {
   const {
     max: t,
     length: n
@@ -10270,7 +10270,7 @@ function q9(e) {
     get: r
   };
 }
-function W9(e, t, n, r, s) {
+function Wf(e, t, n, r, s) {
   const {
     startEdge: o,
     endEdge: a
@@ -10291,7 +10291,7 @@ function W9(e, t, n, r, s) {
     snapsAligned: f
   };
 }
-function U9(e, t, n, r, s, o) {
+function Uf(e, t, n, r, s, o) {
   const {
     groupSlides: a
   } = s, {
@@ -10317,7 +10317,7 @@ function U9(e, t, n, r, s, o) {
     slideRegistry: d
   };
 }
-function G9(e, t, n, r, s) {
+function Gf(e, t, n, r, s) {
   const {
     reachedAny: o,
     removeOffset: a,
@@ -10376,7 +10376,7 @@ function G9(e, t, n, r, s) {
     shortcut: f
   };
 }
-function K9(e, t, n, r, s, o, a) {
+function Kf(e, t, n, r, s, o, a) {
   function l(u) {
     const h = u.distance, p = u.index !== t.get();
     o.add(h), h && (r.duration() ? e.start() : (e.update(), e.render(1), e.update())), p && (n.set(t.get()), t.set(u.index), a.emit("select"));
@@ -10394,7 +10394,7 @@ function K9(e, t, n, r, s, o, a) {
     index: d
   };
 }
-function Y9(e, t, n, r, s, o, a) {
+function Yf(e, t, n, r, s, o, a) {
   let l = 0;
   function c() {
     o.add(document, "keydown", d, !1), t.forEach(f);
@@ -10467,7 +10467,7 @@ function Ac(e, t) {
     toggleActive: c
   };
 }
-function X9(e, t, n, r, s, o, a, l, c) {
+function Xf(e, t, n, r, s, o, a, l, c) {
   const f = Bn(s), u = Bn(s).reverse(), h = x().concat(y());
   function p(L, b) {
     return L.reduce((V, E) => V - s[E], b);
@@ -10530,7 +10530,7 @@ function X9(e, t, n, r, s, o, a, l, c) {
     loopPoints: h
   };
 }
-function J9(e, t, n) {
+function Jf(e, t, n) {
   let r, s = !1;
   function o(c) {
     if (!n)
@@ -10556,7 +10556,7 @@ function J9(e, t, n) {
     destroy: a
   };
 }
-function Q9(e, t, n, r) {
+function Qf(e, t, n, r) {
   const s = {};
   let o = null, a = null, l, c = !1;
   function d() {
@@ -10668,7 +10668,7 @@ function nh(e, t, n, r, s, o, a) {
     watchResize: C,
     watchSlides: _,
     watchDrag: j
-  } = o, M = 2, L = B9(), b = L.measure(t), V = n.map(L.measure), E = A9(c, d), Z = E.measureSize(b), J = D9(Z), F = R9(l, Z), q = !u && !!y, O = u || !!y, {
+  } = o, M = 2, L = Bf(), b = L.measure(t), V = n.map(L.measure), E = Af(c, d), Z = E.measureSize(b), J = Df(Z), F = Rf(l, Z), q = !u && !!y, O = u || !!y, {
     slideSizes: Q,
     slideSizesWithGaps: Y,
     startGap: de,
@@ -10676,12 +10676,12 @@ function nh(e, t, n, r, s, o, a) {
   } = eh(E, b, V, n, O, s), je = th(E, Z, w, u, b, V, de, xe, M), {
     snaps: we,
     snapsAligned: Pe
-  } = W9(E, F, b, V, je), Se = -$e(we) + $e(Y), {
+  } = Wf(E, F, b, V, je), Se = -$e(we) + $e(Y), {
     snapsContained: rt,
     scrollContainLimit: Ue
-  } = I9(Z, Se, Pe, y, M), $ = q ? rt : Pe, {
+  } = If(Z, Se, Pe, y, M), $ = q ? rt : Pe, {
     limit: re
-  } = z9(Se, $, u), ee = Hc(Yn($), f, u), pe = ee.clone(), ne = Bn(n), X = ({
+  } = zf(Se, $, u), ee = Hc(Yn($), f, u), pe = ee.clone(), ne = Bn(n), X = ({
     dragHandler: it,
     scrollBody: $t,
     scrollBounds: It,
@@ -10707,9 +10707,9 @@ function nh(e, t, n, r, s, o, a) {
   }, hn) => {
     const pn = it.velocity(), ot = it.settled(), mn = !ts.shouldConstrain(), zt = er ? ot : ot && mn;
     zt && !Qr.pointerDown() && (es.stop(), Qn.emit("settle")), zt || Qn.emit("scroll"), pt.set(It.get() - pn + pn * hn), er && (Xr.loop(it.direction()), Jr.loop()), $t.to(pt.get());
-  }, W = H9(r, s, () => X(st), (it) => P(st, it)), oe = 0.68, ae = $[ee.get()], ye = _r(ae), Me = _r(ae), Le = _r(ae), He = O9(ye, Me, Le, h, oe), un = G9(u, $, Se, re, Le), dn = K9(W, ee, pe, He, un, Le, a), Ot = q9(re), Xn = Nn(), Yr = Q9(t, n, a, m), {
+  }, W = Hf(r, s, () => X(st), (it) => P(st, it)), oe = 0.68, ae = $[ee.get()], ye = _r(ae), Me = _r(ae), Le = _r(ae), He = Of(ye, Me, Le, h, oe), un = Gf(u, $, Se, re, Le), dn = Kf(W, ee, pe, He, un, Le, a), Ot = qf(re), Xn = Nn(), Yr = Qf(t, n, a, m), {
     slideRegistry: fn
-  } = U9(q, y, $, Ue, je, ne), Jn = Y9(e, n, fn, dn, He, Xn, a), st = {
+  } = Uf(q, y, $, Ue, je, ne), Jn = Yf(e, n, fn, dn, He, Xn, a), st = {
     ownerDocument: r,
     ownerWindow: s,
     eventHandler: a,
@@ -10717,7 +10717,7 @@ function nh(e, t, n, r, s, o, a) {
     slideRects: V,
     animation: W,
     axis: E,
-    dragHandler: k9(E, e, r, s, Le, Z9(E, s), ye, W, dn, He, un, ee, a, J, p, v, x, oe, j),
+    dragHandler: kf(E, e, r, s, Le, Zf(E, s), ye, W, dn, He, un, ee, a, J, p, v, x, oe, j),
     eventStore: Xn,
     percentOfView: J,
     index: ee,
@@ -10726,18 +10726,18 @@ function nh(e, t, n, r, s, o, a) {
     location: ye,
     offsetLocation: Me,
     options: o,
-    resizeHandler: N9(t, a, s, n, E, C, L),
+    resizeHandler: Nf(t, a, s, n, E, C, L),
     scrollBody: He,
-    scrollBounds: $9(re, Me, Le, He, J),
-    scrollLooper: F9(Se, re, Me, [ye, Me, Le]),
+    scrollBounds: $f(re, Me, Le, He, J),
+    scrollLooper: Ff(Se, re, Me, [ye, Me, Le]),
     scrollProgress: Ot,
     scrollSnapList: $.map(Ot.get),
     scrollSnaps: $,
     scrollTarget: un,
     scrollTo: dn,
-    slideLooper: X9(E, Z, Se, Q, Y, we, $, Me, n),
+    slideLooper: Xf(E, Z, Se, Q, Y, we, $, Me, n),
     slideFocus: Jn,
-    slidesHandler: J9(t, a, _),
+    slidesHandler: Jf(t, a, _),
     slidesInView: Yr,
     slideIndexes: ne,
     slideRegistry: fn,
@@ -10959,7 +10959,7 @@ function Kr(e = {}, t = []) {
     s && s.reInit(n.current, r.current);
   }, [s]);
   return B(() => {
-    if (V9() && a) {
+    if (Vf() && a) {
       kr.globalOptions = Kr.globalOptions;
       const d = kr(a, n.current, r.current);
       return o(d), () => d.destroy();
@@ -10968,7 +10968,7 @@ function Kr(e = {}, t = []) {
   }, [a, o]), B(() => {
     Yi(n.current, e) || (n.current = e, c());
   }, [e, c]), B(() => {
-    P9(r.current, t) || (r.current = t, c());
+    Pf(r.current, t) || (r.current = t, c());
   }, [t, c]), [l, s];
 }
 Kr.globalOptions = void 0;
@@ -11455,8 +11455,8 @@ const ah = (e) => {
   speed: a = "slow"
 }) => /* @__PURE__ */ i.jsxs("div", { className: pr.ModuleImageCarousel, children: [
   /* @__PURE__ */ i.jsx("div", { className: pr.ModuleImageCarousel__gallery, children: n ? /* @__PURE__ */ i.jsx(Uh, { direction: o, speed: a, imageSize: r, images: s }) : /* @__PURE__ */ i.jsx(zh, { imageSize: r, images: s }) }),
-  t && /* @__PURE__ */ i.jsx("div", { className: pr.ModuleImageCarousel__packshot, children: /* @__PURE__ */ i.jsx(Uf, { aspectRatio: "16/9", children: /* @__PURE__ */ i.jsx("img", { src: t }) }) }),
-  /* @__PURE__ */ i.jsx("div", { className: pr.ModuleImageCarousel__eyecatcher, children: /* @__PURE__ */ i.jsx(Ff, { ...e }) })
+  t && /* @__PURE__ */ i.jsx("div", { className: pr.ModuleImageCarousel__packshot, children: /* @__PURE__ */ i.jsx(W9, { aspectRatio: "16/9", children: /* @__PURE__ */ i.jsx("img", { src: t }) }) }),
+  /* @__PURE__ */ i.jsx("div", { className: pr.ModuleImageCarousel__eyecatcher, children: /* @__PURE__ */ i.jsx(z9, { ...e }) })
 ] }), Gh = "_userReview_x3nmn_1", Kh = "_lead_x3nmn_9", Yh = "_title_x3nmn_15", Xh = "_follow_x3nmn_25", Jh = "_reviewContent_x3nmn_38", _n = {
   userReview: Gh,
   lead: Kh,
@@ -11499,7 +11499,7 @@ const ah = (e) => {
     /* @__PURE__ */ i.jsx(Ca, { overallStars: s.stars, size: "small" }),
     /* @__PURE__ */ i.jsx("p", { className: _n.reviewContent, children: s.reviewText })
   ] }, o))
-] }), sp = "_productBlockWrap_17r51_1", ip = "_productBlockWrap__container_17r51_6", op = "_productBlockWrap__inner_17r51_11", ap = "_productBlockWrap__image_17r51_20", lp = "_productBlockWrap__content_17r51_34", cp = "_btnWrap_17r51_44", Gt = {
+] }), sp = "_productBlockWrap_sma79_1", ip = "_productBlockWrap__container_sma79_6", op = "_productBlockWrap__inner_sma79_11", ap = "_productBlockWrap__image_sma79_20", lp = "_productBlockWrap__content_sma79_34", cp = "_btnWrap_sma79_44", Gt = {
   productBlockWrap: sp,
   productBlockWrap__container: ip,
   productBlockWrap__inner: op,
@@ -11516,7 +11516,7 @@ const ah = (e) => {
   /* @__PURE__ */ i.jsx("div", { className: Gt.productBlockWrap__image, style: s ? {} : { order: 2 }, children: r && /* @__PURE__ */ i.jsx("img", { src: r, alt: "Thermomix" }) }),
   /* @__PURE__ */ i.jsxs("div", { className: Gt.productBlockWrap__content, style: s ? {} : { order: 1 }, children: [
     e && /* @__PURE__ */ i.jsx(Ce, { component: "h4", variant: "h4", fontWeight: "bold", children: e }),
-    t && /* @__PURE__ */ i.jsx(Qf, { size: "large", price: t }),
+    t && /* @__PURE__ */ i.jsx(J9, { size: "large", price: t }),
     n && /* @__PURE__ */ i.jsx("div", { className: Gt.btnWrap, children: /* @__PURE__ */ i.jsx(N4, { sizing: "fill", children: /* @__PURE__ */ i.jsx(
       Ya,
       {
@@ -13937,7 +13937,7 @@ export {
   Ym as EditPenLight,
   rg as Explore,
   sg as ExploreLight,
-  Ff as EyeCatcher,
+  z9 as EyeCatcher,
   Jp as Facebook,
   yg as Favorite,
   Cg as FavoriteFilled,
@@ -13971,7 +13971,7 @@ export {
   qp as Instagram,
   Ka as InteractiveIcon,
   Pp as Kobold,
-  xf as Language,
+  g9 as Language,
   qm as LanguageLight,
   zp as LanguageSelector,
   jg as Lightbulb,
@@ -13985,7 +13985,7 @@ export {
   mm as LockOpenLight,
   Bg as Mail,
   wv as MailLight,
-  Uf as MediaContainer,
+  W9 as MediaContainer,
   l0 as Menu,
   hm as MenuLight,
   Xv as Minus,
@@ -14007,7 +14007,7 @@ export {
   $m as PlusCircleLight,
   Bm as PlusLight,
   $g as PreCleanLight,
-  Qf as Price,
+  J9 as Price,
   um as ProductBlock,
   Dp as ProductStripe,
   ig as Question,
