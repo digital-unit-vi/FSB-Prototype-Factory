@@ -24,5 +24,6 @@
         ]
       }
     }
-  }
+  },
+  "ignorePatterns": ["components/build-assets/**"]
 }

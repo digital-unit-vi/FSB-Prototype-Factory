@@ -1,5 +1,6 @@
 "use client";
 
+import "@components/build-assets/style.css";
 import Footer from "@components/shared/footer/footer";
 import ReactLenis from "lenis/react";
 import { ReactNode } from "react";

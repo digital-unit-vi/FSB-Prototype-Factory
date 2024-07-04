@@ -1,5 +1,10 @@
-@import url("normalize.css");
-
 p {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family: Vorwerk, system-ui, arial, sans-serif !important;
 }
