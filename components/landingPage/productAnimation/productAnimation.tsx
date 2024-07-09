@@ -1,6 +1,7 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
+import useScreenSize from "@utils/useScreenSize";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
@@ -9,6 +10,7 @@ import styles from "./productAnimation.module.scss";
 const ProductAnimation = ({ dark }: { dark?: boolean }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const screenSize = useScreenSize();
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -61,15 +63,21 @@ const ProductAnimation = ({ dark }: { dark?: boolean }) => {
     });
   });
 
+  const getVideoSrc = () => {
+    if (dark) {
+      return "/landingPage/sensorAnimation/3d_rotation-dark.mp4";
+    } else {
+      return screenSize.width > 768
+        ? "/landingPage/sensorAnimation/3d_rotation-light.mp4"
+        : "/landingPage/sensorAnimation/sensor-light-mobile.mp4";
+    }
+  };
+
   return (
     <div ref={containerRef} className={styles.container}>
       <video
         ref={videoRef}
-        src={
-          dark
-            ? "/landingPage/sensorAnimation/3d_rotation-dark.mp4"
-            : "/landingPage/sensorAnimation/sensor-light-mobile.mp4"
-        }
+        src={getVideoSrc()}
         playsInline
         preload="auto"
         muted
