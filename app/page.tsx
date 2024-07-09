@@ -61,6 +61,7 @@ export default function Home() {
         <Link href="/landing-page/dark/tm6/var-c">TM6 Dark Variant C</Link>
         <Link href="/landing-page/light/sensor">Sensor Light</Link>
         <Link href="/landing-page/dark/sensor">Sensor Dark</Link>
+        <Link href="/landing-page/fsb/sensor">Sensor FSB Light</Link>
       </div>
     </div>
   );
