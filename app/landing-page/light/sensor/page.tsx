@@ -1,6 +1,5 @@
 import BentoBox from "@components/landingPage/bentoBox/bentoBox";
 import Carousel from "@components/landingPage/carousel/carousel";
-import FunctionsTab from "@components/landingPage/functionsTab/functionsTab";
 import Hero from "@components/landingPage/hero/hero";
 import ImageGallery from "@components/landingPage/imageGallery/imageGallery";
 import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
@@ -78,7 +77,7 @@ export default function SensorLightLandingPage() {
         <Spacer size={96} />
         <BentoBox sensor />
         <Spacer size={48} />
-        <FunctionsTab />
+        {/* <FunctionsTab /> */}
         <Spacer size={48} />
         <Heading>
           <p className="secondary">Don&apos;t miss a single</p>
