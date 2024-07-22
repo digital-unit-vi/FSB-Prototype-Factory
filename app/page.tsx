@@ -40,74 +40,7 @@ export default function Home() {
     >
       <div>EMAIL TEMPLATES</div>
       <div style={{ width: "100%" }}>
-        <section
-          style={{
-            display: "grid",
-            gap: "16px",
-          }}
-        >
-          <Link href="/email/light/tm6/var-a" className={styles.button}>
-            <Button text="TM6 Light Variant A" />
-          </Link>
-          <Link href="/email/light/tm6/var-b" className={styles.button}>
-            <Button text="TM6 Light Variant B" />
-          </Link>
-          <Link href="/email/dark/tm6/var-a" className={styles.button}>
-            <Button text="TM6 Dark Variant A" />
-          </Link>
-          <Link href="/email/dark/tm6/var-b" className={styles.button}>
-            <Button text="TM6 Dark Variant B" />
-          </Link>
-          <Link href="/email/light/sensor/var-a" className={styles.button}>
-            <Button text="Sensor Light Variant A" />
-          </Link>
-          <Link href="/email/light/sensor/var-b" className={styles.button}>
-            <Button text="Sensor Light Variant B" />
-          </Link>
-          <Link href="/email/dark/sensor/var-a" className={styles.button}>
-            <Button text="Sensor Dark Variant A" />
-          </Link>
-          <Link href="/email/dark/sensor/var-b" className={styles.button}>
-            <Button text="Sensor Dark Variant B" />
-          </Link>
-          <Link href="/email/light/blade" className={styles.button}>
-            <Button text="Blade Light" />
-          </Link>
-          <Link href="/email/dark/blade" className={styles.button}>
-            <Button text="Blade Dark" />
-          </Link>
-        </section>
-        <hr />
-        <section
-          style={{
-            display: "grid",
-            gap: "16px",
-          }}
-        >
-          <Link
-            href="/email/light/cutter-stressed-compromiser"
-            className={styles.button}
-          >
-            <Button text="Cutter Stressed Compromiser Light" />
-          </Link>
-          <Link
-            href="/email/light/cutter-devoted-perfectionist"
-            className={styles.button}
-          >
-            <Button text="Cutter Devoted Perfectionist Light" />
-          </Link>
-          <Link
-            href="/email/light/cutter-health-seeker"
-            className={styles.button}
-          >
-            <Button text="Cutter Health Seeker Light" />
-          </Link>
-          <Link href="/email/dark/cutter" className={styles.button}>
-            <Button text="Cutter Dark" />
-          </Link>
-        </section>
-        <hr />
-        <section
+      <section
           style={{
             display: "grid",
             gap: "16px",
@@ -172,6 +105,73 @@ export default function Home() {
             className={styles.button}
           >
             <Button text="Storybook Blade Dark" />
+          </Link>
+        </section>
+        <hr/>
+        <section
+          style={{
+            display: "grid",
+            gap: "16px",
+          }}
+        >
+          <Link href="/email/light/tm6/var-a" className={styles.button}>
+            <Button text="TM6 Light Variant A" />
+          </Link>
+          <Link href="/email/light/tm6/var-b" className={styles.button}>
+            <Button text="TM6 Light Variant B" />
+          </Link>
+          <Link href="/email/dark/tm6/var-a" className={styles.button}>
+            <Button text="TM6 Dark Variant A" />
+          </Link>
+          <Link href="/email/dark/tm6/var-b" className={styles.button}>
+            <Button text="TM6 Dark Variant B" />
+          </Link>
+          <Link href="/email/light/sensor/var-a" className={styles.button}>
+            <Button text="Sensor Light Variant A" />
+          </Link>
+          <Link href="/email/light/sensor/var-b" className={styles.button}>
+            <Button text="Sensor Light Variant B" />
+          </Link>
+          <Link href="/email/dark/sensor/var-a" className={styles.button}>
+            <Button text="Sensor Dark Variant A" />
+          </Link>
+          <Link href="/email/dark/sensor/var-b" className={styles.button}>
+            <Button text="Sensor Dark Variant B" />
+          </Link>
+          <Link href="/email/light/blade" className={styles.button}>
+            <Button text="Blade Light" />
+          </Link>
+          <Link href="/email/dark/blade" className={styles.button}>
+            <Button text="Blade Dark" />
+          </Link>
+        </section>
+        <hr />
+        <section
+          style={{
+            display: "grid",
+            gap: "16px",
+          }}
+        >
+          <Link
+            href="/email/light/cutter-stressed-compromiser"
+            className={styles.button}
+          >
+            <Button text="Cutter Stressed Compromiser Light" />
+          </Link>
+          <Link
+            href="/email/light/cutter-devoted-perfectionist"
+            className={styles.button}
+          >
+            <Button text="Cutter Devoted Perfectionist Light" />
+          </Link>
+          <Link
+            href="/email/light/cutter-health-seeker"
+            className={styles.button}
+          >
+            <Button text="Cutter Health Seeker Light" />
+          </Link>
+          <Link href="/email/dark/cutter" className={styles.button}>
+            <Button text="Cutter Dark" />
           </Link>
         </section>
       </div>
