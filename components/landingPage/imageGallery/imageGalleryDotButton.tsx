@@ -8,11 +8,11 @@ import React, {
   useState,
 } from "react";
 
-type UseDotButtonType = {
+interface UseDotButtonType {
   selectedIndex: number;
   scrollSnaps: number[];
   onDotButtonClick: (index: number) => void;
-};
+}
 
 export const useDotButton = (
   emblaApi: EmblaCarouselType | undefined,

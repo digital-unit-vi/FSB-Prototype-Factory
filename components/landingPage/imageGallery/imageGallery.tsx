@@ -13,10 +13,10 @@ import { DotButton, useDotButton } from "./imageGalleryDotButton";
 
 const TWEEN_FACTOR_BASE = 0.2;
 
-type PropType = {
+interface PropType {
   slides: StaticImageData[];
   dark?: boolean;
-};
+}
 
 const OPTIONS: EmblaOptionsType = {
   loop: true,
