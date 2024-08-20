@@ -32,9 +32,7 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
 
   const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
     tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
-      return slideNode.querySelector(
-        `.${styles.imageGalleryParallaxLayer}`
-      ) as HTMLElement;
+      return slideNode.querySelector(`.${styles.imageGalleryParallaxLayer}`)!;
     });
   }, []);
 

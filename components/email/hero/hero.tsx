@@ -9,9 +9,9 @@ import { ReactNode } from "react";
 import styles from "./hero.module.scss";
 
 const LOGO_MAPPING = {
-  white: LogoWhite,
-  green: LogoGreen,
-  "muted-green": LogoMutedGreenWhite,
+  white: LogoWhite as StaticImageData,
+  green: LogoGreen as StaticImageData,
+  "muted-green": LogoMutedGreenWhite as StaticImageData,
 };
 
 // Function to check if a string is a hex color (including shorthand)
@@ -34,7 +34,7 @@ export default function Hero({
   href = "#",
   ctaText,
 }: Readonly<{
-  background: "light" | "dark" | string | StaticImageData;
+  background: "light" | "dark" | StaticImageData;
   logoColor: "white" | "green" | "muted-green";
   children: ReactNode;
   productImage: StaticImageData;
@@ -56,8 +56,8 @@ export default function Hero({
           background === "light" || background === "dark"
             ? styles[background]
             : isImage
-            ? styles.withImageBackground
-            : ""
+              ? styles.withImageBackground
+              : ""
         }`}
         style={hexColor ? { backgroundColor: hexColor } : {}}
       >

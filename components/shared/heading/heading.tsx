@@ -1,6 +1,11 @@
 import React, { ReactNode } from "react";
 import styles from "./heading.module.scss";
 
+interface CustomProps {
+  className?: string;
+  children?: ReactNode;
+}
+
 export default function Heading({
   children,
   dark,
@@ -10,20 +15,20 @@ export default function Heading({
   dark?: boolean;
   oneLineOnMedium?: boolean;
 }) {
-  const renderChildren = (child: React.ReactNode): React.ReactNode => {
-    if (React.isValidElement(child)) {
+  const renderChildren = (child: ReactNode): ReactNode => {
+    if (React.isValidElement<CustomProps>(child)) {
       const { className, children: nestedChildren, ...rest } = child.props;
 
-      // If the child has nested children, recursively render them
+      const classNameStr = className ?? "";
+
       const processedChildren =
         nestedChildren && React.Children.count(nestedChildren)
           ? React.Children.map(nestedChildren, renderChildren)
           : null;
 
-      // Clone the child with additional className if it exists
       return React.cloneElement(child, {
         ...rest,
-        className: `${styles[className]}`,
+        className: `${styles[classNameStr]}`,
         children: processedChildren,
       });
     }

@@ -4,7 +4,7 @@ import InstagramLogo from "@public/shared/socialMediaLogos/instagramLogo";
 import PinterestLogo from "@public/shared/socialMediaLogos/pinterestLogo";
 import RezeptweltLogo from "@public/shared/socialMediaLogos/rezeptweltLogo";
 import YouTubeLogo from "@public/shared/socialMediaLogos/youTubeLogo";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import styles from "./footer.module.scss";
 
@@ -14,7 +14,7 @@ export default function Footer() {
       <div className={styles.logoContainer}>
         <Link href="#" passHref className={styles.logoLink}>
           <Image
-            src={thermomixLogo}
+            src={thermomixLogo as StaticImageData}
             width={156}
             alt="logo"
             className={styles.mainLogo}
