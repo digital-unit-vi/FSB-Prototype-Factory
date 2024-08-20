@@ -30,11 +30,19 @@ const ProductAnimation = ({ dark }: { dark?: boolean }) => {
           start: "top center",
           end: "bottom center",
           scrub: true,
-          onEnter: () => {
-            video.play();
+          onEnter: async () => {
+            try {
+              await video.play();
+            } catch (error) {
+              console.error("Failed to play video:", error);
+            }
           },
-          onEnterBack: () => {
-            video.play();
+          onEnterBack: async () => {
+            try {
+              await video.play();
+            } catch (error) {
+              console.error("Failed to play video:", error);
+            }
           },
         },
       });

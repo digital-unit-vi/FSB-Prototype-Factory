@@ -86,6 +86,22 @@
   color: #00ac46;
 }
 
+.dark.container,
+.dark.containerWide {
+  background-color: #3f4447;
+
+  .headline,
+  .headlineWide,
+  .text,
+  .leadingWide {
+    color: #fff;
+  }
+
+  .textWide {
+    color: #57cd84;
+  }
+}
+
 .link {
   display: flex;
   color: #00ac46;
@@ -115,21 +131,5 @@
         color: #ade9c3;
       }
     }
-  }
-}
-
-.dark.container,
-.dark.containerWide {
-  background-color: #3f4447;
-
-  .headline,
-  .headlineWide,
-  .text,
-  .leadingWide {
-    color: #fff;
-  }
-
-  .textWide {
-    color: #57cd84;
   }
 }

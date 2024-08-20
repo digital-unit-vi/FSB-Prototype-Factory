@@ -56,9 +56,17 @@ const Hero: React.FC<HeroProps> = ({
     };
 
     once(document.documentElement, "touchstart", () => {
-      video.play();
-      video.pause();
-      video.play();
+      video
+        .play()
+        .then(() => {
+          video.pause();
+          video.play().catch((error) => {
+            console.error("Video playback failed:", error);
+          });
+        })
+        .catch((error) => {
+          console.error("Initial video playback failed:", error);
+        });
     });
   }, []);
 
@@ -82,7 +90,7 @@ const Hero: React.FC<HeroProps> = ({
       </div>
       <div className={styles.heroContent}>
         <Image
-          src={Logo}
+          src={Logo as StaticImageData}
           alt="Vorwerk logo"
           className={styles.heroLogo}
           width={160}

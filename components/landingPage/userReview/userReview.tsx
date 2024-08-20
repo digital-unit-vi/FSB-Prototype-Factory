@@ -103,7 +103,7 @@ export default function UserReview({
       {
         duration: 2.2,
         ease: "power4.out",
-        onUpdate: function () {
+        onUpdate: function (this: gsap.core.Tween) {
           const progress = this.progress();
           const currentScore = (1.0 + progress * (ratingScore - 1.0)).toFixed(
             1
