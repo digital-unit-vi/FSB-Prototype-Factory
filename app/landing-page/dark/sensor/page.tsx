@@ -74,7 +74,7 @@ export default function SensorLightLandingPage() {
           </p>
         </Heading>
         <Spacer size={32} />
-        <ProductAnimation dark />
+        <ProductAnimation />
         <Spacer size={96} />
         <BentoBox sensor dark />
         <Spacer size={96} />
