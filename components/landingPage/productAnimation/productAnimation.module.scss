@@ -1,12 +1,12 @@
 .container {
   position: relative;
   width: calc(100% + 32px);
-  min-height: 100svh;
+  height: 100vh;
   margin: 0 -16px;
 }
 
 .canvas {
   display: block;
   width: 100%;
-  min-height: 100svh;
+  height: 100%;
 }
