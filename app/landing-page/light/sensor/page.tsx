@@ -80,7 +80,7 @@ export default function SensorLightLandingPage() {
         {/* <FunctionsTab /> */}
         <Spacer size={48} />
         <Heading>
-          <p className="secondary">Don&apos;t miss a single</p>
+          <p className="secondary">Don&apos;t miss a singles</p>
           <p className="leading">cooking point</p>
         </Heading>
         <Spacer size={32} />
