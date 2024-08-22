@@ -7,7 +7,7 @@
   justify-content: center;
 
   width: calc(100% + 32px);
-  min-height: 100dvh; /* Small viewport height unit to account for dynamic UI changes */
+  min-height: 100lvh;
   margin: 0 -16px;
 }
 
