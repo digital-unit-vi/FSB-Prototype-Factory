@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLayoutEffect, useRef } from "react";
 import styles from "./productAnimation.module.scss";
 
-const ProductAnimation = () => {
+const ProductAnimation2 = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -58,26 +58,12 @@ const ProductAnimation = () => {
 
         const image = images[frames.frame];
 
-        // Calculate the aspect ratio of the image and the canvas
-        const imgAspectRatio = image.width / image.height;
-        const canvasAspectRatio = canvas.width / canvas.height;
-
-        let renderableWidth, renderableHeight, xStart, yStart;
-
         // Determine whether to fit by width or by height
-        if (imgAspectRatio > canvasAspectRatio) {
-          // Image is wider than canvas
-          renderableWidth = canvas.width;
-          renderableHeight = image.height * (renderableWidth / image.width);
-          xStart = 0;
-          yStart = (canvas.height - renderableHeight) / 2; // Center the image vertically
-        } else {
-          // Image is taller than or matches canvas aspect ratio
-          renderableHeight = canvas.height;
-          renderableWidth = image.width * (renderableHeight / image.height);
-          xStart = (canvas.width - renderableWidth) / 2; // Center the image horizontally
-          yStart = 0;
-        }
+        // Image is wider than canvas
+        const renderableWidth = canvas.width;
+        const renderableHeight = image.height * (renderableWidth / image.width);
+        const xStart = 0;
+        const yStart = (canvas.height - renderableHeight) / 2; // Center the image vertically
 
         // Draw the image on the canvas, maintaining aspect ratio
         context.drawImage(
@@ -122,4 +108,4 @@ const ProductAnimation = () => {
   );
 };
 
-export default ProductAnimation;
+export default ProductAnimation2;
