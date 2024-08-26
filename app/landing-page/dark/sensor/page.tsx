@@ -2,7 +2,7 @@ import BentoBox from "@components/landingPage/bentoBox/bentoBox";
 import Carousel from "@components/landingPage/carousel/carousel";
 import Hero from "@components/landingPage/hero/hero";
 import ImageGallery from "@components/landingPage/imageGallery/imageGallery";
-import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
+import ProductAnimation2 from "@components/landingPage/productAnimation2/productAnimation";
 import ProductTile from "@components/landingPage/productTile/productTile";
 import UserReview from "@components/landingPage/userReview/userReview";
 import Heading from "@components/shared/heading/heading";
@@ -74,7 +74,7 @@ export default function SensorLightLandingPage() {
           </p>
         </Heading>
         <Spacer size={32} />
-        <ProductAnimation dark />
+        <ProductAnimation2 />
         <Spacer size={96} />
         <BentoBox sensor dark />
         <Spacer size={96} />

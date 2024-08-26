@@ -72,9 +72,9 @@ export default function SensorLightLandingPage() {
             <span className="heroProminentText">full control</span>
           </p>
         </Heading>
-        <Spacer size={32} />
+        {/* <Spacer size={32} /> */}
         <ProductAnimation />
-        <Spacer size={96} />
+        <Spacer size={48} />
         <BentoBox sensor />
         <Spacer size={48} />
         {/* <FunctionsTab /> */}
