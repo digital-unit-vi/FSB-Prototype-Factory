@@ -8652,11 +8652,11 @@ const Lp = ({
   ] }) }) }) });
 }, oh = "_functionsTabWrapper_1uo3e_1", ih = {
   functionsTabWrapper: oh
-}, ah = "_active_hnphn_1", ch = "_inactive_hnphn_2", dh = "_desktopScrollboxWrapper_hnphn_5", hh = "_desktopScrollbox__list_hnphn_44", uh = "_desktopScrollbox__title_hnphn_70", fh = "_withIcon_hnphn_76", Ch = "_darkMode_hnphn_115", ph = "_noIcon_hnphn_120", vh = "_desktopScrollbox__progress_hnphn_251", mh = "_desktopScrollbox__media_hnphn_330", xh = "_videoContainer_hnphn_369", B0 = {
-  active: ah,
-  inactive: ch,
-  desktopScrollboxWrapper: dh,
-  desktopScrollbox__list: hh,
+}, ah = "_desktopScrollboxWrapper_1ix8m_1", ch = "_desktopScrollbox__list_1ix8m_40", dh = "_inactive_1ix8m_58", hh = "_active_1ix8m_62", uh = "_desktopScrollbox__title_1ix8m_66", fh = "_withIcon_1ix8m_72", Ch = "_darkMode_1ix8m_111", ph = "_noIcon_1ix8m_116", vh = "_desktopScrollbox__progress_1ix8m_247", mh = "_desktopScrollbox__media_1ix8m_326", xh = "_videoContainer_1ix8m_365", B0 = {
+  desktopScrollboxWrapper: ah,
+  desktopScrollbox__list: ch,
+  inactive: dh,
+  active: hh,
   desktopScrollbox__title: uh,
   withIcon: fh,
   darkMode: Ch,
@@ -34258,6 +34258,7 @@ export {
   zp as Croatia,
   $p as Cyprus,
   qp as Czechia,
+  Ac as DarkTheme,
   Om as DataUsage,
   Wg as DataUsageLight,
   Nm as Decrease1,
