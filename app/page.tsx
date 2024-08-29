@@ -183,40 +183,22 @@ export default function Home() {
             gap: "16px",
           }}
         >
-          <Link
-            href="/landing-page/light/tm6/var-a-sb"
-            className={styles.button}
-          >
+          <Link href="/landing-page/light/tm6/var-a" className={styles.button}>
             <Button text="TM6 Light Variant A" />
           </Link>
-          <Link
-            href="/landing-page/light/tm6/var-b-sb"
-            className={styles.button}
-          >
+          <Link href="/landing-page/light/tm6/var-b" className={styles.button}>
             <Button text="TM6 Light Variant B" />
           </Link>
-          <Link
-            href="/landing-page/light/tm6/var-c-sb"
-            className={styles.button}
-          >
+          <Link href="/landing-page/light/tm6/var-c" className={styles.button}>
             <Button text="TM6 Light Variant C" />
           </Link>
-          <Link
-            href="/landing-page/dark/tm6/var-a-sb"
-            className={styles.button}
-          >
+          <Link href="/landing-page/dark/tm6/var-a" className={styles.button}>
             <Button text="TM6 Dark Variant A" />
           </Link>
-          <Link
-            href="/landing-page/dark/tm6/var-b-sb"
-            className={styles.button}
-          >
+          <Link href="/landing-page/dark/tm6/var-b" className={styles.button}>
             <Button text="TM6 Dark Variant B" />
           </Link>
-          <Link
-            href="/landing-page/dark/tm6/var-c-sb"
-            className={styles.button}
-          >
+          <Link href="/landing-page/dark/tm6/var-c" className={styles.button}>
             <Button text="TM6 Dark Variant C" />
           </Link>
           <Link href="/landing-page/light/sensor" className={styles.button}>
