@@ -1,0 +1,20 @@
+.textCentered {
+  text-align: center;
+}
+
+.specialText {
+  margin-top: 32px;
+  font-size: 22px;
+  line-height: 32px;
+
+  @media screen and (width >= 992px) {
+    margin-top: 48px;
+    font-size: 26px;
+    line-height: 39px;
+  }
+
+  @media screen and (width >= 1200px) {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
