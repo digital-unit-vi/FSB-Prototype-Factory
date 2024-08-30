@@ -1,6 +1,3 @@
-/* eslint-disable */
-//@ts-ignore
-
 "use client";
 
 import {

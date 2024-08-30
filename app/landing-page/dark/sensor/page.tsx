@@ -73,7 +73,7 @@ export default function SensorLightLandingPage() {
         }
         isLandingPage
         video={
-          <video autoPlay loop muted>
+          <video autoPlay loop muted playsInline>
             <source
               src="/landingPage/hero/sensor-hero-default.mp4"
               type="video/mp4"
