@@ -1,6 +1,3 @@
-/* eslint-disable */
-//@ts-ignore
-
 "use client";
 
 import {
@@ -90,7 +87,7 @@ export default function TM6VariantCDarkLandingPage() {
         }
         isLandingPage
         video={
-          <video autoPlay loop muted>
+          <video autoPlay loop muted playsInline>
             <source
               src="/landingPage/hero/tm6-hero-cutting.mp4"
               type="video/mp4"
