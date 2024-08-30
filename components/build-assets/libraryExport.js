@@ -8650,20 +8650,6 @@ const Lp = ({
       }
     ) }) })
   ] }) }) }) });
-}, oh = "_functionsTabWrapper_1uo3e_1", ih = {
-  functionsTabWrapper: oh
-}, ah = "_active_19iif_1", ch = "_inactive_19iif_2", dh = "_desktopScrollboxWrapper_19iif_5", hh = "_desktopScrollbox__list_19iif_44", uh = "_desktopScrollbox__title_19iif_66", fh = "_withIcon_19iif_72", Ch = "_darkMode_19iif_113", ph = "_noIcon_19iif_118", vh = "_desktopScrollbox__progress_19iif_253", mh = "_desktopScrollbox__media_19iif_352", xh = "_videoContainer_19iif_390", B0 = {
-  active: ah,
-  inactive: ch,
-  desktopScrollboxWrapper: dh,
-  desktopScrollbox__list: hh,
-  desktopScrollbox__title: uh,
-  withIcon: fh,
-  darkMode: Ch,
-  noIcon: ph,
-  desktopScrollbox__progress: vh,
-  desktopScrollbox__media: mh,
-  videoContainer: xh
 }, p2 = (t) => /* @__PURE__ */ e.jsx(
   "svg",
   {
@@ -8681,7 +8667,19 @@ const Lp = ({
       }
     )
   }
-), Zh = ({
+), oh = "_active_19iif_1", ih = "_inactive_19iif_2", ah = "_desktopScrollboxWrapper_19iif_5", ch = "_desktopScrollbox__list_19iif_44", dh = "_desktopScrollbox__title_19iif_66", hh = "_withIcon_19iif_72", uh = "_darkMode_19iif_113", fh = "_noIcon_19iif_118", Ch = "_desktopScrollbox__progress_19iif_253", ph = "_desktopScrollbox__media_19iif_352", vh = "_videoContainer_19iif_390", B0 = {
+  active: oh,
+  inactive: ih,
+  desktopScrollboxWrapper: ah,
+  desktopScrollbox__list: ch,
+  desktopScrollbox__title: dh,
+  withIcon: hh,
+  darkMode: uh,
+  noIcon: fh,
+  desktopScrollbox__progress: Ch,
+  desktopScrollbox__media: ph,
+  videoContainer: vh
+}, mh = ({
   items: t = [
     {
       id: 1,
@@ -8813,6 +8811,8 @@ const Lp = ({
       ] }, Z);
     }) })
   ] }) }) }) });
+}, xh = "_functionsTabWrapper_1uo3e_1", Zh = {
+  functionsTabWrapper: xh
 }, gh = "_active_155qv_1", Mh = "_inactive_155qv_2", Lh = "_mobileScrollboxWrapper_155qv_4", jh = "_mobileScrollbox__list_155qv_18", wh = "_withIcon_155qv_58", Hh = "_mobileScrollbox__title_155qv_58", Vh = "_noIcon_155qv_68", kh = "_darkMode_155qv_81", bh = "_mediaContainer_155qv_167", yh = "_mobileScrollbox__progress_155qv_196", _h = "_videoContainer_155qv_225", S0 = {
   active: gh,
   inactive: Mh,
@@ -8985,18 +8985,20 @@ const Lp = ({
   ],
   darkMode: s = !1
 }) => {
-  const [l] = N([parseInt($3.m.replace("px", ""))]), r = () => {
-    const a = window.innerWidth, c = l.find((d) => a < d);
-    return !!(c && c.toString() === $3.m.replace("px", ""));
-  }, [n, o] = N(r());
-  W(() => {
-    if (typeof window < "u")
-      return i(), window.addEventListener("resize", i), () => window.removeEventListener("resize", i);
-  }, []);
-  const i = () => {
-    r() ? o(!0) : o(!1);
-  };
-  return /* @__PURE__ */ e.jsx("div", { className: ih.functionsTabWrapper, children: n ? /* @__PURE__ */ e.jsx(Rh, { items: t, darkMode: s }) : /* @__PURE__ */ e.jsx(Zh, { items: t, darkMode: s }) });
+  const [l] = N([
+    parseInt($3.m.replace("px", ""))
+  ]), [r, n] = N(!1);
+  return W(() => {
+    if (typeof window < "u") {
+      const o = () => {
+        i() ? n(!0) : n(!1);
+      }, i = () => {
+        const a = window.innerWidth, c = l.find((d) => a < d);
+        return !!(c && c.toString() === $3.m.replace("px", ""));
+      };
+      return o(), window.addEventListener("resize", o), () => window.removeEventListener("resize", o);
+    }
+  }, [l]), /* @__PURE__ */ e.jsx("div", { className: Zh.functionsTabWrapper, children: r ? /* @__PURE__ */ e.jsx(Rh, { items: t, darkMode: s }) : /* @__PURE__ */ e.jsx(mh, { items: t, darkMode: s }) });
 }, Ah = "_galleryCarouselWrapper_170v7_1", Bh = "_swiper__dots_170v7_5", Sh = "_swiper__dot_170v7_5", Fh = "_swiper__dotsmall_170v7_30", Dh = "_swiper__dotSelected_170v7_42", Wh = "_darkMode_170v7_69", u2 = {
   galleryCarouselWrapper: Ah,
   swiper__dots: Bh,
