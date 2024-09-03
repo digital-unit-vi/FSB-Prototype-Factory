@@ -6,7 +6,6 @@ import {
   ButtonGroup,
   Canada,
   China,
-  ContentBlock,
   Czechia,
   DropdownItem,
   Facebook,
@@ -45,6 +44,7 @@ import {
   Vorwerk,
   Youtube,
 } from "@components/build-assets/libraryExport";
+import { ContentBlock } from "@components/landingPage/contentBlock/contentBlock";
 import Spacer from "@components/shared/spacer/spacer";
 import Link from "next/link";
 import styles from "./page.module.scss";
@@ -270,7 +270,6 @@ export default function Home() {
             </GridItem>
           </GridContainer>
           <ContentBlock
-            buttonCount={1}
             buttonGroup={
               <>
                 <ButtonGroup>
@@ -282,7 +281,6 @@ export default function Home() {
                 </ButtonGroup>
               </>
             }
-            buttonText="Button"
             headline={
               <Headline spaceBelow="default">
                 <Typography component="h3" fontWeight="bold">
@@ -293,9 +291,8 @@ export default function Home() {
             layout="inGrid"
             media={<img src="/landingPage/imageGallery/tm6-dinner.jpg" />}
             mediaAlignment="left"
-            mediaType="image"
             paragraph={
-              <Typography fontWeight="regular" variant="paragraph16">
+              <Typography fontWeight="regular" variant="paragraph18">
                 DS360 is the Vorwerk project designed to enable its sales
                 workforce to benefit from the latest technologies and be more
                 effective in showcasing and selling the company’s premium
@@ -320,9 +317,8 @@ export default function Home() {
             layout="inGrid"
             media={<img src="/landingPage/teaser/teaser.png" />}
             mediaAlignment="right"
-            mediaType="image"
             paragraph={
-              <Typography fontWeight="regular" variant="paragraph16">
+              <Typography fontWeight="regular" variant="paragraph18">
                 The Experience Design Team supports the Vorwerk International
                 Sales division in delivering digital touchpoints to the
                 Company's markets (Work In Progress)
@@ -397,9 +393,8 @@ export default function Home() {
               <img src="/landingPage/imageGallery/tm6-family-leisure.jpg" />
             }
             mediaAlignment="right"
-            mediaType="image"
             paragraph={
-              <Typography fontWeight="regular" variant="paragraph16">
+              <Typography fontWeight="regular" variant="paragraph18">
                 The PF aims to be a robust and reliable reference for all the
                 teams committed to crafting delightful digital experiences for
                 Vorwerk customers.
@@ -430,9 +425,8 @@ export default function Home() {
             layout="inGrid"
             media={<img src="/landingPage/teaser/teaser2.jpeg" />}
             mediaAlignment="left"
-            mediaType="image"
             paragraph={
-              <Typography fontWeight="regular" variant="paragraph16">
+              <Typography fontWeight="regular" variant="paragraph18">
                 The FEW project boldly ambitions to help developers, designers,
                 product experts, and business stakeholders speak the same
                 language and collaborate to build the Company’s digital
@@ -458,9 +452,8 @@ export default function Home() {
             layout="inGrid"
             media={<img src="/landingPage/teaser/teaser3.jpeg" />}
             mediaAlignment="right"
-            mediaType="image"
             paragraph={
-              <Typography fontWeight="regular" variant="paragraph16">
+              <Typography fontWeight="regular" variant="paragraph18">
                 The PF aims to be a robust and reliable reference for all the
                 teams committed to crafting delightful digital experiences for
                 Vorwerk customers.
