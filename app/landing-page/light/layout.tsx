@@ -10,9 +10,7 @@ import {
   FooterSmallLinks,
   Typography,
 } from "@components/build-assets/libraryExport";
-import "@components/build-assets/style.css";
 import { ReactNode } from "react";
-import styles from "./layout.module.scss";
 
 export default function RootLayout({
   children,
@@ -20,7 +18,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <div className={styles.layoutWrapper}>
+    <>
       {children}
       <footer>
         <FooterSection variant="spacingVertical">
@@ -226,6 +224,6 @@ export default function RootLayout({
           </FooterSmallLinks>
         </FooterSection>
       </footer>
-    </div>
+    </>
   );
 }

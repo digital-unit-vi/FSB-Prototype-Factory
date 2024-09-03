@@ -10,7 +10,6 @@ import {
   FooterSmallLinks,
   Typography,
 } from "@components/build-assets/libraryExport";
-import "@components/build-assets/style.css";
 import { Viewport } from "next";
 import { ReactNode } from "react";
 import styles from "./layout.module.scss";
