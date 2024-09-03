@@ -1,0 +1,32 @@
+.mediaContainer img {
+  display: block;
+  aspect-ratio: 1/1;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contentContainerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+
+  height: 100%;
+
+  @media screen and (width > 739px) {
+    padding-left: 40px;
+  }
+}
+
+.contentContainerRight {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+
+  height: 100%;
+
+  @media screen and (width > 739px) {
+    padding-right: 40px;
+  }
+}
