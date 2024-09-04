@@ -412,7 +412,7 @@ export default function SensorLightLandingPage() {
             secondLine: "guaranteed",
             thirdLine: "",
           }}
-          productImage="/landingPage/carousel/carousel-sensor.png"
+          productImage="/landingPage/carousel/carousel-sensor-4-3.png"
           images={[
             {
               url: "/library/images/image-carousel/image-carousel1.png",
