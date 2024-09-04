@@ -42,6 +42,7 @@ import {
   Youtube,
 } from "@components/build-assets/libraryExport";
 import ShowcaseTiles from "@components/landingPage/showcaseTiles/showcaseTiles";
+import Link from "next/link";
 import styles from "./page.module.scss";
 
 const Languages = [
@@ -268,9 +269,9 @@ export default function Home() {
         <Header
           isLandingPage
           landingPageLogo={
-            <a href="#">
+            <Link href="/">
               <Vorwerk className={styles.vorwerkLogo} />
-            </a>
+            </Link>
           }
         />
         <div className={styles.hero}>
@@ -305,7 +306,7 @@ export default function Home() {
                 children={
                   <Typography component="h2">
                     <span>
-                      <strong>Email Template -</strong>
+                      <strong>Email Template</strong> -
                       <br />
                       Three business cases available in light and dark version
                     </span>
@@ -325,7 +326,7 @@ export default function Home() {
                 children={
                   <Typography component="h2">
                     <span>
-                      <strong>Landing Page Template -</strong>
+                      <strong>Landing Page Template</strong> -
                       <br />
                       Two business cases available in light and dark version
                     </span>

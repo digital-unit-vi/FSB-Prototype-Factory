@@ -235,13 +235,15 @@ export default function SensorLightLandingPage() {
             />
           </GridItem>
           <GridItem columns={8}>
-            <p className={styles.specialTextNoMargin}>
-              {screenSize.width > 739
-                ? `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time. With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`
-                : `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time.
+            <Typography component="intro">
+              <span style={{ whiteSpace: "pre-line" }}>
+                {screenSize.width > 739
+                  ? `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time. With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`
+                  : `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time.
 
                 With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`}
-            </p>
+              </span>
+            </Typography>
           </GridItem>
         </GridContainer>
       </SectionContainer>
@@ -374,9 +376,10 @@ export default function SensorLightLandingPage() {
             end={12}
             className={styles.textCentered}
           >
-            <Headline
-              children={
-                <>
+            <>
+              <Headline
+                spaceBelow={"default"}
+                children={
                   <Typography component="h1">
                     <span>
                       Don't miss a single
@@ -384,17 +387,19 @@ export default function SensorLightLandingPage() {
                       <strong>cooking point</strong>
                     </span>
                   </Typography>
-                  <p className={styles.specialText}>
-                    Meat and fish cooked to perfection, light and fluffy cakes,
-                    crispy breads
-                  </p>
-                </>
-              }
-              strongColor="green"
-            />
+                }
+                strongColor="green"
+              />
+              <Typography component="intro">
+                <span>
+                  Meat and fish cooked to perfection, light and fluffy cakes,
+                  crispy breads
+                </span>
+              </Typography>
+            </>
           </GridItem>
         </GridContainer>
-        <Spacer size={32} sizeMedium={64} />
+        <Spacer size={16} sizeMedium={40} />
         <ImageCarousel
           eyecatcher={{
             backgroundColor: "green",

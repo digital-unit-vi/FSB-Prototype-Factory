@@ -174,22 +174,25 @@ export default function TM6VariantCLightLandingPage() {
             end={12}
             className={styles.textCentered}
           >
-            <Headline
-              children={
-                <>
+            <>
+              <Headline
+                spaceBelow={"default"}
+                children={
                   <Typography component="h1">
                     <span>
                       Tons of <strong>functions</strong>
                     </span>
                   </Typography>
-                  <p className={styles.specialText}>
-                    The Thermomix® TM6 replaces more than twenty appliances.
-                    Thanks to numerous built-in functions it can...
-                  </p>
-                </>
-              }
-              strongColor="green"
-            />
+                }
+                strongColor="green"
+              />
+              <Typography component="intro">
+                <span>
+                  The Thermomix® TM6 replaces more than twenty appliances.
+                  Thanks to numerous built-in functions it can...
+                </span>
+              </Typography>
+            </>
           </GridItem>
         </GridContainer>
         <Spacer size={64} sizeMedium={128} />
@@ -391,9 +394,10 @@ export default function TM6VariantCLightLandingPage() {
             end={12}
             className={styles.textCentered}
           >
-            <Headline
-              children={
-                <>
+            <>
+              <Headline
+                spaceBelow={"default"}
+                children={
                   <Typography component="h1">
                     <span>
                       New favorite recipes
@@ -401,19 +405,21 @@ export default function TM6VariantCLightLandingPage() {
                       <strong>everyday</strong>
                     </span>
                   </Typography>
-                  <p className={styles.specialText}>
-                    The Cookidoo® digital recipe portal is the key to your
-                    Thermomix® TM6, allowing you to cook dishes from all over
-                    the world. You can access Cookidoo® directly from your
-                    Thermomix® TM6 or plan your dishes on your smartphone.
-                  </p>
-                </>
-              }
-              strongColor="green"
-            />
+                }
+                strongColor="green"
+              />
+              <Typography component="intro">
+                <span>
+                  The Cookidoo® digital recipe portal is the key to your
+                  Thermomix® TM6, allowing you to cook dishes from all over the
+                  world. You can access Cookidoo® directly from your
+                  Thermomix® TM6 or plan your dishes on your smartphone.
+                </span>
+              </Typography>
+            </>
           </GridItem>
         </GridContainer>
-        <Spacer size={32} sizeMedium={64} />
+        <Spacer size={16} sizeMedium={40} />
         <ImageCarousel
           eyecatcher={{
             backgroundColor: "green",

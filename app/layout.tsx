@@ -24,7 +24,7 @@ const vorwerkFont = localFont({
     },
     {
       path: "../public/fonts/Vorwerk-Medium.woff2",
-      weight: "600",
+      weight: "500",
       style: "normal",
     },
     {
