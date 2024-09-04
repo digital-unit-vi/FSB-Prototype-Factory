@@ -36,7 +36,6 @@ import {
   Spain,
   Switzerland,
   Taiwan,
-  Thermomix,
   Turkey,
   Typography,
   UK,
@@ -213,11 +212,6 @@ export default function Home() {
           isLandingPage
           landingPageLogo={
             <a href="#">
-              <Thermomix size="small" />
-            </a>
-          }
-          logo={
-            <a href="#">
               <Vorwerk />
             </a>
           }
@@ -314,7 +308,6 @@ export default function Home() {
                 </Typography>
               </Headline>
             }
-            layout="inGrid"
             media={<img src="/landingPage/teaser/teaser.png" />}
             mediaAlignment="right"
             paragraph={
@@ -388,7 +381,6 @@ export default function Home() {
                 </Typography>
               </Headline>
             }
-            layout="inGrid"
             media={
               <img src="/landingPage/imageGallery/tm6-family-leisure.jpg" />
             }
@@ -422,7 +414,6 @@ export default function Home() {
                 </Typography>
               </Headline>
             }
-            layout="inGrid"
             media={<img src="/landingPage/teaser/teaser2.jpeg" />}
             mediaAlignment="left"
             paragraph={
@@ -449,7 +440,6 @@ export default function Home() {
                 </Typography>
               </Headline>
             }
-            layout="inGrid"
             media={<img src="/landingPage/teaser/teaser3.jpeg" />}
             mediaAlignment="right"
             paragraph={
@@ -472,7 +462,6 @@ export default function Home() {
               </Typography>
             }
           />
-          <Spacer size={128} />
         </section>
         <ProductStripe
           logo={<Vorwerk />}

@@ -9500,13 +9500,13 @@ const H0 = /* @__PURE__ */ D5(yh), Mp = ({
       }
     )
   }
-), _h = "_active_19iif_1", Rh = "_inactive_19iif_2", Ah = "_desktopScrollboxWrapper_19iif_5", Bh = "_desktopScrollbox__list_19iif_44", Sh = "_desktopScrollbox__title_19iif_66", Fh = "_withIcon_19iif_72", Dh = "_darkMode_19iif_113", Wh = "_noIcon_19iif_118", Eh = "_desktopScrollbox__progress_19iif_253", Ph = "_desktopScrollbox__media_19iif_352", Th = "_videoContainer_19iif_390", B0 = {
-  active: _h,
-  inactive: Rh,
-  desktopScrollboxWrapper: Ah,
-  desktopScrollbox__list: Bh,
-  desktopScrollbox__title: Sh,
-  withIcon: Fh,
+), _h = "_desktopScrollboxWrapper_dr2rc_1", Rh = "_desktopScrollbox__list_dr2rc_40", Ah = "_inactive_dr2rc_59", Bh = "_desktopScrollbox__title_dr2rc_63", Sh = "_withIcon_dr2rc_69", Fh = "_active_dr2rc_96", Dh = "_darkMode_dr2rc_110", Wh = "_noIcon_dr2rc_115", Eh = "_desktopScrollbox__progress_dr2rc_250", Ph = "_desktopScrollbox__media_dr2rc_349", Th = "_videoContainer_dr2rc_387", B0 = {
+  desktopScrollboxWrapper: _h,
+  desktopScrollbox__list: Rh,
+  inactive: Ah,
+  desktopScrollbox__title: Bh,
+  withIcon: Sh,
+  active: Fh,
   darkMode: Dh,
   noIcon: Wh,
   desktopScrollbox__progress: Eh,
@@ -9600,50 +9600,94 @@ const H0 = /* @__PURE__ */ D5(yh), Mp = ({
         return v.isActive !== M && a.current.length > 0 && u(), M && p(x), v.isActive !== M ? { ...v, isActive: M } : v;
       })
     );
-  }), /* @__PURE__ */ e.jsx(P0, { children: /* @__PURE__ */ e.jsx(w0, { columns: 12, children: /* @__PURE__ */ e.jsx("div", { ref: c, style: { height: l }, children: /* @__PURE__ */ e.jsxs("article", { className: H0(B0.desktopScrollboxWrapper, s ? B0.darkMode : ""), children: [
-    /* @__PURE__ */ e.jsxs("ul", { className: B0.desktopScrollbox__list, children: [
-      n.map((C, Z) => {
-        const v = K1(
-          d,
-          [Z / n.length, (Z + 1) / n.length],
-          ["-100%", "0%"]
-        );
-        let x = C.isActive ? B0.active : B0.inactive;
-        return /* @__PURE__ */ e.jsxs(
-          "li",
-          {
-            className: H0(x, C.useIcon ? B0.withIcon : B0.noIcon),
-            children: [
-              /* @__PURE__ */ e.jsxs("div", { className: B0.desktopScrollbox__title, children: [
-                C.useIcon && /* @__PURE__ */ e.jsx("span", { style: { color: W0.color.brand.green.G500 }, children: /* @__PURE__ */ e.jsx(C.icon, {}) }),
-                !C.useIcon && /* @__PURE__ */ e.jsx("span", { children: C.id + "." }),
-                /* @__PURE__ */ e.jsx("span", { children: C.text })
-              ] }),
-              /* @__PURE__ */ e.jsx("div", { className: B0.desktopScrollbox__progress, children: /* @__PURE__ */ e.jsx(s1.div, { style: { x: v } }) })
-            ]
-          },
-          C.id
-        );
-      }),
-      /* @__PURE__ */ e.jsxs("li", { className: B0.inactive, children: [
-        /* @__PURE__ */ e.jsxs("div", { className: B0.desktopScrollbox__title, children: [
-          /* @__PURE__ */ e.jsx("span", { style: { color: W0.color.brand.green.G500 } }),
-          /* @__PURE__ */ e.jsx("span", { children: "and many more..." })
-        ] }),
-        /* @__PURE__ */ e.jsx("div", { className: B0.desktopScrollbox__progress })
-      ] })
-    ] }),
-    /* @__PURE__ */ e.jsx("div", { className: B0.desktopScrollbox__media, children: n.map((C, Z) => {
-      let v = C.isActive ? B0.active : B0.inactive;
-      return /* @__PURE__ */ e.jsxs("div", { className: H0(C.media.type, v), children: [
-        C.media.type === "image" && /* @__PURE__ */ e.jsx("img", { src: C.media.src, alt: C.media.alt, title: C.media.title }),
-        C.media.type === "video" && /* @__PURE__ */ e.jsxs("div", { className: B0.videoContainer, children: [
-          /* @__PURE__ */ e.jsx("video", { ref: (x) => h(x, Z), preload: "metadata", controls: !1, playsInline: !0, muted: !0, loop: !0, children: /* @__PURE__ */ e.jsx("source", { src: C.media.src }) }),
-          f(Z) ? /* @__PURE__ */ e.jsx("button", { onClick: () => m(Z), children: /* @__PURE__ */ e.jsx(et, {}) }) : /* @__PURE__ */ e.jsx("button", { onClick: () => p(Z), children: /* @__PURE__ */ e.jsx(Qe, {}) })
-        ] })
-      ] }, Z);
-    }) })
-  ] }) }) }) });
+  }), /* @__PURE__ */ e.jsx(P0, { children: /* @__PURE__ */ e.jsx(w0, { columns: 12, children: /* @__PURE__ */ e.jsx(
+    "div",
+    {
+      ref: c,
+      style: { height: l, position: "relative" },
+      children: /* @__PURE__ */ e.jsxs(
+        "article",
+        {
+          className: H0(
+            B0.desktopScrollboxWrapper,
+            s ? B0.darkMode : ""
+          ),
+          children: [
+            /* @__PURE__ */ e.jsxs("ul", { className: B0.desktopScrollbox__list, children: [
+              n.map((C, Z) => {
+                const v = K1(
+                  d,
+                  [Z / n.length, (Z + 1) / n.length],
+                  ["-100%", "0%"]
+                );
+                let x = C.isActive ? B0.active : B0.inactive;
+                return /* @__PURE__ */ e.jsxs(
+                  "li",
+                  {
+                    className: H0(
+                      x,
+                      C.useIcon ? B0.withIcon : B0.noIcon
+                    ),
+                    children: [
+                      /* @__PURE__ */ e.jsxs("div", { className: B0.desktopScrollbox__title, children: [
+                        C.useIcon && /* @__PURE__ */ e.jsx("span", { style: { color: W0.color.brand.green.G500 }, children: /* @__PURE__ */ e.jsx(C.icon, {}) }),
+                        !C.useIcon && /* @__PURE__ */ e.jsx("span", { children: C.id + "." }),
+                        /* @__PURE__ */ e.jsx("span", { children: C.text })
+                      ] }),
+                      /* @__PURE__ */ e.jsx("div", { className: B0.desktopScrollbox__progress, children: /* @__PURE__ */ e.jsx(s1.div, { style: { x: v } }) })
+                    ]
+                  },
+                  C.id
+                );
+              }),
+              /* @__PURE__ */ e.jsxs("li", { className: B0.inactive, children: [
+                /* @__PURE__ */ e.jsxs("div", { className: B0.desktopScrollbox__title, children: [
+                  /* @__PURE__ */ e.jsx("span", { style: { color: W0.color.brand.green.G500 } }),
+                  /* @__PURE__ */ e.jsx("span", { children: "and many more..." })
+                ] }),
+                /* @__PURE__ */ e.jsx("div", { className: B0.desktopScrollbox__progress })
+              ] })
+            ] }),
+            /* @__PURE__ */ e.jsx("div", { className: B0.desktopScrollbox__media, children: n.map((C, Z) => {
+              let v = C.isActive ? B0.active : B0.inactive;
+              return /* @__PURE__ */ e.jsxs(
+                "div",
+                {
+                  className: H0(C.media.type, v),
+                  children: [
+                    C.media.type === "image" && /* @__PURE__ */ e.jsx(
+                      "img",
+                      {
+                        src: C.media.src,
+                        alt: C.media.alt,
+                        title: C.media.title
+                      }
+                    ),
+                    C.media.type === "video" && /* @__PURE__ */ e.jsxs("div", { className: B0.videoContainer, children: [
+                      /* @__PURE__ */ e.jsx(
+                        "video",
+                        {
+                          ref: (x) => h(x, Z),
+                          preload: "metadata",
+                          controls: !1,
+                          playsInline: !0,
+                          muted: !0,
+                          loop: !0,
+                          children: /* @__PURE__ */ e.jsx("source", { src: C.media.src })
+                        }
+                      ),
+                      f(Z) ? /* @__PURE__ */ e.jsx("button", { onClick: () => m(Z), children: /* @__PURE__ */ e.jsx(et, {}) }) : /* @__PURE__ */ e.jsx("button", { onClick: () => p(Z), children: /* @__PURE__ */ e.jsx(Qe, {}) })
+                    ] })
+                  ]
+                },
+                Z
+              );
+            }) })
+          ]
+        }
+      )
+    }
+  ) }) });
 }, Nh = "_functionsTabWrapper_1uo3e_1", Ih = {
   functionsTabWrapper: Nh
 }, zh = "_active_155qv_1", $h = "_inactive_155qv_2", qh = "_mobileScrollboxWrapper_155qv_4", Uh = "_mobileScrollbox__list_155qv_18", Gh = "_withIcon_155qv_58", Kh = "_mobileScrollbox__title_155qv_58", Yh = "_noIcon_155qv_68", Xh = "_darkMode_155qv_81", Jh = "_mediaContainer_155qv_167", Qh = "_mobileScrollbox__progress_155qv_196", eu = "_videoContainer_155qv_225", S0 = {
@@ -11570,121 +11614,140 @@ const Xe = ({
   let n = !1, o;
   l || (l = `Rating: ${t} out of 5 stars`), s && s === "small" && (o = d1.small), t = Math.round(t / 0.5) * 0.5;
   const i = Math.floor(t);
-  return t % 1 !== 0 && (n = !0), /* @__PURE__ */ e.jsxs("div", { className: H0(d1.StarRating, o, r ? d1.darkMode : ""), role: "img", "aria-label": l, children: [
-    /* @__PURE__ */ e.jsx("div", { className: H0(d1.firstRow, d1.starWrapper), "aria-hidden": "true", children: [...Array(5)].map((a, c) => /* @__PURE__ */ e.jsx("div", { className: d1.star, children: /* @__PURE__ */ e.jsxs(
-      "svg",
-      {
-        xmlns: "http://www.w3.org/2000/svg",
-        width: "inherit",
-        height: "inherit",
-        fill: "none",
-        viewBox: "0 0 24 25",
-        children: [
-          /* @__PURE__ */ e.jsxs("g", { clipPath: "url(#clip0_3879_4121)", children: [
-            /* @__PURE__ */ e.jsx(
-              "path",
+  return t % 1 !== 0 && (n = !0), /* @__PURE__ */ e.jsxs(
+    "div",
+    {
+      className: H0(
+        d1.StarRating,
+        o,
+        r ? d1.darkMode : ""
+      ),
+      role: "img",
+      "aria-label": l,
+      children: [
+        /* @__PURE__ */ e.jsx(
+          "div",
+          {
+            className: H0(d1.firstRow, d1.starWrapper),
+            "aria-hidden": "true",
+            children: [...Array(5)].map((a, c) => /* @__PURE__ */ e.jsx("div", { className: d1.star, children: /* @__PURE__ */ e.jsxs(
+              "svg",
               {
-                fill: r ? "#fff" : "#000",
-                fillOpacity: r ? "0.3" : "0.16",
-                d: "M24 8.784l-8.4-1.2-3.6-7.5-3.6 7.5-8.4 1.2 6.15 5.7-1.65 8.4 7.5-4.2 7.35 4.2-1.65-8.4 6.3-5.7z"
+                xmlns: "http://www.w3.org/2000/svg",
+                width: "100%",
+                height: "100%",
+                fill: "none",
+                viewBox: "0 0 24 25",
+                children: [
+                  /* @__PURE__ */ e.jsxs("g", { clipPath: "url(#clip0_3879_4121)", children: [
+                    /* @__PURE__ */ e.jsx(
+                      "path",
+                      {
+                        fill: r ? "#fff" : "#000",
+                        fillOpacity: r ? "0.3" : "0.16",
+                        d: "M24 8.784l-8.4-1.2-3.6-7.5-3.6 7.5-8.4 1.2 6.15 5.7-1.65 8.4 7.5-4.2 7.35 4.2-1.65-8.4 6.3-5.7z"
+                      }
+                    ),
+                    /* @__PURE__ */ e.jsx(
+                      "mask",
+                      {
+                        style: { maskType: "alpha" },
+                        width: "12",
+                        height: "23",
+                        x: "0",
+                        y: "0",
+                        maskUnits: "userSpaceOnUse",
+                        children: /* @__PURE__ */ e.jsx("path", { fill: "#C4C4C4", d: "M0 0.084H12V22.884H0z" })
+                      }
+                    )
+                  ] }),
+                  /* @__PURE__ */ e.jsx("defs", { children: /* @__PURE__ */ e.jsx("clipPath", { id: "clip0_3879_4121", children: /* @__PURE__ */ e.jsx(
+                    "path",
+                    {
+                      fill: "#fff",
+                      d: "M0 0H24V24H0z",
+                      transform: "translate(0 .084)"
+                    }
+                  ) }) })
+                ]
               }
-            ),
-            /* @__PURE__ */ e.jsx(
-              "mask",
-              {
-                style: { maskType: "alpha" },
-                width: "12",
-                height: "23",
-                x: "0",
-                y: "0",
-                maskUnits: "userSpaceOnUse",
-                children: /* @__PURE__ */ e.jsx("path", { fill: "#C4C4C4", d: "M0 0.084H12V22.884H0z" })
-              }
-            )
-          ] }),
-          /* @__PURE__ */ e.jsx("defs", { children: /* @__PURE__ */ e.jsx("clipPath", { id: "clip0_3879_4121", children: /* @__PURE__ */ e.jsx(
-            "path",
+            ) }, c))
+          }
+        ),
+        /* @__PURE__ */ e.jsxs("div", { className: H0(d1.secondRow, d1.starWrapper), children: [
+          [...Array(i)].map((a, c) => /* @__PURE__ */ e.jsx("div", { className: d1.star, children: /* @__PURE__ */ e.jsxs(
+            "svg",
             {
-              fill: "#fff",
-              d: "M0 0H24V24H0z",
-              transform: "translate(0 .084)"
+              xmlns: "http://www.w3.org/2000/svg",
+              width: "100%",
+              height: "100%",
+              fill: "none",
+              viewBox: "0 0 24 25",
+              children: [
+                /* @__PURE__ */ e.jsx("g", { clipPath: "url(#clip0_3879_4115)", children: /* @__PURE__ */ e.jsx(
+                  "path",
+                  {
+                    fill: r ? "#EDEFEE" : "#3F4447",
+                    d: "M24 8.784l-8.4-1.2-3.6-7.5-3.6 7.5-8.4 1.2 6.15 5.7-1.65 8.4 7.5-4.2 7.35 4.2-1.65-8.4 6.3-5.7z"
+                  }
+                ) }),
+                /* @__PURE__ */ e.jsx("defs", { children: /* @__PURE__ */ e.jsx("clipPath", { id: "clip0_3879_4115", children: /* @__PURE__ */ e.jsx(
+                  "path",
+                  {
+                    fill: "#fff",
+                    d: "M0 0H24V24H0z",
+                    transform: "translate(0 .084)"
+                  }
+                ) }) })
+              ]
             }
-          ) }) })
-        ]
-      }
-    ) }, c)) }),
-    /* @__PURE__ */ e.jsxs("div", { className: H0(d1.secondRow, d1.starWrapper), children: [
-      [...Array(i)].map((a, c) => /* @__PURE__ */ e.jsx("div", { className: d1.star, children: /* @__PURE__ */ e.jsxs(
-        "svg",
-        {
-          xmlns: "http://www.w3.org/2000/svg",
-          width: "inherit",
-          height: "inherit",
-          fill: "none",
-          viewBox: "0 0 24 25",
-          children: [
-            /* @__PURE__ */ e.jsx("g", { clipPath: "url(#clip0_3879_4115)", children: /* @__PURE__ */ e.jsx(
-              "path",
-              {
-                fill: r ? "#EDEFEE" : "#3F4447",
-                d: "M24 8.784l-8.4-1.2-3.6-7.5-3.6 7.5-8.4 1.2 6.15 5.7-1.65 8.4 7.5-4.2 7.35 4.2-1.65-8.4 6.3-5.7z"
-              }
-            ) }),
-            /* @__PURE__ */ e.jsx("defs", { children: /* @__PURE__ */ e.jsx("clipPath", { id: "clip0_3879_4115", children: /* @__PURE__ */ e.jsx(
-              "path",
-              {
-                fill: "#fff",
-                d: "M0 0H24V24H0z",
-                transform: "translate(0 .084)"
-              }
-            ) }) })
-          ]
-        }
-      ) }, c)),
-      n && /* @__PURE__ */ e.jsx("div", { className: d1.star, children: /* @__PURE__ */ e.jsxs(
-        "svg",
-        {
-          xmlns: "http://www.w3.org/2000/svg",
-          width: "inherit",
-          height: "inherit",
-          fill: "none",
-          viewBox: "0 0 24 25",
-          children: [
-            /* @__PURE__ */ e.jsxs("g", { clipPath: "url(#clip0_3879_4121)", children: [
-              /* @__PURE__ */ e.jsx(
-                "mask",
-                {
-                  id: "mask0_3879_4121",
-                  style: { maskType: "alpha" },
-                  width: "12",
-                  height: "23",
-                  x: "0",
-                  y: "0",
-                  maskUnits: "userSpaceOnUse",
-                  children: /* @__PURE__ */ e.jsx("path", { fill: "#C4C4C4", d: "M0 0.084H12V22.884H0z" })
-                }
-              ),
-              /* @__PURE__ */ e.jsx("g", { mask: "url(#mask0_3879_4121)", children: /* @__PURE__ */ e.jsx(
-                "path",
-                {
-                  fill: r ? "#EDEFEE" : "#3F4447",
-                  d: "M24 8.784l-8.4-1.2-3.6-7.5-3.6 7.5-8.4 1.2 6.15 5.7-1.65 8.4 7.5-4.2 7.35 4.2-1.65-8.4 6.3-5.7z"
-                }
-              ) })
-            ] }),
-            /* @__PURE__ */ e.jsx("defs", { children: /* @__PURE__ */ e.jsx("clipPath", { id: "clip0_3879_4121", children: /* @__PURE__ */ e.jsx(
-              "path",
-              {
-                fill: "#fff",
-                d: "M0 0H24V24H0z",
-                transform: "translate(0 .084)"
-              }
-            ) }) })
-          ]
-        }
-      ) })
-    ] })
-  ] });
+          ) }, c)),
+          n && /* @__PURE__ */ e.jsx("div", { className: d1.star, children: /* @__PURE__ */ e.jsxs(
+            "svg",
+            {
+              xmlns: "http://www.w3.org/2000/svg",
+              width: "100%",
+              height: "100%",
+              fill: "none",
+              viewBox: "0 0 24 25",
+              children: [
+                /* @__PURE__ */ e.jsxs("g", { clipPath: "url(#clip0_3879_4121)", children: [
+                  /* @__PURE__ */ e.jsx(
+                    "mask",
+                    {
+                      id: "mask0_3879_4121",
+                      style: { maskType: "alpha" },
+                      width: "12",
+                      height: "23",
+                      x: "0",
+                      y: "0",
+                      maskUnits: "userSpaceOnUse",
+                      children: /* @__PURE__ */ e.jsx("path", { fill: "#C4C4C4", d: "M0 0.084H12V22.884H0z" })
+                    }
+                  ),
+                  /* @__PURE__ */ e.jsx("g", { mask: "url(#mask0_3879_4121)", children: /* @__PURE__ */ e.jsx(
+                    "path",
+                    {
+                      fill: r ? "#EDEFEE" : "#3F4447",
+                      d: "M24 8.784l-8.4-1.2-3.6-7.5-3.6 7.5-8.4 1.2 6.15 5.7-1.65 8.4 7.5-4.2 7.35 4.2-1.65-8.4 6.3-5.7z"
+                    }
+                  ) })
+                ] }),
+                /* @__PURE__ */ e.jsx("defs", { children: /* @__PURE__ */ e.jsx("clipPath", { id: "clip0_3879_4121", children: /* @__PURE__ */ e.jsx(
+                  "path",
+                  {
+                    fill: "#fff",
+                    d: "M0 0H24V24H0z",
+                    transform: "translate(0 .084)"
+                  }
+                ) }) })
+              ]
+            }
+          ) })
+        ] })
+      ]
+    }
+  );
 }, Jf = "_userReview_ekuhk_1", Qf = "_reviewItems_ekuhk_8", eC = "_title_ekuhk_13", tC = "_follow_ekuhk_24", sC = "_reviewContent_ekuhk_39", lC = "_darkMode_ekuhk_58", rC = "_lead_ekuhk_83", R1 = {
   userReview: Jf,
   reviewItems: Qf,

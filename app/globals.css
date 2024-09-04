@@ -1,3 +1,35 @@
+@font-face {
+  font-family: Vorwerk;
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Vorwerk-Light.woff2");
+}
+
+@font-face {
+  font-family: Vorwerk;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Vorwerk-Regular.woff2");
+}
+
+@font-face {
+  font-family: Vorwerk;
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Vorwerk-Medium.woff2");
+}
+
+@font-face {
+  font-family: Vorwerk;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Vorwerk-Bold.woff2");
+}
+
 p,
 body {
   margin: 0;
