@@ -27,6 +27,7 @@ import {
 } from "@components/build-assets/libraryExport";
 import Spacer from "@components/shared/spacer/spacer";
 import useScreenSize from "@utils/useScreenSize";
+import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPage() {
@@ -36,14 +37,14 @@ export default function SensorLightLandingPage() {
       <Header
         isLandingPage
         landingPageLogo={
-          <a href="#">
+          <Link href="/">
             <Thermomix size="small" />
-          </a>
+          </Link>
         }
         logo={
-          <a href="#">
+          <Link href="/">
             <Vorwerk />
-          </a>
+          </Link>
         }
       />
       <Hero

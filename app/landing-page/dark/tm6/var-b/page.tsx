@@ -41,6 +41,7 @@ import {
   WifiLight,
 } from "@components/build-assets/libraryExport";
 import Spacer from "@components/shared/spacer/spacer";
+import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function TM6VariantBDarkLandingPage() {
@@ -49,14 +50,14 @@ export default function TM6VariantBDarkLandingPage() {
       <Header
         isLandingPage
         landingPageLogo={
-          <a href="#">
+          <Link href="/">
             <Thermomix size="small" />
-          </a>
+          </Link>
         }
         logo={
-          <a href="#">
+          <Link href="/">
             <Vorwerk />
-          </a>
+          </Link>
         }
       />
       <Hero
