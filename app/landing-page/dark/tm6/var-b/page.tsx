@@ -240,6 +240,7 @@ export default function TM6VariantBDarkLandingPage() {
       <SectionContainer>
         <FunctionsTab
           darkMode
+          lastLineText="and many more..."
           items={[
             {
               id: 1,

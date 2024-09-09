@@ -236,6 +236,7 @@ export default function TM6VariantALightLandingPage() {
       </SectionContainer>
       <SectionContainer>
         <FunctionsTab
+          lastLineText="and many more..."
           items={[
             {
               id: 1,
