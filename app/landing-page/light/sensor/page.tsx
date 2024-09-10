@@ -25,6 +25,7 @@ import {
   UserReview,
   Vorwerk,
 } from "@components/build-assets/libraryExport";
+import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
 import Spacer from "@components/shared/spacer/spacer";
 import useScreenSize from "@utils/useScreenSize";
 import Link from "next/link";
@@ -268,6 +269,7 @@ export default function SensorLightLandingPage() {
             />
           </GridItem>
         </GridContainer>
+        <ProductAnimation />
       </SectionContainer>
       <SectionContainer>
         <BentoBoxTiles
