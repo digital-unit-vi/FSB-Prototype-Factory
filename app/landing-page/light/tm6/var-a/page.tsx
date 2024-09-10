@@ -100,7 +100,7 @@ export default function TM6VariantALightLandingPage() {
         logoImage="/library/images/parallaxProductSection/logos.png"
         productImage="/library/images/parallaxProductSection/product.png"
       />
-      <SectionContainer>
+      <section className={styles.sectionOnlyBottomPadding}>
         <GridContainer>
           <GridItem
             columns={10}
@@ -120,7 +120,7 @@ export default function TM6VariantALightLandingPage() {
             />
           </GridItem>
         </GridContainer>
-      </SectionContainer>
+      </section>
       <SectionContainer>
         <BentoBoxTiles
           tiles={[
@@ -167,7 +167,7 @@ export default function TM6VariantALightLandingPage() {
           ]}
         />
       </SectionContainer>
-      <SectionContainer>
+      <section className={styles.sectionOnlyTopPadding}>
         <GridContainer>
           <GridItem
             columns={10}
@@ -233,8 +233,8 @@ export default function TM6VariantALightLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+      </section>
+      <section className={styles.sectionOnlyTopPaddingXS}>
         <FunctionsTab
           lastLineText="and many more..."
           items={[
@@ -305,8 +305,8 @@ export default function TM6VariantALightLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+      </section>
+      <section className={styles.sectionOnlyBottomPadding}>
         <GalleryCarousel
           desktopSlides={[
             {
@@ -387,7 +387,7 @@ export default function TM6VariantALightLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
+      </section>
       <SectionContainer>
         <GridContainer>
           <GridItem

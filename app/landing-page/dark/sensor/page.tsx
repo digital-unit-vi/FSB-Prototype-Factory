@@ -87,7 +87,7 @@ export default function SensorLightLandingPage() {
         productImage="/landingPage/hero/sensor-hero-parallax.png"
         darkMode
       />
-      <SectionContainer>
+      <section className={styles.sectionOnlyBottomPadding}>
         <GridContainer>
           <GridItem
             columns={10}
@@ -107,7 +107,7 @@ export default function SensorLightLandingPage() {
             />
           </GridItem>
         </GridContainer>
-      </SectionContainer>
+      </section>
       <SectionContainer>
         <GalleryCarousel
           darkMode
@@ -271,7 +271,7 @@ export default function SensorLightLandingPage() {
           </GridItem>
         </GridContainer>
       </SectionContainer>
-      <SectionContainer>
+      <section>
         <BentoBoxTiles
           darkMode
           tiles={[
@@ -317,8 +317,8 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+      </section>
+      <section className={styles.sectionOnlyTopPaddingXS}>
         <FunctionsTab
           darkMode
           items={[
@@ -372,8 +372,8 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+      </section>
+      <section className={styles.sectionOnlyBottomPadding}>
         <GridContainer>
           <GridItem
             columns={10}
@@ -458,7 +458,7 @@ export default function SensorLightLandingPage() {
           ]}
           showEyecatcher
         />
-      </SectionContainer>
+      </section>
       <SectionContainer>
         <UserReview
           darkMode
