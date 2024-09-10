@@ -23,10 +23,10 @@ const ProductAnimation = () => {
 
       const context = canvas.getContext("2d");
 
-      const frameCount = 425;
+      const frameCount = 209;
 
       const currentFrame = (index: number) =>
-        `/landingPage/sensorAnimation/lightMore/${(index + 1).toString().padStart(5, "0")}.jpg`;
+        `/landingPage/sensorAnimation/light/vorwerk_tm_sensor_mobile_light_1680x2520_${(index + 1).toString().padStart(3, "0")}.jpg`;
 
       const images: HTMLImageElement[] = [];
       const frames = {
