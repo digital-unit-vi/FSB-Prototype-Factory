@@ -98,6 +98,7 @@ const ProductAnimation = () => {
           end: "+=" + frameCount * 16,
           pin: true,
           scrub: true,
+          onEnter: () => ScrollTrigger.refresh(),
         },
         onUpdate: render,
       });
