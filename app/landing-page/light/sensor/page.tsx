@@ -87,7 +87,7 @@ export default function SensorLightLandingPage() {
         logoImage="/library/images/parallaxProductSection/logos.png"
         productImage="/landingPage/hero/sensor-hero-parallax.png"
       />
-      <section className={styles.sectionOnlyBottomPadding}>
+      <SectionContainer>
         <GridContainer>
           <GridItem
             columns={10}
@@ -107,7 +107,7 @@ export default function SensorLightLandingPage() {
             />
           </GridItem>
         </GridContainer>
-      </section>
+      </SectionContainer>
       <SectionContainer>
         <GalleryCarousel
           desktopSlides={[
@@ -249,7 +249,7 @@ export default function SensorLightLandingPage() {
           </GridItem>
         </GridContainer>
       </SectionContainer>
-      <section className={styles.sectionOnlyTopPadding}>
+      <SectionContainer>
         <GridContainer>
           <GridItem
             columns={10}
@@ -270,8 +270,8 @@ export default function SensorLightLandingPage() {
           </GridItem>
         </GridContainer>
         <ProductAnimation />
-      </section>
-      <section>
+      </SectionContainer>
+      <SectionContainer>
         <BentoBoxTiles
           tiles={[
             {
@@ -316,8 +316,8 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
-      </section>
-      <section className={styles.sectionOnlyTopPaddingXS}>
+      </SectionContainer>
+      <SectionContainer>
         <FunctionsTab
           items={[
             {
@@ -370,8 +370,8 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
-      </section>
-      <section className={styles.sectionOnlyBottomPadding}>
+      </SectionContainer>
+      <SectionContainer>
         <GridContainer>
           <GridItem
             columns={10}
@@ -456,7 +456,8 @@ export default function SensorLightLandingPage() {
           ]}
           showEyecatcher
         />
-      </section>
+      </SectionContainer>
+
       <SectionContainer>
         <UserReview
           additionalText="42 reviews"

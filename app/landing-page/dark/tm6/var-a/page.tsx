@@ -101,7 +101,7 @@ export default function TM6VariantADarkLandingPage() {
         productImage="/library/images/parallaxProductSection/product.png"
         darkMode
       />
-      <section className={styles.sectionOnlyBottomPadding}>
+      <SectionContainer>
         <GridContainer>
           <GridItem
             columns={10}
@@ -121,7 +121,7 @@ export default function TM6VariantADarkLandingPage() {
             />
           </GridItem>
         </GridContainer>
-      </section>
+      </SectionContainer>
       <SectionContainer>
         <BentoBoxTiles
           darkMode
@@ -169,7 +169,7 @@ export default function TM6VariantADarkLandingPage() {
           ]}
         />
       </SectionContainer>
-      <section className={styles.sectionOnlyTopPadding}>
+      <SectionContainer>
         <GridContainer>
           <GridItem
             columns={10}
@@ -236,8 +236,8 @@ export default function TM6VariantADarkLandingPage() {
             },
           ]}
         />
-      </section>
-      <section className={styles.sectionOnlyTopPaddingXS}>
+      </SectionContainer>
+      <SectionContainer>
         <FunctionsTab
           darkMode
           lastLineText="and many more..."
@@ -309,8 +309,8 @@ export default function TM6VariantADarkLandingPage() {
             },
           ]}
         />
-      </section>
-      <section className={styles.sectionOnlyBottomPadding}>
+      </SectionContainer>
+      <SectionContainer>
         <GalleryCarousel
           darkMode
           desktopSlides={[
@@ -392,7 +392,7 @@ export default function TM6VariantADarkLandingPage() {
             },
           ]}
         />
-      </section>
+      </SectionContainer>
       <SectionContainer>
         <GridContainer>
           <GridItem

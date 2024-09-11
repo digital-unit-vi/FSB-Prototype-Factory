@@ -9651,7 +9651,7 @@ const H0 = /* @__PURE__ */ D5(yh), Mp = ({
       ] }, m);
     }) })
   ] }) }) }) });
-}, zh = "_active_f18qk_1", $h = "_inactive_f18qk_2", qh = "_mobileScrollboxWrapper_f18qk_4", Uh = "_mobileScrollbox__list_f18qk_18", Gh = "_withIcon_f18qk_43", Kh = "_mobileScrollbox__title_f18qk_43", Yh = "_noIcon_f18qk_53", Xh = "_darkMode_f18qk_66", Jh = "_mediaContainer_f18qk_152", Qh = "_mobileScrollbox__progress_f18qk_181", eu = "_videoContainer_f18qk_210", S0 = {
+}, zh = "_active_14fsq_1", $h = "_inactive_14fsq_2", qh = "_mobileScrollboxWrapper_14fsq_4", Uh = "_mobileScrollbox__list_14fsq_17", Gh = "_withIcon_14fsq_42", Kh = "_mobileScrollbox__title_14fsq_42", Yh = "_noIcon_14fsq_52", Xh = "_darkMode_14fsq_65", Jh = "_mediaContainer_14fsq_151", Qh = "_mobileScrollbox__progress_14fsq_180", eu = "_videoContainer_14fsq_209", S0 = {
   active: zh,
   inactive: $h,
   mobileScrollboxWrapper: qh,
@@ -11486,7 +11486,7 @@ const wp = ({
     {
       ref: n,
       className: O4.parallaxProductSection,
-      style: { translateY: i },
+      style: { translateY: i, marginBottom: i },
       transition: { ease: "easeInOut", duration: 2 },
       children: /* @__PURE__ */ e.jsxs(P0, { children: [
         /* @__PURE__ */ e.jsx(w0, { start: 4, end: 10, children: /* @__PURE__ */ e.jsx("div", { className: O4.productImage, children: /* @__PURE__ */ e.jsx("img", { src: t }) }) }),
