@@ -217,6 +217,15 @@ export default function Home() {
           }
         />
         <Hero
+          cta={
+            <ButtonGroup alignment="center" layout="vertical">
+              <Link href="/ds360">
+                <Button size="large" type="primary">
+                  Go to the showcase
+                </Button>
+              </Link>
+            </ButtonGroup>
+          }
           headline={
             <Headline
               strongColor="yellow"
