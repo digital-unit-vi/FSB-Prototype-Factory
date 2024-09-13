@@ -6,6 +6,7 @@ import {
   ButtonGroup,
   Canada,
   China,
+  ContentBlock,
   Czechia,
   DropdownItem,
   Facebook,
@@ -43,7 +44,6 @@ import {
   Vorwerk,
   Youtube,
 } from "@components/build-assets/libraryExport";
-import { ContentBlock } from "@components/landingPage/contentBlock/contentBlock";
 import Spacer from "@components/shared/spacer/spacer";
 import Link from "next/link";
 import styles from "./page.module.scss";

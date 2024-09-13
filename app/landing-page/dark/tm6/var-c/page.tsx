@@ -511,7 +511,6 @@ export default function TM6VariantCDarkLandingPage() {
         ctaText="Shop now"
         headline="Thermomix® TM6"
         image="/shared/product/tm6-product-accessories-light.png"
-        imageLeft
         price="1.499,00 €"
       />
       <FullwidthImage
