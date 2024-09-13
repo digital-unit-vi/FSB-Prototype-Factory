@@ -486,7 +486,6 @@ export default function SensorLightLandingPage() {
         ctaText="Shop now"
         headline="Thermomix® Sensor"
         image="/shared/product/sensor-product.png"
-        imageLeft
         price="149,00 €"
       />
     </main>
