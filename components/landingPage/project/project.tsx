@@ -2,11 +2,8 @@
 
 import {
   Austria,
-  Button,
-  ButtonGroup,
   Canada,
   China,
-  ContentBlock,
   Czechia,
   DropdownItem,
   Facebook,
@@ -44,9 +41,42 @@ import {
   Vorwerk,
   Youtube,
 } from "@components/build-assets/libraryExport";
-import Spacer from "@components/shared/spacer/spacer";
+import ShowcaseTiles from "@components/landingPage/showcaseTiles/showcaseTiles";
 import Link from "next/link";
-import styles from "./page.module.scss";
+import styles from "./project.module.scss";
+
+interface TileData {
+  light: {
+    image: string;
+    link: string;
+  };
+  dark?: {
+    image: string;
+    link: string;
+  };
+  title: string;
+}
+
+interface Headline {
+  strong: string,
+  normal: string
+}
+
+interface ProjectProps {
+  tilesData: {
+    firstTilesData: TileData[],
+    secondTilesData: TileData[],
+  },
+  heroHeadline: {
+    mainLine: string,
+    subLine: string
+  },
+  headlines: {
+    headlineAboveFirstTiles: Headline,
+    headlineAboveSecondTiles: Headline
+  }
+  isDarkModeEnable?: boolean
+}
 
 const Languages = [
   <DropdownItem>
@@ -204,282 +234,80 @@ const Languages = [
   </DropdownItem>,
 ];
 
-export default function Home() {
+const Project: React.FC<ProjectProps> = ({ tilesData, heroHeadline, headlines, isDarkModeEnable }) => {
   return (
     <>
       <main>
         <Header
           isLandingPage
           landingPageLogo={
-            <a href="#">
-              <Vorwerk />
-            </a>
+            <Link href="/">
+              <Vorwerk className={styles.vorwerkLogo} />
+            </Link>
           }
         />
-        <Hero
-          cta={
-            <ButtonGroup alignment="center" layout="vertical">
-              <Link href="/ds360">
-                <Button size="large" type="primary">
-                  Go to the showcase
-                </Button>
-              </Link>
-            </ButtonGroup>
-          }
-          headline={
-            <Headline
-              strongColor="yellow"
-              subline="A reliable reference for all teams to build delightful digital products"
-            >
-              <Typography component="h1">
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      "FiBRE Single Blend<br><strong>Prototype Factory</strong>",
-                  }}
-                />
-              </Typography>
-            </Headline>
-          }
-          image={
-            <img
-              alt="Relaxing in the kitchen"
-              src="/landingPage/hero/prototype-factory-hero-cover.jpeg"
-            />
-          }
-          isLandingPage
-        />
+        <div className={styles.hero}>
+          <Hero
+            backgroundColor="lightGrey"
+            headline={
+              <Headline
+                strongColor="green"
+                subline={heroHeadline.subLine}
+              >
+                <Typography component="h1">
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: heroHeadline.mainLine,
+                    }}
+                  />
+                </Typography>
+              </Headline>
+            }
+            image={
+              <img alt="Thermomix" src="/landingPage/hero/ds360-hero.png" />
+            }
+            type="colorFill"
+          />
+        </div>
         <section className={styles.prominentSection}>
           <GridContainer>
-            <GridItem
-              columns={8}
-              start={3}
-              end={11}
-              className={styles.textCentered}
-            >
+            <GridItem columns={12} className={styles.textCentered}>
               <Headline
                 spaceBelow="additional"
                 strongColor="green"
                 children={
                   <Typography component="h2">
                     <span>
-                      Project supported by
+                      <strong>{headlines.headlineAboveFirstTiles.strong}</strong> -
                       <br />
-                      <strong>FiBRE Single Blend</strong>
+                      {headlines.headlineAboveFirstTiles.normal}
                     </span>
                   </Typography>
                 }
               />
             </GridItem>
           </GridContainer>
-          <ContentBlock
-            buttonGroup={
-              <>
-                <ButtonGroup>
-                  <Link href="/ds360">
-                    <Button size="large" type="primary">
-                      Go to the showcase
-                    </Button>
-                  </Link>
-                </ButtonGroup>
-              </>
-            }
-            headline={
-              <Headline spaceBelow="default">
-                <Typography component="h3" fontWeight="bold">
-                  Direct Sales 360 (DS360) Projects
-                </Typography>
-              </Headline>
-            }
-            layout="inGrid"
-            media={<img src="/landingPage/imageGallery/tm6-dinner.jpg" />}
-            mediaAlignment="left"
-            paragraph={
-              <Typography fontWeight="regular" variant="paragraph18">
-                DS360 is the Vorwerk project designed to enable its sales
-                workforce to benefit from the latest technologies and be more
-                effective in showcasing and selling the company’s premium
-                devices, such as Thermomix.
-                <br />
-                <br />
-                The Experience Design Team listed the flagship screens in this
-                section to support teams envisioning and maintaining the DS360
-                digital touchpoints.
-              </Typography>
-            }
-          />
-          <Spacer size={128} />
-          <ContentBlock
-            buttonGroup={
-              <ButtonGroup>
-                <Link href="/sales">
-                  <Button size="large" type="primary">
-                    Go to the showcase
-                  </Button>
-                </Link>
-              </ButtonGroup>
-            }
-            headline={
-              <Headline spaceBelow="default">
-                <Typography component="h3" fontWeight="bold">
-                  Sales Projects
-                </Typography>
-              </Headline>
-            }
-            media={<img src="/landingPage/teaser/teaser.png" />}
-            mediaAlignment="right"
-            paragraph={
-              <Typography fontWeight="regular" variant="paragraph18">
-                The Experience Design Team supports the Vorwerk International
-                Sales division in delivering digital touchpoints to the
-                Company's markets (Work In Progress)
-              </Typography>
-            }
-          />
+          <ShowcaseTiles tilesData={tilesData.firstTilesData} isDarkModeEnable={isDarkModeEnable} />
         </section>
-        <section className={styles.defaultSection}>
+        <section className={styles.prominentSection}>
           <GridContainer>
-            <GridItem
-              columns={8}
-              start={3}
-              end={11}
-              className={styles.textCentered}
-            >
+            <GridItem columns={12} className={styles.textCentered}>
               <Headline
                 spaceBelow="additional"
                 strongColor="green"
                 children={
                   <Typography component="h2">
                     <span>
-                      <strong>FiBRE Single Blend</strong>
+                      <strong>{headlines.headlineAboveSecondTiles.strong}</strong> -
                       <br />
-                      The source of countless nuances
+                      {headlines.headlineAboveSecondTiles.normal}
                     </span>
                   </Typography>
                 }
               />
             </GridItem>
           </GridContainer>
-          <GridContainer>
-            <GridItem columns={12}>
-              <Headline
-                strongColor="green"
-                children={
-                  <>
-                    <Typography
-                      component="h3"
-                      fontWeight="bold"
-                      spaceBelow="default"
-                    >
-                      <span>FiBRE Single Blend (FSB) in a nutshell</span>
-                    </Typography>
-                    <Typography spaceBelow>
-                      <Spacer size={24} />
-                      <span style={{ fontSize: "22px", lineHeight: "32px" }}>
-                        FSB is the Vorwerk Design System meticulously crafted by
-                        the Vorwerk International Experience Design Team (XDT).
-                        Its primary goal is to empower the entire Vorwerk
-                        community to envision, execute, and maintain digital
-                        touchpoints that consistently embody the premium quality
-                        of the company's physical devices, such as the
-                        Thermomix.
-                      </span>
-                      <Spacer size={24} />
-                    </Typography>
-                  </>
-                }
-              />
-            </GridItem>
-          </GridContainer>
-          <ContentBlock
-            headline={
-              <Headline spaceBelow="default">
-                <Typography component="h3" fontWeight="bold">
-                  FSB User Interface Kit (UI Kit)
-                </Typography>
-              </Headline>
-            }
-            media={
-              <img src="/landingPage/imageGallery/tm6-family-leisure.jpg" />
-            }
-            mediaAlignment="right"
-            paragraph={
-              <Typography fontWeight="regular" variant="paragraph18">
-                The PF aims to be a robust and reliable reference for all the
-                teams committed to crafting delightful digital experiences for
-                Vorwerk customers.
-                <br />
-                <br />
-                Its primary purpose is to help developers understand how the
-                Vorwerk digital touchpoints look and work. In addition, the FEW
-                project supports rapid prototyping loops, enabling the Company
-                to mitigate risk by testing options with real users and real
-                code!
-                <br />
-                <br />
-                Lastly, the PF is a great tool for keeping everyone on the same
-                page regarding UX and UI patterns across products and
-                touchpoints.
-              </Typography>
-            }
-          />
-          <Spacer size={128} />
-          <ContentBlock
-            headline={
-              <Headline spaceBelow="default">
-                <Typography component="h3" fontWeight="bold">
-                  FSB FrontEnd Workshop (FEW)
-                </Typography>
-              </Headline>
-            }
-            media={<img src="/landingPage/teaser/teaser2.jpeg" />}
-            mediaAlignment="left"
-            paragraph={
-              <Typography fontWeight="regular" variant="paragraph18">
-                The FEW project boldly ambitions to help developers, designers,
-                product experts, and business stakeholders speak the same
-                language and collaborate to build the Company’s digital
-                products.
-                <br />
-                <br />
-                Designed and built with industry standards, such as the
-                Storybook platform, this collection of code-based atomic
-                components offers a unique opportunity to facilitate the
-                end-to-end product design process.
-              </Typography>
-            }
-          />
-          <Spacer size={128} />
-          <ContentBlock
-            headline={
-              <Headline spaceBelow="default">
-                <Typography component="h3" fontWeight="bold">
-                  FSB Prototype Factory (PF)
-                </Typography>
-              </Headline>
-            }
-            media={<img src="/landingPage/teaser/teaser3.jpeg" />}
-            mediaAlignment="right"
-            paragraph={
-              <Typography fontWeight="regular" variant="paragraph18">
-                The PF aims to be a robust and reliable reference for all the
-                teams committed to crafting delightful digital experiences for
-                Vorwerk customers.
-                <br />
-                <br />
-                Its primary purpose is to help developers understand how the
-                Vorwerk digital touchpoints look and work. In addition, the FEW
-                project supports rapid prototyping loops, enabling the Company
-                to mitigate risk by testing options with real users and real
-                code!
-                <br />
-                <br />
-                Lastly, the PF is a great tool for keeping everyone on the same
-                page regarding UX and UI patterns across products and
-                touchpoints.
-              </Typography>
-            }
-          />
+          <ShowcaseTiles tilesData={tilesData.secondTilesData} isDarkModeEnable={isDarkModeEnable} />
         </section>
         <ProductStripe
           logo={<Vorwerk />}
@@ -708,3 +536,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Project;

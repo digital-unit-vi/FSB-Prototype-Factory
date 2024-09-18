@@ -52,15 +52,16 @@ interface ShowcaseTilesProps {
       image: string;
       link: string;
     };
-    dark: {
+    dark?: {
       image: string;
       link: string;
     };
     title: string;
-  }[];
+  }[],
+  isDarkModeEnable?: boolean;
 }
 
-const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
+const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData, isDarkModeEnable }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [columnsConfig, setColumnsConfig] = useState<
     { start: number; end: number; columns: number }[]
@@ -86,21 +87,23 @@ const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
 
   return (
     <div className={styles.mainContainer}>
-      <GridContainer>
-        <GridItem columns={12} className={styles.switchContainer}>
-          <label className={styles.switchLabel}>
-            <span className={styles.label}>Dark version</span>
-            <input
-              type="checkbox"
-              checked={isDarkMode}
-              onChange={toggleDarkMode}
-              className={styles.switchInput}
-            />
-            <span className={styles.switchSlider}></span>
-          </label>
-        </GridItem>
-      </GridContainer>
-
+      {isDarkModeEnable && (
+        <GridContainer>
+          <GridItem columns={12} className={styles.switchContainer}>
+            <label className={styles.switchLabel}>
+              <span className={styles.label}>Dark version</span>
+              <input
+                type="checkbox"
+                checked={isDarkMode}
+                onChange={toggleDarkMode}
+                className={styles.switchInput}
+              />
+              <span className={styles.switchSlider}></span>
+            </label>
+          </GridItem>
+        </GridContainer>
+      )}
+      
       <div className={styles.schowcaseTilesContainer}>
         <GridContainer>
           {columnsConfig.map((config, index) => (
