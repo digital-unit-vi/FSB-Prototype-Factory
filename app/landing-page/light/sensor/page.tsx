@@ -18,6 +18,7 @@ import {
   ParallaxProductSection,
   ProductBlock,
   SectionContainer,
+  SousVide,
   SousVideLight,
   Thermomix,
   TimerLight,
@@ -330,6 +331,7 @@ export default function SensorLightLandingPage() {
                 type: "video",
                 src: "/landingPage/stepByStep/sensor/01_take.mp4",
               },
+              icon: <SousVide />,
               useIcon: false,
             },
             {
@@ -342,6 +344,7 @@ export default function SensorLightLandingPage() {
                 type: "video",
                 src: "/landingPage/stepByStep/sensor/02_insert.mp4",
               },
+              icon: <SousVide />,
               useIcon: false,
             },
             {
@@ -354,6 +357,7 @@ export default function SensorLightLandingPage() {
                 type: "video",
                 src: "/landingPage/stepByStep/sensor/03_cooking.mp4",
               },
+              icon: <SousVide />,
               useIcon: false,
             },
             {
@@ -366,6 +370,7 @@ export default function SensorLightLandingPage() {
                 type: "video",
                 src: "/landingPage/stepByStep/sensor/04_cleaning.mp4",
               },
+              icon: <SousVide />,
               useIcon: false,
             },
           ]}
