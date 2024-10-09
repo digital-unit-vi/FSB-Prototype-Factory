@@ -70,11 +70,12 @@ export default function SensorLightLandingPage() {
           <img
             alt="Sensor"
             src="/landingPage/hero/sensor-hero-default-cover.png"
+            style={{ display: "none" }}
           />
         }
         isLandingPage
         video={
-          <video autoPlay loop muted playsInline>
+          <video autoPlay loop muted playsInline style={{ display: "block" }}>
             <source
               src="/landingPage/hero/sensor-hero-default.mp4"
               type="video/mp4"
