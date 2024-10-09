@@ -84,11 +84,12 @@ export default function TM6VariantALightLandingPage() {
           <img
             alt="Relaxing in the kitchen"
             src="/landingPage/hero/tm6-hero-default-cover.png"
+            style={{ display: "none" }}
           />
         }
         isLandingPage
         video={
-          <video autoPlay loop muted playsInline>
+          <video autoPlay loop muted playsInline style={{ display: "block" }}>
             <source
               src="/landingPage/hero/tm6-hero-default.mp4"
               type="video/mp4"
