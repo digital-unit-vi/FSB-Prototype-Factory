@@ -17,7 +17,6 @@
   ],
   "dependencies": {
     "@gsap/react": "^2.1.1",
-    "@vorwerk/fibre-react": "^1.1.26",
     "embla-carousel": "^8.3.0",
     "embla-carousel-react": "^8.3.0",
     "gsap": "^3.12.5",
