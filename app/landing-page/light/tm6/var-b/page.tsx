@@ -241,7 +241,7 @@ export default function TM6VariantBLightLandingPage() {
             {
               id: 1,
               text: "Sous-Vide",
-              icon: SousVide,
+              icon: <SousVide />,
               isActive: false,
               scrollMin: 0,
               scrollMax: 1,
@@ -254,7 +254,7 @@ export default function TM6VariantBLightLandingPage() {
             {
               id: 2,
               text: "Slow Cook",
-              icon: SlowCooking,
+              icon: <SlowCooking />,
               isActive: false,
               scrollMin: 0,
               scrollMax: 1,
@@ -267,7 +267,7 @@ export default function TM6VariantBLightLandingPage() {
             {
               id: 3,
               text: "Sauté",
-              icon: TemperatureHigh,
+              icon: <TemperatureHigh />,
               isActive: false,
               scrollMin: 0,
               scrollMax: 1,
@@ -280,7 +280,7 @@ export default function TM6VariantBLightLandingPage() {
             {
               id: 4,
               text: "Fermantation",
-              icon: FermentMode,
+              icon: <FermentMode />,
               isActive: false,
               scrollMin: 0,
               scrollMax: 1,
@@ -293,7 +293,7 @@ export default function TM6VariantBLightLandingPage() {
             {
               id: 5,
               text: "Caramelize",
-              icon: Blend,
+              icon: <Blend />,
               isActive: false,
               scrollMin: 0,
               scrollMax: 1,

@@ -357,11 +357,7 @@ export default function Home() {
                 strongColor="green"
                 children={
                   <>
-                    <Typography
-                      component="h3"
-                      fontWeight="bold"
-                      spaceBelow="default"
-                    >
+                    <Typography component="h3" fontWeight="bold" spaceBelow>
                       <span>FiBRE Single Blend (FSB) in a nutshell</span>
                     </Typography>
                     <Typography spaceBelow>

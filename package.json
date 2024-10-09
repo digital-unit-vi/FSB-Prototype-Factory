@@ -1,6 +1,7 @@
 {
   "name": "ds360",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -19,7 +20,7 @@
     "embla-carousel": "^8.3.0",
     "embla-carousel-react": "^8.3.0",
     "gsap": "^3.12.5",
-    "next": "^14.2.11",
+    "next": "^14.2.15",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
@@ -27,21 +28,21 @@
     "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.10.0",
+    "@eslint/js": "^9.12.0",
     "@types/eslint__js": "^8.42.3",
-    "@types/node": "^22.5.4",
-    "@types/react": "^18.3.5",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
-    "@types/web": "^0.0.162",
-    "@typescript-eslint/eslint-plugin": "^8.5.0",
-    "@typescript-eslint/parser": "^8.5.0",
-    "eslint": "^9.10.0",
+    "@types/web": "^0.0.169",
+    "@typescript-eslint/eslint-plugin": "^8.8.1",
+    "@typescript-eslint/parser": "^8.8.1",
+    "eslint": "^9.12.0",
     "prettier": "^3.3.3",
-    "sass": "^1.78.0",
+    "sass": "^1.79.4",
     "stylelint": "^16.9.0",
     "stylelint-config-clean-order": "^6.1.0",
     "stylelint-config-standard-scss": "^13.1.0",
-    "typescript": "^5.6.2",
-    "typescript-eslint": "^8.5.0"
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.8.1"
   }
 }
