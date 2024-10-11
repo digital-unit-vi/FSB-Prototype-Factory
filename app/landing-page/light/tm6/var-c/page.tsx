@@ -40,7 +40,6 @@ import {
   Vorwerk,
   WifiLight,
 } from "@components/build-assets/libraryExport";
-import VideoAutoplay from "@components/landingPage/videoAutoplay/videoAutoplay";
 import Spacer from "@components/shared/spacer/spacer";
 import Link from "next/link";
 import styles from "./page.module.scss";
@@ -90,7 +89,12 @@ export default function TM6VariantCLightLandingPage() {
         }
         isLandingPage
         video={
-          <VideoAutoplay videoScr="/landingPage/hero/tm6-hero-cutting.mp4" />
+          <video autoPlay muted playsInline loop>
+            <source
+              src="/landingPage/hero/tm6-hero-cutting.mp4"
+              type="video/mp4"
+            />
+          </video>
         }
       />
       <ParallaxProductSection

@@ -18,7 +18,7 @@ const ScrollTriggerWatcher = ({ children }: ScrollTriggerWatcherProps) => {
         onEnter: () => {
           ScrollTrigger.refresh(); // Refresh all ScrollTriggers when this component enters the view
         },
-        start: "top center",
+        start: "top bottom",
       });
 
       return () => {

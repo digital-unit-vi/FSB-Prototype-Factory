@@ -25,7 +25,6 @@ import {
   UserReview,
   Vorwerk,
 } from "@components/build-assets/libraryExport";
-import VideoAutoplay from "@components/landingPage/videoAutoplay/videoAutoplay";
 import Spacer from "@components/shared/spacer/spacer";
 import useScreenSize from "@utils/useScreenSize";
 import Link from "next/link";
@@ -76,7 +75,12 @@ export default function SensorLightLandingPage() {
         }
         isLandingPage
         video={
-          <VideoAutoplay videoScr="/landingPage/hero/sensor-hero-default.mp4" />
+          <video autoPlay muted playsInline loop>
+            <source
+              src="/landingPage/hero/sensor-hero-default.mp4"
+              type="video/mp4"
+            />
+          </video>
         }
       />
       <ParallaxProductSection
