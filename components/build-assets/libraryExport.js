@@ -9576,7 +9576,7 @@ const _v = ({
   const h = C1()[0] >= Number(p1.l.replace("px", "")), u = a ? Hu : "", f = o === "colorFill" ? Lu[i] : "";
   return /* @__PURE__ */ e.jsxs("div", { className: D(ju[o], f, u), children: [
     /* @__PURE__ */ e.jsxs("div", { className: wu[o], children: [
-      o === "imageFill" && s && /* @__PURE__ */ e.jsx("div", { dangerouslySetInnerHTML: { __html: s } }),
+      o === "imageFill" && s && /* @__PURE__ */ e.jsx("div", { children: s }),
       t
     ] }),
     a ? /* @__PURE__ */ e.jsx(g0, { children: /* @__PURE__ */ e.jsx(r0, { columns: 12, children: /* @__PURE__ */ e.jsxs("div", { className: D(O5[o], u), children: [
