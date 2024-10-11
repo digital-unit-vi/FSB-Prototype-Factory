@@ -74,14 +74,13 @@ export default function SensorLightLandingPage() {
           />
         }
         isLandingPage
-        video={
+        video={`
           <video autoPlay loop muted playsInline style={{ display: "block" }}>
             <source
               src="/landingPage/hero/sensor-hero-default.mp4"
               type="video/mp4"
             />
-          </video>
-        }
+          </video>`}
       />
       <ParallaxProductSection
         logoImageDark="/library/images/parallaxProductSection/logos-dark.png"
@@ -318,8 +317,7 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
         <FunctionsTab
           darkMode
           items={[
@@ -373,8 +371,7 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
         <GridContainer>
           <GridItem
             columns={10}

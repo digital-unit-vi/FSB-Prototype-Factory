@@ -30,6 +30,10 @@
   src: url("/fonts/Vorwerk-Bold.woff2");
 }
 
+html {
+  position: relative;
+}
+
 p,
 body {
   margin: 0;

@@ -4689,7 +4689,7 @@ class $i {
    * @internal
    */
   constructor(s, l = {}) {
-    this.version = "11.11.4", this.canTrackVelocity = null, this.events = {}, this.updateAndNotify = (r, n = !0) => {
+    this.version = "11.11.7", this.canTrackVelocity = null, this.events = {}, this.updateAndNotify = (r, n = !0) => {
       const o = u1.now();
       this.updatedAt !== o && this.setPrevFrameValue(), this.prev = this.current, this.setCurrent(r), this.current !== this.prev && this.events.change && this.events.change.notify(this.current), n && this.events.renderRequest && this.events.renderRequest.notify(this.current);
     }, this.hasAnimated = !1, this.setCurrent(s), this.owner = l.owner;
@@ -7393,7 +7393,7 @@ function dd(t, s, l) {
   for (const r in s) {
     const n = s[r], o = l[r];
     if (V0(n))
-      t.addValue(r, n), process.env.NODE_ENV === "development" && L2(n.version === "11.11.4", `Attempting to mix Framer Motion versions ${n.version} with 11.11.4 may not work as expected.`);
+      t.addValue(r, n), process.env.NODE_ENV === "development" && L2(n.version === "11.11.7", `Attempting to mix Framer Motion versions ${n.version} with 11.11.7 may not work as expected.`);
     else if (V0(o))
       t.addValue(r, c1(n, { owner: t }));
     else if (o !== n)
@@ -9576,7 +9576,7 @@ const _v = ({
   const h = C1()[0] >= Number(p1.l.replace("px", "")), u = a ? Hu : "", f = o === "colorFill" ? Lu[i] : "";
   return /* @__PURE__ */ e.jsxs("div", { className: D(ju[o], f, u), children: [
     /* @__PURE__ */ e.jsxs("div", { className: wu[o], children: [
-      o === "imageFill" && s && /* @__PURE__ */ e.jsx("div", { children: s }),
+      o === "imageFill" && s && /* @__PURE__ */ e.jsx("div", { dangerouslySetInnerHTML: { __html: s } }),
       t
     ] }),
     a ? /* @__PURE__ */ e.jsx(g0, { children: /* @__PURE__ */ e.jsx(r0, { columns: 12, children: /* @__PURE__ */ e.jsxs("div", { className: D(O5[o], u), children: [
@@ -9684,7 +9684,7 @@ const k0 = /* @__PURE__ */ Q5(Pu), Av = ({
   ] }) }) }) });
 }, Tu = "_functionsTabWrapper_1uo3e_1", Nu = {
   functionsTabWrapper: Tu
-}, Ou = "_active_1vxgn_1", Iu = "_inactive_1vxgn_2", zu = "_desktopScrollboxWrapper_1vxgn_4", qu = "_desktopScrollbox__list_1vxgn_43", $u = "_desktopScrollbox__title_1vxgn_65", Uu = "_withIcon_1vxgn_71", Gu = "_darkMode_1vxgn_112", Ku = "_noIcon_1vxgn_117", Yu = "_desktopScrollbox__progress_1vxgn_248", Xu = "_desktopScrollbox__media_1vxgn_347", Ju = "_videoContainer_1vxgn_385", b0 = {
+}, Ou = "_active_qrkxt_1", Iu = "_inactive_qrkxt_2", zu = "_desktopScrollboxWrapper_qrkxt_4", qu = "_desktopScrollbox__list_qrkxt_43", $u = "_desktopScrollbox__title_qrkxt_65", Uu = "_withIcon_qrkxt_71", Gu = "_darkMode_qrkxt_112", Ku = "_noIcon_qrkxt_117", Yu = "_desktopScrollbox__progress_qrkxt_248", Xu = "_desktopScrollbox__media_qrkxt_347", Ju = "_videoContainer_qrkxt_385", b0 = {
   active: Ou,
   inactive: Iu,
   desktopScrollboxWrapper: zu,

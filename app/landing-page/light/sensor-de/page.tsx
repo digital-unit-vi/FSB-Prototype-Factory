@@ -27,13 +27,12 @@ import {
   Vorwerk,
 } from "@components/build-assets/libraryExport";
 import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
+import ScrollTriggerWatcher from "@components/landingPage/scrollTriggerWatcher/scrollTriggerWatcher";
 import Spacer from "@components/shared/spacer/spacer";
-import useScreenSize from "@utils/useScreenSize";
 import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPageDE() {
-  const screenSize = useScreenSize();
   return (
     <main>
       <Header
@@ -77,14 +76,13 @@ export default function SensorLightLandingPageDE() {
           />
         }
         isLandingPage
-        video={
+        video={`
           <video autoPlay loop muted playsInline style={{ display: "block" }}>
             <source
               src="/landingPage/hero/sensor-hero-default.mp4"
               type="video/mp4"
             />
-          </video>
-        }
+          </video>`}
       />
       <ParallaxProductSection
         logoImage="/library/images/parallaxProductSection/logos.png"
@@ -231,14 +229,16 @@ export default function SensorLightLandingPageDE() {
       <SectionContainer>
         <GridContainer>
           <GridItem columns={4}>
-            <Headline
-              children={
-                <Typography component="h3" fontWeight="bold">
-                  Was ist der
-                  <br /> Thermomix® Sensor?
-                </Typography>
-              }
-            />
+            <ScrollTriggerWatcher>
+              <Headline
+                children={
+                  <Typography component="h3" fontWeight="bold">
+                    Was ist der
+                    <br /> Thermomix® Sensor?
+                  </Typography>
+                }
+              />
+            </ScrollTriggerWatcher>
           </GridItem>
           <GridItem columns={8}>
             <Typography component="intro">
@@ -273,8 +273,7 @@ Mit der richtigen Kerntemperatur erzielst du perfekte Ergebnisse bei Kuchen, Bro
           </GridItem>
         </GridContainer>
         <ProductAnimation />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={48} sizeMedium={0} />
         <BentoBoxTiles
           tiles={[
             {
@@ -319,8 +318,7 @@ Mit der richtigen Kerntemperatur erzielst du perfekte Ergebnisse bei Kuchen, Bro
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
         <FunctionsTab
           items={[
             {
@@ -377,8 +375,7 @@ Mit der richtigen Kerntemperatur erzielst du perfekte Ergebnisse bei Kuchen, Bro
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
         <GridContainer>
           <GridItem
             columns={10}
@@ -464,7 +461,6 @@ Mit der richtigen Kerntemperatur erzielst du perfekte Ergebnisse bei Kuchen, Bro
           showEyecatcher
         />
       </SectionContainer>
-
       <SectionContainer>
         <UserReview
           additionalText="42 Bewertungen"

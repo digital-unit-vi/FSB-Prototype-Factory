@@ -88,14 +88,13 @@ export default function TM6VariantCDarkLandingPage() {
           />
         }
         isLandingPage
-        video={
+        video={`
           <video autoPlay loop muted playsInline style={{ display: "block" }}>
             <source
               src="/landingPage/hero/tm6-hero-cutting.mp4"
               type="video/mp4"
             />
-          </video>
-        }
+          </video>`}
       />
       <ParallaxProductSection
         logoImageDark="/library/images/parallaxProductSection/logos-dark.png"
@@ -237,8 +236,7 @@ export default function TM6VariantCDarkLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
         <FunctionsTab
           darkMode
           lastLineText="and many more..."
@@ -310,8 +308,7 @@ export default function TM6VariantCDarkLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
         <GalleryCarousel
           darkMode
           desktopSlides={[

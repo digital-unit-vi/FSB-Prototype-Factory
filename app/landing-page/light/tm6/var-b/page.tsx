@@ -88,14 +88,13 @@ export default function TM6VariantBLightLandingPage() {
           />
         }
         isLandingPage
-        video={
+        video={`
           <video autoPlay loop muted playsInline style={{ display: "block" }}>
             <source
               src="/landingPage/hero/tm6-hero-dishes.mp4"
               type="video/mp4"
             />
-          </video>
-        }
+          </video>`}
       />
       <ParallaxProductSection
         logoImage="/library/images/parallaxProductSection/logos.png"
@@ -234,8 +233,7 @@ export default function TM6VariantBLightLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
         <FunctionsTab
           lastLineText="and many more..."
           items={[
@@ -306,8 +304,7 @@ export default function TM6VariantBLightLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
         <GalleryCarousel
           desktopSlides={[
             {

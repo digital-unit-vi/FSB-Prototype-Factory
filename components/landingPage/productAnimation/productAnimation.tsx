@@ -3,7 +3,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import styles from "./productAnimation.module.scss";
 
 const ProductAnimation = () => {
@@ -12,6 +12,10 @@ const ProductAnimation = () => {
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger, useGSAP);
+  }, []);
+
+  useEffect(() => {
+    ScrollTrigger.refresh();
   }, []);
 
   useGSAP(
@@ -23,10 +27,12 @@ const ProductAnimation = () => {
 
       const context = canvas.getContext("2d");
 
-      const frameCount = 209;
+      const frameCount = 425;
 
       const currentFrame = (index: number) =>
-        `/landingPage/sensorAnimation/light/vorwerk_tm_sensor_mobile_light_1680x2520_${(index + 1).toString().padStart(3, "0")}.jpg`;
+        `/landingPage/sensorAnimation/lightOld/${(index + 1)
+          .toString()
+          .padStart(5, "0")}.jpg`;
 
       const images: HTMLImageElement[] = [];
       const frames = {
@@ -40,13 +46,8 @@ const ProductAnimation = () => {
       }
 
       const adjustCanvasSize = () => {
-        // Get the current container dimensions
-        const containerWidth = container.clientWidth;
-        const containerHeight = container.clientHeight;
-
-        // Update canvas resolution to match container size
-        canvas.width = containerWidth;
-        canvas.height = containerHeight;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
         render(); // Re-render after resizing
       };
@@ -58,35 +59,27 @@ const ProductAnimation = () => {
 
         const image = images[frames.frame];
 
-        // Calculate the aspect ratio of the image and the canvas
-        const imgAspectRatio = image.width / image.height;
-        const canvasAspectRatio = canvas.width / canvas.height;
+        const isMobile = window.innerWidth <= 768; // Define breakpoint (adjust as needed)
 
-        let renderableWidth, renderableHeight, xStart, yStart;
+        let scale, x, y, renderableWidth, renderableHeight;
 
-        // Determine whether to fit by width or by height
-        if (imgAspectRatio > canvasAspectRatio) {
-          // Image is wider than canvas
+        if (isMobile) {
+          // On mobile, utilize full screen width
+          scale = canvas.width / image.width;
           renderableWidth = canvas.width;
-          renderableHeight = image.height * (renderableWidth / image.width);
-          xStart = 0;
-          yStart = (canvas.height - renderableHeight) / 2; // Center the image vertically
+          renderableHeight = image.height * scale;
+          x = 0;
+          y = (canvas.height - renderableHeight) / 2; // Center vertically
         } else {
-          // Image is taller than or matches canvas aspect ratio
+          // On desktop, utilize full screen height
+          scale = canvas.height / image.height;
           renderableHeight = canvas.height;
-          renderableWidth = image.width * (renderableHeight / image.height);
-          xStart = (canvas.width - renderableWidth) / 2; // Center the image horizontally
-          yStart = 0;
+          renderableWidth = image.width * scale;
+          x = (canvas.width - renderableWidth) / 2; // Center horizontally
+          y = 0;
         }
 
-        // Draw the image on the canvas, maintaining aspect ratio
-        context.drawImage(
-          image,
-          xStart,
-          yStart,
-          renderableWidth,
-          renderableHeight
-        );
+        context.drawImage(image, x, y, renderableWidth, renderableHeight);
       };
 
       gsap.to(frames, {
@@ -98,6 +91,8 @@ const ProductAnimation = () => {
           end: "+=" + frameCount * 16,
           pin: true,
           scrub: true,
+          anticipatePin: 1,
+          refreshPriority: 1,
           onEnter: () => ScrollTrigger.refresh(),
         },
         onUpdate: render,

@@ -27,6 +27,7 @@ import {
   Vorwerk,
 } from "@components/build-assets/libraryExport";
 import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
+import ScrollTriggerWatcher from "@components/landingPage/scrollTriggerWatcher/scrollTriggerWatcher";
 import Spacer from "@components/shared/spacer/spacer";
 import useScreenSize from "@utils/useScreenSize";
 import Link from "next/link";
@@ -76,14 +77,13 @@ export default function SensorLightLandingPage() {
           />
         }
         isLandingPage
-        video={
-          <video autoPlay loop muted playsInline style={{ display: "block" }}>
+        video={`
+          <video autoPlay playsInline loop muted style={{ display: "block" }}>
             <source
               src="/landingPage/hero/sensor-hero-default.mp4"
               type="video/mp4"
             />
-          </video>
-        }
+          </video>`}
       />
       <ParallaxProductSection
         logoImage="/library/images/parallaxProductSection/logos.png"
@@ -230,13 +230,15 @@ export default function SensorLightLandingPage() {
       <SectionContainer>
         <GridContainer>
           <GridItem columns={4}>
-            <Headline
-              children={
-                <Typography component="h3" fontWeight="bold">
-                  What is the Thermomix® Sensor?
-                </Typography>
-              }
-            />
+            <ScrollTriggerWatcher>
+              <Headline
+                children={
+                  <Typography component="h3" fontWeight="bold">
+                    What is the Thermomix® Sensor?
+                  </Typography>
+                }
+              />
+            </ScrollTriggerWatcher>
           </GridItem>
           <GridItem columns={8}>
             <Typography component="intro">
@@ -272,8 +274,7 @@ export default function SensorLightLandingPage() {
           </GridItem>
         </GridContainer>
         <ProductAnimation />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={48} sizeMedium={0} />
         <BentoBoxTiles
           tiles={[
             {
@@ -318,8 +319,7 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
         <FunctionsTab
           items={[
             {
@@ -376,8 +376,7 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
         <GridContainer>
           <GridItem
             columns={10}
@@ -463,7 +462,6 @@ export default function SensorLightLandingPage() {
           showEyecatcher
         />
       </SectionContainer>
-
       <SectionContainer>
         <UserReview
           additionalText="42 reviews"
