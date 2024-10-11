@@ -226,16 +226,14 @@ export default function SensorLightLandingPageDE() {
       <SectionContainer>
         <GridContainer>
           <GridItem columns={4}>
-            <ScrollTriggerWatcher>
-              <Headline
-                children={
-                  <Typography component="h3" fontWeight="bold">
-                    Was ist der
-                    <br /> Thermomix® Sensor?
-                  </Typography>
-                }
-              />
-            </ScrollTriggerWatcher>
+            <Headline
+              children={
+                <Typography component="h3" fontWeight="bold">
+                  Was ist der
+                  <br /> Thermomix® Sensor?
+                </Typography>
+              }
+            />
           </GridItem>
           <GridItem columns={8}>
             <Typography component="intro">
@@ -257,16 +255,18 @@ Mit der richtigen Kerntemperatur erzielst du perfekte Ergebnisse bei Kuchen, Bro
             end={12}
             className={styles.textCentered}
           >
-            <Headline
-              children={
-                <Typography component="h1">
-                  <span>
-                    Thermomix® Sensor heißt <strong>volle Kontrolle</strong>
-                  </span>
-                </Typography>
-              }
-              strongColor="green"
-            />
+            <ScrollTriggerWatcher>
+              <Headline
+                children={
+                  <Typography component="h1">
+                    <span>
+                      Thermomix® Sensor heißt <strong>volle Kontrolle</strong>
+                    </span>
+                  </Typography>
+                }
+                strongColor="green"
+              />
+            </ScrollTriggerWatcher>
           </GridItem>
         </GridContainer>
         <ProductAnimation />

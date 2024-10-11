@@ -227,15 +227,13 @@ export default function SensorLightLandingPage() {
       <SectionContainer>
         <GridContainer>
           <GridItem columns={4}>
-            <ScrollTriggerWatcher>
-              <Headline
-                children={
-                  <Typography component="h3" fontWeight="bold">
-                    What is the Thermomix® Sensor?
-                  </Typography>
-                }
-              />
-            </ScrollTriggerWatcher>
+            <Headline
+              children={
+                <Typography component="h3" fontWeight="bold">
+                  What is the Thermomix® Sensor?
+                </Typography>
+              }
+            />
           </GridItem>
           <GridItem columns={8}>
             <Typography component="intro">
@@ -258,16 +256,18 @@ export default function SensorLightLandingPage() {
             end={12}
             className={styles.textCentered}
           >
-            <Headline
-              children={
-                <Typography component="h1">
-                  <span>
-                    <strong>Full control</strong> in your kitchen
-                  </span>
-                </Typography>
-              }
-              strongColor="green"
-            />
+            <ScrollTriggerWatcher>
+              <Headline
+                children={
+                  <Typography component="h1">
+                    <span>
+                      <strong>Full control</strong> in your kitchen
+                    </span>
+                  </Typography>
+                }
+                strongColor="green"
+              />
+            </ScrollTriggerWatcher>
           </GridItem>
         </GridContainer>
         <ProductAnimation />

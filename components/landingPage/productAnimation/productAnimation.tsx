@@ -3,7 +3,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import styles from "./productAnimation.module.scss";
 
 const ProductAnimation = () => {
@@ -12,10 +12,6 @@ const ProductAnimation = () => {
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger, useGSAP);
-  }, []);
-
-  useEffect(() => {
-    ScrollTrigger.refresh();
   }, []);
 
   useGSAP(
@@ -91,9 +87,6 @@ const ProductAnimation = () => {
           end: "+=" + frameCount * 16,
           pin: true,
           scrub: true,
-          anticipatePin: 1,
-          refreshPriority: 1,
-          onEnter: () => ScrollTrigger.refresh(),
         },
         onUpdate: render,
       });
