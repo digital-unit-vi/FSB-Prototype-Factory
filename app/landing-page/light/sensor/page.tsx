@@ -112,121 +112,123 @@ export default function SensorLightLandingPage() {
         </GridContainer>
       </SectionContainer>
       <SectionContainer>
-        <GalleryCarousel
-          desktopSlides={[
-            {
-              bigImagePosLeft: false,
-              images: [
-                {
-                  url: "/landingPage/imageGallery/sensor-loaf.jpg",
-                  alt: "Image 1",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-pan.jpg",
-                  alt: "Image 2",
-                  title: "",
-                },
-                {
-                  url: "/email/collage/sensor-father-daughter.jpg",
-                  alt: "Image 3",
-                  title: "",
-                },
-              ],
-            },
-            {
-              bigImagePosLeft: true,
-              images: [
-                {
-                  url: "/landingPage/imageGallery/sensor-tm6-cake.jpg",
-                  alt: "Image 4",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-grill.jpg",
-                  alt: "Image 5",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-mother-daughter.jpg",
-                  alt: "Image 6",
-                  title: "",
-                },
-              ],
-            },
-            {
-              bigImagePosLeft: false,
-              images: [
-                {
-                  url: "/landingPage/imageGallery/sensor-man-fish.jpg",
-                  alt: "Image 7",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-app-juice.jpg",
-                  alt: "Image 8",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-oven-cake.jpg",
-                  alt: "Image 9",
-                  title: "",
-                },
-              ],
-            },
-          ]}
-          mobileSlides={[
-            {
-              mobileCarouselItems: [
-                {
-                  url: "/landingPage/imageGallery/sensor-loaf.jpg",
-                  alt: "Image 1",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-pan.jpg",
-                  alt: "Image 2",
-                  title: "",
-                },
-                {
-                  url: "/email/collage/sensor-father-daughter.jpg",
-                  alt: "Image 3",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-tm6-cake.jpg",
-                  alt: "Image 4",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-grill.jpg",
-                  alt: "Image 5",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-mother-daughter.jpg",
-                  alt: "Image 6",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-man-fish.jpg",
-                  alt: "Image 7",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-app-juice.jpg",
-                  alt: "Image 8",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-oven-cake.jpg",
-                  alt: "Image 9",
-                  title: "",
-                },
-              ],
-            },
-          ]}
-        />
+        <ScrollTriggerWatcher>
+          <GalleryCarousel
+            desktopSlides={[
+              {
+                bigImagePosLeft: false,
+                images: [
+                  {
+                    url: "/landingPage/imageGallery/sensor-loaf.jpg",
+                    alt: "Image 1",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-pan.jpg",
+                    alt: "Image 2",
+                    title: "",
+                  },
+                  {
+                    url: "/email/collage/sensor-father-daughter.jpg",
+                    alt: "Image 3",
+                    title: "",
+                  },
+                ],
+              },
+              {
+                bigImagePosLeft: true,
+                images: [
+                  {
+                    url: "/landingPage/imageGallery/sensor-tm6-cake.jpg",
+                    alt: "Image 4",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-grill.jpg",
+                    alt: "Image 5",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-mother-daughter.jpg",
+                    alt: "Image 6",
+                    title: "",
+                  },
+                ],
+              },
+              {
+                bigImagePosLeft: false,
+                images: [
+                  {
+                    url: "/landingPage/imageGallery/sensor-man-fish.jpg",
+                    alt: "Image 7",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-app-juice.jpg",
+                    alt: "Image 8",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-oven-cake.jpg",
+                    alt: "Image 9",
+                    title: "",
+                  },
+                ],
+              },
+            ]}
+            mobileSlides={[
+              {
+                mobileCarouselItems: [
+                  {
+                    url: "/landingPage/imageGallery/sensor-loaf.jpg",
+                    alt: "Image 1",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-pan.jpg",
+                    alt: "Image 2",
+                    title: "",
+                  },
+                  {
+                    url: "/email/collage/sensor-father-daughter.jpg",
+                    alt: "Image 3",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-tm6-cake.jpg",
+                    alt: "Image 4",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-grill.jpg",
+                    alt: "Image 5",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-mother-daughter.jpg",
+                    alt: "Image 6",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-man-fish.jpg",
+                    alt: "Image 7",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-app-juice.jpg",
+                    alt: "Image 8",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-oven-cake.jpg",
+                    alt: "Image 9",
+                    title: "",
+                  },
+                ],
+              },
+            ]}
+          />
+        </ScrollTriggerWatcher>
       </SectionContainer>
       <SectionContainer>
         <GridContainer>
@@ -260,18 +262,16 @@ export default function SensorLightLandingPage() {
             end={12}
             className={styles.textCentered}
           >
-            <ScrollTriggerWatcher>
-              <Headline
-                children={
-                  <Typography component="h1">
-                    <span>
-                      <strong>Full control</strong> in your kitchen
-                    </span>
-                  </Typography>
-                }
-                strongColor="green"
-              />
-            </ScrollTriggerWatcher>
+            <Headline
+              children={
+                <Typography component="h1">
+                  <span>
+                    <strong>Full control</strong> in your kitchen
+                  </span>
+                </Typography>
+              }
+              strongColor="green"
+            />
           </GridItem>
         </GridContainer>
         <ProductAnimation />

@@ -11583,7 +11583,7 @@ const Dv = ({
   )) }) }),
   s && /* @__PURE__ */ e.jsx("div", { className: O2.ModuleImageCarousel__packshot, children: /* @__PURE__ */ e.jsx("img", { src: s }) }),
   r && /* @__PURE__ */ e.jsx("div", { className: O2.ModuleImageCarousel__eyecatcher, children: /* @__PURE__ */ e.jsx(yC, { ...t }) })
-] }), AC = "_parallaxProductSection_1bk9r_1", BC = "_productImage_1bk9r_7", SC = "_logoImage_1bk9r_8", K4 = {
+] }), AC = "_parallaxProductSection_1pu95_1", BC = "_productImage_1pu95_8", SC = "_logoImage_1pu95_9", K4 = {
   parallaxProductSection: AC,
   productImage: BC,
   logoImage: SC
