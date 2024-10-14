@@ -27,13 +27,12 @@ import {
   Vorwerk,
 } from "@components/build-assets/libraryExport";
 import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
+import ScrollTriggerWatcher from "@components/landingPage/scrollTriggerWatcher/scrollTriggerWatcher";
 import Spacer from "@components/shared/spacer/spacer";
-import useScreenSize from "@utils/useScreenSize";
 import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPageDE() {
-  const screenSize = useScreenSize();
   return (
     <main>
       <Header
@@ -78,7 +77,7 @@ export default function SensorLightLandingPageDE() {
         }
         isLandingPage
         video={
-          <video autoPlay loop muted playsInline style={{ display: "block" }}>
+          <video autoPlay muted playsInline loop>
             <source
               src="/landingPage/hero/sensor-hero-default.mp4"
               type="video/mp4"
@@ -112,121 +111,123 @@ export default function SensorLightLandingPageDE() {
         </GridContainer>
       </SectionContainer>
       <SectionContainer>
-        <GalleryCarousel
-          desktopSlides={[
-            {
-              bigImagePosLeft: false,
-              images: [
-                {
-                  url: "/landingPage/imageGallery/sensor-loaf.jpg",
-                  alt: "Image 1",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-pan.jpg",
-                  alt: "Image 2",
-                  title: "",
-                },
-                {
-                  url: "/email/collage/sensor-father-daughter.jpg",
-                  alt: "Image 3",
-                  title: "",
-                },
-              ],
-            },
-            {
-              bigImagePosLeft: true,
-              images: [
-                {
-                  url: "/landingPage/imageGallery/sensor-tm6-cake.jpg",
-                  alt: "Image 4",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-grill.jpg",
-                  alt: "Image 5",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-mother-daughter.jpg",
-                  alt: "Image 6",
-                  title: "",
-                },
-              ],
-            },
-            {
-              bigImagePosLeft: false,
-              images: [
-                {
-                  url: "/landingPage/imageGallery/sensor-man-fish.jpg",
-                  alt: "Image 7",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-app-juice.jpg",
-                  alt: "Image 8",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-oven-cake.jpg",
-                  alt: "Image 9",
-                  title: "",
-                },
-              ],
-            },
-          ]}
-          mobileSlides={[
-            {
-              mobileCarouselItems: [
-                {
-                  url: "/landingPage/imageGallery/sensor-loaf.jpg",
-                  alt: "Image 1",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-pan.jpg",
-                  alt: "Image 2",
-                  title: "",
-                },
-                {
-                  url: "/email/collage/sensor-father-daughter.jpg",
-                  alt: "Image 3",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-tm6-cake.jpg",
-                  alt: "Image 4",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-grill.jpg",
-                  alt: "Image 5",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-mother-daughter.jpg",
-                  alt: "Image 6",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-man-fish.jpg",
-                  alt: "Image 7",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-app-juice.jpg",
-                  alt: "Image 8",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-oven-cake.jpg",
-                  alt: "Image 9",
-                  title: "",
-                },
-              ],
-            },
-          ]}
-        />
+        <ScrollTriggerWatcher>
+          <GalleryCarousel
+            desktopSlides={[
+              {
+                bigImagePosLeft: false,
+                images: [
+                  {
+                    url: "/landingPage/imageGallery/sensor-loaf.jpg",
+                    alt: "Image 1",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-pan.jpg",
+                    alt: "Image 2",
+                    title: "",
+                  },
+                  {
+                    url: "/email/collage/sensor-father-daughter.jpg",
+                    alt: "Image 3",
+                    title: "",
+                  },
+                ],
+              },
+              {
+                bigImagePosLeft: true,
+                images: [
+                  {
+                    url: "/landingPage/imageGallery/sensor-tm6-cake.jpg",
+                    alt: "Image 4",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-grill.jpg",
+                    alt: "Image 5",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-mother-daughter.jpg",
+                    alt: "Image 6",
+                    title: "",
+                  },
+                ],
+              },
+              {
+                bigImagePosLeft: false,
+                images: [
+                  {
+                    url: "/landingPage/imageGallery/sensor-man-fish.jpg",
+                    alt: "Image 7",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-app-juice.jpg",
+                    alt: "Image 8",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-oven-cake.jpg",
+                    alt: "Image 9",
+                    title: "",
+                  },
+                ],
+              },
+            ]}
+            mobileSlides={[
+              {
+                mobileCarouselItems: [
+                  {
+                    url: "/landingPage/imageGallery/sensor-loaf.jpg",
+                    alt: "Image 1",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-pan.jpg",
+                    alt: "Image 2",
+                    title: "",
+                  },
+                  {
+                    url: "/email/collage/sensor-father-daughter.jpg",
+                    alt: "Image 3",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-tm6-cake.jpg",
+                    alt: "Image 4",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-grill.jpg",
+                    alt: "Image 5",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-mother-daughter.jpg",
+                    alt: "Image 6",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-man-fish.jpg",
+                    alt: "Image 7",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-app-juice.jpg",
+                    alt: "Image 8",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-oven-cake.jpg",
+                    alt: "Image 9",
+                    title: "",
+                  },
+                ],
+              },
+            ]}
+          />
+        </ScrollTriggerWatcher>
       </SectionContainer>
       <SectionContainer>
         <GridContainer>
@@ -273,8 +274,7 @@ Mit der richtigen Kerntemperatur erzielst du perfekte Ergebnisse bei Kuchen, Bro
           </GridItem>
         </GridContainer>
         <ProductAnimation />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={48} sizeMedium={0} />
         <BentoBoxTiles
           tiles={[
             {
@@ -319,8 +319,7 @@ Mit der richtigen Kerntemperatur erzielst du perfekte Ergebnisse bei Kuchen, Bro
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
         <FunctionsTab
           items={[
             {
@@ -377,8 +376,7 @@ Mit der richtigen Kerntemperatur erzielst du perfekte Ergebnisse bei Kuchen, Bro
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
         <GridContainer>
           <GridItem
             columns={10}
@@ -464,7 +462,6 @@ Mit der richtigen Kerntemperatur erzielst du perfekte Ergebnisse bei Kuchen, Bro
           showEyecatcher
         />
       </SectionContainer>
-
       <SectionContainer>
         <UserReview
           additionalText="42 Bewertungen"

@@ -4689,7 +4689,7 @@ class $i {
    * @internal
    */
   constructor(s, l = {}) {
-    this.version = "11.11.4", this.canTrackVelocity = null, this.events = {}, this.updateAndNotify = (r, n = !0) => {
+    this.version = "11.11.8", this.canTrackVelocity = null, this.events = {}, this.updateAndNotify = (r, n = !0) => {
       const o = u1.now();
       this.updatedAt !== o && this.setPrevFrameValue(), this.prev = this.current, this.setCurrent(r), this.current !== this.prev && this.events.change && this.events.change.notify(this.current), n && this.events.renderRequest && this.events.renderRequest.notify(this.current);
     }, this.hasAnimated = !1, this.setCurrent(s), this.owner = l.owner;
@@ -7393,7 +7393,7 @@ function dd(t, s, l) {
   for (const r in s) {
     const n = s[r], o = l[r];
     if (V0(n))
-      t.addValue(r, n), process.env.NODE_ENV === "development" && L2(n.version === "11.11.4", `Attempting to mix Framer Motion versions ${n.version} with 11.11.4 may not work as expected.`);
+      t.addValue(r, n), process.env.NODE_ENV === "development" && L2(n.version === "11.11.8", `Attempting to mix Framer Motion versions ${n.version} with 11.11.8 may not work as expected.`);
     else if (V0(o))
       t.addValue(r, c1(n, { owner: t }));
     else if (o !== n)
@@ -9684,7 +9684,7 @@ const k0 = /* @__PURE__ */ Q5(Pu), Av = ({
   ] }) }) }) });
 }, Tu = "_functionsTabWrapper_1uo3e_1", Nu = {
   functionsTabWrapper: Tu
-}, Ou = "_active_1vxgn_1", Iu = "_inactive_1vxgn_2", zu = "_desktopScrollboxWrapper_1vxgn_4", qu = "_desktopScrollbox__list_1vxgn_43", $u = "_desktopScrollbox__title_1vxgn_65", Uu = "_withIcon_1vxgn_71", Gu = "_darkMode_1vxgn_112", Ku = "_noIcon_1vxgn_117", Yu = "_desktopScrollbox__progress_1vxgn_248", Xu = "_desktopScrollbox__media_1vxgn_347", Ju = "_videoContainer_1vxgn_385", b0 = {
+}, Ou = "_active_qrkxt_1", Iu = "_inactive_qrkxt_2", zu = "_desktopScrollboxWrapper_qrkxt_4", qu = "_desktopScrollbox__list_qrkxt_43", $u = "_desktopScrollbox__title_qrkxt_65", Uu = "_withIcon_qrkxt_71", Gu = "_darkMode_qrkxt_112", Ku = "_noIcon_qrkxt_117", Yu = "_desktopScrollbox__progress_qrkxt_248", Xu = "_desktopScrollbox__media_qrkxt_347", Ju = "_videoContainer_qrkxt_385", b0 = {
   active: Ou,
   inactive: Iu,
   desktopScrollboxWrapper: zu,
@@ -11583,7 +11583,7 @@ const Dv = ({
   )) }) }),
   s && /* @__PURE__ */ e.jsx("div", { className: O2.ModuleImageCarousel__packshot, children: /* @__PURE__ */ e.jsx("img", { src: s }) }),
   r && /* @__PURE__ */ e.jsx("div", { className: O2.ModuleImageCarousel__eyecatcher, children: /* @__PURE__ */ e.jsx(yC, { ...t }) })
-] }), AC = "_parallaxProductSection_1bk9r_1", BC = "_productImage_1bk9r_7", SC = "_logoImage_1bk9r_8", K4 = {
+] }), AC = "_parallaxProductSection_1pu95_1", BC = "_productImage_1pu95_8", SC = "_logoImage_1pu95_9", K4 = {
   parallaxProductSection: AC,
   productImage: BC,
   logoImage: SC
