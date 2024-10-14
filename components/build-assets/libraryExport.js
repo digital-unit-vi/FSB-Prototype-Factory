@@ -4689,7 +4689,7 @@ class $i {
    * @internal
    */
   constructor(s, l = {}) {
-    this.version = "11.11.7", this.canTrackVelocity = null, this.events = {}, this.updateAndNotify = (r, n = !0) => {
+    this.version = "11.11.8", this.canTrackVelocity = null, this.events = {}, this.updateAndNotify = (r, n = !0) => {
       const o = u1.now();
       this.updatedAt !== o && this.setPrevFrameValue(), this.prev = this.current, this.setCurrent(r), this.current !== this.prev && this.events.change && this.events.change.notify(this.current), n && this.events.renderRequest && this.events.renderRequest.notify(this.current);
     }, this.hasAnimated = !1, this.setCurrent(s), this.owner = l.owner;
@@ -7393,7 +7393,7 @@ function dd(t, s, l) {
   for (const r in s) {
     const n = s[r], o = l[r];
     if (V0(n))
-      t.addValue(r, n), process.env.NODE_ENV === "development" && L2(n.version === "11.11.7", `Attempting to mix Framer Motion versions ${n.version} with 11.11.7 may not work as expected.`);
+      t.addValue(r, n), process.env.NODE_ENV === "development" && L2(n.version === "11.11.8", `Attempting to mix Framer Motion versions ${n.version} with 11.11.8 may not work as expected.`);
     else if (V0(o))
       t.addValue(r, c1(n, { owner: t }));
     else if (o !== n)
