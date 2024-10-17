@@ -26,9 +26,9 @@ const ProductAnimation = () => {
       const frameCount = 425;
 
       const currentFrame = (index: number) =>
-        `/landingPage/sensorAnimation/lightOld/${(index + 1)
+        `/landingPage/sensorAnimation/lightNew/frame_${(index + 1)
           .toString()
-          .padStart(5, "0")}.jpg`;
+          .padStart(4, "0")}.webp`;
 
       const images: HTMLImageElement[] = [];
       const frames = {
