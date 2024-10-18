@@ -13,5 +13,5 @@
 .canvas {
   display: block; /* Ensures the canvas is treated as a block-level element */
   width: 100%; /* Canvas should take up the full width of the container */
-  height: auto; /* Let the height be determined by the aspect ratio */
+  height: 100%; /* Let the height be determined by the aspect ratio */
 }

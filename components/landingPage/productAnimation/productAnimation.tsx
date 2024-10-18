@@ -22,13 +22,18 @@ const ProductAnimation = () => {
       if (!canvas || !container) return;
 
       const context = canvas.getContext("2d");
+      if (!context) return;
+
+      context.imageSmoothingEnabled = true;
+
+      const dpr = window.devicePixelRatio || 1;
 
       const frameCount = 425;
 
       const currentFrame = (index: number) =>
-        `/landingPage/sensorAnimation/lightOld/${(index + 1)
+        `/landingPage/sensorAnimation/lightNew/frame_${(index + 1)
           .toString()
-          .padStart(5, "0")}.jpg`;
+          .padStart(4, "0")}.jpg`;
 
       const images: HTMLImageElement[] = [];
       const frames = {
@@ -42,8 +47,13 @@ const ProductAnimation = () => {
       }
 
       const adjustCanvasSize = () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+
+        const rect = canvas.getBoundingClientRect();
+
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
 
         render(); // Re-render after resizing
       };
@@ -54,28 +64,37 @@ const ProductAnimation = () => {
         context.clearRect(0, 0, canvas.width, canvas.height);
 
         const image = images[frames.frame];
+        if (!image) return;
 
-        const isMobile = window.innerWidth <= 768; // Define breakpoint (adjust as needed)
+        const isMobile = window.innerWidth <= 768;
+
+        const rect = canvas.getBoundingClientRect();
+        const canvasWidth = rect.width;
+        const canvasHeight = rect.height;
 
         let scale, x, y, renderableWidth, renderableHeight;
 
         if (isMobile) {
-          // On mobile, utilize full screen width
-          scale = canvas.width / image.width;
-          renderableWidth = canvas.width;
+          scale = canvasWidth / image.width;
+          renderableWidth = canvasWidth;
           renderableHeight = image.height * scale;
           x = 0;
-          y = (canvas.height - renderableHeight) / 2; // Center vertically
+          y = (canvasHeight - renderableHeight) / 2;
         } else {
-          // On desktop, utilize full screen height
-          scale = canvas.height / image.height;
-          renderableHeight = canvas.height;
+          scale = canvasHeight / image.height;
+          renderableHeight = canvasHeight;
           renderableWidth = image.width * scale;
-          x = (canvas.width - renderableWidth) / 2; // Center horizontally
+          x = (canvasWidth - renderableWidth) / 2;
           y = 0;
         }
 
-        context.drawImage(image, x, y, renderableWidth, renderableHeight);
+        context.drawImage(
+          image,
+          x * dpr,
+          y * dpr,
+          renderableWidth * dpr,
+          renderableHeight * dpr
+        );
       };
 
       gsap.to(frames, {
