@@ -4,88 +4,33 @@ import {
   BatteryLevel3Light,
   BentoBoxTiles,
   BluetoothLight,
-  Button,
-  ButtonGroup,
   CleaningLight,
-  FunctionsTab,
   GalleryCarousel,
   GridContainer,
   GridItem,
-  Header,
   Headline,
-  Hero,
   ImageCarousel,
-  ParallaxProductSection,
   ProductBlock,
   SectionContainer,
   SousVideLight,
-  Thermomix,
   TimerLight,
   Typography,
   UserReview,
-  Vorwerk,
 } from "@components/build-assets/libraryExport";
+import Hero from "@components/landingPage/hero/hero";
 import Spacer from "@components/shared/spacer/spacer";
 import useScreenSize from "@utils/useScreenSize";
-import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPage() {
   const screenSize = useScreenSize();
   return (
     <main>
-      <Header
-        isLandingPage
-        landingPageLogo={
-          <Link href="/">
-            <Thermomix size="small" />
-          </Link>
-        }
-        logo={
-          <Link href="/">
-            <Vorwerk />
-          </Link>
-        }
-      />
       <Hero
-        cta={
-          <ButtonGroup alignment="center" layout="vertical">
-            <Button size="medium" type="primary">
-              Shop now
-            </Button>
-          </ButtonGroup>
-        }
-        headline={
-          <Headline eyebrowLine="Thermomix® Sensor" strongColor="white">
-            <Typography component="h1">
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: "Turn a guess<br><strong>into success</strong>",
-                }}
-              />
-            </Typography>
-          </Headline>
-        }
-        image={
-          <img
-            alt="Sensor"
-            src="/landingPage/hero/sensor-hero-default-cover.png"
-            style={{ display: "none" }}
-          />
-        }
-        isLandingPage
-        video={
-          <video autoPlay muted playsInline loop>
-            <source
-              src="/landingPage/hero/sensor-hero-default.mp4"
-              type="video/mp4"
-            />
-          </video>
-        }
-      />
-      <ParallaxProductSection
-        logoImageDark="/library/images/parallaxProductSection/logos-dark.png"
-        productImage="/landingPage/hero/sensor-hero-parallax.png"
+        video="sensor"
+        productImage="sensor"
+        eyebrowLine="Thermomix® Sensor"
+        textCopy="Turn a guess<br><strong>into success</strong>"
         darkMode
       />
       <SectionContainer>
@@ -318,61 +263,8 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
-        <Spacer size={96} sizeMedium={0} />
-        <FunctionsTab
-          darkMode
-          items={[
-            {
-              id: 1,
-              text: "Sensor and charging station",
-              isActive: false,
-              scrollMin: 0,
-              scrollMax: 1,
-              media: {
-                type: "video",
-                src: "/landingPage/stepByStep/sensor/01_take.mp4",
-              },
-              useIcon: false,
-            },
-            {
-              id: 2,
-              text: "Place the sensor",
-              isActive: false,
-              scrollMin: 0,
-              scrollMax: 1,
-              media: {
-                type: "video",
-                src: "/landingPage/stepByStep/sensor/02_insert.mp4",
-              },
-              useIcon: false,
-            },
-            {
-              id: 3,
-              text: "Cooking with the sensor",
-              isActive: false,
-              scrollMin: 0,
-              scrollMax: 1,
-              media: {
-                type: "video",
-                src: "/landingPage/stepByStep/sensor/03_cooking.mp4",
-              },
-              useIcon: false,
-            },
-            {
-              id: 4,
-              text: "Cleaning",
-              isActive: false,
-              scrollMin: 0,
-              scrollMax: 1,
-              media: {
-                type: "video",
-                src: "/landingPage/stepByStep/sensor/04_cleaning.mp4",
-              },
-              useIcon: false,
-            },
-          ]}
-        />
-        <Spacer size={96} sizeMedium={0} />
+      </SectionContainer>
+      <SectionContainer>
         <GridContainer>
           <GridItem
             columns={10}

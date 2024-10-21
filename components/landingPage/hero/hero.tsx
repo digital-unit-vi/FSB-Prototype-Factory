@@ -1,11 +1,22 @@
 "use client";
 
+import {
+  GridContainer,
+  GridItem,
+  Header,
+  Headline,
+  Thermomix,
+  Typography,
+  Vorwerk,
+} from "@components/build-assets/libraryExport";
 import Button from "@components/shared/button/button";
+import ParallaxLogoDark from "@public/landingPage/hero/logos-dark.png";
+import ParallaxLogo from "@public/landingPage/hero/logos.png";
 import SensorProductImage from "@public/landingPage/hero/sensor-hero-landing-page.png";
-import TM6ProductImage from "@public/landingPage/hero/tm6-hero-landing-page.png";
-import Logo from "@public/shared/logo/logo-white.svg";
+import TM6ProductImage from "@public/shared/product/tm6-product-light.png";
 import Image, { StaticImageData } from "next/image";
-import React, { useLayoutEffect, useRef } from "react";
+import Link from "next/link";
+import React, { useEffect, useRef } from "react";
 import { Parallax } from "react-scroll-parallax";
 import styles from "./hero.module.scss";
 
@@ -15,9 +26,9 @@ type ProductImage = "tm6" | "sensor";
 interface HeroProps {
   video: VideoType;
   productImage: ProductImage;
-  primaryText: string;
-  secondaryText: string;
-  tertiaryText: string;
+  eyebrowLine: string;
+  textCopy: string;
+  darkMode?: boolean;
 }
 
 const HERO_VIDEO_MAPPING: Record<VideoType, string> = {
@@ -35,91 +46,130 @@ const HERO_PRODUCT_IMAGE_MAPPING: Record<ProductImage, StaticImageData> = {
 const Hero: React.FC<HeroProps> = ({
   video,
   productImage,
-  primaryText,
-  secondaryText,
-  tertiaryText,
-}: HeroProps) => {
+  eyebrowLine,
+  textCopy,
+  darkMode = false,
+}) => {
+  const parallaxLogo = darkMode ? ParallaxLogoDark : ParallaxLogo;
+
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  useLayoutEffect(() => {
-    const video = videoRef.current;
+  useEffect(() => {
+    const videoEl = videoRef.current;
+    if (!videoEl) return;
 
-    if (!video) return;
+    videoEl.muted = true;
+    videoEl.playsInline = true;
 
-    const once = (el: EventTarget, event: string, fn: (e: Event) => void) => {
-      const onceFn = (e: Event) => {
-        el.removeEventListener(event, onceFn);
-        fn(e);
-      };
-      el.addEventListener(event, onceFn);
-      return onceFn;
+    const playVideo = () => {
+      videoEl.play().catch((error) => {
+        console.error("Video playback failed:", error);
+      });
     };
 
-    once(document.documentElement, "touchstart", () => {
-      video
-        .play()
-        .then(() => {
-          video.pause();
-          video.play().catch((error) => {
-            console.error("Video playback failed:", error);
-          });
-        })
-        .catch((error) => {
-          console.error("Initial video playback failed:", error);
-        });
-    });
+    if (videoEl.readyState >= 3) {
+      playVideo();
+    } else {
+      videoEl.addEventListener("canplaythrough", playVideo, { once: true });
+    }
+
+    return () => {
+      videoEl.removeEventListener("canplaythrough", playVideo);
+    };
   }, []);
 
   return (
-    <div className={styles.heroContainer}>
-      <div className={styles.videoWrapper}>
-        <video
-          ref={videoRef}
-          className={styles.heroVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          disableRemotePlayback
+    <div>
+      <div className={styles.heroContainer}>
+        <div className={styles.videoWrapper}>
+          <video
+            ref={videoRef}
+            className={styles.heroVideo}
+            autoPlay
+            muted
+            playsInline
+            loop
+            preload="auto"
+            disableRemotePlayback
+          >
+            <source src={HERO_VIDEO_MAPPING[video]} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className={styles.heroOverlay} />
+        </div>
+        <div className={styles.headerContainer}>
+          <Header
+            isLandingPage
+            landingPageLogo={
+              <Link href="/">
+                <Thermomix size="small" />
+              </Link>
+            }
+            logo={
+              <Link href="/">
+                <Vorwerk />
+              </Link>
+            }
+          />
+        </div>
+        <div className={styles.heroContent}>
+          <Parallax
+            translateY={[0, -15, "easeOut"]}
+            shouldAlwaysCompleteAnimation={true}
+          >
+            <GridContainer>
+              <GridItem columns={12}>
+                <Headline
+                  eyebrowLine={eyebrowLine}
+                  strongColor="white"
+                  spaceBelow="default"
+                >
+                  <Typography component="h1">
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: textCopy,
+                      }}
+                    />
+                  </Typography>
+                </Headline>
+                <Button type="center" href="#" />
+              </GridItem>
+            </GridContainer>
+          </Parallax>
+        </div>
+      </div>
+      <div className={styles.parallaxWrapper}>
+        <Parallax
+          shouldAlwaysCompleteAnimation={true}
+          translateY={[0, -50, "easeIn"]}
+          scale={[1.0, 1.15, "easeIn"]}
+          className={styles.parallax}
         >
-          <source src={HERO_VIDEO_MAPPING[video]} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className={styles.heroOverlay} />
-      </div>
-      <div className={styles.heroContent}>
-        <Image
-          src={Logo as StaticImageData}
-          alt="Vorwerk logo"
-          className={styles.heroLogo}
-          width={160}
-          height={64}
-          priority
-        />
-        <Parallax translateY={[60, -15, "easeOut"]}>
-          <h3 className={styles.heroTextTertiary}>{tertiaryText}</h3>
-          <h2 className={styles.heroTextSecondary}>{secondaryText}</h2>
-          <h1 className={styles.heroTextPrimary}>{primaryText}</h1>
-          <Button type="center" href="#" />
+          <GridContainer>
+            <GridItem startL={4} endL={10}>
+              <Image
+                src={HERO_PRODUCT_IMAGE_MAPPING[productImage]}
+                alt="Hero product image"
+                className={styles.heroProduct}
+                priority
+              />
+            </GridItem>
+          </GridContainer>
         </Parallax>
+        <div className={styles.parallaxLogoWrapper}>
+          <GridContainer>
+            <GridItem columns={9}></GridItem>
+            <GridItem columns={3}>
+              <Image
+                src={parallaxLogo}
+                alt="Hero logo image"
+                className={styles.heroParallaxLogo}
+                priority
+              />
+            </GridItem>
+          </GridContainer>
+        </div>
       </div>
-      <Parallax
-        translateY={
-          productImage === "tm6" ? [10, -10, "easeOut"] : [5, -25, "easeIn"]
-        }
-        scale={
-          productImage === "tm6" ? [0.9, 1.2, "easeOut"] : [0.9, 1.1, "easeIn"]
-        }
-        className={styles.parallax}
-      >
-        <Image
-          src={HERO_PRODUCT_IMAGE_MAPPING[productImage]}
-          alt="Hero product image"
-          className={styles.heroProduct}
-          priority
-        />
-      </Parallax>
     </div>
   );
 };

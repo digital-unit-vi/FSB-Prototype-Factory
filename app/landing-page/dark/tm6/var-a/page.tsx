@@ -2,104 +2,43 @@
 
 import {
   BentoBoxTiles,
-  Blend,
   BlendIllustration,
   BlendLight,
   BluetoothLight,
-  Button,
-  ButtonGroup,
   DisplaySettingsLight,
   DoughIllustration,
   FermentationIllustration,
-  FermentMode,
   FullwidthImage,
-  FunctionsTab,
   GalleryCarousel,
   GridContainer,
   GridItem,
-  Header,
   Headline,
-  Hero,
   HighTemperatureIllustration,
   ImageCarousel,
-  ParallaxProductSection,
   PeelingIllustration,
   PreparationTimeIllustration,
   ProductBlock,
   ScrollRow,
   SectionContainer,
-  SlowCooking,
   SlowCookingIllustration,
-  SousVide,
   SousVideIllustration,
-  TemperatureHigh,
   TemperatureHighLight,
-  Thermomix,
   Typography,
   UserReview,
-  Vorwerk,
   WifiLight,
 } from "@components/build-assets/libraryExport";
+import Hero from "@components/landingPage/hero/hero";
 import Spacer from "@components/shared/spacer/spacer";
-import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function TM6VariantADarkLandingPage() {
   return (
     <main>
-      <Header
-        isLandingPage
-        landingPageLogo={
-          <Link href="/">
-            <Thermomix size="small" />
-          </Link>
-        }
-        logo={
-          <Link href="/">
-            <Vorwerk />
-          </Link>
-        }
-      />
       <Hero
-        cta={
-          <ButtonGroup alignment="center" layout="vertical">
-            <Button size="medium" type="primary">
-              Shop now
-            </Button>
-          </ButtonGroup>
-        }
-        headline={
-          <Headline eyebrowLine="Thermomix® TM6" strongColor="white">
-            <Typography component="h1">
-              <span
-                dangerouslySetInnerHTML={{
-                  __html:
-                    "One device.<br><strong>Endless possibilities</strong>",
-                }}
-              />
-            </Typography>
-          </Headline>
-        }
-        image={
-          <img
-            alt="Relaxing in the kitchen"
-            src="/landingPage/hero/tm6-hero-default-cover.png"
-            style={{ display: "none" }}
-          />
-        }
-        isLandingPage
-        video={
-          <video autoPlay muted playsInline loop>
-            <source
-              src="/landingPage/hero/tm6-hero-default.mp4"
-              type="video/mp4"
-            />
-          </video>
-        }
-      />
-      <ParallaxProductSection
-        logoImageDark="/library/images/parallaxProductSection/logos-dark.png"
-        productImage="/library/images/parallaxProductSection/product.png"
+        video="default"
+        productImage="tm6"
+        eyebrowLine="Thermomix® TM6"
+        textCopy="One device.<br><strong>Endless possibilities</strong>"
         darkMode
       />
       <SectionContainer>
@@ -199,7 +138,8 @@ export default function TM6VariantADarkLandingPage() {
             </>
           </GridItem>
         </GridContainer>
-        <Spacer size={64} sizeMedium={128} />
+      </SectionContainer>
+      <SectionContainer>
         <ScrollRow
           darkMode
           scrollRowItems={[
@@ -237,79 +177,8 @@ export default function TM6VariantADarkLandingPage() {
             },
           ]}
         />
-        <Spacer size={96} sizeMedium={0} />
-        <FunctionsTab
-          darkMode
-          lastLineText="and many more..."
-          items={[
-            {
-              id: 1,
-              text: "Sous-Vide",
-              icon: <SousVide />,
-              isActive: false,
-              scrollMin: 0,
-              scrollMax: 1,
-              media: {
-                type: "video",
-                src: "/library/videos/functionTab/Sous-vide.webm",
-              },
-              useIcon: true,
-            },
-            {
-              id: 2,
-              text: "Slow Cook",
-              icon: <SlowCooking />,
-              isActive: false,
-              scrollMin: 0,
-              scrollMax: 1,
-              media: {
-                type: "video",
-                src: "/library/videos/functionTab/Slowcook.webm",
-              },
-              useIcon: true,
-            },
-            {
-              id: 3,
-              text: "Sauté",
-              icon: <TemperatureHigh />,
-              isActive: false,
-              scrollMin: 0,
-              scrollMax: 1,
-              media: {
-                type: "video",
-                src: "/library/videos/functionTab/Saute.webm",
-              },
-              useIcon: true,
-            },
-            {
-              id: 4,
-              text: "Fermantation",
-              icon: <FermentMode />,
-              isActive: false,
-              scrollMin: 0,
-              scrollMax: 1,
-              media: {
-                type: "video",
-                src: "/library/videos/functionTab/Fermentation.webm",
-              },
-              useIcon: true,
-            },
-            {
-              id: 5,
-              text: "Caramelize",
-              icon: <Blend />,
-              isActive: false,
-              scrollMin: 0,
-              scrollMax: 1,
-              media: {
-                type: "video",
-                src: "/library/videos/functionTab/Caramel.webm",
-              },
-              useIcon: true,
-            },
-          ]}
-        />
-        <Spacer size={96} sizeMedium={0} />
+      </SectionContainer>
+      <SectionContainer>
         <GalleryCarousel
           darkMode
           desktopSlides={[
