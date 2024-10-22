@@ -4,35 +4,91 @@ import {
   BatteryLevel3Light,
   BentoBoxTiles,
   BluetoothLight,
+  Button,
+  ButtonGroup,
   CleaningLight,
+  FunctionsTab,
   GalleryCarousel,
   GridContainer,
   GridItem,
+  Header,
   Headline,
+  Hero,
   ImageCarousel,
+  ParallaxProductSection,
   ProductBlock,
   SectionContainer,
+  SousVide,
   SousVideLight,
+  Thermomix,
   TimerLight,
   Typography,
   UserReview,
+  Vorwerk,
 } from "@components/build-assets/libraryExport";
-import Hero from "@components/landingPage/hero/hero";
+import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
+import ScrollTriggerWatcher from "@components/landingPage/scrollTriggerWatcher/scrollTriggerWatcher";
 import Spacer from "@components/shared/spacer/spacer";
 import useScreenSize from "@utils/useScreenSize";
+import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPage() {
   const screenSize = useScreenSize();
   return (
     <main>
+      <Header
+        isLandingPage
+        landingPageLogo={
+          <Link href="/">
+            <Thermomix size="small" />
+          </Link>
+        }
+        logo={
+          <Link href="/">
+            <Vorwerk />
+          </Link>
+        }
+      />
       <Hero
-        video="sensor"
-        productImage="sensor"
-        eyebrowLine="Thermomix® Sensor"
-        textCopy="Turn a guess<br><strong>into success</strong>"
-        darkMode
-        poster="/landingPage/hero/sensor-hero-cover-new.jpeg"
+        cta={
+          <ButtonGroup alignment="center" layout="vertical">
+            <Button size="medium" type="primary">
+              Shop now
+            </Button>
+          </ButtonGroup>
+        }
+        headline={
+          <Headline eyebrowLine="Thermomix® Sensor" strongColor="white">
+            <Typography component="h1">
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: "Turn a guess<br><strong>into success</strong>",
+                }}
+              />
+            </Typography>
+          </Headline>
+        }
+        image={
+          <img
+            alt="Sensor"
+            src="/landingPage/hero/sensor-hero-default-cover.png"
+            style={{ display: "none" }}
+          />
+        }
+        isLandingPage
+        video={
+          <video autoPlay muted playsInline loop>
+            <source
+              src="/landingPage/hero/sensor-hero-default.mp4"
+              type="video/mp4"
+            />
+          </video>
+        }
+      />
+      <ParallaxProductSection
+        logoImage="/library/images/parallaxProductSection/logos.png"
+        productImage="/landingPage/hero/sensor-hero-parallax.png"
       />
       <SectionContainer>
         <GridContainer>
@@ -56,126 +112,127 @@ export default function SensorLightLandingPage() {
         </GridContainer>
       </SectionContainer>
       <SectionContainer>
-        <GalleryCarousel
-          darkMode
-          desktopSlides={[
-            {
-              bigImagePosLeft: false,
-              images: [
-                {
-                  url: "/landingPage/imageGallery/sensor-loaf.jpg",
-                  alt: "Image 1",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-pan.jpg",
-                  alt: "Image 2",
-                  title: "",
-                },
-                {
-                  url: "/email/collage/sensor-father-daughter.jpg",
-                  alt: "Image 3",
-                  title: "",
-                },
-              ],
-            },
-            {
-              bigImagePosLeft: true,
-              images: [
-                {
-                  url: "/landingPage/imageGallery/sensor-tm6-cake.jpg",
-                  alt: "Image 4",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-grill.jpg",
-                  alt: "Image 5",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-mother-daughter.jpg",
-                  alt: "Image 6",
-                  title: "",
-                },
-              ],
-            },
-            {
-              bigImagePosLeft: false,
-              images: [
-                {
-                  url: "/landingPage/imageGallery/sensor-man-fish.jpg",
-                  alt: "Image 7",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-app-juice.jpg",
-                  alt: "Image 8",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-oven-cake.jpg",
-                  alt: "Image 9",
-                  title: "",
-                },
-              ],
-            },
-          ]}
-          mobileSlides={[
-            {
-              mobileCarouselItems: [
-                {
-                  url: "/landingPage/imageGallery/sensor-loaf.jpg",
-                  alt: "Image 1",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-pan.jpg",
-                  alt: "Image 2",
-                  title: "",
-                },
-                {
-                  url: "/email/collage/sensor-father-daughter.jpg",
-                  alt: "Image 3",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-tm6-cake.jpg",
-                  alt: "Image 4",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-grill.jpg",
-                  alt: "Image 5",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-mother-daughter.jpg",
-                  alt: "Image 6",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-man-fish.jpg",
-                  alt: "Image 7",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-app-juice.jpg",
-                  alt: "Image 8",
-                  title: "",
-                },
-                {
-                  url: "/landingPage/imageGallery/sensor-oven-cake.jpg",
-                  alt: "Image 9",
-                  title: "",
-                },
-              ],
-            },
-          ]}
-        />
+        <ScrollTriggerWatcher>
+          <GalleryCarousel
+            desktopSlides={[
+              {
+                bigImagePosLeft: false,
+                images: [
+                  {
+                    url: "/landingPage/imageGallery/sensor-loaf.jpg",
+                    alt: "Image 1",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-pan.jpg",
+                    alt: "Image 2",
+                    title: "",
+                  },
+                  {
+                    url: "/email/collage/sensor-father-daughter.jpg",
+                    alt: "Image 3",
+                    title: "",
+                  },
+                ],
+              },
+              {
+                bigImagePosLeft: true,
+                images: [
+                  {
+                    url: "/landingPage/imageGallery/sensor-tm6-cake.jpg",
+                    alt: "Image 4",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-grill.jpg",
+                    alt: "Image 5",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-mother-daughter.jpg",
+                    alt: "Image 6",
+                    title: "",
+                  },
+                ],
+              },
+              {
+                bigImagePosLeft: false,
+                images: [
+                  {
+                    url: "/landingPage/imageGallery/sensor-man-fish.jpg",
+                    alt: "Image 7",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-app-juice.jpg",
+                    alt: "Image 8",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-oven-cake.jpg",
+                    alt: "Image 9",
+                    title: "",
+                  },
+                ],
+              },
+            ]}
+            mobileSlides={[
+              {
+                mobileCarouselItems: [
+                  {
+                    url: "/landingPage/imageGallery/sensor-loaf.jpg",
+                    alt: "Image 1",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-pan.jpg",
+                    alt: "Image 2",
+                    title: "",
+                  },
+                  {
+                    url: "/email/collage/sensor-father-daughter.jpg",
+                    alt: "Image 3",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-tm6-cake.jpg",
+                    alt: "Image 4",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-grill.jpg",
+                    alt: "Image 5",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-mother-daughter.jpg",
+                    alt: "Image 6",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-man-fish.jpg",
+                    alt: "Image 7",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-app-juice.jpg",
+                    alt: "Image 8",
+                    title: "",
+                  },
+                  {
+                    url: "/landingPage/imageGallery/sensor-oven-cake.jpg",
+                    alt: "Image 9",
+                    title: "",
+                  },
+                ],
+              },
+            ]}
+          />
+        </ScrollTriggerWatcher>
       </SectionContainer>
       <SectionContainer>
         <GridContainer>
-          <GridItem columns={4} className={styles.textWhite}>
+          <GridItem columns={4}>
             <Headline
               children={
                 <Typography component="h3" fontWeight="bold">
@@ -184,7 +241,7 @@ export default function SensorLightLandingPage() {
               }
             />
           </GridItem>
-          <GridItem columns={8} className={styles.textWhite}>
+          <GridItem columns={8}>
             <Typography component="intro">
               <span style={{ whiteSpace: "pre-line" }}>
                 {screenSize.width > 739
@@ -217,10 +274,9 @@ export default function SensorLightLandingPage() {
             />
           </GridItem>
         </GridContainer>
-      </SectionContainer>
-      <SectionContainer>
+        <ProductAnimation />
+        <Spacer size={48} sizeMedium={0} />
         <BentoBoxTiles
-          darkMode
           tiles={[
             {
               bigTile: false,
@@ -264,8 +320,64 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
-      <SectionContainer>
+        <Spacer size={96} sizeMedium={0} />
+        <FunctionsTab
+          items={[
+            {
+              id: 1,
+              text: "Sensor and charging station",
+              isActive: false,
+              scrollMin: 0,
+              scrollMax: 1,
+              media: {
+                type: "video",
+                src: "/landingPage/stepByStep/sensor/01_take.mp4",
+              },
+              icon: <SousVide />,
+              useIcon: false,
+            },
+            {
+              id: 2,
+              text: "Place the sensor",
+              isActive: false,
+              scrollMin: 0,
+              scrollMax: 1,
+              media: {
+                type: "video",
+                src: "/landingPage/stepByStep/sensor/02_insert.mp4",
+              },
+              icon: <SousVide />,
+              useIcon: false,
+            },
+            {
+              id: 3,
+              text: "Cooking with the sensor",
+              isActive: false,
+              scrollMin: 0,
+              scrollMax: 1,
+              media: {
+                type: "video",
+                src: "/landingPage/stepByStep/sensor/03_cooking.mp4",
+              },
+              icon: <SousVide />,
+              useIcon: false,
+            },
+            {
+              id: 4,
+              text: "Cleaning",
+              isActive: false,
+              scrollMin: 0,
+              scrollMax: 1,
+              media: {
+                type: "video",
+                src: "/landingPage/stepByStep/sensor/04_cleaning.mp4",
+              },
+              icon: <SousVide />,
+              useIcon: false,
+            },
+          ]}
+        />
+        <Spacer size={96} sizeMedium={0} />
         <GridContainer>
           <GridItem
             columns={10}
@@ -353,7 +465,6 @@ export default function SensorLightLandingPage() {
       </SectionContainer>
       <SectionContainer>
         <UserReview
-          darkMode
           additionalText="42 reviews"
           overallStars={4.5}
           reviewItems={[
@@ -377,14 +488,10 @@ export default function SensorLightLandingPage() {
         <Spacer size={32} sizeMedium={64} />
       </SectionContainer>
       <ProductBlock
-        darkMode
         ctaText="Shop now"
         headline="Thermomix® Sensor"
         image="/shared/product/sensor-product.png"
         price="149,00 €"
-      />
-      <hr
-        style={{ margin: "0", borderStyle: "solid", borderColor: "#23282a" }}
       />
     </main>
   );

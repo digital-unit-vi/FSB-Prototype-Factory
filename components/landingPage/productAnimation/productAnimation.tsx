@@ -28,7 +28,7 @@ const ProductAnimation = () => {
 
       const dpr = window.devicePixelRatio || 1;
 
-      const frameCount = 425;
+      const frameCount = 390;
 
       const currentFrame = (index: number) =>
         `/landingPage/sensorAnimation/lightNew/frame_${(index + 1)
@@ -103,7 +103,7 @@ const ProductAnimation = () => {
         scrollTrigger: {
           trigger: container,
           start: "top top",
-          end: "+=" + frameCount * 16,
+          end: "+=" + frameCount * 14,
           pin: true,
           scrub: true,
         },

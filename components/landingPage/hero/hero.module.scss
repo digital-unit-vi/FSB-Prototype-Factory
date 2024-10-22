@@ -1,3 +1,7 @@
+.mainWrapper {
+  overflow: hidden;
+}
+
 .heroContainer {
   position: relative;
 
@@ -7,7 +11,12 @@
   align-items: center;
 
   width: 100%;
-  min-height: 600px;
+  height: calc(100svh - 16px);
+  max-height: 600px;
+
+  @media (width >= 1268px) {
+    max-height: initial;
+  }
 }
 
 .videoWrapper {
@@ -17,14 +26,30 @@
   display: flex;
 
   width: 100%;
-  max-height: 600px;
+  height: 100%;
 
   border-radius: 0 0 64px;
+
+  @media (width >= 740px) {
+    border-radius: 0 0 88px;
+  }
+
+  @media (width >= 936px) {
+    border-radius: 0 0 128px;
+  }
+
+  @media (width >= 1268px) {
+    border-radius: 0 0 144px;
+  }
+
+  @media (width >= 1580px) {
+    border-radius: 0 0 168px;
+  }
 }
 
 .heroVideo {
   width: 100%;
-  height: 600px;
+  height: 100%;
   object-fit: cover;
   border-radius: 0 0 64px;
 }
@@ -45,51 +70,67 @@
   );
 }
 
-.parallax {
-  z-index: 2;
+.headerContainer {
+  position: absolute;
 }
 
 .heroContent {
   position: relative;
   z-index: 2;
 
-  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
 
   color: white;
   text-align: center;
 }
 
-.heroLogo {
-  margin-bottom: 130px;
-  padding: 16px 3px;
+.parallaxWrapper {
+  position: relative;
 }
 
-.heroText {
-  &Tertiary {
-    margin: 0 0 8px;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 24px;
-  }
-
-  &Secondary {
-    margin: 0;
-    font-size: 36px;
-    font-weight: 300;
-    line-height: 50px;
-  }
-
-  &Primary {
-    margin: 0 0 24px;
-    font-size: 36px;
-    font-weight: 700;
-    line-height: 50px;
-  }
+.parallax {
+  z-index: 2;
 }
 
 .heroProduct {
   z-index: 2;
+
+  display: block;
+
   width: 295px;
-  height: auto;
   margin-top: -112px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (width >= 936px) {
+    width: 100%;
+  }
+}
+
+.parallaxLogoWrapper {
+  position: relative;
+  width: 100%;
+
+  @media (width >= 740px) {
+    position: absolute;
+    top: 25%;
+  }
+}
+
+.parallaxLogo {
+  display: block;
+
+  width: 100%;
+  max-width: 247px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (width >= 740px) {
+    max-width: initial;
+  }
 }
