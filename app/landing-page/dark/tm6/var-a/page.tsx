@@ -40,6 +40,7 @@ export default function TM6VariantADarkLandingPage() {
         eyebrowLine="Thermomix® TM6"
         textCopy="One device.<br><strong>Endless possibilities</strong>"
         darkMode
+        poster="/landingPage/hero/tm6-hero-default-cover-new.jpeg"
       />
       <SectionContainer>
         <GridContainer>

@@ -39,6 +39,7 @@ export default function TM6VariantBLightLandingPage() {
         productImage="tm6"
         eyebrowLine="Thermomix® TM6"
         textCopy="One device.<br><strong>Endless possibilities</strong>"
+        poster="/landingPage/hero/tm6-hero-dishes-cover-new.jpeg"
       />
       <SectionContainer>
         <GridContainer>

@@ -25,6 +25,7 @@ import styles from "./page.module.scss";
 
 export default function SensorLightLandingPage() {
   const screenSize = useScreenSize();
+
   return (
     <main>
       <Hero
@@ -32,6 +33,7 @@ export default function SensorLightLandingPage() {
         productImage="sensor"
         eyebrowLine="Thermomix® Sensor"
         textCopy="Turn a guess<br><strong>into success</strong>"
+        poster="/landingPage/hero/sensor-hero-cover-new.jpeg"
       />
       <SectionContainer>
         <GridContainer>

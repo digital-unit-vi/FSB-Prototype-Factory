@@ -1,3 +1,7 @@
+.mainWrapper {
+  overflow: hidden;
+}
+
 .heroContainer {
   position: relative;
 
@@ -66,8 +70,8 @@
   );
 }
 
-.parallax {
-  z-index: 2;
+.headerContainer {
+  position: absolute;
 }
 
 .heroContent {
@@ -85,6 +89,14 @@
   text-align: center;
 }
 
+.parallaxWrapper {
+  position: relative;
+}
+
+.parallax {
+  z-index: 2;
+}
+
 .heroProduct {
   z-index: 2;
 
@@ -100,23 +112,6 @@
   }
 }
 
-.heroParallaxLogo {
-  display: block;
-
-  width: 100%;
-  max-width: 247px;
-  margin-right: auto;
-  margin-left: auto;
-
-  @media (width >= 740px) {
-    max-width: initial;
-  }
-}
-
-.parallaxWrapper {
-  position: relative;
-}
-
 .parallaxLogoWrapper {
   position: relative;
   width: 100%;
@@ -127,6 +122,15 @@
   }
 }
 
-.headerContainer {
-  position: absolute;
+.parallaxLogo {
+  display: block;
+
+  width: 100%;
+  max-width: 247px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (width >= 740px) {
+    max-width: initial;
+  }
 }

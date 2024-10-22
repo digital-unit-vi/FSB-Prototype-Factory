@@ -32,6 +32,7 @@ export default function SensorLightLandingPage() {
         eyebrowLine="Thermomix® Sensor"
         textCopy="Turn a guess<br><strong>into success</strong>"
         darkMode
+        poster="/landingPage/hero/sensor-hero-cover-new.jpeg"
       />
       <SectionContainer>
         <GridContainer>

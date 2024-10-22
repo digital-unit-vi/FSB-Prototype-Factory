@@ -29,6 +29,7 @@ interface HeroProps {
   eyebrowLine: string;
   textCopy: string;
   darkMode?: boolean;
+  poster?: string;
 }
 
 const HERO_VIDEO_MAPPING: Record<VideoType, string> = {
@@ -49,6 +50,7 @@ const Hero: React.FC<HeroProps> = ({
   eyebrowLine,
   textCopy,
   darkMode = false,
+  poster = "",
 }) => {
   const parallaxLogo = darkMode ? ParallaxLogoDark : ParallaxLogo;
 
@@ -79,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({
   }, []);
 
   return (
-    <div>
+    <div className={styles.mainWrapper}>
       <div className={styles.heroContainer}>
         <div className={styles.videoWrapper}>
           <video
@@ -91,6 +93,7 @@ const Hero: React.FC<HeroProps> = ({
             loop
             preload="auto"
             disableRemotePlayback
+            poster={poster}
           >
             <source src={HERO_VIDEO_MAPPING[video]} type="video/mp4" />
             Your browser does not support the video tag.
@@ -163,7 +166,7 @@ const Hero: React.FC<HeroProps> = ({
               <Image
                 src={parallaxLogo}
                 alt="Hero logo image"
-                className={styles.heroParallaxLogo}
+                className={styles.parallaxLogo}
                 priority
               />
             </GridItem>
