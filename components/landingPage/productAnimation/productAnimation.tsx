@@ -106,6 +106,7 @@ const ProductAnimation = () => {
           end: "+=" + frameCount * 14,
           pin: true,
           scrub: true,
+          anticipatePin: 1,
         },
         onUpdate: render,
       });
