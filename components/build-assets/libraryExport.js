@@ -11382,47 +11382,9 @@ const tC = (t) => {
     };
     return d(a), [{ mobileCarouselItems: c }];
   })(t)), /* @__PURE__ */ e.jsx("div", { className: j0($1.galleryCarouselWrapper, l ? $1.darkMode : ""), children: n ? /* @__PURE__ */ e.jsx(hC, { mobileCarouselItems: s[0].mobileCarouselItems }) : /* @__PURE__ */ e.jsx(oC, { slides: t, darkMode: l }) });
-}, uC = "_ModuleImageCarousel_1sdn7_1", fC = "_ModuleImageCarousel__gallery_1sdn7_8", CC = "_ModuleImageCarousel__image_1sdn7_18", pC = "_ModuleImageCarousel__packshot_1sdn7_24", vC = "_ModuleImageCarousel__eyecatcher_1sdn7_32", P2 = {
-  ModuleImageCarousel: uC,
-  ModuleImageCarousel__gallery: fC,
-  ModuleImageCarousel__image: CC,
-  ModuleImageCarousel__packshot: pC,
-  ModuleImageCarousel__eyecatcher: vC
 };
-var mC = { purple: "_1mubyh30", green: "_1mubyh31", yellow: "_1mubyh32", orange: "_1mubyh33", red: "_1mubyh34", blue: "_1mubyh35" }, xC = { "5 degrees": "_1mubyh36", "-5 degrees": "_1mubyh37", none: "_1mubyh38" }, ZC = "_1mubyh39", gC = "_1mubyh3a", MC = { small: "_1mubyh3b", medium: "_1mubyh3c", large: "_1mubyh3d" };
-const LC = ({
-  firstLine: t,
-  secondLine: s,
-  thirdLine: l,
-  backgroundColor: r = "purple",
-  rotation: n = "none",
-  size: o = "small"
-}) => /* @__PURE__ */ e.jsx(
-  "div",
-  {
-    className: F(
-      ZC,
-      mC[r],
-      MC[o]
-    ),
-    children: /* @__PURE__ */ e.jsxs(
-      "div",
-      {
-        className: F(
-          gC,
-          xC[n]
-        ),
-        children: [
-          t && /* @__PURE__ */ e.jsx(x0, { variant: "paragraph16", fontWeight: "regular", children: t }),
-          s && /* @__PURE__ */ e.jsx(x0, { variant: "paragraph16", fontWeight: "bold", children: s }),
-          l && /* @__PURE__ */ e.jsx(x0, { variant: "paragraph16", fontWeight: "regular", children: l })
-        ]
-      }
-    )
-  }
-);
 var Ft = {};
-function jC(t) {
+function uC(t) {
   if (typeof window > "u")
     return;
   const s = document.createElement("style");
@@ -11430,11 +11392,11 @@ function jC(t) {
 }
 Object.defineProperty(Ft, "__esModule", { value: !0 });
 var h0 = Z0;
-function wC(t) {
+function fC(t) {
   return t && typeof t == "object" && "default" in t ? t : { default: t };
 }
-var w1 = /* @__PURE__ */ wC(h0);
-jC(`.rfm-marquee-container {
+var w1 = /* @__PURE__ */ fC(h0);
+uC(`.rfm-marquee-container {
   overflow-x: hidden;
   display: flex;
   flex-direction: row;
@@ -11506,7 +11468,7 @@ jC(`.rfm-marquee-container {
 .rfm-child {
   transform: var(--transform);
 }`);
-const HC = h0.forwardRef(function({ style: s = {}, className: l = "", autoFill: r = !1, play: n = !0, pauseOnHover: o = !1, pauseOnClick: i = !1, direction: a = "left", speed: c = 50, delay: d = 0, loop: h = 0, gradient: u = !1, gradientColor: f = "white", gradientWidth: Z = 200, onFinish: x, onCycleComplete: m, onMount: v, children: C }, p) {
+const CC = h0.forwardRef(function({ style: s = {}, className: l = "", autoFill: r = !1, play: n = !0, pauseOnHover: o = !1, pauseOnClick: i = !1, direction: a = "left", speed: c = 50, delay: d = 0, loop: h = 0, gradient: u = !1, gradientColor: f = "white", gradientWidth: Z = 200, onFinish: x, onCycleComplete: m, onMount: v, children: C }, p) {
   const [g, L] = h0.useState(0), [j, w] = h0.useState(0), [V, k] = h0.useState(1), [b, A] = h0.useState(!1), B = h0.useRef(null), T = p || B, P = h0.useRef(null), U = h0.useCallback(() => {
     if (P.current && T.current) {
       const E = T.current.getBoundingClientRect(), Y = P.current.getBoundingClientRect();
@@ -11556,8 +11518,44 @@ const HC = h0.forwardRef(function({ style: s = {}, className: l = "", autoFill: 
     w1.default.createElement("div", { className: "rfm-marquee", style: K }, D(V))
   ) : null;
 });
-var Dt = Ft.default = HC;
-const bv = ({
+var Dt = Ft.default = CC, pC = { purple: "_1mubyh30", green: "_1mubyh31", yellow: "_1mubyh32", orange: "_1mubyh33", red: "_1mubyh34", blue: "_1mubyh35" }, vC = { "5 degrees": "_1mubyh36", "-5 degrees": "_1mubyh37", none: "_1mubyh38" }, mC = "_1mubyh39", xC = "_1mubyh3a", ZC = { small: "_1mubyh3b", medium: "_1mubyh3c", large: "_1mubyh3d" };
+const gC = ({
+  firstLine: t,
+  secondLine: s,
+  thirdLine: l,
+  backgroundColor: r = "purple",
+  rotation: n = "none",
+  size: o = "small"
+}) => /* @__PURE__ */ e.jsx(
+  "div",
+  {
+    className: F(
+      mC,
+      pC[r],
+      ZC[o]
+    ),
+    children: /* @__PURE__ */ e.jsxs(
+      "div",
+      {
+        className: F(
+          xC,
+          vC[n]
+        ),
+        children: [
+          t && /* @__PURE__ */ e.jsx(x0, { variant: "paragraph16", fontWeight: "regular", children: t }),
+          s && /* @__PURE__ */ e.jsx(x0, { variant: "paragraph16", fontWeight: "bold", children: s }),
+          l && /* @__PURE__ */ e.jsx(x0, { variant: "paragraph16", fontWeight: "regular", children: l })
+        ]
+      }
+    )
+  }
+), MC = "_ModuleImageCarousel_1sdn7_1", LC = "_ModuleImageCarousel__gallery_1sdn7_8", jC = "_ModuleImageCarousel__image_1sdn7_18", wC = "_ModuleImageCarousel__packshot_1sdn7_24", HC = "_ModuleImageCarousel__eyecatcher_1sdn7_32", P2 = {
+  ModuleImageCarousel: MC,
+  ModuleImageCarousel__gallery: LC,
+  ModuleImageCarousel__image: jC,
+  ModuleImageCarousel__packshot: wC,
+  ModuleImageCarousel__eyecatcher: HC
+}, bv = ({
   eyecatcher: t = {
     firstLine: "First line",
     secondLine: "Second Line",
@@ -11585,8 +11583,8 @@ const bv = ({
     },
     o
   )) }) }),
-  s && /* @__PURE__ */ e.jsx("div", { className: P2.ModuleImageCarousel__packshot, children: /* @__PURE__ */ e.jsx("img", { src: s }) }),
-  r && /* @__PURE__ */ e.jsx("div", { className: P2.ModuleImageCarousel__eyecatcher, children: /* @__PURE__ */ e.jsx(LC, { ...t }) })
+  s && /* @__PURE__ */ e.jsx("div", { className: P2.ModuleImageCarousel__packshot, children: /* @__PURE__ */ e.jsx("img", { src: s, alt: "Product Image" }) }),
+  r && /* @__PURE__ */ e.jsx("div", { className: P2.ModuleImageCarousel__eyecatcher, children: /* @__PURE__ */ e.jsx(gC, { ...t }) })
 ] }), VC = "_parallaxProductSection_1pu95_1", kC = "_productImage_1pu95_8", yC = "_logoImage_1pu95_9", U4 = {
   parallaxProductSection: VC,
   productImage: kC,
@@ -34447,7 +34445,7 @@ export {
   sm as Estonia,
   rZ as Explore,
   lL as ExploreLight,
-  LC as EyeCatcher,
+  gC as EyeCatcher,
   Wm as Facebook,
   Em as FacebookColored,
   Pm as FacebookMessenger,
