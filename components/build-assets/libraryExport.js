@@ -9612,17 +9612,35 @@ const wv = ({
   ] });
 };
 var gu = "_1x27qqv0", Mu = "_1x27qqv1", Lu = "_1x27qqv2", ju = "_1x27qqv3", wu = "_1x27qqv4", Hu = "_1x27qqv5", Vu = "_1x27qqv6", ku = "_1x27qqv7", yu = "_1x27qqv8", bu = "_1x27qqv9";
-const Hv = ({
-  tiles: t,
-  darkMode: s
-}) => /* @__PURE__ */ e.jsx(v0, { children: /* @__PURE__ */ e.jsx(r0, { columns: 12, children: /* @__PURE__ */ e.jsx("div", { className: `${ju} ${s ? gu : ""}`, children: t.map((l, r) => /* @__PURE__ */ e.jsxs("div", { className: `${Lu} ${l.bigTile ? wu : ""}`, children: [
-  l.image && /* @__PURE__ */ e.jsx("div", { className: `${Vu} ${l.imageBottom ? ku : ""}`, children: /* @__PURE__ */ e.jsx("img", { src: l.image }) }),
-  /* @__PURE__ */ e.jsxs("div", { className: Mu, children: [
-    /* @__PURE__ */ e.jsx("div", { className: Hu, children: l.icon }),
-    /* @__PURE__ */ e.jsx(x0, { className: bu, component: "h4", fontWeight: "bold", children: l.title }),
-    /* @__PURE__ */ e.jsx("div", { className: yu, children: l.text })
-  ] })
-] }, r)) }) }) }), Ru = "_fullwidthImageWrapper_jm54t_1", Au = "_fullwidthImage__btngroup_jm54t_15", _u = "_fullwidthImage__topic_jm54t_19", E2 = {
+const Hv = ({ tiles: t, darkMode: s }) => /* @__PURE__ */ e.jsx(v0, { children: /* @__PURE__ */ e.jsx(r0, { columns: 12, children: /* @__PURE__ */ e.jsx("div", { className: `${ju} ${s ? gu : ""}`, children: t.map((l, r) => /* @__PURE__ */ e.jsxs(
+  "div",
+  {
+    className: `${Lu} ${l.bigTile ? wu : ""}`,
+    children: [
+      l.image && /* @__PURE__ */ e.jsx(
+        "div",
+        {
+          className: `${Vu} ${l.imageBottom ? ku : ""}`,
+          children: /* @__PURE__ */ e.jsx("img", { src: l.image, alt: l.title })
+        }
+      ),
+      /* @__PURE__ */ e.jsxs("div", { className: Mu, children: [
+        /* @__PURE__ */ e.jsx("div", { className: Hu, children: l.icon }),
+        /* @__PURE__ */ e.jsx(
+          x0,
+          {
+            className: bu,
+            component: "h4",
+            fontWeight: "bold",
+            children: l.title
+          }
+        ),
+        /* @__PURE__ */ e.jsx("div", { className: yu, children: l.text })
+      ] })
+    ]
+  },
+  r
+)) }) }) }), Ru = "_fullwidthImageWrapper_jm54t_1", Au = "_fullwidthImage__btngroup_jm54t_15", _u = "_fullwidthImage__topic_jm54t_19", E2 = {
   fullwidthImageWrapper: Ru,
   "rounded-corner": "_rounded-corner_jm54t_11",
   fullwidthImage__btngroup: Au,
@@ -11591,8 +11609,8 @@ const bv = ({
       style: { translateY: i, marginBottom: i },
       transition: { ease: "easeInOut", duration: 2 },
       children: /* @__PURE__ */ e.jsxs(v0, { children: [
-        /* @__PURE__ */ e.jsx(r0, { start: 4, end: 10, children: /* @__PURE__ */ e.jsx("div", { className: U4.productImage, children: /* @__PURE__ */ e.jsx("img", { src: t }) }) }),
-        /* @__PURE__ */ e.jsx(r0, { columns: 3, children: /* @__PURE__ */ e.jsx("div", { className: U4.logoImage, children: /* @__PURE__ */ e.jsx("img", { src: r ? l : s }) }) })
+        /* @__PURE__ */ e.jsx(r0, { start: 4, end: 10, children: /* @__PURE__ */ e.jsx("div", { className: U4.productImage, children: /* @__PURE__ */ e.jsx("img", { src: t, alt: "Product Image" }) }) }),
+        /* @__PURE__ */ e.jsx(r0, { columns: 3, children: /* @__PURE__ */ e.jsx("div", { className: U4.logoImage, children: /* @__PURE__ */ e.jsx("img", { src: r ? l : s, alt: "Logo Image" }) }) })
       ] })
     }
   );
