@@ -3,15 +3,35 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import styles from "./productAnimation.module.scss";
 
 const ProductAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger, useGSAP);
+  }, []);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          scrollTriggerRef.current?.refresh();
+        }, 100);
+      }
+    };
+
+    window.scrollTo(0, 0);
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
   }, []);
 
   useGSAP(
@@ -21,14 +41,15 @@ const ProductAnimation = () => {
 
       if (!canvas || !container) return;
 
-      const context = canvas.getContext("2d");
+      const context = canvas.getContext("2d", { alpha: false });
       if (!context) return;
 
       context.imageSmoothingEnabled = true;
+      context.imageSmoothingQuality = "high";
 
       const dpr = window.devicePixelRatio || 1;
-
       const frameCount = 390;
+      let loadedImages = 0;
 
       const currentFrame = (index: number) =>
         `/landingPage/sensorAnimation/lightNew/frame_${(index + 1)
@@ -40,51 +61,56 @@ const ProductAnimation = () => {
         frame: 0,
       };
 
-      for (let i = 0; i < frameCount; i++) {
-        const img = new Image();
-        img.src = currentFrame(i);
-        images.push(img);
-      }
+      const preloadImages = () => {
+        for (let i = 0; i < frameCount; i++) {
+          const img = new Image();
+          img.onload = () => {
+            loadedImages++;
+            if (loadedImages === frameCount) {
+              render();
+            }
+          };
+          img.src = currentFrame(i);
+          images.push(img);
+        }
+      };
 
       const adjustCanvasSize = () => {
-        const canvas = canvasRef.current;
         if (!canvas) return;
 
         const rect = canvas.getBoundingClientRect();
-
         canvas.width = rect.width * dpr;
         canvas.height = rect.height * dpr;
 
-        render(); // Re-render after resizing
+        canvas.style.width = `${rect.width}px`;
+        canvas.style.height = `${rect.height}px`;
+
+        render();
       };
 
       const render = () => {
-        if (!canvas || !context) return;
+        if (!canvas || !context || !images[frames.frame]) return;
 
-        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = "#FFFFFF";
+        context.fillRect(0, 0, canvas.width, canvas.height);
 
         const image = images[frames.frame];
-        if (!image) return;
-
-        const isMobile = window.innerWidth <= 768;
-
         const rect = canvas.getBoundingClientRect();
-        const canvasWidth = rect.width;
-        const canvasHeight = rect.height;
+        const isMobile = window.innerWidth <= 768;
 
         let scale, x, y, renderableWidth, renderableHeight;
 
         if (isMobile) {
-          scale = canvasWidth / image.width;
-          renderableWidth = canvasWidth;
+          scale = rect.width / image.width;
+          renderableWidth = rect.width;
           renderableHeight = image.height * scale;
           x = 0;
-          y = (canvasHeight - renderableHeight) / 2;
+          y = (rect.height - renderableHeight) / 2;
         } else {
-          scale = canvasHeight / image.height;
-          renderableHeight = canvasHeight;
+          scale = rect.height / image.height;
+          renderableHeight = rect.height;
           renderableWidth = image.width * scale;
-          x = (canvasWidth - renderableWidth) / 2;
+          x = (rect.width - renderableWidth) / 2;
           y = 0;
         }
 
@@ -97,7 +123,7 @@ const ProductAnimation = () => {
         );
       };
 
-      gsap.to(frames, {
+      const scrollAnimation = gsap.to(frames, {
         frame: frameCount - 1,
         snap: "frame",
         scrollTrigger: {
@@ -105,20 +131,47 @@ const ProductAnimation = () => {
           start: "top top",
           end: "+=" + frameCount * 14,
           pin: true,
-          scrub: true,
+          scrub: 1,
           anticipatePin: 1,
+          fastScrollEnd: true,
+          invalidateOnRefresh: true,
+          onRefresh: (self) => {
+            if (self.progress > 0) {
+              window.scrollTo(0, 0);
+              self.refresh();
+            }
+          },
+          onToggle: (self) => {
+            if (!self.isActive) {
+              frames.frame = 0;
+              render();
+            }
+          },
+          onUpdate: () => {
+            render();
+          },
         },
         onUpdate: render,
       });
 
-      images[0].onload = render;
+      if (scrollAnimation.scrollTrigger) {
+        scrollTriggerRef.current = scrollAnimation.scrollTrigger;
+      }
 
-      // Adjust canvas size initially and on window resize
+      let resizeTimeout: NodeJS.Timeout;
+      const handleResize = () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(adjustCanvasSize, 150);
+      };
+
+      window.addEventListener("resize", handleResize);
       adjustCanvasSize();
-      window.addEventListener("resize", adjustCanvasSize);
+      preloadImages();
 
       return () => {
-        window.removeEventListener("resize", adjustCanvasSize);
+        window.removeEventListener("resize", handleResize);
+        scrollAnimation.kill();
+        scrollTriggerRef.current = null;
       };
     },
     { scope: containerRef }
