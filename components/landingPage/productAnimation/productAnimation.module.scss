@@ -1,4 +1,7 @@
 .container {
+  overflow-anchor: none;
+  scroll-behavior: auto;
+
   position: relative; /* Ensure positioning for canvas within the container */
 
   overflow: hidden; /* Hide any overflow from the canvas */
