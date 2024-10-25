@@ -3,35 +3,17 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import styles from "./productAnimation.module.scss";
 
 const ProductAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
+  const imagesRef = useRef<HTMLImageElement[]>([]);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger, useGSAP);
-  }, []);
-
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === "visible") {
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-          scrollTriggerRef.current?.refresh();
-        }, 100);
-      }
-    };
-
-    window.scrollTo(0, 0);
-
-    document.addEventListener("visibilitychange", handleVisibilityChange);
-
-    return () => {
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
   }, []);
 
   useGSAP(
@@ -42,6 +24,7 @@ const ProductAnimation = () => {
       if (!canvas || !container) return;
 
       const context = canvas.getContext("2d", { alpha: false });
+
       if (!context) return;
 
       context.imageSmoothingEnabled = true;
@@ -49,17 +32,15 @@ const ProductAnimation = () => {
 
       const dpr = window.devicePixelRatio || 1;
       const frameCount = 390;
+      const frames = {
+        frame: 0,
+      };
       let loadedImages = 0;
 
       const currentFrame = (index: number) =>
         `/landingPage/sensorAnimation/lightNew/frame_${(index + 1)
           .toString()
           .padStart(4, "0")}.jpg`;
-
-      const images: HTMLImageElement[] = [];
-      const frames = {
-        frame: 0,
-      };
 
       const preloadImages = () => {
         for (let i = 0; i < frameCount; i++) {
@@ -71,7 +52,7 @@ const ProductAnimation = () => {
             }
           };
           img.src = currentFrame(i);
-          images.push(img);
+          imagesRef.current.push(img);
         }
       };
 
@@ -89,12 +70,12 @@ const ProductAnimation = () => {
       };
 
       const render = () => {
-        if (!canvas || !context || !images[frames.frame]) return;
+        if (!canvas || !context || !imagesRef.current[frames.frame]) return;
 
         context.fillStyle = "#FFFFFF";
         context.fillRect(0, 0, canvas.width, canvas.height);
 
-        const image = images[frames.frame];
+        const image = imagesRef.current[frames.frame];
         const rect = canvas.getBoundingClientRect();
         const isMobile = window.innerWidth <= 768;
 
@@ -135,12 +116,6 @@ const ProductAnimation = () => {
           anticipatePin: 1,
           fastScrollEnd: true,
           invalidateOnRefresh: true,
-          onRefresh: (self) => {
-            if (self.progress > 0) {
-              window.scrollTo(0, 0);
-              self.refresh();
-            }
-          },
           onToggle: (self) => {
             if (!self.isActive) {
               frames.frame = 0;
@@ -159,6 +134,7 @@ const ProductAnimation = () => {
       }
 
       let resizeTimeout: NodeJS.Timeout;
+
       const handleResize = () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(adjustCanvasSize, 150);
