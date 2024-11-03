@@ -1,11 +1,3 @@
-import {
-  FooterLinks,
-  FooterSection,
-  FooterShopLogos,
-  FooterShopLogosBlock,
-  FooterSmallLinks,
-  Typography,
-} from "@components/build-assets/libraryExport";
 import DHL from "@public/library/images/footer/dhl.png";
 import DPD from "@public/library/images/footer/dpd.png";
 import Installment from "@public/library/images/footer/installment.png";
@@ -17,7 +9,16 @@ import Trusted1 from "@public/library/images/footer/trusted-1.png";
 import Trusted2 from "@public/library/images/footer/trusted-2.png";
 import Visa from "@public/library/images/footer/visa.png";
 import Voucher from "@public/library/images/footer/voucher.png";
+import {
+  FooterLinks,
+  FooterSection,
+  FooterShopLogos,
+  FooterShopLogosBlock,
+  FooterSmallLinks,
+  Typography,
+} from "@vorwerk/fibre-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const FooterLandingPage = () => {
   return (
@@ -32,12 +33,12 @@ const FooterLandingPage = () => {
             </li>
             <li>
               <Typography variant="paragraph16">
-                <a href="#contact">Contact us</a>
+                <Link href="#contact">Contact us</Link>
               </Typography>
             </li>
             <li>
               <Typography variant="paragraph16">
-                <a href="#support">Vorwerk Support Center</a>
+                <Link href="#support">Vorwerk Support Center</Link>
               </Typography>
             </li>
           </ul>
@@ -49,12 +50,12 @@ const FooterLandingPage = () => {
             </li>
             <li>
               <Typography variant="paragraph16">
-                <a href="#experience-live">Experience live</a>
+                <Link href="#experience-live">Experience live</Link>
               </Typography>
             </li>
             <li>
               <Typography variant="paragraph16">
-                <a href="#vorwerk-stores">Vorwerk Stores</a>
+                <Link href="#vorwerk-stores">Vorwerk Stores</Link>
               </Typography>
             </li>
           </ul>
@@ -66,17 +67,17 @@ const FooterLandingPage = () => {
             </li>
             <li>
               <Typography variant="paragraph16">
-                <a href="#paymentmethods">Payment methods</a>
+                <Link href="#paymentmethods">Payment methods</Link>
               </Typography>
             </li>
             <li>
               <Typography variant="paragraph16">
-                <a href="#shipping-delivery">Shipping & delivery</a>
+                <Link href="#shipping-delivery">Shipping & delivery</Link>
               </Typography>
             </li>
             <li>
               <Typography variant="paragraph16">
-                <a href="#security">Security</a>
+                <Link href="#security">Security</Link>
               </Typography>
             </li>
           </ul>
@@ -134,48 +135,50 @@ const FooterLandingPage = () => {
 
             <li>
               <Typography variant="paragraph12">
-                <a href="#about-us">About us</a>
+                <Link href="#about-us">About us</Link>
               </Typography>
             </li>
 
             <li>
               <Typography variant="paragraph12">
-                <a href="#press">Press</a>
+                <Link href="#press">Press</Link>
               </Typography>
             </li>
             <li>
               <Typography variant="paragraph12">
-                <a href="#privacy">Privacy</a>
+                <Link href="#privacy">Privacy</Link>
               </Typography>
             </li>
             <li>
               <Typography variant="paragraph12">
-                <a href="#imprint">Imprint</a>
+                <Link href="#imprint">Imprint</Link>
               </Typography>
             </li>
             <li>
               <Typography variant="paragraph12">
-                <a href="#cookies">Cookies</a>
+                <Link href="#cookies">Cookies</Link>
               </Typography>
             </li>
             <li>
               <Typography variant="paragraph12">
-                <a href="#terms">Terms of service</a>
+                <Link href="#terms">Terms of service</Link>
               </Typography>
             </li>
             <li>
               <Typography variant="paragraph12">
-                <a href="#cancellation">Cancellation</a>
+                <Link href="#cancellation">Cancellation</Link>
               </Typography>
             </li>
             <li>
               <Typography variant="paragraph12">
-                <a href="#disposal">Disposal of batteries & old devices</a>
+                <Link href="#disposal">
+                  Disposal of batteries & old devices
+                </Link>
               </Typography>
             </li>
             <li>
               <Typography variant="paragraph12">
-                <a href="#mandatory">Mandatory information</a>
+                <Link href="#mandatory">Mandatory information</Link>
               </Typography>
             </li>
           </ul>

@@ -1,5 +1,16 @@
 "use client";
 
+import KlarnaIcon from "@public/library/images/footer/svg/payment/Klarna.svg";
+import MastercardIcon from "@public/library/images/footer/svg/payment/Mastercard.svg";
+import PaypalIcon from "@public/library/images/footer/svg/payment/Paypal.svg";
+import VisaIcon from "@public/library/images/footer/svg/payment/Visa.svg";
+import VoucherIcon from "@public/library/images/footer/svg/payment/coupon.svg";
+import InstallmentIcon from "@public/library/images/footer/svg/payment/factoring-euro.svg";
+import InvoiceIcon from "@public/library/images/footer/svg/payment/invoice-euro.svg";
+import DHLIcon from "@public/library/images/footer/svg/shipping/DHL.svg";
+import DPDIcon from "@public/library/images/footer/svg/shipping/DPD.svg";
+import Trusted1Icon from "@public/library/images/footer/svg/trusted/trusted1.svg";
+import Trusted2Icon from "@public/library/images/footer/svg/trusted/trusted2.svg";
 import {
   FooterLinks,
   FooterLinksBlock,
@@ -9,8 +20,10 @@ import {
   FooterShopLogosBlock,
   FooterSmallLinks,
   Typography,
-} from "@components/build-assets/libraryExport";
+} from "@vorwerk/fibre-react";
 import { Viewport } from "next";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import { ReactNode } from "react";
 import styles from "./layout.module.scss";
 
@@ -37,10 +50,10 @@ export default function RootLayout({
               }
               links={[
                 <Typography variant="paragraph16">
-                  <a href="#contact">Contact us</a>
+                  <Link href="#contact">Contact us</Link>
                 </Typography>,
                 <Typography variant="paragraph16">
-                  <a href="#support">Vorwerk Support Center</a>
+                  <Link href="#support">Vorwerk Support Center</Link>
                 </Typography>,
               ]}
             />
@@ -52,10 +65,10 @@ export default function RootLayout({
               }
               links={[
                 <Typography variant="paragraph16">
-                  <a href="#experience-live">Experience live</a>
+                  <Link href="#experience-live">Experience live</Link>
                 </Typography>,
                 <Typography variant="paragraph16">
-                  <a href="#vorwerk-stores">Vorwerk Stores</a>
+                  <Link href="#vorwerk-stores">Vorwerk Stores</Link>
                 </Typography>,
               ]}
             />
@@ -67,13 +80,13 @@ export default function RootLayout({
               }
               links={[
                 <Typography variant="paragraph16">
-                  <a href="#paymentmethods">Payment methods</a>
+                  <Link href="#paymentmethods">Payment methods</Link>
                 </Typography>,
                 <Typography variant="paragraph16">
-                  <a href="#shipping-delivery">Shipping & delivery</a>
+                  <Link href="#shipping-delivery">Shipping & delivery</Link>
                 </Typography>,
                 <Typography variant="paragraph16">
-                  <a href="#security">Security</a>
+                  <Link href="#security">Security</Link>
                 </Typography>,
               ]}
             />
@@ -89,46 +102,31 @@ export default function RootLayout({
               }
               logos={[
                 <FooterShopLogo caption="Mastercard" hasBackground={true}>
-                  <img
-                    src="/library/images/footer/svg/payment/Mastercard.svg"
+                  <Image
+                    src={MastercardIcon as StaticImageData}
                     alt="Mastercard"
                   />
                 </FooterShopLogo>,
                 <FooterShopLogo caption="Visa" hasBackground={true}>
-                  <img
-                    src="/library/images/footer/svg/payment/Visa.svg"
-                    alt="Visa"
-                  />
+                  <Image src={VisaIcon as StaticImageData} alt="Visa" />
                 </FooterShopLogo>,
                 <FooterShopLogo caption="PayPal" hasBackground={true}>
-                  <img
-                    src="/library/images/footer/svg/payment/Paypal.svg"
-                    alt="PayPal"
-                  />
+                  <Image src={PaypalIcon as StaticImageData} alt="PayPal" />
                 </FooterShopLogo>,
                 <FooterShopLogo caption="Klarna">
-                  <img
-                    src="/library/images/footer/svg/payment/Klarna.svg"
-                    alt="Klarna"
-                  />
+                  <Image src={KlarnaIcon as StaticImageData} alt="Klarna" />
                 </FooterShopLogo>,
                 <FooterShopLogo caption="Installment" hasBackground={true}>
-                  <img
-                    src="/library/images/footer/svg/payment/factoring-euro.svg"
+                  <Image
+                    src={InstallmentIcon as StaticImageData}
                     alt="Installment"
                   />
                 </FooterShopLogo>,
                 <FooterShopLogo caption="Invoice" hasBackground={true}>
-                  <img
-                    src="/library/images/footer/svg/payment/invoice-euro.svg"
-                    alt="Invoice"
-                  />
+                  <Image src={InvoiceIcon as StaticImageData} alt="Invoice" />
                 </FooterShopLogo>,
                 <FooterShopLogo caption="Voucher" hasBackground={true}>
-                  <img
-                    src="/library/images/footer/svg/payment/coupon.svg"
-                    alt="Voucher"
-                  />
+                  <Image src={VoucherIcon as StaticImageData} alt="Voucher" />
                 </FooterShopLogo>,
               ]}
             />
@@ -140,16 +138,10 @@ export default function RootLayout({
               }
               logos={[
                 <FooterShopLogo caption="DHL">
-                  <img
-                    src="/library/images/footer/svg/shipping/DHL.svg"
-                    alt="DHL"
-                  />
+                  <Image src={DHLIcon as StaticImageData} alt="DHL" />
                 </FooterShopLogo>,
                 <FooterShopLogo caption="DPD" hasBackground={true}>
-                  <img
-                    src="/library/images/footer/svg/shipping/DPD.svg"
-                    alt="DPD"
-                  />
+                  <Image src={DPDIcon as StaticImageData} alt="DPD" />
                 </FooterShopLogo>,
               ]}
             />
@@ -161,14 +153,8 @@ export default function RootLayout({
                 </Typography>
               }
               logos={[
-                <img
-                  src="/library/images/footer/svg/trusted/trusted1.svg"
-                  alt="Trusted 1"
-                />,
-                <img
-                  src="/library/images/footer/svg/trusted/trusted2.svg"
-                  alt="Trusted 2"
-                />,
+                <Image src={Trusted1Icon as StaticImageData} alt="Trusted 1" />,
+                <Image src={Trusted2Icon as StaticImageData} alt="Trusted 2" />,
               ]}
             />
           </FooterShopLogos>
@@ -182,48 +168,50 @@ export default function RootLayout({
 
               <li key="About us">
                 <Typography variant="paragraph12">
-                  <a href="#about-us">About us</a>
+                  <Link href="#about-us">About us</Link>
                 </Typography>
               </li>
 
               <li key="Press">
                 <Typography variant="paragraph12">
-                  <a href="#press">Press</a>
+                  <Link href="#press">Press</Link>
                 </Typography>
               </li>
               <li key="Privacy">
                 <Typography variant="paragraph12">
-                  <a href="#privacy">Privacy</a>
+                  <Link href="#privacy">Privacy</Link>
                 </Typography>
               </li>
               <li key="Imprint">
                 <Typography variant="paragraph12">
-                  <a href="#imprint">Imprint</a>
+                  <Link href="#imprint">Imprint</Link>
                 </Typography>
               </li>
               <li key="Cookies">
                 <Typography variant="paragraph12">
-                  <a href="#cookies">Cookies</a>
+                  <Link href="#cookies">Cookies</Link>
                 </Typography>
               </li>
               <li key="Terms of service">
                 <Typography variant="paragraph12">
-                  <a href="#terms">Terms of service</a>
+                  <Link href="#terms">Terms of service</Link>
                 </Typography>
               </li>
               <li key="Cancellation">
                 <Typography variant="paragraph12">
-                  <a href="#cancellation">Cancellation</a>
+                  <Link href="#cancellation">Cancellation</Link>
                 </Typography>
               </li>
               <li key="Disposal">
                 <Typography variant="paragraph12">
-                  <a href="#disposal">Disposal of batteries & old devices</a>
+                  <Link href="#disposal">
+                    Disposal of batteries & old devices
+                  </Link>
                 </Typography>
               </li>
               <li key="Mandatory">
                 <Typography variant="paragraph12">
-                  <a href="#mandatory">Mandatory information</a>
+                  <Link href="#mandatory">Mandatory information</Link>
                 </Typography>
               </li>
             </ul>

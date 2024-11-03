@@ -1,6 +1,6 @@
 "use client";
 
-// import { FunctionsTab as FunctionsTabLib } from "@components/build-assets/libraryExport";
+// import { FunctionsTab as FunctionsTabLib } from "@vorwerk/fibre-react";
 import styles from "./functionsTab.module.scss";
 
 // const items: {

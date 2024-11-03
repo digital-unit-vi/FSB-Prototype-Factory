@@ -1,26 +1,33 @@
 "use client";
 
+import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
+import Spacer from "@components/shared/spacer/spacer";
+import HeroCoverImage from "@public/landingPage/hero/sensor-hero-cover-new.jpeg";
+import useScreenSize from "@utils/useScreenSize";
 import {
   BatteryLevel3Light,
   BentoBoxTiles,
   BluetoothLight,
+  Button,
+  ButtonGroup,
   CleaningLight,
   GalleryCarousel,
   GridContainer,
   GridItem,
+  Header,
   Headline,
-  ImageCarousel,
+  Hero,
+  ParallaxProductSection,
   ProductBlock,
   SectionContainer,
   SousVideLight,
+  Thermomix,
   TimerLight,
   Typography,
   UserReview,
-} from "@components/build-assets/libraryExport";
-import Hero from "@components/landingPage/hero/hero";
-import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
-import Spacer from "@components/shared/spacer/spacer";
-import useScreenSize from "@utils/useScreenSize";
+} from "@vorwerk/fibre-react";
+import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPage() {
@@ -28,12 +35,54 @@ export default function SensorLightLandingPage() {
 
   return (
     <main>
+      <Header
+        isLandingPage
+        landingPageLogo={
+          <Link href="/">
+            <Thermomix size="small" />
+          </Link>
+        }
+      />
       <Hero
-        video="sensor"
-        productImage="sensor"
-        eyebrowLine="Thermomix® Sensor"
-        textCopy="Turn a guess<br><strong>into success</strong>"
-        poster="/landingPage/hero/sensor-hero-cover-new.jpeg"
+        cta={
+          <ButtonGroup alignment="center" layout="vertical">
+            <Button size="medium" type="primary">
+              Shop now
+            </Button>
+          </ButtonGroup>
+        }
+        headline={
+          <Headline eyebrowLine="Thermomix® Sensor" strongColor="white">
+            <Typography component="h1">
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: "Turn a guess<br><strong>into success</strong>",
+                }}
+              />
+            </Typography>
+          </Headline>
+        }
+        image={<Image alt="Sensor cover image" src={HeroCoverImage} priority />}
+        isLandingPage
+        video={
+          <video
+            autoPlay
+            muted
+            playsInline
+            loop
+            preload="auto"
+            disableRemotePlayback
+          >
+            <source
+              src="/landingPage/hero/sensor-hero-default.mp4"
+              type="video/mp4"
+            />
+          </video>
+        }
+      />
+      <ParallaxProductSection
+        logoImage="/landingPage/hero/logos.png"
+        productImage="/landingPage/hero/sensor-hero-landing-page.png"
       />
       <SectionContainer>
         <GridContainer>
@@ -234,7 +283,7 @@ export default function SensorLightLandingPage() {
               icon: <SousVideLight />,
               image: "",
               imageBottom: false,
-              text: "The sensors heat protection allows it to be used in 275°C hot enviroments (220°C with holder).",
+              text: "The sensors heat protection allows it to be used in 275°C hot environments (220°C with holder).",
               title: "Up to 275°C",
             },
             {
@@ -295,60 +344,6 @@ export default function SensorLightLandingPage() {
             </>
           </GridItem>
         </GridContainer>
-        <Spacer size={16} sizeMedium={40} />
-        <ImageCarousel
-          eyecatcher={{
-            backgroundColor: "green",
-            firstLine: "Success",
-            rotation: "5 degrees",
-            secondLine: "guaranteed",
-            thirdLine: "",
-          }}
-          productImage="/landingPage/carousel/carousel-sensor-4-3.png"
-          images={[
-            {
-              url: "/library/images/image-carousel/image-carousel1.png",
-              alt: "Image 1",
-              title: "Image 1",
-            },
-            {
-              url: "/library/images/image-carousel/image-carousel2.png",
-              alt: "Image 2",
-              title: "Image 2",
-            },
-            {
-              url: "/library/images/image-carousel/image-carousel3.png",
-              alt: "Image 3",
-              title: "Image 3",
-            },
-            {
-              url: "/library/images/image-carousel/image-carousel4.png",
-              alt: "Image 4",
-              title: "Image 4",
-            },
-            {
-              url: "/library/images/image-carousel/image-carousel5.png",
-              alt: "Image 5",
-              title: "Image 5",
-            },
-            {
-              url: "/library/images/image-carousel/image-carousel6.png",
-              alt: "Image 6",
-              title: "Image 6",
-            },
-            {
-              url: "/library/images/image-carousel/image-carousel7.png",
-              alt: "Image 7",
-              title: "Image 7",
-            },
-            {
-              url: "/library/images/image-carousel/image-carousel8.png",
-              alt: "Image 8",
-              title: "Image 8",
-            },
-          ]}
-          showEyecatcher
-        />
       </SectionContainer>
       <SectionContainer>
         <UserReview

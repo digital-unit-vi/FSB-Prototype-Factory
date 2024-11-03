@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 "use client";
 
 import {
@@ -10,6 +13,7 @@ import {
   FooterSmallLinks,
   Typography,
 } from "@components/build-assets/libraryExport";
+import "@components/build-assets/style.css";
 import { ReactNode } from "react";
 
 export default function RootLayoutDE({

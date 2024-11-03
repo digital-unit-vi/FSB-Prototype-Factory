@@ -3,7 +3,8 @@ import {
   GridItem,
   Headline,
   Typography,
-} from "@components/build-assets/libraryExport";
+} from "@vorwerk/fibre-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./showcaseTiles.module.scss";
@@ -31,9 +32,15 @@ const Tile: React.FC<TileProps> = ({ light, dark, isDarkMode, title }) => {
     <Link
       href={link}
       className={styles.tile}
-      style={{ backgroundColor, color: fontColor }}
+      style={{ backgroundColor, color: fontColor, position: "relative" }}
     >
-      <img src={image} alt="Product" className={styles.image} />
+      <Image
+        src={image}
+        alt="Product"
+        width={500}
+        height={500}
+        className={styles.image}
+      />
       <Headline
         spaceBelow="default"
         children={
@@ -63,17 +70,64 @@ interface ShowcaseTilesProps {
 const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [columnsConfig, setColumnsConfig] = useState<
-    { start: number; end: number; columns: number }[]
+    {
+      start: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | "auto";
+      end: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | "auto";
+      columns: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+    }[]
   >([]);
 
   useEffect(() => {
     const numberOfTiles = tilesData.length;
-    const columnsPerTile = 12 / numberOfTiles; // Calculates the number of columns each tile should span
+    const columnsPerTile = Math.floor(12 / numberOfTiles) as
+      | 1
+      | 2
+      | 3
+      | 4
+      | 5
+      | 6
+      | 7
+      | 8
+      | 9
+      | 10
+      | 11
+      | 12;
 
-    // Calculate start and end values for each tile
     const newColumnsConfig = tilesData.map((_, index) => {
-      const start = index * columnsPerTile + 1; // Calculate start column based on index
-      const end = start + columnsPerTile; // Calculate end column based on start and span
+      const start = (index * columnsPerTile + 1) as
+        | 1
+        | 2
+        | 3
+        | 4
+        | 5
+        | 6
+        | 7
+        | 8
+        | 9
+        | 10
+        | 11
+        | 12
+        | "auto";
+
+      // Ensure `end` is calculated only if `start` is a number
+      const end =
+        typeof start === "number"
+          ? ((start + columnsPerTile) as
+              | 1
+              | 2
+              | 3
+              | 4
+              | 5
+              | 6
+              | 7
+              | 8
+              | 9
+              | 10
+              | 11
+              | 12
+              | "auto")
+          : "auto";
+
       return { start, end, columns: columnsPerTile };
     });
 

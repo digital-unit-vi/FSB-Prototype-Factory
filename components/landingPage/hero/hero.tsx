@@ -1,5 +1,10 @@
 "use client";
 
+import Button from "@components/shared/button/button";
+import ParallaxLogoDark from "@public/landingPage/hero/logos-dark.png";
+import ParallaxLogo from "@public/landingPage/hero/logos.png";
+import SensorProductImage from "@public/landingPage/hero/sensor-hero-landing-page.png";
+import TM6ProductImage from "@public/shared/product/tm6-product-light.png";
 import {
   GridContainer,
   GridItem,
@@ -8,12 +13,7 @@ import {
   Thermomix,
   Typography,
   Vorwerk,
-} from "@components/build-assets/libraryExport";
-import Button from "@components/shared/button/button";
-import ParallaxLogoDark from "@public/landingPage/hero/logos-dark.png";
-import ParallaxLogo from "@public/landingPage/hero/logos.png";
-import SensorProductImage from "@public/landingPage/hero/sensor-hero-landing-page.png";
-import TM6ProductImage from "@public/shared/product/tm6-product-light.png";
+} from "@vorwerk/fibre-react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
@@ -161,7 +161,9 @@ const Hero: React.FC<HeroProps> = ({
         </Parallax>
         <div className={styles.parallaxLogoWrapper}>
           <GridContainer>
-            <GridItem columns={9}></GridItem>
+            <GridItem columns={9}>
+              <></>
+            </GridItem>
             <GridItem columns={3}>
               <Image
                 src={parallaxLogo}

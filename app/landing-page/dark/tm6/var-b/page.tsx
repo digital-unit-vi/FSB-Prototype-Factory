@@ -1,46 +1,87 @@
 "use client";
 
+import Spacer from "@components/shared/spacer/spacer";
+import HeroCoverImage from "@public/landingPage/hero/tm6-hero-dishes-cover-new.jpeg";
 import {
   BentoBoxTiles,
-  BlendIllustration,
   BlendLight,
   BluetoothLight,
+  Button,
+  ButtonGroup,
   DisplaySettingsLight,
-  DoughIllustration,
-  FermentationIllustration,
   FullwidthImage,
   GalleryCarousel,
   GridContainer,
   GridItem,
+  Header,
   Headline,
-  HighTemperatureIllustration,
-  ImageCarousel,
-  PeelingIllustration,
-  PreparationTimeIllustration,
+  Hero,
+  ParallaxProductSection,
   ProductBlock,
-  ScrollRow,
   SectionContainer,
-  SlowCookingIllustration,
-  SousVideIllustration,
   TemperatureHighLight,
+  Thermomix,
   Typography,
   UserReview,
   WifiLight,
-} from "@components/build-assets/libraryExport";
-import Hero from "@components/landingPage/hero/hero";
-import Spacer from "@components/shared/spacer/spacer";
+} from "@vorwerk/fibre-react";
+import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.scss";
 
-export default function TM6VariantBDarkLandingPage() {
+export default function TM6VariantADarkLandingPage() {
   return (
     <main>
+      <Header
+        isLandingPage
+        landingPageLogo={
+          <Link href="/">
+            <Thermomix size="small" />
+          </Link>
+        }
+      />
       <Hero
-        video="dishes"
-        productImage="tm6"
-        eyebrowLine="Thermomix® TM6"
-        textCopy="One device.<br><strong>Endless possibilities</strong>"
+        cta={
+          <ButtonGroup alignment="center" layout="vertical">
+            <Button size="medium" type="primary">
+              Shop now
+            </Button>
+          </ButtonGroup>
+        }
+        headline={
+          <Headline eyebrowLine="Thermomix® TM6" strongColor="white">
+            <Typography component="h1">
+              <span
+                dangerouslySetInnerHTML={{
+                  __html:
+                    "One device.<br><strong>Endless possibilities</strong>",
+                }}
+              />
+            </Typography>
+          </Headline>
+        }
+        image={<Image alt="TM6 cover image" src={HeroCoverImage} priority />}
+        isLandingPage
+        video={
+          <video
+            autoPlay
+            muted
+            playsInline
+            loop
+            preload="auto"
+            disableRemotePlayback
+          >
+            <source
+              src="/landingPage/hero/tm6-hero-dishes.mp4"
+              type="video/mp4"
+            />
+          </video>
+        }
+      />
+      <ParallaxProductSection
+        logoImage="/landingPage/hero/logos-dark.png"
+        productImage="/shared/product/tm6-product-light.png"
         darkMode
-        poster="/landingPage/hero/tm6-hero-dishes-cover-new.jpeg"
       />
       <SectionContainer>
         <GridContainer>
@@ -140,7 +181,7 @@ export default function TM6VariantBDarkLandingPage() {
           </GridItem>
         </GridContainer>
       </SectionContainer>
-      <SectionContainer>
+      {/* <SectionContainer>
         <ScrollRow
           darkMode
           scrollRowItems={[
@@ -178,7 +219,7 @@ export default function TM6VariantBDarkLandingPage() {
             },
           ]}
         />
-      </SectionContainer>
+      </SectionContainer> */}
       <SectionContainer>
         <GalleryCarousel
           darkMode
@@ -295,7 +336,7 @@ export default function TM6VariantBDarkLandingPage() {
             </>
           </GridItem>
         </GridContainer>
-        <Spacer size={16} sizeMedium={40} />
+        {/* <Spacer size={16} sizeMedium={40} />
         <ImageCarousel
           eyecatcher={{
             backgroundColor: "green",
@@ -348,7 +389,7 @@ export default function TM6VariantBDarkLandingPage() {
             },
           ]}
           showEyecatcher
-        />
+        /> */}
       </SectionContainer>
       <SectionContainer>
         <UserReview

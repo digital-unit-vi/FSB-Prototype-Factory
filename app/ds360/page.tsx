@@ -1,5 +1,14 @@
 "use client";
 
+import ShowcaseTiles from "@components/landingPage/showcaseTiles/showcaseTiles";
+import HeroCoverImg from "@public/landingPage/hero/ds360-hero.png";
+import ProductStripe1Img from "@public/library/images/footer/product-stripe-1.png";
+import ProductStripe2Img from "@public/library/images/footer/product-stripe-2.png";
+import ProductStripe3Img from "@public/library/images/footer/product-stripe-3.png";
+import ProductStripe4Img from "@public/library/images/footer/product-stripe-4.png";
+import ProductStripe5Img from "@public/library/images/footer/product-stripe-5.png";
+import ProductStripe6Img from "@public/library/images/footer/product-stripe-6.png";
+import ProductStripe7Img from "@public/library/images/footer/product-stripe-7.png";
 import {
   Austria,
   Canada,
@@ -40,8 +49,8 @@ import {
   USA,
   Vorwerk,
   Youtube,
-} from "@components/build-assets/libraryExport";
-import ShowcaseTiles from "@components/landingPage/showcaseTiles/showcaseTiles";
+} from "@vorwerk/fibre-react";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.scss";
 
@@ -291,9 +300,7 @@ export default function Home() {
                 </Typography>
               </Headline>
             }
-            image={
-              <img alt="Thermomix" src="/landingPage/hero/ds360-hero.png" />
-            }
+            image={<Image src={HeroCoverImg} alt="DS360 hero" quality={90} />}
             type="colorFill"
           />
         </div>
@@ -341,41 +348,13 @@ export default function Home() {
           logo={<Vorwerk />}
           text="For over 130 years, our products have impressed millions of families with their superior, innovative technology and their proverbial long service life."
           images={[
-            <img
-              src="/library/images/footer/product-stripe-1.png"
-              alt="product stripe 1"
-              key={1}
-            />,
-            <img
-              src="/library/images/footer/product-stripe-2.png"
-              alt="product stripe 2"
-              key={2}
-            />,
-            <img
-              src="/library/images/footer/product-stripe-3.png"
-              alt="product stripe 3"
-              key={3}
-            />,
-            <img
-              src="/library/images/footer/product-stripe-4.png"
-              alt="product stripe 4"
-              key={4}
-            />,
-            <img
-              src="/library/images/footer/product-stripe-5.png"
-              alt="product stripe 5"
-              key={5}
-            />,
-            <img
-              src="/library/images/footer/product-stripe-6.png"
-              alt="product stripe 6"
-              key={6}
-            />,
-            <img
-              src="/library/images/footer/product-stripe-7.png"
-              alt="product stripe 7"
-              key={7}
-            />,
+            <Image src={ProductStripe1Img} alt="product stripe 1" key={1} />,
+            <Image src={ProductStripe2Img} alt="product stripe 2" key={2} />,
+            <Image src={ProductStripe3Img} alt="product stripe 3" key={3} />,
+            <Image src={ProductStripe4Img} alt="product stripe 4" key={4} />,
+            <Image src={ProductStripe5Img} alt="product stripe 5" key={5} />,
+            <Image src={ProductStripe6Img} alt="product stripe 6" key={6} />,
+            <Image src={ProductStripe7Img} alt="product stripe 7" key={7} />,
           ]}
         />
       </main>
@@ -390,10 +369,10 @@ export default function Home() {
               }
               links={[
                 <Typography variant="paragraph16">
-                  <a href="#contact">Contact us</a>
+                  <Link href="#contact">Contact us</Link>
                 </Typography>,
                 <Typography variant="paragraph16">
-                  <a href="#support">Vorwerk Support Center</a>
+                  <Link href="#support">Vorwerk Support Center</Link>
                 </Typography>,
               ]}
             />
@@ -405,10 +384,10 @@ export default function Home() {
               }
               links={[
                 <Typography variant="paragraph16">
-                  <a href="#experience-live">Experience live</a>
+                  <Link href="#experience-live">Experience live</Link>
                 </Typography>,
                 <Typography variant="paragraph16">
-                  <a href="#vorwerk-stores">Vorwerk Stores</a>
+                  <Link href="#vorwerk-stores">Vorwerk Stores</Link>
                 </Typography>,
               ]}
             />
@@ -420,13 +399,13 @@ export default function Home() {
               }
               links={[
                 <Typography variant="paragraph16">
-                  <a href="#paymentmethods">Payment methods</a>
+                  <Link href="#paymentmethods">Payment methods</Link>
                 </Typography>,
                 <Typography variant="paragraph16">
-                  <a href="#shipping-delivery">Shipping & delivery</a>
+                  <Link href="#shipping-delivery">Shipping & delivery</Link>
                 </Typography>,
                 <Typography variant="paragraph16">
-                  <a href="#security">Security</a>
+                  <Link href="#security">Security</Link>
                 </Typography>,
               ]}
             />
@@ -441,21 +420,21 @@ export default function Home() {
                 </Typography>
               }
               links={[
-                <a href="#facebook">
+                <Link href="#facebook">
                   <Facebook />
-                </a>,
-                <a href="#instagram">
+                </Link>,
+                <Link href="#instagram">
                   <Instagram />
-                </a>,
-                <a href="#pinterest">
+                </Link>,
+                <Link href="#pinterest">
                   <Pinterest />
-                </a>,
-                <a href="#youtube">
+                </Link>,
+                <Link href="#youtube">
                   <Youtube />
-                </a>,
-                <a href="#receptwelt">
+                </Link>,
+                <Link href="#receptwelt">
                   <Rezeptwelt />
-                </a>,
+                </Link>,
               ]}
             />
             <FooterSocialLinkBlock
@@ -465,18 +444,18 @@ export default function Home() {
                 </Typography>
               }
               links={[
-                <a href="#facebook">
+                <Link href="#facebook">
                   <Facebook />
-                </a>,
-                <a href="#instagram">
+                </Link>,
+                <Link href="#instagram">
                   <Instagram />
-                </a>,
-                <a href="#pinterest">
+                </Link>,
+                <Link href="#pinterest">
                   <Pinterest />
-                </a>,
-                <a href="#youtube">
+                </Link>,
+                <Link href="#youtube">
                   <Youtube />
-                </a>,
+                </Link>,
               ]}
             />
             <LanguageSelector
@@ -513,48 +492,50 @@ export default function Home() {
 
               <li>
                 <Typography variant="paragraph12">
-                  <a href="#about-us">About us</a>
+                  <Link href="#about-us">About us</Link>
                 </Typography>
               </li>
 
               <li>
                 <Typography variant="paragraph12">
-                  <a href="#press">Press</a>
+                  <Link href="#press">Press</Link>
                 </Typography>
               </li>
               <li>
                 <Typography variant="paragraph12">
-                  <a href="#privacy">Privacy</a>
+                  <Link href="#privacy">Privacy</Link>
                 </Typography>
               </li>
               <li>
                 <Typography variant="paragraph12">
-                  <a href="#imprint">Imprint</a>
+                  <Link href="#imprint">Imprint</Link>
                 </Typography>
               </li>
               <li>
                 <Typography variant="paragraph12">
-                  <a href="#cookies">Cookies</a>
+                  <Link href="#cookies">Cookies</Link>
                 </Typography>
               </li>
               <li>
                 <Typography variant="paragraph12">
-                  <a href="#terms">Terms of service</a>
+                  <Link href="#terms">Terms of service</Link>
                 </Typography>
               </li>
               <li>
                 <Typography variant="paragraph12">
-                  <a href="#cancellation">Cancellation</a>
+                  <Link href="#cancellation">Cancellation</Link>
                 </Typography>
               </li>
               <li>
                 <Typography variant="paragraph12">
-                  <a href="#disposal">Disposal of batteries & old devices</a>
+                  <Link href="#disposal">
+                    Disposal of batteries & old devices
+                  </Link>
                 </Typography>
               </li>
               <li>
                 <Typography variant="paragraph12">
-                  <a href="#mandatory">Mandatory information</a>
+                  <Link href="#mandatory">Mandatory information</Link>
                 </Typography>
               </li>
             </ul>

@@ -1,38 +1,87 @@
 "use client";
 
+import Spacer from "@components/shared/spacer/spacer";
+import HeroCoverImage from "@public/landingPage/hero/sensor-hero-cover-new.jpeg";
+import useScreenSize from "@utils/useScreenSize";
 import {
   BatteryLevel3Light,
   BentoBoxTiles,
   BluetoothLight,
+  Button,
+  ButtonGroup,
   CleaningLight,
   GalleryCarousel,
   GridContainer,
   GridItem,
+  Header,
   Headline,
-  ImageCarousel,
+  Hero,
+  ParallaxProductSection,
   ProductBlock,
   SectionContainer,
   SousVideLight,
+  Thermomix,
   TimerLight,
   Typography,
   UserReview,
-} from "@components/build-assets/libraryExport";
-import Hero from "@components/landingPage/hero/hero";
-import Spacer from "@components/shared/spacer/spacer";
-import useScreenSize from "@utils/useScreenSize";
+} from "@vorwerk/fibre-react";
+import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPage() {
   const screenSize = useScreenSize();
   return (
     <main>
+      <Header
+        isLandingPage
+        landingPageLogo={
+          <Link href="/">
+            <Thermomix size="small" />
+          </Link>
+        }
+      />
       <Hero
-        video="sensor"
-        productImage="sensor"
-        eyebrowLine="Thermomix® Sensor"
-        textCopy="Turn a guess<br><strong>into success</strong>"
+        cta={
+          <ButtonGroup alignment="center" layout="vertical">
+            <Button size="medium" type="primary">
+              Shop now
+            </Button>
+          </ButtonGroup>
+        }
+        headline={
+          <Headline eyebrowLine="Thermomix® Sensor" strongColor="white">
+            <Typography component="h1">
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: "Turn a guess<br><strong>into success</strong>",
+                }}
+              />
+            </Typography>
+          </Headline>
+        }
+        image={<Image alt="Sensor cover image" src={HeroCoverImage} priority />}
+        isLandingPage
+        video={
+          <video
+            autoPlay
+            muted
+            playsInline
+            loop
+            preload="auto"
+            disableRemotePlayback
+          >
+            <source
+              src="/landingPage/hero/sensor-hero-default.mp4"
+              type="video/mp4"
+            />
+          </video>
+        }
+      />
+      <ParallaxProductSection
+        logoImage="/landingPage/hero/logos-dark.png"
+        productImage="/landingPage/hero/sensor-hero-landing-page.png"
         darkMode
-        poster="/landingPage/hero/sensor-hero-cover-new.jpeg"
       />
       <SectionContainer>
         <GridContainer>
@@ -235,7 +284,7 @@ export default function SensorLightLandingPage() {
               icon: <SousVideLight />,
               image: "",
               imageBottom: false,
-              text: "The sensors heat protection allows it to be used in 275°C hot enviroments (220°C with holder).",
+              text: "The sensors heat protection allows it to be used in 275°C hot environments (220°C with holder).",
               title: "Up to 275°C",
             },
             {
@@ -296,7 +345,7 @@ export default function SensorLightLandingPage() {
             </>
           </GridItem>
         </GridContainer>
-        <Spacer size={16} sizeMedium={40} />
+        {/* <Spacer size={16} sizeMedium={40} />
         <ImageCarousel
           eyecatcher={{
             backgroundColor: "green",
@@ -349,7 +398,7 @@ export default function SensorLightLandingPage() {
             },
           ]}
           showEyecatcher
-        />
+        /> */}
       </SectionContainer>
       <SectionContainer>
         <UserReview
