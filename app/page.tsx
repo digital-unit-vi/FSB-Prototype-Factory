@@ -234,7 +234,7 @@ export default function Home() {
           cta={
             <ButtonGroup alignment="center" layout="vertical">
               <Link href="/ds360">
-                <Button size="large" type="primary">
+                <Button size="large" buttonStyle="primary">
                   Go to the showcase
                 </Button>
               </Link>
@@ -292,7 +292,7 @@ export default function Home() {
               <>
                 <ButtonGroup>
                   <Link href="/ds360">
-                    <Button size="large" type="primary">
+                    <Button size="large" buttonStyle="primary">
                       Go to the showcase
                     </Button>
                   </Link>

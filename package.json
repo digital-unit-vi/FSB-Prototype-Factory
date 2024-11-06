@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "next build",
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "export": "next export",
     "lint": "npx eslint .",
     "lint:styles": "stylelint '**/*.scss'",
@@ -17,11 +17,11 @@
   ],
   "dependencies": {
     "@gsap/react": "^2.1.1",
-    "@vorwerk/fibre-react": "^1.1.31",
+    "@vorwerk/fibre-react": "^1.1.33",
     "embla-carousel": "^8.3.1",
     "embla-carousel-react": "^8.3.1",
     "gsap": "^3.12.5",
-    "next": "^14.2.16",
+    "next": "^14.2.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",
@@ -31,12 +31,12 @@
   "devDependencies": {
     "@eslint/js": "^9.14.0",
     "@types/eslint__js": "^8.42.3",
-    "@types/node": "^22.8.7",
+    "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/web": "^0.0.176",
-    "@typescript-eslint/eslint-plugin": "^8.12.2",
-    "@typescript-eslint/parser": "^8.12.2",
+    "@typescript-eslint/eslint-plugin": "^8.13.0",
+    "@typescript-eslint/parser": "^8.13.0",
     "eslint": "^9.14.0",
     "prettier": "^3.3.3",
     "sass": "^1.80.6",
@@ -44,6 +44,6 @@
     "stylelint-config-clean-order": "^6.1.0",
     "stylelint-config-standard-scss": "^13.1.0",
     "typescript": "^5.6.3",
-    "typescript-eslint": "^8.12.2"
+    "typescript-eslint": "^8.13.0"
   }
 }

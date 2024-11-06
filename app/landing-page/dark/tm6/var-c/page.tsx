@@ -29,7 +29,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.scss";
 
-export default function TM6VariantADarkLandingPage() {
+export default function TM6VariantCDarkLandingPage() {
   return (
     <main>
       <Header
@@ -43,7 +43,7 @@ export default function TM6VariantADarkLandingPage() {
       <Hero
         cta={
           <ButtonGroup alignment="center" layout="vertical">
-            <Button size="medium" type="primary">
+            <Button size="medium" buttonStyle="primary">
               Shop now
             </Button>
           </ButtonGroup>
@@ -83,7 +83,7 @@ export default function TM6VariantADarkLandingPage() {
         productImage="/shared/product/tm6-product-light.png"
         darkMode
       />
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <GridContainer>
           <GridItem
             columns={10}
@@ -104,7 +104,7 @@ export default function TM6VariantADarkLandingPage() {
           </GridItem>
         </GridContainer>
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <BentoBoxTiles
           darkMode
           tiles={[
@@ -151,7 +151,7 @@ export default function TM6VariantADarkLandingPage() {
           ]}
         />
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <GridContainer>
           <GridItem
             columns={10}
@@ -180,9 +180,7 @@ export default function TM6VariantADarkLandingPage() {
             </>
           </GridItem>
         </GridContainer>
-      </SectionContainer>
-      {/* <SectionContainer>
-        <ScrollRow
+        {/* <ScrollRow
           darkMode
           scrollRowItems={[
             {
@@ -218,9 +216,9 @@ export default function TM6VariantADarkLandingPage() {
               text: "Slow Cook",
             },
           ]}
-        />
-      </SectionContainer> */}
-      <SectionContainer>
+        />*/}
+      </SectionContainer>
+      <SectionContainer gap="gap04">
         <GalleryCarousel
           darkMode
           desktopSlides={[
@@ -303,7 +301,7 @@ export default function TM6VariantADarkLandingPage() {
           ]}
         />
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap01">
         <GridContainer>
           <GridItem
             columns={10}
@@ -336,8 +334,7 @@ export default function TM6VariantADarkLandingPage() {
             </>
           </GridItem>
         </GridContainer>
-        {/* <Spacer size={16} sizeMedium={40} />
-        <ImageCarousel
+        {/*<ImageCarousel
           eyecatcher={{
             backgroundColor: "green",
             firstLine: "Success",
@@ -391,7 +388,7 @@ export default function TM6VariantADarkLandingPage() {
           showEyecatcher
         /> */}
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <UserReview
           darkMode
           additionalText="42 reviews"
@@ -414,8 +411,8 @@ export default function TM6VariantADarkLandingPage() {
             },
           ]}
         />
-        <Spacer size={32} sizeMedium={64} />
       </SectionContainer>
+      <Spacer size={32} sizeMedium={64} />
       <ProductBlock
         darkMode
         ctaText="Shop now"

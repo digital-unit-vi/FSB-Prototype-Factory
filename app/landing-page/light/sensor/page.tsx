@@ -3,7 +3,6 @@
 import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
 import Spacer from "@components/shared/spacer/spacer";
 import HeroCoverImage from "@public/landingPage/hero/sensor-hero-cover-new.jpeg";
-import useScreenSize from "@utils/useScreenSize";
 import {
   BatteryLevel3Light,
   BentoBoxTiles,
@@ -21,6 +20,7 @@ import {
   ProductBlock,
   SectionContainer,
   SousVideLight,
+  TextBlock,
   Thermomix,
   TimerLight,
   Typography,
@@ -31,8 +31,6 @@ import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPage() {
-  const screenSize = useScreenSize();
-
   return (
     <main>
       <Header
@@ -46,7 +44,7 @@ export default function SensorLightLandingPage() {
       <Hero
         cta={
           <ButtonGroup alignment="center" layout="vertical">
-            <Button size="medium" type="primary">
+            <Button size="medium" buttonStyle="primary">
               Shop now
             </Button>
           </ButtonGroup>
@@ -84,7 +82,7 @@ export default function SensorLightLandingPage() {
         logoImage="/landingPage/hero/logos.png"
         productImage="/landingPage/hero/sensor-hero-landing-page.png"
       />
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <GridContainer>
           <GridItem
             columns={10}
@@ -105,7 +103,7 @@ export default function SensorLightLandingPage() {
           </GridItem>
         </GridContainer>
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <GalleryCarousel
           desktopSlides={[
             {
@@ -221,32 +219,12 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
+        <TextBlock
+          headline="What is the Thermomix® Sensor?"
+          text="The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time. With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!"
+        />
       </SectionContainer>
-      <SectionContainer>
-        <GridContainer>
-          <GridItem columns={4}>
-            <Headline
-              children={
-                <Typography component="h3" fontWeight="bold">
-                  What is the Thermomix® Sensor?
-                </Typography>
-              }
-            />
-          </GridItem>
-          <GridItem columns={8}>
-            <Typography component="intro">
-              <span style={{ whiteSpace: "pre-line" }}>
-                {screenSize.width > 739
-                  ? `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time. With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`
-                  : `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time.
-
-                With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`}
-              </span>
-            </Typography>
-          </GridItem>
-        </GridContainer>
-      </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <GridContainer>
           <GridItem
             columns={10}
@@ -267,7 +245,6 @@ export default function SensorLightLandingPage() {
           </GridItem>
         </GridContainer>
         <ProductAnimation />
-        <Spacer size={48} sizeMedium={0} />
         <BentoBoxTiles
           tiles={[
             {
@@ -313,7 +290,7 @@ export default function SensorLightLandingPage() {
           ]}
         />
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap01">
         <GridContainer>
           <GridItem
             columns={10}
@@ -344,8 +321,61 @@ export default function SensorLightLandingPage() {
             </>
           </GridItem>
         </GridContainer>
+        {/* <ImageCarousel
+          eyecatcher={{
+            backgroundColor: "green",
+            firstLine: "Success",
+            rotation: "5 degrees",
+            secondLine: "guaranteed",
+            thirdLine: "",
+          }}
+          productImage="/landingPage/carousel/carousel-sensor-4-3.png"
+          images={[
+            {
+              url: "/library/images/image-carousel/image-carousel1.png",
+              alt: "Image 1",
+              title: "Image 1",
+            },
+            {
+              url: "/library/images/image-carousel/image-carousel2.png",
+              alt: "Image 2",
+              title: "Image 2",
+            },
+            {
+              url: "/library/images/image-carousel/image-carousel3.png",
+              alt: "Image 3",
+              title: "Image 3",
+            },
+            {
+              url: "/library/images/image-carousel/image-carousel4.png",
+              alt: "Image 4",
+              title: "Image 4",
+            },
+            {
+              url: "/library/images/image-carousel/image-carousel5.png",
+              alt: "Image 5",
+              title: "Image 5",
+            },
+            {
+              url: "/library/images/image-carousel/image-carousel6.png",
+              alt: "Image 6",
+              title: "Image 6",
+            },
+            {
+              url: "/library/images/image-carousel/image-carousel7.png",
+              alt: "Image 7",
+              title: "Image 7",
+            },
+            {
+              url: "/library/images/image-carousel/image-carousel8.png",
+              alt: "Image 8",
+              title: "Image 8",
+            },
+          ]}
+          showEyecatcher
+        /> */}
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <UserReview
           additionalText="42 reviews"
           overallStars={4.5}
@@ -367,8 +397,8 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
-        <Spacer size={32} sizeMedium={64} />
       </SectionContainer>
+      <Spacer size={32} sizeMedium={64} />
       <ProductBlock
         ctaText="Shop now"
         headline="Thermomix® Sensor"

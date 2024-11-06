@@ -2,7 +2,6 @@
 
 import Spacer from "@components/shared/spacer/spacer";
 import HeroCoverImage from "@public/landingPage/hero/sensor-hero-cover-new.jpeg";
-import useScreenSize from "@utils/useScreenSize";
 import {
   BatteryLevel3Light,
   BentoBoxTiles,
@@ -20,6 +19,7 @@ import {
   ProductBlock,
   SectionContainer,
   SousVideLight,
+  TextBlock,
   Thermomix,
   TimerLight,
   Typography,
@@ -30,7 +30,6 @@ import Link from "next/link";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPage() {
-  const screenSize = useScreenSize();
   return (
     <main>
       <Header
@@ -44,7 +43,7 @@ export default function SensorLightLandingPage() {
       <Hero
         cta={
           <ButtonGroup alignment="center" layout="vertical">
-            <Button size="medium" type="primary">
+            <Button size="medium" buttonStyle="primary">
               Shop now
             </Button>
           </ButtonGroup>
@@ -83,7 +82,7 @@ export default function SensorLightLandingPage() {
         productImage="/landingPage/hero/sensor-hero-landing-page.png"
         darkMode
       />
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <GridContainer>
           <GridItem
             columns={10}
@@ -104,7 +103,7 @@ export default function SensorLightLandingPage() {
           </GridItem>
         </GridContainer>
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <GalleryCarousel
           darkMode
           desktopSlides={[
@@ -221,32 +220,13 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
+        <TextBlock
+          darkMode
+          headline="What is the Thermomix® Sensor?"
+          text="The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time. With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!"
+        />
       </SectionContainer>
-      <SectionContainer>
-        <GridContainer>
-          <GridItem columns={4} className={styles.textWhite}>
-            <Headline
-              children={
-                <Typography component="h3" fontWeight="bold">
-                  What is the Thermomix® Sensor?
-                </Typography>
-              }
-            />
-          </GridItem>
-          <GridItem columns={8} className={styles.textWhite}>
-            <Typography component="intro">
-              <span style={{ whiteSpace: "pre-line" }}>
-                {screenSize.width > 739
-                  ? `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time. With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`
-                  : `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time.
-
-                With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`}
-              </span>
-            </Typography>
-          </GridItem>
-        </GridContainer>
-      </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <GridContainer>
           <GridItem
             columns={10}
@@ -267,7 +247,7 @@ export default function SensorLightLandingPage() {
           </GridItem>
         </GridContainer>
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <BentoBoxTiles
           darkMode
           tiles={[
@@ -314,7 +294,7 @@ export default function SensorLightLandingPage() {
           ]}
         />
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap01">
         <GridContainer>
           <GridItem
             columns={10}
@@ -345,8 +325,7 @@ export default function SensorLightLandingPage() {
             </>
           </GridItem>
         </GridContainer>
-        {/* <Spacer size={16} sizeMedium={40} />
-        <ImageCarousel
+        {/* <ImageCarousel
           eyecatcher={{
             backgroundColor: "green",
             firstLine: "Success",
@@ -400,7 +379,7 @@ export default function SensorLightLandingPage() {
           showEyecatcher
         /> */}
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <UserReview
           darkMode
           additionalText="42 reviews"
@@ -423,8 +402,8 @@ export default function SensorLightLandingPage() {
             },
           ]}
         />
-        <Spacer size={32} sizeMedium={64} />
       </SectionContainer>
+      <Spacer size={32} sizeMedium={64} />
       <ProductBlock
         darkMode
         ctaText="Shop now"

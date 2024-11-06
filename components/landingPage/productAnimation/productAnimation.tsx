@@ -112,6 +112,7 @@ const ProductAnimation = () => {
           start: "top top",
           end: "+=" + frameCount * 14,
           pin: true,
+          pinSpacing: true,
           scrub: 1,
           anticipatePin: 1,
           fastScrollEnd: true,

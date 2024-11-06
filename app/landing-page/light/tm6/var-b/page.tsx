@@ -43,7 +43,7 @@ export default function TM6VariantBLightLandingPage() {
       <Hero
         cta={
           <ButtonGroup alignment="center" layout="vertical">
-            <Button size="medium" type="primary">
+            <Button size="medium" buttonStyle="primary">
               Shop now
             </Button>
           </ButtonGroup>
@@ -82,7 +82,7 @@ export default function TM6VariantBLightLandingPage() {
         logoImage="/landingPage/hero/logos.png"
         productImage="/shared/product/tm6-product-light.png"
       />
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <GridContainer>
           <GridItem
             columns={10}
@@ -103,7 +103,7 @@ export default function TM6VariantBLightLandingPage() {
           </GridItem>
         </GridContainer>
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <BentoBoxTiles
           tiles={[
             {
@@ -149,7 +149,7 @@ export default function TM6VariantBLightLandingPage() {
           ]}
         />
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <GridContainer>
           <GridItem
             columns={10}
@@ -178,9 +178,7 @@ export default function TM6VariantBLightLandingPage() {
             </>
           </GridItem>
         </GridContainer>
-      </SectionContainer>
-      {/* <SectionContainer>
-        <ScrollRow
+        {/* <ScrollRow
           scrollRowItems={[
             {
               children: <PreparationTimeIllustration />,
@@ -215,9 +213,9 @@ export default function TM6VariantBLightLandingPage() {
               text: "Slow Cook",
             },
           ]}
-        />
-      </SectionContainer> */}
-      <SectionContainer>
+        />*/}
+      </SectionContainer>
+      <SectionContainer gap="gap04">
         <GalleryCarousel
           desktopSlides={[
             {
@@ -299,7 +297,7 @@ export default function TM6VariantBLightLandingPage() {
           ]}
         />
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap01">
         <GridContainer>
           <GridItem
             columns={10}
@@ -332,8 +330,7 @@ export default function TM6VariantBLightLandingPage() {
             </>
           </GridItem>
         </GridContainer>
-        {/* <Spacer size={16} sizeMedium={40} />
-        <ImageCarousel
+        {/*<ImageCarousel
           eyecatcher={{
             backgroundColor: "green",
             firstLine: "Success",
@@ -387,7 +384,7 @@ export default function TM6VariantBLightLandingPage() {
           showEyecatcher
         /> */}
       </SectionContainer>
-      <SectionContainer>
+      <SectionContainer gap="gap04">
         <UserReview
           additionalText="42 reviews"
           overallStars={4.6}
@@ -409,8 +406,8 @@ export default function TM6VariantBLightLandingPage() {
             },
           ]}
         />
-        <Spacer size={32} sizeMedium={64} />
       </SectionContainer>
+      <Spacer size={32} sizeMedium={64} />
       <ProductBlock
         ctaText="Shop now"
         headline="Thermomix® TM6"
