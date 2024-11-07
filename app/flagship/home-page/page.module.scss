@@ -1,0 +1,76 @@
+.hero {
+    text-wrap: balance;
+    margin-bottom: 8px;
+    position: relative;
+}
+
+.prominentSection, .defaultSection {
+    padding: 64px 0px 80px;
+    @media(min-width: 936px) and (max-width: 1267px) {
+        padding: 112px 0px 144px;
+    }
+    @media(min-width: 1268px) {
+        padding: 128px 0px 160px;
+    }
+}
+
+.prominentSection {
+    background-color: #F3F5F3;
+    @media(min-width: 740px) and (max-width: 935px) {
+        border-radius: 0 0 88px;
+    }
+    @media(min-width: 936px) and (max-width: 1267px) {
+        border-radius: 0 0 128px;
+    }
+    @media(min-width: 1268px) and (max-width: 1579px) {
+        border-radius: 0 0 144px;
+    }
+    @media(min-width: 1580) {
+        border-radius: 0 0 168px;
+    }
+}
+
+.textCentered, .overlayIconText {
+    text-align: center;
+}
+
+.categoryTilesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 64px;
+}
+
+.contentBlock {
+    margin-bottom: 32px;
+}
+
+.overlayIconWrapper {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 72px;
+    color: #FFFFFF;
+    z-index: 3;
+}
+
+.overlayIcon, .overlayIconText {
+    position: absolute;
+}
+
+.overlayIcon {
+    left: 50%;
+    top: 17px;
+    transform: translateX(-50%);
+    @media (min-width: 936px) {
+        top: 0px;
+    }
+}
+
+.overlayIconText {
+    top: 48px;
+    width: 100%;
+}
+
