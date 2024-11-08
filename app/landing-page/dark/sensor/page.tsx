@@ -82,7 +82,7 @@ export default function SensorLightLandingPage() {
         productImage="/landingPage/hero/sensor-hero-landing-page.png"
         darkMode
       />
-      <SectionContainer gap="gap04">
+      <SectionContainer>
         <GridContainer>
           <GridItem
             columns={10}
@@ -226,7 +226,7 @@ export default function SensorLightLandingPage() {
           text="The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time. With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!"
         />
       </SectionContainer>
-      <SectionContainer gap="gap04">
+      <SectionContainer>
         <GridContainer>
           <GridItem
             columns={10}
@@ -247,7 +247,7 @@ export default function SensorLightLandingPage() {
           </GridItem>
         </GridContainer>
       </SectionContainer>
-      <SectionContainer gap="gap04">
+      <SectionContainer>
         <BentoBoxTiles
           darkMode
           tiles={[
@@ -379,7 +379,7 @@ export default function SensorLightLandingPage() {
           showEyecatcher
         /> */}
       </SectionContainer>
-      <SectionContainer gap="gap04">
+      <SectionContainer>
         <UserReview
           darkMode
           additionalText="42 reviews"

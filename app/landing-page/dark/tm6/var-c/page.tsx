@@ -83,7 +83,7 @@ export default function TM6VariantCDarkLandingPage() {
         productImage="/shared/product/tm6-product-light.png"
         darkMode
       />
-      <SectionContainer gap="gap04">
+      <SectionContainer>
         <GridContainer>
           <GridItem
             columns={10}
@@ -104,7 +104,7 @@ export default function TM6VariantCDarkLandingPage() {
           </GridItem>
         </GridContainer>
       </SectionContainer>
-      <SectionContainer gap="gap04">
+      <SectionContainer>
         <BentoBoxTiles
           darkMode
           tiles={[
@@ -218,7 +218,7 @@ export default function TM6VariantCDarkLandingPage() {
           ]}
         />*/}
       </SectionContainer>
-      <SectionContainer gap="gap04">
+      <SectionContainer>
         <GalleryCarousel
           darkMode
           desktopSlides={[
@@ -388,7 +388,7 @@ export default function TM6VariantCDarkLandingPage() {
           showEyecatcher
         /> */}
       </SectionContainer>
-      <SectionContainer gap="gap04">
+      <SectionContainer>
         <UserReview
           darkMode
           additionalText="42 reviews"

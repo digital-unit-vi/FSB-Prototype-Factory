@@ -82,7 +82,7 @@ export default function TM6VariantBLightLandingPage() {
         logoImage="/landingPage/hero/logos.png"
         productImage="/shared/product/tm6-product-light.png"
       />
-      <SectionContainer gap="gap04">
+      <SectionContainer>
         <GridContainer>
           <GridItem
             columns={10}
@@ -103,7 +103,7 @@ export default function TM6VariantBLightLandingPage() {
           </GridItem>
         </GridContainer>
       </SectionContainer>
-      <SectionContainer gap="gap04">
+      <SectionContainer>
         <BentoBoxTiles
           tiles={[
             {
@@ -215,7 +215,7 @@ export default function TM6VariantBLightLandingPage() {
           ]}
         />*/}
       </SectionContainer>
-      <SectionContainer gap="gap04">
+      <SectionContainer>
         <GalleryCarousel
           desktopSlides={[
             {
@@ -384,7 +384,7 @@ export default function TM6VariantBLightLandingPage() {
           showEyecatcher
         /> */}
       </SectionContainer>
-      <SectionContainer gap="gap04">
+      <SectionContainer>
         <UserReview
           additionalText="42 reviews"
           overallStars={4.6}
