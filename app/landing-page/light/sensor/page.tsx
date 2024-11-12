@@ -81,6 +81,7 @@ export default function SensorLightLandingPage() {
       <ParallaxProductSection
         logoImage="/landingPage/hero/logos.png"
         productImage="/landingPage/hero/sensor-hero-landing-page.png"
+        productImageAlt="Thermomix Sensor"
       />
       <SectionContainer>
         <GridContainer>
@@ -404,6 +405,7 @@ export default function SensorLightLandingPage() {
         headline="Thermomix® Sensor"
         image="/shared/product/sensor-product.png"
         price="149,00 €"
+        imageAlt="Thermomix Sensor"
       />
     </main>
   );

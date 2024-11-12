@@ -81,6 +81,7 @@ export default function TM6VariantBDarkLandingPage() {
       <ParallaxProductSection
         logoImage="/landingPage/hero/logos-dark.png"
         productImage="/shared/product/tm6-product-light.png"
+        productImageAlt="Thermomix TM6"
         darkMode
       />
       <SectionContainer>
@@ -419,6 +420,7 @@ export default function TM6VariantBDarkLandingPage() {
         headline="Thermomix® TM6"
         image="/shared/product/tm6-product-accessories-light.png"
         price="1.499,00 €"
+        imageAlt="Thermomix® TM6"
       />
       <FullwidthImage
         btnText="Book a free demo"

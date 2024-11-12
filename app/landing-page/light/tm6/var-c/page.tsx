@@ -81,6 +81,7 @@ export default function TM6VariantCLightLandingPage() {
       <ParallaxProductSection
         logoImage="/landingPage/hero/logos.png"
         productImage="/shared/product/tm6-product-light.png"
+        productImageAlt="Thermomix TM6"
       />
       <SectionContainer>
         <GridContainer>
@@ -413,6 +414,7 @@ export default function TM6VariantCLightLandingPage() {
         headline="Thermomix® TM6"
         image="/shared/product/tm6-product-accessories-light.png"
         price="1.499,00 €"
+        imageAlt="Thermomix TM6"
       />
       <FullwidthImage
         btnText="Book a free demo"
