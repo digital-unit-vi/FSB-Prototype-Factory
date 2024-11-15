@@ -4,11 +4,14 @@
     position: relative;
 }
 
-.prominentSection, .defaultSection {
+.prominentSection,
+.defaultSection {
     padding: 64px 0px 80px;
+
     @media(min-width: 936px) and (max-width: 1267px) {
         padding: 112px 0px 144px;
     }
+
     @media(min-width: 1268px) {
         padding: 128px 0px 160px;
     }
@@ -16,21 +19,26 @@
 
 .prominentSection {
     background-color: #F3F5F3;
+
     @media(min-width: 740px) and (max-width: 935px) {
         border-radius: 0 0 88px;
     }
+
     @media(min-width: 936px) and (max-width: 1267px) {
         border-radius: 0 0 128px;
     }
+
     @media(min-width: 1268px) and (max-width: 1579px) {
         border-radius: 0 0 144px;
     }
+
     @media(min-width: 1580) {
         border-radius: 0 0 168px;
     }
 }
 
-.textCentered, .overlayIconText {
+.textCentered,
+.overlayIconText {
     text-align: center;
 }
 
@@ -56,7 +64,8 @@
     z-index: 3;
 }
 
-.overlayIcon, .overlayIconText {
+.overlayIcon,
+.overlayIconText {
     position: absolute;
 }
 
@@ -64,6 +73,7 @@
     left: 50%;
     top: 17px;
     transform: translateX(-50%);
+
     @media (min-width: 936px) {
         top: 0px;
     }
@@ -74,3 +84,59 @@
     width: 100%;
 }
 
+.overriddenProductStripeGap div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
+    @media (min-width: 936px) and (max-width: 1267px) {
+        gap: 24px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        align-items: flex-start;
+    }
+}
+
+.overriddenProductStripeGap div:has(>img) {
+
+    @media (max-width: 739px),
+    (min-width: 936px) and (max-width: 1267px) {
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.overriddenProductStripeGap img {
+    max-width: 100%;
+    max-height: 54px;
+    object-fit: contain;
+
+    @media (min-width: 740px) and (max-width: 935px) {
+        max-height: 149px;
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        max-height: 99px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        max-height: 113px;
+    }
+
+    @media (min-width: 1580px) {
+        max-height: 124px;
+    }
+}
+
+.overriddenLanguageSelector {
+    grid-column: span 6;
+
+    @media (min-width: 936px) {
+        grid-column: span 4;
+    }
+}
+
+.overriddenFooterSocialLinks div:has(> div:nth-of-type(3)):not(:has(> div:nth-of-type(4)))>div:not(:last-child) {
+    @media (min-width: 740px) and (max-width: 935px) {
+        grid-column: span 6;
+        padding-bottom: 56px;
+    }
+}

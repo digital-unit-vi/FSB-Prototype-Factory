@@ -219,10 +219,12 @@ const Languages = [
 
 export default function Home() {
   const [isLargeScreen, setIsLargeScreen] = useState(false)
+  const [isExtraLargeScreen, setIsExtraLargeScreen] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
       setIsLargeScreen(window.innerWidth > 935)
+      setIsExtraLargeScreen(window.innerWidth > 1267)
     }
 
     window.addEventListener('resize', handleResize)
@@ -491,7 +493,10 @@ export default function Home() {
                 </Headline>
               }
               paragraph={
-                <Typography fontWeight="regular" variant="paragraph16">
+                <Typography
+                  fontWeight="regular"
+                  variant={isExtraLargeScreen ? 'paragraph18' : 'paragraph16'}
+                >
                   Discover the Thermomix® TM6 and see how it can help you
                   create showstopping dishes and delicious meals from scratch
                   whilst saving you time and money. For everyday inspiration,
@@ -563,7 +568,10 @@ export default function Home() {
                 </Headline>
               }
               paragraph={
-                <Typography fontWeight="regular" variant="paragraph16">
+                <Typography
+                  fontWeight="regular"
+                  variant={isExtraLargeScreen ? 'paragraph18' : 'paragraph16'}
+                >
                   Whatever your home situation, the VB100 system brings the grab
                   and go flexibility you need. With this lightweight, quiet,
                   all-in-one solution, you can vacuum and mop simultaneously…and
@@ -658,7 +666,10 @@ export default function Home() {
               </Headline>
             }
             paragraph={
-              <Typography fontWeight="regular" variant="paragraph16">
+              <Typography
+                fontWeight="regular"
+                variant={isExtraLargeScreen ? 'paragraph18' : 'paragraph16'}
+              >
                 Whatever your home situation, the VB100 system brings the grab
                 and go flexibility you need. With this lightweight, quiet,
                 all-in-one solution, you can vacuum and mop simultaneously…and
@@ -699,7 +710,10 @@ export default function Home() {
                 </Headline>
               }
               paragraph={
-                <Typography fontWeight="regular" variant="paragraph16">
+                <Typography
+                  fontWeight="regular"
+                  variant={isExtraLargeScreen ? 'paragraph18' : 'paragraph16'}
+                >
                   Whatever your home situation, the VB100 system brings the grab
                   and go flexibility you need. With this lightweight, quiet,
                   all-in-one solution, you can vacuum and mop simultaneously…and
@@ -727,54 +741,57 @@ export default function Home() {
         </section>
       </main>
       <footer>
-        <ProductStripe
-          logo={<Vorwerk />}
-          text="For over 130 years, our products have impressed millions of families with their superior, innovative technology and their proverbial long service life."
-          images={[
-            <img
-              src="/library/images/footer/product-stripe-1.png"
-              alt="product stripe 1"
-              key={1}
-            />,
-            <img
-              src="/library/images/footer/product-stripe-2.png"
-              alt="product stripe 2"
-              key={2}
-            />,
-            <img
-              src="/library/images/footer/product-stripe-3.png"
-              alt="product stripe 3"
-              key={3}
-            />,
-            <img
-              src="/library/images/footer/product-stripe-4.png"
-              alt="product stripe 4"
-              key={4}
-            />,
-            <img
-              src="/library/images/footer/product-stripe-5.png"
-              alt="product stripe 5"
-              key={5}
-            />,
-            <img
-              src="/library/images/footer/product-stripe-6.png"
-              alt="product stripe 6"
-              key={6}
-            />,
-            <img
-              src="/library/images/footer/product-stripe-7.png"
-              alt="product stripe 7"
-              key={7}
-            />,
-          ]}
-        />
+        <div className={styles.overriddenProductStripeGap}>
+          <ProductStripe
+            logo={<Vorwerk />}
+            text="For over 130 years, our products have impressed millions of families with their superior, innovative technology and their proverbial long service life."
+            images={[
+              <img
+                src="/library/images/footer/product-stripe-1.png"
+                alt="product stripe 1"
+                key={1}
+              />,
+              <img
+                src="/library/images/footer/product-stripe-2.png"
+                alt="product stripe 2"
+                key={2}
+              />,
+              <img
+                src="/library/images/footer/product-stripe-3.png"
+                alt="product stripe 3"
+                key={3}
+              />,
+              <img
+                src="/library/images/footer/product-stripe-4.png"
+                alt="product stripe 4"
+                key={4}
+              />,
+              <img
+                src="/library/images/footer/vr7.png"
+                alt="product stripe 5"
+                key={5}
+              />,
+              <img
+                src="/library/images/footer/product-stripe-6.png"
+                alt="product stripe 6"
+                key={6}
+              />,
+              <img
+                src="/library/images/footer/product-stripe-7.png"
+                alt="product stripe 7"
+                key={7}
+              />,
+            ]}
+          />
+        </div>
         <FooterSection variant="spacingVertical" borderBottom={true}>
           <NewsletterSubscription
             headline={
               <Headline
                 children={
                   <Typography component="h2">
-                    Stay <strong>informed</strong>
+                    Stay {isLargeScreen && <br />}
+                    <strong>informed</strong>
                   </Typography>
                 }
               />
@@ -791,7 +808,7 @@ export default function Home() {
             <FooterLinksBlock
               header={
                 <Typography variant="paragraph18" fontWeight="bold">
-                  Get in touch
+                  Get in Touch
                 </Typography>
               }
               links={[
@@ -839,76 +856,80 @@ export default function Home() {
           </FooterLinks>
         </FooterSection>
         <FooterSection variant="spacingBottom" borderBottom={true}>
-          <FooterSocialLinks>
-            <FooterSocialLinkBlock
-              header={
-                <Typography variant="paragraph18" fontWeight="bold">
-                  Thermomix®
-                </Typography>
-              }
-              links={[
-                <a href="#facebook">
-                  <Facebook />
-                </a>,
-                <a href="#instagram">
-                  <Instagram />
-                </a>,
-                <a href="#pinterest">
-                  <Pinterest />
-                </a>,
-                <a href="#youtube">
-                  <Youtube />
-                </a>,
-                <a href="#receptwelt">
-                  <Rezeptwelt />
-                </a>,
-              ]}
-            />
-            <FooterSocialLinkBlock
-              header={
-                <Typography variant="paragraph18" fontWeight="bold">
-                  Kobold
-                </Typography>
-              }
-              links={[
-                <a href="#facebook">
-                  <Facebook />
-                </a>,
-                <a href="#instagram">
-                  <Instagram />
-                </a>,
-                <a href="#pinterest">
-                  <Pinterest />
-                </a>,
-                <a href="#youtube">
-                  <Youtube />
-                </a>,
-              ]}
-            />
-            <LanguageSelector
-              title={
-                <Typography variant="paragraph18" fontWeight="bold">
-                  Country
-                </Typography>
-              }
-              buttonLabel="United Kingdom"
-              modalTitle="Select your country"
-              suggestedLabel="Suggested"
-              suggestedLanguages={[
-                <DropdownItem>
-                  <Germany />
-                  <Typography
-                    component="span"
-                    variant="paragraph16"
-                    fontWeight="regular"
-                  >
-                    Deutschland
+          <div className={styles.overriddenFooterSocialLinks}>
+            <FooterSocialLinks>
+              <FooterSocialLinkBlock
+                header={
+                  <Typography variant="paragraph18" fontWeight="bold">
+                    Thermomix®
                   </Typography>
-                </DropdownItem>,
-              ]}
-              languages={Languages}
-            />
-          </FooterSocialLinks>
+                }
+                links={[
+                  <a href="#facebook">
+                    <Facebook />
+                  </a>,
+                  <a href="#instagram">
+                    <Instagram />
+                  </a>,
+                  <a href="#pinterest">
+                    <Pinterest />
+                  </a>,
+                  <a href="#youtube">
+                    <Youtube />
+                  </a>,
+                  <a href="#receptwelt">
+                    <Rezeptwelt />
+                  </a>,
+                ]}
+              />
+              <FooterSocialLinkBlock
+                header={
+                  <Typography variant="paragraph18" fontWeight="bold">
+                    Kobold
+                  </Typography>
+                }
+                links={[
+                  <a href="#facebook">
+                    <Facebook />
+                  </a>,
+                  <a href="#instagram">
+                    <Instagram />
+                  </a>,
+                  <a href="#pinterest">
+                    <Pinterest />
+                  </a>,
+                  <a href="#youtube">
+                    <Youtube />
+                  </a>,
+                ]}
+              />
+              <div className={styles.overriddenLanguageSelector}>
+                <LanguageSelector
+                  title={
+                    <Typography variant="paragraph18" fontWeight="bold">
+                      Country
+                    </Typography>
+                  }
+                  buttonLabel="United Kingdom"
+                  modalTitle="Select your country"
+                  suggestedLabel="Suggested"
+                  suggestedLanguages={[
+                    <DropdownItem>
+                      <Germany />
+                      <Typography
+                        component="span"
+                        variant="paragraph16"
+                        fontWeight="regular"
+                      >
+                        Deutschland
+                      </Typography>
+                    </DropdownItem>,
+                  ]}
+                  languages={Languages}
+                />
+              </div>
+            </FooterSocialLinks>
+          </div>
         </FooterSection>
         <FooterSection>
           <FooterSmallLinks>
