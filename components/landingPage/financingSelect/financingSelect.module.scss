@@ -1,0 +1,180 @@
+.financingContainer {
+  position: relative;
+  width: 100%;
+}
+
+.financingSelect {
+  border-radius: 8px;
+  border: 1px solid #DCDFDC;
+  background-color: #F3F5F3;
+  width: 100%;
+  padding: 16px 16px 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+}
+
+.financingSelect:hover {
+  border: 1px solid #919394;
+}
+
+.financingSelect.isClicked {
+  border: 2px solid #2175c2;
+  box-shadow: 0px 0px 0px 4px rgba(55, 130, 205, 0.24);
+}
+
+.financingSelect>p {
+  padding: 2px 0;
+}
+
+.financingCaret {
+  padding: 8px;
+}
+
+.financingCaret>svg {
+  width: 16px;
+  aspect-ratio: 1/1;
+
+  &>path {
+    fill: #707375;
+  }
+}
+
+.buttonLabelWithIcon {
+  display: flex;
+  gap: 12px;
+}
+
+.checkMakerIcon>svg {
+  &>path {
+    fill: #00AC46;
+  }
+}
+
+.buttonLabel {
+  text-align: start;
+  color: #23282A;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  margin-top: 8px;
+  list-style: none;
+  padding: 8px 4px;
+  box-shadow: 0 2px 4px 2px rgba(35, 40, 42, 0.08);
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+  color: #23282A;
+}
+
+
+.dropdownMenu.fadeIn {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.dropdownMenu.fadeOut {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dropdownMenuItem {
+  padding: 19px 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.dropdownMenuItem:not(:last-of-type):after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  right: 8px;
+  height: 1px;
+  background-color: #DCDFDC;
+}
+
+.dropdownMenuItem:hover {
+  background-color: #EDEDED;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 12px;
+}
+
+.radioInput {
+  display: none;
+}
+
+.radioCustom {
+  min-width: 24px;
+  min-height: 24px;
+  border: 1px solid #B2B4B5;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  background-color: #FFFFFF;
+}
+
+.radioCustom::after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  background: transparent;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.radioInput:checked+.radioCustom {
+  border-color: #00ac46;
+}
+
+.radioInput:checked+.radioCustom::after {
+  background: #00ac46;
+}
+
+.labelWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.textInfoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoIcon>svg {
+  &>path {
+    fill: #707375;
+  }
+}
+
+.badge {
+  border-radius: 20px;
+  padding: 1px 8px;
+  background-color: #734BA5;
+  color: #FFFFFF;
+  width: fit-content;
+}
+
+.checkMakerIcon>svg,
+.infoIcon>svg {
+  min-width: 24px;
+}

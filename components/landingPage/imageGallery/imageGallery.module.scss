@@ -13,14 +13,34 @@
 .imageGalleryContainer {
   touch-action: pan-y pinch-zoom;
   display: flex;
-  margin-left: calc(var(--slide-spacing) * -1);
+  // margin-left: calc(var(--slide-spacing) * -1);
   backface-visibility: hidden;
+  gap: var(--slide-spacing);
+}
+
+.overriddenImageGalleryContainer {
+  touch-action: pan-y pinch-zoom;
+  backface-visibility: hidden;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+  width: 1120px;
+
+  @media (min-width: 1580px) {
+    gap: 40px;
+    width: 1400px;
+  }
 }
 
 .imageGallerySlide {
   flex: 0 0 var(--slide-size);
   min-width: 0;
-  padding-left: var(--slide-spacing);
+  // padding-left: var(--slide-spacing);
+}
+
+.overriddenImageGallerySlide {
+  min-width: 0;
+  grid-column: span 4;
 }
 
 .imageGallerySlideImg {
@@ -33,6 +53,7 @@
 .imageGalleryControls {
   display: grid;
   margin-top: 28px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .imageGalleryButtons {
@@ -83,6 +104,8 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  grid-column: 2/3;
+  justify-content: center;
 }
 
 .imageGalleryDot {
@@ -126,10 +149,8 @@
   position: relative;
 
   display: flex;
-  justify-content: center;
 
   width: 100%;
-  height: 100%;
 }
 
 .imageGalleryParallaxImg {
@@ -146,4 +167,49 @@
       background-color: #fff;
     }
   }
+}
+
+.imageGalleryArrows {
+  grid-column: 3/4;
+  justify-self: end;
+}
+
+.imageGalleryPrev,
+.imageGalleryNext {
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.07);
+  border: none;
+}
+
+.imageGalleryPrev>svg,
+.imageGalleryNext>svg {
+  width: 24px;
+  height: 24px;
+
+  &>path {
+    fill: #23282a;
+  }
+}
+
+.overriddenImageGallery {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.overriddenImageGallery .imageGalleryViewport {
+  width: 100%;
+}
+
+.overriddenImageGallery .imageGalleryViewport,
+.overriddenImageGallery .imageGalleryContainer,
+.overriddenImageGallery .imageGallerySlide {
+  aspect-ratio: 1/1;
+}
+
+.overriddenImageGallery .imageGallerySlide img {
+  flex: 0;
+  object-fit: cover;
+  aspect-ratio: 1/1 !important;
 }
