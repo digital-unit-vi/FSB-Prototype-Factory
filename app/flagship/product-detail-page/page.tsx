@@ -472,6 +472,7 @@ export default function Home() {
                       slides={galleryAsset}
                       options={{ loop: false, align: 'start' }}
                       isModal
+                      showCarouselInfo
                     ></ImageGallery>
                   )}
                 </GridItem>
@@ -483,7 +484,7 @@ export default function Home() {
                           <span>Thermomix® TM6</span>
                         </Typography>
                         <Rating
-                          rate={4.6}
+                          rate={4.9}
                           counter={42}
                           iconSize={16}
                           iconColors={{

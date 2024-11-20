@@ -12,12 +12,16 @@ import React, {
   useEffect,
   useRef,
   ReactNode,
-  useState
+  useState,
 } from 'react'
 import styles from './imageGallery.module.scss'
 import { DotButton, useDotButton } from './imageGalleryDotButton'
 import { PrevButton, NextButton } from './imageGalleryArrowButtons'
-import { CaretLeft, CaretRight } from '@components/build-assets/libraryExport'
+import {
+  CaretLeft,
+  CaretRight,
+  Typography,
+} from '@components/build-assets/libraryExport'
 import GalleryModal from '../galleryModal/galleryModal'
 import { GalleryItem } from '../gallery/gallery'
 
@@ -37,6 +41,7 @@ interface PropType {
     extraExtraLarge: number
   }
   isModal?: boolean
+  showCarouselInfo?: boolean
 }
 
 const OPTIONS: EmblaOptionsType = {
@@ -92,6 +97,7 @@ const ImageGallery: React.FC<PropType> = ({
   screenSizes,
   containerWidth,
   isModal,
+  showCarouselInfo,
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options ?? OPTIONS)
   const tweenFactor = useRef(0)
@@ -263,6 +269,27 @@ const ImageGallery: React.FC<PropType> = ({
               ),
             )}
           </div>
+          {showCarouselInfo && (
+            <div className={styles.carouselInfo}>
+              <div className={styles.carouselInfoContent}>
+                {images.length > 0 && (
+                  <Typography variant={'paragraph14'} fontWeight={'regular'}>
+                    {`${images.length} image${images.length > 1 ? 's' : ''}`}
+                  </Typography>
+                )}
+                {images.length > 0 && videos.length > 0 && (
+                  <Typography variant={'paragraph14'} fontWeight={'regular'}>
+                    -
+                  </Typography>
+                )}
+                {videos.length > 0 && (
+                  <Typography variant={'paragraph14'} fontWeight={'regular'}>
+                    {`${videos.length} video${videos.length > 1 ? 's' : ''}`}
+                  </Typography>
+                )}
+              </div>
+            </div>
+          )}
         </div>
         <div className={styles.imageGalleryControls}>
           <div className={styles.imageGalleryDots}>

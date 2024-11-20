@@ -207,9 +207,11 @@
 
 .overriddenImageGallery .imageGalleryViewport {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.overriddenImageGallery .imageGalleryViewport,
 .overriddenImageGallery .imageGalleryContainer,
 .overriddenImageGallery .imageGallerySlide {
   aspect-ratio: 1/1;
@@ -219,4 +221,25 @@
   flex: 0;
   object-fit: cover;
   aspect-ratio: 1/1 !important;
+}
+
+.overriddenImageGallery .imageGalleryControls {
+  margin-top: 0;
+}
+
+.carouselInfo {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+
+.carouselInfoContent {
+  border-radius: 24px;
+  padding: 8px 12px;
+  display: flex;
+  gap: 8px;
+  background-color: #FFFFFF;
+  color: #4B4A4B;
+  justify-content: center;
+  width: fit-content;
 }
