@@ -1,5 +1,4 @@
 .componentWrapper {
-    background-color: #F3F5F3;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -49,6 +48,16 @@
             padding: 10.67 !important;
         }
 
+    }
+}
+
+.productTileEyeCatcher.slider {
+    @media (max-width: 739px) {
+        &>* {
+            width: 56px !important;
+            height: 56px !important;
+            padding: 7.47px !important;
+        }
     }
 }
 

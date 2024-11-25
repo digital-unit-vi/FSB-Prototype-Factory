@@ -6,7 +6,6 @@ import {
   AdvisorUnassigned,
   Austria,
   Button,
-  ButtonGroup,
   Canada,
   ContentBlock,
   China,
@@ -32,7 +31,6 @@ import {
   Italy,
   LanguageSelector,
   Location,
-  MediaContainer,
   Menu,
   Mexico,
   NavItem,
@@ -55,25 +53,17 @@ import {
   User,
   Vorwerk,
   Youtube,
-  DeliveryLight,
-  CalendarLight,
-  CheckmarkCircleLight,
-  StickyProductBar,
 } from '@components/build-assets/libraryExport'
 import Link from 'next/link'
 import styles from './page.module.scss'
-import { ComponentProps } from 'react'
-import Rating from '@components/landingPage/rating/rating'
-import Gallery from '@components/landingPage/gallery/gallery'
-import List from '@components/landingPage/list/list'
-import ProductPurchaseOptions from '@components/landingPage/price/productPurchaseOptions'
-import TrustBanner from '@components/landingPage/trustBanner/trustBanner'
-import Accordion from '@components/landingPage/accordion/accordion'
 import ImageGallery from '@components/landingPage/imageGallery/imageGallery'
-import IncludedProductTile from '@components/landingPage/includedProductTile/includedProductTile'
-import File from '@components/landingPage/file/file'
-import ProductTileNew from '@components/landingPage/productTileNew/productTileNew'
 import useScreenSize from '@utils/useScreenSize'
+import IMAGE_CHP_1 from '@public/landingPage/teaser/teaser-thermomix.png'
+import IMAGE_CHP_2 from '@public/landingPage/teaser/teaser-kobold.png'
+import IMAGE_CHP_3 from '@public/landingPage/teaser/teaser-voucher.png'
+import CategoryTiles from '@components/landingPage/categoryTiles/categoryTiles'
+import CategoryTile from '@components/landingPage/categoryTile/categoryTile'
+import ProductTileNew from '@components/landingPage/productTileNew/productTileNew'
 
 const Languages = [
   <DropdownItem>
@@ -231,50 +221,15 @@ const Languages = [
   </DropdownItem>,
 ]
 
-const galleryAsset: ComponentProps<typeof Gallery>['gallery'] = [
-  {
-    type: 'image',
-    url: '/landingPage/carousel/pdp-1.png',
-    alt: 'Thermomix front side',
-    title: 'Thermomix front side',
-  },
-  {
-    type: 'image',
-    url: '/landingPage/carousel/pdp-2.png',
-    alt: 'Thermomix right side',
-    title: 'Thermomix right side',
-  },
-  {
-    type: 'image',
-    url: '/landingPage/carousel/pdp-3.png',
-    alt: 'Thermomix left side',
-    title: 'Thermomix left side',
-  },
-  {
-    type: 'image',
-    url: '/landingPage/carousel/pdp-4.png',
-    alt: 'Thermomix back side',
-    title: 'Thermomix back side',
-  },
-  {
-    type: 'video',
-    url: '/library/videos/thermomix.webm',
-    poster: '/landingPage/carousel/pdp-video.png',
-  },
-]
-
 export default function Home() {
   const screenSize = useScreenSize()
-
-  const productTilesGalleryAsset: ComponentProps<
-    typeof ImageGallery
-  >['slides'] = [
+  const categoryTilesAssets = [
     <ProductTileNew
       key={'Thermomix friend'}
       productImageSrc={'/library/images/thermomix-friend.png'}
       heading={'Thermomix Friend® with TM6 Mixtopf'}
       price={{
-        price: '1499,00 €'
+        price: '499,00 €',
       }}
       screenSizes={screenSize}
     />,
@@ -283,7 +238,7 @@ export default function Home() {
       productImageSrc={'/library/images/knife-cover.png'}
       heading={'Knife cover “Shaft” with peeler'}
       price={{
-        price: '1499,00 €'
+        price: '34,00 €',
       }}
       screenSizes={screenSize}
     />,
@@ -292,7 +247,8 @@ export default function Home() {
       productImageSrc={'/library/images/blade-cover.png'}
       heading={'Blade cover “Shaft”'}
       price={{
-        price: '24,90 €'
+        price: '24,00 €',
+        lowestPrice: '45,00 €',
       }}
       eyeCatcherProps={{
         firstLine: 'Save',
@@ -302,12 +258,56 @@ export default function Home() {
         size: 'large',
       }}
       screenSizes={screenSize}
+      slider={true}
+    />,
+  ]
+  const productTileAssets = [
+    <ProductTileNew
+      key={'Kobold VR7'}
+      productImageSrc={'/library/images/kobold-vr7.png'}
+      heading={'Kobold VR7 Vacuum Robot'}
+      price={{
+        price: '999,00 €',
+      }}
+      screenSizes={screenSize}
+      color={'white'}
+    />,
+    <ProductTileNew
+      key={'Kobold VC100'}
+      productImageSrc={'/library/images/kobold-vc100.png'}
+      heading={'Kobold VC100 Handheld Vacuum Cleaner'}
+      price={{
+        price: '24,90 €',
+        lowestPrice: '45,00 €',
+      }}
+      screenSizes={screenSize}
+      color={'white'}
+      eyeCatcherProps={{
+        firstLine: 'Save',
+        secondLine: '30%',
+        thirdLine: false,
+        backgroundColor: 'purple',
+        size: 'large',
+      }}
+      slider={true}
+    />,
+    <ProductTileNew
+      key={'Kobold VK7'}
+      productImageSrc={'/library/images/kobold-cordless-vacuum-cleaner.png'}
+      heading={'Kobold VK7 Cordless Vacuum Cleaner'}
+      price={{
+        price: '979,00 €',
+      }}
+      screenSizes={screenSize}
+      color={'white'}
     />,
   ]
 
+  const teaserTileAssets = [IMAGE_CHP_1, IMAGE_CHP_2, IMAGE_CHP_3]
+
   return (
     <>
-      <main>
+      <main className={styles.catalogueHomePage}>
         <Header
           advisor={
             <AdvisorDropdown buttonLabel="Advisor">
@@ -464,311 +464,287 @@ export default function Home() {
           backgroundType="transparent"
           stickyMode="normal"
         />
-        <section
-          className={`${styles.prominentSection} ${styles.additionalSectionPadding}`}
-        >
-          <GridContainer isOverlay={screenSize.width < 936}>
-            <GridItem columns={12}>
-              <GridContainer isOverlay={screenSize.width < 936}>
-                <GridItem columns={12} columnsL={7} columnsXL={8}>
-                  {screenSize.width > 935 ? (
-                    <Gallery gallery={galleryAsset}></Gallery>
-                  ) : (
-                    <ImageGallery
-                      slides={galleryAsset}
-                      options={{ loop: false, align: 'start' }}
-                      isModal
-                      showCarouselInfo
-                    ></ImageGallery>
-                  )}
-                </GridItem>
-                <GridItem columns={12} columnsL={5} columnsXL={4}>
-                  <div className={styles.productDetailsContainer}>
-                    <div className={styles.productDetailsWrapper}>
-                      <div className={styles.headingAndRating}>
-                        <Typography component="h4" fontWeight="bold">
-                          <span>Thermomix® TM6</span>
-                        </Typography>
-                        <Rating
-                          rate={4.9}
-                          counter={42}
-                          size={"sapcVersion"}
-                          iconColors={{
-                            full: '#23282A',
-                            empty: 'rgb(196, 196, 196)',
-                          }}
-                          showCounter={true}
-                          showAmount={true}
-                        ></Rating>
-                      </div>
-                      <List
-                        items={[
-                          'Delicious dishes prepared quickly and easily',
-                          'Thousands of recipes with guaranteed success directly on your device',
-                          'A real all-rounder: Numerous cooking functions and modes',
-                        ]}
-                        decoratorType="check"
-                        size="medium"
-                      />
-                      <ProductPurchaseOptions
-                        price="1.399 €"
-                        delivery={
-                          <Typography
-                            variant="paragraph16"
-                            fontWeight="regular"
-                          >
-                            <span>
-                              Free delivery{' '}
-                              <strong>
-                                Wednesday, 26.06. – Friday, 27.06.{' '}
-                              </strong>
-                            </span>
-                          </Typography>
-                        }
-                      />
-                      <TrustBanner
-                        items={[
-                          {
-                            text: 'Free shipping for orders over $50',
-                            icon: <DeliveryLight />,
-                          },
-                          {
-                            text: '30 day satisfaction guarantee',
-                            icon: <CalendarLight />,
-                          },
-                          {
-                            text: '5 year warranty',
-                            icon: <CheckmarkCircleLight />,
-                          },
-                        ]}
-                      />
-                    </div>
-                  </div>
-                </GridItem>
-              </GridContainer>
+        <GridContainer>
+          <GridItem
+            columns={12}
+            className={`${styles.topHeadline} ${styles.textCentered}`}
+          >
+            <Headline strongColor={'green'}>
+              <Typography component={'h1'}>
+                Your <strong>perfect home</strong>
+              </Typography>
+            </Headline>
+          </GridItem>
+        </GridContainer>
+        <div className={styles.overriddenGridCol}>
+          <GridContainer>
+            <GridItem columns={6}>
+              <CategoryTile
+                size={'small'}
+                title={'Cooking with Thermomix®'}
+                backgroundImageSrc={
+                  '/landingPage/categoryTile/cooking-with-thermomix.png'
+                }
+              />
             </GridItem>
-            <GridItem columns={12} columnsL={7}>
-              <div className={styles.productDetailsContainer}>
-                <div className={styles.headingWithParagraph}>
-                  <Typography component="h6" fontWeight="bold">
-                    It has never been so easy and delicious
-                  </Typography>
-                  <Typography component="intro" fontWeight="regular">
-                    The Thermomix® TM6 makes your life easier and adapts to
-                    your individual dietary requirements. Do you love kitchen
-                    classics, or do you like trying out current food trends? Do
-                    you pay particular attention to healthy, balanced food and
-                    also to your figure? No matter what your personal cooking
-                    preferences are – you will find the answer with Thermomix®.
-                  </Typography>
-                </div>
-              </div>
-            </GridItem>
-            <GridItem columns={12} columnsL={7}>
-              <div className={styles.productDetailsContainer}>
-                <Accordion
-                  items={[
-                    {
-                      title: 'Product description',
-                      content: <p>Lorem ipsum...</p>,
-                    },
-                    { title: 'Modes', content: <p>Lorem ipsum...</p> },
-                    { title: 'Specifications', content: <p>Lorem ipsum...</p> },
-                    {
-                      title: 'Reviews',
-                      additionalInfo: (
-                        <Rating
-                          rate={4.5}
-                          counter={0}
-                          size={"medium"}
-                          iconColors={{ full: '#3F4447', empty: '#C4C4C4' }}
-                          showAmount={true}
-                        />
-                      ),
-                      content: <p>Lorem ipsum...</p>,
-                    },
-                  ]}
-                />
-              </div>
+            <GridItem columns={6}>
+              <CategoryTile
+                size={'small'}
+                title={'Cleaning with Kobold'}
+                backgroundImageSrc={
+                  '/landingPage/categoryTile/cleaning-with-kobold.png'
+                }
+              />
             </GridItem>
           </GridContainer>
-        </section>
+        </div>
         <section className={styles.prominentSection}>
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin} ${styles.overriddenGap}`}
+              className={`${styles.textCentered} ${styles.overriddenMargin}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'green'}>
-                <Typography component="h2">
-                  <span>
-                    What is <strong>included</strong>
-                  </span>
+                <Typography component={'h2'}>
+                  Everything about <strong>cooking</strong>
                 </Typography>
               </Headline>
             </GridItem>
-            <GridItem columns={12}>
-              <ImageGallery
-                slides={[
-                  <IncludedProductTile
-                    key={'Bundle name'}
-                    imageProps={{
-                      src: '/landingPage/includedProductTile/tm6-1.png',
-                      alt: 'Thermomix TM6',
-                    }}
-                    heading={'Thermomix Friend® with TM6 Mixtopf'}
-                    bundleName={'Bundle name'}
-                    bundleImage={{
-                      src: '/landingPage/includedProductTile/bowl-set.png',
-                      alt: 'Bowl set',
-                    }}
-                  />,
-                  <IncludedProductTile
-                    key={'Varoma'}
-                    imageProps={{
-                      src: '/landingPage/includedProductTile/tm6-2.png',
-                      alt: 'Thermomix TM6',
-                    }}
-                    heading={
-                      'Steaming retaining flavors and nutrients while cooking'
-                    }
-                    bundleName={'Varoma® complete'}
-                    bundleImage={{
-                      src: '/landingPage/includedProductTile/varoma.png',
-                      alt: 'Varoma',
-                    }}
-                  />,
-                  <IncludedProductTile
-                    key={'Butterfly whisk'}
-                    imageProps={{
-                      src: '/landingPage/includedProductTile/tm6-3.png',
-                      alt: 'Thermomix TM6',
-                    }}
-                    heading={
-                      'Mixes and whips ingredients with airy textures, like mousses and creams'
-                    }
-                    bundleName={'Butterfly whisk'}
-                    bundleImage={{
-                      src: '/landingPage/includedProductTile/butterfly-scoop.png',
-                      alt: 'Butterfly whisk',
-                    }}
-                  />,
-                ]}
-                options={{ loop: false, align: 'start' }}
-                screenSizes={screenSize}
-                containerWidth={{
-                  large: 881,
-                  extraLarge: 1120,
-                  extraExtraLarge: 1440,
-                }}
-              />
-            </GridItem>
           </GridContainer>
+          <div className={styles.tilesContainer}>
+            <div className={styles.categoryTilesContainer}>
+              <GridContainer>
+                <GridItem columns={12}>
+                  <CategoryTile
+                    size={'large'}
+                    title={'Thermomix® TM6'}
+                    backgroundImageSrc={
+                      screenSize.width < 740
+                        ? '/landingPage/categoryTile/thermomix-tm6-cropped.png'
+                        : '/landingPage/categoryTile/thermomix-tm6.png'
+                    }
+                    button={{
+                      label: 'Explore the product',
+                      size: 'medium',
+                    }}
+                  />
+                </GridItem>
+              </GridContainer>
+              <CategoryTiles
+                categoryTilesData={[
+                  {
+                    size: 'large',
+                    backgroundColor: 'grey',
+                    imageProps: {
+                      src: '/landingPage/categoryTile/tm-specials.png',
+                      alt: 'Thermomix Specials',
+                    },
+                    title: 'Specials',
+                    button: {
+                      label: 'Explore more',
+                      size: 'medium',
+                    },
+                  },
+                  {
+                    size: 'large',
+                    backgroundColor: 'grey',
+                    imageProps: {
+                      src: '/landingPage/categoryTile/cooking-books.png',
+                      alt: 'Cooking books',
+                    },
+                    title: 'Cooking books',
+                    button: {
+                      label: 'Explore more',
+                      size: 'medium',
+                    },
+                  },
+                ]}
+              />
+            </div>
+            <div>
+              <GridContainer>
+                <GridItem
+                  columns={12}
+                  className={`${styles.textCentered} ${styles.overriddenMarginHeadline}`}
+                >
+                  <Headline spaceBelow={'default'} strongColor={'green'}>
+                    <Typography component={'h3'}>
+                      Our Thermomix® <strong>topseller</strong>
+                    </Typography>
+                  </Headline>
+                </GridItem>
+              </GridContainer>
+              <div className={styles.tilesSliderContainer}>
+                <GridContainer>
+                  <GridItem columns={12}>
+                    <ImageGallery
+                      slides={categoryTilesAssets}
+                      options={{ loop: false, align: 'start' }}
+                      screenSizes={screenSize}
+                      containerWidth={{
+                        large: 704,
+                        extraLarge: 1120,
+                        extraExtraLarge: 1440,
+                      }}
+                      noControl={true}
+                    />
+                  </GridItem>
+                </GridContainer>
+                <GridContainer>
+                  <GridItem columns={12}>
+                    <Button type={'primary'} size={'medium'}>
+                      All Thermomix® products
+                    </Button>
+                  </GridItem>
+                </GridContainer>
+              </div>
+            </div>
+          </div>
         </section>
-        <section className={styles.prominentSection}>
+        <section className={styles.sectionRadius}>
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenHeadline} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overriddenMargin}`}
             >
-              <Headline
-                subline={
-                  'From meal planning, to ingredient shopping, to cooking, the TM6 has your back so you can seamlessly create the perfect meal, every time.'
-                }
-                strongColor={'green'}
-                spaceBelow={'additional'}
-              >
-                <Typography component={'h2'} fontWeight={'light'}>
-                  <span>
-                    Don’t just cook every day…
-                    {screenSize.width > 739 && <br />}
-                    <strong>create wow every day</strong>
-                  </span>
+              <Headline spaceBelow={'additional'} strongColor={'green'}>
+                <Typography component={'h2'}>
+                  Everything about <strong>cleaning</strong>
                 </Typography>
               </Headline>
             </GridItem>
           </GridContainer>
-          <div className={styles.contentBlockContainer}>
-            <div className={styles.contentBlockLeft}>
-              <ContentBlock
-                mediaAlignment={screenSize.width > 739 ? 'left' : undefined}
-                media={<video controls src="/library/videos/tm-1.mp4"></video>}
-                headline={
-                  <Headline spaceBelow={'default'}>
-                    <Typography component={'h4'} fontWeight={'bold'}>
-                      <span>Recipes with step-by-step instructions</span>
-                    </Typography>
-                  </Headline>
-                }
-                paragraph={
-                  <Typography
-                    variant={`paragraph${screenSize.width > 1267 ? '18' : '19'}`}
-                    fontWeight={'regular'}
-                  >
-                    Prepare foolproof dishes with innovative step-by-step Guided
-                    Cooking or access our Cookidoo platform for thousands of
-                    recipes with manual or guided cooking.
-                  </Typography>
-                }
-              />
-            </div>
-            <div className={styles.contentBlockRight}>
-              <ContentBlock
-                mediaAlignment={screenSize.width > 739 ? 'right' : undefined}
-                media={
-                  <video
-                    controls
-                    src="/library/videos/tm-1.mp4"
-                    poster="/library/videos/tm-2-placeholder.png"
-                  ></video>
-                }
-                headline={
-                  <Headline spaceBelow={'default'}>
-                    <Typography component={'h4'} fontWeight={'bold'}>
-                      <span>Multi-purpose cooking device</span>
-                    </Typography>
-                  </Headline>
-                }
-                paragraph={
-                  <Typography
-                    variant={`paragraph${screenSize.width > 1267 ? '18' : '19'}`}
-                    fontWeight={'regular'}
-                  >
-                    Thermomix® TM6 can blend, steam, whip, knead and so much
-                    more! With exciting modes like High Temperature, Sous vide,
-                    Slow Cooking and Fermentation, Thermomix® TM6 is a modern
-                    culinary revolution.
-                  </Typography>
-                }
-              />
-            </div>
-            <div className={styles.contentBlockLeft}>
-              <ContentBlock
-                mediaAlignment={screenSize.width > 739 ? 'left' : undefined}
-                media={
-                  <img
-                    src="/library/images/content-block-1.png"
-                    alt="Innovative technology"
-                    style={{ aspectRatio: '16/9' }}
+          <div className={styles.tilesContainer}>
+            <div className={styles.categoryTilesContainer}>
+              <GridContainer>
+                <GridItem columns={12}>
+                  <CategoryTile
+                    size={'large'}
+                    title={'Battery Vacuum Cleaner'}
+                    backgroundImageSrc={
+                      '/landingPage/categoryTile/battery-vacuum-cleaner.png'
+                    }
+                    button={{
+                      size: 'medium',
+                      label: 'Explore the product',
+                    }}
                   />
-                }
-                headline={
-                  <Headline spaceBelow={'default'}>
-                    <Typography component={'h4'} fontWeight={'bold'}>
-                      <span>Innovative technology</span>
+                </GridItem>
+              </GridContainer>
+              <div
+                className={`${styles.overriddenGridCol} ${styles.overriddenGridItemCol}`}
+              >
+                <GridContainer>
+                  <GridItem columns={6}>
+                    <CategoryTile
+                      layout={'horizontal'}
+                      size={'small'}
+                      title={'Special offers'}
+                      backgroundImageSrc={'/landingPage/teaser/teaser4.png'}
+                    />
+                  </GridItem>
+                  <GridItem columns={6}>
+                    <CategoryTile
+                      layout={'horizontal'}
+                      size={'small'}
+                      title={'Upright Vacuum cleaner'}
+                      backgroundImageSrc={
+                        '/landingPage/categoryTile/upright-vacuum-cleaner.png'
+                      }
+                    />
+                  </GridItem>
+                  <GridItem columns={12}>
+                    <CategoryTile
+                      layout={'horizontal'}
+                      size={'large'}
+                      title={'Robot'}
+                      backgroundImageSrc={'/landingPage/categoryTile/robot.png'}
+                    />
+                  </GridItem>
+                </GridContainer>
+              </div>
+              <CategoryTiles
+                categoryTilesData={[
+                  {
+                    size: 'large',
+                    backgroundColor: 'white',
+                    imageProps: {
+                      src: '/landingPage/categoryTile/kobold-attachments.png',
+                      alt: 'Kobold Attachments',
+                    },
+                    title: 'Attachments',
+                    button: {
+                      label: 'Explore more',
+                      size: 'medium',
+                    },
+                    eyeCatcherProps: {
+                      firstLine: 'Only until',
+                      secondLine: '25.12.23',
+                      thirdLine: false,
+                      backgroundColor: 'purple',
+                      size: 'small',
+                    },
+                  },
+                  {
+                    size: 'large',
+                    backgroundColor: 'white',
+                    imageProps: {
+                      src: '/landingPage/categoryTile/kobold-accessories.png',
+                      alt: 'Kobold Accessories',
+                    },
+                    title: 'Accessories',
+                    button: {
+                      label: 'Explore more',
+                      size: 'medium',
+                    },
+                    eyeCatcherProps: {
+                      firstLine: 'Only until',
+                      secondLine: '25.12.23',
+                      thirdLine: false,
+                      backgroundColor: 'purple',
+                      size: 'small',
+                    },
+                  },
+                ]}
+              />
+            </div>
+            <div>
+              <GridContainer>
+                <GridItem
+                  columns={12}
+                  className={`${styles.textCentered} ${styles.overriddenMarginHeadline}`}
+                >
+                  <Headline spaceBelow={'additional'} strongColor={'green'}>
+                    <Typography component={'h3'}>
+                      Our Kobold <strong>topseller</strong>
                     </Typography>
                   </Headline>
-                }
-                paragraph={
-                  <Typography
-                    variant={`paragraph${screenSize.width > 1267 ? '18' : '19'}`}
-                    fontWeight={'regular'}
-                  >
-                    German engineering and outstanding quality Thermomix® TM6
-                    is a leading device amongst kitchen appliances.
-                  </Typography>
-                }
-              />
+                </GridItem>
+              </GridContainer>
+              <div className={styles.tilesSliderContainer}>
+                <GridContainer>
+                  <GridItem columns={12}>
+                    <ImageGallery
+                      slides={productTileAssets}
+                      options={{ loop: false, align: 'start' }}
+                      screenSizes={screenSize}
+                      containerWidth={{
+                        large: 704,
+                        extraLarge: 1120,
+                        extraExtraLarge: 1440,
+                      }}
+                      noControl={true}
+                    />
+                  </GridItem>
+                </GridContainer>
+                <GridContainer>
+                  <GridItem columns={12}>
+                    <Button type={'primary'} size={'medium'}>
+                      All Kobold products
+                    </Button>
+                  </GridItem>
+                </GridContainer>
+              </div>
             </div>
           </div>
         </section>
@@ -776,175 +752,107 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin} ${styles.overriddenGap}`}
+              className={`${styles.textCentered} ${styles.overriddenMargin}`}
             >
-              <Headline spaceBelow={'additional'}>
-                <Typography component={'h2'}>Downloads</Typography>
+              <Headline spaceBelow={'additional'} strongColor={'green'}>
+                <Typography component={'h2'}>
+                  <strong>Products</strong> for Thermomix® & Kobold
+                </Typography>
               </Headline>
             </GridItem>
+          </GridContainer>
+          <GridContainer>
             <GridItem columns={12}>
-              <div className={styles.filesContainer}>
-                <File label={'Product manual'} sizeFormat={'PDF  1,7 MB'} />
-                <File label={'Quickstart guide'} sizeFormat={'PDF  0,8 MB'} />
-                <File
-                  label={'Information obligation with some extra text'}
-                  sizeFormat={'PDF  1,7 MB'}
-                  subLine={screenSize.width > 739 && screenSize.width < 936}
-                />
-              </div>
+              <ImageGallery
+                slides={teaserTileAssets}
+                options={{ loop: false, align: 'start' }}
+                screenSizes={screenSize}
+                containerWidth={{
+                  large: 704,
+                  extraLarge: 1120,
+                  extraExtraLarge: 1440,
+                }}
+                noControl={true}
+                setHeight={true}
+              />
             </GridItem>
           </GridContainer>
         </section>
-        {screenSize.width < 1580 && (
-          <>
-            <section className={styles.prominentSection}>
-              <GridContainer>
-                <GridItem columns={12}>
-                  <div
-                    className={`${styles.awardsContainer} ${styles.textCentered}`}
-                  >
-                    <Headline spaceBelow={'additional'}>
-                      <Typography component={'h2'}>Awards</Typography>
-                    </Headline>
-                    <div className={styles.awardsMediaContainer}>
-                      <MediaContainer aspectRatio={'3/2'}>
-                        <img
-                          src="/library/images/design-award-1.png"
-                          alt="Design award"
-                        />
-                      </MediaContainer>
-                      <MediaContainer aspectRatio={'3/2'}>
-                        <img
-                          src="/library/images/design-award-2.png"
-                          alt="Design award"
-                        />
-                      </MediaContainer>
-                      <MediaContainer aspectRatio={'3/2'}>
-                        <img
-                          src="/library/images/design-award-3.png"
-                          alt="Design award"
-                        />
-                      </MediaContainer>
-                    </div>
-                  </div>
-                </GridItem>
-              </GridContainer>
-            </section>
-            <section className={styles.sectionWithBiggerPadding}>
-              <GridContainer
-                isOverlay={screenSize.width > 935 && screenSize.width < 1268}
-              >
-                <GridItem columns={12} className={styles.textCentered}>
-                  <div className={styles.overriddenMargin}>
-                    <Headline spaceBelow={'additional'} strongColor={'green'}>
-                      <Typography component={'h2'}>
-                        <strong>Matching</strong> products
-                      </Typography>
-                    </Headline>
-                  </div>
-                </GridItem>
-              </GridContainer>
-              {screenSize.width > 935 && screen.width < 1268 ? (
-                <div className={styles.productTilesContainer}>
-                  {productTilesGalleryAsset.map(
-                    (productTile: typeof ProductTileNew) => productTile,
-                  )}
-                </div>
-              ) : (
-                <GridContainer>
-                  <GridItem columns={12}>
-                    {screenSize.width < 740 ? (
-                      <ImageGallery
-                        slides={productTilesGalleryAsset}
-                        options={{ loop: false, align: 'start' }}
-                        screenSizes={screenSize}
-                        containerWidth={{
-                          large: 522.5,
-                          extraLarge: 1120,
-                          extraExtraLarge: 1440,
-                        }}
-                      />
-                    ) : (
-                      <div className={styles.productTilesContainer}>
-                        {productTilesGalleryAsset.map(
-                          (productTile: typeof ProductTileNew) => productTile,
-                        )}
-                      </div>
-                    )}
-                  </GridItem>
-                </GridContainer>
-              )}
-            </section>
-          </>
-        )}
-        <section className={styles.defaultSection}>
+        <section className={styles.sectionRadius}>
           <GridContainer>
             <GridItem
               columns={12}
-              className={styles.textCentered}
+              className={`${styles.textCentered} ${styles.overriddenMargin}`}
             >
-              <div className={styles.overriddenMargin}>
-                <Headline spaceBelow={'additional'} strongColor={'blue'}>
-                  <Typography component={'h2'}>
-                    Vorwerk Advisor,
-                    <br />a unique opportunity to
-                    {screenSize.width > 739 && <br />}
-                    <strong>join our sales force</strong>
-                  </Typography>
-                </Headline>
-              </div>
+              <Headline spaceBelow={'additional'} strongColor={'green'}>
+                <Typography component={'h2'}>
+                  Current <strong>offers</strong>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
-          <div className={styles.overriddenContentBlockWidth}>
+          <div className={styles.tilesContainer}>
             <ContentBlock
-              mediaAlignment="left"
+              mediaAlignment={screenSize.width > 935 ? 'left' : undefined}
               media={
-                <img
-                  src="/landingPage/contentBlock/thermomix-team.png"
-                  alt="Woman eating sushi"
-                />
+                <img src="/landingPage/contentBlock/vorwerk-content.png" />
               }
               headline={
-                <Headline spaceBelow="default">
-                  <Typography component="h3" fontWeight="bold">
-                    Turn your passion into a career with Thermomix®
+                <Headline spaceBelow={'default'}>
+                  <Typography component={'h3'} fontWeight={'bold'}>
+                    Turbo vacuuming and mopping at the same time.
                   </Typography>
                 </Headline>
               }
               paragraph={
                 <Typography
-                  fontWeight="regular"
-                  variant={
-                    screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
-                  }
+                  variant={`paragraph${screenSize.width > 1267 ? '18' : '16'}`}
+                  fontWeight={'regular'}
                 >
-                  Whatever your home situation, the VB100 system brings the grab
-                  and go flexibility you need. With this lightweight, quiet,
-                  all-in-one solution, you can vacuum and mop simultaneously…and
-                  that’s not all. Thanks to its broad range of attachments, it
-                  also cleans carpets, hard floors and mattresses thoroughly and
-                  efficiently.
+                  Vorwerk presents the new Kobold VK7! In combination with the
+                  SP7 squeegee, it becomes the best squeegee ever. Thanks to the
+                  Boost function, you can clean with even more power and switch
+                  between other attachments in a flash with just one click.
+                  Vacuuming & mopping?
                 </Typography>
               }
               buttonGroup={
-                <ButtonGroup>
-                  <Link href="#">
-                    <Button size="large" type="primary">
-                      Join the Thermomix® team
-                    </Button>
-                  </Link>
-                  <Link href="#">
-                    <Button size="large" type="secondary">
-                      Details
-                    </Button>
-                  </Link>
-                </ButtonGroup>
+                <Button type={'primary'} size={'large'}>
+                  Kobold VK7 offers
+                </Button>
               }
-            ></ContentBlock>
+            />
+            <ContentBlock
+              mediaAlignment={screenSize.width > 935 ? 'right' : undefined}
+              media={<img src="/landingPage/contentBlock/content-1.png" />}
+              headline={
+                <Headline spaceBelow={'default'}>
+                  <Typography component={'h3'} fontWeight={'bold'}>
+                    Only the best for you!
+                  </Typography>
+                </Headline>
+              }
+              paragraph={
+                <Typography
+                  variant={`paragraph${screenSize.width > 1267 ? '18' : '16'}`}
+                  fontWeight={'regular'}
+                >
+                  Effortlessly eat fresh and delicious food all the time? You
+                  can rely 100% on the Thermomix®. You can now enjoy the
+                  carefree pleasure of cooking with an extended enjoyment
+                  guarantee at a special price!
+                </Typography>
+              }
+              buttonGroup={
+                <Button type={'primary'} size={'large'}>
+                  Join the Thermomix® team
+                </Button>
+              }
+            />
           </div>
         </section>
       </main>
-      <footer className={styles.additionalFooterMargin}>
+      <footer>
         <div className={styles.overriddenProductStripeGap}>
           <ProductStripe
             logo={<Vorwerk />}
@@ -1192,19 +1100,6 @@ export default function Home() {
           </FooterSmallLinks>
         </FooterSection>
       </footer>
-      {screenSize.width < 936 && (
-        <div className={styles.overriddenZIndex}>
-          <StickyProductBar
-            image={<img src="/landingPage/hero/ds360-hero.png" alt="Product" />}
-            button={
-              <Button type={'primary'} size={'medium'}>
-                Buy
-              </Button>
-            }
-            title={'Thermomix® TM6'}
-          />
-        </div>
-      )}
     </>
   )
 }

@@ -48,6 +48,7 @@ const CategoryTile: FC<CategoryTileProps> = ({
           ? `linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.42) 65.01%, rgba(0, 0, 0, 0.4) 100%, rgba(0, 0, 0, 0.42) 100%), url(${backgroundImageSrc})`
           : undefined,
         color: backgroundImageSrc || brandColor ? '#FFFFFF' : '#23282A',
+        backgroundPosition: 'center',
       }}
     >
       {eyeCatcherProps && layout === 'vertical' && (
@@ -55,18 +56,20 @@ const CategoryTile: FC<CategoryTileProps> = ({
           <EyeCatcher {...eyeCatcherProps} />
         </div>
       )}
-      <div className={styles.imageContainer}>
-        <div className={styles.imageWrapper}>
-          {imageProps && (
-            <Image
-              src={imageProps.src}
-              alt={imageProps.alt}
-              fill="fill"
-              className={styles.image}
-            />
-          )}
+      {layout === 'vertical' && (
+        <div className={styles.imageContainer}>
+          <div className={styles.imageWrapper}>
+            {imageProps && (
+              <Image
+                src={imageProps.src}
+                alt={imageProps.alt}
+                fill="fill"
+                className={styles.image}
+              />
+            )}
+          </div>
         </div>
-      </div>
+      )}
       <div className={styles.content}>
         <div className={styles.textWrapper}>
           <Typography
