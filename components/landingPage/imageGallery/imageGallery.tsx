@@ -12,7 +12,7 @@ import React, {
   useEffect,
   useRef,
   ReactNode,
-  useState
+  useState,
 } from 'react'
 import styles from './imageGallery.module.scss'
 import { DotButton, useDotButton } from './imageGalleryDotButton'
@@ -37,6 +37,8 @@ interface PropType {
     extraExtraLarge: number
   }
   isModal?: boolean
+  imageMaxWidth?: string
+  noControl?: boolean
 }
 
 const OPTIONS: EmblaOptionsType = {
@@ -92,6 +94,8 @@ const ImageGallery: React.FC<PropType> = ({
   screenSizes,
   containerWidth,
   isModal,
+  imageMaxWidth,
+  noControl,
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options ?? OPTIONS)
   const tweenFactor = useRef(0)
@@ -103,7 +107,7 @@ const ImageGallery: React.FC<PropType> = ({
   if (
     isModal &&
     Array.isArray(slides) &&
-    slides.every(slide => typeof slide === 'object')
+    slides.every(slide => typeof slide === 'object' && slide.type)
   ) {
     images = slides.filter(item => item.type === 'image')
     videos = slides.filter(item => item.type === 'video')
@@ -205,9 +209,10 @@ const ImageGallery: React.FC<PropType> = ({
           ? 24
           : 16)
   const slideMaxWidth =
-    fullWidth &&
-    gap &&
-    Math.round((fullWidth - gap * (slides.length - 1)) / slides.length)
+    imageMaxWidth ??
+    (fullWidth &&
+      gap &&
+      Math.round((fullWidth - gap * (slides.length - 1)) / slides.length))
   if (galleryRef.current) {
     const slideSpacing = gap && `${gap / 10}rem`
     if (slideSpacing) {
@@ -220,10 +225,14 @@ const ImageGallery: React.FC<PropType> = ({
       <div
         className={`${styles.imageGallery} ${
           dark ? styles.imageGalleryDark : ''
-        } ${isModal && styles.overriddenImageGallery}`}
+        } ${(isModal ?? imageMaxWidth) && styles.overriddenImageGallery}`}
         ref={galleryRef}
       >
-        <div className={styles.imageGalleryViewport} ref={emblaRef}>
+        <div
+          className={styles.imageGalleryViewport}
+          ref={emblaRef}
+          style={{ maxWidth: imageMaxWidth ?? '100%' }}
+        >
           <div
             className={
               screenSizes?.width && screenSizes?.width > 1267
@@ -243,7 +252,7 @@ const ImageGallery: React.FC<PropType> = ({
                       : styles.imageGallerySlide
                   }
                   key={index}
-                  style={{ maxWidth: slideMaxWidth }}
+                  style={{ maxWidth: slideMaxWidth ?? '100%' }}
                 >
                   <div
                     className={styles.imageGalleryParallax}
@@ -253,7 +262,7 @@ const ImageGallery: React.FC<PropType> = ({
                       className={styles.imageGalleryParallaxLayer}
                       style={{
                         justifyContent: !fullWidth && 'center',
-                        height: fullWidth && '100%',
+                        height: (fullWidth || imageMaxWidth) && '100%',
                       }}
                     >
                       {renderSlide(slide, index, () => setModalOpen(true))}
@@ -264,29 +273,33 @@ const ImageGallery: React.FC<PropType> = ({
             )}
           </div>
         </div>
-        <div className={styles.imageGalleryControls}>
-          <div className={styles.imageGalleryDots}>
-            {scrollSnaps.map((_, index) => (
-              <DotButton
-                key={index}
-                onClick={() => onDotButtonClick(index)}
-                className={`${styles.imageGalleryDot} ${
-                  index === selectedIndex ? styles.imageGalleryDotSelected : ''
-                }`}
-              />
-            ))}
-          </div>
-          {screenSizes?.width && screenSizes?.width > 935 && (
-            <div className={styles.imageGalleryArrows}>
-              <PrevButton onClick={scrollPrev}>
-                <CaretLeft />
-              </PrevButton>
-              <NextButton onClick={scrollNext}>
-                <CaretRight />
-              </NextButton>
+        {!noControl && (
+          <div className={styles.imageGalleryControls}>
+            <div className={styles.imageGalleryDots}>
+              {scrollSnaps.map((_, index) => (
+                <DotButton
+                  key={index}
+                  onClick={() => onDotButtonClick(index)}
+                  className={`${styles.imageGalleryDot} ${
+                    index === selectedIndex
+                      ? styles.imageGalleryDotSelected
+                      : ''
+                  }`}
+                />
+              ))}
             </div>
-          )}
-        </div>
+            {screenSizes?.width && screenSizes?.width > 935 && (
+              <div className={styles.imageGalleryArrows}>
+                <PrevButton onClick={scrollPrev}>
+                  <CaretLeft />
+                </PrevButton>
+                <NextButton onClick={scrollNext}>
+                  <CaretRight />
+                </NextButton>
+              </div>
+            )}
+          </div>
+        )}
       </div>
       {isModalOpen && isModal && (
         <GalleryModal

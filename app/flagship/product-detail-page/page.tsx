@@ -485,12 +485,11 @@ export default function Home() {
                         <Rating
                           rate={4.6}
                           counter={42}
-                          iconSize={16}
+                          size={"sapcVersion"}
                           iconColors={{
                             full: '#23282A',
                             empty: 'rgb(196, 196, 196)',
                           }}
-                          fontSize={14}
                           showCounter={true}
                           showAmount={true}
                         ></Rating>
@@ -574,9 +573,8 @@ export default function Home() {
                         <Rating
                           rate={4.5}
                           counter={0}
-                          iconSize={20}
+                          size={"medium"}
                           iconColors={{ full: '#3F4447', empty: '#C4C4C4' }}
-                          fontSize={16}
                           showAmount={true}
                         />
                       ),

@@ -5,28 +5,12 @@ import styles from './list.module.scss'
 interface ListProps {
   items: string[]
   decoratorType: 'check' | 'dot' | 'number'
-  size: 'small' | 'medium' | 'large'
+  size: 'medium' | 'large'
 }
 
 const List: FC<ListProps> = ({ items, decoratorType, size }) => {
-  const iconUrl = (() => {
-    switch (decoratorType) {
-      case 'check':
-        return '/landingPage/list/check.svg'
-      case 'dot':
-        return '' //@todo
-      case 'number':
-        return ''
-      default:
-        return ''
-    }
-  })()
-
-  //@todo Verify the size for small and large
   const sizeInPx = (() => {
     switch (size) {
-      case 'small':
-        return '24px'
       case 'medium':
         return '28px'
       case 'large':
@@ -38,17 +22,26 @@ const List: FC<ListProps> = ({ items, decoratorType, size }) => {
 
   return (
     <ul
-      className={styles.list}
-      style={{ listStyleType: decoratorType === 'number' ? 'decimal' : 'none' }}
+      className={`${styles.list} ${decoratorType === 'check' ? styles.checkList : ''}`}
+      style={{
+        listStyleType:
+          decoratorType === 'number'
+            ? 'decimal'
+            : decoratorType === 'dot'
+              ? 'disc'
+              : 'none',
+      }}
     >
       {items.map((item, idx) => (
         <li key={idx}>
-          <img
-            src={iconUrl}
-            alt="decorator list"
-            style={{ width: sizeInPx }}
-          ></img>
-          <Typography variant="paragraph16">
+          {decoratorType === 'check' && (
+            <img
+              src="/landingPage/list/check.svg"
+              alt="decorator list"
+              style={{ width: sizeInPx }}
+            ></img>
+          )}
+          <Typography variant="paragraph16" fontWeight={'regular'}>
             <span>{item}</span>
           </Typography>
         </li>
