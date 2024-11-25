@@ -397,3 +397,13 @@ div:has(> .overriddenGap) {
         }
     }
 }
+
+.overriddenZIndex > div {
+    z-index: 11;
+}
+
+.additionalFooterMargin {
+    @media (max-width: 935px) {
+        margin-bottom: 72px; //height of StickyProductBar
+    }
+}
