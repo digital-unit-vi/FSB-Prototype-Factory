@@ -3,14 +3,31 @@
     display: flex;
     overflow: hidden;
     height: 100%;
-    --container-padding: 24px;
     background-size: cover;
-    @media (min-width: 936px) and (max-width: 1579px) {
-        --container-padding: 32px;
+    width: 100%;
+
+    &.padding-large {
+        --container-padding: 24px;
+
+        @media (min-width: 936px) and (max-width: 1579px) {
+            --container-padding: 32px;
+        }
+
+        @media (min-width: 1580px) {
+            --container-padding: 40px;
+        }
     }
-    
-    @media (min-width: 1580px) {
-        --container-padding: 40px;
+
+    &.padding-small {
+        --container-padding: 16px;
+
+        @media (min-width: 936px) and (max-width: 1579px) {
+            --container-padding: 24px;
+        }
+
+        @media (min-width: 1580px) {
+            --container-padding: 32px;
+        }
     }
 }
 
@@ -24,9 +41,11 @@
     padding: var(--container-padding);
     width: 100%;
     aspect-ratio: 1/1;
+
     @media (min-width: 936px) {
         top: 0px;
     }
+
     flex: 3;
 }
 
@@ -42,26 +61,32 @@
     position: absolute;
     top: 8px;
     right: 8px;
-    & > * {
+
+    &>* {
         width: 80px !important;
         height: 80px !important;
         padding: 10.67px !important;
+
         @media (min-width: 936px) and (max-width: 1267px) {
             width: 96px !important;
             height: 96px !important;
             padding: 12.8px !important;
         }
+
         @media (min-width: 1268px) {
             width: 120px !important;
             height: 120px !important;
             padding: 16px !important;
         }
     }
+
     p {
         font-size: 1rem !important;
+
         @media (min-width: 936px) and (max-width: 1267px) {
             font-size: 1.2rem !important;
         }
+
         @media (min-width: 1268px) {
             font-size: 1.6rem !important;
         }
@@ -95,9 +120,11 @@
 .textWrapper {
     height: 60px;
     align-content: center;
+
     @media (min-width: 936px) and (max-width: 1267px) {
         height: 76px;
     }
+
     @media (min-width: 1268px) {
         height: 96px;
     }

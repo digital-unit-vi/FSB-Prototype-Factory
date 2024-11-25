@@ -510,7 +510,8 @@ export default function Home() {
             <CategoryTiles
               categoryTilesData={[
                 {
-                  backgroundColor: '#F3F5F3',
+                  size: 'large',
+                  backgroundColor: 'grey',
                   imageProps: {
                     src: '/landingPage/hero/ds360-hero.png',
                     alt: 'Thermomix DS360',
@@ -522,6 +523,7 @@ export default function Home() {
                   },
                 },
                 {
+                  size: 'large',
                   backgroundImageSrc: '/landingPage/categoryTile/soup.png',
                   title: 'Thousands of recipes – Endless inspiration',
                   button: {
@@ -594,12 +596,13 @@ export default function Home() {
                   </Link>
                 </ButtonGroup>
               }
-            ></ContentBlock>
+            />
           </div>
           <div className={styles.categoryTilesContainer}>
             <CategoryTiles
               categoryTilesData={[
                 {
+                  size: 'large',
                   backgroundImageSrc:
                     '/landingPage/categoryTile/kobold-vk7.png',
                   title: 'New Kobold VK7s – more powerful than ever',
@@ -609,7 +612,8 @@ export default function Home() {
                   },
                 },
                 {
-                  backgroundColor: '#FFFFFF',
+                  size: 'large',
+                  backgroundColor: 'white',
                   imageProps: {
                     src: '/landingPage/categoryTile/kobold.png',
                     alt: 'Kobold',

@@ -486,12 +486,11 @@ export default function Home() {
                         <Rating
                           rate={4.9}
                           counter={42}
-                          iconSize={16}
+                          size={"sapcVersion"}
                           iconColors={{
                             full: '#23282A',
                             empty: 'rgb(196, 196, 196)',
                           }}
-                          fontSize={14}
                           showCounter={true}
                           showAmount={true}
                         ></Rating>
@@ -575,9 +574,8 @@ export default function Home() {
                         <Rating
                           rate={4.5}
                           counter={0}
-                          iconSize={20}
+                          size={"medium"}
                           iconColors={{ full: '#3F4447', empty: '#C4C4C4' }}
-                          fontSize={16}
                           showAmount={true}
                         />
                       ),
@@ -665,7 +663,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenHeadline} ${styles.overriddenGrid} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overriddenHeadline} ${styles.overriddenMargin}`}
             >
               <Headline
                 subline={
@@ -877,7 +875,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenGrid}`}
+              className={styles.textCentered}
             >
               <div className={styles.overriddenMargin}>
                 <Headline spaceBelow={'additional'} strongColor={'blue'}>
@@ -940,7 +938,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer>
+      <footer className={styles.additionalFooterMargin}>
         <div className={styles.overriddenProductStripeGap}>
           <ProductStripe
             logo={<Vorwerk />}
@@ -1189,15 +1187,17 @@ export default function Home() {
         </FooterSection>
       </footer>
       {screenSize.width < 936 && (
-        <StickyProductBar
-          image={<img src="/landingPage/hero/ds360-hero.png" alt="Product" />}
-          button={
-            <Button type={'primary'} size={'medium'}>
-              Buy
-            </Button>
-          }
-          title={'Thermomix® TM6'}
-        />
+        <div className={styles.overriddenZIndex}>
+          <StickyProductBar
+            image={<img src="/landingPage/hero/ds360-hero.png" alt="Product" />}
+            button={
+              <Button type={'primary'} size={'medium'}>
+                Buy
+              </Button>
+            }
+            title={'Thermomix® TM6'}
+          />
+        </div>
       )}
     </>
   )

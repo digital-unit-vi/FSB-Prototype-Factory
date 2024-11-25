@@ -317,10 +317,6 @@ div:has(> .overriddenGap) {
     }
 }
 
-.overriddenGrid {
-    grid-column: 3/11;
-}
-
 .overriddenContentBlockWidth div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
     @media (min-width: 740px) and (max-width: 935px) {
         &>div {
@@ -399,5 +395,15 @@ div:has(> .overriddenGap) {
             font-size: 1.8rem;
             line-height: 2.7rem;
         }
+    }
+}
+
+.overriddenZIndex > div {
+    z-index: 11;
+}
+
+.additionalFooterMargin {
+    @media (max-width: 935px) {
+        margin-bottom: 72px; //height of StickyProductBar
     }
 }
