@@ -938,7 +938,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer>
+      <footer className={styles.additionalFooterMargin}>
         <div className={styles.overriddenProductStripeGap}>
           <ProductStripe
             logo={<Vorwerk />}
@@ -1187,15 +1187,17 @@ export default function Home() {
         </FooterSection>
       </footer>
       {screenSize.width < 936 && (
-        <StickyProductBar
-          image={<img src="/landingPage/hero/ds360-hero.png" alt="Product" />}
-          button={
-            <Button type={'primary'} size={'medium'}>
-              Buy
-            </Button>
-          }
-          title={'Thermomix® TM6'}
-        />
+        <div className={styles.overriddenZIndex}>
+          <StickyProductBar
+            image={<img src="/landingPage/hero/ds360-hero.png" alt="Product" />}
+            button={
+              <Button type={'primary'} size={'medium'}>
+                Buy
+              </Button>
+            }
+            title={'Thermomix® TM6'}
+          />
+        </div>
       )}
     </>
   )
