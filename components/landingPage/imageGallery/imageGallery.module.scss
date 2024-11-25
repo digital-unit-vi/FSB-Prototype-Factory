@@ -169,6 +169,10 @@
   object-fit: cover;
 }
 
+.overwriteMaxWidth > img {
+  max-width: 100%;
+}
+
 .imageGalleryDark {
   .imageGalleryDot {
     background-color: #5b6266;

@@ -1,0 +1,123 @@
+.catalogueHomePage {
+    color: #23282A;
+    --padding-5: 64px;
+    --padding-6: 80px;
+    --radius-rounded-corner: 64px;
+}
+
+.topHeadline {
+    padding: 48px 0;
+}
+
+.textCentered {
+    text-align: center;
+}
+
+.overriddenGridCol>div {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.prominentSection,
+.sectionRadius {
+    padding: var(--padding-5) 0 var(--padding-6);
+}
+
+.sectionRadius {
+    background-color: #F3F5F3;
+    border-radius: 0 0 var(--radius-rounded-corner) 0;
+}
+
+.overriddenMargin>div {
+    margin-bottom: 40px !important;
+}
+
+.tilesContainer,
+.categoryTilesContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.tilesContainer {
+    gap: 64px;
+}
+
+.categoryTilesContainer {
+    gap: 32px;
+}
+
+.overriddenMarginHeadline>div {
+    margin-bottom: 32px !important;
+}
+
+.tilesSliderContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &>div:last-child {
+        place-items: center;
+    }
+}
+
+.overriddenGridItemCol>div {
+    &>div:last-child {
+        grid-column: span 12 !important;
+    }
+}
+
+.overriddenProductStripeGap div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
+    @media (min-width: 936px) and (max-width: 1267px) {
+        gap: 24px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        align-items: flex-start;
+    }
+}
+
+.overriddenProductStripeGap div:has(>img) {
+
+    @media (max-width: 739px),
+    (min-width: 936px) and (max-width: 1267px) {
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.overriddenProductStripeGap img {
+    max-width: 100%;
+    max-height: 54px;
+    object-fit: contain;
+
+    @media (min-width: 740px) and (max-width: 935px) {
+        max-height: 149px;
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        max-height: 99px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        max-height: 113px;
+    }
+
+    @media (min-width: 1580px) {
+        max-height: 124px;
+    }
+}
+
+.overriddenLanguageSelector {
+    grid-column: span 6;
+
+    @media (min-width: 936px) {
+        grid-column: span 4;
+    }
+}
+
+.overriddenFooterSocialLinks div:has(> div:nth-of-type(3)):not(:has(> div:nth-of-type(4)))>div:not(:last-child) {
+    @media (min-width: 740px) and (max-width: 935px) {
+        grid-column: span 6;
+        padding-bottom: 56px;
+    }
+}

@@ -15,15 +15,22 @@ export default function ProductTileNew({
   price,
   eyeCatcherProps,
   screenSizes,
+  color = 'grey',
+  slider = false,
 }: Readonly<{
   productImageSrc: string
   heading: string
-  price: string
+  price: {
+    price: string
+    lowestPrice?: string
+  }
   eyeCatcherProps: ComponentProps<typeof EyeCatcher>
   screenSizes: {
     width: number
     height: number
   }
+  color?: 'grey' | 'white'
+  slider?: boolean
 }>) {
   const size =
     screenSizes.width > 1267
@@ -33,10 +40,15 @@ export default function ProductTileNew({
         : 'small'
 
   return (
-    <div className={styles.componentWrapper}>
+    <div
+      className={styles.componentWrapper}
+      style={{ backgroundColor: color === 'white' ? '#FFFFFF' : '#F3F5F3' }}
+    >
       <div className={styles.imageWrapper}>
         {eyeCatcherProps && (
-          <div className={styles.productTileEyeCatcher}>
+          <div
+            className={`${styles.productTileEyeCatcher} ${slider ? styles.slider : ''}`}
+          >
             <EyeCatcher {...eyeCatcherProps} />
           </div>
         )}
@@ -52,7 +64,12 @@ export default function ProductTileNew({
           {heading}
         </Typography>
         <div className={styles.priceAndButton}>
-          <Price size={size} price={price} vat="incl. VAT & shipping" />
+          <Price
+            size={size}
+            price={price.price}
+            lowestPrice={price.lowestPrice}
+            vat="incl. VAT & shipping"
+          />
           <Button type={'primary'} size={size} icon={<ShoppingCart />} />
         </div>
       </div>

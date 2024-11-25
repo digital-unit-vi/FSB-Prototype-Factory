@@ -44,6 +44,7 @@ interface PropType {
   showCarouselInfo?: boolean
   imageMaxWidth?: string
   noControl?: boolean
+  setHeight?: boolean
 }
 
 const OPTIONS: EmblaOptionsType = {
@@ -102,6 +103,7 @@ const ImageGallery: React.FC<PropType> = ({
   showCarouselInfo,
   imageMaxWidth,
   noControl,
+  setHeight = false,
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options ?? OPTIONS)
   const tweenFactor = useRef(0)
@@ -258,14 +260,17 @@ const ImageGallery: React.FC<PropType> = ({
                       : styles.imageGallerySlide
                   }
                   key={index}
-                  style={{ maxWidth: slideMaxWidth ?? '100%' }}
+                  style={{
+                    maxWidth: slideMaxWidth ?? '100%',
+                    height: (setHeight && slideMaxWidth) ?? '100%',
+                  }}
                 >
                   <div
                     className={styles.imageGalleryParallax}
                     style={{ height: !fullWidth && '100%' }}
                   >
                     <div
-                      className={styles.imageGalleryParallaxLayer}
+                      className={`${styles.imageGalleryParallaxLayer} ${setHeight ? styles.overwriteMaxWidth : ''}`}
                       style={{
                         justifyContent: !fullWidth && 'center',
                         height: (fullWidth || imageMaxWidth) && '100%',
