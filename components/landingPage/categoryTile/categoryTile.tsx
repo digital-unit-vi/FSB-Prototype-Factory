@@ -10,7 +10,9 @@ import Link from 'next/link'
 
 interface CategoryTileProps {
   layout?: 'vertical' | 'horizontal'
-  backgroundColor?: string
+  size: 'small' | 'large'
+  backgroundColor?: 'grey' | 'white'
+  brandColor?: string
   backgroundImageSrc?: string
   imageProps?: { src: string; alt: string }
   title: string
@@ -20,22 +22,32 @@ interface CategoryTileProps {
 
 const CategoryTile: FC<CategoryTileProps> = ({
   layout = 'vertical',
+  size,
   backgroundColor,
+  brandColor,
   backgroundImageSrc,
   imageProps,
   title,
   button,
   eyeCatcherProps,
 }) => {
+  const containerPadding = size === 'large' ? 'padding-large' : 'padding-small'
+  const bkgColor =
+    backgroundColor === 'grey'
+      ? '#F3F5F3'
+      : backgroundColor === 'white'
+        ? '#FFFFFF'
+        : 'transparent'
+
   return (
     <div
-      className={`${styles.categoryTile} ${styles[layout]} ${backgroundImageSrc ? styles.gradient : ''}`}
+      className={`${styles.categoryTile} ${styles[layout]} ${backgroundImageSrc ? styles.gradient : ''} ${styles[containerPadding]}`}
       style={{
-        backgroundColor: backgroundColor ?? 'transparent',
+        backgroundColor: brandColor ?? bkgColor,
         backgroundImage: backgroundImageSrc
           ? `linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.42) 65.01%, rgba(0, 0, 0, 0.4) 100%, rgba(0, 0, 0, 0.42) 100%), url(${backgroundImageSrc})`
           : undefined,
-        color: backgroundImageSrc ? '#FFFFFF' : '#23282A',
+        color: backgroundImageSrc || brandColor ? '#FFFFFF' : '#23282A',
       }}
     >
       {eyeCatcherProps && layout === 'vertical' && (
@@ -57,7 +69,10 @@ const CategoryTile: FC<CategoryTileProps> = ({
       </div>
       <div className={styles.content}>
         <div className={styles.textWrapper}>
-          <Typography component="h3" fontWeight="bold">
+          <Typography
+            component={size === 'large' ? 'h3' : 'h5'}
+            fontWeight="bold"
+          >
             {title}
           </Typography>
         </div>
