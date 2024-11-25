@@ -663,7 +663,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenHeadline} ${styles.overriddenGrid} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overriddenHeadline} ${styles.overriddenMargin}`}
             >
               <Headline
                 subline={
@@ -875,7 +875,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenGrid}`}
+              className={styles.textCentered}
             >
               <div className={styles.overriddenMargin}>
                 <Headline spaceBelow={'additional'} strongColor={'blue'}>
