@@ -1,0 +1,25 @@
+.teaserTileContainer {
+  --spacing: 16px;
+  display: flex;
+  width: 223px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing);
+}
+
+.contentContainer {
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  text-align: start;
+}

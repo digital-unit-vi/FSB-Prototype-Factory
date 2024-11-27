@@ -45,6 +45,7 @@ interface PropType {
   imageMaxWidth?: string
   noControl?: boolean
   setHeight?: boolean
+  imageTile?: boolean
 }
 
 const OPTIONS: EmblaOptionsType = {
@@ -104,6 +105,7 @@ const ImageGallery: React.FC<PropType> = ({
   imageMaxWidth,
   noControl,
   setHeight = false,
+  imageTile = false,
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options ?? OPTIONS)
   const tweenFactor = useRef(0)
@@ -235,6 +237,7 @@ const ImageGallery: React.FC<PropType> = ({
           dark ? styles.imageGalleryDark : ''
         } ${(isModal ?? imageMaxWidth) && styles.overriddenImageGallery}`}
         ref={galleryRef}
+        style={{ maxWidth: imageTile ? '100%' : '' }}
       >
         <div
           className={styles.imageGalleryViewport}
@@ -261,7 +264,8 @@ const ImageGallery: React.FC<PropType> = ({
                   }
                   key={index}
                   style={{
-                    maxWidth: slideMaxWidth ?? '100%',
+                    maxWidth:
+                      slideMaxWidth ?? (imageTile ? 'fit-content' : '100%'),
                     height: (setHeight && slideMaxWidth) ?? '100%',
                   }}
                 >
