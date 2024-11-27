@@ -10,7 +10,7 @@ import Link from 'next/link'
 
 interface CategoryTileProps {
   layout?: 'vertical' | 'horizontal'
-  size: 'small' | 'large'
+  size: 'small' | 'medium' | 'large'
   backgroundColor?: 'grey' | 'white'
   brandColor?: string
   backgroundImageSrc?: string
@@ -41,7 +41,7 @@ const CategoryTile: FC<CategoryTileProps> = ({
 
   return (
     <div
-      className={`${styles.categoryTile} ${styles[layout]} ${backgroundImageSrc ? styles.gradient : ''} ${styles[containerPadding]}`}
+      className={`${styles.categoryTile} ${styles[layout]} ${backgroundImageSrc ? styles.gradient : ''} ${styles[containerPadding]} ${imageProps ? styles.productImage : ''}`}
       style={{
         backgroundColor: brandColor ?? bkgColor,
         backgroundImage: backgroundImageSrc
@@ -56,7 +56,7 @@ const CategoryTile: FC<CategoryTileProps> = ({
           <EyeCatcher {...eyeCatcherProps} />
         </div>
       )}
-      {layout === 'vertical' && (
+      {(imageProps || layout === 'vertical') && (
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
             {imageProps && (
