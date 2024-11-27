@@ -33,6 +33,7 @@ import {
   Italy,
   LanguageSelector,
   Location,
+  MediaContainer,
   Menu,
   Mexico,
   NavItem,
@@ -61,6 +62,10 @@ import Link from 'next/link'
 import styles from './page.module.scss'
 import CategoryTiles from '@components/landingPage/categoryTiles/categoryTiles'
 import useScreenSize from '@utils/useScreenSize'
+import ImageTileCarousel from '@components/landingPage/imageTileCarousel/imageTileCarousel'
+import ImageGallery from '@components/landingPage/imageGallery/imageGallery'
+import ImageTile from '@components/landingPage/imageTile/imageTile'
+import TeaserTile from '@components/landingPage/teaserTile/teaserTile'
 
 const Languages = [
   <DropdownItem>
@@ -223,7 +228,7 @@ export default function Home() {
 
   return (
     <>
-      <main>
+      <main className={styles.dlp}>
         <Header
           advisor={
             <AdvisorDropdown buttonLabel="Advisor">
@@ -398,21 +403,18 @@ export default function Home() {
               </ButtonGroup>
             }
             headline={
-              <Headline strongColor="yellow" subline="Prepare the perfect meal">
+              <Headline strongColor="yellow">
                 <Typography component="h1">
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        '<strong>More time</strong><br/>doing the things<br/>you love',
-                    }}
-                  />
+                  Thermomix®
+                  <br />
+                  <strong>Fast. Easy. Flawless.</strong>
                 </Typography>
               </Headline>
             }
             image={
               <img
-                alt="Woman meditating"
-                src="/landingPage/hero/hero-home-page.png"
+                alt="Food lifestyle"
+                src="/landingPage/hero/thermomix-food-lifestyle.png"
               />
             }
           />
@@ -435,312 +437,414 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <section className={styles.defaultSection}>
+        <section className={styles.prominentSection}>
           <GridContainer>
-            <GridItem columns={12} className={styles.textCentered}>
-              <Headline
-                spaceBelow="additional"
-                strongColor="green"
-                children={
-                  <Typography component="h2">
-                    <span>
-                      Thermomix® TM6
-                      <br />
-                      <strong>makes it possible</strong>
-                    </span>
-                  </Typography>
-                }
-              />
+            <GridItem
+              columns={12}
+              className={`${styles.textCentered} ${styles.overwrittenMargin}`}
+            >
+              <Headline spaceBelow={'additional'} strongColor={'green'}>
+                <Typography component={'h2'}>
+                  The new
+                  <br />
+                  <strong> standard of cooking</strong>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
-          <div className={styles.contentBlock}>
-            <ContentBlock
-              buttonGroup={
-                <ButtonGroup>
-                  <Link href="#">
-                    <Button size="large" type="primary">
-                      Book a demo
-                    </Button>
-                  </Link>
-                  <Link href="#">
-                    <Button size="large" type="secondary">
-                      Buy now
-                    </Button>
-                  </Link>
-                </ButtonGroup>
-              }
-              mediaAlignment="left"
-              media={
-                <img
-                  src="/landingPage/contentBlock/couple-eating.png"
-                  alt="Couple eating"
-                />
-              }
-              headline={
-                <Headline spaceBelow="default">
-                  <Typography component="h3" fontWeight="bold">
-                    Time to enjoy together!
-                  </Typography>
-                </Headline>
-              }
-              paragraph={
-                <Typography
-                  fontWeight="regular"
-                  variant={
-                    screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
-                  }
-                >
-                  Discover the Thermomix® TM6 and see how it can help you
-                  create showstopping dishes and delicious meals from scratch
-                  whilst saving you time and money. For everyday inspiration,
-                  choose from thousands of dishes on Cookidoo®, our very own
-                  smart recipe platform.
-                </Typography>
-              }
-            />
-          </div>
-          <div className={styles.categoryTilesContainer}>
+          <div className={styles.containerContentBlock}>
             <CategoryTiles
               categoryTilesData={[
                 {
-                  size: 'large',
+                  size: 'medium',
+                  title: 'Thermomix® TM6',
+                  layout: 'horizontal',
                   backgroundColor: 'grey',
                   imageProps: {
-                    src: '/landingPage/hero/ds360-hero.png',
-                    alt: 'Thermomix DS360',
+                    src: '/landingPage/categoryTile/thermomix.png',
+                    alt: 'Thermomix',
                   },
-                  title: 'Thermomix® TM6 starter pack',
                   button: {
-                    label: 'Explore the product',
-                    size: screenSize.width > 935 ? 'large' : 'medium',
+                    label: 'Explore more',
+                    size: 'small',
                   },
                 },
                 {
-                  size: 'large',
-                  backgroundImageSrc: '/landingPage/categoryTile/soup.png',
-                  title: 'Thousands of recipes – Endless inspiration',
+                  size: 'medium',
+                  title: 'Accessories',
+                  layout: 'horizontal',
+                  backgroundColor: 'grey',
+                  imageProps: {
+                    src: '/landingPage/categoryTile/accessories.png',
+                    alt: 'Thermomix accessories',
+                  },
                   button: {
-                    label: 'Join Cookidoo® for free',
-                    size: screenSize.width > 935 ? 'large' : 'medium',
+                    label: 'Explore more',
+                    size: 'small',
                   },
                 },
               ]}
-            ></CategoryTiles>
-          </div>
-        </section>
-        <section className={styles.prominentSection}>
-          <GridContainer>
-            <GridItem columns={12} className={styles.textCentered}>
-              <Headline
-                spaceBelow="additional"
-                strongColor="orange"
-                children={
-                  <Typography component="h2">
-                    <span>
-                      Kobold VK7s always
-                      <br />
-                      clean, <strong>always simple</strong>
-                    </span>
-                  </Typography>
-                }
-              />
-            </GridItem>
-          </GridContainer>
-          <div style={{ marginTop: '48px' }}>
+            />
             <ContentBlock
-              mediaAlignment="right"
+              mediaAlignment={screenSize.width > 935 ? 'right' : undefined}
               media={
                 <img
-                  src="/landingPage/hero/hero-home-page.png"
-                  alt="Woman meditating"
+                  src="/landingPage/contentBlock/content-2.png"
+                  alt="Dinner party"
                 />
               }
               headline={
-                <Headline spaceBelow="default">
-                  <Typography component="h3" fontWeight="bold">
-                    The cordless and flexible choice for your home
+                <Headline spaceBelow={'default'}>
+                  <Typography component={'h3'} fontWeight={'bold'}>
+                    It's never been so easy
                   </Typography>
                 </Headline>
               }
               paragraph={
                 <Typography
-                  fontWeight="regular"
-                  variant={
-                    screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
-                  }
+                  variant={`paragraph${screenSize.width > 1267 ? '18' : '16'}`}
+                  fontWeight={'regular'}
                 >
-                  Whatever your home situation, the VB100 system brings the grab
-                  and go flexibility you need. With this lightweight, quiet,
-                  all-in-one solution, you can vacuum and mop simultaneously…and
-                  that’s not all. Thanks to its broad range of attachments, it
-                  also cleans carpets, hard floors and mattresses thoroughly and
-                  efficiently.
+                  Do you love kitchen classics or do you like to try out the
+                  latest food trends? Do you pay particular attention to
+                  healthy, balanced food? No matter what your personal cooking
+                  preferences are - with Thermomix® you'll find the answer.
+                  Simply
                 </Typography>
               }
               buttonGroup={
-                <ButtonGroup>
-                  <Link href="#">
-                    <Button size="large" type="primary">
-                      Book a demo
-                    </Button>
-                  </Link>
-                  <Link href="#">
-                    <Button size="large" type="secondary">
-                      Buy now
-                    </Button>
-                  </Link>
+                <ButtonGroup
+                  layout={'horizontal'}
+                  alignment={'left'}
+                  sizing={'hug'}
+                >
+                  <Button type={'primary'} size={'large'}>
+                    Book a demo
+                  </Button>
+                  <Button type={'secondary'} size={'large'}>
+                    Details
+                  </Button>
                 </ButtonGroup>
               }
             />
-          </div>
-          <div className={styles.categoryTilesContainer}>
             <CategoryTiles
               categoryTilesData={[
                 {
                   size: 'large',
                   backgroundImageSrc:
-                    '/landingPage/categoryTile/kobold-vk7.png',
-                  title: 'New Kobold VK7s – more powerful than ever',
+                    '/landingPage/categoryTile/serving-chocolate-mousse-cropped.png',
+                  title: 'Request Cooking Experience',
                   button: {
-                    label: 'Explore the product',
-                    size: screenSize.width > 935 ? 'large' : 'medium',
+                    label: 'Book a demo',
+                    size: 'medium',
                   },
                 },
                 {
                   size: 'large',
-                  backgroundColor: 'white',
                   imageProps: {
-                    src: '/landingPage/categoryTile/kobold.png',
-                    alt: 'Kobold',
+                    src: '/landingPage/categoryTile/tm-specials.png',
+                    alt: 'Thermomix specials',
                   },
-                  title: 'The Kobold evolution arrived. Put us to the test',
+                  backgroundColor: 'grey',
+                  title: 'No gift idea yet? Discover the Thermomix® Specials',
                   button: {
-                    label: 'Book a demo',
-                    size: screenSize.width > 935 ? 'large' : 'medium',
-                  },
-                  eyeCatcherProps: {
-                    firstLine: 'Only until',
-                    secondLine: '25.12.23',
-                    backgroundColor: 'purple',
-                    size: 'small',
+                    label: 'Explore more',
+                    size: 'medium',
                   },
                 },
               ]}
-            ></CategoryTiles>
-          </div>
-        </section>
-        <section className={styles.defaultSection}>
-          <GridContainer>
-            <GridItem columns={12} className={styles.textCentered}>
-              <Headline
-                spaceBelow="additional"
-                strongColor="blue"
-                children={
-                  <Typography component="h2">
-                    <span>
-                      Vorwerk Advisor,
-                      <br />
-                      a unique opportunity to
-                      <br />
-                      <strong>join our sales force</strong>
-                    </span>
-                  </Typography>
-                }
-              />
-            </GridItem>
-          </GridContainer>
-          <ContentBlock
-            mediaAlignment="left"
-            media={
-              <img
-                src="/landingPage/contentBlock/thermomix-team.png"
-                alt="Woman eating sushi"
-              />
-            }
-            headline={
-              <Headline spaceBelow="default">
-                <Typography component="h3" fontWeight="bold">
-                  Turn your passion into a career with Thermomix®
-                </Typography>
-              </Headline>
-            }
-            paragraph={
-              <Typography
-                fontWeight="regular"
-                variant={
-                  screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
-                }
-              >
-                Whatever your home situation, the VB100 system brings the grab
-                and go flexibility you need. With this lightweight, quiet,
-                all-in-one solution, you can vacuum and mop simultaneously…and
-                that’s not all. Thanks to its broad range of attachments, it
-                also cleans carpets, hard floors and mattresses thoroughly and
-                efficiently.
-              </Typography>
-            }
-            buttonGroup={
-              <ButtonGroup>
-                <Link href="#">
-                  <Button size="large" type="primary">
-                    Join the Thermomix® team
-                  </Button>
-                </Link>
-                <Link href="#">
-                  <Button size="large" type="secondary">
-                    Details
-                  </Button>
-                </Link>
-              </ButtonGroup>
-            }
-          ></ContentBlock>
-          <div style={{ marginTop: '64px' }}>
+            />
             <ContentBlock
-              mediaAlignment="right"
+              mediaAlignment={screenSize.width > 935 ? 'left' : undefined}
               media={
                 <img
-                  src="/landingPage/contentBlock/kobold-advisor.png"
-                  alt="Kobold advisor"
+                  src="/landingPage/contentBlock/child-drinking.png"
+                  alt="Child drinking milk"
                 />
               }
               headline={
-                <Headline spaceBelow="default">
-                  <Typography component="h3" fontWeight="bold">
-                    Turn your passion into a career with Kobold
+                <Headline spaceBelow={'default'}>
+                  <Typography component={'h3'} fontWeight={'bold'}>
+                    Done with love for the your beloved ones
                   </Typography>
                 </Headline>
               }
               paragraph={
                 <Typography
-                  fontWeight="regular"
-                  variant={
-                    screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
-                  }
+                  variant={`paragraph${screenSize.width > 1267 ? '18' : '16'}`}
+                  fontWeight={'regular'}
                 >
-                  Whatever your home situation, the VB100 system brings the grab
-                  and go flexibility you need. With this lightweight, quiet,
-                  all-in-one solution, you can vacuum and mop simultaneously…and
-                  that’s not all. Thanks to its broad range of attachments, it
-                  also cleans carpets, hard floors and mattresses thoroughly and
-                  efficiently.
+                  With delicious recipes and a little planning ahead, you can
+                  not only save money and time, but also treat yourself and your
+                  loved ones to freshly cooked and healthy food.
                 </Typography>
               }
               buttonGroup={
-                <ButtonGroup>
-                  <Link href="#">
-                    <Button size="large" type="primary">
-                      Join the Thermomix® team
-                    </Button>
-                  </Link>
-                  <Link href="#">
-                    <Button size="large" type="secondary">
-                      Details
-                    </Button>
-                  </Link>
-                </ButtonGroup>
+                <Button type={'primary'} size={'large'}>
+                  Explore the Thermomix®
+                </Button>
               }
-            ></ContentBlock>
+            />
           </div>
+        </section>
+        <ImageTileCarousel
+          slides={[
+            <ImageTile
+              key={'image-1'}
+              imageSrc={'/landingPage/imageTileCarousel/lasagne.png'}
+              title={'Lasagne bolognese'}
+              aspectRatio={'3/4'}
+              width={104}
+            />,
+            <ImageTile
+              key={'image-2'}
+              imageSrc={'/landingPage/imageTileCarousel/dalgona-coffee.png'}
+              title={'Dalgona Coffee'}
+              aspectRatio={'1/1'}
+              width={104}
+            />,
+            <ImageTile
+              key={'image-3'}
+              imageSrc={'/landingPage/imageTileCarousel/veggie-kebab.png'}
+              title={'Vegetable kebab'}
+              aspectRatio={'1/1'}
+              width={224}
+            />,
+            <ImageTile
+              key={'image-4'}
+              imageSrc={'/landingPage/imageTileCarousel/red-salsa.png'}
+              title={'Salsa roja'}
+              aspectRatio={'4/3'}
+              width={164}
+            />,
+            <ImageTile
+              key={'image-5'}
+              imageSrc={'/landingPage/carousel/result-10.jpg'}
+              title={'Sourdough bread'}
+              aspectRatio={'1/1'}
+              width={164}
+            />,
+            <ImageTile
+              key={'image-6'}
+              imageSrc={
+                '/landingPage/imageTileCarousel/orange-ginger-juice.png'
+              }
+              title={'Orange ginger juice'}
+              aspectRatio={'1/1'}
+              width={104}
+            />,
+          ]}
+          screenSize={screenSize}
+        />
+        <section className={styles.prominentSection}>
+          <GridContainer>
+            <GridItem
+              columns={12}
+              className={`${styles.textCentered} ${styles.overwrittenMargin}`}
+            >
+              <Headline spaceBelow={'additional'} strongColor={'green'}>
+                <Typography component={'h2'}>
+                  One device –
+                  <br />
+                  <strong> Endless possibilities</strong>
+                </Typography>
+              </Headline>
+              <div className={styles.containerVideoParagraph}>
+                <MediaContainer aspectRatio={'16/9'}>
+                  <iframe
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    frameBorder="0"
+                    height="315"
+                    src="https://www.youtube.com/embed/VDjQvbJ-YRo?si=XmRtpNB3nJzt04CP"
+                    title="YouTube video player"
+                    width="560"
+                  />
+                </MediaContainer>
+                <Typography variant={'paragraph16'} fontWeight={'regular'}>
+                  Due to a very rare occurrence of a problem when using the
+                  Thermomix® TM6 measuring cup, we have released a new version
+                  of the TM6 and TM5 software. In Cookidoo®, all recipes
+                  involved have been updated so that they are available to you
+                  in Guided Cooking with additional safety instructions. Your
+                  Thermomix® device will guide you step by step during the
+                  cooking process and instruct you on which cover to use for the
+                  hole in your mixing bowl lid depending on your preparation or
+                  selected cooking function.
+                </Typography>
+              </div>
+            </GridItem>
+          </GridContainer>
+        </section>
+        <ContentBlock
+          layout={'fullWidth'}
+          media={
+            <img
+              src="/landingPage/contentBlock/dinner-party.png"
+              alt="Dinner party"
+            />
+          }
+          headline={
+            <Headline strongColor={'red'} spaceBelow={'default'}>
+              <Typography component={'h3'}>
+                Try the
+                <br />
+                Thermomix® –
+                <br />
+                <strong> Book a demo</strong>
+              </Typography>
+            </Headline>
+          }
+          paragraph={
+            <Typography variant={'paragraph16'} fontWeight={'regular'}>
+              Simply decide together with your personal contact whether you
+              would like to experience the products live or online! We are
+              flexible and well prepared and can fully respond to your wishes.
+            </Typography>
+          }
+          buttonGroup={
+            <Button type={'primary'} size={'large'}>
+              Get in touch with an advisor
+            </Button>
+          }
+        />
+        <section className={styles.prominentSection}>
+          <GridContainer>
+            <GridItem
+              columns={12}
+              className={`${styles.textCentered} ${styles.overwrittenMargin}`}
+            >
+              <Headline spaceBelow={'additional'} strongColor={'purple'}>
+                <Typography component={'h2'}>
+                  <strong>Back in shape</strong>
+                  <br />
+                  with Thermomix®
+                </Typography>
+              </Headline>
+            </GridItem>
+          </GridContainer>
+          <CategoryTiles
+            categoryTilesData={[
+              {
+                size: 'large',
+                backgroundImageSrc:
+                  '/landingPage/categoryTile/avocado-toast.png',
+                title: 'The slightly different breakfast',
+                button: {
+                  label: 'Button',
+                  size: 'medium',
+                },
+              },
+              {
+                size: 'large',
+                backgroundImageSrc: '/landingPage/categoryTile/guacamole.png',
+                title: 'Yes, you can!',
+                button: {
+                  label: 'Button',
+                  size: 'medium',
+                },
+              },
+            ]}
+          />
+        </section>
+        <section
+          className={styles.prominentSection}
+          style={{ backgroundColor: '#F3F5F3' }}
+        >
+          <ContentBlock
+            mediaAlignment={'right'}
+            media={
+              <img
+                src="/landingPage/contentBlock/thermomix-with-knife-cover.png"
+                alt="Thermomix with knife cover"
+              />
+            }
+            headline={
+              <Headline spaceBelow={'default'}>
+                <Typography component={'h3'} fontWeight={'bold'}>
+                  Operating and safety instructions
+                </Typography>
+              </Headline>
+            }
+            paragraph={
+              <Typography variant={'paragraph16'} fontWeight={'regular'}>
+                Due to a very rare occurrence of a problem when using the
+                Thermomix® TM6 measuring cup, we have released a new version of
+                the TM6 and TM5 software. In Cookidoo®, all recipes involved
+                have been updated so that they are available to you in Guided
+                Cooking with additional safety instructions. Your Thermomix®
+                device will guide you step by step during the cooking process
+                and instruct you on which cover to use for the hole in your
+                mixing bowl lid depending on your preparation or selected
+                cooking function.
+              </Typography>
+            }
+            buttonGroup={
+              <Button type={'primary'} size={'large'}>
+                Learn more
+              </Button>
+            }
+          />
+        </section>
+        <section className={styles.prominentSection}>
+          <GridContainer>
+            <GridItem
+              columns={12}
+              className={`${styles.textCentered} ${styles.overwrittenMargin}`}
+            >
+              <Headline spaceBelow={'additional'} strongColor={'green'}>
+                <Typography component={'h2'}>
+                  You may also
+                  <br />
+                  <strong>be interested in</strong>
+                </Typography>
+              </Headline>
+              <ImageGallery
+                slides={[
+                  <TeaserTile
+                    key={'tile1'}
+                    title={'Our current Thermomix® offers'}
+                    paragraph={
+                      'Receive in addition to the Thermomix® TM6 including versatile accessories and the Thermomix® guarantee'
+                    }
+                    imageProps={{
+                      src: '/landingPage/teaserTile/thermomix-black.png',
+                      alt: 'Thermomix',
+                    }}
+                    buttonLabel={'Register Online'}
+                  />,
+                  <TeaserTile
+                    key={'tile2'}
+                    title={'Thermomix Friend®'}
+                    paragraph={
+                      'The accessory for your Thermomix® that provides even more cooking convenience and flexibility'
+                    }
+                    imageProps={{
+                      src: '/landingPage/teaserTile/thermomix-friend.png',
+                      alt: 'Thermomix Friend',
+                    }}
+                    buttonLabel={'Register Online'}
+                  />,
+                  <TeaserTile
+                    key={'tile3'}
+                    title={'Cooking shows in the Vorwerk Stores '}
+                    paragraph={
+                      'You would like to finally get to know Thermomix® TM6 in person?'
+                    }
+                    imageProps={{
+                      src: '/landingPage/teaserTile/thermomix-cooking.png',
+                      alt: 'Thermomix Cooking',
+                    }}
+                    buttonLabel={'Register Online'}
+                  />,
+                ]}
+                screenSizes={screenSize}
+                noControl
+                imageTile
+                options={{ loop: false }}
+              />
+            </GridItem>
+          </GridContainer>
         </section>
       </main>
       <footer>

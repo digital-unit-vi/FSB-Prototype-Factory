@@ -1,0 +1,156 @@
+.dlp {
+  --padding-5: 64px;
+  --padding-6: 80px;
+  --gap-4: 64px;
+}
+
+.hero {
+  text-wrap: balance;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.overlayIconWrapper {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 72px;
+  color: #ffffff;
+  z-index: 3;
+}
+
+.overlayIcon,
+.overlayIconText,
+.overlayIconWrapper > svg {
+  position: absolute;
+}
+
+.overlayIcon,
+.overlayIconWrapper > svg {
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: opacity 1s ease-in-out;
+  animation: icon-animation 3s infinite;
+  animation-delay: 1ms;
+
+  @media (min-width: 936px) {
+    top: 0px;
+  }
+}
+
+.overlayIconWrapper > svg {
+  top: 12px;
+  width: 36px;
+  aspect-ratio: 1/1;
+}
+
+@keyframes icon-animation {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -12px);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.6, -0.01, 0.46, 1);
+  }
+  100% {
+    transform: translate(-50%, -12px);
+    opacity: 0;
+  }
+}
+
+.overlayIconText {
+  top: 48px;
+  width: 100%;
+}
+
+.overlayIconText,
+.textCentered {
+  text-align: center;
+}
+
+.prominentSection {
+  padding: var(--padding-5) 0 var(--padding-6);
+}
+
+.overwrittenMargin > div:first-child {
+  margin-bottom: 40px !important;
+}
+
+.containerContentBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-4);
+  align-self: stretch;
+}
+
+.containerVideoParagraph {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  align-self: stretch;
+  text-align: start;
+}
+
+.overriddenProductStripeGap
+  div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
+  @media (min-width: 936px) and (max-width: 1267px) {
+    gap: 24px;
+  }
+
+  @media (min-width: 1268px) and (max-width: 1579px) {
+    align-items: flex-start;
+  }
+}
+
+.overriddenProductStripeGap div:has(> img) {
+  @media (max-width: 739px), (min-width: 936px) and (max-width: 1267px) {
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.overriddenProductStripeGap img {
+  max-width: 100%;
+  max-height: 54px;
+  object-fit: contain;
+
+  @media (min-width: 740px) and (max-width: 935px) {
+    max-height: 149px;
+  }
+
+  @media (min-width: 936px) and (max-width: 1267px) {
+    max-height: 99px;
+  }
+
+  @media (min-width: 1268px) and (max-width: 1579px) {
+    max-height: 113px;
+  }
+
+  @media (min-width: 1580px) {
+    max-height: 124px;
+  }
+}
+
+.overriddenLanguageSelector {
+  grid-column: span 6;
+
+  @media (min-width: 936px) {
+    grid-column: span 4;
+  }
+}
+
+.overriddenFooterSocialLinks
+  div:has(> div:nth-of-type(3)):not(:has(> div:nth-of-type(4)))
+  > div:not(:last-child) {
+  @media (min-width: 740px) and (max-width: 935px) {
+    grid-column: span 6;
+    padding-bottom: 56px;
+  }
+}
