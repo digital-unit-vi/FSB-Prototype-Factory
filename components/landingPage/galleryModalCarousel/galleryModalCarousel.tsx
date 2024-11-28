@@ -78,7 +78,7 @@ const GalleryModalCarousel: React.FC<GalleryModalCarouselProps> = ({
             {slides.map((item, index) => (
               <div className={styles.carouselSlide} key={index}>
                 {item.type === 'image' ? (
-                  <>
+                  <div className={styles.imageWrapper}>
                     <MediaContainer aspectRatio={'1/1'}>
                       <img src={item.url} alt="Selected" />
                     </MediaContainer>
@@ -89,7 +89,7 @@ const GalleryModalCarousel: React.FC<GalleryModalCarouselProps> = ({
                         icon={<ZoomIn />}
                       />
                     )}
-                  </>
+                  </div>
                 ) : (
                   <video
                     src={item.url}
