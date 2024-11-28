@@ -9,10 +9,6 @@
   align-items: center;
 }
 
-.imageGalleryViewport {
-  overflow: hidden;
-}
-
 .imageGalleryContainer {
   touch-action: pan-y pinch-zoom;
   display: flex;
