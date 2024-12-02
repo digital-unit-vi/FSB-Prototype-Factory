@@ -313,7 +313,7 @@ export default function Home() {
             <AdvisorDropdown buttonLabel="Advisor">
               <AdvisorDropdownMenuItem
                 avatar={
-                  <img alt="avatar" src="library/images/avatars/avatar2.png" />
+                  <img alt="avatar" src="/library/images/avatars/avatar2.png" />
                 }
                 href="#"
                 labels={

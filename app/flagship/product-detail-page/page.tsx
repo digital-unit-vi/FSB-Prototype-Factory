@@ -62,7 +62,7 @@ import {
 } from '@components/build-assets/libraryExport'
 import Link from 'next/link'
 import styles from './page.module.scss'
-import { ComponentProps } from 'react'
+import { ComponentProps, useState, useRef, useEffect } from 'react'
 import Rating from '@components/landingPage/rating/rating'
 import Gallery from '@components/landingPage/gallery/gallery'
 import List from '@components/landingPage/list/list'
@@ -74,6 +74,7 @@ import IncludedProductTile from '@components/landingPage/includedProductTile/inc
 import File from '@components/landingPage/file/file'
 import ProductTileNew from '@components/landingPage/productTileNew/productTileNew'
 import useScreenSize from '@utils/useScreenSize'
+import Specifications from '@components/landingPage/accordion/specifications'
 
 const Languages = [
   <DropdownItem>
@@ -265,6 +266,10 @@ const galleryAsset: ComponentProps<typeof Gallery>['gallery'] = [
 
 export default function Home() {
   const screenSize = useScreenSize()
+  const productHeroContainerRef = useRef<HTMLDivElement | null>(null)
+  const productDetailsContainerRef = useRef<HTMLDivElement | null>(null)
+  const [productDetailsContainerStyle, setProductDetailsContainerStyles] =
+    useState({})
 
   const productTilesGalleryAsset: ComponentProps<
     typeof ImageGallery
@@ -274,7 +279,7 @@ export default function Home() {
       productImageSrc={'/library/images/thermomix-friend.png'}
       heading={'Thermomix Friend® with TM6 Mixtopf'}
       price={{
-        price: '1499,00 €'
+        price: '1499,00 €',
       }}
       screenSizes={screenSize}
     />,
@@ -283,7 +288,7 @@ export default function Home() {
       productImageSrc={'/library/images/knife-cover.png'}
       heading={'Knife cover “Shaft” with peeler'}
       price={{
-        price: '1499,00 €'
+        price: '1499,00 €',
       }}
       screenSizes={screenSize}
     />,
@@ -292,7 +297,7 @@ export default function Home() {
       productImageSrc={'/library/images/blade-cover.png'}
       heading={'Blade cover “Shaft”'}
       price={{
-        price: '24,90 €'
+        price: '24,90 €',
       }}
       eyeCatcherProps={{
         firstLine: 'Save',
@@ -305,15 +310,61 @@ export default function Home() {
     />,
   ]
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (screen.width < 1268) return
+
+      const productHeroContainer = productHeroContainerRef.current
+      const productDetailsContainer = productDetailsContainerRef.current
+
+      if (!productHeroContainer || !productDetailsContainer) return
+
+      const productHeroContainerRect =
+        productHeroContainer.getBoundingClientRect()
+      const productDetailsContainerRect =
+        productDetailsContainer.getBoundingClientRect()
+
+      if (
+        productHeroContainerRect.top <= 0 &&
+        productHeroContainerRect.bottom > productDetailsContainerRect.bottom
+      ) {
+        setProductDetailsContainerStyles({
+          position: 'sticky',
+          top: '0',
+        })
+      } else if (
+        productHeroContainerRect.top <= 0 &&
+        productDetailsContainerRect.top <= 0 &&
+        productHeroContainerRect.bottom <= productDetailsContainerRect.bottom
+      ) {
+        setProductDetailsContainerStyles({
+          position: 'absolute',
+          bottom: '0',
+          top: 'auto',
+        })
+      } else {
+        setProductDetailsContainerStyles({
+          position: '',
+          top: '',
+        })
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <>
-      <main>
+      <main className={styles.pdp}>
         <Header
           advisor={
             <AdvisorDropdown buttonLabel="Advisor">
               <AdvisorDropdownMenuItem
                 avatar={
-                  <img alt="avatar" src="library/images/avatars/avatar2.png" />
+                  <img alt="avatar" src="/library/images/avatars/avatar2.png" />
                 }
                 href="#"
                 labels={
@@ -467,137 +518,163 @@ export default function Home() {
         <section
           className={`${styles.prominentSection} ${styles.additionalSectionPadding}`}
         >
-          <GridContainer isOverlay={screenSize.width < 936}>
-            <GridItem columns={12}>
-              <GridContainer isOverlay={screenSize.width < 936}>
-                <GridItem columns={12} columnsL={7} columnsXL={8}>
-                  {screenSize.width > 935 ? (
-                    <Gallery gallery={galleryAsset}></Gallery>
-                  ) : (
-                    <ImageGallery
-                      slides={galleryAsset}
-                      options={{ loop: false, align: 'start' }}
-                      isModal
-                      showCarouselInfo
-                    ></ImageGallery>
-                  )}
-                </GridItem>
-                <GridItem columns={12} columnsL={5} columnsXL={4}>
-                  <div className={styles.productDetailsContainer}>
-                    <div className={styles.productDetailsWrapper}>
-                      <div className={styles.headingAndRating}>
-                        <Typography component="h4" fontWeight="bold">
-                          <span>Thermomix® TM6</span>
-                        </Typography>
-                        <Rating
-                          rate={4.9}
-                          counter={42}
-                          size={"sapcVersion"}
-                          iconColors={{
-                            full: '#23282A',
-                            empty: 'rgb(196, 196, 196)',
-                          }}
-                          showCounter={true}
-                          showAmount={true}
-                        ></Rating>
-                      </div>
-                      <List
-                        items={[
-                          'Delicious dishes prepared quickly and easily',
-                          'Thousands of recipes with guaranteed success directly on your device',
-                          'A real all-rounder: Numerous cooking functions and modes',
-                        ]}
-                        decoratorType="check"
-                        size="medium"
-                      />
-                      <ProductPurchaseOptions
-                        price="1.399 €"
-                        delivery={
-                          <Typography
-                            variant="paragraph16"
-                            fontWeight="regular"
-                          >
-                            <span>
-                              Free delivery{' '}
-                              <strong>
-                                Wednesday, 26.06. – Friday, 27.06.{' '}
-                              </strong>
-                            </span>
-                          </Typography>
-                        }
-                      />
-                      <TrustBanner
-                        items={[
-                          {
-                            text: 'Free shipping for orders over $50',
-                            icon: <DeliveryLight />,
-                          },
-                          {
-                            text: '30 day satisfaction guarantee',
-                            icon: <CalendarLight />,
-                          },
-                          {
-                            text: '5 year warranty',
-                            icon: <CheckmarkCircleLight />,
-                          },
-                        ]}
-                      />
+          <div className={styles.gridProductHero} ref={productHeroContainerRef}>
+            <GridContainer isOverlay={screenSize.width < 936}>
+              <GridItem
+                columns={12}
+                columnsL={7}
+                columnsXL={8}
+                className={styles.gridItem1}
+              >
+                {screenSize.width > 935 ? (
+                  <Gallery gallery={galleryAsset} />
+                ) : (
+                  <ImageGallery
+                    slides={galleryAsset}
+                    options={{ loop: false, align: 'start' }}
+                    isModal
+                    showCarouselInfo
+                  ></ImageGallery>
+                )}
+              </GridItem>
+              <GridItem
+                columns={12}
+                columnsL={5}
+                columnsXL={4}
+                className={styles.gridItem2}
+              >
+                <div
+                  className={styles.productDetailsContainer}
+                  ref={productDetailsContainerRef}
+                  style={productDetailsContainerStyle}
+                >
+                  <div className={styles.productDetailsWrapper}>
+                    <div className={styles.headingAndRating}>
+                      <Typography component="h4" fontWeight="bold">
+                        <span>Thermomix® TM6</span>
+                      </Typography>
+                      <Rating
+                        rate={4.9}
+                        counter={42}
+                        size={'sapcVersion'}
+                        iconColors={{
+                          full: '#23282A',
+                          empty: 'rgb(196, 196, 196)',
+                        }}
+                        showCounter={true}
+                        showAmount={true}
+                      ></Rating>
                     </div>
+                    <List
+                      items={[
+                        'Delicious dishes prepared quickly and easily',
+                        'Thousands of recipes with guaranteed success directly on your device',
+                        'A real all-rounder: Numerous cooking functions and modes',
+                      ]}
+                      decoratorType="check"
+                      size="medium"
+                    />
+                    <ProductPurchaseOptions
+                      price="1.399 €"
+                      delivery={
+                        <Typography variant="paragraph16" fontWeight="regular">
+                          <span>
+                            Free delivery{' '}
+                            <strong>Wednesday, 26.06. – Friday, 27.06. </strong>
+                          </span>
+                        </Typography>
+                      }
+                    />
+                    <TrustBanner
+                      items={[
+                        {
+                          text: 'Free shipping for orders over $50',
+                          icon: <DeliveryLight />,
+                        },
+                        {
+                          text: '30 day satisfaction guarantee',
+                          icon: <CalendarLight />,
+                        },
+                        {
+                          text: '5 year warranty',
+                          icon: <CheckmarkCircleLight />,
+                        },
+                      ]}
+                    />
                   </div>
-                </GridItem>
-              </GridContainer>
-            </GridItem>
-            <GridItem columns={12} columnsL={7}>
-              <div className={styles.productDetailsContainer}>
-                <div className={styles.headingWithParagraph}>
-                  <Typography component="h6" fontWeight="bold">
-                    It has never been so easy and delicious
-                  </Typography>
-                  <Typography component="intro" fontWeight="regular">
-                    The Thermomix® TM6 makes your life easier and adapts to
-                    your individual dietary requirements. Do you love kitchen
-                    classics, or do you like trying out current food trends? Do
-                    you pay particular attention to healthy, balanced food and
-                    also to your figure? No matter what your personal cooking
-                    preferences are – you will find the answer with Thermomix®.
-                  </Typography>
                 </div>
-              </div>
-            </GridItem>
-            <GridItem columns={12} columnsL={7}>
-              <div className={styles.productDetailsContainer}>
-                <Accordion
-                  items={[
-                    {
-                      title: 'Product description',
-                      content: <p>Lorem ipsum...</p>,
-                    },
-                    { title: 'Modes', content: <p>Lorem ipsum...</p> },
-                    { title: 'Specifications', content: <p>Lorem ipsum...</p> },
-                    {
-                      title: 'Reviews',
-                      additionalInfo: (
-                        <Rating
-                          rate={4.5}
-                          counter={0}
-                          size={"medium"}
-                          iconColors={{ full: '#3F4447', empty: '#C4C4C4' }}
-                          showAmount={true}
-                        />
-                      ),
-                      content: <p>Lorem ipsum...</p>,
-                    },
-                  ]}
-                />
-              </div>
-            </GridItem>
-          </GridContainer>
+              </GridItem>
+              <GridItem
+                columns={12}
+                columnsL={7}
+                columnsXL={8}
+                className={styles.gridItem3}
+              >
+                <div className={styles.productDetailsContainer}>
+                  <div className={styles.headingWithParagraph}>
+                    <Typography component="h6" fontWeight="bold">
+                      It has never been so easy and delicious
+                    </Typography>
+                    <Typography component="intro" fontWeight="regular">
+                      The Thermomix® TM6 makes your life easier and adapts to
+                      your individual dietary requirements. Do you love kitchen
+                      classics, or do you like trying out current food trends?
+                      Do you pay particular attention to healthy, balanced food
+                      and also to your figure? No matter what your personal
+                      cooking preferences are – you will find the answer with
+                      Thermomix®.
+                    </Typography>
+                  </div>
+                </div>
+              </GridItem>
+              <GridItem
+                columns={12}
+                columnsL={7}
+                columnsXL={8}
+                className={styles.gridItem4}
+              >
+                <div className={styles.productDetailsContainer}>
+                  <Accordion
+                    items={[
+                      {
+                        title: 'Product description',
+                        content: <p>Lorem ipsum...</p>,
+                      },
+                      { title: 'Modes', content: <p>Lorem ipsum...</p> },
+                      {
+                        title: 'Specifications',
+                        content:
+                          screenSize.width > 1569 ? (
+                            <Specifications />
+                          ) : (
+                            <p>Lorem ipsum...</p>
+                          ),
+                      },
+                      {
+                        title: 'Reviews',
+                        additionalInfo: (
+                          <Rating
+                            rate={4.5}
+                            counter={0}
+                            size={'medium'}
+                            iconColors={{ full: '#3F4447', empty: '#C4C4C4' }}
+                            showAmount={true}
+                          />
+                        ),
+                        content: <p>Lorem ipsum...</p>,
+                      },
+                    ]}
+                  />
+                </div>
+              </GridItem>
+            </GridContainer>
+          </div>
         </section>
         <section className={styles.prominentSection}>
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin} ${styles.overriddenGap}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin} ${styles.overwrittenGap}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component="h2">
@@ -670,7 +747,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenHeadline} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenHeadline} ${styles.overwrittenMargin}`}
             >
               <Headline
                 subline={
@@ -777,7 +854,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin} ${styles.overriddenGap}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin} ${styles.overwrittenGap} ${styles.overwrittenHeadline}`}
             >
               <Headline spaceBelow={'additional'}>
                 <Typography component={'h2'}>Downloads</Typography>
@@ -836,7 +913,7 @@ export default function Home() {
                 isOverlay={screenSize.width > 935 && screenSize.width < 1268}
               >
                 <GridItem columns={12} className={styles.textCentered}>
-                  <div className={styles.overriddenMargin}>
+                  <div className={styles.overwrittenMargin}>
                     <Headline spaceBelow={'additional'} strongColor={'green'}>
                       <Typography component={'h2'}>
                         <strong>Matching</strong> products
@@ -882,21 +959,19 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={styles.textCentered}
+              className={`${styles.textCentered} ${styles.overwrittenMargin} ${styles.overwrittenHeadline}`}
             >
-              <div className={styles.overriddenMargin}>
-                <Headline spaceBelow={'additional'} strongColor={'blue'}>
-                  <Typography component={'h2'}>
-                    Vorwerk Advisor,
-                    <br />a unique opportunity to
-                    {screenSize.width > 739 && <br />}
-                    <strong>join our sales force</strong>
-                  </Typography>
-                </Headline>
-              </div>
+              <Headline spaceBelow={'additional'} strongColor={'blue'}>
+                <Typography component={'h2'}>
+                  Vorwerk Advisor,
+                  <br />a unique opportunity to
+                  {screenSize.width > 739 && <br />}
+                  <strong>join our sales force</strong>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
-          <div className={styles.overriddenContentBlockWidth}>
+          <div className={styles.overwrittenContentBlockWidth}>
             <ContentBlock
               mediaAlignment="left"
               media={
@@ -1194,7 +1269,7 @@ export default function Home() {
         </FooterSection>
       </footer>
       {screenSize.width < 936 && (
-        <div className={styles.overriddenZIndex}>
+        <div className={styles.overwrittenZIndex}>
           <StickyProductBar
             image={<img src="/landingPage/hero/ds360-hero.png" alt="Product" />}
             button={

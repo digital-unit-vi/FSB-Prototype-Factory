@@ -275,7 +275,7 @@ export default function Home() {
                   avatar={
                     <img
                       alt="avatar"
-                      src="library/images/avatars/avatar2.png"
+                      src="/library/images/avatars/avatar2.png"
                     />
                   }
                   href="#"
