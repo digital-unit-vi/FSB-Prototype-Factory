@@ -661,6 +661,7 @@ export default function Home() {
                   extraLarge: 1120,
                   extraExtraLarge: 1440,
                 }}
+                overflow
               />
             </GridItem>
           </GridContainer>
