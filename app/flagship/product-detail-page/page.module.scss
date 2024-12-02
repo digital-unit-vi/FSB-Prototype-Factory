@@ -1,21 +1,56 @@
-.prominentSection {
-    padding-bottom: 48px;
+.pdp {
+    --padding-3: 40px;
+    --padding-4: 48px;
+    --padding-5: 64px;
+    --padding-6: 80px;
+    --gap-1: 24px;
+    --gap-2: 40px;
+    --radiusRoundedCorner: 64px;
     color: #23282A;
 
     @media (min-width: 740px) and (max-width: 935px) {
-        padding: 40px 0 48px;
+        --radiusRoundedCorner: 88px;
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        --padding-3: 56px;
+        --padding-4: 64px;
+        --padding-5: 112px;
+        --padding-6: 144px;
+        --radiusRoundedCorner: 128px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1569px) {
+        --gap-1: 32px;
+        --radiusRoundedCorner: 144px;
+    }
+
+    @media (min-width: 1268px) {
+        --padding-3: 64px;
+        --padding-4: 80px;
+        --padding-5: 128px;
+        --padding-6: 160px;
+        --gap-2: 56px
+    }
+
+    @media (min-width: 1570px) {
+        --gap-1: 40px;
+        --radiusRoundedCorner: 168px;
+    }
+}
+
+.prominentSection {
+    padding-bottom: var(--padding-4);
+
+    @media (min-width: 740px) {
+        padding: var(--padding-3) 0 var(--padding-4);
     }
 
     @media (min-width: 936px) and (max-width: 1267px) {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        padding: 56px 0 64px;
         align-items: center;
-    }
-
-    @media (min-width: 1268px) {
-        padding: 64px 0 80px;
     }
 }
 
@@ -39,6 +74,40 @@
     @media (min-width: 936px) and (max-width: 1267px) {
         padding-left: 48px;
         padding-right: 48px;
+    }
+}
+
+.gridProductHero>div {
+    grid-template-rows: auto;
+    row-gap: var(--padding-5);
+
+    @media (min-width: 936px) {
+        column-gap: var(--gap-1);
+    }
+}
+
+.gridItem1 {
+    @media (min-width: 936px) {
+        grid-row: 1 / 2;
+    }
+}
+
+.gridItem2 {
+    @media (min-width: 936px) {
+        grid-row: 1 / 4;
+        position: relative;
+    }
+}
+
+.gridItem3 {
+    @media (min-width: 936px) {
+        grid-row: 2 / 3;
+    }
+}
+
+.gridItem4 {
+    @media (min-width: 936px) {
+        grid-row: 3 / 4;
     }
 }
 
@@ -247,16 +316,7 @@ div:has(> .filesContainer) {
 
 .sectionWithBiggerPadding,
 .defaultSection {
-    padding: 64px 0 80px;
-    color: #23282A;
-
-    @media (min-width: 936px) and (max-width: 1267px) {
-        padding: 112px 0 144px;
-    }
-
-    @media (min-width: 1268px) {
-        padding: 128px 0 160px;
-    }
+    padding: var(--padding-5) 0 var(--padding-6);
 }
 
 .sectionWithBiggerPadding {
@@ -280,44 +340,22 @@ div:has(> .filesContainer) {
     }
 }
 
-.overriddenMargin>div {
-    margin-bottom: 40px !important;
-
-    @media (min-width: 936px) and (max-width: 1267px) {
-        margin-bottom: 56px !important;
-    }
-
-    @media (min-width: 1268px) {
-        margin-bottom: 64px !important;
+.overwrittenMargin>div {
+    @media (max-width: 935px) {
+        margin-bottom: 40px !important;
     }
 }
 
-div:has(> .overriddenGap) {
+div:has(> .overwrittenGap) {
     row-gap: 0;
 }
 
 .defaultSection {
     background-color: #F3F5F3;
-    border-radius: 0 0 64px;
-
-    @media(min-width: 740px) and (max-width: 935px) {
-        border-radius: 0 0 88px;
-    }
-
-    @media(min-width: 936px) and (max-width: 1267px) {
-        border-radius: 0 0 0;
-    }
-
-    @media(min-width: 1268px) and (max-width: 1579px) {
-        border-radius: 0 0 144px;
-    }
-
-    @media(min-width: 1580) {
-        border-radius: 0 0 168px;
-    }
+    border-radius: 0 0 var(--radiusRoundedCorner);
 }
 
-.overriddenContentBlockWidth div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
+.overwrittenContentBlockWidth div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
     @media (min-width: 740px) and (max-width: 935px) {
         &>div {
             max-width: 460px;
@@ -325,8 +363,8 @@ div:has(> .overriddenGap) {
         }
     }
 
-    @media (min-width: 1267px) {
-        column-gap: 56px;
+    @media (min-width: 936px) {
+        column-gap: var(--gap-2);
     }
 }
 
@@ -387,10 +425,12 @@ div:has(> .overriddenGap) {
     }
 }
 
-.overriddenHeadline {
-    @media(min-width: 740px) and (max-width: 935px) {
+.overwrittenHeadline {
+    @media (min-width: 740px) {
         grid-column: 3/11;
+    }
 
+    @media(min-width: 740px) and (max-width: 935px) {
         & p {
             font-size: 1.8rem;
             line-height: 2.7rem;
@@ -398,7 +438,7 @@ div:has(> .overriddenGap) {
     }
 }
 
-.overriddenZIndex > div {
+.overwrittenZIndex>div {
     z-index: 11;
 }
 

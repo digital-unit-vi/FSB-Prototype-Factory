@@ -60,6 +60,11 @@
   justify-content: center;
   margin-top: 28px;
   grid-template-columns: repeat(3, 1fr);
+  
+  @media (min-width: 1268px) {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 .imageGalleryButtons {
@@ -188,6 +193,10 @@
 .imageGalleryArrows {
   grid-column: 3/4;
   justify-self: end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 .imageGalleryPrev,
@@ -197,6 +206,7 @@
   height: 40px;
   background-color: rgba(0, 0, 0, 0.07);
   border: none;
+  padding: 8px;
 }
 
 .imageGalleryPrev>svg,
