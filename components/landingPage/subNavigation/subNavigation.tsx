@@ -31,6 +31,7 @@ const SubNavigation: FC<SubNavigationProps> = ({ items }) => {
       noControl
       imageTile
       options={{ loop: false }}
+      overflow
     />
   )
 }
