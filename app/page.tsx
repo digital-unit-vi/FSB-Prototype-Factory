@@ -1,5 +1,6 @@
 "use client";
 
+import Spacer from "@components/shared/spacer/spacer";
 import {
   Austria,
   Button,
@@ -43,8 +44,7 @@ import {
   USA,
   Vorwerk,
   Youtube,
-} from "@components/build-assets/libraryExport";
-import Spacer from "@components/shared/spacer/spacer";
+} from "@vorwerk/fibre-react";
 import Link from "next/link";
 import styles from "./page.module.scss";
 
@@ -220,7 +220,7 @@ export default function Home() {
           cta={
             <ButtonGroup alignment="center" layout="vertical">
               <Link href="/ds360">
-                <Button size="large" type="primary">
+                <Button size="large" buttonStyle="primary">
                   Go to the showcase
                 </Button>
               </Link>
@@ -274,15 +274,13 @@ export default function Home() {
           </GridContainer>
           <ContentBlock
             buttonGroup={
-              <>
-                <ButtonGroup>
-                  <Link href="/ds360">
-                    <Button size="large" type="primary">
-                      Go to the showcase
-                    </Button>
-                  </Link>
-                </ButtonGroup>
-              </>
+              <ButtonGroup>
+                <Link href="/ds360">
+                  <Button size="large" buttonStyle="primary">
+                    Go to the showcase
+                  </Button>
+                </Link>
+              </ButtonGroup>
             }
             headline={
               <Headline spaceBelow="default">

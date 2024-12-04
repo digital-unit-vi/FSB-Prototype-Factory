@@ -1,5 +1,9 @@
 "use client";
 
+import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
+import ScrollTriggerWatcher from "@components/landingPage/scrollTriggerWatcher/scrollTriggerWatcher";
+import Spacer from "@components/shared/spacer/spacer";
+import useScreenSize from "@utils/useScreenSize";
 import {
   BatteryLevel3Light,
   BentoBoxTiles,
@@ -25,11 +29,7 @@ import {
   Typography,
   UserReview,
   Vorwerk,
-} from "@components/build-assets/libraryExport";
-import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
-import ScrollTriggerWatcher from "@components/landingPage/scrollTriggerWatcher/scrollTriggerWatcher";
-import Spacer from "@components/shared/spacer/spacer";
-import useScreenSize from "@utils/useScreenSize";
+} from "@vorwerk/fibre-react";
 import Link from "next/link";
 import styles from "./page.module.scss";
 
@@ -53,7 +53,7 @@ export default function SensorLightLandingPage() {
       <Hero
         cta={
           <ButtonGroup alignment="center" layout="vertical">
-            <Button size="medium" type="primary">
+            <Button size="medium" buttonStyle="primary">
               Shop now
             </Button>
           </ButtonGroup>
@@ -89,6 +89,7 @@ export default function SensorLightLandingPage() {
       <ParallaxProductSection
         logoImage="/library/images/parallaxProductSection/logos.png"
         productImage="/landingPage/hero/sensor-hero-parallax.png"
+        productImageAlt="Sensor light"
       />
       <SectionContainer>
         <GridContainer>
@@ -418,6 +419,7 @@ export default function SensorLightLandingPage() {
             thirdLine: "",
           }}
           productImage="/landingPage/carousel/carousel-sensor-4-3.png"
+          productImageAlt="Sensor light"
           images={[
             {
               url: "/library/images/image-carousel/image-carousel1.png",
@@ -491,6 +493,7 @@ export default function SensorLightLandingPage() {
         ctaText="Shop now"
         headline="Thermomix® Sensor"
         image="/shared/product/sensor-product.png"
+        imageAlt="Sensor light"
         price="149,00 €"
       />
     </main>

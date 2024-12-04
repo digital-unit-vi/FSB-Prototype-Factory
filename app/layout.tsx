@@ -1,6 +1,6 @@
-import "@components/build-assets/style.css";
+import "@vorwerk/fibre-react/style.css";
 import localFont from "next/font/local";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import "./globals.css";
 import { Providers } from "./providers";
 

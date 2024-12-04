@@ -1,5 +1,9 @@
 "use client";
 
+import Hero from "@components/landingPage/hero/hero";
+import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
+import Spacer from "@components/shared/spacer/spacer";
+import useScreenSize from "@utils/useScreenSize";
 import {
   BatteryLevel3Light,
   BentoBoxTiles,
@@ -16,11 +20,7 @@ import {
   TimerLight,
   Typography,
   UserReview,
-} from "@components/build-assets/libraryExport";
-import Hero from "@components/landingPage/hero/hero";
-import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
-import Spacer from "@components/shared/spacer/spacer";
-import useScreenSize from "@utils/useScreenSize";
+} from "@vorwerk/fibre-react";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPage() {
@@ -297,6 +297,7 @@ export default function SensorLightLandingPage() {
         </GridContainer>
         <Spacer size={16} sizeMedium={40} />
         <ImageCarousel
+          productImageAlt="Sensor light"
           eyecatcher={{
             backgroundColor: "green",
             firstLine: "Success",
@@ -378,6 +379,7 @@ export default function SensorLightLandingPage() {
         ctaText="Shop now"
         headline="Thermomix® Sensor"
         image="/shared/product/sensor-product.png"
+        imageAlt="Sensor light"
         price="149,00 €"
       />
     </main>

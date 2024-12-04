@@ -9,9 +9,9 @@ import {
   FooterShopLogosBlock,
   FooterSmallLinks,
   Typography,
-} from "@components/build-assets/libraryExport";
-import { Viewport } from "next";
-import { ReactNode } from "react";
+} from "@vorwerk/fibre-react";
+import type { Viewport } from "next";
+import type { ReactNode } from "react";
 import styles from "./layout.module.scss";
 
 export const viewport: Viewport = {

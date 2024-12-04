@@ -3,7 +3,7 @@ import {
   GridItem,
   Headline,
   Typography,
-} from "@components/build-assets/libraryExport";
+} from "@vorwerk/fibre-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./showcaseTiles.module.scss";
@@ -60,20 +60,22 @@ interface ShowcaseTilesProps {
   }[];
 }
 
+type GridColumns = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
 const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [columnsConfig, setColumnsConfig] = useState<
-    { start: number; end: number; columns: number }[]
+    { start: number; end: number; columns: GridColumns }[]
   >([]);
 
   useEffect(() => {
     const numberOfTiles = tilesData.length;
-    const columnsPerTile = 12 / numberOfTiles; // Calculates the number of columns each tile should span
+    const columnsPerTileNumber = Math.max(1, Math.min(12, Math.floor(12 / numberOfTiles)));
+    const columnsPerTile = columnsPerTileNumber as GridColumns;
 
-    // Calculate start and end values for each tile
     const newColumnsConfig = tilesData.map((_, index) => {
-      const start = index * columnsPerTile + 1; // Calculate start column based on index
-      const end = start + columnsPerTile; // Calculate end column based on start and span
+      const start = index * columnsPerTileNumber + 1;
+      const end = start + columnsPerTileNumber;
       return { start, end, columns: columnsPerTile };
     });
 
@@ -96,7 +98,7 @@ const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
               onChange={toggleDarkMode}
               className={styles.switchInput}
             />
-            <span className={styles.switchSlider}></span>
+            <span className={styles.switchSlider} />
           </label>
         </GridItem>
       </GridContainer>

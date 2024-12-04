@@ -1,5 +1,6 @@
 "use client";
 
+import ShowcaseTiles from "@components/landingPage/showcaseTiles/showcaseTiles";
 import {
   Austria,
   Canada,
@@ -40,8 +41,7 @@ import {
   USA,
   Vorwerk,
   Youtube,
-} from "@components/build-assets/libraryExport";
-import ShowcaseTiles from "@components/landingPage/showcaseTiles/showcaseTiles";
+} from "@vorwerk/fibre-react";
 import Link from "next/link";
 import styles from "./page.module.scss";
 

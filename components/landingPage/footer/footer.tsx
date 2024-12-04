@@ -1,11 +1,3 @@
-import {
-  FooterLinks,
-  FooterSection,
-  FooterShopLogos,
-  FooterShopLogosBlock,
-  FooterSmallLinks,
-  Typography,
-} from "@components/build-assets/libraryExport";
 import DHL from "@public/library/images/footer/dhl.png";
 import DPD from "@public/library/images/footer/dpd.png";
 import Installment from "@public/library/images/footer/installment.png";
@@ -17,6 +9,14 @@ import Trusted1 from "@public/library/images/footer/trusted-1.png";
 import Trusted2 from "@public/library/images/footer/trusted-2.png";
 import Visa from "@public/library/images/footer/visa.png";
 import Voucher from "@public/library/images/footer/voucher.png";
+import {
+  FooterLinks,
+  FooterSection,
+  FooterShopLogos,
+  FooterShopLogosBlock,
+  FooterSmallLinks,
+  Typography,
+} from "@vorwerk/fibre-react";
 import Image from "next/image";
 
 const FooterLandingPage = () => {
