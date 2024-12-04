@@ -43,7 +43,7 @@ const CategoryTile: FC<CategoryTileProps> = ({
 
   return (
     <div
-      className={`${styles.categoryTile} ${styles[layout]} ${backgroundImageSrc ? styles.gradient : ''} ${styles[containerPadding]} ${imageProps ? styles.productImage : ''} ${size === 'large' ? styles.large : ''}`}
+      className={`${styles.categoryTile} ${styles[layout]} ${styles[containerPadding]} ${imageProps ? styles.productImage : ''} ${size === 'large' ? styles.large : ''}`}
       style={{
         backgroundColor: brandColor ?? bkgColor,
         backgroundImage: backgroundImageSrc

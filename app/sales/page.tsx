@@ -259,7 +259,7 @@ export default function Home() {
                 button={{
                   label: 'Explore more',
                   size: screenSize.width > 935 ? 'large' : 'medium',
-                  link: '/',
+                  link: '/flagship',
                 }}
               />
             </GridItem>
