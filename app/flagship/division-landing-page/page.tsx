@@ -686,7 +686,7 @@ export default function Home() {
           }
           headline={
             <Headline strongColor={'red'} spaceBelow={'default'}>
-              <Typography component={'h3'}>
+              <Typography component={'h3'} variant={"h2"}>
                 Try the
                 <br />
                 Thermomix® –

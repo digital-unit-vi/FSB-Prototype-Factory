@@ -63,10 +63,6 @@ import List from '@components/landingPage/list/list'
 import ImageGallery from '@components/landingPage/imageGallery/imageGallery'
 import AdvisorTile from '@components/landingPage/advisorTile/advisorTile'
 import useScreenSize from '@utils/useScreenSize'
-import IMAGE_PDP_1 from '@public/landingPage/hero/ds360-hero.png'
-import IMAGE_PDP_2 from '@public/landingPage/carousel/pdp-2.png'
-import IMAGE_PDP_3 from '@public/landingPage/carousel/pdp-3.png'
-import IMAGE_PDP_4 from '@public/landingPage/carousel/pdp-4.png'
 import CategoryTiles from '@components/landingPage/categoryTiles/categoryTiles'
 import CategoryTile from '@components/landingPage/categoryTile/categoryTile'
 
@@ -226,7 +222,28 @@ const Languages = [
   </DropdownItem>,
 ]
 
-const imagesCarousel = [IMAGE_PDP_1, IMAGE_PDP_2, IMAGE_PDP_3, IMAGE_PDP_4]
+const imagesCarousel = [
+  <img
+    key="image1"
+    src="/landingPage/hero/ds360-hero.png"
+    alt="Thermomix DS360"
+  />,
+  <img
+    key="image2"
+    src="/landingPage/carousel/pdp-2.png"
+    alt="Thermomix right side"
+  />,
+  <img
+    key="image3"
+    src="/landingPage/carousel/pdp-3.png"
+    alt="Thermomix back side"
+  />,
+  <img
+    key="image4"
+    src="/landingPage/carousel/pdp-4.png"
+    alt="Thermomix left side"
+  />,
+]
 
 const categoryTilesAssets = [
   <CategoryTile
@@ -430,7 +447,11 @@ export default function Home() {
           <div className={styles.productHeroContainer}>
             <GridContainer>
               <GridItem columns={12}>
-                <ImageGallery slides={imagesCarousel} imageMaxWidth={'280px'} />
+                <ImageGallery
+                  slides={imagesCarousel}
+                  imageMaxWidth={'280px'}
+                  options={{ loop: false }}
+                />
               </GridItem>
               <GridItem columns={12}>
                 <div className={styles.productDetailsContainer}>
@@ -548,7 +569,7 @@ export default function Home() {
                     },
                     title: 'Cooking books',
                     button: {
-                      label: 'Explore the product',
+                      label: 'Explore more',
                       size: screenSize.width > 936 ? 'large' : 'medium',
                     },
                   },

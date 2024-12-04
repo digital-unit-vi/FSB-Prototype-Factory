@@ -513,17 +513,19 @@ export default function Home() {
                       <ProductPurchaseOptions
                         price="1.399 €"
                         delivery={
-                          <Typography
-                            variant="paragraph16"
-                            fontWeight="regular"
-                          >
-                            <span>
-                              Free delivery{' '}
-                              <strong>
-                                Wednesday, 26.06. – Friday, 27.06.{' '}
-                              </strong>
-                            </span>
-                          </Typography>
+                          <div className={styles.deliveryText}>
+                            <Typography
+                              variant="paragraph16"
+                              fontWeight="regular"
+                            >
+                              <span>
+                                Free delivery
+                              </span>
+                            </Typography>
+                            <Typography variant={"paragraph16"} fontWeight={"medium"}>
+                              <span> Wednesday, 26.06. – Friday, 27.06.</span>
+                            </Typography>
+                          </div>
                         }
                       />
                       <TrustBanner
@@ -693,7 +695,7 @@ export default function Home() {
             <div className={styles.contentBlockLeft}>
               <ContentBlock
                 mediaAlignment={screenSize.width > 739 ? 'left' : undefined}
-                media={<video controls src="/library/videos/tm-1.mp4"></video>}
+                media={<video controls src="/library/videos/tm-1.mp4" poster={"/library/videos/tm-1-placeholder.png"}></video>}
                 headline={
                   <Headline spaceBelow={'default'}>
                     <Typography component={'h4'} fontWeight={'bold'}>
