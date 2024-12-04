@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styles from './categoryTile.module.scss'
 import {
   EyeCatcher,
@@ -10,13 +9,13 @@ import Link from 'next/link'
 
 interface CategoryTileProps {
   layout?: 'vertical' | 'horizontal'
-  size: 'small' | 'medium' | 'large'
+  size: 'small' | 'medium' | 'large' | '2/3'
   backgroundColor?: 'grey' | 'white'
   brandColor?: string
   backgroundImageSrc?: string
   imageProps?: { src: string; alt: string }
   title: string
-  button?: { label: string; size: string }
+  button?: { label: string; size: string; link?: string }
   eyeCatcherProps?: ComponentProps<typeof EyeCatcher>
 }
 
@@ -31,7 +30,10 @@ const CategoryTile: FC<CategoryTileProps> = ({
   button,
   eyeCatcherProps,
 }) => {
-  const containerPadding = size === 'large' ? 'padding-large' : 'padding-small'
+  const containerPadding =
+    size === 'small' || (size === 'medium' && imageProps)
+      ? 'padding-small'
+      : 'padding-large'
   const bkgColor =
     backgroundColor === 'grey'
       ? '#F3F5F3'
@@ -41,7 +43,7 @@ const CategoryTile: FC<CategoryTileProps> = ({
 
   return (
     <div
-      className={`${styles.categoryTile} ${styles[layout]} ${backgroundImageSrc ? styles.gradient : ''} ${styles[containerPadding]} ${imageProps ? styles.productImage : ''}`}
+      className={`${styles.categoryTile} ${styles[layout]} ${backgroundImageSrc ? styles.gradient : ''} ${styles[containerPadding]} ${imageProps ? styles.productImage : ''} ${size === 'large' ? styles.large : ''}`}
       style={{
         backgroundColor: brandColor ?? bkgColor,
         backgroundImage: backgroundImageSrc
@@ -60,10 +62,9 @@ const CategoryTile: FC<CategoryTileProps> = ({
         <div className={styles.imageContainer}>
           <div className={styles.imageWrapper}>
             {imageProps && (
-              <Image
+              <img
                 src={imageProps.src}
                 alt={imageProps.alt}
-                fill="fill"
                 className={styles.image}
               />
             )}
@@ -80,7 +81,7 @@ const CategoryTile: FC<CategoryTileProps> = ({
           </Typography>
         </div>
         {button && (
-          <Link href="/">
+          <Link href={button.link ?? '/'}>
             <Button size={button.size} type="primary">
               {button.label}
             </Button>

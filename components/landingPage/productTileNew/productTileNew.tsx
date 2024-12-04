@@ -23,6 +23,7 @@ export default function ProductTileNew({
   price: {
     price: string
     lowestPrice?: string
+    delivery?: string
   }
   eyeCatcherProps: ComponentProps<typeof EyeCatcher>
   screenSizes: {
@@ -69,6 +70,7 @@ export default function ProductTileNew({
             price={price.price}
             lowestPrice={price.lowestPrice}
             vat="incl. VAT & shipping"
+            delivery={price.delivery}
           />
           <Button type={'primary'} size={size} icon={<ShoppingCart />} />
         </div>

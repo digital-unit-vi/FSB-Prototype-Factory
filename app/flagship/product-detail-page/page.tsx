@@ -518,52 +518,83 @@ export default function Home() {
         <section
           className={`${styles.prominentSection} ${styles.additionalSectionPadding}`}
         >
-          <div className={styles.gridProductHero} ref={productHeroContainerRef}>
-            <GridContainer isOverlay={screenSize.width < 936}>
-              <GridItem
-                columns={12}
-                columnsL={7}
-                columnsXL={8}
-                className={styles.gridItem1}
-              >
-                {screenSize.width > 935 ? (
-                  <Gallery gallery={galleryAsset} />
-                ) : (
-                  <ImageGallery
-                    slides={galleryAsset}
-                    options={{ loop: false, align: 'start' }}
-                    isModal
-                    showCarouselInfo
-                  ></ImageGallery>
-                )}
-              </GridItem>
-              <GridItem
-                columns={12}
-                columnsL={5}
-                columnsXL={4}
-                className={styles.gridItem2}
-              >
-                <div
-                  className={styles.productDetailsContainer}
-                  ref={productDetailsContainerRef}
-                  style={productDetailsContainerStyle}
-                >
-                  <div className={styles.productDetailsWrapper}>
-                    <div className={styles.headingAndRating}>
-                      <Typography component="h4" fontWeight="bold">
-                        <span>Thermomix® TM6</span>
-                      </Typography>
-                      <Rating
-                        rate={4.9}
-                        counter={42}
-                        size={'sapcVersion'}
-                        iconColors={{
-                          full: '#23282A',
-                          empty: 'rgb(196, 196, 196)',
-                        }}
-                        showCounter={true}
-                        showAmount={true}
-                      ></Rating>
+          <GridContainer isOverlay={screenSize.width < 936}>
+            <GridItem columns={12}>
+              <GridContainer isOverlay={screenSize.width < 936}>
+                <GridItem columns={12} columnsL={7} columnsXL={8}>
+                  {screenSize.width > 935 ? (
+                    <Gallery gallery={galleryAsset}></Gallery>
+                  ) : (
+                    <ImageGallery
+                      slides={galleryAsset}
+                      options={{ loop: false, align: 'start' }}
+                      isModal
+                      showCarouselInfo
+                    ></ImageGallery>
+                  )}
+                </GridItem>
+                <GridItem columns={12} columnsL={5} columnsXL={4}>
+                  <div className={styles.productDetailsContainer}>
+                    <div className={styles.productDetailsWrapper}>
+                      <div className={styles.headingAndRating}>
+                        <Typography component="h4" fontWeight="bold">
+                          <span>Thermomix® TM6</span>
+                        </Typography>
+                        <Rating
+                          rate={4.9}
+                          counter={42}
+                          size={"sapcVersion"}
+                          iconColors={{
+                            full: '#23282A',
+                            empty: 'rgb(196, 196, 196)',
+                          }}
+                          showCounter={true}
+                          showAmount={true}
+                        ></Rating>
+                      </div>
+                      <List
+                        items={[
+                          'Delicious dishes prepared quickly and easily',
+                          'Thousands of recipes with guaranteed success directly on your device',
+                          'A real all-rounder: Numerous cooking functions and modes',
+                        ]}
+                        decoratorType="check"
+                        size="medium"
+                      />
+                      <ProductPurchaseOptions
+                        price="1.399 €"
+                        delivery={
+                          <div className={styles.deliveryText}>
+                            <Typography
+                              variant="paragraph16"
+                              fontWeight="regular"
+                            >
+                              <span>
+                                Free delivery
+                              </span>
+                            </Typography>
+                            <Typography variant={"paragraph16"} fontWeight={"medium"}>
+                              <span> Wednesday, 26.06. – Friday, 27.06.</span>
+                            </Typography>
+                          </div>
+                        }
+                      />
+                      <TrustBanner
+                        items={[
+                          {
+                            text: 'Free shipping for orders over $50',
+                            icon: <DeliveryLight />,
+                          },
+                          {
+                            text: '30 day satisfaction guarantee',
+                            icon: <CalendarLight />,
+                          },
+                          {
+                            text: '5 year warranty',
+                            icon: <CheckmarkCircleLight />,
+                          },
+                        ]}
+                      />
                     </div>
                     <List
                       items={[
@@ -770,7 +801,7 @@ export default function Home() {
             <div className={styles.contentBlockLeft}>
               <ContentBlock
                 mediaAlignment={screenSize.width > 739 ? 'left' : undefined}
-                media={<video controls src="/library/videos/tm-1.mp4"></video>}
+                media={<video controls src="/library/videos/tm-1.mp4" poster={"/library/videos/tm-1-placeholder.png"}></video>}
                 headline={
                   <Headline spaceBelow={'default'}>
                     <Typography component={'h4'} fontWeight={'bold'}>
