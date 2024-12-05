@@ -791,7 +791,7 @@ export default function Home() {
                   <span>
                     Don’t just cook every day…
                     {screenSize.width > 739 && <br />}
-                    <strong>create wow every day</strong>
+                    <strong> create wow every day</strong>
                   </span>
                 </Typography>
               </Headline>
@@ -992,14 +992,16 @@ export default function Home() {
               columns={12}
               className={`${styles.textCentered} ${styles.overwrittenMargin} ${styles.overwrittenHeadline}`}
             >
-              <Headline spaceBelow={'additional'} strongColor={'blue'}>
-                <Typography component={'h2'}>
-                  Vorwerk Advisor,
-                  <br />a unique opportunity to
-                  {screenSize.width > 739 && <br />}
-                  <strong>join our sales force</strong>
-                </Typography>
-              </Headline>
+              <div className={styles.overriddenMargin}>
+                <Headline spaceBelow={'additional'} strongColor={'blue'}>
+                  <Typography component={'h2'}>
+                    Vorwerk Advisor,
+                    <br />a unique opportunity to
+                    {screenSize.width > 739 && <br />}
+                    <strong> join our sales force</strong>
+                  </Typography>
+                </Headline>
+              </div>
             </GridItem>
           </GridContainer>
           <div className={styles.overwrittenContentBlockWidth}>

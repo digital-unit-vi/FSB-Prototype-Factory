@@ -28,8 +28,10 @@
 
 .tiles>a {
     text-decoration: none;
+}
 
-    &>div>div:first-child {
+.tiles div:has(> div:nth-of-type(2)) {
+    &>div:first-child {
         padding: 0;
     }
 }

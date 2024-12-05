@@ -657,7 +657,7 @@ export default function Home() {
                 <Typography component={'h2'}>
                   Vorwerk Advisor -
                   <br />
-                  <strong>join our sales force</strong>
+                  <strong> join our sales force</strong>
                 </Typography>
               </Headline>
             </GridItem>

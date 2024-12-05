@@ -642,7 +642,7 @@ export default function Home() {
                       <br />
                       a unique opportunity to
                       <br />
-                      <strong>join our sales force</strong>
+                      <strong> join our sales force</strong>
                     </span>
                   </Typography>
                 }
