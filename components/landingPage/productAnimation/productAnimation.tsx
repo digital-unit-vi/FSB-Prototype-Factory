@@ -109,9 +109,10 @@ const ProductAnimation = () => {
         snap: "frame",
         scrollTrigger: {
           trigger: container,
-          start: "top top",
+          start: "center center",
           end: "+=" + frameCount * 14,
           pin: true,
+          pinSpacing: true,
           scrub: 1,
           anticipatePin: 1,
           fastScrollEnd: true,
