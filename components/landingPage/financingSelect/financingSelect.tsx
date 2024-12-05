@@ -35,7 +35,7 @@ const FinancingSelect = ({
   const handleToggle = () => {
     if (isOpen) {
       setAnimationState('fadeOut')
-      setTimeout(() => setOpen(false), 300)
+      setOpen(false)
     } else {
       setOpen(true)
       setAnimationState('fadeIn')
@@ -47,22 +47,61 @@ const FinancingSelect = ({
   }
 
   useEffect(() => {
-    const handler = (event: MouseEvent | TouchEvent) => {
-      if (
-        isOpen &&
-        selectRef.current &&
-        !selectRef.current.contains(event.target as Node)
-      ) {
+    let touchStartX = 0
+    let touchStartY = 0
+    let isSwipe = false
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartX = e.touches[0].clientX
+      touchStartY = e.touches[0].clientY
+      isSwipe = false
+    }
+
+    const handleTouchMove = (e: TouchEvent) => {
+      const deltaX = Math.abs(e.touches[0].clientX - touchStartX)
+      const deltaY = Math.abs(e.touches[0].clientY - touchStartY)
+
+      // Detect if the movement qualifies as a swipe
+      if (deltaX > 10 || deltaY > 10) {
+        isSwipe = true
+      }
+    }
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (!isSwipe) {
+        // It's a tap, so check if it's outside the dropdown
+        const target = e.target as Node
+        if (
+          isOpen &&
+          selectRef.current &&
+          !selectRef.current.contains(target)
+        ) {
+          setAnimationState('fadeOut')
+          setOpen(false)
+        }
+      }
+    }
+
+    const handleMouseDown = (e: MouseEvent) => {
+      const target = e.target as Node
+      if (isOpen && selectRef.current && !selectRef.current.contains(target)) {
+        setAnimationState('fadeOut')
         setOpen(false)
       }
     }
-    document.addEventListener('mousedown', handler)
-    document.addEventListener('touchstart', handler)
+
+    document.addEventListener('mousedown', handleMouseDown)
+    document.addEventListener('touchstart', handleTouchStart)
+    document.addEventListener('touchmove', handleTouchMove)
+    document.addEventListener('touchend', handleTouchEnd)
+
     return () => {
-      document.removeEventListener('mousedown', handler)
-      document.removeEventListener('touchstart', handler)
+      document.removeEventListener('mousedown', handleMouseDown)
+      document.removeEventListener('touchstart', handleTouchStart)
+      document.removeEventListener('touchmove', handleTouchMove)
+      document.removeEventListener('touchend', handleTouchEnd)
     }
-  }, [isOpen])
+  }, [isOpen, selectRef])
 
   return (
     <div className={styles.financingContainer} ref={selectRef}>

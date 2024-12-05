@@ -326,6 +326,17 @@ export default function Home() {
                 Company's markets (Work In Progress)
               </Typography>
             }
+            buttonGroup={
+              <>
+                <ButtonGroup>
+                  <Link href="/sales">
+                    <Button size="large" type="primary">
+                      Go to the showcase
+                    </Button>
+                  </Link>
+                </ButtonGroup>
+              </>
+            }
           />
         </section>
         <section className={styles.defaultSection}>
