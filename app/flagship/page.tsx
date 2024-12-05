@@ -19,6 +19,7 @@ import {
   GridContainer,
   GridItem,
   Headline,
+  Header,
   Instagram,
   Ireland,
   Italy,
@@ -40,7 +41,6 @@ import {
   Youtube,
 } from '@components/build-assets/libraryExport'
 import CategoryTile from '@components/landingPage/categoryTile/categoryTile'
-import useScreenSize from '@utils/useScreenSize'
 import Link from 'next/link'
 import styles from './page.module.scss'
 
@@ -204,6 +204,15 @@ export default function Home() {
   return (
     <>
       <main>
+        <Header
+          isLandingPage
+          landingPageLogo={
+            <Link href="/sales">
+              <Vorwerk className={styles.vorwerkLogo} />
+            </Link>
+          }
+          backgroundType={'transparent'}
+        />
         <section className={styles.prominentSection}>
           <GridContainer>
             <GridItem columns={12} className={styles.textCentered}>
@@ -227,10 +236,10 @@ export default function Home() {
                 <CategoryTile
                   size={'small'}
                   imageProps={{
-                    src: "/landingPage/categoryTile/home-page.png",
-                    alt: "Screen design"
+                    src: '/landingPage/categoryTile/home-page.png',
+                    alt: 'Screen design',
                   }}
-                  backgroundColor={"grey"}
+                  backgroundColor={'grey'}
                   title={'Home Page - AEM'}
                 />
               </Link>
@@ -245,10 +254,10 @@ export default function Home() {
                 <CategoryTile
                   size={'small'}
                   imageProps={{
-                    src: "/landingPage/categoryTile/product-detail-page-sapc.png",
-                    alt: "Screen design"
+                    src: '/landingPage/categoryTile/product-detail-page-sapc.png',
+                    alt: 'Screen design',
                   }}
-                  backgroundColor={"grey"}
+                  backgroundColor={'grey'}
                   title={'Product Detail Page - SAPC'}
                 />
               </Link>
@@ -263,10 +272,10 @@ export default function Home() {
                 <CategoryTile
                   size={'small'}
                   imageProps={{
-                    src: "/landingPage/categoryTile/product-detail-page-aem.png",
-                    alt: "Screen design"
+                    src: '/landingPage/categoryTile/product-detail-page-aem.png',
+                    alt: 'Screen design',
                   }}
-                  backgroundColor={"grey"}
+                  backgroundColor={'grey'}
                   title={'Product Detail Page - AEM'}
                 />
               </Link>
@@ -281,10 +290,10 @@ export default function Home() {
                 <CategoryTile
                   size={'small'}
                   imageProps={{
-                    src: "/landingPage/categoryTile/division-landing-page.png",
-                    alt: "Screen design"
+                    src: '/landingPage/categoryTile/division-landing-page.png',
+                    alt: 'Screen design',
                   }}
-                  backgroundColor={"grey"}
+                  backgroundColor={'grey'}
                   title={'Division Landing Page - AEM'}
                 />
               </Link>
@@ -299,10 +308,10 @@ export default function Home() {
                 <CategoryTile
                   size={'small'}
                   imageProps={{
-                    src: "/landingPage/categoryTile/catalogue-home-page.png",
-                    alt: "Screen design"
+                    src: '/landingPage/categoryTile/catalogue-home-page.png',
+                    alt: 'Screen design',
                   }}
-                  backgroundColor={"grey"}
+                  backgroundColor={'grey'}
                   title={'Catalogue Home Page - AEM'}
                 />
               </Link>
@@ -317,10 +326,10 @@ export default function Home() {
                 <CategoryTile
                   size={'small'}
                   imageProps={{
-                    src: "/landingPage/categoryTile/product-landing-page.png",
-                    alt: "Screen design"
+                    src: '/landingPage/categoryTile/product-landing-page.png',
+                    alt: 'Screen design',
                   }}
-                  backgroundColor={"grey"}
+                  backgroundColor={'grey'}
                   title={'Product Landing Page - AEM'}
                 />
               </Link>
@@ -335,10 +344,10 @@ export default function Home() {
                 <CategoryTile
                   size={'small'}
                   imageProps={{
-                    src: "/landingPage/categoryTile/catalogue-division-landing-page.png",
-                    alt: "Screen design"
+                    src: '/landingPage/categoryTile/catalogue-division-landing-page.png',
+                    alt: 'Screen design',
                   }}
-                  backgroundColor={"grey"}
+                  backgroundColor={'grey'}
                   title={'Catalogue Division Landing Page - SAPC'}
                 />
               </Link>
@@ -353,10 +362,10 @@ export default function Home() {
               <CategoryTile
                 size={'small'}
                 imageProps={{
-                  src: "/landingPage/categoryTile/catalogue-division-section-page.png",
-                  alt: "Screen design"
+                  src: '/landingPage/categoryTile/catalogue-division-section-page.png',
+                  alt: 'Screen design',
                 }}
-                backgroundColor={"grey"}
+                backgroundColor={'grey'}
                 title={'Catalogue Division Section Page - SAPC'}
               />
               {/* </Link> */}
