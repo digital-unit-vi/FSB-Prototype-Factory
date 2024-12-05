@@ -357,7 +357,7 @@ export default function Home() {
                   alt: "Screen design"
                 }}
                 backgroundColor={"grey"}
-                title={'Catalogue Division Section Page - AEM'}
+                title={'Catalogue Division Section Page - SAPC'}
               />
               {/* </Link> */}
             </GridItem>

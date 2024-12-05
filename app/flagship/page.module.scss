@@ -24,6 +24,10 @@
 
 .tiles>a {
     text-decoration: none;
+
+    &>div>div:first-child {
+        padding: 0;
+    }
 }
 
 .overwrittenProductStripeGap div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
