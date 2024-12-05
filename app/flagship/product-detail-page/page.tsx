@@ -685,7 +685,7 @@ export default function Home() {
                   <span>
                     Don’t just cook every day…
                     {screenSize.width > 739 && <br />}
-                    <strong>create wow every day</strong>
+                    <strong> create wow every day</strong>
                   </span>
                 </Typography>
               </Headline>
@@ -892,7 +892,7 @@ export default function Home() {
                     Vorwerk Advisor,
                     <br />a unique opportunity to
                     {screenSize.width > 739 && <br />}
-                    <strong>join our sales force</strong>
+                    <strong> join our sales force</strong>
                   </Typography>
                 </Headline>
               </div>
