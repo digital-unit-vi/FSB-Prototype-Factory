@@ -191,9 +191,183 @@ export default function Home() {
               <Typography component="h3" fontWeight="bold">
                 FSB User Interface Kit (UI Kit)
               </Typography>
-            </Headline>
-          }
-          media={
+            }
+          />
+          <Spacer size={128} />
+          <ContentBlock
+            headline={
+              <Headline spaceBelow="default">
+                <Typography component="h3" fontWeight="bold">
+                  Sales Projects
+                </Typography>
+              </Headline>
+            }
+            media={<img src="/landingPage/teaser/teaser.png" />}
+            mediaAlignment="right"
+            paragraph={
+              <Typography fontWeight="regular" variant="paragraph18">
+                The Experience Design Team supports the Vorwerk International
+                Sales division in delivering digital touchpoints to the
+                Company's markets (Work In Progress)
+              </Typography>
+            }
+            buttonGroup={
+              <>
+                <ButtonGroup>
+                  <Link href="/sales">
+                    <Button size="large" type="primary">
+                      Go to the showcase
+                    </Button>
+                  </Link>
+                </ButtonGroup>
+              </>
+            }
+          />
+        </section>
+        <section className={styles.defaultSection}>
+          <GridContainer>
+            <GridItem
+              columns={8}
+              start={3}
+              end={11}
+              className={styles.textCentered}
+            >
+              <Headline
+                spaceBelow="additional"
+                strongColor="green"
+                children={
+                  <Typography component="h2">
+                    <span>
+                      <strong>FiBRE Single Blend</strong>
+                      <br />
+                      The source of countless nuances
+                    </span>
+                  </Typography>
+                }
+              />
+            </GridItem>
+          </GridContainer>
+          <GridContainer>
+            <GridItem columns={12}>
+              <Headline
+                strongColor="green"
+                children={
+                  <>
+                    <Typography component="h3" fontWeight="bold" spaceBelow>
+                      <span>FiBRE Single Blend (FSB) in a nutshell</span>
+                    </Typography>
+                    <Typography spaceBelow>
+                      <Spacer size={24} />
+                      <span style={{ fontSize: "22px", lineHeight: "32px" }}>
+                        FSB is the Vorwerk Design System meticulously crafted by
+                        the Vorwerk International Experience Design Team (XDT).
+                        Its primary goal is to empower the entire Vorwerk
+                        community to envision, execute, and maintain digital
+                        touchpoints that consistently embody the premium quality
+                        of the company's physical devices, such as the
+                        Thermomix.
+                      </span>
+                      <Spacer size={24} />
+                    </Typography>
+                  </>
+                }
+              />
+            </GridItem>
+          </GridContainer>
+          <ContentBlock
+            headline={
+              <Headline spaceBelow="default">
+                <Typography component="h3" fontWeight="bold">
+                  FSB User Interface Kit (UI Kit)
+                </Typography>
+              </Headline>
+            }
+            media={
+              <img src="/landingPage/imageGallery/tm6-family-leisure.jpg" />
+            }
+            mediaAlignment="right"
+            paragraph={
+              <Typography fontWeight="regular" variant="paragraph18">
+                The PF aims to be a robust and reliable reference for all the
+                teams committed to crafting delightful digital experiences for
+                Vorwerk customers.
+                <br />
+                <br />
+                Its primary purpose is to help developers understand how the
+                Vorwerk digital touchpoints look and work. In addition, the FEW
+                project supports rapid prototyping loops, enabling the Company
+                to mitigate risk by testing options with real users and real
+                code!
+                <br />
+                <br />
+                Lastly, the PF is a great tool for keeping everyone on the same
+                page regarding UX and UI patterns across products and
+                touchpoints.
+              </Typography>
+            }
+          />
+          <Spacer size={128} />
+          <ContentBlock
+            headline={
+              <Headline spaceBelow="default">
+                <Typography component="h3" fontWeight="bold">
+                  FSB FrontEnd Workshop (FEW)
+                </Typography>
+              </Headline>
+            }
+            media={<img src="/landingPage/teaser/teaser2.jpeg" />}
+            mediaAlignment="left"
+            paragraph={
+              <Typography fontWeight="regular" variant="paragraph18">
+                The FEW project boldly ambitions to help developers, designers,
+                product experts, and business stakeholders speak the same
+                language and collaborate to build the Company’s digital
+                products.
+                <br />
+                <br />
+                Designed and built with industry standards, such as the
+                Storybook platform, this collection of code-based atomic
+                components offers a unique opportunity to facilitate the
+                end-to-end product design process.
+              </Typography>
+            }
+          />
+          <Spacer size={128} />
+          <ContentBlock
+            headline={
+              <Headline spaceBelow="default">
+                <Typography component="h3" fontWeight="bold">
+                  FSB Prototype Factory (PF)
+                </Typography>
+              </Headline>
+            }
+            media={<img src="/landingPage/teaser/teaser3.jpeg" />}
+            mediaAlignment="right"
+            paragraph={
+              <Typography fontWeight="regular" variant="paragraph18">
+                The PF aims to be a robust and reliable reference for all the
+                teams committed to crafting delightful digital experiences for
+                Vorwerk customers.
+                <br />
+                <br />
+                Its primary purpose is to help developers understand how the
+                Vorwerk digital touchpoints look and work. In addition, the FEW
+                project supports rapid prototyping loops, enabling the Company
+                to mitigate risk by testing options with real users and real
+                code!
+                <br />
+                <br />
+                Lastly, the PF is a great tool for keeping everyone on the same
+                page regarding UX and UI patterns across products and
+                touchpoints.
+              </Typography>
+            }
+          />
+        </section>
+        <ProductStripe
+          logo={<Vorwerk />}
+          text="For over 130 years, our products have impressed millions of families with their superior, innovative technology and their proverbial long service life."
+          images={[
             <img
               src="/landingPage/imageGallery/tm6-family-leisure.jpg"
               alt="Father and children playing checkers and studying at a wooden kitchen table."

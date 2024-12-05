@@ -226,7 +226,11 @@ export default function Home() {
               <Link href={'/flagship/home-page'}>
                 <CategoryTile
                   size={'small'}
-                  backgroundImageSrc={'/landingPage/categoryTile/couple.png'}
+                  imageProps={{
+                    src: "/landingPage/categoryTile/home-page.png",
+                    alt: "Screen design"
+                  }}
+                  backgroundColor={"grey"}
                   title={'Home Page - AEM'}
                 />
               </Link>
@@ -240,7 +244,11 @@ export default function Home() {
               <Link href={'/flagship/product-detail-page'}>
                 <CategoryTile
                   size={'small'}
-                  backgroundImageSrc={'/landingPage/categoryTile/couple.png'}
+                  imageProps={{
+                    src: "/landingPage/categoryTile/product-detail-page-sapc.png",
+                    alt: "Screen design"
+                  }}
+                  backgroundColor={"grey"}
                   title={'Product Detail Page - SAPC'}
                 />
               </Link>
@@ -254,7 +262,11 @@ export default function Home() {
               <Link href={'/flagship/product-detail-page-aem'}>
                 <CategoryTile
                   size={'small'}
-                  backgroundImageSrc={'/landingPage/categoryTile/couple.png'}
+                  imageProps={{
+                    src: "/landingPage/categoryTile/product-detail-page-aem.png",
+                    alt: "Screen design"
+                  }}
+                  backgroundColor={"grey"}
                   title={'Product Detail Page - AEM'}
                 />
               </Link>
@@ -268,7 +280,11 @@ export default function Home() {
               <Link href={'/flagship/division-landing-page'}>
                 <CategoryTile
                   size={'small'}
-                  backgroundImageSrc={'/landingPage/categoryTile/couple.png'}
+                  imageProps={{
+                    src: "/landingPage/categoryTile/division-landing-page.png",
+                    alt: "Screen design"
+                  }}
+                  backgroundColor={"grey"}
                   title={'Division Landing Page - AEM'}
                 />
               </Link>
@@ -282,7 +298,11 @@ export default function Home() {
               <Link href={'/flagship/catalogue-home-page'}>
                 <CategoryTile
                   size={'small'}
-                  backgroundImageSrc={'/landingPage/categoryTile/couple.png'}
+                  imageProps={{
+                    src: "/landingPage/categoryTile/catalogue-home-page.png",
+                    alt: "Screen design"
+                  }}
+                  backgroundColor={"grey"}
                   title={'Catalogue Home Page - AEM'}
                 />
               </Link>
@@ -296,7 +316,11 @@ export default function Home() {
               <Link href={'/flagship/product-landing-page'}>
                 <CategoryTile
                   size={'small'}
-                  backgroundImageSrc={'/landingPage/categoryTile/couple.png'}
+                  imageProps={{
+                    src: "/landingPage/categoryTile/product-landing-page.png",
+                    alt: "Screen design"
+                  }}
+                  backgroundColor={"grey"}
                   title={'Product Landing Page - AEM'}
                 />
               </Link>
@@ -310,7 +334,11 @@ export default function Home() {
               <Link href={'/flagship/catalogue-division-landing-page'}>
                 <CategoryTile
                   size={'small'}
-                  backgroundImageSrc={'/landingPage/categoryTile/couple.png'}
+                  imageProps={{
+                    src: "/landingPage/categoryTile/catalogue-division-landing-page.png",
+                    alt: "Screen design"
+                  }}
+                  backgroundColor={"grey"}
                   title={'Catalogue Division Landing Page - SAPC'}
                 />
               </Link>
@@ -324,7 +352,11 @@ export default function Home() {
               {/* <Link href={"/flagship/catalogue-division-section-page"}> */}
               <CategoryTile
                 size={'small'}
-                backgroundImageSrc={'/landingPage/categoryTile/couple.png'}
+                imageProps={{
+                  src: "/landingPage/categoryTile/catalogue-division-section-page.png",
+                  alt: "Screen design"
+                }}
+                backgroundColor={"grey"}
                 title={'Catalogue Division Section Page - AEM'}
               />
               {/* </Link> */}
