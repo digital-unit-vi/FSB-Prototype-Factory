@@ -358,17 +358,17 @@ export default function Home() {
               columnsXL={4}
               className={styles.tiles}
             >
-              {/* <Link href={"/flagship/catalogue-division-section-page"}> */}
-              <CategoryTile
-                size={'small'}
-                imageProps={{
-                  src: '/landingPage/categoryTile/catalogue-division-section-page.png',
-                  alt: 'Screen design',
-                }}
-                backgroundColor={'grey'}
-                title={'Catalogue Division Section Page - SAPC'}
-              />
-              {/* </Link> */}
+              <Link href={'/flagship/catalogue-division-section-page'}>
+                <CategoryTile
+                  size={'small'}
+                  imageProps={{
+                    src: '/landingPage/categoryTile/catalogue-division-section-page.png',
+                    alt: 'Screen design',
+                  }}
+                  backgroundColor={'grey'}
+                  title={'Catalogue Division Section Page - SAPC'}
+                />
+              </Link>
             </GridItem>
           </GridContainer>
         </section>
