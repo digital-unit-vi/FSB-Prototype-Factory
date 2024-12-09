@@ -123,3 +123,16 @@
         height: 24px !important;
     }
 }
+
+.thumbsSlide.aem {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+
+    &>.thumbsSlideImage {
+        background: rgba(255, 255, 255, 0.50);
+    }
+
+    &.selected {
+        border: 2px solid #23282A;
+    }
+}
