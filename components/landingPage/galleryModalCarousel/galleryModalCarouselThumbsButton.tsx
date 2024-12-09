@@ -8,13 +8,16 @@ interface ThumbProps {
   selected: boolean
   item: GalleryItem
   onClick: () => void
+  isAEM?: boolean
 }
 
 export const Thumb: React.FC<ThumbProps> = props => {
-  const { selected, item, onClick } = props
+  const { selected, item, onClick, isAEM = false } = props
 
   return (
-    <div className={`${styles.thumbsSlide} ${selected && styles.selected}`}>
+    <div
+      className={`${styles.thumbsSlide} ${selected && styles.selected} ${isAEM && styles.aem}`}
+    >
       <button
         onClick={onClick}
         type="button"
