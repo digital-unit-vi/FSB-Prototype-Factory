@@ -5,6 +5,10 @@
   justify-content: flex-end;
   background-size: cover;
   background-position: center;
+  width: 224px;
+  height: 224px;
+  transition: transform 0.5s ease;
+  transform-origin: top left; 
 }
 
 .text {

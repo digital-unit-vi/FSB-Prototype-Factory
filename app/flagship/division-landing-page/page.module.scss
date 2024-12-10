@@ -2,6 +2,28 @@
   --padding-5: 64px;
   --padding-6: 80px;
   --gap-4: 64px;
+  --container-min-width: 460px;
+
+  @media (min-width: 936px) and (max-width: 1267px) {
+    --padding-5: 112px;
+    --padding-6: 144px;
+    --container-min-width: 552px;
+    --gap-4: 112px;
+  }
+
+  @media (min-width: 1268px) and (max-width: 1579px) {
+    --container-min-width: 736px;
+  }
+
+  @media (min-width: 1268px) {
+    --padding-5: 128px;
+    --padding-6: 160px;
+    --gap-4: 128px;
+  }
+
+  @media (min-width: 1580px) {
+    --container-min-width: 920px;
+  }
 }
 
 .hero {
@@ -23,12 +45,12 @@
 
 .overlayIcon,
 .overlayIconText,
-.overlayIconWrapper > svg {
+.overlayIconWrapper>svg {
   position: absolute;
 }
 
 .overlayIcon,
-.overlayIconWrapper > svg {
+.overlayIconWrapper>svg {
   left: 50%;
   transform: translate(-50%, 0);
   transition: opacity 1s ease-in-out;
@@ -40,7 +62,7 @@
   }
 }
 
-.overlayIconWrapper > svg {
+.overlayIconWrapper>svg {
   top: 12px;
   width: 36px;
   aspect-ratio: 1/1;
@@ -51,11 +73,13 @@
     transform: translate(-50%, 0);
     opacity: 1;
   }
+
   50% {
     transform: translate(-50%, -12px);
     opacity: 1;
     animation-timing-function: cubic-bezier(0.6, -0.01, 0.46, 1);
   }
+
   100% {
     transform: translate(-50%, -12px);
     opacity: 0;
@@ -76,14 +100,21 @@
   padding: var(--padding-5) 0 var(--padding-6);
 }
 
-.overwrittenMargin > div:first-child {
-  margin-bottom: 40px !important;
+.overwrittenMargin>div:first-child {
+  @media (max-width: 935px) {
+    margin-bottom: 40px !important;
+  }
+
+  @media (min-width: 740px) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--container-min-width);
+  }
 }
 
 .containerContentBlock {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: var(--gap-4);
   align-self: stretch;
 }
@@ -95,10 +126,16 @@
   gap: 40px;
   align-self: stretch;
   text-align: start;
+
+  &>p {
+    @media (min-width: 740px) {
+      max-width: var(--container-min-width);
+      margin-inline: auto;
+    }
+  }
 }
 
-.overriddenProductStripeGap
-  div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
+.overwrittenProductStripeGap div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
   @media (min-width: 936px) and (max-width: 1267px) {
     gap: 24px;
   }
@@ -108,15 +145,17 @@
   }
 }
 
-.overriddenProductStripeGap div:has(> img) {
-  @media (max-width: 739px), (min-width: 936px) and (max-width: 1267px) {
+.overwrittenProductStripeGap div:has(> img) {
+
+  @media (max-width: 739px),
+  (min-width: 936px) and (max-width: 1267px) {
     gap: 8px;
     justify-content: center;
     align-items: center;
   }
 }
 
-.overriddenProductStripeGap img {
+.overwrittenProductStripeGap img {
   max-width: 100%;
   max-height: 54px;
   object-fit: contain;
@@ -138,7 +177,7 @@
   }
 }
 
-.overriddenLanguageSelector {
+.overwrittenLanguageSelector {
   grid-column: span 6;
 
   @media (min-width: 936px) {
@@ -146,9 +185,7 @@
   }
 }
 
-.overriddenFooterSocialLinks
-  div:has(> div:nth-of-type(3)):not(:has(> div:nth-of-type(4)))
-  > div:not(:last-child) {
+.overwrittenFooterSocialLinks div:has(> div:nth-of-type(3)):not(:has(> div:nth-of-type(4)))>div:not(:last-child) {
   @media (min-width: 740px) and (max-width: 935px) {
     grid-column: span 6;
     padding-bottom: 56px;

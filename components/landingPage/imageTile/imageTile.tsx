@@ -1,31 +1,29 @@
-import { FC } from 'react'
+import { CSSProperties, FC } from 'react'
 import { Typography } from '@components/build-assets/libraryExport'
 import styles from './imageTile.module.scss'
 
 interface ImageTileProps {
-  imageSrc: string
   title: string
-  aspectRatio: string
-  width: number
+  style: CSSProperties
+  screenSizeWidth: number
 }
 
-const ImageTile: FC<ImageTileProps> = ({
-  imageSrc,
-  title,
-  aspectRatio,
-  width,
-}) => {
+const setFontSize = (width: number): number => {
+  if (width > 1267) {
+    return 18
+  } else if (width > 739 && width < 1268) {
+    return 16
+  } else {
+    return 12
+  }
+}
+
+const ImageTile: FC<ImageTileProps> = ({ title, style, screenSizeWidth }) => {
+  const fontSize = setFontSize(screenSizeWidth)
   return (
-    <div
-      className={styles.imageTile}
-      style={{
-        backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.54) 100%), url(${imageSrc})`,
-        aspectRatio: aspectRatio,
-        width: `${width}px`,
-      }}
-    >
+    <div className={styles.imageTile} style={style}>
       <Typography
-        variant={'paragraph12'}
+        variant={`paragraph${fontSize}`}
         fontWeight={'bold'}
         className={styles.text}
       >
