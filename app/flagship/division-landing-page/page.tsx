@@ -64,7 +64,6 @@ import CategoryTiles from '@components/landingPage/categoryTiles/categoryTiles'
 import useScreenSize from '@utils/useScreenSize'
 import ImageTileCarousel from '@components/landingPage/imageTileCarousel/imageTileCarousel'
 import ImageGallery from '@components/landingPage/imageGallery/imageGallery'
-import ImageTile from '@components/landingPage/imageTile/imageTile'
 import TeaserTile from '@components/landingPage/teaserTile/teaserTile'
 
 const Languages = [
@@ -225,6 +224,47 @@ const Languages = [
 
 export default function Home() {
   const screenSize = useScreenSize()
+  const teaserTiles = [
+    <TeaserTile
+      key={'tile1'}
+      title={'Our current Thermomix® offers'}
+      paragraph={
+        'Receive in addition to the Thermomix® TM6 including versatile accessories and the Thermomix® guarantee'
+      }
+      imageProps={{
+        src: '/landingPage/teaserTile/thermomix-black.png',
+        alt: 'Thermomix',
+      }}
+      buttonLabel={'Register Online'}
+      screenSizeWidth={screenSize.width}
+    />,
+    <TeaserTile
+      key={'tile2'}
+      title={'Thermomix Friend®'}
+      paragraph={
+        'The accessory for your Thermomix® that provides even more cooking convenience and flexibility'
+      }
+      imageProps={{
+        src: '/landingPage/teaserTile/thermomix-friend.png',
+        alt: 'Thermomix Friend',
+      }}
+      buttonLabel={'Register Online'}
+      screenSizeWidth={screenSize.width}
+    />,
+    <TeaserTile
+      key={'tile3'}
+      title={'Cooking shows in the Vorwerk Stores '}
+      paragraph={
+        'You would like to finally get to know Thermomix® TM6 in person?'
+      }
+      imageProps={{
+        src: '/landingPage/teaserTile/thermomix-cooking.png',
+        alt: 'Thermomix Cooking',
+      }}
+      buttonLabel={'Register Online'}
+      screenSizeWidth={screenSize.width}
+    />,
+  ]
 
   return (
     <>
@@ -403,7 +443,10 @@ export default function Home() {
               </ButtonGroup>
             }
             headline={
-              <Headline strongColor="yellow">
+              <Headline
+                strongColor="yellow"
+                subline="Meet Your Kitchen Assistant"
+              >
                 <Typography component="h1">
                   Thermomix®
                   <br />
@@ -466,7 +509,7 @@ export default function Home() {
                   },
                   button: {
                     label: 'Explore more',
-                    size: 'small',
+                    size: screenSize.width > 935 ? 'large' : 'small',
                   },
                 },
                 {
@@ -480,7 +523,7 @@ export default function Home() {
                   },
                   button: {
                     label: 'Explore more',
-                    size: 'small',
+                    size: screenSize.width > 935 ? 'large' : 'small',
                   },
                 },
               ]}
@@ -536,7 +579,7 @@ export default function Home() {
                   title: 'Request Cooking Experience',
                   button: {
                     label: 'Book a demo',
-                    size: 'medium',
+                    size: screenSize.width > 935 ? 'large' : 'medium',
                   },
                 },
                 {
@@ -549,7 +592,7 @@ export default function Home() {
                   title: 'No gift idea yet? Discover the Thermomix® Specials',
                   button: {
                     label: 'Explore more',
-                    size: 'medium',
+                    size: screenSize.width > 935 ? 'large' : 'medium',
                   },
                 },
               ]}
@@ -588,51 +631,31 @@ export default function Home() {
           </div>
         </section>
         <ImageTileCarousel
-          slides={[
-            <ImageTile
-              key={'image-1'}
-              imageSrc={'/landingPage/imageTileCarousel/lasagne.png'}
-              title={'Lasagne bolognese'}
-              aspectRatio={'3/4'}
-              width={104}
-            />,
-            <ImageTile
-              key={'image-2'}
-              imageSrc={'/landingPage/imageTileCarousel/dalgona-coffee.png'}
-              title={'Dalgona Coffee'}
-              aspectRatio={'1/1'}
-              width={104}
-            />,
-            <ImageTile
-              key={'image-3'}
-              imageSrc={'/landingPage/imageTileCarousel/veggie-kebab.png'}
-              title={'Vegetable kebab'}
-              aspectRatio={'1/1'}
-              width={224}
-            />,
-            <ImageTile
-              key={'image-4'}
-              imageSrc={'/landingPage/imageTileCarousel/red-salsa.png'}
-              title={'Salsa roja'}
-              aspectRatio={'4/3'}
-              width={164}
-            />,
-            <ImageTile
-              key={'image-5'}
-              imageSrc={'/landingPage/carousel/result-10.jpg'}
-              title={'Sourdough bread'}
-              aspectRatio={'1/1'}
-              width={164}
-            />,
-            <ImageTile
-              key={'image-6'}
-              imageSrc={
-                '/landingPage/imageTileCarousel/orange-ginger-juice.png'
-              }
-              title={'Orange ginger juice'}
-              aspectRatio={'1/1'}
-              width={104}
-            />,
+          images={[
+            {
+              src: '/landingPage/imageTileCarousel/lasagne.png',
+              title: 'Lasagne bolognese',
+            },
+            {
+              src: '/landingPage/imageTileCarousel/dalgona-coffee.png',
+              title: 'Dalgona Coffee',
+            },
+            {
+              src: '/landingPage/imageTileCarousel/veggie-kebab.png',
+              title: 'Vegetable kebab',
+            },
+            {
+              src: '/landingPage/imageTileCarousel/red-salsa.png',
+              title: 'Salsa roja',
+            },
+            {
+              src: '/landingPage/carousel/result-10.jpg',
+              title: 'Sourdough bread',
+            },
+            {
+              src: '/landingPage/imageTileCarousel/orange-ginger-juice.png',
+              title: 'Orange ginger juice',
+            },
           ]}
           screenSize={screenSize}
         />
@@ -661,7 +684,12 @@ export default function Home() {
                     width="560"
                   />
                 </MediaContainer>
-                <Typography variant={'paragraph16'} fontWeight={'regular'}>
+                <Typography
+                  variant={
+                    screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
+                  }
+                  fontWeight={'regular'}
+                >
                   Due to a very rare occurrence of a problem when using the
                   Thermomix® TM6 measuring cup, we have released a new version
                   of the TM6 and TM5 software. In Cookidoo®, all recipes
@@ -686,17 +714,20 @@ export default function Home() {
           }
           headline={
             <Headline strongColor={'red'} spaceBelow={'default'}>
-              <Typography component={'h3'} variant={"h2"}>
+              <Typography component={'h3'} variant={'h2'}>
                 Try the
-                <br />
-                Thermomix® –
+                {screenSize.width < 740 && <br />}
+                <span> Thermomix® –</span>
                 <br />
                 <strong> Book a demo</strong>
               </Typography>
             </Headline>
           }
           paragraph={
-            <Typography variant={'paragraph16'} fontWeight={'regular'}>
+            <Typography
+              variant={screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'}
+              fontWeight={'regular'}
+            >
               Simply decide together with your personal contact whether you
               would like to experience the products live or online! We are
               flexible and well prepared and can fully respond to your wishes.
@@ -731,7 +762,7 @@ export default function Home() {
                   '/landingPage/categoryTile/avocado-toast.png',
                 title: 'The slightly different breakfast',
                 button: {
-                  label: 'Button',
+                  label: 'Explore the recipe',
                   size: 'medium',
                 },
               },
@@ -740,7 +771,7 @@ export default function Home() {
                 backgroundImageSrc: '/landingPage/categoryTile/guacamole.png',
                 title: 'Yes, you can!',
                 button: {
-                  label: 'Button',
+                  label: 'Explore the recipe',
                   size: 'medium',
                 },
               },
@@ -767,7 +798,12 @@ export default function Home() {
               </Headline>
             }
             paragraph={
-              <Typography variant={'paragraph16'} fontWeight={'regular'}>
+              <Typography
+                variant={
+                  screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
+                }
+                fontWeight={'regular'}
+              >
                 Due to a very rare occurrence of a problem when using the
                 Thermomix® TM6 measuring cup, we have released a new version of
                 the TM6 and TM5 software. In Cookidoo®, all recipes involved
@@ -799,56 +835,29 @@ export default function Home() {
                   <strong>be interested in</strong>
                 </Typography>
               </Headline>
-              <ImageGallery
-                slides={[
-                  <TeaserTile
-                    key={'tile1'}
-                    title={'Our current Thermomix® offers'}
-                    paragraph={
-                      'Receive in addition to the Thermomix® TM6 including versatile accessories and the Thermomix® guarantee'
-                    }
-                    imageProps={{
-                      src: '/landingPage/teaserTile/thermomix-black.png',
-                      alt: 'Thermomix',
-                    }}
-                    buttonLabel={'Register Online'}
-                  />,
-                  <TeaserTile
-                    key={'tile2'}
-                    title={'Thermomix Friend®'}
-                    paragraph={
-                      'The accessory for your Thermomix® that provides even more cooking convenience and flexibility'
-                    }
-                    imageProps={{
-                      src: '/landingPage/teaserTile/thermomix-friend.png',
-                      alt: 'Thermomix Friend',
-                    }}
-                    buttonLabel={'Register Online'}
-                  />,
-                  <TeaserTile
-                    key={'tile3'}
-                    title={'Cooking shows in the Vorwerk Stores '}
-                    paragraph={
-                      'You would like to finally get to know Thermomix® TM6 in person?'
-                    }
-                    imageProps={{
-                      src: '/landingPage/teaserTile/thermomix-cooking.png',
-                      alt: 'Thermomix Cooking',
-                    }}
-                    buttonLabel={'Register Online'}
-                  />,
-                ]}
-                screenSizes={screenSize}
-                noControl
-                imageTile
-                options={{ loop: false }}
-              />
             </GridItem>
+            {screenSize.width > 739 ? (
+              teaserTiles.map(teaser => (
+                <GridItem columns={4} key={teaser.key}>
+                  {teaser}
+                </GridItem>
+              ))
+            ) : (
+              <GridItem>
+                <ImageGallery
+                  slides={teaserTiles}
+                  screenSizes={screenSize}
+                  noControl
+                  imageTile
+                  options={{ loop: false }}
+                />
+              </GridItem>
+            )}
           </GridContainer>
         </section>
       </main>
       <footer>
-        <div className={styles.overriddenProductStripeGap}>
+        <div className={styles.overwrittenProductStripeGap}>
           <ProductStripe
             logo={<Vorwerk />}
             text="For over 130 years, our products have impressed millions of families with their superior, innovative technology and their proverbial long service life."
@@ -963,7 +972,7 @@ export default function Home() {
           </FooterLinks>
         </FooterSection>
         <FooterSection variant="spacingBottom" borderBottom={true}>
-          <div className={styles.overriddenFooterSocialLinks}>
+          <div className={styles.overwrittenFooterSocialLinks}>
             <FooterSocialLinks>
               <FooterSocialLinkBlock
                 header={
@@ -1010,7 +1019,7 @@ export default function Home() {
                   </a>,
                 ]}
               />
-              <div className={styles.overriddenLanguageSelector}>
+              <div className={styles.overwrittenLanguageSelector}>
                 <LanguageSelector
                   title={
                     <Typography variant="paragraph18" fontWeight="bold">

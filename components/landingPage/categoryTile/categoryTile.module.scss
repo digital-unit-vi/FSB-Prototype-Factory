@@ -100,6 +100,18 @@
     flex: 1 0 0;
     padding-left: 0;
     padding-top: var(--container-padding);
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        height: 184px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        height: 210px;
+    }
+
+    @media (min-width: 1580px) {
+        height: 234px;
+    }
 }
 
 .eyeCatcher {
