@@ -6,9 +6,7 @@ import {
   AdvisorUnassigned,
   Austria,
   Button,
-  ButtonGroup,
   Canada,
-  ContentBlock,
   China,
   Czechia,
   DropdownItem,
@@ -27,13 +25,11 @@ import {
   Header,
   HeaderButton,
   Headline,
-  Hero,
   Instagram,
   Ireland,
   Italy,
   LanguageSelector,
   Location,
-  MediaContainer,
   Menu,
   Mexico,
   NavItem,
@@ -46,6 +42,7 @@ import {
   Search,
   SectionSeparator,
   ShoppingCart,
+  Sort,
   Spain,
   Switzerland,
   Taiwan,
@@ -56,13 +53,16 @@ import {
   User,
   Vorwerk,
   Youtube,
+  Filter,
 } from '@components/build-assets/libraryExport'
 import Link from 'next/link'
 import styles from './page.module.scss'
 import CategoryTiles from '@components/landingPage/categoryTiles/categoryTiles'
 import useScreenSize from '@utils/useScreenSize'
-import ImageGallery from '@components/landingPage/imageGallery/imageGallery'
-import CategoryTile from '@components/landingPage/categoryTile/categoryTile'
+import Breadcrumb from '@components/landingPage/breadcrumb/breadcrumb'
+import SubNavigation from '@components/landingPage/subNavigation/subNavigation'
+import StandaloneSelect from '@components/landingPage/standaloneSelect/standaloneSelect'
+import ProductTileNew from '@components/landingPage/productTileNew/productTileNew'
 
 const Languages = [
   <DropdownItem>
@@ -225,13 +225,13 @@ export default function Home() {
 
   return (
     <>
-      <main className={styles.plp}>
+      <main className={styles.cdsp}>
         <Header
           advisor={
             <AdvisorDropdown buttonLabel="Advisor">
               <AdvisorDropdownMenuItem
                 avatar={
-                  <img alt="avatar" src="/library/images/avatars/avatar2.png" />
+                  <img alt="avatar" src="library/images/avatars/avatar2.png" />
                 }
                 href="#"
                 labels={
@@ -387,249 +387,298 @@ export default function Home() {
           backgroundType="transparent"
           stickyMode="normal"
         />
-        <Hero
-          cta={
-            <ButtonGroup alignment="center" layout="vertical">
-              <Button size="large" type="primary">
-                Book a Cooking Experience
-              </Button>
-              <Button size="large" type="tertiary">
-                Learn more
-              </Button>
-            </ButtonGroup>
-          }
-          headline={
-            <Headline strongColor="green">
-              <Typography component="h1">
-                Mealtimes
-                <br />
-                <strong>Reimagined</strong>
-              </Typography>
-            </Headline>
-          }
-          image={<img alt="Thermomix" src="/landingPage/hero/ds360-hero.png" />}
-          type={'colorFill'}
-          backgroundColor={'green'}
-        />
-        <section className={styles.prominentSection}>
+        <section className={styles.topHeadline}>
           <GridContainer>
-            <GridItem
-              columns={12}
-              className={`${styles.textCentered} ${styles.overwrittenMargin}`}
-            >
-              <Headline strongColor={'green'} spaceBelow={'additional'}>
-                <Typography component={'h2'}>
-                  The world’s
-                  <br />
-                  <strong>smartest kitchen</strong> – Thermomix® TM6
-                </Typography>
+            <GridItem columns={12}>
+              <Breadcrumb nodes={['Product', 'Online-Shop', 'Thermomix®']} />
+              <Headline>
+                <Typography component={'h1'}>Specials</Typography>
               </Headline>
             </GridItem>
           </GridContainer>
-          <div className={styles.tilesContainer}>
+        </section>
+        <section className={styles.sectionWithPadding}>
+          <GridContainer>
+            <GridItem columns={12}>
+              <SubNavigation
+                items={[
+                  'Storage',
+                  'Baking & Preparing',
+                  'Cutlery & Crockery',
+                  'Kitchen utensils',
+                  'Varoma® Rims',
+                ]}
+              />
+            </GridItem>
+          </GridContainer>
+          <div className={styles.overwrittenGridItemCol}>
             <GridContainer>
-              <GridItem>
-                <ImageGallery
-                  slides={[
-                    <CategoryTile
-                      key={'tile1'}
-                      size={'small'}
-                      backgroundColor={'grey'}
-                      imageProps={{
-                        src: '/landingPage/categoryTile/thermomix.png',
-                        alt: 'Thermomix',
-                      }}
-                      title={'Thermomix® TM6'}
-                    />,
-                    <CategoryTile
-                      key={'tile2'}
-                      size={'small'}
-                      backgroundColor={'grey'}
-                      imageProps={{
-                        src: '/landingPage/categoryTile/accessories.png',
-                        alt: 'Thermomix accessories',
-                      }}
-                      title={'Accessories'}
-                    />,
-                    <CategoryTile
-                      key={'tile3'}
-                      size={'small'}
-                      brandColor={'#23282A'}
-                      imageProps={{
-                        src: '/library/images/tm6.png',
-                        alt: 'Thermomix',
-                      }}
-                      title={'Special offers'}
-                    />,
-                  ]}
-                  options={{ loop: false, align: 'start' }}
-                  screenSizes={screenSize}
-                  containerWidth={{
-                    large: 704,
-                    extraLarge: 1120,
-                    extraExtraLarge: 1440,
+              <GridItem columns={12}>
+                <div className={styles.settingsContainer}>
+                  <StandaloneSelect
+                    icon={<Sort />}
+                    text={'Relevance'}
+                    items={['Item 1', 'Item 2', 'Item 3']}
+                  />
+                  <div className={styles.filter}>
+                    <Button
+                      type={'tertiary'}
+                      size={'large'}
+                      icon={<Filter />}
+                      iconPosition={'left'}
+                    >
+                      <Typography variant={'paragraph16'} fontWeight={'medium'}>
+                        Filter
+                      </Typography>
+                    </Button>
+                  </div>
+                </div>
+              </GridItem>
+              <GridItem columns={12}>
+                <ProductTileNew
+                  productImageSrc={'/landingPage/productTile/stoneware.png'}
+                  heading={'Stoneware Shape "Betty Roaster"'}
+                  price={{
+                    price: '1499,00 €',
                   }}
-                  noControl
+                  screenSizes={screenSize}
+                  color={'grey'}
+                />
+              </GridItem>
+              <GridItem columns={12}>
+                <ProductTileNew
+                  productImageSrc={'/landingPage/productTile/earthenware.png'}
+                  heading={'Earthenware mould'}
+                  price={{
+                    price: '1499,00 €',
+                  }}
+                  screenSizes={screenSize}
+                  color={'grey'}
+                />
+              </GridItem>
+              <GridItem columns={12}>
+                <ProductTileNew
+                  productImageSrc={'/landingPage/productTile/stoneware-2.png'}
+                  heading={'Stoneware Shape'}
+                  price={{
+                    price: '1499,00 €',
+                  }}
+                  screenSizes={screenSize}
+                  color={'grey'}
+                  eyeCatcherProps={{
+                    firstLine: 'Save',
+                    secondLine: '45%',
+                    thirdLine: false,
+                    backgroundColor: 'purple',
+                    size: 'large',
+                  }}
+                />
+              </GridItem>
+              <GridItem columns={12}>
+                <ProductTileNew
+                  productImageSrc={'/landingPage/productTile/stoneware-3.png'}
+                  heading={'Stoneware Shape "Anna Casserole Dish"'}
+                  price={{
+                    price: '1499,00 €',
+                  }}
+                  screenSizes={screenSize}
+                  color={'grey'}
+                />
+              </GridItem>
+              <GridItem columns={12}>
+                <ProductTileNew
+                  productImageSrc={'/landingPage/productTile/bowl.png'}
+                  heading={'Bowl GOURMET, 500 ml (6 pcs.)'}
+                  price={{
+                    price: '1499,00 €',
+                  }}
+                  screenSizes={screenSize}
+                  color={'grey'}
+                />
+              </GridItem>
+              <GridItem columns={12}>
+                <ProductTileNew
+                  productImageSrc={'/landingPage/productTile/serving-bowl.png'}
+                  heading={`L'Econome by Starck" serving bowl 18cm, 1.3l rosé`}
+                  price={{
+                    price: '1499,00 €',
+                  }}
+                  screenSizes={screenSize}
+                  color={'grey'}
+                />
+              </GridItem>
+              <GridItem columns={12}>
+                <ProductTileNew
+                  productImageSrc={
+                    '/landingPage/productTile/drinking-bottle-silver.png'
+                  }
+                  heading={'FLSK Silver Drinking Bottle'}
+                  price={{
+                    price: '1499,00 €',
+                  }}
+                  screenSizes={screenSize}
+                  color={'grey'}
+                />
+              </GridItem>
+              <GridItem columns={12}>
+                <ProductTileNew
+                  productImageSrc={
+                    '/landingPage/productTile/drinking-bottle-green.png'
+                  }
+                  heading={'Stoneware Shape "Betty Roaster"'}
+                  price={{
+                    price: '1499,00 €',
+                  }}
+                  screenSizes={screenSize}
+                  color={'grey'}
+                />
+              </GridItem>
+              <GridItem columns={12}>
+                <ProductTileNew
+                  productImageSrc={'/landingPage/productTile/earthenware.png'}
+                  heading={'Earthenware mould "flat baking dish Ben”'}
+                  price={{
+                    price: '1499,00 €',
+                  }}
+                  screenSizes={screenSize}
+                  color={'grey'}
+                />
+              </GridItem>
+              <GridItem columns={12}>
+                <ProductTileNew
+                  productImageSrc={'/landingPage/productTile/stoneware.png'}
+                  heading={'Stoneware Shape "Betty Roaster"'}
+                  price={{
+                    price: '1499,00 €',
+                  }}
+                  screenSizes={screenSize}
+                  color={'grey'}
+                />
+              </GridItem>
+              <GridItem columns={12}>
+                <ProductTileNew
+                  productImageSrc={'/landingPage/productTile/stoneware-2.png'}
+                  heading={'Stoneware Shape "Pizza Stone Paul”'}
+                  price={{
+                    price: '1499,00 €',
+                  }}
+                  screenSizes={screenSize}
+                  color={'grey'}
+                  eyeCatcherProps={{
+                    firstLine: 'Save',
+                    secondLine: '45%',
+                    thirdLine: false,
+                    backgroundColor: 'purple',
+                    size: 'large',
+                  }}
+                />
+              </GridItem>
+              <GridItem columns={12}>
+                <ProductTileNew
+                  productImageSrc={'/landingPage/productTile/stoneware-3.png'}
+                  heading={'Stoneware Shape "Anna Casserole Dish"'}
+                  price={{
+                    price: '1499,00 €',
+                  }}
+                  screenSizes={screenSize}
+                  color={'grey'}
                 />
               </GridItem>
             </GridContainer>
-            <CategoryTiles
-              categoryTilesData={[
-                {
-                  size: 'large',
-                  backgroundColor: 'grey',
-                  imageProps: {
-                    src: '/landingPage/categoryTile/cooking-books.png',
-                    alt: 'Cooking books',
-                  },
-                  title: 'Cooking books',
-                  button: {
-                    label: 'Explore more',
-                    size: screenSize.width > 936 ? 'large' : 'medium',
-                  },
-                  eyeCatcherProps: {
-                    firstLine: 'Only until',
-                    secondLine: '25.12.23',
-                    thirdLine: false,
-                    backgroundColor: 'purple',
-                    size: 'small',
-                  }
-                },
-                {
-                  size: 'large',
-                  backgroundImageSrc: '/landingPage/categoryTile/soup.png',
-                  title: 'Thousands of recipes – Endless inspiration',
-                  button: {
-                    label: 'Join Cookidoo® for free',
-                    size: screenSize.width > 936 ? 'large' : 'medium',
-                  },
-                },
-              ]}
-            />
           </div>
+          <GridContainer>
+            <GridItem columns={12} className={styles.centeredButton}>
+              <Button type={'primary'} size={'large'}>
+                Load more
+              </Button>
+            </GridItem>
+          </GridContainer>
         </section>
-        <section
-          className={styles.prominentSection}
-          style={{ backgroundColor: '#F3F5F3' }}
-        >
+        <section className={styles.sectionRadius}>
           <GridContainer>
             <GridItem
               columns={12}
               className={`${styles.textCentered} ${styles.overwrittenMargin}`}
             >
-              <Headline strongColor={'green'} spaceBelow={'additional'}>
+              <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component={'h2'}>
-                  Introducing the
-                  <br />
-                  <strong>Thermomix® TM6</strong>
+                  <strong>Related</strong> categories
                 </Typography>
               </Headline>
             </GridItem>
           </GridContainer>
-          <ContentBlock
-            media={
-              <MediaContainer aspectRatio={'16/9'}>
-                <iframe
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  frameBorder="0"
-                  height="315"
-                  src="https://www.youtube.com/embed/VDjQvbJ-YRo?si=XmRtpNB3nJzt04CP"
-                  title="YouTube video player"
-                  width="560"
-                />
-              </MediaContainer>
-            }
-            paragraph={
-              <Typography
-                fontWeight="regular"
-                variant={
-                  screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
-                }
-              >
-                This all-in-one kitchen appliance embodies versatility with over
-                20 different functions and modes, all in one sleek compact
-                machine. From meal planning, to ingredient shopping, to cooking,
-                the TM6 has your back so you can seamlessly create the perfect
-                meal, every time.
-              </Typography>
-            }
-            buttonGroup={
-              <ButtonGroup>
-                <Link href="#">
-                  <Button size="large" type="primary">
-                    Book a demo
-                  </Button>
-                </Link>
-                <Link href="#">
-                  <Button size="large" type="tertiary">
-                    Learn more
-                  </Button>
-                </Link>
-              </ButtonGroup>
-            }
+          <CategoryTiles
+            categoryTilesData={[
+              {
+                layout: 'horizontal',
+                size: 'medium',
+                backgroundColor: 'white',
+                title: 'Cooking books',
+                imageProps: {
+                  src: '/landingPage/categoryTile/cooking-books.png',
+                  alt: 'Cooking books',
+                },
+                button: {
+                  label: 'Explore more',
+                  size: 'small',
+                },
+              },
+              {
+                layout: 'horizontal',
+                size: 'medium',
+                backgroundColor: 'white',
+                title: 'Accessories',
+                imageProps: {
+                  src: '/landingPage/categoryTile/accessories.png',
+                  alt: 'Accessories',
+                },
+                button: {
+                  label: 'Explore more',
+                  size: 'small',
+                },
+              },
+            ]}
           />
         </section>
         <section className={styles.prominentSection}>
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin}`}
             >
-              <Headline spaceBelow={'additional'} strongColor={'blue'}>
+              <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component={'h2'}>
-                  Vorwerk Advisor -
+                  Interested in
                   <br />
-                  <strong> join our sales force</strong>
+                  Thermomix® <strong>products?</strong>
                 </Typography>
               </Headline>
             </GridItem>
           </GridContainer>
-          <ContentBlock
-            mediaAlignment="left"
-            media={
-              <img
-                src="/landingPage/contentBlock/thermomix-team.png"
-                alt="Woman eating sushi"
-              />
-            }
-            headline={
-              <Headline spaceBelow="default">
-                <Typography component="h3" fontWeight="bold">
-                  Turn your passion into a career with Thermomix®
-                </Typography>
-              </Headline>
-            }
-            paragraph={
-              <Typography
-                fontWeight="regular"
-                variant={
-                  screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
-                }
-              >
-                Whatever your home situation, the VB100 system brings the grab
-                and go flexibility you need. With this lightweight, quiet,
-                all-in-one solution, you can vacuum and mop simultaneously…and
-                that’s not all. Thanks to its broad range of attachments, it
-                also cleans carpets, hard floors and mattresses thoroughly and
-                efficiently.
-              </Typography>
-            }
-            buttonGroup={
-              <ButtonGroup>
-                <Link href="#">
-                  <Button size="large" type="primary">
-                    Join the Thermomix® team
-                  </Button>
-                </Link>
-                <Link href="#">
-                  <Button size="large" type="secondary">
-                    Button
-                  </Button>
-                </Link>
-              </ButtonGroup>
-            }
-          ></ContentBlock>
+          <CategoryTiles
+            categoryTilesData={[
+              {
+                size: 'large',
+                title: 'Lorem ipsum dolor sit amet consetetur',
+                backgroundImageSrc:
+                  '/landingPage/categoryTile/serving-chocolate-mousse-cropped.png',
+                button: {
+                  label: 'Book a demo',
+                  size: 'medium',
+                },
+              },
+              {
+                size: 'large',
+                title: 'Experience in the Vorwerk Store',
+                backgroundImageSrc:
+                  '/landingPage/categoryTile/vorwerk-worker.png',
+                button: {
+                  label: 'Find a store',
+                  size: 'medium',
+                },
+              },
+            ]}
+          />
         </section>
       </main>
       <footer>

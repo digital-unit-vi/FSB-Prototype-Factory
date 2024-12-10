@@ -70,12 +70,14 @@ function renderSlide(
     } else {
       if (slide.type === 'image') {
         return (
-          <img
-            src={slide.url}
-            alt={slide.alt}
+          <div
+            className={styles.image}
+            style={{
+              background: `url(${slide.url}) 50% / contain no-repeat #F3F5F3`,
+            }}
             key={slide.title}
             onClick={setModal}
-          />
+          ></div>
         )
       } else if (slide.type === 'video') {
         return (

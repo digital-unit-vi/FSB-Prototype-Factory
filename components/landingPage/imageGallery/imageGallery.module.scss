@@ -60,7 +60,7 @@
   justify-content: center;
   margin-top: 28px;
   grid-template-columns: repeat(3, 1fr);
-  
+
   @media (min-width: 1268px) {
     width: 100%;
     justify-content: space-between;
@@ -152,7 +152,7 @@
 }
 
 .imageGalleryParallax {
-  overflow: hidden;
+  // overflow: hidden;
   height: 100%;
 }
 
@@ -164,7 +164,15 @@
   width: 100%;
 }
 
-.imageGalleryParallaxLayer > video {
+.imageGalleryParallaxLayer:has(> .image) {
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+}
+
+.imageGalleryParallaxLayer>video {
   grid-column: span 1;
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -176,7 +184,7 @@
   object-fit: cover;
 }
 
-.overwriteMaxWidth > img {
+.overwriteMaxWidth>img {
   max-width: 100%;
 }
 

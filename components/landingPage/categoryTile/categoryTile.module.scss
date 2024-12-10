@@ -42,6 +42,13 @@
         aspect-ratio: 3/2;
         justify-content: flex-end;
     }
+
+    &.horizontal.large:not(.productImage) {
+        @media (max-width: 739px) {
+            height: 491px;
+            justify-content: flex-end;
+        }
+    }
 }
 
 .categoryTile.horizontal.productImage {
@@ -72,6 +79,14 @@
     padding: 0 var(--container-padding) var(--container-padding);
     gap: var(--container-padding);
     flex: 1;
+
+    &>a {
+        text-decoration: none;
+
+        &>button {
+            min-width: 128px;
+        }
+    }
 }
 
 .horizontal .content {
@@ -126,6 +141,7 @@
 .image {
     object-fit: cover;
     inset: 0;
+    height: 100%;
 }
 
 .imageWrapper {
@@ -133,18 +149,6 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-}
-
-.categoryTile.gradient::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
 }
 
 .textWrapper {

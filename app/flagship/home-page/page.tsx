@@ -223,7 +223,7 @@ export default function Home() {
 
   return (
     <>
-      <main>
+      <main className={styles.hp}>
         <Header
           advisor={
             <AdvisorDropdown buttonLabel="Advisor">
@@ -453,7 +453,7 @@ export default function Home() {
               />
             </GridItem>
           </GridContainer>
-          <div className={styles.contentBlock}>
+          <div className={styles.contentAndCategoryContainer}>
             <ContentBlock
               buttonGroup={
                 <ButtonGroup>
@@ -498,8 +498,6 @@ export default function Home() {
                 </Typography>
               }
             />
-          </div>
-          <div className={styles.categoryTilesContainer}>
             <CategoryTiles
               categoryTilesData={[
                 {
@@ -525,40 +523,146 @@ export default function Home() {
                   },
                 },
               ]}
-            ></CategoryTiles>
+            />
           </div>
         </section>
         <section className={styles.prominentSection}>
+          <div className={styles.headlineAndContentContainer}>
+            <GridContainer>
+              <GridItem
+                columns={12}
+                className={`${styles.textCentered} ${styles.overwrittenMargin}`}
+              >
+                <Headline
+                  spaceBelow="additional"
+                  strongColor="orange"
+                  children={
+                    <Typography component="h2">
+                      <span>
+                        Kobold VK7s always
+                        <br />
+                        clean, <strong>always simple</strong>
+                      </span>
+                    </Typography>
+                  }
+                />
+              </GridItem>
+            </GridContainer>
+            <div className={styles.contentAndCategoryContainer}>
+              <ContentBlock
+                mediaAlignment="right"
+                media={
+                  <img
+                    src="/landingPage/hero/hero-home-page.png"
+                    alt="Woman meditating"
+                  />
+                }
+                headline={
+                  <Headline spaceBelow="default">
+                    <Typography component="h3" fontWeight="bold">
+                      The cordless and flexible choice for your home
+                    </Typography>
+                  </Headline>
+                }
+                paragraph={
+                  <Typography
+                    fontWeight="regular"
+                    variant={
+                      screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
+                    }
+                  >
+                    Whatever your home situation, the VB100 system brings the
+                    grab and go flexibility you need. With this lightweight,
+                    quiet, all-in-one solution, you can vacuum and mop
+                    simultaneously…and that’s not all. Thanks to its broad range
+                    of attachments, it also cleans carpets, hard floors and
+                    mattresses thoroughly and efficiently.
+                  </Typography>
+                }
+                buttonGroup={
+                  <ButtonGroup>
+                    <Link href="#">
+                      <Button size="large" type="primary">
+                        Book a demo
+                      </Button>
+                    </Link>
+                    <Link href="#">
+                      <Button size="large" type="secondary">
+                        Buy now
+                      </Button>
+                    </Link>
+                  </ButtonGroup>
+                }
+              />
+              <CategoryTiles
+                categoryTilesData={[
+                  {
+                    size: 'large',
+                    backgroundImageSrc:
+                      '/landingPage/categoryTile/kobold-vk7.png',
+                    title: 'New Kobold VK7s – more powerful than ever',
+                    button: {
+                      label: 'Explore the product',
+                      size: screenSize.width > 935 ? 'large' : 'medium',
+                    },
+                  },
+                  {
+                    size: 'large',
+                    backgroundColor: 'white',
+                    imageProps: {
+                      src: '/landingPage/categoryTile/kobold.png',
+                      alt: 'Kobold',
+                    },
+                    title: 'The Kobold evolution arrived. Put us to the test',
+                    button: {
+                      label: 'Book a demo',
+                      size: screenSize.width > 935 ? 'large' : 'medium',
+                    },
+                    eyeCatcherProps: {
+                      firstLine: 'Only until',
+                      secondLine: '25.12.23',
+                      backgroundColor: 'purple',
+                      size: 'small',
+                    },
+                  },
+                ]}
+              />
+            </div>
+          </div>
+        </section>
+        <section className={styles.defaultSection}>
           <GridContainer>
             <GridItem columns={12} className={styles.textCentered}>
               <Headline
                 spaceBelow="additional"
-                strongColor="orange"
+                strongColor="blue"
                 children={
                   <Typography component="h2">
                     <span>
-                      Kobold VK7s always
+                      Vorwerk Advisor,
                       <br />
-                      clean, <strong>always simple</strong>
+                      a unique opportunity to
+                      <br />
+                      <strong> join our sales force</strong>
                     </span>
                   </Typography>
                 }
               />
             </GridItem>
           </GridContainer>
-          <div style={{ marginTop: '48px' }}>
+          <div className={styles.contentAndCategoryContainer}>
             <ContentBlock
-              mediaAlignment="right"
+              mediaAlignment="left"
               media={
                 <img
-                  src="/landingPage/hero/hero-home-page.png"
-                  alt="Woman meditating"
+                  src="/landingPage/contentBlock/thermomix-team.png"
+                  alt="Woman eating sushi"
                 />
               }
               headline={
                 <Headline spaceBelow="default">
                   <Typography component="h3" fontWeight="bold">
-                    The cordless and flexible choice for your home
+                    Turn your passion into a career with Thermomix®
                   </Typography>
                 </Headline>
               }
@@ -581,120 +685,17 @@ export default function Home() {
                 <ButtonGroup>
                   <Link href="#">
                     <Button size="large" type="primary">
-                      Book a demo
+                      Join the Thermomix® team
                     </Button>
                   </Link>
                   <Link href="#">
                     <Button size="large" type="secondary">
-                      Buy now
+                      Details
                     </Button>
                   </Link>
                 </ButtonGroup>
               }
             />
-          </div>
-          <div className={styles.categoryTilesContainer}>
-            <CategoryTiles
-              categoryTilesData={[
-                {
-                  size: 'large',
-                  backgroundImageSrc:
-                    '/landingPage/categoryTile/kobold-vk7.png',
-                  title: 'New Kobold VK7s – more powerful than ever',
-                  button: {
-                    label: 'Explore the product',
-                    size: screenSize.width > 935 ? 'large' : 'medium',
-                  },
-                },
-                {
-                  size: 'large',
-                  backgroundColor: 'white',
-                  imageProps: {
-                    src: '/landingPage/categoryTile/kobold.png',
-                    alt: 'Kobold',
-                  },
-                  title: 'The Kobold evolution arrived. Put us to the test',
-                  button: {
-                    label: 'Book a demo',
-                    size: screenSize.width > 935 ? 'large' : 'medium',
-                  },
-                  eyeCatcherProps: {
-                    firstLine: 'Only until',
-                    secondLine: '25.12.23',
-                    backgroundColor: 'purple',
-                    size: 'small',
-                  },
-                },
-              ]}
-            ></CategoryTiles>
-          </div>
-        </section>
-        <section className={styles.defaultSection}>
-          <GridContainer>
-            <GridItem columns={12} className={styles.textCentered}>
-              <Headline
-                spaceBelow="additional"
-                strongColor="blue"
-                children={
-                  <Typography component="h2">
-                    <span>
-                      Vorwerk Advisor,
-                      <br />
-                      a unique opportunity to
-                      <br />
-                      <strong>join our sales force</strong>
-                    </span>
-                  </Typography>
-                }
-              />
-            </GridItem>
-          </GridContainer>
-          <ContentBlock
-            mediaAlignment="left"
-            media={
-              <img
-                src="/landingPage/contentBlock/thermomix-team.png"
-                alt="Woman eating sushi"
-              />
-            }
-            headline={
-              <Headline spaceBelow="default">
-                <Typography component="h3" fontWeight="bold">
-                  Turn your passion into a career with Thermomix®
-                </Typography>
-              </Headline>
-            }
-            paragraph={
-              <Typography
-                fontWeight="regular"
-                variant={
-                  screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
-                }
-              >
-                Whatever your home situation, the VB100 system brings the grab
-                and go flexibility you need. With this lightweight, quiet,
-                all-in-one solution, you can vacuum and mop simultaneously…and
-                that’s not all. Thanks to its broad range of attachments, it
-                also cleans carpets, hard floors and mattresses thoroughly and
-                efficiently.
-              </Typography>
-            }
-            buttonGroup={
-              <ButtonGroup>
-                <Link href="#">
-                  <Button size="large" type="primary">
-                    Join the Thermomix® team
-                  </Button>
-                </Link>
-                <Link href="#">
-                  <Button size="large" type="secondary">
-                    Details
-                  </Button>
-                </Link>
-              </ButtonGroup>
-            }
-          ></ContentBlock>
-          <div style={{ marginTop: '64px' }}>
             <ContentBlock
               mediaAlignment="right"
               media={
@@ -739,7 +740,7 @@ export default function Home() {
                   </Link>
                 </ButtonGroup>
               }
-            ></ContentBlock>
+            />
           </div>
         </section>
       </main>

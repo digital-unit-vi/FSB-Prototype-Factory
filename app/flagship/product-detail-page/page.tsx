@@ -577,12 +577,19 @@ export default function Home() {
                     <ProductPurchaseOptions
                       price="1.399 €"
                       delivery={
-                        <Typography variant="paragraph16" fontWeight="regular">
-                          <span>
-                            Free delivery{' '}
-                            <strong>Wednesday, 26.06. – Friday, 27.06. </strong>
-                          </span>
-                        </Typography>
+                        <div className={styles.deliveryText}>
+                            <Typography
+                              variant="paragraph16"
+                              fontWeight="regular"
+                            >
+                              <span>
+                                Free delivery
+                              </span>
+                            </Typography>
+                            <Typography variant={"paragraph16"} fontWeight={"medium"}>
+                              <span> Wednesday, 26.06. – Friday, 27.06.</span>
+                            </Typography>
+                          </div>
                       }
                     />
                     <TrustBanner
@@ -760,7 +767,7 @@ export default function Home() {
                   <span>
                     Don’t just cook every day…
                     {screenSize.width > 739 && <br />}
-                    <strong>create wow every day</strong>
+                    <strong> create wow every day</strong>
                   </span>
                 </Typography>
               </Headline>
@@ -770,7 +777,7 @@ export default function Home() {
             <div className={styles.contentBlockLeft}>
               <ContentBlock
                 mediaAlignment={screenSize.width > 739 ? 'left' : undefined}
-                media={<video controls src="/library/videos/tm-1.mp4"></video>}
+                media={<video controls src="/library/videos/tm-1.mp4" poster={"/library/videos/tm-1-placeholder.png"}></video>}
                 headline={
                   <Headline spaceBelow={'default'}>
                     <Typography component={'h4'} fontWeight={'bold'}>
@@ -961,14 +968,14 @@ export default function Home() {
               columns={12}
               className={`${styles.textCentered} ${styles.overwrittenMargin} ${styles.overwrittenHeadline}`}
             >
-              <Headline spaceBelow={'additional'} strongColor={'blue'}>
-                <Typography component={'h2'}>
-                  Vorwerk Advisor,
-                  <br />a unique opportunity to
-                  {screenSize.width > 739 && <br />}
-                  <strong>join our sales force</strong>
-                </Typography>
-              </Headline>
+                <Headline spaceBelow={'additional'} strongColor={'blue'}>
+                  <Typography component={'h2'}>
+                    Vorwerk Advisor,
+                    <br />a unique opportunity to
+                    {screenSize.width > 739 && <br />}
+                    <strong> join our sales force</strong>
+                  </Typography>
+                </Headline>
             </GridItem>
           </GridContainer>
           <div className={styles.overwrittenContentBlockWidth}>

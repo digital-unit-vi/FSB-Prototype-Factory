@@ -79,10 +79,10 @@
 
 .gridProductHero>div {
     grid-template-rows: auto;
-    row-gap: var(--padding-5);
 
     @media (min-width: 936px) {
         column-gap: var(--gap-1);
+        row-gap: var(--padding-5);
     }
 }
 
@@ -108,6 +108,12 @@
 .gridItem4 {
     @media (min-width: 936px) {
         grid-row: 3 / 4;
+    }
+}
+
+.gridItem3, .gridItem4 {
+    @media (max-width: 935px) {
+        padding-top: 64px;
     }
 }
 
@@ -141,6 +147,10 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+.deliveryText > p {
+    display: inline;
 }
 
 .headingWithParagraph>h6 {

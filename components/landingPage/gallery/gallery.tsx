@@ -31,12 +31,14 @@ const Gallery: FC<GalleryImages> = ({ gallery }) => {
       <div className={styles.galleryContainer}>
         {gallery.map(media => {
           return media.type === 'image' ? (
-            <img
-              src={media.url}
-              alt={media.alt}
+            <div
+              className={styles.image}
+              style={{
+                background: `url(${media.url}) 50% / contain no-repeat #F3F5F3`,
+              }}
               key={media.title}
               onClick={() => setModalOpen(true)}
-            ></img>
+            ></div>
           ) : (
             <video
               src={media.url}

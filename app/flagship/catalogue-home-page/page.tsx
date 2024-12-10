@@ -58,9 +58,6 @@ import Link from 'next/link'
 import styles from './page.module.scss'
 import ImageGallery from '@components/landingPage/imageGallery/imageGallery'
 import useScreenSize from '@utils/useScreenSize'
-import IMAGE_CHP_1 from '@public/landingPage/teaser/teaser-thermomix.png'
-import IMAGE_CHP_2 from '@public/landingPage/teaser/teaser-kobold.png'
-import IMAGE_CHP_3 from '@public/landingPage/teaser/teaser-voucher.png'
 import CategoryTiles from '@components/landingPage/categoryTiles/categoryTiles'
 import CategoryTile from '@components/landingPage/categoryTile/categoryTile'
 import ProductTileNew from '@components/landingPage/productTileNew/productTileNew'
@@ -249,6 +246,7 @@ export default function Home() {
       price={{
         price: '24,00 €',
         lowestPrice: '45,00 €',
+        delivery: 'Delivery time 7-10 workdays',
       }}
       eyeCatcherProps={{
         firstLine: 'Save',
@@ -293,7 +291,9 @@ export default function Home() {
     />,
     <ProductTileNew
       key={'Kobold VK7'}
-      productImageSrc={'/landingPage/productTile/kobold-cordless-vacuum-cleaner.png'}
+      productImageSrc={
+        '/landingPage/productTile/kobold-cordless-vacuum-cleaner.png'
+      }
       heading={'Kobold VK7 Cordless Vacuum Cleaner'}
       price={{
         price: '979,00 €',
@@ -303,7 +303,23 @@ export default function Home() {
     />,
   ]
 
-  const teaserTileAssets = [IMAGE_CHP_1, IMAGE_CHP_2, IMAGE_CHP_3]
+  const teaserTileAssets = [
+    <img
+      key="image1"
+      src="/landingPage/teaser/teaser-thermomix.png"
+      alt="Thermomix"
+    />,
+    <img
+      key="image2"
+      src="/landingPage/teaser/teaser-kobold.png"
+      alt="Kobold"
+    />,
+    <img
+      key="image3"
+      src="/landingPage/teaser/teaser-voucher.png"
+      alt="Voucher"
+    />,
+  ]
 
   return (
     <>

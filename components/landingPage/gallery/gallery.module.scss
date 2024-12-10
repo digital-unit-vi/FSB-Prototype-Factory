@@ -5,14 +5,14 @@
     max-width: 1136px;
 }
 
-.galleryContainer > img:first-child {
+.galleryContainer > div:first-child {
     grid-column: span 2;
     aspect-ratio: 3/2 !important;
     min-width: 480px;
     width: 100%;
 }
 
-.galleryContainer > img:not(first-child), .galleryContainer > video:not(first-child) {
+.galleryContainer > div:not(:first-child):not(:last-child), .galleryContainer > video:not(:first-child) {
     grid-column: span 1;
     min-width: 232px;
     width: 100%;
