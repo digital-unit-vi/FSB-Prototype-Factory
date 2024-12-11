@@ -43,14 +43,13 @@ const CategoryTile: FC<CategoryTileProps> = ({
 
   return (
     <div
-      className={`${styles.categoryTile} ${styles[layout]} ${styles[containerPadding]} ${imageProps ? styles.productImage : ''} ${size === 'large' ? styles.large : ''}`}
+      className={`${styles.categoryTile} ${styles[layout]} ${styles[containerPadding]} ${imageProps ? styles.productImage : ''} ${styles[size]}`}
       style={{
         backgroundColor: brandColor ?? bkgColor,
-        backgroundImage: backgroundImageSrc
-          ? `linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.42) 65.01%, rgba(0, 0, 0, 0.4) 100%, rgba(0, 0, 0, 0.42) 100%), url(${backgroundImageSrc})`
+        background: backgroundImageSrc
+          ? `linear-gradient(180deg, rgba(0, 0, 0, 0.00) 49.98%, rgba(0, 0, 0, 0.40) 75.51%, rgba(0, 0, 0, 0.50) 100%), url(${backgroundImageSrc}) 50% / cover no-repeat`
           : undefined,
         color: backgroundImageSrc || brandColor ? '#FFFFFF' : '#23282A',
-        backgroundPosition: 'center',
       }}
     >
       {eyeCatcherProps && layout === 'vertical' && (
@@ -74,7 +73,11 @@ const CategoryTile: FC<CategoryTileProps> = ({
       <div className={styles.content}>
         <div className={styles.textWrapper}>
           <Typography
-            component={size === 'large' ? 'h3' : 'h5'}
+            component={
+              size === 'large' || (size === 'medium' && backgroundImageSrc)
+                ? 'h3'
+                : 'h5'
+            }
             fontWeight="bold"
           >
             {title}
