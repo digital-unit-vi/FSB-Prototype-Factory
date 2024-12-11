@@ -44,10 +44,16 @@
     }
 
     &.horizontal.large:not(.productImage) {
+        aspect-ratio: 16/9;
+
         @media (max-width: 739px) {
             height: 491px;
             justify-content: flex-end;
         }
+    }
+
+    &.horizontal.medium:not(.productImage) {
+        aspect-ratio: 2/1;
     }
 }
 
