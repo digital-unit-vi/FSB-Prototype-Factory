@@ -387,30 +387,65 @@ export default function Home() {
           backgroundType="transparent"
           stickyMode="normal"
         />
-        <Hero
-          cta={
-            <ButtonGroup alignment="center" layout="vertical">
-              <Button size="large" type="primary">
-                Book a Cooking Experience
-              </Button>
-              <Button size="large" type="tertiary">
-                Learn more
-              </Button>
-            </ButtonGroup>
-          }
-          headline={
-            <Headline strongColor="green">
-              <Typography component="h1">
-                Mealtimes
-                <br />
-                <strong>Reimagined</strong>
-              </Typography>
-            </Headline>
-          }
-          image={<img alt="Thermomix" src="/landingPage/hero/ds360-hero.png" />}
-          type={'colorFill'}
-          backgroundColor={'green'}
-        />
+        <div className={styles.hero}>
+          <Hero
+            cta={
+              <ButtonGroup alignment="center" layout="vertical">
+                <Button size="large" type="primary">
+                  Book a Cooking Experience
+                </Button>
+                <Button size="large" type="tertiary">
+                  Learn more
+                </Button>
+              </ButtonGroup>
+            }
+            headline={
+              <Headline strongColor="green" subline={'Starting from 1.499 €'}>
+                <Typography component="h1">
+                  Mealtimes
+                  <br />
+                  <strong>Reimagined</strong>
+                </Typography>
+              </Headline>
+            }
+            image={
+              <img alt="Thermomix" src="/landingPage/hero/ds360-hero.png" />
+            }
+            type={'colorFill'}
+            backgroundColor={'green'}
+          />
+          {screenSize.width > 935 && (
+            <div className={styles.overlayIconWrapper}>
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clipRule="evenodd"
+                  d="M31.2 31.3333V16.6667C31.2 12.6166 27.9764 9.33333 24 9.33333C20.0236 9.33333 16.8 12.6166 16.8 16.6667V31.3333C16.8 35.3834 20.0236 38.6667 24 38.6667C27.9764 38.6667 31.2 35.3834 31.2 31.3333ZM24 7.5C19.0294 7.5 15 11.6041 15 16.6667V31.3333C15 36.3959 19.0294 40.5 24 40.5C28.9706 40.5 33 36.3959 33 31.3333V16.6667C33 11.6041 28.9706 7.5 24 7.5Z"
+                  fill="#23282A"
+                />
+                <rect
+                  x="22"
+                  y="16"
+                  width="4"
+                  height="4"
+                  rx="2"
+                  fill="#23282A"
+                />
+              </svg>
+              <div className={styles.overlayIconText}>
+                <Typography variant="paragraph14" fontWeight="medium">
+                  <span>Scroll down</span>
+                </Typography>
+              </div>
+            </div>
+          )}
+        </div>
         <section className={styles.prominentSection}>
           <GridContainer>
             <GridItem
@@ -420,8 +455,10 @@ export default function Home() {
               <Headline strongColor={'green'} spaceBelow={'additional'}>
                 <Typography component={'h2'}>
                   The world’s
-                  <br />
-                  <strong>smartest kitchen</strong> – Thermomix® TM6
+                  {screenSize.width < 740 && <br />}
+                  <strong> smartest kitchen</strong> –
+                  {screenSize.width > 739 && <br />}
+                  <span> Thermomix® TM6</span>
                 </Typography>
               </Headline>
             </GridItem>
@@ -493,7 +530,7 @@ export default function Home() {
                     thirdLine: false,
                     backgroundColor: 'purple',
                     size: 'small',
-                  }
+                  },
                 },
                 {
                   size: 'large',
@@ -509,13 +546,12 @@ export default function Home() {
           </div>
         </section>
         <section
-          className={styles.prominentSection}
-          style={{ backgroundColor: '#F3F5F3' }}
+          className={`${styles.prominentSection} ${styles.sectionWithRadius}`}
         >
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overwrittenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin} ${styles.overwrittenHeadline}`}
             >
               <Headline strongColor={'green'} spaceBelow={'additional'}>
                 <Typography component={'h2'}>
@@ -526,55 +562,55 @@ export default function Home() {
               </Headline>
             </GridItem>
           </GridContainer>
-          <ContentBlock
-            media={
-              <MediaContainer aspectRatio={'16/9'}>
-                <iframe
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  frameBorder="0"
-                  height="315"
-                  src="https://www.youtube.com/embed/VDjQvbJ-YRo?si=XmRtpNB3nJzt04CP"
-                  title="YouTube video player"
-                  width="560"
-                />
-              </MediaContainer>
-            }
-            paragraph={
-              <Typography
-                fontWeight="regular"
-                variant={
-                  screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
-                }
-              >
-                This all-in-one kitchen appliance embodies versatility with over
-                20 different functions and modes, all in one sleek compact
-                machine. From meal planning, to ingredient shopping, to cooking,
-                the TM6 has your back so you can seamlessly create the perfect
-                meal, every time.
-              </Typography>
-            }
-            buttonGroup={
-              <ButtonGroup>
-                <Link href="#">
-                  <Button size="large" type="primary">
-                    Book a demo
-                  </Button>
-                </Link>
-                <Link href="#">
-                  <Button size="large" type="tertiary">
-                    Learn more
-                  </Button>
-                </Link>
-              </ButtonGroup>
-            }
-          />
+          <GridContainer>
+            <GridItem columns={12}>
+              <div className={styles.videoWithTextBlock}>
+                <MediaContainer aspectRatio={'16/9'}>
+                  <iframe
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    frameBorder="0"
+                    height="315"
+                    src="https://www.youtube.com/embed/VDjQvbJ-YRo?si=XmRtpNB3nJzt04CP"
+                    title="YouTube video player"
+                    width="560"
+                  />
+                </MediaContainer>
+                <div className={styles.textBlock}>
+                  <Typography
+                    fontWeight="regular"
+                    variant={
+                      screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
+                    }
+                  >
+                    This all-in-one kitchen appliance embodies versatility with
+                    over 20 different functions and modes, all in one sleek
+                    compact machine. From meal planning, to ingredient shopping,
+                    to cooking, the TM6 has your back so you can seamlessly
+                    create the perfect meal, every time.
+                  </Typography>
+                  <ButtonGroup>
+                    <Link href="#">
+                      <Button size="large" type="primary">
+                        Book a demo
+                      </Button>
+                    </Link>
+                    <Link href="#">
+                      <Button size="large" type="tertiary">
+                        Learn more
+                      </Button>
+                    </Link>
+                  </ButtonGroup>
+                </div>
+              </div>
+            </GridItem>
+          </GridContainer>
         </section>
         <section className={styles.prominentSection}>
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin} ${styles.overwrittenHeadline}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'blue'}>
                 <Typography component={'h2'}>
@@ -633,7 +669,7 @@ export default function Home() {
         </section>
       </main>
       <footer>
-        <div className={styles.overriddenProductStripeGap}>
+        <div className={styles.overwrittenProductStripeGap}>
           <ProductStripe
             logo={<Vorwerk />}
             text="For over 130 years, our products have impressed millions of families with their superior, innovative technology and their proverbial long service life."
@@ -748,7 +784,7 @@ export default function Home() {
           </FooterLinks>
         </FooterSection>
         <FooterSection variant="spacingBottom" borderBottom={true}>
-          <div className={styles.overriddenFooterSocialLinks}>
+          <div className={styles.overwrittenFooterSocialLinks}>
             <FooterSocialLinks>
               <FooterSocialLinkBlock
                 header={
@@ -795,7 +831,7 @@ export default function Home() {
                   </a>,
                 ]}
               />
-              <div className={styles.overriddenLanguageSelector}>
+              <div className={styles.overwrittenLanguageSelector}>
                 <LanguageSelector
                   title={
                     <Typography variant="paragraph18" fontWeight="bold">
