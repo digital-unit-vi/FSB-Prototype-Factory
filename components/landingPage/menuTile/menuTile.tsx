@@ -8,6 +8,7 @@ import { FC } from 'react'
 
 interface MenuTileProps {
   type: 'category' | 'cta'
+  screenSizeWidth: number
   label?: string
   title?: string
   cta?: string
@@ -19,6 +20,7 @@ interface MenuTileProps {
 
 const MenuTile: FC<MenuTileProps> = ({
   type,
+  screenSizeWidth,
   label,
   title,
   cta,
@@ -44,7 +46,10 @@ const MenuTile: FC<MenuTileProps> = ({
           </>
         ) : (
           <>
-            <Typography component={'h3'} fontWeight={'bold'}>
+            <Typography
+              variant={screenSizeWidth < 740 ? 'h3' : 'h4'}
+              fontWeight={'bold'}
+            >
               {title}
             </Typography>
             <Typography

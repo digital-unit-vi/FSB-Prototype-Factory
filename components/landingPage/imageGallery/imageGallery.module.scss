@@ -157,7 +157,15 @@
   width: 100%;
 }
 
-.imageGalleryParallaxLayer > video {
+.imageGalleryParallaxLayer:has(> .image), .imageGalleryParallaxLayer:has(> a) {
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+}
+
+.imageGalleryParallaxLayer>video {
   grid-column: span 1;
   width: 100%;
   aspect-ratio: 1 / 1;

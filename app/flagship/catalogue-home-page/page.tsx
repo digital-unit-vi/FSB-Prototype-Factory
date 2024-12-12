@@ -802,6 +802,7 @@ export default function Home() {
                 }}
                 noControl={true}
                 setHeight={true}
+                overflow
               />
             </GridItem>
           </GridContainer>

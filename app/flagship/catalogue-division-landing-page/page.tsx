@@ -252,6 +252,56 @@ export default function Home() {
     />,
   ]
 
+  const menuTiles = [
+    <MenuTile
+      key={'menu1'}
+      type={'category'}
+      screenSizeWidth={screenSize.width}
+      label={'Thermomix® TM6'}
+      imageProps={{
+        src: '/landingPage/menuTile/thermomix.png',
+        alt: 'Thermomix',
+      }}
+    />,
+    <MenuTile
+      key={'menu2'}
+      type={'category'}
+      screenSizeWidth={screenSize.width}
+      label={'Cooking books'}
+      imageProps={{
+        src: '/landingPage/menuTile/cooking-books.png',
+        alt: 'Cooking books',
+      }}
+    />,
+    <MenuTile
+      key={'menu3'}
+      type={'category'}
+      screenSizeWidth={screenSize.width}
+      label={'Specials'}
+      imageProps={{
+        src: '/library/images/thermomix-specials.png',
+        alt: 'Thermomix specials',
+      }}
+    />,
+    <MenuTile
+      key={'menu4'}
+      type={'category'}
+      screenSizeWidth={screenSize.width}
+      label={'Accessories'}
+      imageProps={{
+        src: '/landingPage/menuTile/accessories.png',
+        alt: 'Thermomix accessories',
+      }}
+    />,
+    <MenuTile
+      key={'menu5'}
+      type={'cta'}
+      screenSizeWidth={screenSize.width}
+      title={'Products for your device'}
+      cta={'Find now'}
+    />,
+  ]
+
   return (
     <>
       <main className={styles.cdlp}>
@@ -427,71 +477,36 @@ export default function Home() {
             </GridItem>
           </GridContainer>
           <GridContainer>
-            <GridItem columns={12}>
-              <ImageGallery
-                slides={[
-                  <MenuTile
-                    key={'menu1'}
-                    type={'category'}
-                    label={'Thermomix® TM6'}
-                    imageProps={{
-                      src: '/landingPage/menuTile/thermomix.png',
-                      alt: 'Thermomix',
-                    }}
-                  />,
-                  <MenuTile
-                    key={'menu2'}
-                    type={'category'}
-                    label={'Cooking books'}
-                    imageProps={{
-                      src: '/landingPage/menuTile/cooking-books.png',
-                      alt: 'Cooking books',
-                    }}
-                  />,
-                  <MenuTile
-                    key={'menu3'}
-                    type={'category'}
-                    label={'Specials'}
-                    imageProps={{
-                      src: '/library/images/thermomix-specials.png',
-                      alt: 'Thermomix specials',
-                    }}
-                  />,
-                  <MenuTile
-                    key={'menu4'}
-                    type={'category'}
-                    label={'Accessories'}
-                    imageProps={{
-                      src: '/landingPage/menuTile/accessories.png',
-                      alt: 'Thermomix accessories',
-                    }}
-                  />,
-                  <MenuTile
-                    key={'menu5'}
-                    type={'cta'}
-                    title={'Products for your device'}
-                    cta={'Find now'}
-                  />,
-                ]}
-                screenSizes={screenSize}
-                noControl
-                options={{ loop: false }}
-                imageTile
-                containerWidth={{
-                  large: 734,
-                  extraLarge: 1120,
-                  extraExtraLarge: 1440,
-                }}
-                overflow
-              />
-            </GridItem>
+            {screenSize.width < 936 ? (
+              <GridItem columns={12}>
+                <ImageGallery
+                  slides={menuTiles}
+                  screenSizes={screenSize}
+                  noControl
+                  options={{ loop: false }}
+                  imageTile
+                  setHeight
+                  overflow
+                />
+              </GridItem>
+            ) : (
+              menuTiles.map((tile, ind) => (
+                <GridItem
+                  className={styles.menuTileGridItem}
+                  startL={2 + ind * 2}
+                  endL={4 + ind * 2}
+                >
+                  {tile}
+                </GridItem>
+              ))
+            )}
           </GridContainer>
         </section>
         <section className={styles.prominentSection}>
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin} ${styles.overwrittenHeadline}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component={'h2'}>
@@ -502,23 +517,33 @@ export default function Home() {
           </GridContainer>
           <div className={styles.tilesSliderContainer}>
             <GridContainer>
-              <GridItem columns={12}>
-                <ImageGallery
-                  slides={productTileAssets}
-                  options={{ loop: false, align: 'start' }}
-                  screenSizes={screenSize}
-                  containerWidth={{
-                    large: 704,
-                    extraLarge: 1120,
-                    extraExtraLarge: 1440,
-                  }}
-                  noControl={true}
-                />
-              </GridItem>
+              {screenSize.width < 740 ? (
+                <GridItem columns={12}>
+                  <ImageGallery
+                    slides={productTileAssets}
+                    options={{ loop: false, align: 'start' }}
+                    screenSizes={screenSize}
+                    containerWidth={{
+                      large: 704,
+                      extraLarge: 1120,
+                      extraExtraLarge: 1440,
+                    }}
+                    noControl={true}
+                    overflow
+                  />
+                </GridItem>
+              ) : (
+                productTileAssets.map(tile => (
+                  <GridItem columns={4}>{tile}</GridItem>
+                ))
+              )}
             </GridContainer>
             <GridContainer>
               <GridItem columns={12}>
-                <Button type={'primary'} size={'medium'}>
+                <Button
+                  type={'primary'}
+                  size={screenSize.width < 936 ? 'medium' : 'large'}
+                >
                   All new Thermomix® products
                 </Button>
               </GridItem>
@@ -529,7 +554,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin} ${styles.overwrittenHeadline}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component={'h2'}>
@@ -550,7 +575,7 @@ export default function Home() {
                 },
                 button: {
                   label: 'Explore more',
-                  size: 'medium',
+                  size: screenSize.width < 936 ? 'medium' : 'large',
                 },
               },
               {
@@ -560,7 +585,7 @@ export default function Home() {
                   '/landingPage/categoryTile/thermomix-black-long.png',
                 button: {
                   label: 'Button',
-                  size: 'medium',
+                  size: screenSize.width < 936 ? 'medium' : 'large',
                 },
                 eyeCatcherProps: {
                   firstLine: 'Only until',
@@ -577,7 +602,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin} ${styles.overwrittenHeadline}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component={'h2'}>
@@ -588,23 +613,33 @@ export default function Home() {
           </GridContainer>
           <div className={styles.tilesSliderContainer}>
             <GridContainer>
-              <GridItem columns={12}>
-                <ImageGallery
-                  slides={productTileAssets}
-                  options={{ loop: false, align: 'start' }}
-                  screenSizes={screenSize}
-                  containerWidth={{
-                    large: 704,
-                    extraLarge: 1120,
-                    extraExtraLarge: 1440,
-                  }}
-                  noControl={true}
-                />
-              </GridItem>
+              {screenSize.width < 740 ? (
+                <GridItem columns={12}>
+                  <ImageGallery
+                    slides={productTileAssets}
+                    options={{ loop: false, align: 'start' }}
+                    screenSizes={screenSize}
+                    containerWidth={{
+                      large: 704,
+                      extraLarge: 1120,
+                      extraExtraLarge: 1440,
+                    }}
+                    noControl={true}
+                    overflow
+                  />
+                </GridItem>
+              ) : (
+                productTileAssets.map(tile => (
+                  <GridItem columns={4}>{tile}</GridItem>
+                ))
+              )}
             </GridContainer>
             <GridContainer>
               <GridItem columns={12}>
-                <Button type={'primary'} size={'medium'}>
+                <Button
+                  type={'primary'}
+                  size={screenSize.width < 936 ? 'medium' : 'large'}
+                >
                   All new Thermomix® products
                 </Button>
               </GridItem>
@@ -615,7 +650,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin} ${styles.overwrittenHeadline}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component={'h2'}>
@@ -635,7 +670,7 @@ export default function Home() {
                   '/landingPage/categoryTile/serving-chocolate-mousse-cropped.png',
                 button: {
                   label: 'Book a demo',
-                  size: 'medium',
+                  size: screenSize.width < 936 ? 'medium' : 'large',
                 },
               },
               {
@@ -645,7 +680,7 @@ export default function Home() {
                   '/landingPage/categoryTile/vorwerk-worker.png',
                 button: {
                   label: 'Find a store',
-                  size: 'medium',
+                  size: screenSize.width < 936 ? 'medium' : 'large',
                 },
               },
             ]}
@@ -653,7 +688,7 @@ export default function Home() {
         </section>
       </main>
       <footer>
-        <div className={styles.overriddenProductStripeGap}>
+        <div className={styles.overwrittenProductStripeGap}>
           <ProductStripe
             logo={<Vorwerk />}
             text="For over 130 years, our products have impressed millions of families with their superior, innovative technology and their proverbial long service life."
@@ -768,7 +803,7 @@ export default function Home() {
           </FooterLinks>
         </FooterSection>
         <FooterSection variant="spacingBottom" borderBottom={true}>
-          <div className={styles.overriddenFooterSocialLinks}>
+          <div className={styles.overwrittenFooterSocialLinks}>
             <FooterSocialLinks>
               <FooterSocialLinkBlock
                 header={
@@ -815,7 +850,7 @@ export default function Home() {
                   </a>,
                 ]}
               />
-              <div className={styles.overriddenLanguageSelector}>
+              <div className={styles.overwrittenLanguageSelector}>
                 <LanguageSelector
                   title={
                     <Typography variant="paragraph18" fontWeight="bold">
