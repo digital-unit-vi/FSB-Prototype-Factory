@@ -84,9 +84,16 @@ const FinancingSelect = ({
 
     const handleMouseDown = (e: MouseEvent) => {
       const target = e.target as Node
-      if (isOpen && selectRef.current && !selectRef.current.contains(target)) {
-        setAnimationState('fadeOut')
-        setOpen(false)
+      if (selectRef.current) {
+        const rect = selectRef.current.getBoundingClientRect()
+
+        // Check if the click is within the bounds of the scrollbar
+        const isOnScrollbar = e.clientX > rect.right || e.clientY > rect.bottom
+
+        if (isOpen && !isOnScrollbar && !selectRef.current.contains(target)) {
+          setAnimationState('fadeOut')
+          setOpen(false)
+        }
       }
     }
 

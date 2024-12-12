@@ -40,6 +40,10 @@
   gap: 16px;
 }
 
+.accordionCaret {
+  cursor: pointer;
+}
+
 .accordionCaret>svg {
   width: 24px;
   aspect-ratio: 1/1;
