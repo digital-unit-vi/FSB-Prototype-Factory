@@ -39,7 +39,8 @@ export default function ProductTileNew({
       : screenSizes.width > 935
         ? 'medium'
         : 'small'
-
+  const headingFontSize =
+    screenSizes.width > 1569 ? 18 : screenSizes.width > 935 ? 16 : 14
   return (
     <div
       className={styles.componentWrapper}
@@ -58,10 +59,7 @@ export default function ProductTileNew({
         </MediaContainer>
       </div>
       <div className={styles.contentWrapper}>
-        <Typography
-          variant={`paragraph${screenSizes.width > 1267 ? 16 : 14}`}
-          fontWeight={'bold'}
-        >
+        <Typography variant={`paragraph${headingFontSize}`} fontWeight={'bold'}>
           {heading}
         </Typography>
         <div className={styles.priceAndButton}>

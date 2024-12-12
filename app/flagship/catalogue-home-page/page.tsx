@@ -672,7 +672,7 @@ export default function Home() {
                   <GridItem columns={12}>
                     <CategoryTile
                       layout={'horizontal'}
-                      size={'large'}
+                      size={'2/3'}
                       title={'Robot'}
                       backgroundImageSrc={'/landingPage/categoryTile/robot.png'}
                     />
@@ -790,6 +790,7 @@ export default function Home() {
                 }}
                 noControl={true}
                 setHeight={true}
+                overflow
               />
             </GridItem>
           </GridContainer>
