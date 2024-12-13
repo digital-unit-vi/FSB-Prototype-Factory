@@ -1,38 +1,54 @@
-import styles from './subNavigation.module.scss'
-import { Typography } from '@components/build-assets/libraryExport'
 import { FC, useState } from 'react'
 import ImageGallery from '../imageGallery/imageGallery'
+import SubNavigationButton from './subNavigationButton'
+import styles from './subNavigation.module.scss'
 
 interface SubNavigationProps {
   items: string[]
+  screenSizeWidth: number
 }
 
-const SubNavigation: FC<SubNavigationProps> = ({ items }) => {
+const SubNavigation: FC<SubNavigationProps> = ({ items, screenSizeWidth }) => {
   const [activeIndex, setActiveIndex] = useState('')
 
   const handleItemClick = (index: string) => {
+    if (activeIndex === index) {
+      setActiveIndex('')
+      return
+    }
     setActiveIndex(index)
   }
 
   return (
-    <ImageGallery
-      slides={items.map(item => (
-        <button
-          key={item}
-          type="button"
-          className={`${styles.subNavigationItem} ${activeIndex === item ? styles.active : ''}`}
-          onClick={() => handleItemClick(item)}
-        >
-          <Typography variant={'paragraph16'} fontWeight={'regular'}>
-            {item}
-          </Typography>
-        </button>
-      ))}
-      noControl
-      imageTile
-      options={{ loop: false }}
-      overflow
-    />
+    <>
+      {screenSizeWidth < 936 ? (
+        <ImageGallery
+          slides={items.map(item => (
+            <SubNavigationButton
+              key={item}
+              item={item}
+              isActive={activeIndex === item}
+              onClick={() => handleItemClick(item)}
+            />
+          ))}
+          noControl
+          imageTile
+          options={{ loop: false }}
+          overflow
+        />
+      ) : (
+        <div className={styles.subNavigationWrapper}>
+          {items.map(item => (
+            <SubNavigationButton
+              key={item}
+              item={item}
+              isActive={activeIndex === item}
+              onClick={() => handleItemClick(item)}
+            />
+          ))}
+        </div>
+      )}
+    </>
   )
 }
 
