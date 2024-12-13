@@ -18,6 +18,7 @@ import {
   FooterSocialLinkBlock,
   FooterSocialLinks,
   France,
+  GalleryView,
   Germany,
   Greece,
   GridContainer,
@@ -54,6 +55,8 @@ import {
   Vorwerk,
   Youtube,
   Filter,
+  InteractiveIcon,
+  ListView,
 } from '@components/build-assets/libraryExport'
 import Link from 'next/link'
 import styles from './page.module.scss'
@@ -222,6 +225,12 @@ const Languages = [
 
 export default function Home() {
   const screenSize = useScreenSize()
+  const buttonSize =
+    screenSize.width > 1267
+      ? 'large'
+      : screenSize.width > 935
+        ? 'medium'
+        : 'small'
 
   return (
     <>
@@ -408,6 +417,7 @@ export default function Home() {
                   'Kitchen utensils',
                   'Varoma® Rims',
                 ]}
+                screenSizeWidth={screenSize.width}
               />
             </GridItem>
           </GridContainer>
@@ -418,8 +428,18 @@ export default function Home() {
                   <StandaloneSelect
                     icon={<Sort />}
                     text={'Relevance'}
-                    items={['Item 1', 'Item 2', 'Item 3']}
+                    items={[
+                      'dropdownlistItem',
+                      'dropdownlistItem',
+                      'dropdownlistItem',
+                    ]}
                   />
+                  {screenSize.width > 739 && (
+                    <div className={styles.viewContainer}>
+                      <InteractiveIcon icon={<GalleryView />} />
+                      <InteractiveIcon icon={<ListView />} disabled />
+                    </div>
+                  )}
                   <div className={styles.filter}>
                     <Button
                       type={'tertiary'}
@@ -434,7 +454,7 @@ export default function Home() {
                   </div>
                 </div>
               </GridItem>
-              <GridItem columns={12}>
+              <GridItem columns={screenSize.width < 740 ? 12 : 8}>
                 <ProductTileNew
                   productImageSrc={'/landingPage/productTile/stoneware.png'}
                   heading={'Stoneware Shape "Betty Roaster"'}
@@ -445,7 +465,7 @@ export default function Home() {
                   color={'grey'}
                 />
               </GridItem>
-              <GridItem columns={12}>
+              <GridItem columns={screenSize.width < 740 ? 12 : 4}>
                 <ProductTileNew
                   productImageSrc={'/landingPage/productTile/earthenware.png'}
                   heading={'Earthenware mould'}
@@ -456,7 +476,7 @@ export default function Home() {
                   color={'grey'}
                 />
               </GridItem>
-              <GridItem columns={12}>
+              <GridItem columns={screenSize.width < 740 ? 12 : 4}>
                 <ProductTileNew
                   productImageSrc={'/landingPage/productTile/stoneware-2.png'}
                   heading={'Stoneware Shape'}
@@ -474,7 +494,7 @@ export default function Home() {
                   }}
                 />
               </GridItem>
-              <GridItem columns={12}>
+              <GridItem columns={screenSize.width < 740 ? 12 : 4}>
                 <ProductTileNew
                   productImageSrc={'/landingPage/productTile/stoneware-3.png'}
                   heading={'Stoneware Shape "Anna Casserole Dish"'}
@@ -485,7 +505,7 @@ export default function Home() {
                   color={'grey'}
                 />
               </GridItem>
-              <GridItem columns={12}>
+              <GridItem columns={screenSize.width < 740 ? 12 : 4}>
                 <ProductTileNew
                   productImageSrc={'/landingPage/productTile/bowl.png'}
                   heading={'Bowl GOURMET, 500 ml (6 pcs.)'}
@@ -496,7 +516,7 @@ export default function Home() {
                   color={'grey'}
                 />
               </GridItem>
-              <GridItem columns={12}>
+              <GridItem columns={screenSize.width < 740 ? 12 : 4}>
                 <ProductTileNew
                   productImageSrc={'/landingPage/productTile/serving-bowl.png'}
                   heading={`L'Econome by Starck" serving bowl 18cm, 1.3l rosé`}
@@ -507,7 +527,7 @@ export default function Home() {
                   color={'grey'}
                 />
               </GridItem>
-              <GridItem columns={12}>
+              <GridItem columns={screenSize.width < 740 ? 12 : 4}>
                 <ProductTileNew
                   productImageSrc={
                     '/landingPage/productTile/drinking-bottle-silver.png'
@@ -520,7 +540,7 @@ export default function Home() {
                   color={'grey'}
                 />
               </GridItem>
-              <GridItem columns={12}>
+              <GridItem columns={screenSize.width < 740 ? 12 : 8}>
                 <ProductTileNew
                   productImageSrc={
                     '/landingPage/productTile/drinking-bottle-green.png'
@@ -533,7 +553,7 @@ export default function Home() {
                   color={'grey'}
                 />
               </GridItem>
-              <GridItem columns={12}>
+              <GridItem columns={screenSize.width < 740 ? 12 : 4}>
                 <ProductTileNew
                   productImageSrc={'/landingPage/productTile/earthenware.png'}
                   heading={'Earthenware mould "flat baking dish Ben”'}
@@ -544,7 +564,7 @@ export default function Home() {
                   color={'grey'}
                 />
               </GridItem>
-              <GridItem columns={12}>
+              <GridItem columns={screenSize.width < 740 ? 12 : 4}>
                 <ProductTileNew
                   productImageSrc={'/landingPage/productTile/stoneware.png'}
                   heading={'Stoneware Shape "Betty Roaster"'}
@@ -555,7 +575,7 @@ export default function Home() {
                   color={'grey'}
                 />
               </GridItem>
-              <GridItem columns={12}>
+              <GridItem columns={screenSize.width < 740 ? 12 : 4}>
                 <ProductTileNew
                   productImageSrc={'/landingPage/productTile/stoneware-2.png'}
                   heading={'Stoneware Shape "Pizza Stone Paul”'}
@@ -573,7 +593,7 @@ export default function Home() {
                   }}
                 />
               </GridItem>
-              <GridItem columns={12}>
+              <GridItem columns={screenSize.width < 740 ? 12 : 4}>
                 <ProductTileNew
                   productImageSrc={'/landingPage/productTile/stoneware-3.png'}
                   heading={'Stoneware Shape "Anna Casserole Dish"'}
@@ -620,7 +640,7 @@ export default function Home() {
                 },
                 button: {
                   label: 'Explore more',
-                  size: 'small',
+                  size: buttonSize,
                 },
               },
               {
@@ -634,7 +654,7 @@ export default function Home() {
                 },
                 button: {
                   label: 'Explore more',
-                  size: 'small',
+                  size: buttonSize,
                 },
               },
             ]}
@@ -659,12 +679,12 @@ export default function Home() {
             categoryTilesData={[
               {
                 size: 'large',
-                title: 'Lorem ipsum dolor sit amet consetetur',
+                title: 'Request a Cooking Experience',
                 backgroundImageSrc:
                   '/landingPage/categoryTile/serving-chocolate-mousse-cropped.png',
                 button: {
                   label: 'Book a demo',
-                  size: 'medium',
+                  size: screenSize.width < 936 ? 'medium' : 'large',
                 },
               },
               {
@@ -674,7 +694,7 @@ export default function Home() {
                   '/landingPage/categoryTile/vorwerk-worker.png',
                 button: {
                   label: 'Find a store',
-                  size: 'medium',
+                  size: screenSize.width < 936 ? 'medium' : 'large',
                 },
               },
             ]}
