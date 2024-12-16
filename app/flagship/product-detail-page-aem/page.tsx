@@ -65,6 +65,9 @@ import AdvisorTile from '@components/landingPage/advisorTile/advisorTile'
 import useScreenSize from '@utils/useScreenSize'
 import CategoryTiles from '@components/landingPage/categoryTiles/categoryTiles'
 import CategoryTile from '@components/landingPage/categoryTile/categoryTile'
+import GalleryModalCarousel from '@components/landingPage/galleryModalCarousel/galleryModalCarousel'
+import ProductHeroAEM from '@components/landingPage/productHeroAEM/productHeroAEM'
+import { GalleryItem } from '@components/landingPage/gallery/gallery'
 
 const Languages = [
   <DropdownItem>
@@ -243,6 +246,33 @@ const imagesCarousel = [
     src="/landingPage/carousel/pdp-4.png"
     alt="Thermomix left side"
   />,
+]
+
+const imagesForThumbnails: GalleryItem[] = [
+  {
+    type: 'image',
+    url: '/landingPage/hero/ds360-hero.png',
+    alt: 'DS360',
+    title: 'DS360'
+  },
+  {
+    type: 'image',
+    url: '/landingPage/carousel/pdp-aem-2.png',
+    alt: 'DS360 right side',
+    title: 'DS360 right side'
+  },
+  {
+    type: 'image',
+    url: '/landingPage/carousel/pdp-aem-3.png',
+    alt: 'DS360 left side',
+    title: 'DS360 left side'
+  },
+  {
+    type: 'image',
+    url: '/landingPage/carousel/pdp-aem-4.png',
+    alt: 'DS360 back side',
+    title: 'DS360 back side'
+  }
 ]
 
 const categoryTilesAssets = [
@@ -444,99 +474,21 @@ export default function Home() {
             backgroundType="transparent"
             stickyMode="normal"
           />
-          <div className={styles.productHeroContainer}>
-            <GridContainer>
-              <GridItem columns={12}>
-                <ImageGallery
-                  slides={imagesCarousel}
-                  imageMaxWidth={'280px'}
-                  options={{ loop: false }}
-                />
-              </GridItem>
-              <GridItem columns={12}>
-                <div className={styles.productDetailsContainer}>
-                  <div className={styles.headingAndRating}>
-                    <Typography component="h4" fontWeight="bold">
-                      <span>Thermomix® TM6</span>
-                    </Typography>
-                    <Rating
-                      rate={5}
-                      counter={42}
-                      size={'large'}
-                      iconColors={{
-                        full: '#23282A',
-                        empty: 'rgb(196, 196, 196)',
-                      }}
-                      showCounter={true}
-                      showAmount={true}
-                    ></Rating>
-                  </div>
-                  <List
-                    items={[
-                      'Delicious dishes prepared quickly and easily',
-                      'Thousands of recipes with guaranteed success directly on your device',
-                      'A real all-rounder: Numerous cooking functions and modes',
-                    ]}
-                    decoratorType="check"
-                    size="medium"
-                  />
-                  <AdvisorTile
-                    imageSrc={'/landingPage/contentBlock/kobold-advisor.png'}
-                    text={'Try the Thermomix® live for free'}
-                  />
-                  <div className={styles.containerPrice}>
-                    <Button type="primary" size="large">
-                      Add to cart — 1.399 €
-                    </Button>
-                    <div className={styles.additionalInfoPrice}>
-                      <Typography
-                        variant={'paragraph12'}
-                        fontWeight={'regular'}
-                      >
-                        incl. 19% VAT
-                      </Typography>
-                      <Typography
-                        variant={'paragraph12'}
-                        fontWeight={'regular'}
-                      >
-                        ·
-                      </Typography>
-                      <Typography
-                        variant={'paragraph12'}
-                        fontWeight={'regular'}
-                      >
-                        free shipping
-                      </Typography>
-                      <Typography
-                        variant={'paragraph12'}
-                        fontWeight={'regular'}
-                      >
-                        ·
-                      </Typography>
-                      <Typography
-                        variant={'paragraph12'}
-                        fontWeight={'regular'}
-                      >
-                        delivery time 7-10 workdays
-                      </Typography>
-                    </div>
-                  </div>
-                </div>
-              </GridItem>
-            </GridContainer>
-          </div>
+          <ProductHeroAEM screenSize={screenSize} imagesForImageGallery={imagesCarousel} imagesForThumbnails={imagesForThumbnails} />
         </div>
         <section className={styles.prominentSection}>
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.overriddenMargin} ${styles.textCentered}`}
+              className={`${styles.overwrittenMargin} ${styles.textCentered}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component={'h2'}>
                   The world’s
                   <br />
-                  <strong> smartest kitchen</strong> – Thermomix® TM6
+                  <strong> smartest kitchen</strong> – 
+                  <br />
+                   Thermomix® TM6
                 </Typography>
               </Headline>
             </GridItem>
@@ -557,7 +509,7 @@ export default function Home() {
                 />
               </GridItem>
             </GridContainer>
-            <div className={styles.overriddenGap}>
+            <div className={styles.overwrittenGap}>
               <CategoryTiles
                 categoryTilesData={[
                   {
@@ -587,24 +539,24 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section
-          className={styles.prominentSection}
-          style={{ backgroundColor: '#F3F5F3' }}
-        >
+        <section className={`${styles.prominentSection} ${styles.sectionWithRadius}`}>
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.overriddenMargin} ${styles.textCentered}`}
+              className={`${styles.overwrittenMargin} ${styles.textCentered}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component={'h2'}>
-                  Introducing the <strong>Thermomix® TM6</strong>
+                  Introducing the
+                  <br />
+                  <strong> Thermomix® TM6</strong>
                 </Typography>
               </Headline>
             </GridItem>
           </GridContainer>
-          <ContentBlock
-            media={
+          <div className={styles.overwrittenRowGap}>
+          <GridContainer>
+            <GridItem columns={12}>
               <MediaContainer aspectRatio={'16/9'}>
                 <iframe
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -616,23 +568,17 @@ export default function Home() {
                   width="560"
                 />
               </MediaContainer>
-            }
-            paragraph={
-              <Typography
-                fontWeight="regular"
-                variant={
-                  screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
-                }
-              >
-                This all-in-one kitchen appliance embodies versatility with over
+            </GridItem>
+            <GridItem columns={12} columnsL={8} startL={3} endL={11}>
+                <div className={styles.textBlockContainer}>
+                  <Typography variant={screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'} fontWeight={"regular"}>
+                  This all-in-one kitchen appliance embodies versatility with over
                 20 different functions and modes, all in one sleek compact
                 machine. From meal planning, to ingredient shopping, to cooking,
                 the TM6 has your back so you can seamlessly create the perfect
                 meal, every time.
-              </Typography>
-            }
-            buttonGroup={
-              <ButtonGroup>
+                  </Typography>
+                  <ButtonGroup>
                 <Link href="#">
                   <Button size="large" type="primary">
                     Book a demo
@@ -644,14 +590,16 @@ export default function Home() {
                   </Button>
                 </Link>
               </ButtonGroup>
-            }
-          />
+                </div>
+            </GridItem>
+          </GridContainer>
+          </div>
         </section>
         <section className={styles.prominentSection}>
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'blue'}>
                 <Typography component={'h2'}>
@@ -710,7 +658,7 @@ export default function Home() {
         </section>
       </main>
       <footer>
-        <div className={styles.overriddenProductStripeGap}>
+        <div className={styles.overwrittenProductStripeGap}>
           <ProductStripe
             logo={<Vorwerk />}
             text="For over 130 years, our products have impressed millions of families with their superior, innovative technology and their proverbial long service life."
@@ -825,7 +773,7 @@ export default function Home() {
           </FooterLinks>
         </FooterSection>
         <FooterSection variant="spacingBottom" borderBottom={true}>
-          <div className={styles.overriddenFooterSocialLinks}>
+          <div className={styles.overwrittenFooterSocialLinks}>
             <FooterSocialLinks>
               <FooterSocialLinkBlock
                 header={
@@ -872,7 +820,7 @@ export default function Home() {
                   </a>,
                 ]}
               />
-              <div className={styles.overriddenLanguageSelector}>
+              <div className={styles.overwrittenLanguageSelector}>
                 <LanguageSelector
                   title={
                     <Typography variant="paragraph18" fontWeight="bold">
