@@ -14,6 +14,7 @@ interface TeaserTileProps {
     alt: string
   }
   buttonLabel: string
+  screenSizeWidth: number
 }
 
 const TeaserTile: FC<TeaserTileProps> = ({
@@ -21,6 +22,7 @@ const TeaserTile: FC<TeaserTileProps> = ({
   paragraph,
   imageProps,
   buttonLabel,
+  screenSizeWidth
 }) => {
   return (
     <div className={styles.teaserTileContainer}>
@@ -29,14 +31,14 @@ const TeaserTile: FC<TeaserTileProps> = ({
       </MediaContainer>
       <div className={styles.contentContainer}>
         <div className={styles.textContainer}>
-          <Typography variant={'paragraph16'} fontWeight={'bold'}>
+          <Typography variant={screenSizeWidth > 1267 ? 'paragraph18' : 'paragraph16'} fontWeight={'bold'}>
             {title}
           </Typography>
-          <Typography variant={'paragraph16'} fontWeight={'regular'}>
+          <Typography variant={screenSizeWidth > 1267 ? 'paragraph18' : 'paragraph16'} fontWeight={'regular'}>
             {paragraph}
           </Typography>
         </div>
-        <Button type={'tertiary'} size={'medium'}>
+        <Button type={'tertiary'} size={screenSizeWidth > 1267 ? 'large' : 'medium'}>
           {buttonLabel}
         </Button>
       </div>
