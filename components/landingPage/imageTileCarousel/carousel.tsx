@@ -29,7 +29,7 @@ const Carousel: FC<CarouselProps> = ({ images, screenSize }) => {
     Math.floor(images.length / 2) - 1,
   ) // Start with middle image
   const [containerWidth, setContainerWidth] = useState(0)
-  const carouselContainerRef = useRef(null)
+  const carouselContainerRef = useRef<HTMLDivElement | null>(null);
   const startX = useRef(0)
   const endX = useRef(0)
   const dimensions = setDimensions(screenSize.width)
@@ -81,20 +81,20 @@ const Carousel: FC<CarouselProps> = ({ images, screenSize }) => {
     }
   }
 
-  const handleTouchStart = e => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     startX.current = e.touches[0].clientX
   }
 
-  const handleTouchEnd = e => {
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
     endX.current = e.changedTouches[0].clientX
     handleSwipe()
   }
 
-  const handleMouseDown = e => {
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     startX.current = e.clientX
   }
 
-  const handleMouseUp = e => {
+  const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>) => {
     endX.current = e.clientX
     handleSwipe()
   }
