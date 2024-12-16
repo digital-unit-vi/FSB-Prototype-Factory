@@ -117,7 +117,6 @@ const Carousel: FC<CarouselProps> = ({ images, screenSize }) => {
       onTouchEnd={handleTouchEnd}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}
       ref={carouselContainerRef}
     >
       <div
