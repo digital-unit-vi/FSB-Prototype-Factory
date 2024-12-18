@@ -326,16 +326,40 @@ export default function Home() {
 
       if (
         productHeroContainerRect.top <= 0 &&
-        productHeroContainerRect.bottom > productDetailsContainerRect.bottom
+        productHeroContainerRect.bottom > productDetailsContainerRect.bottom &&
+        productDetailsContainerRect.height < window.innerHeight
       ) {
         setProductDetailsContainerStyles({
           position: 'sticky',
           top: '0',
         })
       } else if (
+        productDetailsContainerRect.height > window.innerHeight &&
+        productHeroContainerRect.top <= 0 &&
+        Math.round(productHeroContainerRect.bottom) >
+          Math.round(productDetailsContainerRect.bottom) &&
+        Math.round(productDetailsContainerRect.bottom) <= window.innerHeight
+      ) {
+        const parentWidth =
+          productDetailsContainer.parentElement?.getBoundingClientRect().width
+        if (parentWidth) {
+          setProductDetailsContainerStyles({
+            position: 'fixed',
+            bottom: '0',
+            width: `${parentWidth}px`,
+          })
+        } else {
+          setProductDetailsContainerStyles({
+            position: 'fixed',
+            bottom: '0',
+          })
+        }
+      } else if (
         productHeroContainerRect.top <= 0 &&
         productDetailsContainerRect.top <= 0 &&
-        productHeroContainerRect.bottom <= productDetailsContainerRect.bottom
+        Math.round(productHeroContainerRect.bottom) <=
+          Math.round(productDetailsContainerRect.bottom) &&
+        productHeroContainerRect.bottom <= window.innerHeight
       ) {
         setProductDetailsContainerStyles({
           position: 'absolute',
@@ -608,12 +632,20 @@ export default function Home() {
                     <ProductPurchaseOptions
                       price="1.399 €"
                       delivery={
-                        <Typography variant="paragraph16" fontWeight="regular">
-                          <span>
-                            Free delivery{' '}
-                            <strong>Wednesday, 26.06. – Friday, 27.06. </strong>
-                          </span>
-                        </Typography>
+                        <div className={styles.deliveryText}>
+                          <Typography
+                            variant="paragraph16"
+                            fontWeight="regular"
+                          >
+                            <span>Free delivery</span>
+                          </Typography>
+                          <Typography
+                            variant={'paragraph16'}
+                            fontWeight={'medium'}
+                          >
+                            <span> Wednesday, 26.06. – Friday, 27.06.</span>
+                          </Typography>
+                        </div>
                       }
                     />
                     <TrustBanner
@@ -801,7 +833,13 @@ export default function Home() {
             <div className={styles.contentBlockLeft}>
               <ContentBlock
                 mediaAlignment={screenSize.width > 739 ? 'left' : undefined}
-                media={<video controls src="/library/videos/tm-1.mp4" poster={"/library/videos/tm-1-placeholder.png"}></video>}
+                media={
+                  <video
+                    controls
+                    src="/library/videos/tm-1.mp4"
+                    poster={'/library/videos/tm-1-placeholder.png'}
+                  ></video>
+                }
                 headline={
                   <Headline spaceBelow={'default'}>
                     <Typography component={'h4'} fontWeight={'bold'}>
@@ -992,16 +1030,14 @@ export default function Home() {
               columns={12}
               className={`${styles.textCentered} ${styles.overwrittenMargin} ${styles.overwrittenHeadline}`}
             >
-              <div className={styles.overriddenMargin}>
-                <Headline spaceBelow={'additional'} strongColor={'blue'}>
-                  <Typography component={'h2'}>
-                    Vorwerk Advisor,
-                    <br />a unique opportunity to
-                    {screenSize.width > 739 && <br />}
-                    <strong> join our sales force</strong>
-                  </Typography>
-                </Headline>
-              </div>
+              <Headline spaceBelow={'additional'} strongColor={'blue'}>
+                <Typography component={'h2'}>
+                  Vorwerk Advisor,
+                  <br />a unique opportunity to
+                  {screenSize.width > 739 && <br />}
+                  <strong> join our sales force</strong>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <div className={styles.overwrittenContentBlockWidth}>
