@@ -492,24 +492,22 @@ export default function Home() {
             </Headline>
           </GridItem>
         </GridContainer>
-        <div className={styles.overriddenGridCol}>
+        <div className={styles.overwrittenGridCol}>
           <GridContainer>
             <GridItem columns={6}>
               <CategoryTile
-                size={'small'}
+                size={screenSize.width > 739 ? 'medium' : 'small'}
                 title={'Cooking with Thermomix®'}
-                backgroundImageSrc={
-                  '/landingPage/categoryTile/cooking-with-thermomix.png'
-                }
+                backgroundImageSrc={`/landingPage/categoryTile/cooking-with-thermomix${screenSize.width > 739 ? '-m' : ''}.png`}
+                layout={screenSize.width > 739 ? 'horizontal' : 'vertical'}
               />
             </GridItem>
             <GridItem columns={6}>
               <CategoryTile
-                size={'small'}
+                size={screenSize.width > 739 ? 'medium' : 'small'}
                 title={'Cleaning with Kobold'}
-                backgroundImageSrc={
-                  '/landingPage/categoryTile/cleaning-with-kobold.png'
-                }
+                backgroundImageSrc={`/landingPage/categoryTile/cleaning-with-kobold${screenSize.width > 739 ? '-m' : ''}.png`}
+                layout={screenSize.width > 739 ? 'horizontal' : 'vertical'}
               />
             </GridItem>
           </GridContainer>
@@ -518,7 +516,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component={'h2'}>
@@ -541,8 +539,9 @@ export default function Home() {
                     }
                     button={{
                       label: 'Explore the product',
-                      size: 'medium',
+                      size: screenSize.width < 936 ? 'medium' : 'large',
                     }}
+                    layout={screenSize.width < 740 ? 'vertical' : 'horizontal'}
                   />
                 </GridItem>
               </GridContainer>
@@ -558,7 +557,7 @@ export default function Home() {
                     title: 'Specials',
                     button: {
                       label: 'Explore more',
-                      size: 'medium',
+                      size: screenSize.width < 936 ? 'medium' : 'large',
                     },
                   },
                   {
@@ -571,7 +570,7 @@ export default function Home() {
                     title: 'Cooking books',
                     button: {
                       label: 'Explore more',
-                      size: 'medium',
+                      size: screenSize.width < 936 ? 'medium' : 'large',
                     },
                   },
                 ]}
@@ -579,11 +578,8 @@ export default function Home() {
             </div>
             <div>
               <GridContainer>
-                <GridItem
-                  columns={12}
-                  className={`${styles.textCentered} ${styles.overriddenMarginHeadline}`}
-                >
-                  <Headline spaceBelow={'default'} strongColor={'green'}>
+                <GridItem columns={12} className={`${styles.textCentered}`}>
+                  <Headline spaceBelow={'additional'} strongColor={'green'}>
                     <Typography component={'h3'}>
                       Our Thermomix® <strong>topseller</strong>
                     </Typography>
@@ -592,23 +588,32 @@ export default function Home() {
               </GridContainer>
               <div className={styles.tilesSliderContainer}>
                 <GridContainer>
-                  <GridItem columns={12}>
-                    <ImageGallery
-                      slides={categoryTilesAssets}
-                      options={{ loop: false, align: 'start' }}
-                      screenSizes={screenSize}
-                      containerWidth={{
-                        large: 704,
-                        extraLarge: 1120,
-                        extraExtraLarge: 1440,
-                      }}
-                      noControl={true}
-                    />
-                  </GridItem>
+                  {screenSize.width < 740 ? (
+                    <GridItem columns={12}>
+                      <ImageGallery
+                        slides={categoryTilesAssets}
+                        options={{ loop: false, align: 'start' }}
+                        screenSizes={screenSize}
+                        containerWidth={{
+                          large: 704,
+                          extraLarge: 1120,
+                          extraExtraLarge: 1440,
+                        }}
+                        noControl={true}
+                      />
+                    </GridItem>
+                  ) : (
+                    categoryTilesAssets.map(tile => (
+                      <GridItem columns={4}>{tile}</GridItem>
+                    ))
+                  )}
                 </GridContainer>
                 <GridContainer>
                   <GridItem columns={12}>
-                    <Button type={'primary'} size={'medium'}>
+                    <Button
+                      type={'primary'}
+                      size={screenSize.width < 1268 ? 'medium' : 'large'}
+                    >
                       All Thermomix® products
                     </Button>
                   </GridItem>
@@ -621,7 +626,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component={'h2'}>
@@ -641,17 +646,18 @@ export default function Home() {
                       '/landingPage/categoryTile/battery-vacuum-cleaner.png'
                     }
                     button={{
-                      size: 'medium',
+                      size: screenSize.width < 936 ? 'medium' : 'large',
                       label: 'Explore the product',
                     }}
+                    layout={screenSize.width < 740 ? 'vertical' : 'horizontal'}
                   />
                 </GridItem>
               </GridContainer>
               <div
-                className={`${styles.overriddenGridCol} ${styles.overriddenGridItemCol}`}
+                className={`${styles.overwrittenGridCol} ${styles.overwrittenGridItemCol}`}
               >
                 <GridContainer>
-                  <GridItem columns={6}>
+                  <GridItem columns={4}>
                     <CategoryTile
                       layout={'horizontal'}
                       size={'small'}
@@ -659,7 +665,7 @@ export default function Home() {
                       backgroundImageSrc={'/landingPage/teaser/teaser4.png'}
                     />
                   </GridItem>
-                  <GridItem columns={6}>
+                  <GridItem columns={4}>
                     <CategoryTile
                       layout={'horizontal'}
                       size={'small'}
@@ -669,10 +675,10 @@ export default function Home() {
                       }
                     />
                   </GridItem>
-                  <GridItem columns={12}>
+                  <GridItem columns={8}>
                     <CategoryTile
                       layout={'horizontal'}
-                      size={'large'}
+                      size={'2/3'}
                       title={'Robot'}
                       backgroundImageSrc={'/landingPage/categoryTile/robot.png'}
                     />
@@ -691,7 +697,7 @@ export default function Home() {
                     title: 'Attachments',
                     button: {
                       label: 'Explore more',
-                      size: 'medium',
+                      size: screenSize.width < 936 ? 'medium' : 'large',
                     },
                     eyeCatcherProps: {
                       firstLine: 'Only until',
@@ -711,7 +717,7 @@ export default function Home() {
                     title: 'Accessories',
                     button: {
                       label: 'Explore more',
-                      size: 'medium',
+                      size: screenSize.width < 936 ? 'medium' : 'large',
                     },
                     eyeCatcherProps: {
                       firstLine: 'Only until',
@@ -726,10 +732,7 @@ export default function Home() {
             </div>
             <div>
               <GridContainer>
-                <GridItem
-                  columns={12}
-                  className={`${styles.textCentered} ${styles.overriddenMarginHeadline}`}
-                >
+                <GridItem columns={12} className={`${styles.textCentered}`}>
                   <Headline spaceBelow={'additional'} strongColor={'green'}>
                     <Typography component={'h3'}>
                       Our Kobold <strong>topseller</strong>
@@ -739,23 +742,32 @@ export default function Home() {
               </GridContainer>
               <div className={styles.tilesSliderContainer}>
                 <GridContainer>
-                  <GridItem columns={12}>
-                    <ImageGallery
-                      slides={productTileAssets}
-                      options={{ loop: false, align: 'start' }}
-                      screenSizes={screenSize}
-                      containerWidth={{
-                        large: 704,
-                        extraLarge: 1120,
-                        extraExtraLarge: 1440,
-                      }}
-                      noControl={true}
-                    />
-                  </GridItem>
+                  {screenSize.width < 740 ? (
+                    <GridItem columns={12}>
+                      <ImageGallery
+                        slides={productTileAssets}
+                        options={{ loop: false, align: 'start' }}
+                        screenSizes={screenSize}
+                        containerWidth={{
+                          large: 704,
+                          extraLarge: 1120,
+                          extraExtraLarge: 1440,
+                        }}
+                        noControl={true}
+                      />
+                    </GridItem>
+                  ) : (
+                    productTileAssets.map(tile => (
+                      <GridItem columns={4}>{tile}</GridItem>
+                    ))
+                  )}
                 </GridContainer>
                 <GridContainer>
                   <GridItem columns={12}>
-                    <Button type={'primary'} size={'medium'}>
+                    <Button
+                      type={'primary'}
+                      size={screenSize.width < 1268 ? 'medium' : 'large'}
+                    >
                       All Kobold products
                     </Button>
                   </GridItem>
@@ -768,7 +780,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component={'h2'}>
@@ -798,7 +810,7 @@ export default function Home() {
           <GridContainer>
             <GridItem
               columns={12}
-              className={`${styles.textCentered} ${styles.overriddenMargin}`}
+              className={`${styles.textCentered} ${styles.overwrittenMargin}`}
             >
               <Headline spaceBelow={'additional'} strongColor={'green'}>
                 <Typography component={'h2'}>
@@ -869,7 +881,7 @@ export default function Home() {
         </section>
       </main>
       <footer>
-        <div className={styles.overriddenProductStripeGap}>
+        <div className={styles.overwrittenProductStripeGap}>
           <ProductStripe
             logo={<Vorwerk />}
             text="For over 130 years, our products have impressed millions of families with their superior, innovative technology and their proverbial long service life."
@@ -984,7 +996,7 @@ export default function Home() {
           </FooterLinks>
         </FooterSection>
         <FooterSection variant="spacingBottom" borderBottom={true}>
-          <div className={styles.overriddenFooterSocialLinks}>
+          <div className={styles.overwrittenFooterSocialLinks}>
             <FooterSocialLinks>
               <FooterSocialLinkBlock
                 header={
@@ -1031,7 +1043,7 @@ export default function Home() {
                   </a>,
                 ]}
               />
-              <div className={styles.overriddenLanguageSelector}>
+              <div className={styles.overwrittenLanguageSelector}>
                 <LanguageSelector
                   title={
                     <Typography variant="paragraph18" fontWeight="bold">
