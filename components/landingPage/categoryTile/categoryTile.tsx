@@ -46,10 +46,13 @@ const CategoryTile: FC<CategoryTileProps> = ({
       className={`${styles.categoryTile} ${styles[layout]} ${styles[containerPadding]} ${imageProps ? styles.productImage : ''} ${styles[size]}`}
       style={{
         backgroundColor: brandColor ?? bkgColor,
-        background: backgroundImageSrc
-          ? `linear-gradient(180deg, rgba(0, 0, 0, 0.00) 49.98%, rgba(0, 0, 0, 0.40) 75.51%, rgba(0, 0, 0, 0.50) 100%), url(${backgroundImageSrc}) 50% / cover no-repeat`
+        backgroundImage: backgroundImageSrc
+          ? `linear-gradient(180deg, rgba(0, 0, 0, 0.00) 49.98%, rgba(0, 0, 0, 0.40) 75.51%, rgba(0, 0, 0, 0.50) 100%), url(${backgroundImageSrc})`
           : undefined,
         color: backgroundImageSrc || brandColor ? '#FFFFFF' : '#23282A',
+        backgroundPosition: '50%',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
       }}
     >
       {eyeCatcherProps && layout === 'vertical' && (

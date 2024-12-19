@@ -164,7 +164,7 @@
   width: 100%;
 }
 
-.imageGalleryParallaxLayer:has(> .image) {
+.imageGalleryParallaxLayer:has(> .image), .imageGalleryParallaxLayer:has(> a) {
   height: 100%;
 }
 

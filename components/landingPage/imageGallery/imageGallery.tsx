@@ -227,10 +227,27 @@ const ImageGallery: React.FC<PropType> = ({
     (fullWidth &&
       gap &&
       Math.round((fullWidth - gap * (slides.length - 1)) / slides.length))
+  let overflowClipMargin
   if (galleryRef.current) {
-    const slideSpacing = gap && `${gap / 10}rem`
-    if (slideSpacing) {
-      galleryRef.current.style.setProperty('--slide-spacing', slideSpacing)
+    const gridContainer = galleryRef.current.parentElement?.parentElement
+    const sectionContainer = gridContainer?.parentElement
+
+    if (gridContainer) {
+      const gridGap =
+        getComputedStyle(gridContainer).getPropertyValue('column-gap')
+      if (gridGap) {
+        galleryRef.current.style.setProperty('--slide-spacing', gridGap)
+      }
+    }
+
+    if (overflow) {
+      const galleryWidth = galleryRef.current.offsetWidth
+      if (screenSizes && screenSizes?.width < 740) {
+        overflowClipMargin = '16px'
+      } else if (sectionContainer) {
+        const sectionContainerWidth = sectionContainer.offsetWidth
+        overflowClipMargin = `${(sectionContainerWidth - galleryWidth) / 2}px`
+      }
     }
   }
 
@@ -249,7 +266,7 @@ const ImageGallery: React.FC<PropType> = ({
           style={{
             maxWidth: imageMaxWidth ?? '100%',
             overflow: overflow ? 'clip' : 'hidden',
-            overflowClipMargin: overflow ? '16px' : '',
+            overflowClipMargin: (overflow && overflowClipMargin) ? overflowClipMargin : '',
           }}
         >
           <div
@@ -274,7 +291,7 @@ const ImageGallery: React.FC<PropType> = ({
                   style={{
                     maxWidth:
                       slideMaxWidth ?? (imageTile ? 'fit-content' : '100%'),
-                    height: (setHeight && slideMaxWidth) ?? '100%',
+                    minHeight: (setHeight && slideMaxWidth) ?? '100%',
                   }}
                 >
                   <div

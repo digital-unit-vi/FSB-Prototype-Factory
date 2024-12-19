@@ -40,7 +40,7 @@ export default function ProductTileNew({
         ? 'medium'
         : 'small'
   const headingFontSize =
-    screenSizes.width > 1579 ? 18 : screenSizes.width > 935 ? 16 : 14
+    screenSizes.width > 1569 ? 18 : screenSizes.width > 935 ? 16 : 14
   return (
     <div
       className={styles.componentWrapper}
