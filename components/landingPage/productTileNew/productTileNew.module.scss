@@ -8,7 +8,11 @@
         width: 100%;
     }
 
-    @media (min-width: 936px) and (max-width: 1579px) {
+    @media (min-width: 936px) and (max-width: 1267px) {
+        --image-wrapper-padding: 0;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
         --image-wrapper-padding: 24px;
     }
 
@@ -109,7 +113,7 @@
         gap: 8px;
     }
 
-    @media (min-width: 1268px) and (max-width: 1579px) {
+    @media (min-width: 936px) and (max-width: 1579px) {
         padding: 0 24px 24px 24px;
     }
 
@@ -120,6 +124,7 @@
 
 .contentWrapper p {
     margin: 0;
+    line-height: 22px !important;
 }
 
 .contentWrapper>* {

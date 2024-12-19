@@ -9,15 +9,15 @@ import { FC, useState } from 'react'
 interface StandaloneSelectProps {
   icon: JSX.Element
   text: string
-  // items: string[]
-  // menuDirection: 'down' | 'up'
+  items: string[]
+  menuDirection: 'down' | 'up'
 }
 
 const StandaloneSelect: FC<StandaloneSelectProps> = ({
   icon,
   text,
-  // items,
-  // menuDirection = 'down',
+  items,
+  menuDirection = 'down',
 }) => {
   const [isOpen, setOpen] = useState(false)
   const [animationState, setAnimationState] = useState<
@@ -55,7 +55,7 @@ const StandaloneSelect: FC<StandaloneSelectProps> = ({
           {isOpen ? <CaretUp /> : <CaretDown />}
         </div>
       </button>
-      {/* <ul
+      <ul
         className={`${styles.dropdownMenu} ${
           animationState === 'fadeIn' ? styles.fadeIn : styles.fadeOut
         } ${menuDirection === 'up' ? styles.upMenu : ''}`}
@@ -68,7 +68,7 @@ const StandaloneSelect: FC<StandaloneSelectProps> = ({
             </Typography>
           </li>
         ))}
-      </ul> */}
+      </ul>
     </div>
   )
 }
