@@ -16,6 +16,10 @@
     display: inline-block;
     outline: none;
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 .subNavigationItem:hover {
