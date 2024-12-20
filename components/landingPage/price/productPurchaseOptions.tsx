@@ -10,11 +10,15 @@ import styles from './productPurchaseOptions.module.scss'
 interface ProductPurchaseOptionsProps {
   price: string
   delivery: JSX.Element
+  onToggle: (isOpen: boolean) => void
+  onScroll: (scrollTarget: number) => void
 }
 
 const ProductPurchaseOptions: FC<ProductPurchaseOptionsProps> = ({
   price,
   delivery,
+  onToggle,
+  onScroll,
 }) => {
   return (
     <div className={styles.priceContainer}>
@@ -52,6 +56,8 @@ const ProductPurchaseOptions: FC<ProductPurchaseOptionsProps> = ({
             info: true,
           },
         ]}
+        onToggle={onToggle}
+        onScroll={onScroll}
       ></FinancingSelect>
       <Button
         type="primary"

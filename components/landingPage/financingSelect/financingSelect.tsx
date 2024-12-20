@@ -20,95 +20,76 @@ interface FinancingSelectProps {
     info?: boolean
     slot?: string
   }[]
+  onToggle: (isOpen: boolean) => void
+  onScroll: (scrollTarget: number) => void
 }
 const FinancingSelect = ({
   primaryButtonLabel,
   items,
+  onToggle,
+  onScroll,
 }: FinancingSelectProps) => {
   const [isOpen, setOpen] = useState(false)
   const [animationState, setAnimationState] = useState<
     'fadeIn' | 'fadeOut' | null
   >(null)
-  const [selectedOption, setSelectedOption] = useState<string | null>()
+  const [selectedOption, setSelectedOption] = useState<string | null>(null)
   const selectRef = useRef<HTMLDivElement | null>(null)
 
   const handleToggle = () => {
-    if (isOpen) {
-      setAnimationState('fadeOut')
-      setOpen(false)
-    } else {
-      setOpen(true)
-      setAnimationState('fadeIn')
+    const newState = !isOpen
+    setOpen(newState)
+    setAnimationState(newState ? 'fadeIn' : 'fadeOut')
+    if (onToggle) {
+      onToggle(newState)
     }
   }
 
   const handleSelectOption = (optionTitle: string) => {
     setSelectedOption(optionTitle)
+    setAnimationState('fadeOut')
+    setOpen(false)
+    onToggle(false)
   }
 
   useEffect(() => {
-    let touchStartX = 0
-    let touchStartY = 0
-    let isSwipe = false
+    if (isOpen && selectRef.current) {
+      const financingSelectElement = selectRef.current
+      const addCartButton = selectRef.current
+        .nextElementSibling as HTMLElement | null
+      if (financingSelectElement && addCartButton) {
+        const financingSelectRect =
+          financingSelectElement.getBoundingClientRect()
+        const buttonRect = addCartButton.getBoundingClientRect()
 
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartX = e.touches[0].clientX
-      touchStartY = e.touches[0].clientY
-      isSwipe = false
-    }
+        const viewportHeight = window.innerHeight
 
-    const handleTouchMove = (e: TouchEvent) => {
-      const deltaX = Math.abs(e.touches[0].clientX - touchStartX)
-      const deltaY = Math.abs(e.touches[0].clientY - touchStartY)
-
-      // Detect if the movement qualifies as a swipe
-      if (deltaX > 10 || deltaY > 10) {
-        isSwipe = true
-      }
-    }
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      if (!isSwipe) {
-        // It's a tap, so check if it's outside the dropdown
-        const target = e.target as Node
+        // Determine if FinancingSelect or Add to Cart button is out of view
+        const isFinancingSelectTopOutOfView = financingSelectRect.top < 0
+        const isFinancingSelectBottomOutOfView =
+          financingSelectRect.bottom > viewportHeight
+        const isButtonOutOfView = buttonRect.bottom > viewportHeight
         if (
-          isOpen &&
-          selectRef.current &&
-          !selectRef.current.contains(target)
+          isFinancingSelectTopOutOfView ||
+          isFinancingSelectBottomOutOfView ||
+          isButtonOutOfView
         ) {
-          setAnimationState('fadeOut')
-          setOpen(false)
+          const scrollTarget = isFinancingSelectTopOutOfView
+            ? financingSelectRect.top - 16 // Add a margin of 16px
+            : (financingSelectRect.height > viewportHeight
+                ? financingSelectRect.bottom
+                : buttonRect.bottom) -
+              viewportHeight +
+              16
+          window.scrollBy({
+            top: scrollTarget,
+            behavior: 'smooth',
+          })
+          onScroll(scrollTarget)
         }
       }
     }
-
-    const handleMouseDown = (e: MouseEvent) => {
-      const target = e.target as Node
-      if (selectRef.current) {
-        const rect = selectRef.current.getBoundingClientRect()
-
-        // Check if the click is within the bounds of the scrollbar
-        const isOnScrollbar = e.clientX > rect.right || e.clientY > rect.bottom
-
-        if (isOpen && !isOnScrollbar && !selectRef.current.contains(target)) {
-          setAnimationState('fadeOut')
-          setOpen(false)
-        }
-      }
-    }
-
-    document.addEventListener('mousedown', handleMouseDown)
-    document.addEventListener('touchstart', handleTouchStart)
-    document.addEventListener('touchmove', handleTouchMove)
-    document.addEventListener('touchend', handleTouchEnd)
-
-    return () => {
-      document.removeEventListener('mousedown', handleMouseDown)
-      document.removeEventListener('touchstart', handleTouchStart)
-      document.removeEventListener('touchmove', handleTouchMove)
-      document.removeEventListener('touchend', handleTouchEnd)
-    }
-  }, [isOpen, selectRef])
+  }, [isOpen])
 
   return (
     <div className={styles.financingContainer} ref={selectRef}>
@@ -138,7 +119,6 @@ const FinancingSelect = ({
             )}
           </div>
         </div>
-
         <span className={styles.financingCaret}>
           {isOpen ? <CaretUp /> : <CaretDown />}
         </span>

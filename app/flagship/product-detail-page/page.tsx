@@ -270,6 +270,15 @@ export default function Home() {
   const productDetailsContainerRef = useRef<HTMLDivElement | null>(null)
   const [productDetailsContainerStyle, setProductDetailsContainerStyles] =
     useState({})
+  const [isOpen, setOpen] = useState<boolean>(false)
+  const [scrollTarget, setScrollTarget] = useState<number>(0)
+
+  const handleFinancingSelectToggle = (isOpen: boolean) => {
+    setOpen(isOpen)
+  }
+  const handleFinancingSelectScroll = (scrollTarget: number) => {
+    setScrollTarget(scrollTarget)
+  }
 
   const productTilesGalleryAsset: ComponentProps<
     typeof ImageGallery
@@ -311,9 +320,8 @@ export default function Home() {
   ]
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScrollOrResize = () => {
       if (screen.width < 1268) return
-
       const productHeroContainer = productHeroContainerRef.current
       const productDetailsContainer = productDetailsContainerRef.current
 
@@ -323,62 +331,51 @@ export default function Home() {
         productHeroContainer.getBoundingClientRect()
       const productDetailsContainerRect =
         productDetailsContainer.getBoundingClientRect()
-
-      if (
-        productHeroContainerRect.top <= 0 &&
-        productHeroContainerRect.bottom > productDetailsContainerRect.bottom &&
-        productDetailsContainerRect.height < window.innerHeight
-      ) {
+      const parentWidth =
+        productDetailsContainer.parentElement?.getBoundingClientRect().width
+      if (productHeroContainerRect.top <= 0) {
         setProductDetailsContainerStyles({
           position: 'sticky',
-          top: '0',
+          top:
+            productDetailsContainerRect.height > window.innerHeight && !isOpen
+              ? ''
+              : isOpen
+                ? `${-scrollTarget}px`
+                : 0,
+          bottom:
+            productDetailsContainerRect.height > window.innerHeight && !isOpen
+              ? '0'
+              : '',
+          width: parentWidth ? `${parentWidth}px` : undefined,
         })
-      } else if (
-        productDetailsContainerRect.height > window.innerHeight &&
-        productHeroContainerRect.top <= 0 &&
-        Math.round(productHeroContainerRect.bottom) >
-          Math.round(productDetailsContainerRect.bottom) &&
-        Math.round(productDetailsContainerRect.bottom) <= window.innerHeight
-      ) {
-        const parentWidth =
-          productDetailsContainer.parentElement?.getBoundingClientRect().width
-        if (parentWidth) {
-          setProductDetailsContainerStyles({
-            position: 'fixed',
-            bottom: '0',
-            width: `${parentWidth}px`,
-          })
-        } else {
-          setProductDetailsContainerStyles({
-            position: 'fixed',
-            bottom: '0',
-          })
-        }
-      } else if (
-        productHeroContainerRect.top <= 0 &&
-        productDetailsContainerRect.top <= 0 &&
-        Math.round(productHeroContainerRect.bottom) <=
-          Math.round(productDetailsContainerRect.bottom) &&
-        productHeroContainerRect.bottom <= window.innerHeight
-      ) {
-        setProductDetailsContainerStyles({
-          position: 'absolute',
-          bottom: '0',
-          top: 'auto',
-        })
-      } else {
+      } else if (productHeroContainerRect.top >= 0) {
         setProductDetailsContainerStyles({
           position: '',
           top: '',
+          bottom: '',
         })
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScrollOrResize)
+
+    const resizeObserver = new ResizeObserver(() => {
+      handleScrollOrResize()
+    })
+
+    const productDetailsContainer = productDetailsContainerRef.current
+    if (productDetailsContainer) {
+      resizeObserver.observe(productDetailsContainer)
     }
-  }, [])
+
+    return () => {
+      window.removeEventListener('scroll', handleScrollOrResize)
+      if (productDetailsContainer) {
+        resizeObserver.unobserve(productDetailsContainer)
+      }
+      resizeObserver.disconnect()
+    }
+  }, [isOpen, scrollTarget])
 
   return (
     <>
@@ -630,6 +627,8 @@ export default function Home() {
                       size="medium"
                     />
                     <ProductPurchaseOptions
+                      onScroll={handleFinancingSelectScroll}
+                      onToggle={handleFinancingSelectToggle}
                       price="1.399 €"
                       delivery={
                         <div className={styles.deliveryText}>
