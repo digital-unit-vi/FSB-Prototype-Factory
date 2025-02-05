@@ -241,6 +241,37 @@ const tilesData2 = [
   {
     light: {
       image: "/shared/product/tm6-product-light.png",
+      link: "/templates/email/light/cookidooServiceMail/var-a/index.html",
+    },
+    title: "Service Mail - Var-A",
+  },
+  {
+    light: {
+      image: "/shared/product/tm6-product-light.png",
+      link: "/templates/email/light/cookidooServiceMail/var-b/index.html",
+    },
+    title: "Service Mail - Var-B",
+  },
+  {
+    light: {
+      image: "/shared/product/tm6-product-light.png",
+      link: "/templates/email/light/cookidooMarketingMail/reangeagement/index.html",
+    },
+    title: "Marketing Mail - Reangeagement",
+  },
+  {
+    light: {
+      image: "/shared/product/tm6-product-light.png",
+      link: "/templates/email/light/cookidooMarketingMail/onboarding/index.html",
+    },
+    title: "Marketing Mail - Onboarding",
+  },
+];
+
+const tilesData3 = [
+  {
+    light: {
+      image: "/shared/product/tm6-product-light.png",
       link: "/landing-page/light/tm6/var-a",
     },
     dark: {
@@ -326,6 +357,24 @@ export default function Home() {
                 children={
                   <Typography component="h2">
                     <span>
+                      <strong>Marketing Email Template</strong>
+                    </span>
+                  </Typography>
+                }
+              />
+            </GridItem>
+          </GridContainer>
+          <ShowcaseTiles tilesData={tilesData2} />
+        </section>
+        <section className={styles.prominentSection}>
+          <GridContainer>
+            <GridItem columns={12} className={styles.textCentered}>
+              <Headline
+                spaceBelow="additional"
+                strongColor="green"
+                children={
+                  <Typography component="h2">
+                    <span>
                       <strong>Landing Page Template</strong> -
                       <br />
                       Two business cases available in light and dark version
@@ -335,7 +384,7 @@ export default function Home() {
               />
             </GridItem>
           </GridContainer>
-          <ShowcaseTiles tilesData={tilesData2} />
+          <ShowcaseTiles tilesData={tilesData3} />
         </section>
         <ProductStripe
           logo={<Vorwerk />}

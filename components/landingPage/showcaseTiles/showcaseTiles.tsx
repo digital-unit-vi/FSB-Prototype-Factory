@@ -13,7 +13,7 @@ interface TileProps {
     image: string;
     link: string;
   };
-  dark: {
+  dark?: {
     image: string;
     link: string;
   };
@@ -22,33 +22,25 @@ interface TileProps {
 }
 
 const Tile: React.FC<TileProps> = ({ light, dark, isDarkMode, title }) => {
-  useEffect(() => {
-    const preloadLight = new Image();
-    preloadLight.src = light.image;
-    const preloadDark = new Image();
-    preloadDark.src = dark.image;
-  }, [light.image, dark.image]);
+  const tileData = isDarkMode && dark ? dark : light;
 
-  const { image, link } = isDarkMode ? dark : light;
-
-  const backgroundColor = isDarkMode ? "#3f4447" : "#F3F5F3";
-  const fontColor = isDarkMode ? "#fff" : "#23282A";
+  const backgroundColor =
+    isDarkMode && dark ? "#3f4447" : "#F3F5F3";
+  const fontColor =
+    isDarkMode && dark ? "#fff" : "#23282A";
 
   return (
     <Link
-      href={link}
+      href={tileData.link}
       className={styles.tile}
       style={{ backgroundColor, color: fontColor }}
     >
-      <img src={image} alt="Product" className={styles.image} />
-      <Headline
-        spaceBelow="default"
-        children={
-          <Typography component="h5" fontWeight="bold">
-            <span>{title}</span>
-          </Typography>
-        }
-      />
+      <img src={tileData.image} alt="Product" className={styles.image} />
+      <Headline spaceBelow="default">
+        <Typography component="h5" fontWeight="bold">
+          <span>{title}</span>
+        </Typography>
+      </Headline>
     </Link>
   );
 };
@@ -59,7 +51,7 @@ interface ShowcaseTilesProps {
       image: string;
       link: string;
     };
-    dark: {
+    dark?: {
       image: string;
       link: string;
     };
@@ -73,7 +65,8 @@ const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
   const columnsConfig = useMemo(() => {
     const numberOfTiles = tilesData.length;
     const columnsPerTile = 12 / numberOfTiles;
-    return tilesData.map((_, index) => {
+
+    const newColumnsConfig = tilesData.map((_, index) => {
       const start = index * columnsPerTile + 1;
       const end = start + columnsPerTile;
       return { start, end, columns: columnsPerTile };
@@ -82,24 +75,28 @@ const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
 
   const toggleDarkMode = useCallback(() => {
     setIsDarkMode((prevMode) => !prevMode);
-  }, []);
+  };
+
+  const hasDarkVersion = tilesData.some(tile => tile.dark !== undefined);
 
   return (
     <div className={styles.mainContainer}>
-      <GridContainer>
-        <GridItem columns={12} className={styles.switchContainer}>
-          <label className={styles.switchLabel}>
-            <span className={styles.label}>Dark version</span>
-            <input
-              type="checkbox"
-              checked={isDarkMode}
-              onChange={toggleDarkMode}
-              className={styles.switchInput}
-            />
-            <span className={styles.switchSlider}></span>
-          </label>
-        </GridItem>
-      </GridContainer>
+      {hasDarkVersion && (
+        <GridContainer>
+          <GridItem columns={12} className={styles.switchContainer}>
+            <label className={styles.switchLabel}>
+              <span className={styles.label}>Dark version</span>
+              <input
+                type="checkbox"
+                checked={isDarkMode}
+                onChange={toggleDarkMode}
+                className={styles.switchInput}
+              />
+              <span className={styles.switchSlider}></span>
+            </label>
+          </GridItem>
+        </GridContainer>
+      )}
 
       <div className={styles.schowcaseTilesContainer}>
         <GridContainer>
