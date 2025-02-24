@@ -10,10 +10,13 @@
     font-style: normal;
     line-height: 27px;
     color: #23282a;
-    text-wrap: pretty;
+
+    @supports (text-wrap: pretty) {
+      text-wrap: pretty;
+    }
   }
 
-  @media (width >= 768px) {
+  @media (width >=768px) {
     padding: 0 48px;
   }
 }

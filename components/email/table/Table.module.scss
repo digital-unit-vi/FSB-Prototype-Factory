@@ -10,13 +10,12 @@
     border-inline: 1px;
   }
 
-  @media (width >= 768px) {
+  @media (width >=768px) {
     display: flex;
 
     hr {
       height: auto;
       margin: 0 24px;
-
       border-top: none;
       border-right: 1px solid #b2b4b5;
       border-bottom: none;
@@ -41,7 +40,7 @@
     color: #23282a;
   }
 
-  @media (width >= 768px) {
+  @media (width >=768px) {
     flex: 1;
     flex-direction: column;
   }

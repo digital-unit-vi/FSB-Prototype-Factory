@@ -12,6 +12,8 @@
   cursor: pointer;
 
   min-width: 192px;
+  border: none;
+  border-radius: 8px;
 
   font-size: 18px;
   font-weight: 600;
@@ -21,8 +23,6 @@
   text-decoration: none;
 
   background-color: #00ac46;
-  border: none;
-  border-radius: 8px;
 
   &:hover {
     background-color: #00973d;

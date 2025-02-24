@@ -9,7 +9,7 @@ import {
   FooterShopLogosBlock,
   FooterSmallLinks,
   Typography,
-} from "@components/build-assets/libraryExport";
+} from "@vorwerk/fibre-react";
 import { ReactNode } from "react";
 
 export default function RootLayoutDE({

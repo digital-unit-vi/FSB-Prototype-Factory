@@ -1,5 +1,7 @@
 "use client";
 
+import Hero from "@components/landingPage/hero/hero";
+import Spacer from "@components/shared/spacer/spacer";
 import {
   BentoBoxTiles,
   BlendIllustration,
@@ -26,9 +28,7 @@ import {
   Typography,
   UserReview,
   WifiLight,
-} from "@components/build-assets/libraryExport";
-import Hero from "@components/landingPage/hero/hero";
-import Spacer from "@components/shared/spacer/spacer";
+} from "@vorwerk/fibre-react";
 import styles from "./page.module.scss";
 
 export default function TM6VariantADarkLandingPage() {
@@ -305,6 +305,7 @@ export default function TM6VariantADarkLandingPage() {
             thirdLine: "",
           }}
           productImage="/library/images/image-carousel/image-carousel-product.png"
+          productImageAlt="TM6 front side"
           images={[
             {
               url: "/library/images/image-carousel/image-carousel1.png",
@@ -380,6 +381,7 @@ export default function TM6VariantADarkLandingPage() {
         ctaText="Shop now"
         headline="Thermomix® TM6"
         image="/shared/product/tm6-product-accessories-light.png"
+        imageAlt="TM6 with accessories"
         price="1.499,00 €"
       />
       <FullwidthImage

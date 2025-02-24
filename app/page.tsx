@@ -1,5 +1,6 @@
 "use client";
 
+import Spacer from "@components/shared/spacer/spacer";
 import {
   Austria,
   Button,
@@ -43,8 +44,7 @@ import {
   USA,
   Vorwerk,
   Youtube,
-} from "@components/build-assets/libraryExport";
-import Spacer from "@components/shared/spacer/spacer";
+} from "@vorwerk/fibre-react";
 import Link from "next/link";
 import styles from "./page.module.scss";
 
@@ -211,7 +211,7 @@ export default function Home() {
         <Header
           isLandingPage
           landingPageLogo={
-            <a href="#">
+            <a href="#" aria-label="Vorwerk logo">
               <Vorwerk />
             </a>
           }
@@ -220,7 +220,7 @@ export default function Home() {
           cta={
             <ButtonGroup alignment="center" layout="vertical">
               <Link href="/ds360">
-                <Button size="large" type="primary">
+                <Button size="large" buttonStyle="primary">
                   Go to the showcase
                 </Button>
               </Link>
@@ -277,7 +277,7 @@ export default function Home() {
               <>
                 <ButtonGroup>
                   <Link href="/ds360">
-                    <Button size="large" type="primary">
+                    <Button size="large" buttonStyle="primary">
                       Go to the showcase
                     </Button>
                   </Link>
@@ -292,7 +292,7 @@ export default function Home() {
               </Headline>
             }
             layout="inGrid"
-            media={<img src="/landingPage/imageGallery/tm6-dinner.jpg" />}
+            media={<img src="/landingPage/imageGallery/tm6-dinner.jpg" alt="Family gathered for dinner; people sitting at the table" />}
             mediaAlignment="left"
             paragraph={
               <Typography fontWeight="regular" variant="paragraph18">
@@ -317,7 +317,7 @@ export default function Home() {
                 </Typography>
               </Headline>
             }
-            media={<img src="/landingPage/teaser/teaser.png" />}
+            media={<img src="/landingPage/teaser/teaser.png" alt="Smiling people in a bright kitchen enjoying a cooking demonstration." />}
             mediaAlignment="right"
             paragraph={
               <Typography fontWeight="regular" variant="paragraph18">
@@ -387,7 +387,7 @@ export default function Home() {
               </Headline>
             }
             media={
-              <img src="/landingPage/imageGallery/tm6-family-leisure.jpg" />
+              <img src="/landingPage/imageGallery/tm6-family-leisure.jpg" alt="Father and children playing checkers and studying at a wooden kitchen table." />
             }
             mediaAlignment="right"
             paragraph={
@@ -419,7 +419,12 @@ export default function Home() {
                 </Typography>
               </Headline>
             }
-            media={<img src="/landingPage/teaser/teaser2.jpeg" />}
+            media={
+              <img
+                src="/landingPage/teaser/teaser2.jpeg"
+                alt="Couple enjoying a homemade meal in a cozy kitchen."
+              />
+            }
             mediaAlignment="left"
             paragraph={
               <Typography fontWeight="regular" variant="paragraph18">
@@ -445,7 +450,7 @@ export default function Home() {
                 </Typography>
               </Headline>
             }
-            media={<img src="/landingPage/teaser/teaser3.jpeg" />}
+            media={<img src="/landingPage/teaser/teaser3.jpeg" alt="Family enjoying homemade cake together." />}
             mediaAlignment="right"
             paragraph={
               <Typography fontWeight="regular" variant="paragraph18">
@@ -572,19 +577,19 @@ export default function Home() {
                 </Typography>
               }
               links={[
-                <a href="#facebook">
+                <a href="#facebook" aria-label="Facebook">
                   <Facebook />
                 </a>,
-                <a href="#instagram">
+                <a href="#instagram" aria-label="Instagram">
                   <Instagram />
                 </a>,
-                <a href="#pinterest">
+                <a href="#pinterest" aria-label="Pinterest">
                   <Pinterest />
                 </a>,
-                <a href="#youtube">
+                <a href="#youtube" aria-label="YouTube">
                   <Youtube />
                 </a>,
-                <a href="#receptwelt">
+                <a href="#receptwelt" aria-label="Rezeptwelt">
                   <Rezeptwelt />
                 </a>,
               ]}
@@ -596,16 +601,16 @@ export default function Home() {
                 </Typography>
               }
               links={[
-                <a href="#facebook">
+                <a href="#facebook" aria-label="Facebook">
                   <Facebook />
                 </a>,
-                <a href="#instagram">
+                <a href="#instagram" aria-label="Instagram">
                   <Instagram />
                 </a>,
-                <a href="#pinterest">
+                <a href="#pinterest" aria-label="Pinterest">
                   <Pinterest />
                 </a>,
-                <a href="#youtube">
+                <a href="#youtube" aria-label="YouTube">
                   <Youtube />
                 </a>,
               ]}

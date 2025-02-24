@@ -1,10 +1,8 @@
-import "@components/build-assets/style.css";
+import '@vorwerk/fibre-react/main.css';
 import localFont from "next/font/local";
 import { ReactNode } from "react";
 import "./globals.css";
 import { Providers } from "./providers";
-
-// export const runtime = "edge";
 
 const vorwerkFont = localFont({
   preload: true,

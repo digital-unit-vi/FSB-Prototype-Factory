@@ -55,7 +55,10 @@
   font-weight: 400;
   line-height: 30px;
   color: #23282a;
-  text-wrap: pretty;
+
+  @supports (text-wrap: pretty) {
+    text-wrap: pretty;
+  }
 }
 
 .dark {

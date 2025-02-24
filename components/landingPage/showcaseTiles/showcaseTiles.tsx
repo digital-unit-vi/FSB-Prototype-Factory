@@ -3,9 +3,9 @@ import {
   GridItem,
   Headline,
   Typography,
-} from "@components/build-assets/libraryExport";
+} from "@vorwerk/fibre-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./showcaseTiles.module.scss";
 
 interface TileProps {
@@ -22,6 +22,13 @@ interface TileProps {
 }
 
 const Tile: React.FC<TileProps> = ({ light, dark, isDarkMode, title }) => {
+  useEffect(() => {
+    const preloadLight = new Image();
+    preloadLight.src = light.image;
+    const preloadDark = new Image();
+    preloadDark.src = dark.image;
+  }, [light.image, dark.image]);
+
   const { image, link } = isDarkMode ? dark : light;
 
   const backgroundColor = isDarkMode ? "#3f4447" : "#F3F5F3";
@@ -62,27 +69,20 @@ interface ShowcaseTilesProps {
 
 const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [columnsConfig, setColumnsConfig] = useState<
-    { start: number; end: number; columns: number }[]
-  >([]);
 
-  useEffect(() => {
+  const columnsConfig = useMemo(() => {
     const numberOfTiles = tilesData.length;
-    const columnsPerTile = 12 / numberOfTiles; // Calculates the number of columns each tile should span
-
-    // Calculate start and end values for each tile
-    const newColumnsConfig = tilesData.map((_, index) => {
-      const start = index * columnsPerTile + 1; // Calculate start column based on index
-      const end = start + columnsPerTile; // Calculate end column based on start and span
+    const columnsPerTile = 12 / numberOfTiles;
+    return tilesData.map((_, index) => {
+      const start = index * columnsPerTile + 1;
+      const end = start + columnsPerTile;
       return { start, end, columns: columnsPerTile };
     });
-
-    setColumnsConfig(newColumnsConfig);
   }, [tilesData]);
 
-  const toggleDarkMode = () => {
+  const toggleDarkMode = useCallback(() => {
     setIsDarkMode((prevMode) => !prevMode);
-  };
+  }, []);
 
   return (
     <div className={styles.mainContainer}>
@@ -104,7 +104,7 @@ const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
       <div className={styles.schowcaseTilesContainer}>
         <GridContainer>
           {columnsConfig.map((config, index) => (
-            <GridItem key={index} columns={config.columns}>
+            <GridItem key={index} columns={config.columns as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}>
               <Tile
                 light={tilesData[index].light}
                 dark={tilesData[index].dark}

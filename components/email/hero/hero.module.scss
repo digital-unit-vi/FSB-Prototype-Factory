@@ -10,7 +10,7 @@
   padding: 0 16px 107px;
   text-align: center;
 
-  @media (width >= 768px) {
+  @media (width >=768px) {
     padding: 0 24px 156px;
   }
 }
@@ -25,7 +25,7 @@
 
   object-fit: contain;
 
-  @media (width >= 768px) {
+  @media (width >=768px) {
     height: 338px;
     margin-top: -132px;
   }
@@ -35,12 +35,12 @@
   position: relative;
 
   & + .image {
-    @media (width >= 768px) {
+    @media (width >=768px) {
       margin-top: -200px;
     }
   }
 
-  @media (width >= 768px) {
+  @media (width >=768px) {
     height: 600px;
   }
 }
@@ -48,8 +48,8 @@
 .backgroundImage {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   border-radius: 0 0 64px;
+  object-fit: cover;
 }
 
 .heroBackgroundImageWrapper {
@@ -69,16 +69,14 @@
 
     width: 100%;
     height: 100%;
-
-    background: linear-gradient(
-      180deg,
-      rgb(0 0 0 / 40%) 50%,
-      rgb(0 0 0 / 0%) 100%
-    );
     border-radius: 0 0 64px;
+
+    background: linear-gradient(180deg,
+        rgb(0 0 0 / 40%) 50%,
+        rgb(0 0 0 / 0%) 100%);
   }
 
-  @media (width >= 768px) {
+  @media (width >=768px) {
     height: 600px;
   }
 }
@@ -96,7 +94,7 @@
   width: 100%;
   padding: 24px 0 16px;
 
-  @media (width >= 768px) {
+  @media (width >=768px) {
     padding-top: 40px;
   }
 }
