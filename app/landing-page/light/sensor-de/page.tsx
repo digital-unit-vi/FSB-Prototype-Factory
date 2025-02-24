@@ -1,5 +1,8 @@
 "use client";
 
+import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
+import ScrollTriggerWatcher from "@components/landingPage/scrollTriggerWatcher/scrollTriggerWatcher";
+import Spacer from "@components/shared/spacer/spacer";
 import {
   BatteryLevel3Light,
   BentoBoxTiles,
@@ -25,10 +28,7 @@ import {
   Typography,
   UserReview,
   Vorwerk,
-} from "@components/build-assets/libraryExport";
-import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
-import ScrollTriggerWatcher from "@components/landingPage/scrollTriggerWatcher/scrollTriggerWatcher";
-import Spacer from "@components/shared/spacer/spacer";
+} from "@vorwerk/fibre-react";
 import Link from "next/link";
 import styles from "./page.module.scss";
 
@@ -51,7 +51,7 @@ export default function SensorLightLandingPageDE() {
       <Hero
         cta={
           <ButtonGroup alignment="center" layout="vertical">
-            <Button size="medium" type="primary">
+            <Button size="medium" buttonStyle="primary">
               Jetzt shoppen
             </Button>
           </ButtonGroup>
@@ -88,6 +88,7 @@ export default function SensorLightLandingPageDE() {
       <ParallaxProductSection
         logoImage="/library/images/parallaxProductSection/logos.png"
         productImage="/landingPage/hero/sensor-hero-parallax.png"
+        productImageAlt="Thermomix® Sensor"
       />
       <SectionContainer>
         <GridContainer>
@@ -417,6 +418,7 @@ Mit der richtigen Kerntemperatur erzielst du perfekte Ergebnisse bei Kuchen, Bro
             thirdLine: "",
           }}
           productImage="/landingPage/carousel/carousel-sensor-4-3.png"
+          productImageAlt="Thermomix® Sensor"
           images={[
             {
               url: "/library/images/image-carousel/image-carousel1.png",
@@ -490,6 +492,7 @@ Mit der richtigen Kerntemperatur erzielst du perfekte Ergebnisse bei Kuchen, Bro
         ctaText="Jetzt shoppen"
         headline="Thermomix® Sensor"
         image="/shared/product/sensor-product.png"
+        imageAlt="Thermomix® Sensor"
         price="149,00 €"
       />
     </main>

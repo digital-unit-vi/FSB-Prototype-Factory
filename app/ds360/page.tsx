@@ -1,5 +1,6 @@
 "use client";
 
+import ShowcaseTiles from "@components/landingPage/showcaseTiles/showcaseTiles";
 import {
   Austria,
   Canada,
@@ -40,8 +41,7 @@ import {
   USA,
   Vorwerk,
   Youtube,
-} from "@components/build-assets/libraryExport";
-import ShowcaseTiles from "@components/landingPage/showcaseTiles/showcaseTiles";
+} from "@vorwerk/fibre-react";
 import Link from "next/link";
 import styles from "./page.module.scss";
 
@@ -441,19 +441,19 @@ export default function Home() {
                 </Typography>
               }
               links={[
-                <a href="#facebook">
+                <a aria-label="Facebook" href="#facebook">
                   <Facebook />
                 </a>,
-                <a href="#instagram">
+                <a aria-label="Instagram" href="#instagram">
                   <Instagram />
                 </a>,
-                <a href="#pinterest">
+                <a aria-label="Pinterest" href="#pinterest">
                   <Pinterest />
                 </a>,
-                <a href="#youtube">
+                <a aria-label="YouTube" href="#youtube">
                   <Youtube />
                 </a>,
-                <a href="#receptwelt">
+                <a aria-label="Rezeptwelt" href="#receptwelt">
                   <Rezeptwelt />
                 </a>,
               ]}
@@ -465,16 +465,16 @@ export default function Home() {
                 </Typography>
               }
               links={[
-                <a href="#facebook">
+                <a aria-label="Facebook" href="#facebook">
                   <Facebook />
                 </a>,
-                <a href="#instagram">
+                <a aria-label="Instagram" href="#instagram">
                   <Instagram />
                 </a>,
-                <a href="#pinterest">
+                <a aria-label="Pinterest" href="#pinterest">
                   <Pinterest />
                 </a>,
-                <a href="#youtube">
+                <a aria-label="YouTube" href="#youtube">
                   <Youtube />
                 </a>,
               ]}

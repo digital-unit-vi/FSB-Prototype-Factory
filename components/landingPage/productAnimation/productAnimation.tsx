@@ -79,7 +79,11 @@ const ProductAnimation = () => {
         const rect = canvas.getBoundingClientRect();
         const isMobile = window.innerWidth <= 768;
 
-        let scale, x, y, renderableWidth, renderableHeight;
+        let scale: number;
+        let x: number;
+        let y: number;
+        let renderableWidth: number;
+        let renderableHeight: number;
 
         if (isMobile) {
           scale = rect.width / image.width;
@@ -110,8 +114,9 @@ const ProductAnimation = () => {
         scrollTrigger: {
           trigger: container,
           start: "top top",
-          end: "+=" + frameCount * 14,
+          end: `+=${frameCount * 14}`,
           pin: true,
+          pinSpacing: true,
           scrub: 1,
           anticipatePin: 1,
           fastScrollEnd: true,

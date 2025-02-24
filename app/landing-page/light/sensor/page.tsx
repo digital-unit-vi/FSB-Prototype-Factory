@@ -1,5 +1,9 @@
 "use client";
 
+import Hero from "@components/landingPage/hero/hero";
+import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
+import Spacer from "@components/shared/spacer/spacer";
+import useScreenSize from "@utils/useScreenSize";
 import {
   BatteryLevel3Light,
   BentoBoxTiles,
@@ -16,11 +20,7 @@ import {
   TimerLight,
   Typography,
   UserReview,
-} from "@components/build-assets/libraryExport";
-import Hero from "@components/landingPage/hero/hero";
-import ProductAnimation from "@components/landingPage/productAnimation/productAnimation";
-import Spacer from "@components/shared/spacer/spacer";
-import useScreenSize from "@utils/useScreenSize";
+} from "@vorwerk/fibre-react";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPage() {
@@ -305,6 +305,7 @@ export default function SensorLightLandingPage() {
             thirdLine: "",
           }}
           productImage="/landingPage/carousel/carousel-sensor-4-3.png"
+          productImageAlt="Thermomix® Sensor with casing"
           images={[
             {
               url: "/library/images/image-carousel/image-carousel1.png",
@@ -378,6 +379,7 @@ export default function SensorLightLandingPage() {
         ctaText="Shop now"
         headline="Thermomix® Sensor"
         image="/shared/product/sensor-product.png"
+        imageAlt="Thermomix® Sensor front side"
         price="149,00 €"
       />
     </main>

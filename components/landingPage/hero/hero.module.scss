@@ -14,7 +14,7 @@
   height: calc(100svh - 16px);
   max-height: 600px;
 
-  @media (width >= 1268px) {
+  @media (width >=1268px) {
     max-height: initial;
   }
 }
@@ -27,22 +27,21 @@
 
   width: 100%;
   height: 100%;
-
   border-radius: 0 0 64px;
 
-  @media (width >= 740px) {
+  @media (width >=740px) {
     border-radius: 0 0 88px;
   }
 
-  @media (width >= 936px) {
+  @media (width >=936px) {
     border-radius: 0 0 128px;
   }
 
-  @media (width >= 1268px) {
+  @media (width >=1268px) {
     border-radius: 0 0 144px;
   }
 
-  @media (width >= 1580px) {
+  @media (width >=1580px) {
     border-radius: 0 0 168px;
   }
 }
@@ -50,8 +49,8 @@
 .heroVideo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   border-radius: 0 0 64px;
+  object-fit: cover;
 }
 
 .heroOverlay {
@@ -63,11 +62,9 @@
   width: 100%;
   height: 100%;
 
-  background: linear-gradient(
-    180deg,
-    rgb(0 0 0 / 40%) 0%,
-    rgb(0 0 0 / 0%) 100%
-  );
+  background: linear-gradient(180deg,
+      rgb(0 0 0 / 40%) 0%,
+      rgb(0 0 0 / 0%) 100%);
 }
 
 .headerContainer {
@@ -107,7 +104,7 @@
   margin-right: auto;
   margin-left: auto;
 
-  @media (width >= 936px) {
+  @media (width >=936px) {
     width: 100%;
   }
 }
@@ -116,7 +113,7 @@
   position: relative;
   width: 100%;
 
-  @media (width >= 740px) {
+  @media (width >=740px) {
     position: absolute;
     top: 25%;
   }
@@ -130,7 +127,7 @@
   margin-right: auto;
   margin-left: auto;
 
-  @media (width >= 740px) {
+  @media (width >=740px) {
     max-width: initial;
   }
 }

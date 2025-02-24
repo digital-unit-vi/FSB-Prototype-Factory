@@ -9,7 +9,7 @@ import {
   FooterShopLogosBlock,
   FooterSmallLinks,
   Typography,
-} from "@components/build-assets/libraryExport";
+} from "@vorwerk/fibre-react";
 import { Viewport } from "next";
 import { ReactNode } from "react";
 import styles from "./layout.module.scss";
