@@ -106,6 +106,17 @@ const tilesDataLP = [
   },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const tilesDataCoSy = [
+  {
+    dark: {
+      image: "/cosy/cosy_square.png",
+      link: "/landing-page/dark/tm7/",
+    },
+    title: "TM7",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -175,6 +186,23 @@ export default function Home() {
           </GridItem>
         </GridContainer>
         <ShowcaseTiles tilesData={tilesDataMarketingEmail} />
+      </section> */}
+      {/* <section className={styles.prominentSection}>
+        <GridContainer>
+          <GridItem columns={12} className={styles.textCentered}>
+            <Headline
+              spaceBelow="additional"
+              strongColor="green"
+            >
+              <Typography component="h2">
+                <span>
+                  <strong>Landing Page Template TM7</strong>
+                </span>
+              </Typography>
+            </Headline>
+          </GridItem>
+        </GridContainer>
+        <ShowcaseTiles tilesData={tilesDataCoSy} />
       </section> */}
       <section className={styles.prominentSection}>
         <GridContainer>
