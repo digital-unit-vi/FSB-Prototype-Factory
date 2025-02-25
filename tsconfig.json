@@ -39,7 +39,7 @@
         "utils/*"
       ]
     },
-    "target": "ES2017"
+    "target": "ESNext"
   },
   "include": [
     "eslint.config.js",

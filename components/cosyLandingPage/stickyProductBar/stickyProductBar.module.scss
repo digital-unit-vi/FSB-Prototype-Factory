@@ -1,0 +1,131 @@
+$breakpoint-m: 740px;
+$breakpoint-l: 936px;
+$breakpoint-xl: 1268px;
+
+.stickyProductBarRoot {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+
+  width: 100%;
+  min-height: 72px;
+
+  text-align: left;
+
+  opacity: 0;
+  background: transparent;
+  box-shadow: 0 0 40px 0 rgb(35 40 42 / 15%);
+
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+
+    background: rgb(0 0 0 / 50%);
+    backdrop-filter: blur(8px);
+  }
+
+  &.hidden {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  &.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  button {
+    align-self: center;
+  }
+
+  @media screen and (width >=$breakpoint-xl) {
+    top: 32px;
+    right: 32px;
+    bottom: unset;
+    left: unset;
+    transform: translateY(-100%);
+
+    width: auto;
+    border-radius: 16px;
+
+    &::before {
+      border-radius: 16px;
+    }
+
+    &.hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    &.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.stickyProductBarInner {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px 0;
+
+  @media screen and (width >=$breakpoint-m) {
+    gap: 32px;
+  }
+
+  @media screen and (width >=$breakpoint-xl) {
+    gap: 0;
+    padding: 8px 16px;
+  }
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  @media screen and (width >=$breakpoint-l) {
+    gap: 32px;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #fff;
+
+  @media screen and (width >=$breakpoint-l) {
+    gap: 16px;
+  }
+
+  @media screen and (width >=$breakpoint-xl) {
+    gap: 8px;
+    margin-right: 32px;
+  }
+}
+
+.imageWrapper {
+  img {
+    width: 64px;
+    height: 64px;
+  }
+
+  @media screen and (width >=$breakpoint-xl) {
+    margin-right: 16px;
+  }
+}

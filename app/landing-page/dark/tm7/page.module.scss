@@ -1,0 +1,31 @@
+.textCentered {
+  display: block;
+  color: #fff;
+  text-align: center;
+}
+
+.textWhite {
+  color: #fff;
+}
+
+.questionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8;
+
+  @media screen and (width >=1268px) {
+    gap: 32px;
+  }
+}
+
+.footerSocialLinkBlock {
+  ul {
+    justify-content: center;
+  }
+}
+
+.tm7Page {
+  strong {
+    color: #57cd84 !important;
+  }
+}

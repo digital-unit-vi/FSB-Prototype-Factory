@@ -30,7 +30,7 @@ import "@vorwerk/fibre-react/main.css";
 import { Languages } from "const";
 import localFont from "next/font/local";
 import { ReactNode } from "react";
-import "./globals.css";
+import "./globals.scss";
 import { Providers } from "./providers";
 
 const vorwerkFont = localFont({

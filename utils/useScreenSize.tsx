@@ -7,7 +7,6 @@ const useScreenSize = () => {
   });
 
   useEffect(() => {
-    // Only set the initial size and add the event listener if window is defined
     if (typeof window !== "undefined") {
       const handleResize = () => {
         setScreenSize({
@@ -16,12 +15,9 @@ const useScreenSize = () => {
         });
       };
 
-      // Set initial size
       handleResize();
-
       window.addEventListener("resize", handleResize);
 
-      // Clean up the event listener when the component unmounts
       return () => {
         window.removeEventListener("resize", handleResize);
       };
