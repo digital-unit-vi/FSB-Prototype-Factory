@@ -1,13 +1,14 @@
 "use client";
 
-import {
+import type {
   EmblaCarouselType,
   EmblaEventType,
   EmblaOptionsType,
 } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import Image, { StaticImageData } from "next/image";
-import React, { useCallback, useEffect, useRef } from "react";
+import Image, { type StaticImageData } from "next/image";
+import type React from "react";
+import { useCallback, useEffect, useRef } from "react";
 import styles from "./imageGallery.module.scss";
 import { DotButton, useDotButton } from "./imageGalleryDotButton";
 
@@ -105,7 +106,7 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
         });
       });
     },
-    []
+    [],
   );
 
   useEffect(() => {

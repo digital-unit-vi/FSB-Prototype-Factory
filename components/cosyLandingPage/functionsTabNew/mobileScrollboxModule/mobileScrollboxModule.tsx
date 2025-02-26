@@ -15,7 +15,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { ListItem } from "../functionsTab";
+import type { ListItem } from "../functionsTab";
 import styles from "./mobileScrollboxModule.module.scss";
 
 interface ExtendedListItem extends ListItem {
@@ -34,13 +34,13 @@ export default function MobileScrollboxModule({
   items = [],
 }: MobileScrollboxModuleProps) {
   const [listItems, setListItems] = useState<ExtendedListItem[]>(
-    items.map(item => ({
+    items.map((item) => ({
       ...item,
       scrollMin: 0,
       scrollMax: 0,
       isActive: false,
       isFolded: false,
-    }))
+    })),
   );
   const [initialVideoReady, setInitialVideoReady] = useState(false);
 
@@ -58,7 +58,7 @@ export default function MobileScrollboxModule({
   };
 
   const isPlaying = (index: number) => {
-    return videoRefs.current[index]?.paused == false;
+    return videoRefs.current[index]?.paused === false;
   };
 
   const pressPlay = (index: number) => {
@@ -79,10 +79,10 @@ export default function MobileScrollboxModule({
               prevItems.map((item, i) => ({
                 ...item,
                 isPlaying: i === index,
-              }))
+              })),
             );
           })
-          .catch(function (error) {
+          .catch((error) => {
             console.log(error);
           });
       }
@@ -99,7 +99,7 @@ export default function MobileScrollboxModule({
       prevItems.map((item, i) => ({
         ...item,
         isPlaying: i === index,
-      }))
+      })),
     );
   };
 
@@ -112,7 +112,7 @@ export default function MobileScrollboxModule({
         scrollMax: (index + 1) * (1 / numberOfItems),
         isActive: index === 0,
         isFolded: false,
-      }))
+      })),
     );
   }, [listItems.length]);
 
@@ -145,7 +145,7 @@ export default function MobileScrollboxModule({
         }
 
         return newState;
-      })
+      }),
     );
   });
 
@@ -159,7 +159,7 @@ export default function MobileScrollboxModule({
                 const y = useTransform(
                   scrollYProgress,
                   [item.scrollMin, item.scrollMax],
-                  ["-100%", "0%"]
+                  ["-100%", "0%"],
                 );
 
                 const activeClassState = item.isActive
@@ -176,11 +176,11 @@ export default function MobileScrollboxModule({
                     <div
                       className={classNames(
                         styles.mediaContainer,
-                        item.media.type
+                        item.media.type,
                       )}
                     >
                       <div className={styles.mobileScrollbox__progress}>
-                        <motion.div style={{ y: y }}></motion.div>
+                        <motion.div style={{ y: y }} />
                       </div>
                       {item.media.type === "image" && (
                         <img
@@ -202,11 +202,19 @@ export default function MobileScrollboxModule({
                             <source src={item.media.src} />
                           </video>
                           {!isPlaying(index) ? (
-                            <button onClick={() => pressPlay(index)} aria-label="Play button">
+                            <button
+                              type="button"
+                              onClick={() => pressPlay(index)}
+                              aria-label="Play button"
+                            >
                               <Play />
                             </button>
                           ) : (
-                            <button onClick={() => pressPause(index)} aria-label="Pause button">
+                            <button
+                              type="button"
+                              onClick={() => pressPause(index)}
+                              aria-label="Pause button"
+                            >
                               <Pause />
                             </button>
                           )}

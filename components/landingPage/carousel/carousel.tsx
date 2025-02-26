@@ -13,7 +13,7 @@ import Result6 from "@public/landingPage/carousel/result-6.jpg";
 import Result7 from "@public/landingPage/carousel/result-7.jpg";
 import Result8 from "@public/landingPage/carousel/result-8.jpg";
 import Result9 from "@public/landingPage/carousel/result-9.jpg";
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Marquee from "react-fast-marquee";
 import { Parallax } from "react-scroll-parallax";
 import styles from "./carousel.module.scss";

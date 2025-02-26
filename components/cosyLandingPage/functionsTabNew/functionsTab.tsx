@@ -41,7 +41,7 @@ export default function FunctionsTab({
   darkMode = false,
 }: FunctionsTabProps) {
   const [breakpoints] = useState([
-    parseInt(GlobalBreakpoints.m.replace("px", "")),
+    Number.parseInt(GlobalBreakpoints.m.replace("px", "")),
   ]);
   const [mobileTab, setMobileTab] = useState(false);
 
@@ -55,9 +55,9 @@ export default function FunctionsTab({
         breakpoint.toString() === GlobalBreakpoints.m.replace("px", "")
       ) {
         return true;
-      } else {
-        return false;
       }
+
+      return false;
     };
 
     const handleResize = () => {
@@ -74,7 +74,7 @@ export default function FunctionsTab({
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
-  }, [setMobileTab, breakpoints]);
+  }, [breakpoints]);
 
   return (
     <div className={styles.functionsTabWrapper}>

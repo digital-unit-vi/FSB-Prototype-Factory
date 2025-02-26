@@ -14,10 +14,10 @@ export default function Button({
     <div data-observe="true" className={`${styles.wrapper} ${styles[type]}`}>
       {href ? (
         <Link href={href} passHref className={styles.link}>
-          <button className={styles.button}>{text ?? "Shop now"}</button>
+          <button className={styles.button} type="button">{text ?? "Shop now"}</button>
         </Link>
       ) : (
-        <button className={styles.button}>{text ?? "Shop now"}</button>
+        <button className={styles.button} type="button">{text ?? "Shop now"}</button>
       )}
     </div>
   );

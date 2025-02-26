@@ -43,7 +43,7 @@ const ProductBlock = ({
                   {headline}
                 </Typography>
                 <div className={styles.productBlockWrap__shippingWrapper}>
-                  <Price size="large" price={price || ""}></Price>
+                  <Price size="large" price={price || ""} />
                   <Typography
                     component="p"
                     variant="paragraph10"

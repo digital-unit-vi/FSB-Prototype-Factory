@@ -12,7 +12,7 @@ import {
 } from "@vorwerk/fibre-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import styles from "./hero.module.scss";
 

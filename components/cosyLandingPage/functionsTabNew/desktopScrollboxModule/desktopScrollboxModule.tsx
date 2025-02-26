@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  GridContainer,
-  GridItem,
-  Pause,
-  Play,
-} from "@vorwerk/fibre-react";
+import { GridContainer, GridItem, Pause, Play } from "@vorwerk/fibre-react";
 import classNames from "classnames";
 import {
   motion,
@@ -14,7 +9,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { ListItem } from "../functionsTab";
+import type { ListItem } from "../functionsTab";
 import styles from "./desktopScrollboxModule.module.scss";
 
 interface ExtendedListItem extends ListItem {
@@ -35,12 +30,12 @@ export default function DesktopScrollboxModule({
 }: DesktopScrollboxModuleProps) {
   const [elementHeight, setElementHeight] = useState("0vh");
   const [listItems, setListItems] = useState<ExtendedListItem[]>(
-    items.map(item => ({
+    items.map((item) => ({
       ...item,
       scrollMin: 0,
       scrollMax: 0,
       isActive: false,
-    }))
+    })),
   );
 
   const viewportUnit = "vh";
@@ -51,7 +46,7 @@ export default function DesktopScrollboxModule({
   });
 
   const handlePauseAndResetAll = () => {
-    videoRefs.current.forEach((video) => {
+    for (const video of videoRefs.current) {
       if (video) {
         const playPromise = video.play();
 
@@ -61,12 +56,12 @@ export default function DesktopScrollboxModule({
               video.pause();
               video.currentTime = 0;
             })
-            .catch(function (error) {
+            .catch((error) => {
               console.log(error);
             });
         }
       }
-    });
+    }
   };
 
   const setVideoRef = (element: HTMLVideoElement | null, index: number) => {
@@ -74,7 +69,7 @@ export default function DesktopScrollboxModule({
   };
 
   const isPlaying = (index: number) => {
-    return videoRefs.current[index]?.paused == false;
+    return videoRefs.current[index]?.paused === false;
   };
 
   const pressPlay = (index: number) => {
@@ -88,11 +83,11 @@ export default function DesktopScrollboxModule({
             setListItems((prevItems) =>
               prevItems.map((item, i) => ({
                 ...item,
-                isPlaying: index == i,
-              }))
+                isPlaying: index === i,
+              })),
             );
           })
-          .catch(function (error) {
+          .catch((error) => {
             console.log(error);
           });
       }
@@ -104,8 +99,8 @@ export default function DesktopScrollboxModule({
     setListItems((prevItems) =>
       prevItems.map((item, i) => ({
         ...item,
-        isPlaying: !(index == i),
-      }))
+        isPlaying: !(index === i),
+      })),
     );
   };
 
@@ -120,9 +115,9 @@ export default function DesktopScrollboxModule({
         scrollMin: index * (1 / numberOfItems),
         scrollMax: (index + 1) * (1 / numberOfItems),
         isActive: index === 0,
-      }))
+      })),
     );
-  }, [setElementHeight, listItems.length]);
+  }, [listItems.length]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     setListItems((prevItems) =>
@@ -138,7 +133,7 @@ export default function DesktopScrollboxModule({
         }
 
         return item.isActive !== isActive ? { ...item, isActive } : item;
-      })
+      }),
     );
   });
 
@@ -149,7 +144,7 @@ export default function DesktopScrollboxModule({
           <article
             className={classNames(
               styles.desktopScrollboxWrapper,
-              darkMode ? styles.darkMode : ""
+              darkMode ? styles.darkMode : "",
             )}
           >
             <ul className={styles.desktopScrollbox__list}>
@@ -157,7 +152,7 @@ export default function DesktopScrollboxModule({
                 const x = useTransform(
                   scrollYProgress,
                   [index / listItems.length, (index + 1) / listItems.length],
-                  ["-100%", "0%"]
+                  ["-100%", "0%"],
                 );
 
                 const activeClassState = item.isActive
@@ -170,7 +165,7 @@ export default function DesktopScrollboxModule({
                       <span>{item.text}</span>
                     </div>
                     <div className={styles.desktopScrollbox__progress}>
-                      <motion.div style={{ x }}></motion.div>
+                      <motion.div style={{ x }} />
                     </div>
                   </li>
                 );
@@ -207,11 +202,19 @@ export default function DesktopScrollboxModule({
                           <source src={item.media.src} />
                         </video>
                         {!isPlaying(index) ? (
-                          <button onClick={() => pressPlay(index)} aria-label="Play button">
+                          <button
+                            type="button"
+                            onClick={() => pressPlay(index)}
+                            aria-label="Play button"
+                          >
                             <Play />
                           </button>
                         ) : (
-                          <button onClick={() => pressPause(index)} aria-label="Pause button">
+                          <button
+                            type="button"
+                            onClick={() => pressPause(index)}
+                            aria-label="Pause button"
+                          >
                             <Pause />
                           </button>
                         )}

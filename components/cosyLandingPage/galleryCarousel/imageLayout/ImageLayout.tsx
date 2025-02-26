@@ -71,7 +71,7 @@ export const ImageLayout = ({
 
       {numberOfImages === 2 && (
         <div className={classes}>
-          <div style={{ backgroundImage: `url(${images[0].url})` }}></div>
+          <div style={{ backgroundImage: `url(${images[0].url})` }} />
           <div>
             <img
               src={images[1].url}
@@ -88,11 +88,11 @@ export const ImageLayout = ({
             <div
               className={styles.c1}
               style={{ backgroundImage: `url(${images[0].url})` }}
-            ></div>
+            />
             <div
               className={styles.c2}
               style={{ backgroundImage: `url(${images[1].url})` }}
-            ></div>
+            />
           </div>
           <div>
             <img

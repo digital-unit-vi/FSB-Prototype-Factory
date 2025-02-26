@@ -1,6 +1,11 @@
 import classNames from "classnames";
-import { EmblaCarouselType } from "embla-carousel";
-import { PropsWithChildren, useCallback, useEffect, useState } from "react";
+import type { EmblaCarouselType } from "embla-carousel";
+import {
+  type PropsWithChildren,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import styles from "./galleryCarousel.module.scss";
 
 interface UseDotButtonType {
@@ -10,7 +15,7 @@ interface UseDotButtonType {
 }
 
 const useDotButton = (
-  emblaApi: EmblaCarouselType | undefined
+  emblaApi: EmblaCarouselType | undefined,
 ): UseDotButtonType => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
@@ -20,7 +25,7 @@ const useDotButton = (
       if (!emblaApi) return;
       emblaApi.scrollTo(index);
     },
-    [emblaApi]
+    [emblaApi],
   );
 
   const onInit = useCallback((emblaApi: EmblaCarouselType) => {
@@ -74,16 +79,12 @@ export const DotButtons: React.FC<{
     let continueNext = undefined;
     let continuePrev = undefined;
 
-    const dynamicBullets = scrollSnaps.length > maxDots ? true : false;
+    const dynamicBullets = scrollSnaps.length > maxDots;
     const canCenterBullets =
       selectedIndex >= Math.floor(maxDots / 2) &&
       selectedIndex <= scrollSnaps.length - Math.ceil(maxDots / 2)
-        ? true
-        : false;
     const isNearEndBullets =
       selectedIndex > scrollSnaps.length - Math.ceil(maxDots / 2)
-        ? true
-        : false;
     let smallDotsBeforeStart = false;
     let smallDotsBeforeEnd = false;
 
@@ -110,8 +111,8 @@ export const DotButtons: React.FC<{
       continuePrev = undefined;
 
       const smallClass =
-        (i == start && smallDotsBeforeStart) ||
-        (i == end - 1 && smallDotsBeforeEnd);
+        (i === start && smallDotsBeforeStart) ||
+        (i === end - 1 && smallDotsBeforeEnd);
 
       const hiddenClass = i < Math.abs(0 - start) || i > Math.abs(0 - end) - 1;
 
@@ -126,9 +127,9 @@ export const DotButtons: React.FC<{
             hiddenClass ? styles.swiper__dothidden : "",
             dotSelected,
             continuePrev,
-            continueNext
+            continueNext,
           )}
-        ></DotButton>
+        />,
       );
     }
 

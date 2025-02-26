@@ -14,9 +14,9 @@ import {
   Typography,
   Vorwerk,
 } from "@vorwerk/fibre-react";
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Parallax } from "react-scroll-parallax";
 import styles from "./hero.module.scss";
 

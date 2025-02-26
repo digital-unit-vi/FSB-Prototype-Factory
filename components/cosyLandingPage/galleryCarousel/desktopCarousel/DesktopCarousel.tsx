@@ -2,7 +2,7 @@ import classNames from "classnames";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect } from "react";
 import { DotButtons } from "../EmblaCarouselDotButton";
-import { ImageLayout, ImageLayoutProps } from "../imageLayout/ImageLayout";
+import { ImageLayout, type ImageLayoutProps } from "../imageLayout/ImageLayout";
 import styles from "./desktopCarousel.module.scss";
 
 export interface DesktopCarouselProps {
@@ -35,13 +35,12 @@ export const DesktopCarousel = ({
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
-
   useEffect(() => {
-    const handleKeyUp = (e: any) => {
-      if (e.key == "ArrowLeft") {
+    const handleKeyUp = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
         scrollPrev();
       }
-      if (e.key == "ArrowRight") {
+      if (e.key === "ArrowRight") {
         scrollNext();
       }
     };
@@ -49,7 +48,7 @@ export const DesktopCarousel = ({
     window.addEventListener("keyup", handleKeyUp);
 
     return () => window.removeEventListener("keyup", handleKeyUp);
-  }, [emblaApi, scrollPrev, scrollNext]);
+  }, [scrollPrev, scrollNext]);
 
   return (
     <div
@@ -65,24 +64,26 @@ export const DesktopCarousel = ({
               <ImageLayout
                 bigImagePosLeft={slide.bigImagePosLeft}
                 images={slide.images}
-              ></ImageLayout>
+              />
             </div>
           ))}
         </div>
         <button
           className={classNames(styles.swiper__pagination, styles.swiper__prev)}
           onClick={scrollPrev}
+          type="button"
         >
           Prev
         </button>
         <button
           className={classNames(styles.swiper__pagination, styles.swiper__next)}
           onClick={scrollNext}
+          type="button"
         >
           Next
         </button>
 
-        {emblaApi && <DotButtons emblaApi={emblaApi}></DotButtons>}
+        {emblaApi && <DotButtons emblaApi={emblaApi} />}
       </div>
     </div>
   );

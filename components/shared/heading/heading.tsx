@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { type ReactNode } from "react";
 import styles from "./heading.module.scss";
 
 interface CustomProps {
@@ -37,9 +37,8 @@ export default function Heading({
 
   return (
     <div
-      className={`${styles.container} ${dark ? styles.dark : ""} ${
-        oneLineOnMedium ? styles.oneLine : ""
-      }`}
+      className={`${styles.container} ${dark ? styles.dark : ""} ${oneLineOnMedium ? styles.oneLine : ""
+        }`}
     >
       {React.Children.map(children, renderChildren)}
     </div>

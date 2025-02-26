@@ -33,7 +33,7 @@ export const MobileCarousel = ({
             </div>
           ))}
         </div>
-        {emblaApi && <DotButtons emblaApi={emblaApi}></DotButtons>}
+        {emblaApi && <DotButtons emblaApi={emblaApi} />}
       </div>
     </div>
   );

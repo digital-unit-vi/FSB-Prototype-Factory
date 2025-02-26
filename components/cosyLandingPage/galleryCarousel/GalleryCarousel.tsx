@@ -3,10 +3,10 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { DesktopCarousel } from "./desktopCarousel/DesktopCarousel";
 import styles from "./galleryCarousel.module.scss";
-import { ImageLayoutProps } from "./imageLayout/ImageLayout";
+import type { ImageLayoutProps } from "./imageLayout/ImageLayout";
 import {
   MobileCarousel,
-  MobileCarouselProps,
+  type MobileCarouselProps,
 } from "./mobileCarousel/MobileCarousel";
 
 const GlobalBreakpoints = {
@@ -29,7 +29,7 @@ const GalleryCarousel = ({
   darkMode = false,
 }: GalleryCarouselProps) => {
   const [breakpoints] = useState([
-    parseInt(GlobalBreakpoints.l.replace("px", "")),
+    Number.parseInt(GlobalBreakpoints.l.replace("px", "")),
   ]);
   const [mobileSlider, setMobileSlider] = useState(false);
 
@@ -78,7 +78,7 @@ const GalleryCarousel = ({
     <div
       className={classNames(
         styles.galleryCarouselWrapper,
-        darkMode ? styles.darkMode : ""
+        darkMode ? styles.darkMode : "",
       )}
     >
       {mobileSlider ? (

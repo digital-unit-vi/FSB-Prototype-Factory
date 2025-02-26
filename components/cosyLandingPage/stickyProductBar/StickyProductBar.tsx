@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@vorwerk/fibre-react";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./stickyProductBar.module.scss";
 
 const StickyProductBar: React.FC = () => {
@@ -26,15 +26,14 @@ const StickyProductBar: React.FC = () => {
       rootMargin: "0px",
       threshold: 0.1,
     };
-
     const observerCallback: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
+      for (const entry of entries) {
         if (entry.isIntersecting) {
           intersectingElements.add(entry.target);
         } else {
           intersectingElements.delete(entry.target);
         }
-      });
+      }
 
       if (intersectingElements.size > 0) {
         setIsVisible(false);
@@ -47,10 +46,13 @@ const StickyProductBar: React.FC = () => {
       observerCallback,
       observerOptions
     );
-    targets.forEach((target) => observer.observe(target));
+
+    for (const target of targets) {
+      observer.observe(target);
+    }
 
     let initialIntersecting = false;
-    targets.forEach((target) => {
+    for (const target of targets) {
       const rect = target.getBoundingClientRect();
       if (
         rect.top < window.innerHeight &&
@@ -60,11 +62,14 @@ const StickyProductBar: React.FC = () => {
       ) {
         initialIntersecting = true;
       }
-    });
+    };
+
     setIsVisible(!initialIntersecting);
 
     return () => {
-      targets.forEach((target) => observer.unobserve(target));
+      for (const target of targets) {
+        observer.unobserve(target);
+      }
       observer.disconnect();
     };
   }, []);
