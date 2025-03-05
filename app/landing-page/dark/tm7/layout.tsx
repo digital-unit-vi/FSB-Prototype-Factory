@@ -30,10 +30,10 @@ export default function RootLayout({
                 </Typography>
               }
               links={[
-                <Typography variant="paragraph16">
+                <Typography variant="paragraph16" key="press-kit">
                   <Link href="#press-kit">Explore our press kit</Link>
                 </Typography>,
-                <Typography variant="paragraph16">
+                <Typography variant="paragraph16" key="customer-service">
                   <Link href="#customer-service">Customer Service</Link>
                 </Typography>,
               ]}
@@ -45,10 +45,10 @@ export default function RootLayout({
                 </Typography>
               }
               links={[
-                <Typography variant="paragraph16">
+                <Typography variant="paragraph16" key="pre-order">
                   <Link href="#pre-order">Pre-order now</Link>
                 </Typography>,
-                <Typography variant="paragraph16">
+                <Typography variant="paragraph16" key="track-delivery">
                   <Link href="#track-delivery">Track your delivery</Link>
                 </Typography>,
               ]}
@@ -60,7 +60,7 @@ export default function RootLayout({
                 </Typography>
               }
               links={[
-                <Typography variant="paragraph16">
+                <Typography variant="paragraph16" key="ar">
                   <Link href="#ar">See it in AR</Link>
                 </Typography>,
               ]}

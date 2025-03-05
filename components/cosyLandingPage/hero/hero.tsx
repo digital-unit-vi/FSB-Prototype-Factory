@@ -66,24 +66,18 @@ const Hero: React.FC = () => {
       let newFadeValue1 = 0;
       if (scrollPosition >= fadeStart1) {
         newFadeValue1 = 1;
-      } else {
-        newFadeValue1 = 0;
       }
       setFadeValue1(newFadeValue1);
 
       let newFadeValue2 = 0;
       if (scrollPosition >= fadeStart2) {
         newFadeValue2 = 1;
-      } else {
-        newFadeValue2 = 0;
       }
       setFadeValue2(newFadeValue2);
 
       let newFadeValue3 = 0;
       if (scrollPosition >= fadeStart3) {
         newFadeValue3 = 1;
-      } else {
-        newFadeValue3 = 0;
       }
       setFadeValue3(newFadeValue3);
     };
@@ -107,9 +101,9 @@ const Hero: React.FC = () => {
             loop
             preload="auto"
             disableRemotePlayback
-            poster="/cosy/hero-video-model-background.png"
+            poster="/cosy/hero_video_desktop_poster.webp"
           >
-            <source src="/cosy/hero-video-model.mp4" type="video/mp4" />
+            <source src="/cosy/hero_video_desktop.webm" type="video/webm" />
             Your browser does not support the video tag.
           </video>
           <div className={styles.heroOverlay} />

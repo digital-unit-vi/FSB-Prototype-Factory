@@ -91,7 +91,7 @@ export default function TM7Page() {
                 scrollMax: 1,
                 media: {
                   type: "video",
-                  src: "/cosy/cosy_step1.mp4",
+                  src: "/cosy/functions_tab_benefit1.webm",
                 },
                 description:
                   "A sleek base, and a heat-insulated bowl that keeps it cool while making your kitchen look even more beautiful.",
@@ -104,7 +104,7 @@ export default function TM7Page() {
                 scrollMax: 1,
                 media: {
                   type: "video",
-                  src: "/cosy/cosy_step2.mp4",
+                  src: "/cosy/functions_tab_benefit2.webm",
                 },
                 description:
                   "A stunning 10-inch multi-touch display that makes manual and Guided Cooking a completely new experience.",
@@ -117,7 +117,7 @@ export default function TM7Page() {
                 scrollMax: 1,
                 media: {
                   type: "video",
-                  src: "/cosy/cosy_step1.mp4",
+                  src: "/cosy/functions_tab_benefit3.webm",
                 },
                 description:
                   "So silent, you'll wonder if it's even on. Feel the power without the noise.",
@@ -130,7 +130,7 @@ export default function TM7Page() {
                 scrollMax: 1,
                 media: {
                   type: "video",
-                  src: "/cosy/cosy_step4.mp4",
+                  src: "/cosy/functions_tab_benefit4.webm",
                 },
                 description:
                   "The Open Cooking mode for delicate ingredients with no mixing knife rotation.",
@@ -223,7 +223,7 @@ export default function TM7Page() {
                 bigImagePosLeft: false,
                 images: [
                   {
-                    url: "/cosy/gallery-carousel-1.jpg",
+                    url: "/cosy/gallery-carousel-1-desktop.webp",
                     alt: "Image 1",
                     title: "",
                     description:
@@ -235,7 +235,7 @@ export default function TM7Page() {
                 bigImagePosLeft: false,
                 images: [
                   {
-                    url: "/cosy/gallery-carousel-2.jpg",
+                    url: "/cosy/gallery-carousel-2-desktop.webp",
                     alt: "Image 2",
                     title: "",
                     description:
@@ -247,7 +247,7 @@ export default function TM7Page() {
                 bigImagePosLeft: false,
                 images: [
                   {
-                    url: "/cosy/gallery-carousel-3.jpg",
+                    url: "/cosy/gallery-carousel-3-desktop.webp",
                     alt: "Image 3",
                     title: "",
                     description:
@@ -259,7 +259,7 @@ export default function TM7Page() {
                 bigImagePosLeft: false,
                 images: [
                   {
-                    url: "/cosy/gallery-carousel-4.jpg",
+                    url: "/cosy/gallery-carousel-4-desktop.webp",
                     alt: "Image 4",
                     title: "",
                     description:
@@ -272,28 +272,28 @@ export default function TM7Page() {
               {
                 mobileCarouselItems: [
                   {
-                    url: "/cosy/gallery-carousel-1.jpg",
+                    url: "/cosy/gallery-carousel-1-mobile.webp",
                     alt: "Image 1",
                     title: "",
                     description:
                       "Save time: Cook entire meals with multi-level cooking while Guided Cooking and automated modes do the work. Scale recipes instantly.",
                   },
                   {
-                    url: "/cosy/gallery-carousel-2.jpg",
+                    url: "/cosy/gallery-carousel-2-mobile.webp",
                     alt: "Image 2",
                     title: "",
                     description:
                       "Save space: One elegant device replaces dozens of appliances and takes less space than a microwave.",
                   },
                   {
-                    url: "/cosy/gallery-carousel-3.jpg",
+                    url: "/cosy/gallery-carousel-3-mobile.webp",
                     alt: "Image 3",
                     title: "",
                     description:
                       "Save money: Create restaurant-quality meals at home for a fraction of the cost.",
                   },
                   {
-                    url: "/cosy/gallery-carousel-4.jpg",
+                    url: "/cosy/gallery-carousel-4-mobile.webp",
                     alt: "Image 4",
                     title: "",
                     description:
@@ -318,8 +318,7 @@ export default function TM7Page() {
                 children={
                   <Typography component="p" variant="h2">
                     <span>
-                      Meet the
-                      <strong> all-new TM7</strong>.
+                      Meet the<strong> all-new TM7</strong>.
                     </span>
                   </Typography>
                 }
@@ -332,9 +331,9 @@ export default function TM7Page() {
                 <video
                   controls
                   preload="auto"
-                  poster="/cosy/hero-video-model-background.png"
+                  poster="/cosy/tm7_reveal_poster.webp"
                 >
-                  <source src="/cosy/hero-video-model.mp4" type="video/mp4" />
+                  <source src="/cosy/tm7_reveal_video.webm" type="video/webm" />
                 </video>
               </MediaContainer>
             </GridItem>
@@ -469,8 +468,8 @@ export default function TM7Page() {
             tiles={[
               {
                 bigTile: false,
-                image: "/cosy/bento-tray.png",
-                imageBottom: true,
+                image: "/cosy/bento-dish.webp",
+                imageBottom: false,
                 text: "Perfect results every time you cook.",
                 title: "100%",
                 titleSecondary: "success guaranteed",
@@ -504,7 +503,7 @@ export default function TM7Page() {
                 image: "/cosy/bento-varoma-2.png",
                 imageBottom: false,
                 text: "for complete meals.",
-                title: "40%",
+                title: "45%",
                 titleSecondary: "increased steaming space",
               },
             ]}
@@ -524,8 +523,7 @@ export default function TM7Page() {
                 children={
                   <Typography component="p" variant="h2">
                     <span>
-                      What's
-                      <strong> included</strong>.
+                      What's<strong> included</strong>.
                     </span>
                   </Typography>
                 }
@@ -539,7 +537,7 @@ export default function TM7Page() {
                 bigImagePosLeft: false,
                 images: [
                   {
-                    url: "/cosy/image_gallery_1_xxl3.png",
+                    url: "/cosy/image_gallery_1_desktop.webp",
                     alt: "Image 1",
                     title: "",
                   },
@@ -549,8 +547,8 @@ export default function TM7Page() {
                 bigImagePosLeft: false,
                 images: [
                   {
-                    url: "/cosy/image_gallery_2_xxl3.png",
-                    alt: "Image 1",
+                    url: "/cosy/image_gallery_2_desktop.webp",
+                    alt: "Image 2",
                     title: "",
                   },
                 ],
@@ -560,12 +558,12 @@ export default function TM7Page() {
               {
                 mobileCarouselItems: [
                   {
-                    url: "/cosy/image_gallery_1_xs.png",
+                    url: "/cosy/image_gallery_1_mobile.png",
                     alt: "Image 1",
                     title: "",
                   },
                   {
-                    url: "/cosy/image_gallery_2_xs.png",
+                    url: "/cosy/image_gallery_2_mobile.png",
                     alt: "Image 2",
                     title: "",
                   },

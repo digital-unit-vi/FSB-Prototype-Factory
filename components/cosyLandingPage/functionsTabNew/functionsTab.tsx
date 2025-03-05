@@ -24,8 +24,8 @@ interface ListItemMedia {
 }
 
 interface FunctionsTabProps {
-  items: ListItem[];
-  darkMode?: boolean;
+  readonly items: ListItem[];
+  readonly darkMode?: boolean;
 }
 
 const GlobalBreakpoints = {
@@ -39,7 +39,7 @@ const GlobalBreakpoints = {
 export default function FunctionsTab({
   items = [],
   darkMode = false,
-}: FunctionsTabProps) {
+}: Readonly<FunctionsTabProps>) {
   const [breakpoints] = useState([
     Number.parseInt(GlobalBreakpoints.m.replace("px", "")),
   ]);
