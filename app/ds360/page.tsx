@@ -201,7 +201,7 @@ const Languages = [
   </DropdownItem>,
 ];
 
-const tilesData = [
+const tilesDataEmail = [
   {
     light: {
       image: "/shared/product/tm6-product-light.png",
@@ -237,7 +237,7 @@ const tilesData = [
   },
 ];
 
-const tilesData2 = [
+const tilesDataMarketingEmail = [
   {
     light: {
       image: "/shared/product/tm6-product-light.png",
@@ -268,7 +268,7 @@ const tilesData2 = [
   },
 ];
 
-const tilesData3 = [
+const tilesDataLP = [
   {
     light: {
       image: "/shared/product/tm6-product-light.png",
@@ -346,7 +346,7 @@ export default function Home() {
               />
             </GridItem>
           </GridContainer>
-          <ShowcaseTiles tilesData={tilesData} />
+          <ShowcaseTiles tilesData={tilesDataEmail} />
         </section>
         <section className={styles.prominentSection}>
           <GridContainer>
@@ -364,7 +364,7 @@ export default function Home() {
               />
             </GridItem>
           </GridContainer>
-          <ShowcaseTiles tilesData={tilesData2} />
+          <ShowcaseTiles tilesData={tilesDataMarketingEmail} />
         </section>
         <section className={styles.prominentSection}>
           <GridContainer>
@@ -384,7 +384,7 @@ export default function Home() {
               />
             </GridItem>
           </GridContainer>
-          <ShowcaseTiles tilesData={tilesData3} />
+          <ShowcaseTiles tilesData={tilesDataLP} />
         </section>
         <ProductStripe
           logo={<Vorwerk />}

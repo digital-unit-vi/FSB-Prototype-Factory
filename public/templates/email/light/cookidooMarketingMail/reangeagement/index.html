@@ -80,16 +80,20 @@
       min-width: 100% !important;
       width: 100% !important;
       background: #e2e4e2;
-      -webkit-text-size-adjust: none
+      -webkit-text-size-adjust: none;
     }
 
     a {
       color: #00ac46;
-      text-decoration: none
+      text-decoration: none;
     }
 
     p {
-      margin: 0 !important
+      margin: 0 !important;
+      word-wrap: break-word;
+      word-break: break-word;
+      -ms-word-break: break-all;
+      overflow-wrap: break-word;
     }
 
     table {
@@ -237,7 +241,6 @@
       padding: 0 !important;
       margin: 0 !important;
       mso-line-height-rule: exactly;
-      margin: 0;
     }
 
     h1,
@@ -252,7 +255,6 @@
       padding: 0 !important;
       margin: 0 !important;
       mso-line-height-rule: exactly;
-      Margin: 0;
     }
 
     ul {
@@ -376,6 +378,16 @@
       background-color: #3f4447 !important;
     }
 
+    .text-truncate-22-4-lines {
+      display: -webkit-box !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      -webkit-box-orient: vertical !important;
+      -webkit-line-clamp: 4 !important;
+      line-height: 22px !important;
+      max-height: 88px !important;
+    }
+
 
     /* Mobile styles */
     @media only screen and (max-device-width: 480px),
@@ -419,10 +431,6 @@
 
       .mpb-3 {
         padding-bottom: 3px !important;
-      }
-
-      .mpb-10 {
-        padding-bottom: 10px !important;
       }
 
       .mpb-0 {
@@ -738,7 +746,7 @@
                   <!-- Hero -->
                   <tr>
                     <td bgcolor="#f3f5f3"
-                      style="font-size:0pt; line-height:0pt; text-align:center; padding: 16px 16px 12px;">
+                      style="font-size:0pt; line-height:0pt; text-align:center; padding: 24px 16px;">
                       <a href="https://www.thermomix.com/" target="_blank"><img
                           src="/library/email/Header/logo_green.png" width="129" height="52" border="0"
                           alt="Logo Header" /></a>
@@ -747,8 +755,8 @@
 
                   <tr>
                     <td bgcolor="#f3f5f3"
-                      style="border-radius: 0 0 80px 0; padding-top: 32px; padding-right: 24px; padding-bottom: 186px; padding-left: 24px;"
-                      class="bg-grey mrounded mpb-132">
+                      style="border-radius: 0 0 80px 0; padding-top: 32px; padding-right: 20px; padding-bottom: 186px; padding-left: 20px;"
+                      class="bg-grey mrounded mpb-132 mpx-16">
                       <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                         <tr>
                           <td class="c-green l-green"
@@ -770,7 +778,7 @@
                           <td align="center">
                             <table border="0" cellspacing="0" cellpadding="0" role="presentation">
                               <tr>
-                                <td class="btn bg-green mail-button" bgcolor="#00ac46" width="192"
+                                <td class="btn bg-green mail-button" bgcolor="#00ac46"
                                   style="font-size:18px; line-height:30px; color:#fffffe; font-family:'Vorwerk', Arial, sans-serif; text-align:center; font-weight:400; mso-padding-alt:8px 20px; border-radius: 8px;">
                                   <p class="btn no-p"
                                     style="font-size:18px; line-height:30px; color:#fffffe; font-family:'Vorwerk', Arial, sans-serif; text-align:center; font-weight:400; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
@@ -794,8 +802,8 @@
                         <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                           <tr>
                             <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:center;">
-                              <img src="/email/marketing/hero/hero-reangagement.png" width="600" height="338" border="0"
-                                alt="Image 1" />
+                              <img src="/email/marketing/hero/hero.png" width="600" height="338" border="0"
+                                alt="Phone screen with cooking application opened" />
                             </td>
                           </tr>
                         </table>
@@ -848,272 +856,43 @@
                   <tr>
                     <td class="mpx-16 mpb-32" style="padding-left: 24px; padding-right: 24px; padding-bottom: 48px;">
                       <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
-                        <!-- Desktop Layout -->
                         <tr>
-                          <td class="m-hide" style="display: block;">
+                          <td class="mpb-16" style="padding-bottom: 24px;">
                             <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                               <tr>
-                                <td class="mpb-16" style="padding-bottom: 16px;">
+                                <th class="column-top" width="360"
+                                  style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                                     <tr>
-                                      <th class="column-top"
-                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
+                                      <td valign="top" bgcolor="#f3f5f3" width="168" class="bg-grey mw-48p">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                          role="presentation" style="table-layout: fixed;">
-                                          <tr>
-                                            <td height="288" valign="top" bgcolor="#f3f5f3" class="bg-grey"
-                                              style="border-radius: 8px;">
-                                              <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                role="presentation">
-                                                <tr>
-                                                  <td style="padding: 16px; vertical-align: top;">
-                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                      role="presentation">
-                                                      <tr>
-                                                        <td
-                                                          style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
-                                                          <img src="/email/marketing/featureTiles/seasoning-icon.svg"
-                                                            width="64" height="64" border="0" alt="Seasoning icon" />
-                                                        </td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td
-                                                          style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding-bottom: 8px;">
-                                                          <p class="no-p"
-                                                            style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly; word-break: break-word;">
-                                                            Guided-<br />Cooking</p>
-                                                        </td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td
-                                                          style="vertical-align: top; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px;">
-                                                          <p class="no-p"
-                                                            style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
-                                                            Follow along the instructions of your Thermomix&reg;.</p>
-                                                        </td>
-                                                      </tr>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                            <td class="mw-16" width="16"
-                                              style="font-size:0pt; line-height:0pt; text-align:left;">&nbsp;</td>
-                                            <td height="288" valign="top" bgcolor="#f3f5f3" class="bg-grey"
-                                              style="border-radius: 8px;">
-                                              <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                role="presentation">
-                                                <tr>
-                                                  <td style="padding: 16px; vertical-align: top;">
-                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                      role="presentation">
-                                                      <tr>
-                                                        <td
-                                                          style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
-                                                          <img src="/email/marketing/featureTiles/recipe-icon.svg"
-                                                            width="64" height="64" border="0" alt="Recipe icon" />
-                                                        </td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td
-                                                          style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding-bottom: 8px;">
-                                                          <p class="no-p"
-                                                            style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly; word-break: break-word;">
-                                                            Recipe recommendations</p>
-                                                        </td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td
-                                                          style="vertical-align: top; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px;">
-                                                          <p class="no-p"
-                                                            style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
-                                                            Discover new worlds with Cookidoo&reg; and enjoy content
-                                                            made for your
-                                                            taste.</p>
-                                                        </td>
-                                                      </tr>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                            <td class="mw-16" width="16"
-                                              style="font-size:0pt; line-height:0pt; text-align:left;">&nbsp;</td>
-                                            <td height="288" valign="top" bgcolor="#f3f5f3" class="bg-grey"
-                                              style="border-radius: 8px;">
-                                              <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                role="presentation">
-                                                <tr>
-                                                  <td style="padding: 16px; vertical-align: top;">
-                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                      role="presentation">
-                                                      <tr>
-                                                        <td
-                                                          style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
-                                                          <img src="/email/marketing/featureTiles/serving-icon.svg"
-                                                            width="64" height="64" border="0" alt="Serving icon" />
-                                                        </td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td
-                                                          style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding-bottom: 8px;">
-                                                          <p class="no-p"
-                                                            style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly; word-break: break-word;">
-                                                            Personalised<br />recipes</p>
-                                                        </td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td
-                                                          style="vertical-align: top; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px;">
-                                                          <p class="no-p"
-                                                            style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
-                                                            Make recipes yours by adding, removing ingredients or
-                                                            scaling portions.</p>
-                                                        </td>
-                                                      </tr>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </table>
-                                      </th>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
-                                    <tr>
-                                      <th class="column-top bg-grey" bgcolor="#f3f5f3" width="362" height="260"
-                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; border-radius: 8px;">
-                                        <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0"
                                           role="presentation">
                                           <tr>
                                             <td class="mpx-16"
-                                              style="padding-top: 16px; padding-bottom: 32px; padding-left: 16px; padding-right: 16px; vertical-align: middle;">
-                                              <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                role="presentation">
-                                                <tr>
-                                                  <td
-                                                    style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 36px; line-height: 50px; font-weight: 700;">
-                                                    <p class="no-p"
-                                                      style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 36px; line-height: 50px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
-                                                      95.000+</p>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700;">
-                                                    <p class="no-p"
-                                                      style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:-7px 0 0 !important; mso-line-height-rule:exactly;">
-                                                      international recipes</p>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                            <td
-                                              style="height: 190px; width: 50%; background-image: url('/email/marketing/featureTiles/chefs-hat.png'); background-size: cover; background-position: left; font-size:0pt; line-height:0pt; border-bottom-right-radius: 8px;">
-                                              &nbsp;
-                                            </td>
-                                          </tr>
-                                        </table>
-                                      </th>
-                                      <th class="column-top" width="16"
-                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
-                                      </th>
-                                      <th class="column-top bg-grey mw-48p m-hide" height="260" bgcolor="#f3f5f3"
-                                        style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; border-radius: 8px;">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                          role="presentation">
-                                          <tr>
-                                            <td bgcolor="#f3f5f3" class="bg-grey" style="border-radius: 8px;">
-                                              <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                role="presentation">
-                                                <tr>
-                                                  <td style="padding: 16px; vertical-align: top;">
-                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                      role="presentation">
-                                                      <tr>
-                                                        <td
-                                                          style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
-                                                          <img src="/email/marketing/featureTiles/calendar-icon.svg"
-                                                            width="64" height="64" border="0" alt="Calendar icon" />
-                                                        </td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td
-                                                          style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding-bottom: 8px;">
-                                                          <p class="no-p"
-                                                            style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly; word-break: break-word;">
-                                                            Weekly<br />planner</p>
-                                                        </td>
-                                                      </tr>
-                                                      <tr>
-                                                        <td
-                                                          style="vertical-align: top; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px;">
-                                                          <p class="no-p"
-                                                            style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
-                                                            Plan your week and don’t think twice!</p>
-                                                        </td>
-                                                      </tr>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </table>
-                                      </th>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                        <!-- END Desktop Layout -->
-
-                        <!-- Mobile Layout -->
-                        <tr>
-                          <td class="m-block" style="display: none;">
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
-                              <tr>
-                                <!-- Left Column -->
-                                <td width="48%" valign="top" style="vertical-align: top;">
-                                  <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
-                                    <!-- Guided-Cooking Tile -->
-                                    <tr>
-                                      <td bgcolor="#f3f5f3" class="bg-grey" style="border-radius: 8px;">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                          role="presentation">
-                                          <tr>
-                                            <td style="padding: 16px; vertical-align: top;">
+                                              style="padding-top: 16px; padding-left: 24px; padding-right: 24px; padding-bottom: 16px;">
                                               <table width="100%" border="0" cellspacing="0" cellpadding="0"
                                                 role="presentation">
                                                 <tr>
                                                   <td
                                                     style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
-                                                    <img src="/email/marketing/featureTiles/seasoning-icon.svg"
-                                                      width="64" height="64" border="0" alt="Seasoning icon" />
+                                                    <img src="/email/marketing/featureTiles/spice-up-icon.svg"
+                                                      width="48" height="48" border="0" alt="Spice up icon" />
                                                   </td>
                                                 </tr>
                                                 <tr>
                                                   <td
                                                     style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding-bottom: 8px;">
                                                     <p class="no-p"
-                                                      style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly; word-break: break-word;">
-                                                      Guided-<br />Cooking</p>
+                                                      style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                      Guided-Cooking</p>
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <td
+                                                  <td height="88"
                                                     style="vertical-align: top; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px;">
                                                     <p class="no-p"
                                                       style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
-                                                      Follow along the instructions of your Thermomix&reg;.</p>
+                                                      Follow along the instructions of your Thermomix®.</p>
                                                   </td>
                                                 </tr>
                                               </table>
@@ -1121,92 +900,37 @@
                                           </tr>
                                         </table>
                                       </td>
-                                    </tr>
-                                    <!-- Spacer -->
-                                    <tr>
-                                      <td class="mw-16" height="16"
-                                        style="font-size:0pt; line-height:0pt; text-align:left;">
-                                        &nbsp;</td>
-                                    </tr>
-                                    <!-- Personalised recipes Tile -->
-                                    <tr>
-                                      <td bgcolor="#f3f5f3" class="bg-grey" style="border-radius: 8px;">
+                                      <td class="mw-16" width="24"
+                                        style="font-size:0pt; line-height:0pt; text-align:left;">&nbsp;</td>
+                                      <td valign="top" bgcolor="#f3f5f3" width="168" class="bg-grey mw-48p">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0"
                                           role="presentation">
                                           <tr>
-                                            <td style="padding: 16px; vertical-align: top;">
+                                            <td class="mpx-16"
+                                              style="padding-top: 16px; padding-left: 24px; padding-right: 24px; padding-bottom: 16px;">
                                               <table width="100%" border="0" cellspacing="0" cellpadding="0"
                                                 role="presentation">
                                                 <tr>
                                                   <td
                                                     style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
-                                                    <img src="/email/marketing/featureTiles/serving-icon.svg" width="64"
-                                                      height="64" border="0" alt="Serving icon" />
+                                                    <img src="/email/marketing/featureTiles/created-recipe-icon.svg"
+                                                      width="48" height="48" border="0" alt="Created recipe icon" />
                                                   </td>
                                                 </tr>
                                                 <tr>
                                                   <td
                                                     style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding-bottom: 8px;">
                                                     <p class="no-p"
-                                                      style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly; word-break: break-word;">
-                                                      Personalised<br />recipes</p>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="vertical-align: top; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px;">
-                                                    <p class="no-p"
-                                                      style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
-                                                      Make recipes yours by adding, removing ingredients or scaling
-                                                      portions.</p>
-                                                  </td>
-                                                </tr>
-                                              </table>
-                                            </td>
-                                          </tr>
-                                        </table>
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-
-                                <!-- Spacer -->
-                                <td style="font-size:0pt; line-height:0pt; min-width: 16px;">&nbsp;</td>
-
-                                <!-- Right Column -->
-                                <td width="48%" valign="top" style="vertical-align: top;">
-                                  <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
-                                    <!-- Recipe recommendations Tile -->
-                                    <tr>
-                                      <td bgcolor="#f3f5f3" class="bg-grey" style="border-radius: 8px;">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                          role="presentation">
-                                          <tr>
-                                            <td style="padding: 16px; vertical-align: top;">
-                                              <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                role="presentation">
-                                                <tr>
-                                                  <td
-                                                    style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
-                                                    <img src="/email/marketing/featureTiles/recipe-icon.svg" width="64"
-                                                      height="64" border="0" alt="Recipe icon" />
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding-bottom: 8px;">
-                                                    <p class="no-p"
-                                                      style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly; word-break: break-word;">
+                                                      style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
                                                       Recipe recommendations</p>
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <td
+                                                  <td height="88"
                                                     style="vertical-align: top; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px;">
                                                     <p class="no-p"
                                                       style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
-                                                      Discover new worlds with Cookidoo&reg; and enjoy content made for
-                                                      your
+                                                      Discover new worlds with Cookidoo® and enjoy content made for your
                                                       taste.</p>
                                                   </td>
                                                 </tr>
@@ -1216,45 +940,124 @@
                                         </table>
                                       </td>
                                     </tr>
-                                    <!-- Spacer -->
+                                  </table>
+                                </th>
+                                <th class="column-top" width="24"
+                                  style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
+                                </th>
+                                <th class="column-top bg-grey mw-48p m-hide" width="168" bgcolor="#f3f5f3"
+                                  style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
+                                  <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                                     <tr>
-                                      <td class="mw-16" height="16"
-                                        style="font-size:0pt; line-height:0pt; text-align:left;">
-                                        &nbsp;</td>
-                                    </tr>
-                                    <!-- Weekly planner Tile -->
-                                    <tr>
-                                      <td bgcolor="#f3f5f3" class="bg-grey" style="border-radius: 8px;">
+                                      <td
+                                        style="padding-top: 16px; padding-left: 24px; padding-right: 24px; padding-bottom: 16px;">
                                         <table width="100%" border="0" cellspacing="0" cellpadding="0"
                                           role="presentation">
                                           <tr>
-                                            <td style="padding: 16px; vertical-align: top;">
-                                              <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                                role="presentation">
-                                                <tr>
-                                                  <td
-                                                    style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
-                                                    <img src="/email/marketing/featureTiles/calendar-icon.svg"
-                                                      width="64" height="64" border="0" alt="Calendar icon" />
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding-bottom: 8px;">
-                                                    <p class="no-p"
-                                                      style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly; word-break: break-word;">
-                                                      Weekly<br />planner</p>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td
-                                                    style="vertical-align: top; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px;">
-                                                    <p class="no-p"
-                                                      style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
-                                                      Plan your week and don’t think twice!</p>
-                                                  </td>
-                                                </tr>
-                                              </table>
+                                            <td
+                                              style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
+                                              <img src="/email/marketing/featureTiles/created-recipe-icon.svg"
+                                                width="48" height="48" border="0" alt="Created recipe icon" />
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td
+                                              style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding-bottom: 8px;">
+                                              <p class="no-p"
+                                                style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                Personalised recipes</p>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td height="88"
+                                              style="vertical-align: top; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px;">
+                                              <p class="no-p"
+                                                style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                Make recipes yours by adding, removing ingredients or scaling portions.
+                                              </p>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </th>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <!-- Mobile 2 Row Columns -->
+                        <!--[if !mso]><!-->
+                        <tr>
+                          <td class="m-block mpb-16" style="display:none;">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                              <tr>
+                                <td valign="top" width="168" bgcolor="#f3f5f3" class="bg-grey mw-48p">
+                                  <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                    <tr>
+                                      <td class="mpx-16"
+                                        style="padding-top: 16px; padding-left: 24px; padding-right: 24px; padding-bottom: 16px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                          role="presentation">
+                                          <tr>
+                                            <td
+                                              style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
+                                              <img src="/email/marketing/featureTiles/dinner-ready-icon.svg" width="48"
+                                                height="48" border="0" alt="Icon 3 Mobile" />
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td
+                                              style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding-bottom: 8px;">
+                                              <p class="no-p"
+                                                style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                Personalised recipes</p>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td height="88"
+                                              style="vertical-align: top; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px;">
+                                              <p class="no-p"
+                                                style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                Make recipes yours by adding, removing ingredients or scaling portions.
+                                              </p>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                                <td class="mw-16" width="24" style="font-size:0pt; line-height:0pt; text-align:left;">
+                                  &nbsp;</td>
+                                <td valign="top" width="168" bgcolor="#f3f5f3" class="bg-grey mw-48p">
+                                  <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                    <tr>
+                                      <td class="mpx-16"
+                                        style="padding-top: 16px; padding-left: 24px; padding-right: 24px; padding-bottom: 16px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                          role="presentation">
+                                          <tr>
+                                            <td
+                                              style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
+                                              <img src="/email/marketing/featureTiles/calendar-icon.svg" width="48"
+                                                height="48" border="0" alt="Calendar icon" />
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td
+                                              style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding-bottom: 8px;">
+                                              <p class="no-p"
+                                                style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                Weekly planner</p>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td height="88"
+                                              style="vertical-align: top; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px;">
+                                              <p class="no-p"
+                                                style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                Plan your week and don’t think twice!</p>
                                             </td>
                                           </tr>
                                         </table>
@@ -1264,47 +1067,99 @@
                                 </td>
                               </tr>
                             </table>
-
-                            <!-- Mobile Large Tile -->
-                            <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation"
-                              style="margin-top: 16px;">
-                              <th class="column-top bg-grey" bgcolor="#f3f5f3"
-                                style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top; border-radius: 8px;">
-                                <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
-                                  <tr>
-                                    <td class="mpx-16"
-                                      style="padding-top: 16px; padding-bottom: 32px; padding-left: 16px; padding-right: 16px; vertical-align: middle;">
-                                      <table width="100%" border="0" cellspacing="0" cellpadding="0"
-                                        role="presentation">
-                                        <tr>
-                                          <td
-                                            style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 36px; line-height: 50px; font-weight: 700;">
-                                            <p class="no-p"
-                                              style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 36px; line-height: 50px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
-                                              95.000+</p>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td
-                                            style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700;">
-                                            <p class="no-p"
-                                              style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
-                                              international recipes</p>
-                                          </td>
-                                        </tr>
-                                      </table>
-                                    </td>
-                                    <td
-                                      style="height: 190px; width: 50%; background-image: url('/email/marketing/featureTiles/chefs-hat.png'); background-size: cover; background-position: left; font-size:0pt; line-height:0pt; border-bottom-right-radius: 8px;">
-                                      &nbsp;
-                                    </td>
-                                  </tr>
-                                </table>
-                              </th>
+                          </td>
+                        </tr>
+                        <!--<![endif]-->
+                        <!-- END Mobile 2 Row Columns -->
+                        <tr>
+                          <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                              <tr>
+                                <th class="column-top bg-grey mw-48p m-hide" width="168" bgcolor="#f3f5f3"
+                                  style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
+                                  <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                    <tr>
+                                      <td
+                                        style="padding-top: 16px; padding-left: 24px; padding-right: 24px; padding-bottom: 16px;">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                          role="presentation">
+                                          <tr>
+                                            <td
+                                              style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
+                                              <img src="/email/marketing/featureTiles/calendar-icon.svg" width="48"
+                                                height="48" border="0" alt="Calendar icon" />
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td
+                                              style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding-bottom: 8px;">
+                                              <p class="no-p"
+                                                style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 20px; line-height: 24px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                Weekly planner</p>
+                                            </td>
+                                          </tr>
+                                          <tr>
+                                            <td height="66"
+                                              style="vertical-align: top; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px;">
+                                              <p class="no-p"
+                                                style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 14px; line-height: 22px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                Plan your week and don’t think twice!</p>
+                                            </td>
+                                          </tr>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </th>
+                                <th class="column-top" width="24"
+                                  style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
+                                </th>
+                                <th class="column-top bg-grey" bgcolor="#f3f5f3"
+                                  style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:center;">
+                                  <a href="#" class="mail-hover-content" target="_blank">
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                      <tr>
+                                        <td class="mpx-16"
+                                          style="padding-top: 24px; padding-bottom: 24px; padding-left: 24px; padding-right: 24px;">
+                                          <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                            role="presentation">
+                                            <tr>
+                                              <td
+                                                style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 72px; line-height: 74px; font-weight: 700;">
+                                                <p class="no-p"
+                                                  style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 72px; line-height: 74px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                  95.000+</p>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td
+                                                style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 32px; line-height: 38px; font-weight: 700; padding-bottom: 24px;">
+                                                <p class="no-p"
+                                                  style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 32px; line-height: 38px; font-weight: 700; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                  international recipes</p>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td class="c-green l-green"
+                                                style="font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 16px; line-height: 28px; color:#00ac46; font-weight: 500;">
+                                                <p class="c-green l-green no-p"
+                                                  style="font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 16px; line-height: 28px; color:#00ac46; font-weight: 500; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                  <span class="c-green l-green mail-link"
+                                                    style="text-decoration:none; color:#00ac46;">Explore all
+                                                    functions</span>
+                                                </p>
+                                              </td>
+                                            </tr>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </a>
+                                </th>
+                              </tr>
                             </table>
                           </td>
                         </tr>
-                        <!-- END Mobile Layout -->
                       </table>
                     </td>
                   </tr>
@@ -1335,7 +1190,7 @@
                                         <table class="mw-100p" border="0" cellspacing="0" cellpadding="0"
                                           role="presentation">
                                           <tr>
-                                            <td class="btn bg-green mail-button" bgcolor="#00ac46" width="192"
+                                            <td class="btn bg-green mail-button" bgcolor="#00ac46"
                                               style="font-size:18px; line-height:30px; color:#fffffe; font-family:'Vorwerk', Arial, sans-serif; text-align:center; font-weight:400; mso-padding-alt:13px 14px; border-radius: 8px;">
                                               <p class="btn no-p"
                                                 style="font-size:18px; line-height:30px; color:#fffffe; font-family:'Vorwerk', Arial, sans-serif; text-align:center; font-weight:400; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
@@ -1366,11 +1221,18 @@
                     <td class="mpx-16" style="padding-left: 24px; padding-right: 24px;">
                       <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                         <tr>
-                          <td
-                            style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; font-size: 32px; line-height: 38px; text-align:center; font-weight: 300; padding-bottom: 24px;">
+                          <td class="m-block"
+                            style="display: none; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; font-size: 32px; line-height: 38px; text-align:center; font-weight: 300; padding-bottom: 24px;">
                             <h2 class="no-p"
                               style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; font-size: 32px; line-height: 38px; text-align:center; font-weight: 300; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
                               Hungry for <br /><strong class="c-green l-green"
+                                style="color:#00ac46; font-weight: 700;">something new?</strong></h2>
+                          </td>
+                          <td class="m-hide"
+                            style="display: table-cell; color:#23282a; font-family:'Vorwerk', Arial, sans-serif; font-size: 32px; line-height: 38px; text-align:center; font-weight: 300; padding-bottom: 24px;">
+                            <h2 class="no-p"
+                              style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; font-size: 32px; line-height: 38px; text-align:center; font-weight: 300; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                              Hungry for <strong class="c-green l-green"
                                 style="color:#00ac46; font-weight: 700;">something new?</strong></h2>
                           </td>
                         </tr>
@@ -1381,7 +1243,7 @@
 
                   <!-- Text block -->
                   <tr>
-                    <td class="mpx-16" style="padding-left: 24px; padding-right: 24px; padding-bottom: 32px;">
+                    <td class="mpx-16" style="padding-left: 24px; padding-right: 24px; padding-bottom: 40px;">
                       <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                         <tr>
                           <td>
@@ -1392,9 +1254,9 @@
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                                     <tr>
                                       <td
-                                        style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 16px; line-height: 26px;">
+                                        style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:center; font-size: 18px; line-height: 27px;">
                                         <p class="no-p"
-                                          style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:left; font-size: 16px; line-height: 26px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                          style="color:#23282a; font-family:'Vorwerk', Arial, sans-serif; text-align:center; font-size: 18px; line-height: 27px; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
                                           Cookidoo&reg; always has some excitement with more than 90.000 international
                                           recipes</p>
                                       </td>
@@ -1411,70 +1273,52 @@
                   <!-- END Text block -->
 
                   <!-- Recipes section collage -->
+                  <!-- Collage column -->
                   <tr>
-                    <td class="mpx-16" style="padding-left: 24px; padding-right: 24px; padding-bottom: 64px;">
+                    <td class="mpx-16" style="padding-left: 24px; padding-right: 24px; padding-bottom: 32px;">
                       <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                         <tr>
-                          <td align="center" class="mpx-0"
-                            style="padding-right: 96px; padding-bottom: 32px; padding-left: 96px;">
+                          <td align="center">
                             <table border="0" cellspacing="0" cellpadding="0" role="presentation">
                               <tr>
-                                <td valign="top" class="mw-48p"
+                                <td valign="top" class="mw-48p" width="220"
                                   style="font-size:0pt; line-height:0pt; text-align:left;">
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                                     <tr>
                                       <td class="mpb-16 fluid-img"
-                                        style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
-                                        <img src="/email/marketing/recipesSection/spiced-nuts.png" border="0"
-                                          alt="Spiced nuts recipe" style="max-width: 100%;" />
+                                        style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 24px;">
+                                        <img src="/email/marketing/collage/pasta-ricotta.png" width="220" height="294"
+                                          border="0" alt="Pasta with Courgette Ricotta" />
                                       </td>
                                     </tr>
                                     <tr>
                                       <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;">
-                                        <img src="/email/marketing/recipesSection/coconut-bars.png" border="0"
-                                          alt="Coconut bars recipe" style="max-width: 100%;" />
+                                        <img src="/email/marketing/collage/chicken-shawarma.png" width="220"
+                                          height="220" border="0" alt="Chicken Shawarma Bowl" />
                                       </td>
                                     </tr>
                                   </table>
                                 </td>
                                 <td class="mpl-16"
-                                  style="font-size:0pt; line-height:0pt; text-align:left; padding-left: 16px;">&nbsp;
+                                  style="font-size:0pt; line-height:0pt; text-align:left; padding-left: 24px;">&nbsp;
                                 </td>
-                                <td valign="top" class="mw-48p"
+                                <td valign="top" class="mw-48p" width="220"
                                   style="font-size:0pt; line-height:0pt; text-align:left;">
                                   <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                                     <tr>
                                       <td class="mpb-16 fluid-img"
-                                        style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 16px;">
-                                        <img src="/email/marketing/recipesSection/roasted-lentils.png" border="0"
-                                          alt="Lentils recipe" style="max-width: 100%;" />
+                                        style="font-size:0pt; line-height:0pt; text-align:left; padding-bottom: 24px;">
+                                        <img src="/email/marketing/collage/vegan-shawarma.png" width="220" height="221"
+                                          border="0" alt="Vegan Mushroom Shawarma" />
                                       </td>
                                     </tr>
                                     <tr>
                                       <td class="fluid-img" style="font-size:0pt; line-height:0pt; text-align:left;">
-                                        <img src="/email/marketing/recipesSection/asian-salad.png" border="0"
-                                          alt="Asian salad recipe" style="max-width: 100%;" />
+                                        <img src="/email/marketing/collage/souffle-pancackes.png" width="220"
+                                          height="294" border="0" alt="Souffle Pancakes with Berries" />
                                       </td>
                                     </tr>
                                   </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td align="center">
-                            <table class="mw-100p" border="0" cellspacing="0" cellpadding="0" role="presentation">
-                              <tr>
-                                <td class="btn bg-green mail-button" bgcolor="#00ac46" width="192"
-                                  style="font-size:18px; line-height:30px; color:#fffffe; font-family:'Vorwerk', Arial, sans-serif; text-align:center; font-weight:400; mso-padding-alt:13px 14px; border-radius: 8px;">
-                                  <p class="btn no-p"
-                                    style="font-size:18px; line-height:30px; color:#fffffe; font-family:'Vorwerk', Arial, sans-serif; text-align:center; font-weight:400; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
-                                    <a href="https://www.thermomix.com/" target="_blank" class="l-white"
-                                      style="padding: 8px 20px; display: block; text-decoration:none; color:#fffffe;"><span
-                                        class="l-white" style="text-decoration:none; color:#fffffe;">Discover
-                                        recipes</span></a>
-                                  </p>
                                 </td>
                               </tr>
                             </table>
@@ -1483,7 +1327,60 @@
                       </table>
                     </td>
                   </tr>
+                  <!-- END Collage column -->
                   <!-- END Recipes section collage -->
+
+                  <tr>
+                    <td class="mpx-16" style="padding-left: 24px; padding-right: 24px; padding-bottom: 64px;">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                <tbody>
+                                  <tr>
+                                    <th class="column mpx-0"
+                                      style="font-size:0pt; line-height:0pt; padding: 0px 48px; margin:0; font-weight:normal;">
+                                      <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                        role="presentation">
+                                        <tbody>
+                                          <tr>
+                                            <td align="center">
+                                              <table class="mw-100p" border="0" cellspacing="0" cellpadding="0"
+                                                role="presentation">
+                                                <tbody>
+                                                  <tr>
+                                                    <td class="btn bg-green mail-button" bgcolor="#00ac46"
+                                                      style="font-size:18px; line-height:30px; color:#fffffe; font-family:'Vorwerk', Arial, sans-serif; text-align:center; font-weight:400; mso-padding-alt:13px 14px; border-radius: 8px;">
+                                                      <p class="btn no-p"
+                                                        style="font-size:18px; line-height:30px; color:#fffffe; font-family:'Vorwerk', Arial, sans-serif; text-align:center; font-weight:400; padding:0 !important; margin:0 !important; mso-line-height-rule:exactly;">
+                                                        <a href="https://www.thermomix.com/" target="_blank"
+                                                          class="l-white"
+                                                          style="padding: 8px 20px; display: block; text-decoration:none; color:#fffffe;"><span
+                                                            class="l-white"
+                                                            style="text-decoration:none; color:#fffffe;">Discover
+                                                            recipes
+                                                          </span>
+                                                        </a>
+                                                      </p>
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </th>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
 
                   <!-- Footer -->
                   <tr>

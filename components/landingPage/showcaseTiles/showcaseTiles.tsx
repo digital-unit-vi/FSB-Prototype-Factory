@@ -1,3 +1,5 @@
+'use client';
+
 import {
   GridContainer,
   GridItem,
@@ -8,65 +10,88 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./showcaseTiles.module.scss";
 
+interface TileVersion {
+  image: string;
+  link: string;
+}
+
 interface TileProps {
-  light: {
-    image: string;
-    link: string;
-  };
-  dark?: {
-    image: string;
-    link: string;
-  };
+  light?: TileVersion;
+  dark?: TileVersion;
   isDarkMode: boolean;
   title: string;
 }
 
 const Tile: React.FC<TileProps> = ({ light, dark, isDarkMode, title }) => {
-  const tileData = isDarkMode && dark ? dark : light;
+  // Determine which version to show based on availability and mode
+  const version = useMemo(() => {
+    if (isDarkMode && dark) return dark;
+    if (!isDarkMode && light) return light;
+    // Fallback to whatever is available
+    return dark ?? light;
+  }, [light, dark, isDarkMode]);
 
-  const backgroundColor =
-    isDarkMode && dark ? "#3f4447" : "#F3F5F3";
-  const fontColor =
-    isDarkMode && dark ? "#fff" : "#23282A";
+  useEffect(() => {
+    // Only preload images that exist on the client side
+    if (typeof window !== 'undefined') {
+      if (light) {
+        const preloadLight = new Image();
+        preloadLight.src = light.image;
+      }
+      if (dark) {
+        const preloadDark = new Image();
+        preloadDark.src = dark.image;
+      }
+    }
+  }, [light, dark]);
+
+  // Determine background color based on which version is being shown
+  const isShowingDark = isDarkMode || (!light && dark);
+  const backgroundColor = isShowingDark ? "#3f4447" : "#F3F5F3";
+  const fontColor = isShowingDark ? "#fff" : "#23282A";
+
+  if (!version) return null; // Safety check - shouldn't happen with proper props
 
   return (
     <Link
-      href={tileData.link}
+      href={version.link}
       className={styles.tile}
       style={{ backgroundColor, color: fontColor }}
     >
-      <img src={tileData.image} alt="Product" className={styles.image} />
-      <Headline spaceBelow="default">
-        <Typography component="h5" fontWeight="bold">
-          <span>{title}</span>
-        </Typography>
-      </Headline>
+      <img src={version.image} alt="Product" className={styles.image} />
+      <Headline
+        spaceBelow="default"
+        children={
+          <Typography component="h5" fontWeight="bold">
+            <span>{title}</span>
+          </Typography>
+        }
+      />
     </Link>
   );
 };
 
 interface ShowcaseTilesProps {
   tilesData: {
-    light: {
-      image: string;
-      link: string;
-    };
-    dark?: {
-      image: string;
-      link: string;
-    };
+    light?: TileVersion;
+    dark?: TileVersion;
     title: string;
   }[];
 }
 
+// Export the component as a client component
 const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Check if we have both modes available for at least one tile
+  const hasBothModes = useMemo(() => {
+    return tilesData.some(tile => tile.light && tile.dark);
+  }, [tilesData]);
 
   const columnsConfig = useMemo(() => {
     const numberOfTiles = tilesData.length;
     const columnsPerTile = 12 / numberOfTiles;
-
-    const newColumnsConfig = tilesData.map((_, index) => {
+    return tilesData.map((_, index) => {
       const start = index * columnsPerTile + 1;
       const end = start + columnsPerTile;
       return { start, end, columns: columnsPerTile };
@@ -75,13 +100,24 @@ const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
 
   const toggleDarkMode = useCallback(() => {
     setIsDarkMode((prevMode) => !prevMode);
-  };
+  }, []);
 
-  const hasDarkVersion = tilesData.some(tile => tile.dark !== undefined);
+  // Check if all tiles only have dark mode
+  const onlyDarkMode = useMemo(() => {
+    return tilesData.every(tile => tile.dark && !tile.light);
+  }, [tilesData]);
+
+  // Set initial dark mode state based on available modes
+  useEffect(() => {
+    if (onlyDarkMode) {
+      setIsDarkMode(true);
+    }
+  }, [onlyDarkMode]);
 
   return (
     <div className={styles.mainContainer}>
-      {hasDarkVersion && (
+      {/* Only show the switch if both modes are available */}
+      {hasBothModes && (
         <GridContainer>
           <GridItem columns={12} className={styles.switchContainer}>
             <label className={styles.switchLabel}>
@@ -92,7 +128,7 @@ const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
                 onChange={toggleDarkMode}
                 className={styles.switchInput}
               />
-              <span className={styles.switchSlider}></span>
+              <span className={styles.switchSlider} />
             </label>
           </GridItem>
         </GridContainer>
@@ -100,16 +136,22 @@ const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
 
       <div className={styles.schowcaseTilesContainer}>
         <GridContainer>
-          {columnsConfig.map((config, index) => (
-            <GridItem key={index} columns={config.columns as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}>
-              <Tile
-                light={tilesData[index].light}
-                dark={tilesData[index].dark}
-                isDarkMode={isDarkMode}
-                title={tilesData[index].title}
-              />
-            </GridItem>
-          ))}
+          {columnsConfig.map((config, index) => {
+            const tile = tilesData[index];
+            // Skip tiles that don't have at least one version
+            if (!tile.light && !tile.dark) return null;
+
+            return (
+              <GridItem key={index} columns={config.columns as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}>
+                <Tile
+                  light={tile.light}
+                  dark={tile.dark}
+                  isDarkMode={isDarkMode}
+                  title={tile.title}
+                />
+              </GridItem>
+            );
+          })}
         </GridContainer>
       </div>
     </div>
