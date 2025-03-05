@@ -333,7 +333,8 @@ export default function TM7Page() {
                   preload="auto"
                   poster="/cosy/tm7_reveal_poster.webp"
                 >
-                  <source src="/cosy/tm7_reveal_video.webm" type="video/webm" />
+                  <source src="https://media.vorwerk.com/is/content/vorwerk/vorwerk-eCommerce-portal/gb/en/c/dam-home/videos/thermomix/tm7/H305666_VORWERK_Reveal_TM_long_version_16x9_UK_titled_1920px.webm" type="video/webm" />
+                  <source src="https://media.vorwerk.com/is/content/vorwerk/vorwerk-eCommerce-portal/gb/en/c/dam-home/videos/thermomix/tm7/H305666_VORWERK_Reveal_TM_long_version_16x9_UK_titled_1920px-0x720-3000k.mp4" type="video/mp4" />
                 </video>
               </MediaContainer>
             </GridItem>
