@@ -97,13 +97,14 @@ const Hero: React.FC = () => {
             className={styles.heroVideo}
             autoPlay
             muted
-            playsInline
+            playsInline={true}
             loop
-            preload="auto"
+            preload="metadata"
             disableRemotePlayback
             poster="/cosy/hero_video_desktop_poster.webp"
           >
             <source src="/cosy/hero_video_desktop.webm" type="video/webm" />
+            <source src="/cosy/hero_video_desktop.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className={styles.heroOverlay} />

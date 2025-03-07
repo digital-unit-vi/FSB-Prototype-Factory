@@ -32,7 +32,7 @@ interface MobileScrollboxModuleProps {
 
 export default function MobileScrollboxModule({
   items = [],
-}: MobileScrollboxModuleProps) {
+}: Readonly<MobileScrollboxModuleProps>) {
   const [listItems, setListItems] = useState<ExtendedListItem[]>(
     items.map((item) => ({
       ...item,
@@ -184,7 +184,7 @@ export default function MobileScrollboxModule({
                       </div>
                       {item.media.type === "image" && (
                         <img
-                          src={item.media.src}
+                          src={typeof item.media.src === 'string' ? item.media.src : ''}
                           alt={item.media.alt}
                           title={item.media.title}
                         />
@@ -199,7 +199,14 @@ export default function MobileScrollboxModule({
                             muted={true}
                             loop={true}
                           >
-                            <source src={item.media.src} />
+                            {typeof item.media.src === 'string' ? (
+                              <source src={item.media.src} />
+                            ) : (
+                              <>
+                                <source src={item.media.src.webm} type="video/webm" />
+                                <source src={item.media.src.mp4} type="video/mp4" />
+                              </>
+                            )}
                           </video>
                           {!isPlaying(index) ? (
                             <button

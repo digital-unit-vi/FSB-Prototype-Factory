@@ -91,7 +91,10 @@ export default function TM7Page() {
                 scrollMax: 1,
                 media: {
                   type: "video",
-                  src: "/cosy/functions_tab_benefit1.webm",
+                  src: {
+                    webm: "/cosy/functions_tab_benefit1.webm",
+                    mp4: "/cosy/functions_tab_benefit1.mp4"
+                  }
                 },
                 description:
                   "A sleek base, and a heat-insulated bowl that keeps it cool while making your kitchen look even more beautiful.",
@@ -104,7 +107,10 @@ export default function TM7Page() {
                 scrollMax: 1,
                 media: {
                   type: "video",
-                  src: "/cosy/functions_tab_benefit2.webm",
+                  src: {
+                    webm: "/cosy/functions_tab_benefit2.webm",
+                    mp4: "/cosy/functions_tab_benefit2.mp4"
+                  }
                 },
                 description:
                   "A stunning 10-inch multi-touch display that makes manual and Guided Cooking a completely new experience.",
@@ -117,7 +123,10 @@ export default function TM7Page() {
                 scrollMax: 1,
                 media: {
                   type: "video",
-                  src: "/cosy/functions_tab_benefit3.webm",
+                  src: {
+                    webm: "/cosy/functions_tab_benefit3.webm",
+                    mp4: "/cosy/functions_tab_benefit3.mp4"
+                  }
                 },
                 description:
                   "So silent, you'll wonder if it's even on. Feel the power without the noise.",
@@ -130,7 +139,10 @@ export default function TM7Page() {
                 scrollMax: 1,
                 media: {
                   type: "video",
-                  src: "/cosy/functions_tab_benefit4.webm",
+                  src: {
+                    webm: "/cosy/functions_tab_benefit4.webm",
+                    mp4: "/cosy/functions_tab_benefit4.mp4"
+                  }
                 },
                 description:
                   "The Open Cooking mode for delicate ingredients with no mixing knife rotation.",

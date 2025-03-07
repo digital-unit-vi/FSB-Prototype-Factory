@@ -27,7 +27,7 @@ interface DesktopScrollboxModuleProps {
 export default function DesktopScrollboxModule({
   items = [],
   darkMode = false,
-}: DesktopScrollboxModuleProps) {
+}: Readonly<DesktopScrollboxModuleProps>) {
   const [elementHeight, setElementHeight] = useState("0vh");
   const [listItems, setListItems] = useState<ExtendedListItem[]>(
     items.map((item) => ({
@@ -99,7 +99,7 @@ export default function DesktopScrollboxModule({
     setListItems((prevItems) =>
       prevItems.map((item, i) => ({
         ...item,
-        isPlaying: !(index === i),
+        isPlaying: index !== i,
       })),
     );
   };
@@ -184,7 +184,7 @@ export default function DesktopScrollboxModule({
                   >
                     {item.media.type === "image" && (
                       <img
-                        src={item.media.src}
+                        src={typeof item.media.src === 'string' ? item.media.src : ''}
                         alt={item.media.alt}
                         title={item.media.title}
                       />
@@ -199,7 +199,14 @@ export default function DesktopScrollboxModule({
                           muted={true}
                           loop={true}
                         >
-                          <source src={item.media.src} />
+                          {typeof item.media.src === 'string' ? (
+                            <source src={item.media.src} />
+                          ) : (
+                            <>
+                              <source src={item.media.src.webm} type="video/webm" />
+                              <source src={item.media.src.mp4} type="video/mp4" />
+                            </>
+                          )}
                         </video>
                         {!isPlaying(index) ? (
                           <button

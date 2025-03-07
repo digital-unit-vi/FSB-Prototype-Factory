@@ -18,7 +18,10 @@ export interface ListItem {
 
 interface ListItemMedia {
   type: "image" | "video";
-  src: string;
+  src: string | {
+    webm: string;
+    mp4: string;
+  };
   title?: string;
   alt?: string;
 }
