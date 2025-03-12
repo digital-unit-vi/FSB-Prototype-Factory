@@ -22,7 +22,7 @@ interface TileProps {
   title: string;
 }
 
-const Tile: React.FC<TileProps> = ({ light, dark, isDarkMode, title }) => {
+const Tile = ({ light, dark, isDarkMode, title }: TileProps) => {
   // Determine which version to show based on availability and mode
   const version = useMemo(() => {
     if (isDarkMode && dark) return dark;
@@ -61,12 +61,11 @@ const Tile: React.FC<TileProps> = ({ light, dark, isDarkMode, title }) => {
       <img src={version.image} alt="Product" className={styles.image} />
       <Headline
         spaceBelow="default"
-        children={
-          <Typography component="h5" fontWeight="bold">
-            <span>{title}</span>
-          </Typography>
-        }
-      />
+      >
+        <Typography component="h5" fontWeight="bold">
+          <span>{title}</span>
+        </Typography>
+      </Headline>
     </Link>
   );
 };
@@ -80,7 +79,7 @@ interface ShowcaseTilesProps {
 }
 
 // Export the component as a client component
-const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
+const ShowcaseTiles = ({ tilesData }: ShowcaseTilesProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Check if we have both modes available for at least one tile
@@ -142,7 +141,7 @@ const ShowcaseTiles: React.FC<ShowcaseTilesProps> = ({ tilesData }) => {
             if (!tile.light && !tile.dark) return null;
 
             return (
-              <GridItem key={index} columns={config.columns as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}>
+              <GridItem key={`tile-${tile.title}`} columns={config.columns as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}>
                 <Tile
                   light={tile.light}
                   dark={tile.dark}
