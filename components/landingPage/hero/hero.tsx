@@ -64,7 +64,7 @@ const Hero: React.FC<HeroProps> = ({
     videoEl.playsInline = true;
 
     const playVideo = () => {
-      videoEl.play().catch((error) => {
+      videoEl.play().catch((error: unknown) => {
         console.error("Video playback failed:", error);
       });
     };

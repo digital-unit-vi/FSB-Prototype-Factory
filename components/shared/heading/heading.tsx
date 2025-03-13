@@ -28,7 +28,7 @@ export default function Heading({
 
       return React.cloneElement(child, {
         ...rest,
-        className: `${styles[classNameStr]}`,
+        className: styles[classNameStr],
         children: processedChildren,
       });
     }

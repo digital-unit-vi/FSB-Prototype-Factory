@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const useVisibility = (ref: React.RefObject<never>, options = {}) => {
+const useVisibility = (ref: React.RefObject<HTMLElement>, options = {}) => {
   const [isVisible, setIsVisible] = useState(false);
   const currentRef = ref.current;
 

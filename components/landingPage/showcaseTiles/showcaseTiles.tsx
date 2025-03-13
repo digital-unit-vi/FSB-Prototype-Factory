@@ -82,6 +82,12 @@ interface ShowcaseTilesProps {
 const ShowcaseTiles = ({ tilesData }: ShowcaseTilesProps) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // Generate a unique storage key based on tile titles
+  const storageKey = useMemo(() => {
+    const tileIdentifier = tilesData.map(tile => tile.title).join('-');
+    return `showcaseTiles-darkMode-${tileIdentifier}`;
+  }, [tilesData]);
+
   // Check if we have both modes available for at least one tile
   const hasBothModes = useMemo(() => {
     return tilesData.some(tile => tile.light && tile.dark);
@@ -98,20 +104,35 @@ const ShowcaseTiles = ({ tilesData }: ShowcaseTilesProps) => {
   }, [tilesData]);
 
   const toggleDarkMode = useCallback(() => {
-    setIsDarkMode((prevMode) => !prevMode);
-  }, []);
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      // Save preference to localStorage with unique key
+      if (typeof window !== 'undefined') {
+        localStorage.setItem(storageKey, String(newMode));
+      }
+      return newMode;
+    });
+  }, [storageKey]);
 
   // Check if all tiles only have dark mode
   const onlyDarkMode = useMemo(() => {
     return tilesData.every(tile => tile.dark && !tile.light);
   }, [tilesData]);
 
-  // Set initial dark mode state based on available modes
+  // Set initial dark mode state based on available modes and saved preference
   useEffect(() => {
-    if (onlyDarkMode) {
-      setIsDarkMode(true);
+    if (typeof window !== 'undefined') {
+      const savedPreference = localStorage.getItem(storageKey);
+
+      if (savedPreference !== null) {
+        // Use saved preference if it exists
+        setIsDarkMode(savedPreference === 'true');
+      } else if (onlyDarkMode) {
+        // Fall back to onlyDarkMode logic if no saved preference
+        setIsDarkMode(true);
+      }
     }
-  }, [onlyDarkMode]);
+  }, [onlyDarkMode, storageKey]);
 
   return (
     <div className={styles.mainContainer}>
