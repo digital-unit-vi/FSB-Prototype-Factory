@@ -51,15 +51,14 @@ export default function TM6VariantADarkLandingPage() {
             className={styles.textCentered}
           >
             <Headline
-              children={
-                <Typography component="h2">
-                  <span>
-                    Compact and versatile – the Thermomix® TM6 is cleaner, more
-                    powerful, and quieter.
-                  </span>
-                </Typography>
-              }
-            />
+            >
+              <Typography component="h2">
+                <span>
+                  Compact and versatile – the Thermomix® TM6 is cleaner, more
+                  powerful, and quieter.
+                </span>
+              </Typography>
+            </Headline>
           </GridItem>
         </GridContainer>
       </SectionContainer>
@@ -121,15 +120,14 @@ export default function TM6VariantADarkLandingPage() {
             <>
               <Headline
                 spaceBelow={"default"}
-                children={
-                  <Typography component="h1">
-                    <span>
-                      Tons of <strong>functions</strong>
-                    </span>
-                  </Typography>
-                }
                 strongColor="green"
-              />
+              >
+                <Typography component="h1">
+                  <span>
+                    Tons of <strong>functions</strong>
+                  </span>
+                </Typography>
+              </Headline>
               <Typography component="intro">
                 <span>
                   The Thermomix® TM6 replaces more than twenty appliances.
@@ -273,17 +271,16 @@ export default function TM6VariantADarkLandingPage() {
             <>
               <Headline
                 spaceBelow={"default"}
-                children={
-                  <Typography component="h1">
-                    <span>
-                      New favorite recipes
-                      <br />
-                      <strong>everyday</strong>
-                    </span>
-                  </Typography>
-                }
                 strongColor="green"
-              />
+              >
+                <Typography component="h1">
+                  <span>
+                    New favorite recipes
+                    <br />
+                    <strong>everyday</strong>
+                  </span>
+                </Typography>
+              </Headline>
               <Typography component="intro">
                 <span>
                   The Cookidoo® digital recipe portal is the key to your

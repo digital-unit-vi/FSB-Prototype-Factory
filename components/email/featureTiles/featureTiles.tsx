@@ -10,9 +10,7 @@ export default function FeatureTiles({
 
   return (
     <div
-      className={`${styles.container} ${
-        styles[`container-${numberOfChildren}`]
-      }`}
+      className={`${styles.container} ${styles['container-' + numberOfChildren.toString()]}`}
     >
       {children}
     </div>

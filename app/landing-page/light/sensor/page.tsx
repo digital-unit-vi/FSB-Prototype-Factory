@@ -44,15 +44,14 @@ export default function SensorLightLandingPage() {
             className={styles.textCentered}
           >
             <Headline
-              children={
-                <Typography component="h2">
-                  <span>
-                    Guaranteed flavour, consistency and perfect results on the
-                    oven, pan and grill
-                  </span>
-                </Typography>
-              }
-            />
+            >
+              <Typography component="h2">
+                <span>
+                  Guaranteed flavour, consistency and perfect results on the
+                  oven, pan and grill
+                </span>
+              </Typography>
+            </Headline>
           </GridItem>
         </GridContainer>
       </SectionContainer>
@@ -176,13 +175,11 @@ export default function SensorLightLandingPage() {
       <SectionContainer>
         <GridContainer>
           <GridItem columns={4}>
-            <Headline
-              children={
-                <Typography component="h3" fontWeight="bold">
-                  What is the Thermomix® Sensor?
-                </Typography>
-              }
-            />
+            <Headline>
+              <Typography component="h3" fontWeight="bold">
+                What is the Thermomix® Sensor?
+              </Typography>
+            </Headline>
           </GridItem>
           <GridItem columns={8}>
             <Typography component="intro">
@@ -206,15 +203,14 @@ export default function SensorLightLandingPage() {
             className={styles.textCentered}
           >
             <Headline
-              children={
-                <Typography component="h1">
-                  <span>
-                    <strong>Full control</strong> in your kitchen
-                  </span>
-                </Typography>
-              }
               strongColor="green"
-            />
+            >
+              <Typography component="h1">
+                <span>
+                  <strong>Full control</strong> in your kitchen
+                </span>
+              </Typography>
+            </Headline>
           </GridItem>
         </GridContainer>
         <ProductAnimation />
@@ -275,17 +271,16 @@ export default function SensorLightLandingPage() {
             <>
               <Headline
                 spaceBelow={"default"}
-                children={
-                  <Typography component="h1">
-                    <span>
-                      Don't miss a single
-                      <br />
-                      <strong>cooking point</strong>
-                    </span>
-                  </Typography>
-                }
                 strongColor="green"
-              />
+              >
+                <Typography component="h1">
+                  <span>
+                    Don&apos;t miss a single
+                    <br />
+                    <strong>cooking point</strong>
+                  </span>
+                </Typography>
+              </Headline>
               <Typography component="intro">
                 <span>
                   Meat and fish cooked to perfection, light and fluffy cakes,

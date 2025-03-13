@@ -57,20 +57,18 @@ const ProductAnimation = () => {
       };
 
       const adjustCanvasSize = () => {
-        if (!canvas) return;
-
         const rect = canvas.getBoundingClientRect();
         canvas.width = rect.width * dpr;
         canvas.height = rect.height * dpr;
 
-        canvas.style.width = `${rect.width}px`;
-        canvas.style.height = `${rect.height}px`;
+        canvas.style.width = `${rect.width.toString()}px`;
+        canvas.style.height = `${rect.height.toString()}px`;
 
         render();
       };
 
       const render = () => {
-        if (!canvas || !context || !imagesRef.current[frames.frame]) return;
+        if (!imagesRef.current[frames.frame]) return;
 
         context.fillStyle = "#FFFFFF";
         context.fillRect(0, 0, canvas.width, canvas.height);
@@ -114,7 +112,7 @@ const ProductAnimation = () => {
         scrollTrigger: {
           trigger: container,
           start: "top top",
-          end: `+=${frameCount * 14}`,
+          end: `+=${String(frameCount * 14)}`,
           pin: true,
           pinSpacing: true,
           scrub: 1,

@@ -42,7 +42,7 @@
     "target": "ES2017"
   },
   "include": [
-    "eslint.config.mjs",
+    "eslint.config.js",
     "next.config.mjs",
     "next-env.d.ts",
     "**/*.ts",

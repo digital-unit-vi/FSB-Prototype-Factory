@@ -277,7 +277,7 @@ export default function SensorLightLandingPage() {
               >
                 <Typography component="h1">
                   <span>
-                    Don't miss a single
+                    Don&apos;t miss a single
                     <br />
                     <strong>cooking point</strong>
                   </span>

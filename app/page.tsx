@@ -131,7 +131,7 @@ export default function Home() {
             <Typography fontWeight="regular" variant="paragraph18">
               The Experience Design Team supports the Vorwerk International
               Sales division in delivering digital touchpoints to the
-              Company's markets (Work In Progress)
+              Company&apos;s markets (Work In Progress)
             </Typography>
           }
         />
@@ -175,7 +175,7 @@ export default function Home() {
                     Its primary goal is to empower the entire Vorwerk
                     community to envision, execute, and maintain digital
                     touchpoints that consistently embody the premium quality
-                    of the company's physical devices, such as the
+                    of the company&apos;s physical devices, such as the
                     Thermomix.
                   </span>
                   <Spacer size={24} />

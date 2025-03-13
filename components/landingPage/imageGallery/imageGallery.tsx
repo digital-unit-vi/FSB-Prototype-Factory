@@ -32,7 +32,14 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
 
   const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
     tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
-      return slideNode.querySelector(`.${styles.imageGalleryParallaxLayer}`)!;
+      const element = slideNode.querySelector(`.${styles.imageGalleryParallaxLayer}`);
+
+      if (!element) {
+        console.error('Parallax layer element not found');
+        return document.createElement('div');
+      }
+
+      return element as HTMLElement;
     });
   }, []);
 
@@ -47,33 +54,54 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
       const slidesInView = emblaApi.slidesInView();
       const isScrollEvent = eventName === "scroll";
 
+      // Helper function to handle loop point calculations
+      const calculateDiffToTarget = (
+        slideIndex: number,
+        snapIndex: number,
+        initialDiff: number
+      ): number => {
+        let diffToTarget = initialDiff;
+
+        if (!engine.options.loop) return diffToTarget;
+
+        engine.slideLooper.loopPoints.forEach((loopItem) => {
+          const target = loopItem.target();
+
+          if (slideIndex !== loopItem.index || target === 0) return;
+
+          const sign = Math.sign(target);
+          if (sign === -1) {
+            diffToTarget = emblaApi.scrollSnapList()[snapIndex] - (1 + scrollProgress);
+          }
+          if (sign === 1) {
+            diffToTarget = emblaApi.scrollSnapList()[snapIndex] + (1 - scrollProgress);
+          }
+        });
+
+        return diffToTarget;
+      };
+
+      // Apply transform to each slide
+      const applyTransform = (slideIndex: number, diffToTarget: number): void => {
+        const translate = diffToTarget * (-1 * tweenFactor.current) * 100;
+        const tweenNode = tweenNodes.current[slideIndex];
+        tweenNode.style.transform = `translateX(${translate.toString()}%)`;
+      };
+
       emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
-        let diffToTarget = scrollSnap - scrollProgress;
+        const initialDiff = scrollSnap - scrollProgress;
         const slidesInSnap = engine.slideRegistry[snapIndex];
 
         slidesInSnap.forEach((slideIndex) => {
           if (isScrollEvent && !slidesInView.includes(slideIndex)) return;
 
-          if (engine.options.loop) {
-            engine.slideLooper.loopPoints.forEach((loopItem) => {
-              const target = loopItem.target();
+          const diffToTarget = calculateDiffToTarget(
+            slideIndex,
+            snapIndex,
+            initialDiff
+          );
 
-              if (slideIndex === loopItem.index && target !== 0) {
-                const sign = Math.sign(target);
-
-                if (sign === -1) {
-                  diffToTarget = scrollSnap - (1 + scrollProgress);
-                }
-                if (sign === 1) {
-                  diffToTarget = scrollSnap + (1 - scrollProgress);
-                }
-              }
-            });
-          }
-
-          const translate = diffToTarget * (-1 * tweenFactor.current) * 100;
-          const tweenNode = tweenNodes.current[slideIndex];
-          tweenNode.style.transform = `translateX(${translate}%)`;
+          applyTransform(slideIndex, diffToTarget);
         });
       });
     },
@@ -97,9 +125,8 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
 
   return (
     <div
-      className={`${styles.imageGallery} ${
-        dark ? styles.imageGalleryDark : ""
-      }`}
+      className={`${styles.imageGallery} ${dark ? styles.imageGalleryDark : ""
+        }`}
     >
       <div className={styles.imageGalleryViewport} ref={emblaRef}>
         <div className={styles.imageGalleryContainer}>
@@ -110,7 +137,7 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
                   <Image
                     className={`${styles.imageGallerySlideImg} ${styles.imageGalleryParallaxImg}`}
                     src={slide}
-                    alt={`Image gallery img${index}`}
+                    alt={`Image gallery img${index.toString()}`}
                   />
                 </div>
               </div>
@@ -122,11 +149,10 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
         <div className={styles.imageGalleryDots}>
           {scrollSnaps.map((_, index) => (
             <DotButton
-              key={index}
-              onClick={() => onDotButtonClick(index)}
-              className={`${styles.imageGalleryDot} ${
-                index === selectedIndex ? styles.imageGalleryDotSelected : ""
-              }`}
+              key={`dot-${scrollSnaps[index].toString()}`}
+              onClick={() => { onDotButtonClick(index); }}
+              className={`${styles.imageGalleryDot} ${index === selectedIndex ? styles.imageGalleryDotSelected : ""
+                }`}
             />
           ))}
         </div>

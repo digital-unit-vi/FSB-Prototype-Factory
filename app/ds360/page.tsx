@@ -49,6 +49,7 @@ const tilesDataEmail = [
   },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const tilesDataMarketingEmail = [
   {
     light: {
