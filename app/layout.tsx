@@ -313,7 +313,7 @@ export default function RootLayout({
                         hasBackground={true}
                       >
                         <img
-                          src="/library/images/footer/svg/payment/Apple Pay.svg"
+                          src="/library/images/footer/svg/payment/ApplePay.svg"
                           alt="Apple Pay"
                         />
                       </FooterShopLogo>,
