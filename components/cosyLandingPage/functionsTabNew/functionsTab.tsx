@@ -55,7 +55,7 @@ export default function FunctionsTab({
 
       if (
         breakpoint &&
-        breakpoint.toString() === GlobalBreakpoints.m.replace("px", "")
+        String(breakpoint) === GlobalBreakpoints.m.replace("px", "")
       ) {
         return true;
       }

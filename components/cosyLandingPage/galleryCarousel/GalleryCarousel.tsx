@@ -39,7 +39,7 @@ const GalleryCarousel = ({
       const breakpoint = breakpoints.find((bp) => width < bp);
 
       if (breakpoint) {
-        if (breakpoint.toString() === GlobalBreakpoints.l.replace("px", "")) {
+        if (String(breakpoint) === GlobalBreakpoints.l.replace("px", "")) {
           setMobileSlider(true);
         }
       } else {
@@ -53,20 +53,35 @@ const GalleryCarousel = ({
     return () => window.removeEventListener("resize", handleResize);
   }, [breakpoints]);
 
-  const extractImages = (data: any): MobileCarouselProps[] => {
+  const extractImages = (data: ImageLayoutProps[]): MobileCarouselProps[] => {
     let result: { url: string; alt: string; title?: string }[] = [];
 
-    const searchImages = (obj: any) => {
-      for (const key in obj) {
-        if (key === "images" && Array.isArray(obj[key])) {
-          result = result.concat(obj[key]);
-        } else if (typeof obj[key] === "object" && obj[key] !== null) {
-          searchImages(obj[key]);
+    // Define image item type
+    interface ImageItem {
+      url: string;
+      alt: string;
+      title?: string;
+      description?: string;
+    }
+
+    const processObject = (obj: Record<string, unknown>): void => {
+      Object.entries(obj).forEach(([key, value]) => {
+        if (key === "images" && Array.isArray(value)) {
+          // Type assertion for the image array
+          const imageItems = value as ImageItem[];
+          result = result.concat(imageItems);
+        } else if (value !== null && typeof value === "object") {
+          // Process nested objects
+          processObject(value as Record<string, unknown>);
         }
-      }
+      });
     };
 
-    searchImages(data);
+    // Process each slide
+    data.forEach(slide => {
+      processObject(slide as unknown as Record<string, unknown>);
+    });
+
     return [{ mobileCarouselItems: result }];
   };
 

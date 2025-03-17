@@ -44,14 +44,14 @@ const HERO_PRODUCT_IMAGE_MAPPING: Record<ProductImage, StaticImageData> = {
   sensor: SensorProductImage,
 };
 
-const Hero: React.FC<HeroProps> = ({
+const Hero = ({
   video,
   productImage,
   eyebrowLine,
   textCopy,
   darkMode = false,
   poster = "",
-}) => {
+}: HeroProps) => {
   const parallaxLogo = darkMode ? ParallaxLogoDark : ParallaxLogo;
 
   const videoRef = useRef<HTMLVideoElement>(null);

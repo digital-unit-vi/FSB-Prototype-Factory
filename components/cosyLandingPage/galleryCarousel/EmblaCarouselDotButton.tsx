@@ -1,10 +1,9 @@
 import classNames from "classnames";
 import type { EmblaCarouselType } from "embla-carousel";
 import {
-  type PropsWithChildren,
   useCallback,
   useEffect,
-  useState,
+  useState
 } from "react";
 import styles from "./galleryCarousel.module.scss";
 
@@ -51,22 +50,17 @@ const useDotButton = (
   };
 };
 
-type PropType = PropsWithChildren<
-  React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  >
->;
+export interface DotButtonProps extends React.HTMLAttributes<HTMLSpanElement> {
+  children?: React.ReactNode;
+}
 
-export const DotButton: React.FC<PropType> = (props) => {
+export const DotButton = (props: DotButtonProps) => {
   const { children, ...restProps } = props;
 
   return <span {...restProps}>{children}</span>;
 };
 
-export const DotButtons: React.FC<{
-  emblaApi: EmblaCarouselType | undefined;
-}> = ({ emblaApi }) => {
+export const DotButtons = ({ emblaApi }: { emblaApi: EmblaCarouselType | undefined }) => {
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
   const maxDots = 7;
@@ -96,7 +90,6 @@ export const DotButtons: React.FC<{
         start = scrollSnaps.length - maxDots;
         end = scrollSnaps.length;
       } else {
-        start = 0;
         end = maxDots;
       }
 

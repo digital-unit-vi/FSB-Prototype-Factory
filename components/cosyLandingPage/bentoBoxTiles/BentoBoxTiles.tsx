@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  GridContainer,
-  GridItem,
-  Typography,
-} from "@vorwerk/fibre-react";
+import { GridContainer, GridItem, Typography } from "@vorwerk/fibre-react";
 import styles from "./bentoBoxTiles.module.scss";
 
 export interface BentoBoxTilesProps {
@@ -32,7 +28,7 @@ const BentoBoxTiles = ({ tiles, darkMode }: BentoBoxTilesProps) => {
         >
           {tiles.map((tile, index) => (
             <div
-              key={index}
+              key={`${tile.title}-${String(index)}`}
               className={`${styles.bentoBoxTile} ${tile.bigTile ? styles.tileBig : ""
                 }`}
             >

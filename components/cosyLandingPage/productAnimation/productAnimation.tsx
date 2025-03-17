@@ -64,25 +64,23 @@ const ProductAnimation = () => {
 			};
 
 			const adjustCanvasSize = () => {
-				if (!canvas) return;
-
 				const rect = canvas.getBoundingClientRect();
 				canvas.width = rect.width * dpr;
 				canvas.height = rect.height * dpr;
 
-				canvas.style.width = `${rect.width}px`;
-				canvas.style.height = `${rect.height}px`;
+				canvas.style.width = String(rect.width) + "px";
+				canvas.style.height = String(rect.height) + "px";
 
 				render();
 			};
 
 			const render = () => {
-				if (!canvas || !context || !imagesRef.current?.[frames.frame]) return;
+				if (!imagesRef.current?.[frames.frame]) return;
 
 				context.fillStyle = "#23282a";
 				context.fillRect(0, 0, canvas.width, canvas.height);
 
-				const image = imagesRef.current?.[frames.frame];
+				const image = imagesRef.current[frames.frame];
 				const rect = canvas.getBoundingClientRect();
 
 				const scale = rect.height / image.height;

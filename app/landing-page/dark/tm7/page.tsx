@@ -48,16 +48,15 @@ export default function TM7Page() {
               <Headline
                 strongColor="green"
                 spaceBelow="default"
-                children={
-                  <Typography component="p" variant="h2">
-                    <span>
-                      Share your love.
-                      <br />
-                      Like <strong>never before</strong>.
-                    </span>
-                  </Typography>
-                }
-              />
+              >
+                <Typography component="p" variant="h2">
+                  <span>
+                    Share your love.
+                    <br />
+                    Like <strong>never before</strong>.
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <GridContainer>
@@ -163,16 +162,15 @@ export default function TM7Page() {
             >
               <Headline
                 strongColor="green"
-                children={
-                  <Typography component="p" variant="h2">
-                    <span>
-                      Engineered for
-                      <br />
-                      <strong>culinary excellence</strong>.
-                    </span>
-                  </Typography>
-                }
-              />
+              >
+                <Typography component="p" variant="h2">
+                  <span>
+                    Engineered for
+                    <br />
+                    <strong>culinary excellence</strong>.
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <ProductAnimation />
@@ -217,15 +215,14 @@ export default function TM7Page() {
               <Headline
                 strongColor="green"
                 spaceBelow="additional"
-                children={
-                  <Typography component="p" variant="h2">
-                    <span>
-                      Discover what the <br />
-                      <strong>all-new TM7</strong> can do for you.
-                    </span>
-                  </Typography>
-                }
-              />
+              >
+                <Typography component="p" variant="h2">
+                  <span>
+                    Discover what the <br />
+                    <strong>all-new TM7</strong> can do for you.
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <GalleryCarousel
@@ -327,14 +324,13 @@ export default function TM7Page() {
               <Headline
                 strongColor="green"
                 spaceBelow="additional"
-                children={
-                  <Typography component="p" variant="h2">
-                    <span>
-                      Meet the<strong> all-new TM7</strong>.
-                    </span>
-                  </Typography>
-                }
-              />
+              >
+                <Typography component="p" variant="h2">
+                  <span>
+                    Meet the<strong> all-new TM7</strong>.
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <GridContainer>
@@ -364,22 +360,21 @@ export default function TM7Page() {
                 <Headline
                   strongColor="green"
                   spaceBelow="default"
-                  children={
-                    <Typography component="p" variant="h2">
-                      {isDesktop ? (
-                        <span>
-                          Explore <strong>over 1000,000 recipes</strong>
-                          <br /> tailored to you.
-                        </span>
-                      ) : (
-                        <span>
-                          Explore <strong>over 1000,000 recipes</strong>{" "}
-                          tailored to you.
-                        </span>
-                      )}
-                    </Typography>
-                  }
-                />
+                >
+                  <Typography component="p" variant="h2">
+                    {isDesktop ? (
+                      <span>
+                        Explore <strong>over 1000,000 recipes</strong>
+                        <br /> tailored to you.
+                      </span>
+                    ) : (
+                      <span>
+                        Explore <strong>over 1000,000 recipes</strong>{" "}
+                        tailored to you.
+                      </span>
+                    )}
+                  </Typography>
+                </Headline>
               </GridItem>
             </GridContainer>
             <ImageCarousel
@@ -465,15 +460,14 @@ export default function TM7Page() {
               <Headline
                 strongColor="green"
                 spaceBelow="additional"
-                children={
-                  <Typography component="p" variant="h2">
-                    <span>
-                      Designed to <br />
-                      <strong>deliver more</strong>.
-                    </span>
-                  </Typography>
-                }
-              />
+              >
+                <Typography component="p" variant="h2">
+                  <span>
+                    Designed to <br />
+                    <strong>deliver more</strong>.
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <BentoBoxTiles
@@ -533,14 +527,13 @@ export default function TM7Page() {
               <Headline
                 strongColor="green"
                 spaceBelow="additional"
-                children={
-                  <Typography component="p" variant="h2">
-                    <span>
-                      What's<strong> included</strong>.
-                    </span>
-                  </Typography>
-                }
-              />
+              >
+                <Typography component="p" variant="h2">
+                  <span>
+                    What&apos;s<strong> included</strong>.
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <GalleryCarousel
@@ -595,16 +588,15 @@ export default function TM7Page() {
             >
               <Headline
                 strongColor="green"
-                children={
-                  <Typography component="p" variant="h2">
-                    <span>
-                      Be among the first to
-                      <br />
-                      <strong>own the all-new TM7</strong>.
-                    </span>
-                  </Typography>
-                }
-              />
+              >
+                <Typography component="p" variant="h2">
+                  <span>
+                    Be among the first to
+                    <br />
+                    <strong>own the all-new TM7</strong>.
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <ProductBlock
@@ -627,37 +619,36 @@ export default function TM7Page() {
               <Headline
                 strongColor="green"
                 spaceBelow="default"
-                children={
-                  <Typography component="p" variant="h2">
-                    <span>
-                      Share your love of the
-                      <br />
-                      TM7 like <strong>never before</strong>.
-                    </span>
-                  </Typography>
-                }
-              />
+              >
+                <Typography component="p" variant="h2">
+                  <span>
+                    Share your love of the
+                    <br />
+                    TM7 like <strong>never before</strong>.
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <section className={styles.footerSocialLinkBlock}>
             <FooterSocialLinkBlock
               links={[
-                <a href="#share" aria-label="Share">
+                <a key="share" href="#share" aria-label="Share">
                   <SocialMediaShare />
                 </a>,
-                <a href="#facebook" aria-label="Facebook">
+                <a key="facebook" href="#facebook" aria-label="Facebook">
                   <FacebookIcon />
                 </a>,
-                <a href="#facebookMessenger" aria-label="Facebook Messenger">
+                <a key="messenger" href="#facebookMessenger" aria-label="Facebook Messenger">
                   <FacebookMessengerIcon />
                 </a>,
-                <a href="#telegram" aria-label="Telegram">
+                <a key="telegram" href="#telegram" aria-label="Telegram">
                   <TelegramIcon />
                 </a>,
-                <a href="#x" aria-label="X">
+                <a key="x" href="#x" aria-label="X">
                   <XIcon />
                 </a>,
-                <a href="#whatsapp" aria-label="WhatsApp">
+                <a key="whatsapp" href="#whatsapp" aria-label="WhatsApp">
                   <WhatsappIcon />
                 </a>,
               ]}
@@ -675,16 +666,15 @@ export default function TM7Page() {
               <Headline
                 spaceBelow="additional"
                 strongColor="green"
-                children={
-                  <Typography component="p" variant="h2">
-                    <span>
-                      Questions about TM7
-                      <br />
-                      <strong>explained</strong>.
-                    </span>
-                  </Typography>
-                }
-              />
+              >
+                <Typography component="p" variant="h2">
+                  <span>
+                    Questions about TM7
+                    <br />
+                    <strong>explained</strong>.
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <GridContainer>
@@ -702,12 +692,11 @@ export default function TM7Page() {
                   <Headline
                     spaceBelow="default"
                     strongColor="green"
-                    children={
-                      <Typography component="p" variant="h4" fontWeight="bold">
-                        <span>When will I receive my TM7?</span>
-                      </Typography>
-                    }
-                  />
+                  >
+                    <Typography component="p" variant="h4" fontWeight="bold">
+                      <span>When will I receive my TM7?</span>
+                    </Typography>
+                  </Headline>
                   <Typography
                     component="p"
                     variant={isDesktop ? "paragraph18" : "paragraph16"}
@@ -724,12 +713,11 @@ export default function TM7Page() {
                   <Headline
                     spaceBelow="default"
                     strongColor="green"
-                    children={
-                      <Typography component="p" variant="h4" fontWeight="bold">
-                        <span>When can I expect delivery?</span>
-                      </Typography>
-                    }
-                  />
+                  >
+                    <Typography component="p" variant="h4" fontWeight="bold">
+                      <span>When can I expect delivery?</span>
+                    </Typography>
+                  </Headline>
                   <Typography
                     component="p"
                     variant={isDesktop ? "paragraph18" : "paragraph16"}
@@ -747,12 +735,11 @@ export default function TM7Page() {
                   <Headline
                     spaceBelow="default"
                     strongColor="green"
-                    children={
-                      <Typography component="p" variant="h4" fontWeight="bold">
-                        <span>How does the pre-order process work?</span>
-                      </Typography>
-                    }
-                  />
+                  >
+                    <Typography component="p" variant="h4" fontWeight="bold">
+                      <span>How does the pre-order process work?</span>
+                    </Typography>
+                  </Headline>
                   <Typography
                     component="p"
                     variant={isDesktop ? "paragraph18" : "paragraph16"}
@@ -770,12 +757,11 @@ export default function TM7Page() {
                   <Headline
                     spaceBelow="default"
                     strongColor="green"
-                    children={
-                      <Typography component="p" variant="h4" fontWeight="bold">
-                        <span>Why pre-order now?</span>
-                      </Typography>
-                    }
-                  />
+                  >
+                    <Typography component="p" variant="h4" fontWeight="bold">
+                      <span>Why pre-order now?</span>
+                    </Typography>
+                  </Headline>
                   <Typography
                     component="p"
                     variant={isDesktop ? "paragraph18" : "paragraph16"}
@@ -792,19 +778,18 @@ export default function TM7Page() {
                   <Headline
                     spaceBelow="default"
                     strongColor="green"
-                    children={
-                      <Typography component="p" variant="h4" fontWeight="bold">
-                        <span>How can I purchase a TM7?</span>
-                      </Typography>
-                    }
-                  />
+                  >
+                    <Typography component="p" variant="h4" fontWeight="bold">
+                      <span>How can I purchase a TM7?</span>
+                    </Typography>
+                  </Headline>
                   <Typography
                     component="p"
                     variant={isDesktop ? "paragraph18" : "paragraph16"}
                     spaceBelow
                   >
                     <span>
-                      Simply click 'Pre-order now' and fill out the form. Our
+                      Simply click &apos;Pre-order now&apos; and fill out the form. Our
                       advisors will be in touch with you shortly to discuss
                       further details.
                     </span>
@@ -814,12 +799,11 @@ export default function TM7Page() {
                   <Headline
                     spaceBelow="default"
                     strongColor="green"
-                    children={
-                      <Typography component="p" variant="h4" fontWeight="bold">
-                        <span>What makes TM7 different from TM6?</span>
-                      </Typography>
-                    }
-                  />
+                  >
+                    <Typography component="p" variant="h4" fontWeight="bold">
+                      <span>What makes TM7 different from TM6?</span>
+                    </Typography>
+                  </Headline>
                   <Typography
                     component="p"
                     variant={isDesktop ? "paragraph18" : "paragraph16"}
@@ -827,7 +811,7 @@ export default function TM7Page() {
                   >
                     <span>
                       Experience whisper-quiet operation, open cooking freedom,
-                      and a stunning 10" display with TM7, plus 40% more
+                      and a stunning 10&quot; display with TM7, plus 40% more
                       steaming space compared to TM6.
                     </span>
                   </Typography>
@@ -836,12 +820,11 @@ export default function TM7Page() {
                   <Headline
                     spaceBelow="default"
                     strongColor="green"
-                    children={
-                      <Typography component="p" variant="h4" fontWeight="bold">
-                        <span>What payment methods are accepted for TM7?</span>
-                      </Typography>
-                    }
-                  />
+                  >
+                    <Typography component="p" variant="h4" fontWeight="bold">
+                      <span>What payment methods are accepted for TM7?</span>
+                    </Typography>
+                  </Headline>
                   <Typography
                     component="p"
                     variant={isDesktop ? "paragraph18" : "paragraph16"}

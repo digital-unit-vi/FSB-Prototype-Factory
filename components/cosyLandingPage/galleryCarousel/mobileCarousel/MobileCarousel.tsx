@@ -27,7 +27,7 @@ export const MobileCarousel = ({
       <div className={styles.swiper} ref={emblaRef}>
         <div className={styles.swiper__container}>
           {mobileCarouselItems.map((item, index) => (
-            <div key={index} className={styles.swiper__slide}>
+            <div key={`${item.url}-${String(index)}`} className={styles.swiper__slide}>
               <img src={item.url} alt={item.alt} title={item.title} />
               <p className={styles.description}>{item.description}</p>
             </div>

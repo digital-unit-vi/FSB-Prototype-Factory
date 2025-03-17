@@ -10,6 +10,7 @@ import {
 import classNames from "classnames";
 import {
   motion,
+  MotionValue,
   useMotionValueEvent,
   useScroll,
   useTransform,
@@ -30,6 +31,46 @@ interface MobileScrollboxModuleProps {
   items: ListItem[];
 }
 
+interface MotionProgressProps {
+  scrollYProgress: MotionValue<number>;
+  index: number;
+  listItemsLength: number;
+}
+
+const MotionProgress = ({
+  scrollYProgress,
+  index,
+  listItemsLength,
+}: MotionProgressProps) => {
+  const y = useTransform(
+    scrollYProgress,
+    [index / listItemsLength, (index + 1) / listItemsLength],
+    ["-100%", "0%"]
+  );
+
+  return <motion.div style={{ y }} />;
+};
+
+// Helper function to pause all videos except the current one
+const pauseOtherVideos = (
+  videoRefs: React.MutableRefObject<(HTMLVideoElement | null)[]>,
+  currentIndex: number
+) => {
+  videoRefs.current.forEach((v, i) => {
+    if (i !== currentIndex && v) {
+      v.pause();
+      v.currentTime = 0;
+    }
+  });
+};
+
+// Helper function to update list items' playing state
+const updatePlayingState = (prevItems: ExtendedListItem[], index: number) =>
+  prevItems.map((item, i) => ({
+    ...item,
+    isPlaying: i === index,
+  }));
+
 export default function MobileScrollboxModule({
   items = [],
 }: Readonly<MobileScrollboxModuleProps>) {
@@ -40,7 +81,7 @@ export default function MobileScrollboxModule({
       scrollMax: 0,
       isActive: false,
       isFolded: false,
-    })),
+    }))
   );
   const [initialVideoReady, setInitialVideoReady] = useState(false);
 
@@ -63,44 +104,26 @@ export default function MobileScrollboxModule({
 
   const pressPlay = (index: number) => {
     const video = videoRefs.current[index];
-    if (video) {
-      const playPromise = video.play();
+    if (!video) return;
 
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            videoRefs.current.forEach((v, i) => {
-              if (i !== index && v) {
-                v.pause();
-                v.currentTime = 0;
-              }
-            });
-            setListItems((prevItems) =>
-              prevItems.map((item, i) => ({
-                ...item,
-                isPlaying: i === index,
-              })),
-            );
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }
-    }
+    video
+      .play()
+      .then(() => {
+        pauseOtherVideos(videoRefs, index);
+        setListItems((prevItems) => updatePlayingState(prevItems, index));
+      })
+      .catch((error: unknown) => {
+        console.log(error);
+      });
   };
 
   const pressPause = (index: number) => {
     const video = videoRefs.current[index];
-    if (video) {
-      video.pause();
-      video.currentTime = 0;
-    }
-    setListItems((prevItems) =>
-      prevItems.map((item, i) => ({
-        ...item,
-        isPlaying: i === index,
-      })),
-    );
+    if (!video) return;
+
+    video.pause();
+    video.currentTime = 0;
+    setListItems((prevItems) => updatePlayingState(prevItems, index));
   };
 
   useEffect(() => {
@@ -112,7 +135,7 @@ export default function MobileScrollboxModule({
         scrollMax: (index + 1) * (1 / numberOfItems),
         isActive: index === 0,
         isFolded: false,
-      })),
+      }))
     );
   }, [listItems.length]);
 
@@ -120,7 +143,7 @@ export default function MobileScrollboxModule({
     if (initialVideoReady && listItems[0]?.isActive) {
       pressPlay(0);
     }
-  }, [initialVideoReady, listItems[0]?.isActive]);
+  }, [initialVideoReady, listItems]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     setListItems((prevItems) =>
@@ -136,37 +159,32 @@ export default function MobileScrollboxModule({
           newState.isFolded = true;
           pressPause(index);
         } else {
-          if (index === 0) {
-            newState.isActive = true;
-          } else {
-            newState.isActive = false;
-          }
+          newState.isActive = index === 0;
           newState.isFolded = false;
         }
 
         return newState;
-      }),
+      })
     );
   });
 
   return (
     <GridContainer>
       <GridItem columns={12}>
-        <div ref={targetRef} style={{ height: `${listItems.length * 100}vh` }}>
+        <div
+          ref={targetRef}
+          style={{ height: `${String(listItems.length * 100)}vh` }}
+        >
           <article className={classNames(styles.mobileScrollboxWrapper)}>
             <ul className={styles.mobileScrollbox__list}>
               {listItems.map((item, index) => {
-                const y = useTransform(
-                  scrollYProgress,
-                  [item.scrollMin, item.scrollMax],
-                  ["-100%", "0%"],
-                );
+                let activeClassState = styles.inactive;
 
-                const activeClassState = item.isActive
-                  ? styles.active
-                  : item.isFolded
-                    ? styles.folded
-                    : styles.inactive;
+                if (item.isActive) {
+                  activeClassState = styles.active;
+                } else if (item.isFolded) {
+                  activeClassState = styles.folded;
+                }
 
                 return (
                   <li key={item.id} className={classNames(activeClassState)}>
@@ -176,15 +194,23 @@ export default function MobileScrollboxModule({
                     <div
                       className={classNames(
                         styles.mediaContainer,
-                        item.media.type,
+                        item.media.type
                       )}
                     >
                       <div className={styles.mobileScrollbox__progress}>
-                        <motion.div style={{ y: y }} />
+                        <MotionProgress
+                          scrollYProgress={scrollYProgress}
+                          index={index}
+                          listItemsLength={listItems.length}
+                        />
                       </div>
                       {item.media.type === "image" && (
                         <img
-                          src={typeof item.media.src === 'string' ? item.media.src : ''}
+                          src={
+                            typeof item.media.src === "string"
+                              ? item.media.src
+                              : ""
+                          }
                           alt={item.media.alt}
                           title={item.media.title}
                         />
@@ -199,12 +225,18 @@ export default function MobileScrollboxModule({
                             muted={true}
                             loop={true}
                           >
-                            {typeof item.media.src === 'string' ? (
+                            {typeof item.media.src === "string" ? (
                               <source src={item.media.src} />
                             ) : (
                               <>
-                                <source src={item.media.src.webm} type="video/webm" />
-                                <source src={item.media.src.mp4} type="video/mp4" />
+                                <source
+                                  src={item.media.src.webm}
+                                  type="video/webm"
+                                />
+                                <source
+                                  src={item.media.src.mp4}
+                                  type="video/mp4"
+                                />
                               </>
                             )}
                           </video>

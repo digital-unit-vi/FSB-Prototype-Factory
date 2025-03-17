@@ -59,14 +59,20 @@ export const DesktopCarousel = ({
     >
       <div className={styles.swiper} ref={emblaRef}>
         <div className={styles.swiper__container}>
-          {slides.map((slide, index) => (
-            <div key={index} className={styles.swiper__slide}>
-              <ImageLayout
-                bigImagePosLeft={slide.bigImagePosLeft}
-                images={slide.images}
-              />
-            </div>
-          ))}
+          {slides.map((slide, index) => {
+            const slideKey = slide.images[0]?.url
+              ? `slide-${slide.images[0].url}`
+              : `slide-${String(index)}`;
+
+            return (
+              <div key={slideKey} className={styles.swiper__slide}>
+                <ImageLayout
+                  bigImagePosLeft={slide.bigImagePosLeft}
+                  images={slide.images}
+                />
+              </div>
+            );
+          })}
         </div>
         <button
           className={classNames(styles.swiper__pagination, styles.swiper__prev)}

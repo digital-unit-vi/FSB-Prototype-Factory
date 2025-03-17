@@ -56,12 +56,11 @@ export const ImageLayout = ({
                 >
                   <Headline
                     strongColor="green"
-                    children={
-                      <Typography component="intro">
-                        {images[0].description}
-                      </Typography>
-                    }
-                  />
+                  >
+                    <Typography component="intro">
+                      {images[0].description}
+                    </Typography>
+                  </Headline>
                 </GridItem>
               </GridContainer>
             )}
@@ -109,7 +108,7 @@ export const ImageLayout = ({
 
 const setLayout = (numberOfImages: number): string => {
   if (numberOfImages > 0 && numberOfImages <= 3) {
-    return `layout--${numberOfImages}`;
+    return `layout--${String(numberOfImages)}`;
   }
   return "layout--1";
 };

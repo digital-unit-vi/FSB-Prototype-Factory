@@ -86,7 +86,7 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
       const applyTransform = (slideIndex: number, diffToTarget: number): void => {
         const translate = diffToTarget * (-1 * tweenFactor.current) * 100;
         const tweenNode = tweenNodes.current[slideIndex];
-        tweenNode.style.transform = `translateX(${translate.toString()}%)`;
+        tweenNode.style.transform = `translateX(${String(translate)}%)`;
       };
 
       emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
@@ -138,7 +138,7 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
                   <Image
                     className={`${styles.imageGallerySlideImg} ${styles.imageGalleryParallaxImg}`}
                     src={slide}
-                    alt={`Image gallery img${index.toString()}`}
+                    alt={`Image gallery img${String(index)}`}
                   />
                 </div>
               </div>
@@ -150,7 +150,7 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
         <div className={styles.imageGalleryDots}>
           {scrollSnaps.map((_, index) => (
             <DotButton
-              key={`dot-${scrollSnaps[index].toString()}`}
+              key={`dot-${String(scrollSnaps[index])}`}
               onClick={() => { onDotButtonClick(index); }}
               className={`${styles.imageGalleryDot} ${index === selectedIndex ? styles.imageGalleryDotSelected : ""
                 }`}

@@ -61,8 +61,8 @@ const ProductAnimation = () => {
         canvas.width = rect.width * dpr;
         canvas.height = rect.height * dpr;
 
-        canvas.style.width = `${rect.width.toString()}px`;
-        canvas.style.height = `${rect.height.toString()}px`;
+        canvas.style.width = `${String(rect.width)}px`;
+        canvas.style.height = `${String(rect.height)}px`;
 
         render();
       };
