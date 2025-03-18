@@ -3,7 +3,6 @@
   --slide-spacing: 1rem;
   --slide-size: 100%;
 
-  // max-width: 48rem;
   margin: auto;
 }
 
@@ -33,12 +32,6 @@
 
 .imageGalleryControls {
   display: grid;
-
-  // grid-template-columns: auto 1fr;
-  // gap: 1.2rem;
-  // justify-content: space-between;
-
-  justify-content: center;
   margin-top: 28px;
 }
 

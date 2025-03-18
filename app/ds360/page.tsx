@@ -8,7 +8,7 @@ import {
   Headline,
   Hero,
   Typography,
-  Vorwerk
+  Vorwerk,
 } from "@vorwerk/fibre-react";
 import Link from "next/link";
 import styles from "./page.module.scss";
@@ -145,19 +145,14 @@ export default function Home() {
               </Typography>
             </Headline>
           }
-          image={
-            <img alt="Thermomix" src="/landingPage/hero/ds360-hero.png" />
-          }
+          image={<img alt="Thermomix" src="/landingPage/hero/ds360-hero.png" />}
           type="colorFill"
         />
       </div>
       <section className={styles.prominentSection}>
         <GridContainer>
           <GridItem columns={12} className={styles.textCentered}>
-            <Headline
-              spaceBelow="additional"
-              strongColor="green"
-            >
+            <Headline spaceBelow="additional" strongColor="green">
               <Typography component="h2">
                 <span>
                   <strong>Email Template</strong> -
@@ -207,10 +202,7 @@ export default function Home() {
       <section className={styles.prominentSection}>
         <GridContainer>
           <GridItem columns={12} className={styles.textCentered}>
-            <Headline
-              spaceBelow="additional"
-              strongColor="green"
-            >
+            <Headline spaceBelow="additional" strongColor="green">
               <Typography component="h2">
                 <span>
                   <strong>Landing Page Template</strong> -

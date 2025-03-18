@@ -18,10 +18,12 @@ export interface ListItem {
 
 interface ListItemMedia {
   type: "image" | "video";
-  src: string | {
-    webm: string;
-    mp4: string;
-  };
+  src:
+    | string
+    | {
+        webm: string;
+        mp4: string;
+      };
   title?: string;
   alt?: string;
 }
@@ -81,11 +83,9 @@ export default function FunctionsTab({
 
   return (
     <div className={styles.functionsTabWrapper}>
-      {mobileTab ? (
+      {mobileTab ?
         <MobileScrollboxModule items={items} />
-      ) : (
-        <DesktopScrollboxModule items={items} darkMode={darkMode} />
-      )}
+      : <DesktopScrollboxModule items={items} darkMode={darkMode} />}
     </div>
   );
 }

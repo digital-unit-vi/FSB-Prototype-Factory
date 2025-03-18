@@ -10,8 +10,9 @@ export default function ComponentWrapper({
 }>) {
   return (
     <div
-      className={`${styles.wrapper} ${textCenter ? styles.wrapperCenterText : ""
-        }`}
+      className={`${styles.wrapper} ${
+        textCenter ? styles.wrapperCenterText : ""
+      }`}
     >
       {children}
     </div>

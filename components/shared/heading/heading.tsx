@@ -10,11 +10,11 @@ export default function Heading({
   children,
   dark,
   oneLineOnMedium,
-}: {
+}: Readonly<{
   children: ReactNode[] | ReactNode;
   dark?: boolean;
   oneLineOnMedium?: boolean;
-}) {
+}>) {
   const renderChildren = (child: ReactNode): ReactNode => {
     if (React.isValidElement<CustomProps>(child)) {
       const { className, children: nestedChildren, ...rest } = child.props;
@@ -22,9 +22,9 @@ export default function Heading({
       const classNameStr = className ?? "";
 
       const processedChildren =
-        nestedChildren && React.Children.count(nestedChildren)
-          ? React.Children.map(nestedChildren, renderChildren)
-          : null;
+        nestedChildren && React.Children.count(nestedChildren) ?
+          React.Children.map(nestedChildren, renderChildren)
+        : null;
 
       return React.cloneElement(child, {
         ...rest,
@@ -37,8 +37,9 @@ export default function Heading({
 
   return (
     <div
-      className={`${styles.container} ${dark ? styles.dark : ""} ${oneLineOnMedium ? styles.oneLine : ""
-        }`}
+      className={`${styles.container} ${dark ? styles.dark : ""} ${
+        oneLineOnMedium ? styles.oneLine : ""
+      }`}
     >
       {React.Children.map(children, renderChildren)}
     </div>

@@ -72,9 +72,7 @@ export default function RootLayout({
             <FooterSmallLinks>
               <ul>
                 <li key="2021 Vorwerk">
-                  <Typography variant="paragraph12">
-                    © 2021 Vorwerk
-                  </Typography>
+                  <Typography variant="paragraph12">© 2021 Vorwerk</Typography>
                 </li>
 
                 <li key="About us">

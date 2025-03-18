@@ -29,9 +29,14 @@
 }
 
 .productBlockWrap__image img {
-  translate: 0 calc(-1 * (var(--Paddings-padding06, 160px) + (var(--Spacing-5s, 40px) / 2)));
+  translate: 0
+    calc(
+      -1 * (var(--Paddings-padding06, 160px) + (var(--Spacing-5s, 40px) / 2))
+    );
   max-width: 100%;
-  margin-bottom: calc(-1 * (var(--Paddings-padding06, 160px) + (var(--Spacing-5s, 40px) / 2)));
+  margin-bottom: calc(
+    -1 * (var(--Paddings-padding06, 160px) + (var(--Spacing-5s, 40px) / 2))
+  );
 }
 
 .productBlockWrap__content {

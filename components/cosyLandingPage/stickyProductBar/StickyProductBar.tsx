@@ -76,10 +76,11 @@ const StickyProductBar: React.FC = () => {
 
   return (
     <div
-      className={`${styles.stickyProductBarRoot} ${isVisible ? styles.visible : styles.hidden
-        }`}
+      className={`${styles.stickyProductBarRoot} ${
+        isVisible ? styles.visible : styles.hidden
+      }`}
     >
-      {screenSize.width >= 1268 ? (
+      {screenSize.width >= 1268 ?
         <div className={styles.stickyProductBarInner}>
           <div className={styles.imageWrapper}>
             <Image src={ProductPicture} alt="TM7" />
@@ -96,8 +97,7 @@ const StickyProductBar: React.FC = () => {
             </Button>
           </div>
         </div>
-      ) : (
-        <GridContainer>
+      : <GridContainer>
           <GridItem columns={12}>
             <div className={styles.stickyProductBarInner}>
               <div className={styles.titleWrapper}>
@@ -114,7 +114,7 @@ const StickyProductBar: React.FC = () => {
             </div>
           </GridItem>
         </GridContainer>
-      )}
+      }
     </div>
   );
 };

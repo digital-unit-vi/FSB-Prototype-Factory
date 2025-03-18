@@ -1,10 +1,6 @@
 import classNames from "classnames";
 import type { EmblaCarouselType } from "embla-carousel";
-import {
-  useCallback,
-  useEffect,
-  useState
-} from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./galleryCarousel.module.scss";
 
 interface UseDotButtonType {
@@ -14,7 +10,7 @@ interface UseDotButtonType {
 }
 
 const useDotButton = (
-  emblaApi: EmblaCarouselType | undefined,
+  emblaApi: EmblaCarouselType | undefined
 ): UseDotButtonType => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
@@ -24,15 +20,15 @@ const useDotButton = (
       if (!emblaApi) return;
       emblaApi.scrollTo(index);
     },
-    [emblaApi],
+    [emblaApi]
   );
 
-  const onInit = useCallback((emblaApi: EmblaCarouselType) => {
-    setScrollSnaps(emblaApi.scrollSnapList());
+  const onInit = useCallback((api: EmblaCarouselType) => {
+    setScrollSnaps(api.scrollSnapList());
   }, []);
 
-  const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap());
+  const onSelect = useCallback((api: EmblaCarouselType) => {
+    setSelectedIndex(api.selectedScrollSnap());
   }, []);
 
   useEffect(() => {
@@ -60,7 +56,11 @@ export const DotButton = (props: DotButtonProps) => {
   return <span {...restProps}>{children}</span>;
 };
 
-export const DotButtons = ({ emblaApi }: { emblaApi: EmblaCarouselType | undefined }) => {
+export const DotButtons = ({
+  emblaApi,
+}: {
+  emblaApi: EmblaCarouselType | undefined;
+}) => {
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
   const maxDots = 7;
@@ -76,9 +76,9 @@ export const DotButtons = ({ emblaApi }: { emblaApi: EmblaCarouselType | undefin
     const dynamicBullets = scrollSnaps.length > maxDots;
     const canCenterBullets =
       selectedIndex >= Math.floor(maxDots / 2) &&
-      selectedIndex <= scrollSnaps.length - Math.ceil(maxDots / 2)
+      selectedIndex <= scrollSnaps.length - Math.ceil(maxDots / 2);
     const isNearEndBullets =
-      selectedIndex > scrollSnaps.length - Math.ceil(maxDots / 2)
+      selectedIndex > scrollSnaps.length - Math.ceil(maxDots / 2);
     let smallDotsBeforeStart = false;
     let smallDotsBeforeEnd = false;
 
@@ -120,9 +120,9 @@ export const DotButtons = ({ emblaApi }: { emblaApi: EmblaCarouselType | undefin
             hiddenClass ? styles.swiper__dothidden : "",
             dotSelected,
             continuePrev,
-            continueNext,
+            continueNext
           )}
-        />,
+        />
       );
     }
 

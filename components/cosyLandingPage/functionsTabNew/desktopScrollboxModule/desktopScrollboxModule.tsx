@@ -31,16 +31,18 @@ interface MotionProgressProps {
   listItemsLength: number;
 }
 
-const MotionProgress = ({ scrollYProgress, index, listItemsLength }: MotionProgressProps) => {
+const MotionProgress = ({
+  scrollYProgress,
+  index,
+  listItemsLength,
+}: MotionProgressProps) => {
   const x = useTransform(
     scrollYProgress,
     [index / listItemsLength, (index + 1) / listItemsLength],
-    ["-100%", "0%"],
+    ["-100%", "0%"]
   );
 
-  return (
-    <motion.div style={{ x }} />
-  );
+  return <motion.div style={{ x }} />;
 };
 
 export default function DesktopScrollboxModule({
@@ -54,7 +56,7 @@ export default function DesktopScrollboxModule({
       scrollMin: 0,
       scrollMax: 0,
       isActive: false,
-    })),
+    }))
   );
 
   const viewportUnit = "vh";
@@ -67,7 +69,8 @@ export default function DesktopScrollboxModule({
   const handlePauseAndResetAll = () => {
     for (const video of videoRefs.current) {
       if (video) {
-        video.play()
+        video
+          .play()
           .then(() => {
             video.pause();
             video.currentTime = 0;
@@ -90,50 +93,61 @@ export default function DesktopScrollboxModule({
     return !videoRefs.current[index]?.paused;
   };
 
-  const updatePlayingState = (index: number, isPlaying: boolean) => (item: ExtendedListItem, i: number) => ({
-    ...item,
-    isPlaying: index === i === isPlaying,
-  });
+  const updatePlayingState =
+    (index: number, isPlaying: boolean) =>
+    (item: ExtendedListItem, i: number) => ({
+      ...item,
+      isPlaying: (index === i) === isPlaying,
+    });
 
-  const updateScrollRanges = (numberOfItems: number) => (item: ExtendedListItem, index: number) => ({
-    ...item,
-    scrollMin: index * (1 / numberOfItems),
-    scrollMax: (index + 1) * (1 / numberOfItems),
-    isActive: index === 0,
-  });
+  const updateScrollRanges =
+    (numberOfItems: number) => (item: ExtendedListItem, index: number) => ({
+      ...item,
+      scrollMin: index * (1 / numberOfItems),
+      scrollMax: (index + 1) * (1 / numberOfItems),
+      isActive: index === 0,
+    });
 
-  const updateItemActiveState = (latest: number, index: number) => (item: ExtendedListItem) => {
-    const isActive = latest > item.scrollMin && latest <= item.scrollMax;
+  const updateItemActiveState =
+    (latest: number, index: number) => (item: ExtendedListItem) => {
+      const isActive = latest > item.scrollMin && latest <= item.scrollMax;
 
-    if (item.isActive !== isActive && videoRefs.current.length > 0) {
-      handlePauseAndResetAll();
-    }
+      if (item.isActive !== isActive && videoRefs.current.length > 0) {
+        handlePauseAndResetAll();
+      }
 
-    if (isActive) {
-      handlePlayVideo(index);
-    }
+      if (isActive) {
+        handlePlayVideo(index);
+      }
 
-    return item.isActive !== isActive ? { ...item, isActive } : item;
-  };
+      return item.isActive !== isActive ? { ...item, isActive } : item;
+    };
 
   const handlePlayVideo = (index: number) => {
     const video = videoRefs.current[index];
     if (video) {
-      video.play()
+      video
+        .play()
         .then(() => {
-          setListItems((prevItems) => prevItems.map(updatePlayingState(index, true)));
+          setListItems((prevItems) =>
+            prevItems.map(updatePlayingState(index, true))
+          );
         })
         .catch((error: unknown) => {
           handleVideoError(error, "handlePlayVideo");
 
-          setListItems((prevItems) => prevItems.map(updatePlayingState(index, false)));
+          setListItems((prevItems) =>
+            prevItems.map(updatePlayingState(index, false))
+          );
         });
     }
   };
 
   const handlePauseVideo = (index: number) => {
     videoRefs.current[index]?.pause();
-    setListItems((prevItems) => prevItems.map(updatePlayingState(index, false)));
+    setListItems((prevItems) =>
+      prevItems.map(updatePlayingState(index, false))
+    );
   };
 
   const handleVideoError = (error: unknown, context: string) => {
@@ -153,7 +167,9 @@ export default function DesktopScrollboxModule({
     const cssValue = String(numberOfItems * 100) + viewportUnit;
     setElementHeight(cssValue);
 
-    setListItems((prevItems) => prevItems.map(updateScrollRanges(numberOfItems)));
+    setListItems((prevItems) =>
+      prevItems.map(updateScrollRanges(numberOfItems))
+    );
   }, [listItems.length]);
 
   useMotionValueEvent(scrollYProgress, "change", handleScrollProgress);
@@ -165,14 +181,13 @@ export default function DesktopScrollboxModule({
           <article
             className={classNames(
               styles.desktopScrollboxWrapper,
-              darkMode ? styles.darkMode : "",
+              darkMode ? styles.darkMode : ""
             )}
           >
             <ul className={styles.desktopScrollbox__list}>
               {listItems.map((item, index) => {
-                const activeClassState = item.isActive
-                  ? styles.active
-                  : styles.inactive;
+                const activeClassState =
+                  item.isActive ? styles.active : styles.inactive;
 
                 return (
                   <li key={item.id} className={classNames(activeClassState)}>
@@ -192,9 +207,8 @@ export default function DesktopScrollboxModule({
             </ul>
             <div className={styles.desktopScrollbox__media}>
               {listItems.map((item, index) => {
-                const activeClassState = item.isActive
-                  ? styles.active
-                  : styles.inactive;
+                const activeClassState =
+                  item.isActive ? styles.active : styles.inactive;
 
                 return (
                   <div
@@ -203,7 +217,11 @@ export default function DesktopScrollboxModule({
                   >
                     {item.media.type === "image" && (
                       <img
-                        src={typeof item.media.src === 'string' ? item.media.src : ''}
+                        src={
+                          typeof item.media.src === "string" ?
+                            item.media.src
+                          : ""
+                        }
                         alt={item.media.alt}
                         title={item.media.title}
                       />
@@ -218,16 +236,21 @@ export default function DesktopScrollboxModule({
                           muted={true}
                           loop={true}
                         >
-                          {typeof item.media.src === 'string' ? (
+                          {typeof item.media.src === "string" ?
                             <source src={item.media.src} />
-                          ) : (
-                            <>
-                              <source src={item.media.src.webm} type="video/webm" />
-                              <source src={item.media.src.mp4} type="video/mp4" />
+                          : <>
+                              <source
+                                src={item.media.src.webm}
+                                type="video/webm"
+                              />
+                              <source
+                                src={item.media.src.mp4}
+                                type="video/mp4"
+                              />
                             </>
-                          )}
+                          }
                         </video>
-                        {!isVideoPlaying(index) ? (
+                        {!isVideoPlaying(index) ?
                           <button
                             type="button"
                             onClick={() => handlePlayVideo(index)}
@@ -235,15 +258,14 @@ export default function DesktopScrollboxModule({
                           >
                             <Play />
                           </button>
-                        ) : (
-                          <button
+                        : <button
                             type="button"
                             onClick={() => handlePauseVideo(index)}
                             aria-label="Pause button"
                           >
                             <Pause />
                           </button>
-                        )}
+                        }
                       </div>
                     )}
                     {item.description && (

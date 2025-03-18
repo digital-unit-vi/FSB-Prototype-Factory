@@ -78,7 +78,7 @@ const GalleryCarousel = ({
     };
 
     // Process each slide
-    data.forEach(slide => {
+    data.forEach((slide) => {
       processObject(slide as unknown as Record<string, unknown>);
     });
 
@@ -93,20 +93,19 @@ const GalleryCarousel = ({
     <div
       className={classNames(
         styles.galleryCarouselWrapper,
-        darkMode ? styles.darkMode : "",
+        darkMode ? styles.darkMode : ""
       )}
     >
-      {mobileSlider ? (
+      {mobileSlider ?
         <MobileCarousel
           mobileCarouselItems={mobileSlides[0].mobileCarouselItems}
         />
-      ) : (
-        <GridContainer>
+      : <GridContainer>
           <GridItem columns={12}>
             <DesktopCarousel slides={desktopSlides} darkMode={darkMode} />
           </GridItem>
         </GridContainer>
-      )}
+      }
     </div>
   );
 };

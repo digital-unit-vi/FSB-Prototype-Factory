@@ -60,8 +60,9 @@ export const DesktopCarousel = ({
       <div className={styles.swiper} ref={emblaRef}>
         <div className={styles.swiper__container}>
           {slides.map((slide, index) => {
-            const slideKey = slide.images[0]?.url
-              ? `slide-${slide.images[0].url}`
+            const slideKey =
+              slide.images[0]?.url ?
+                `slide-${slide.images[0].url}`
               : `slide-${String(index)}`;
 
             return (

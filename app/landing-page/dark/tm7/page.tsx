@@ -45,10 +45,7 @@ export default function TM7Page() {
               endXL={11}
               className={styles.textCentered}
             >
-              <Headline
-                strongColor="green"
-                spaceBelow="default"
-              >
+              <Headline strongColor="green" spaceBelow="default">
                 <Typography component="p" variant="h2">
                   <span>
                     Share your love.
@@ -92,8 +89,8 @@ export default function TM7Page() {
                   type: "video",
                   src: {
                     webm: "/cosy/functions_tab_benefit1.webm",
-                    mp4: "/cosy/functions_tab_benefit1.mp4"
-                  }
+                    mp4: "/cosy/functions_tab_benefit1.mp4",
+                  },
                 },
                 description:
                   "A sleek base, and a heat-insulated bowl that keeps it cool while making your kitchen look even more beautiful.",
@@ -108,8 +105,8 @@ export default function TM7Page() {
                   type: "video",
                   src: {
                     webm: "/cosy/functions_tab_benefit2.webm",
-                    mp4: "/cosy/functions_tab_benefit2.mp4"
-                  }
+                    mp4: "/cosy/functions_tab_benefit2.mp4",
+                  },
                 },
                 description:
                   "A stunning 10-inch multi-touch display that makes manual and Guided Cooking a completely new experience.",
@@ -124,8 +121,8 @@ export default function TM7Page() {
                   type: "video",
                   src: {
                     webm: "/cosy/functions_tab_benefit3.webm",
-                    mp4: "/cosy/functions_tab_benefit3.mp4"
-                  }
+                    mp4: "/cosy/functions_tab_benefit3.mp4",
+                  },
                 },
                 description:
                   "So silent, you'll wonder if it's even on. Feel the power without the noise.",
@@ -140,8 +137,8 @@ export default function TM7Page() {
                   type: "video",
                   src: {
                     webm: "/cosy/functions_tab_benefit4.webm",
-                    mp4: "/cosy/functions_tab_benefit4.mp4"
-                  }
+                    mp4: "/cosy/functions_tab_benefit4.mp4",
+                  },
                 },
                 description:
                   "The Open Cooking mode for delicate ingredients with no mixing knife rotation.",
@@ -160,9 +157,7 @@ export default function TM7Page() {
               endXL={11}
               className={styles.textCentered}
             >
-              <Headline
-                strongColor="green"
-              >
+              <Headline strongColor="green">
                 <Typography component="p" variant="h2">
                   <span>
                     Engineered for
@@ -176,7 +171,7 @@ export default function TM7Page() {
           <ProductAnimation />
           <GridContainer>
             <GridItem columns={12} className={styles.textCentered}>
-              {isDesktop ? (
+              {isDesktop ?
                 <>
                   <Typography component="intro">
                     Redesigned Varoma® for more space.
@@ -188,8 +183,7 @@ export default function TM7Page() {
                     Compact base with an expansive display.
                   </Typography>
                 </>
-              ) : (
-                <>
+              : <>
                   <Typography component="p" variant="paragraph16">
                     Redesigned Varoma® for more space.
                   </Typography>
@@ -200,7 +194,7 @@ export default function TM7Page() {
                     Compact base with an expansive display.
                   </Typography>
                 </>
-              )}
+              }
             </GridItem>
           </GridContainer>
         </SectionContainer>
@@ -212,10 +206,7 @@ export default function TM7Page() {
               end={12}
               className={styles.textCentered}
             >
-              <Headline
-                strongColor="green"
-                spaceBelow="additional"
-              >
+              <Headline strongColor="green" spaceBelow="additional">
                 <Typography component="p" variant="h2">
                   <span>
                     Discover what the <br />
@@ -321,10 +312,7 @@ export default function TM7Page() {
               end={12}
               className={styles.textCentered}
             >
-              <Headline
-                strongColor="green"
-                spaceBelow="additional"
-              >
+              <Headline strongColor="green" spaceBelow="additional">
                 <Typography component="p" variant="h2">
                   <span>
                     Meet the<strong> all-new TM7</strong>.
@@ -341,8 +329,14 @@ export default function TM7Page() {
                   preload="auto"
                   poster="/cosy/tm7_reveal_poster.webp"
                 >
-                  <source src="https://media.vorwerk.com/is/content/vorwerk/vorwerk-eCommerce-portal/gb/en/c/dam-home/videos/thermomix/tm7/H305666_VORWERK_Reveal_TM_long_version_16x9_UK_titled_1920px.webm" type="video/webm" />
-                  <source src="https://media.vorwerk.com/is/content/vorwerk/vorwerk-eCommerce-portal/gb/en/c/dam-home/videos/thermomix/tm7/H305666_VORWERK_Reveal_TM_long_version_16x9_UK_titled_1920px-0x720-3000k.mp4" type="video/mp4" />
+                  <source
+                    src="https://media.vorwerk.com/is/content/vorwerk/vorwerk-eCommerce-portal/gb/en/c/dam-home/videos/thermomix/tm7/H305666_VORWERK_Reveal_TM_long_version_16x9_UK_titled_1920px.webm"
+                    type="video/webm"
+                  />
+                  <source
+                    src="https://media.vorwerk.com/is/content/vorwerk/vorwerk-eCommerce-portal/gb/en/c/dam-home/videos/thermomix/tm7/H305666_VORWERK_Reveal_TM_long_version_16x9_UK_titled_1920px-0x720-3000k.mp4"
+                    type="video/mp4"
+                  />
                 </video>
               </MediaContainer>
             </GridItem>
@@ -357,22 +351,18 @@ export default function TM7Page() {
                 end={12}
                 className={styles.textCentered}
               >
-                <Headline
-                  strongColor="green"
-                  spaceBelow="default"
-                >
+                <Headline strongColor="green" spaceBelow="default">
                   <Typography component="p" variant="h2">
-                    {isDesktop ? (
+                    {isDesktop ?
                       <span>
                         Explore <strong>over 1000,000 recipes</strong>
                         <br /> tailored to you.
                       </span>
-                    ) : (
-                      <span>
-                        Explore <strong>over 1000,000 recipes</strong>{" "}
-                        tailored to you.
+                    : <span>
+                        Explore <strong>over 1000,000 recipes</strong> tailored
+                        to you.
                       </span>
-                    )}
+                    }
                   </Typography>
                 </Headline>
               </GridItem>
@@ -435,17 +425,16 @@ export default function TM7Page() {
               endXL={11}
               className={styles.textCentered}
             >
-              {isDesktop ? (
+              {isDesktop ?
                 <Typography component="intro">
                   From the perfect risotto to beloved classics, let Thermomix®
                   inspire your next culinary adventure.
                 </Typography>
-              ) : (
-                <Typography component="p" variant="paragraph16">
+              : <Typography component="p" variant="paragraph16">
                   From the perfect risotto to beloved classics, let Thermomix®
                   inspire your next culinary adventure.
                 </Typography>
-              )}
+              }
             </GridItem>
           </GridContainer>
         </SectionContainer>
@@ -457,10 +446,7 @@ export default function TM7Page() {
               end={12}
               className={styles.textCentered}
             >
-              <Headline
-                strongColor="green"
-                spaceBelow="additional"
-              >
+              <Headline strongColor="green" spaceBelow="additional">
                 <Typography component="p" variant="h2">
                   <span>
                     Designed to <br />
@@ -524,10 +510,7 @@ export default function TM7Page() {
               end={12}
               className={styles.textCentered}
             >
-              <Headline
-                strongColor="green"
-                spaceBelow="additional"
-              >
+              <Headline strongColor="green" spaceBelow="additional">
                 <Typography component="p" variant="h2">
                   <span>
                     What&apos;s<strong> included</strong>.
@@ -586,9 +569,7 @@ export default function TM7Page() {
               end={12}
               className={styles.textCentered}
             >
-              <Headline
-                strongColor="green"
-              >
+              <Headline strongColor="green">
                 <Typography component="p" variant="h2">
                   <span>
                     Be among the first to
@@ -616,10 +597,7 @@ export default function TM7Page() {
               end={12}
               className={styles.textCentered}
             >
-              <Headline
-                strongColor="green"
-                spaceBelow="default"
-              >
+              <Headline strongColor="green" spaceBelow="default">
                 <Typography component="p" variant="h2">
                   <span>
                     Share your love of the
@@ -639,7 +617,11 @@ export default function TM7Page() {
                 <a key="facebook" href="#facebook" aria-label="Facebook">
                   <FacebookIcon />
                 </a>,
-                <a key="messenger" href="#facebookMessenger" aria-label="Facebook Messenger">
+                <a
+                  key="messenger"
+                  href="#facebookMessenger"
+                  aria-label="Facebook Messenger"
+                >
                   <FacebookMessengerIcon />
                 </a>,
                 <a key="telegram" href="#telegram" aria-label="Telegram">
@@ -663,10 +645,7 @@ export default function TM7Page() {
               end={12}
               className={styles.textCentered}
             >
-              <Headline
-                spaceBelow="additional"
-                strongColor="green"
-              >
+              <Headline spaceBelow="additional" strongColor="green">
                 <Typography component="p" variant="h2">
                   <span>
                     Questions about TM7
@@ -689,10 +668,7 @@ export default function TM7Page() {
             >
               <div className={styles.questionSection}>
                 <div>
-                  <Headline
-                    spaceBelow="default"
-                    strongColor="green"
-                  >
+                  <Headline spaceBelow="default" strongColor="green">
                     <Typography component="p" variant="h4" fontWeight="bold">
                       <span>When will I receive my TM7?</span>
                     </Typography>
@@ -710,10 +686,7 @@ export default function TM7Page() {
                   </Typography>
                 </div>
                 <div>
-                  <Headline
-                    spaceBelow="default"
-                    strongColor="green"
-                  >
+                  <Headline spaceBelow="default" strongColor="green">
                     <Typography component="p" variant="h4" fontWeight="bold">
                       <span>When can I expect delivery?</span>
                     </Typography>
@@ -732,10 +705,7 @@ export default function TM7Page() {
                   </Typography>
                 </div>
                 <div>
-                  <Headline
-                    spaceBelow="default"
-                    strongColor="green"
-                  >
+                  <Headline spaceBelow="default" strongColor="green">
                     <Typography component="p" variant="h4" fontWeight="bold">
                       <span>How does the pre-order process work?</span>
                     </Typography>
@@ -754,10 +724,7 @@ export default function TM7Page() {
                   </Typography>
                 </div>
                 <div>
-                  <Headline
-                    spaceBelow="default"
-                    strongColor="green"
-                  >
+                  <Headline spaceBelow="default" strongColor="green">
                     <Typography component="p" variant="h4" fontWeight="bold">
                       <span>Why pre-order now?</span>
                     </Typography>
@@ -775,10 +742,7 @@ export default function TM7Page() {
                   </Typography>
                 </div>
                 <div>
-                  <Headline
-                    spaceBelow="default"
-                    strongColor="green"
-                  >
+                  <Headline spaceBelow="default" strongColor="green">
                     <Typography component="p" variant="h4" fontWeight="bold">
                       <span>How can I purchase a TM7?</span>
                     </Typography>
@@ -789,17 +753,14 @@ export default function TM7Page() {
                     spaceBelow
                   >
                     <span>
-                      Simply click &apos;Pre-order now&apos; and fill out the form. Our
-                      advisors will be in touch with you shortly to discuss
-                      further details.
+                      Simply click &apos;Pre-order now&apos; and fill out the
+                      form. Our advisors will be in touch with you shortly to
+                      discuss further details.
                     </span>
                   </Typography>
                 </div>
                 <div>
-                  <Headline
-                    spaceBelow="default"
-                    strongColor="green"
-                  >
+                  <Headline spaceBelow="default" strongColor="green">
                     <Typography component="p" variant="h4" fontWeight="bold">
                       <span>What makes TM7 different from TM6?</span>
                     </Typography>
@@ -817,10 +778,7 @@ export default function TM7Page() {
                   </Typography>
                 </div>
                 <div>
-                  <Headline
-                    spaceBelow="default"
-                    strongColor="green"
-                  >
+                  <Headline spaceBelow="default" strongColor="green">
                     <Typography component="p" variant="h4" fontWeight="bold">
                       <span>What payment methods are accepted for TM7?</span>
                     </Typography>

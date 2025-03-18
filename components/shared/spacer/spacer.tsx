@@ -16,7 +16,7 @@ export default function Spacer({
   const md = useMediaQuery("(min-width: 768px)");
 
   useEffect(() => {
-    const newSize = md ? sizeMedium ?? size : size;
+    const newSize = md ? (sizeMedium ?? size) : size;
     setSpacerSize(newSize);
   }, [md, size, sizeMedium]);
 

@@ -56,7 +56,8 @@
 
 @media screen and (width >=740px) {
   .swiper {
-    padding: 0 var(--Section-container-padding-sectionContainerPadding, 20px) calc(var(--Gaps-gap01, 20px) + 28px);
+    padding: 0 var(--Section-container-padding-sectionContainerPadding, 20px)
+      calc(var(--Gaps-gap01, 20px) + 28px);
   }
 
   .swiper__slide {
@@ -67,7 +68,8 @@
 
 @media screen and (width >=936px) {
   .swiper {
-    padding: 0 var(--Section-container-padding-sectionContainerPadding, 24px) calc(var(--Gaps-gap01, 24px) + 28px);
+    padding: 0 var(--Section-container-padding-sectionContainerPadding, 24px)
+      calc(var(--Gaps-gap01, 24px) + 28px);
   }
 
   .swiper__slide {

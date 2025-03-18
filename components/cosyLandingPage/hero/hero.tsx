@@ -146,7 +146,14 @@ const Hero: React.FC = () => {
                   </Typography>
                 </Headline>
                 <div data-observe="true">
-                  <Button buttonStyle="primary" size="large" componentNode="a" url="#">Pre-order now</Button>
+                  <Button
+                    buttonStyle="primary"
+                    size="large"
+                    componentNode="a"
+                    url="#"
+                  >
+                    Pre-order now
+                  </Button>
                 </div>
               </GridItem>
             </GridContainer>
@@ -159,9 +166,9 @@ const Hero: React.FC = () => {
           shouldAlwaysCompleteAnimation={true}
           translateY={[0, -40, "easeIn"]}
           scale={
-            screenSize.width >= 1268
-              ? [1.0, 1.2, "easeIn"]
-              : [1.0, 1.4, "easeInOut"]
+            screenSize.width >= 1268 ?
+              [1.0, 1.2, "easeIn"]
+            : [1.0, 1.4, "easeInOut"]
           }
           className={styles.parallax}
         >

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   GridContainer,
@@ -33,7 +33,7 @@ const Tile = ({ light, dark, isDarkMode, title }: TileProps) => {
 
   useEffect(() => {
     // Only preload images that exist on the client side
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       if (light) {
         const preloadLight = new Image();
         preloadLight.src = light.image;
@@ -59,9 +59,7 @@ const Tile = ({ light, dark, isDarkMode, title }: TileProps) => {
       style={{ backgroundColor, color: fontColor }}
     >
       <img src={version.image} alt="Product" className={styles.image} />
-      <Headline
-        spaceBelow="default"
-      >
+      <Headline spaceBelow="default">
         <Typography component="h5" fontWeight="bold">
           <span>{title}</span>
         </Typography>
@@ -84,13 +82,13 @@ const ShowcaseTiles = ({ tilesData }: ShowcaseTilesProps) => {
 
   // Generate a unique storage key based on tile titles
   const storageKey = useMemo(() => {
-    const tileIdentifier = tilesData.map(tile => tile.title).join('-');
+    const tileIdentifier = tilesData.map((tile) => tile.title).join("-");
     return `showcaseTiles-darkMode-${tileIdentifier}`;
   }, [tilesData]);
 
   // Check if we have both modes available for at least one tile
   const hasBothModes = useMemo(() => {
-    return tilesData.some(tile => tile.light && tile.dark);
+    return tilesData.some((tile) => tile.light && tile.dark);
   }, [tilesData]);
 
   const columnsConfig = useMemo(() => {
@@ -107,7 +105,7 @@ const ShowcaseTiles = ({ tilesData }: ShowcaseTilesProps) => {
     setIsDarkMode((prevMode) => {
       const newMode = !prevMode;
       // Save preference to localStorage with unique key
-      if (typeof window !== 'undefined') {
+      if (typeof window !== "undefined") {
         localStorage.setItem(storageKey, String(newMode));
       }
       return newMode;
@@ -116,17 +114,17 @@ const ShowcaseTiles = ({ tilesData }: ShowcaseTilesProps) => {
 
   // Check if all tiles only have dark mode
   const onlyDarkMode = useMemo(() => {
-    return tilesData.every(tile => tile.dark && !tile.light);
+    return tilesData.every((tile) => tile.dark && !tile.light);
   }, [tilesData]);
 
   // Set initial dark mode state based on available modes and saved preference
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const savedPreference = localStorage.getItem(storageKey);
 
       if (savedPreference !== null) {
         // Use saved preference if it exists
-        setIsDarkMode(savedPreference === 'true');
+        setIsDarkMode(savedPreference === "true");
       } else if (onlyDarkMode) {
         // Fall back to onlyDarkMode logic if no saved preference
         setIsDarkMode(true);
@@ -162,7 +160,24 @@ const ShowcaseTiles = ({ tilesData }: ShowcaseTilesProps) => {
             if (!tile.light && !tile.dark) return null;
 
             return (
-              <GridItem key={`tile-${tile.title}`} columns={config.columns as 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12}>
+              <GridItem
+                key={`tile-${tile.title}`}
+                columns={
+                  config.columns as
+                    | 1
+                    | 2
+                    | 3
+                    | 4
+                    | 5
+                    | 6
+                    | 7
+                    | 8
+                    | 9
+                    | 10
+                    | 11
+                    | 12
+                }
+              >
                 <Tile
                   light={tile.light}
                   dark={tile.dark}

@@ -161,7 +161,9 @@ const Hero = ({
         </Parallax>
         <div className={styles.parallaxLogoWrapper}>
           <GridContainer>
-            <GridItem columns={9}><div /></GridItem>
+            <GridItem columns={9}>
+              <div />
+            </GridItem>
             <GridItem columns={3}>
               <Image
                 src={parallaxLogo}

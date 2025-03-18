@@ -23,19 +23,22 @@ const BentoBoxTiles = ({ tiles, darkMode }: BentoBoxTilesProps) => {
     <GridContainer>
       <GridItem columns={12}>
         <div
-          className={`${styles.bentoBoxTiles} ${darkMode ? styles.darkModeEnabled : ""
-            }`}
+          className={`${styles.bentoBoxTiles} ${
+            darkMode ? styles.darkModeEnabled : ""
+          }`}
         >
           {tiles.map((tile, index) => (
             <div
               key={`${tile.title}-${String(index)}`}
-              className={`${styles.bentoBoxTile} ${tile.bigTile ? styles.tileBig : ""
-                }`}
+              className={`${styles.bentoBoxTile} ${
+                tile.bigTile ? styles.tileBig : ""
+              }`}
             >
               {tile.image && (
                 <div
-                  className={`${styles.tileImageContainer} ${tile.imageBottom ? styles.tileImageBottom : ""
-                    }`}
+                  className={`${styles.tileImageContainer} ${
+                    tile.imageBottom ? styles.tileImageBottom : ""
+                  }`}
                 >
                   <img src={tile.image} alt={tile.imageAlt} />
                 </div>

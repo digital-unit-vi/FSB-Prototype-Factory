@@ -54,9 +54,7 @@ export const ImageLayout = ({
                   end={11}
                   className={styles.description}
                 >
-                  <Headline
-                    strongColor="green"
-                  >
+                  <Headline strongColor="green">
                     <Typography component="intro">
                       {images[0].description}
                     </Typography>

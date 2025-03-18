@@ -213,9 +213,9 @@ export default function MobileScrollboxModule({
                       {item.media.type === "image" && (
                         <img
                           src={
-                            typeof item.media.src === "string"
-                              ? item.media.src
-                              : ""
+                            typeof item.media.src === "string" ?
+                              item.media.src
+                            : ""
                           }
                           alt={item.media.alt}
                           title={item.media.title}
@@ -231,10 +231,9 @@ export default function MobileScrollboxModule({
                             muted={true}
                             loop={true}
                           >
-                            {typeof item.media.src === "string" ? (
+                            {typeof item.media.src === "string" ?
                               <source src={item.media.src} />
-                            ) : (
-                              <>
+                            : <>
                                 <source
                                   src={item.media.src.webm}
                                   type="video/webm"
@@ -244,9 +243,9 @@ export default function MobileScrollboxModule({
                                   type="video/mp4"
                                 />
                               </>
-                            )}
+                            }
                           </video>
-                          {!isPlaying(index) ? (
+                          {!isPlaying(index) ?
                             <button
                               type="button"
                               onClick={() => pressPlay(index)}
@@ -254,15 +253,14 @@ export default function MobileScrollboxModule({
                             >
                               <Play />
                             </button>
-                          ) : (
-                            <button
+                          : <button
                               type="button"
                               onClick={() => pressPause(index)}
                               aria-label="Pause button"
                             >
                               <Pause />
                             </button>
-                          )}
+                          }
                         </div>
                       )}
                       <Typography

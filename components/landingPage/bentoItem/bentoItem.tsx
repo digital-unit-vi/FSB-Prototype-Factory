@@ -10,12 +10,12 @@ interface BentoItemProps {
   imageAlt?: string;
   dark?: boolean;
   variant:
-  | "noImage"
-  | "imageTop"
-  | "imageBottom"
-  | "horizontal"
-  | "imageTopSensor"
-  | "imageBottomSensor";
+    | "noImage"
+    | "imageTop"
+    | "imageBottom"
+    | "horizontal"
+    | "imageTopSensor"
+    | "imageBottomSensor";
   "data-item"?: string;
 }
 
@@ -32,8 +32,9 @@ export default function BentoItem({
   const Icon = icon;
   return (
     <div
-      className={`${styles.bentoItem} ${styles[variant]} ${dark ? styles.dark : ""
-        }`}
+      className={`${styles.bentoItem} ${styles[variant]} ${
+        dark ? styles.dark : ""
+      }`}
       {...restProps}
     >
       <div className={styles.contentWrapper}>
