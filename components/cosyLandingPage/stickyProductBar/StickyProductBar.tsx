@@ -12,9 +12,6 @@ import styles from "./stickyProductBar.module.scss";
 
 const StickyProductBar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-
-  const screenSize = useScreenSize();
-
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -26,6 +23,7 @@ const StickyProductBar: React.FC = () => {
       rootMargin: "0px",
       threshold: 0.1,
     };
+
     const observerCallback: IntersectionObserverCallback = (entries) => {
       for (const entry of entries) {
         if (entry.isIntersecting) {
@@ -62,7 +60,7 @@ const StickyProductBar: React.FC = () => {
       ) {
         initialIntersecting = true;
       }
-    };
+    }
 
     setIsVisible(!initialIntersecting);
 
@@ -73,6 +71,8 @@ const StickyProductBar: React.FC = () => {
       observer.disconnect();
     };
   }, []);
+
+  const screenSize = useScreenSize();
 
   return (
     <div

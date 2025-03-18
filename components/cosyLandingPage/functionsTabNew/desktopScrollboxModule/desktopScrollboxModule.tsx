@@ -72,7 +72,12 @@ export default function DesktopScrollboxModule({
             video.pause();
             video.currentTime = 0;
           })
-          .catch(console.log);
+          .catch((error: unknown) => {
+            handleVideoError(error, "handlePauseAndResetAll");
+
+            video.pause();
+            video.currentTime = 0;
+          });
       }
     }
   };
@@ -82,7 +87,7 @@ export default function DesktopScrollboxModule({
   };
 
   const isVideoPlaying = (index: number) => {
-    return videoRefs.current[index]?.paused === false;
+    return !videoRefs.current[index]?.paused;
   };
 
   const updatePlayingState = (index: number, isPlaying: boolean) => (item: ExtendedListItem, i: number) => ({
@@ -118,13 +123,23 @@ export default function DesktopScrollboxModule({
         .then(() => {
           setListItems((prevItems) => prevItems.map(updatePlayingState(index, true)));
         })
-        .catch(console.log);
+        .catch((error: unknown) => {
+          handleVideoError(error, "handlePlayVideo");
+
+          setListItems((prevItems) => prevItems.map(updatePlayingState(index, false)));
+        });
     }
   };
 
   const handlePauseVideo = (index: number) => {
     videoRefs.current[index]?.pause();
     setListItems((prevItems) => prevItems.map(updatePlayingState(index, false)));
+  };
+
+  const handleVideoError = (error: unknown, context: string) => {
+    if (process.env.NODE_ENV === "development") {
+      console.warn(`Video error in ${context}:`, error);
+    }
   };
 
   const handleScrollProgress = (latest: number) => {

@@ -15,7 +15,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { ListItem } from "../functionsTab";
 import styles from "./mobileScrollboxModule.module.scss";
 
@@ -99,10 +99,10 @@ export default function MobileScrollboxModule({
   };
 
   const isPlaying = (index: number) => {
-    return videoRefs.current[index]?.paused === false;
+    return !videoRefs.current[index]?.paused;
   };
 
-  const pressPlay = (index: number) => {
+  const pressPlay = useCallback((index: number) => {
     const video = videoRefs.current[index];
     if (!video) return;
 
@@ -113,9 +113,9 @@ export default function MobileScrollboxModule({
         setListItems((prevItems) => updatePlayingState(prevItems, index));
       })
       .catch((error: unknown) => {
-        console.log(error);
+        handleVideoError(error, "pressPlay");
       });
-  };
+  }, []);
 
   const pressPause = (index: number) => {
     const video = videoRefs.current[index];
@@ -124,6 +124,12 @@ export default function MobileScrollboxModule({
     video.pause();
     video.currentTime = 0;
     setListItems((prevItems) => updatePlayingState(prevItems, index));
+  };
+
+  const handleVideoError = (error: unknown, context: string) => {
+    if (process.env.NODE_ENV === "development") {
+      console.warn(`Video error in ${context}:`, error);
+    }
   };
 
   useEffect(() => {
@@ -143,7 +149,7 @@ export default function MobileScrollboxModule({
     if (initialVideoReady && listItems[0]?.isActive) {
       pressPlay(0);
     }
-  }, [initialVideoReady, listItems]);
+  }, [initialVideoReady, listItems, pressPlay]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     setListItems((prevItems) =>
