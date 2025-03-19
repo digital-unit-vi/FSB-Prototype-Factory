@@ -1,0 +1,13 @@
+.wrapper {
+  background-color: #23282a;
+}
+
+.footerSmallLinks {
+  padding-bottom: 72px;
+}
+
+@media screen and (width >=1268px) {
+  .footerSmallLinks {
+    padding-bottom: 0;
+  }
+}

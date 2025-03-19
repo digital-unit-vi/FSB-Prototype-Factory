@@ -11,7 +11,7 @@ import {
   Headline,
   Hero,
   Typography,
-  Vorwerk
+  Vorwerk,
 } from "@vorwerk/fibre-react";
 import Link from "next/link";
 import styles from "./page.module.scss";
@@ -68,10 +68,7 @@ export default function Home() {
             end={11}
             className={styles.textCentered}
           >
-            <Headline
-              spaceBelow="additional"
-              strongColor="green"
-            >
+            <Headline spaceBelow="additional" strongColor="green">
               <Typography component="h2">
                 <span>
                   Project supported by
@@ -100,14 +97,19 @@ export default function Home() {
             </Headline>
           }
           layout="inGrid"
-          media={<img src="/landingPage/imageGallery/tm6-dinner.jpg" alt="Family gathered for dinner; people sitting at the table" />}
+          media={
+            <img
+              src="/landingPage/imageGallery/tm6-dinner.jpg"
+              alt="Family gathered for dinner; people sitting at the table"
+            />
+          }
           mediaAlignment="left"
           paragraph={
             <Typography fontWeight="regular" variant="paragraph18">
               DS360 is the Vorwerk project designed to enable its sales
               workforce to benefit from the latest technologies and be more
-              effective in showcasing and selling the company’s premium
-              devices, such as Thermomix.
+              effective in showcasing and selling the company’s premium devices,
+              such as Thermomix.
               <br />
               <br />
               The Experience Design Team listed the flagship screens in this
@@ -125,7 +127,12 @@ export default function Home() {
               </Typography>
             </Headline>
           }
-          media={<img src="/landingPage/teaser/teaser.png" alt="Smiling people in a bright kitchen enjoying a cooking demonstration." />}
+          media={
+            <img
+              src="/landingPage/teaser/teaser.png"
+              alt="Smiling people in a bright kitchen enjoying a cooking demonstration."
+            />
+          }
           mediaAlignment="right"
           paragraph={
             <Typography fontWeight="regular" variant="paragraph18">
@@ -144,10 +151,7 @@ export default function Home() {
             end={11}
             className={styles.textCentered}
           >
-            <Headline
-              spaceBelow="additional"
-              strongColor="green"
-            >
+            <Headline spaceBelow="additional" strongColor="green">
               <Typography component="h2">
                 <span>
                   <strong>FiBRE Single Blend</strong>
@@ -160,9 +164,7 @@ export default function Home() {
         </GridContainer>
         <GridContainer>
           <GridItem columns={12}>
-            <Headline
-              strongColor="green"
-            >
+            <Headline strongColor="green">
               <>
                 <Typography component="h3" fontWeight="bold" spaceBelow>
                   <span>FiBRE Single Blend (FSB) in a nutshell</span>
@@ -170,13 +172,12 @@ export default function Home() {
                 <Typography spaceBelow>
                   <Spacer size={24} />
                   <span style={{ fontSize: "22px", lineHeight: "32px" }}>
-                    FSB is the Vorwerk Design System meticulously crafted by
-                    the Vorwerk International Experience Design Team (XDT).
-                    Its primary goal is to empower the entire Vorwerk
-                    community to envision, execute, and maintain digital
-                    touchpoints that consistently embody the premium quality
-                    of the company&apos;s physical devices, such as the
-                    Thermomix.
+                    FSB is the Vorwerk Design System meticulously crafted by the
+                    Vorwerk International Experience Design Team (XDT). Its
+                    primary goal is to empower the entire Vorwerk community to
+                    envision, execute, and maintain digital touchpoints that
+                    consistently embody the premium quality of the
+                    company&apos;s physical devices, such as the Thermomix.
                   </span>
                   <Spacer size={24} />
                 </Typography>
@@ -193,7 +194,10 @@ export default function Home() {
             </Headline>
           }
           media={
-            <img src="/landingPage/imageGallery/tm6-family-leisure.jpg" alt="Father and children playing checkers and studying at a wooden kitchen table." />
+            <img
+              src="/landingPage/imageGallery/tm6-family-leisure.jpg"
+              alt="Father and children playing checkers and studying at a wooden kitchen table."
+            />
           }
           mediaAlignment="right"
           paragraph={
@@ -205,14 +209,12 @@ export default function Home() {
               <br />
               Its primary purpose is to help developers understand how the
               Vorwerk digital touchpoints look and work. In addition, the FEW
-              project supports rapid prototyping loops, enabling the Company
-              to mitigate risk by testing options with real users and real
-              code!
+              project supports rapid prototyping loops, enabling the Company to
+              mitigate risk by testing options with real users and real code!
               <br />
               <br />
               Lastly, the PF is a great tool for keeping everyone on the same
-              page regarding UX and UI patterns across products and
-              touchpoints.
+              page regarding UX and UI patterns across products and touchpoints.
             </Typography>
           }
         />
@@ -235,15 +237,14 @@ export default function Home() {
           paragraph={
             <Typography fontWeight="regular" variant="paragraph18">
               The FEW project boldly ambitions to help developers, designers,
-              product experts, and business stakeholders speak the same
-              language and collaborate to build the Company’s digital
-              products.
+              product experts, and business stakeholders speak the same language
+              and collaborate to build the Company’s digital products.
               <br />
               <br />
-              Designed and built with industry standards, such as the
-              Storybook platform, this collection of code-based atomic
-              components offers a unique opportunity to facilitate the
-              end-to-end product design process.
+              Designed and built with industry standards, such as the Storybook
+              platform, this collection of code-based atomic components offers a
+              unique opportunity to facilitate the end-to-end product design
+              process.
             </Typography>
           }
         />
@@ -256,7 +257,12 @@ export default function Home() {
               </Typography>
             </Headline>
           }
-          media={<img src="/landingPage/teaser/teaser3.jpeg" alt="Family enjoying homemade cake together." />}
+          media={
+            <img
+              src="/landingPage/teaser/teaser3.jpeg"
+              alt="Family enjoying homemade cake together."
+            />
+          }
           mediaAlignment="right"
           paragraph={
             <Typography fontWeight="regular" variant="paragraph18">
@@ -267,14 +273,12 @@ export default function Home() {
               <br />
               Its primary purpose is to help developers understand how the
               Vorwerk digital touchpoints look and work. In addition, the FEW
-              project supports rapid prototyping loops, enabling the Company
-              to mitigate risk by testing options with real users and real
-              code!
+              project supports rapid prototyping loops, enabling the Company to
+              mitigate risk by testing options with real users and real code!
               <br />
               <br />
               Lastly, the PF is a great tool for keeping everyone on the same
-              page regarding UX and UI patterns across products and
-              touchpoints.
+              page regarding UX and UI patterns across products and touchpoints.
             </Typography>
           }
         />

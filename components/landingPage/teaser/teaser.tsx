@@ -1,7 +1,7 @@
 import Button from "@components/shared/button/button";
 import Heading from "@components/shared/heading/heading";
-import Image, { StaticImageData } from "next/image";
-import { ReactNode } from "react";
+import Image, { type StaticImageData } from "next/image";
+import type { ReactNode } from "react";
 import styles from "./teaser.module.scss";
 
 export default function Teaser({

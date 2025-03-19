@@ -1,5 +1,5 @@
 import Button from "@components/shared/button/button";
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import styles from "./productTile.module.scss";
 
 export default function ProductTile({
@@ -23,7 +23,7 @@ export default function ProductTile({
         />
       </div>
       <div className={styles.contentWrapper}>
-        <div className={styles.contentEmptyContainer}></div>
+        <div className={styles.contentEmptyContainer} />
         <div className={styles.contentContainer}>
           <span className={styles.headline}>{title}</span>
           <span className={styles.price}>{subtitle}</span>

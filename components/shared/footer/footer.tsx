@@ -4,7 +4,8 @@ import InstagramLogo from "@public/shared/socialMediaLogos/instagramLogo";
 import PinterestLogo from "@public/shared/socialMediaLogos/pinterestLogo";
 import RezeptweltLogo from "@public/shared/socialMediaLogos/rezeptweltLogo";
 import YouTubeLogo from "@public/shared/socialMediaLogos/youTubeLogo";
-import Image, { StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "./footer.module.scss";
 

@@ -67,7 +67,7 @@ export default function BentoBox({
 
   return (
     <div className={styles.bentoBox} ref={container}>
-      {sensor ? (
+      {sensor ?
         <>
           <BentoItem
             title="Pinpoint perfection"
@@ -120,8 +120,7 @@ export default function BentoBox({
             data-item="bentoItem"
           />
         </>
-      ) : (
-        <>
+      : <>
           <BentoItem
             title="6.8-inch touch screen"
             description="Great recipes require a greater display so we increased it further."
@@ -173,7 +172,7 @@ export default function BentoBox({
             data-item="bentoItem"
           />
         </>
-      )}
+      }
     </div>
   );
 }

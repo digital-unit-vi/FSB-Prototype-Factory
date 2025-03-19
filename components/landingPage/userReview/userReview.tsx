@@ -103,8 +103,8 @@ export default function UserReview({
       {
         duration: 2.2,
         ease: "power4.out",
-        onUpdate: function (this: gsap.core.Tween) {
-          const progress = this.progress();
+        onUpdate: (self: gsap.core.Tween) => {
+          const progress = self.progress();
           const currentScore = (1.0 + progress * (ratingScore - 1.0)).toFixed(
             1
           );
@@ -125,7 +125,7 @@ export default function UserReview({
       <div className={styles.ratingSection}>
         <p className={styles.ratingScore}>{animatedScore}</p>
         <div className={styles.ratingIndicatorBig} ref={starContainer}>
-          {dark ? (
+          {dark ?
             <>
               <RatingDarkFull data-item="ratingStar" />
               <RatingDarkFull data-item="ratingStar" />
@@ -133,15 +133,14 @@ export default function UserReview({
               <RatingDarkFull data-item="ratingStar" />
               <RatingDarkHalf data-item="ratingStar" />
             </>
-          ) : (
-            <>
+          : <>
               <RatingLightFull data-item="ratingStar" />
               <RatingLightFull data-item="ratingStar" />
               <RatingLightFull data-item="ratingStar" />
               <RatingLightFull data-item="ratingStar" />
               <RatingLightHalf data-item="ratingStar" />
             </>
-          )}
+          }
           <span className={styles.ratingIndicatorReviews}>
             ({noReviews} reviews)
           </span>
@@ -150,7 +149,7 @@ export default function UserReview({
       <div className={styles.reviewSection} ref={reviewSection}>
         <div className={`${styles.singleReview} reviewContainer`}>
           <div className={styles.ratingIndicatorSmall}>
-            {dark ? (
+            {dark ?
               <>
                 <RatingDarkFull />
                 <RatingDarkFull />
@@ -158,21 +157,20 @@ export default function UserReview({
                 <RatingDarkFull />
                 <RatingDarkEmpty />
               </>
-            ) : (
-              <>
+            : <>
                 <RatingLightFull />
                 <RatingLightFull />
                 <RatingLightFull />
                 <RatingLightFull />
                 <RatingLightEmpty />
               </>
-            )}
+            }
           </div>
           <p className={styles.reviewText}>{review1}</p>
         </div>
         <div className={`${styles.singleReview} reviewContainer`}>
           <div className={styles.ratingIndicatorSmall}>
-            {dark ? (
+            {dark ?
               <>
                 <RatingDarkFull />
                 <RatingDarkFull />
@@ -180,21 +178,20 @@ export default function UserReview({
                 <RatingDarkFull />
                 <RatingDarkFull />
               </>
-            ) : (
-              <>
+            : <>
                 <RatingLightFull />
                 <RatingLightFull />
                 <RatingLightFull />
                 <RatingLightFull />
                 <RatingLightFull />
               </>
-            )}
+            }
           </div>
           <p className={styles.reviewText}>{review2}</p>
         </div>
         <div className={`${styles.singleReview} reviewContainer`}>
           <div className={styles.ratingIndicatorSmall}>
-            {dark ? (
+            {dark ?
               <>
                 <RatingDarkFull />
                 <RatingDarkFull />
@@ -202,15 +199,14 @@ export default function UserReview({
                 <RatingDarkFull />
                 <RatingDarkFull />
               </>
-            ) : (
-              <>
+            : <>
                 <RatingLightFull />
                 <RatingLightFull />
                 <RatingLightFull />
                 <RatingLightFull />
                 <RatingLightFull />
               </>
-            )}
+            }
           </div>
           <p className={styles.reviewText}>{review3}</p>
         </div>

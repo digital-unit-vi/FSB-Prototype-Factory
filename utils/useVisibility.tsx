@@ -13,8 +13,7 @@ const useVisibility = (ref: React.RefObject<HTMLElement>, options = {}) => {
     );
 
     if (ref.current) {
-      const currentRef = ref.current;
-      observer.observe(currentRef);
+      observer.observe(ref.current);
     }
 
     return () => {

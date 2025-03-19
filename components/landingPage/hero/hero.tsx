@@ -14,9 +14,9 @@ import {
   Typography,
   Vorwerk,
 } from "@vorwerk/fibre-react";
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Parallax } from "react-scroll-parallax";
 import styles from "./hero.module.scss";
 
@@ -44,14 +44,14 @@ const HERO_PRODUCT_IMAGE_MAPPING: Record<ProductImage, StaticImageData> = {
   sensor: SensorProductImage,
 };
 
-const Hero: React.FC<HeroProps> = ({
+const Hero = ({
   video,
   productImage,
   eyebrowLine,
   textCopy,
   darkMode = false,
   poster = "",
-}) => {
+}: HeroProps) => {
   const parallaxLogo = darkMode ? ParallaxLogoDark : ParallaxLogo;
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -161,7 +161,9 @@ const Hero: React.FC<HeroProps> = ({
         </Parallax>
         <div className={styles.parallaxLogoWrapper}>
           <GridContainer>
-            <GridItem columns={9}><div /></GridItem>
+            <GridItem columns={9}>
+              <div />
+            </GridItem>
             <GridItem columns={3}>
               <Image
                 src={parallaxLogo}

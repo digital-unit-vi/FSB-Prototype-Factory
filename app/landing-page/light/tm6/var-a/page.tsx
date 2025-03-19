@@ -49,8 +49,7 @@ export default function TM6VariantALightLandingPage() {
             end={12}
             className={styles.textCentered}
           >
-            <Headline
-            >
+            <Headline>
               <Typography component="h2">
                 <span>
                   Compact and versatile – the Thermomix® TM6 is cleaner, more
@@ -116,10 +115,7 @@ export default function TM6VariantALightLandingPage() {
             className={styles.textCentered}
           >
             <>
-              <Headline
-                spaceBelow={"default"}
-                strongColor="green"
-              >
+              <Headline spaceBelow={"default"} strongColor="green">
                 <Typography component="h1">
                   <span>
                     Tons of <strong>functions</strong>
@@ -265,10 +261,7 @@ export default function TM6VariantALightLandingPage() {
             className={styles.textCentered}
           >
             <>
-              <Headline
-                spaceBelow={"default"}
-                strongColor="green"
-              >
+              <Headline spaceBelow={"default"} strongColor="green">
                 <Typography component="h1">
                   <span>
                     New favorite recipes

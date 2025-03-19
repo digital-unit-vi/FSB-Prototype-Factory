@@ -1,13 +1,14 @@
 "use client";
 
-import {
+import type {
   EmblaCarouselType,
   EmblaEventType,
   EmblaOptionsType,
 } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import Image, { StaticImageData } from "next/image";
-import React, { useCallback, useEffect, useRef } from "react";
+import Image, { type StaticImageData } from "next/image";
+import type React from "react";
+import { useCallback, useEffect, useRef } from "react";
 import styles from "./imageGallery.module.scss";
 import { DotButton, useDotButton } from "./imageGalleryDotButton";
 
@@ -30,28 +31,30 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi);
 
-  const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
-    tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
-      const element = slideNode.querySelector(`.${styles.imageGalleryParallaxLayer}`);
+  const setTweenNodes = useCallback((api: EmblaCarouselType): void => {
+    tweenNodes.current = api.slideNodes().map((slideNode) => {
+      const element = slideNode.querySelector(
+        `.${styles.imageGalleryParallaxLayer}`
+      );
 
       if (!element) {
-        console.error('Parallax layer element not found');
-        return document.createElement('div');
+        console.error("Parallax layer element not found");
+        return document.createElement("div");
       }
 
       return element as HTMLElement;
     });
   }, []);
 
-  const setTweenFactor = useCallback((emblaApi: EmblaCarouselType) => {
-    tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
+  const setTweenFactor = useCallback((api: EmblaCarouselType) => {
+    tweenFactor.current = TWEEN_FACTOR_BASE * api.scrollSnapList().length;
   }, []);
 
   const tweenParallax = useCallback(
-    (emblaApi: EmblaCarouselType, eventName?: EmblaEventType) => {
-      const engine = emblaApi.internalEngine();
-      const scrollProgress = emblaApi.scrollProgress();
-      const slidesInView = emblaApi.slidesInView();
+    (api: EmblaCarouselType, eventName?: EmblaEventType) => {
+      const engine = api.internalEngine();
+      const scrollProgress = api.scrollProgress();
+      const slidesInView = api.slidesInView();
       const isScrollEvent = eventName === "scroll";
 
       // Helper function to handle loop point calculations
@@ -71,10 +74,12 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
 
           const sign = Math.sign(target);
           if (sign === -1) {
-            diffToTarget = emblaApi.scrollSnapList()[snapIndex] - (1 + scrollProgress);
+            diffToTarget =
+              api.scrollSnapList()[snapIndex] - (1 + scrollProgress);
           }
           if (sign === 1) {
-            diffToTarget = emblaApi.scrollSnapList()[snapIndex] + (1 - scrollProgress);
+            diffToTarget =
+              api.scrollSnapList()[snapIndex] + (1 - scrollProgress);
           }
         });
 
@@ -82,13 +87,16 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
       };
 
       // Apply transform to each slide
-      const applyTransform = (slideIndex: number, diffToTarget: number): void => {
+      const applyTransform = (
+        slideIndex: number,
+        diffToTarget: number
+      ): void => {
         const translate = diffToTarget * (-1 * tweenFactor.current) * 100;
         const tweenNode = tweenNodes.current[slideIndex];
-        tweenNode.style.transform = `translateX(${translate.toString()}%)`;
+        tweenNode.style.transform = `translateX(${String(translate)}%)`;
       };
 
-      emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
+      api.scrollSnapList().forEach((scrollSnap, snapIndex) => {
         const initialDiff = scrollSnap - scrollProgress;
         const slidesInSnap = engine.slideRegistry[snapIndex];
 
@@ -125,8 +133,9 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
 
   return (
     <div
-      className={`${styles.imageGallery} ${dark ? styles.imageGalleryDark : ""
-        }`}
+      className={`${styles.imageGallery} ${
+        dark ? styles.imageGalleryDark : ""
+      }`}
     >
       <div className={styles.imageGalleryViewport} ref={emblaRef}>
         <div className={styles.imageGalleryContainer}>
@@ -137,7 +146,7 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
                   <Image
                     className={`${styles.imageGallerySlideImg} ${styles.imageGalleryParallaxImg}`}
                     src={slide}
-                    alt={`Image gallery img${index.toString()}`}
+                    alt={`Image gallery img${String(index)}`}
                   />
                 </div>
               </div>
@@ -149,10 +158,13 @@ const ImageGallery: React.FC<PropType> = ({ slides, dark }) => {
         <div className={styles.imageGalleryDots}>
           {scrollSnaps.map((_, index) => (
             <DotButton
-              key={`dot-${scrollSnaps[index].toString()}`}
-              onClick={() => { onDotButtonClick(index); }}
-              className={`${styles.imageGalleryDot} ${index === selectedIndex ? styles.imageGalleryDotSelected : ""
-                }`}
+              key={`dot-${String(scrollSnaps[index])}`}
+              onClick={() => {
+                onDotButtonClick(index);
+              }}
+              className={`${styles.imageGalleryDot} ${
+                index === selectedIndex ? styles.imageGalleryDotSelected : ""
+              }`}
             />
           ))}
         </div>

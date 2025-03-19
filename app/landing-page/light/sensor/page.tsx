@@ -43,8 +43,7 @@ export default function SensorLightLandingPage() {
             end={12}
             className={styles.textCentered}
           >
-            <Headline
-            >
+            <Headline>
               <Typography component="h2">
                 <span>
                   Guaranteed flavour, consistency and perfect results on the
@@ -184,11 +183,12 @@ export default function SensorLightLandingPage() {
           <GridItem columns={8}>
             <Typography component="intro">
               <span style={{ whiteSpace: "pre-line" }}>
-                {screenSize.width > 739
-                  ? `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time. With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`
-                  : `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time.
+                {screenSize.width > 739 ?
+                  `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time. With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`
+                : `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time.
 
-                With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`}
+                With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`
+                }
               </span>
             </Typography>
           </GridItem>
@@ -202,9 +202,7 @@ export default function SensorLightLandingPage() {
             end={12}
             className={styles.textCentered}
           >
-            <Headline
-              strongColor="green"
-            >
+            <Headline strongColor="green">
               <Typography component="h1">
                 <span>
                   <strong>Full control</strong> in your kitchen
@@ -269,10 +267,7 @@ export default function SensorLightLandingPage() {
             className={styles.textCentered}
           >
             <>
-              <Headline
-                spaceBelow={"default"}
-                strongColor="green"
-              >
+              <Headline spaceBelow={"default"} strongColor="green">
                 <Typography component="h1">
                   <span>
                     Don&apos;t miss a single

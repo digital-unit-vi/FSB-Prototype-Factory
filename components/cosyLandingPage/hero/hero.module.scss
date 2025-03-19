@@ -1,0 +1,178 @@
+.mainWrapper {
+  overflow: hidden;
+}
+
+.heroContainer {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: calc(100svh - 48px);
+
+  @media (width >=1268px) {
+    height: calc(100svh - 16px);
+  }
+}
+
+.videoWrapper {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 64px;
+
+  @media (width >=740px) {
+    border-radius: 0 0 88px;
+  }
+
+  @media (width >=936px) {
+    border-radius: 0 0 128px;
+  }
+
+  @media (width >=1268px) {
+    border-radius: 0 0 144px;
+  }
+
+  @media (width >=1580px) {
+    border-radius: 0 0 168px;
+  }
+}
+
+.heroVideo {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    180deg,
+    rgb(0 0 0 / 40%) 0%,
+    rgb(0 0 0 / 0%) 100%
+  );
+}
+
+.headerContainer {
+  position: absolute;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  color: white;
+  text-align: center;
+
+  a,
+  button {
+    min-width: 192px;
+  }
+}
+
+.parallaxWrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: -86px;
+
+  @media (width >=1268px) {
+    margin-top: -160px;
+  }
+}
+
+.parallax {
+  z-index: 2;
+}
+
+.imageWrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+
+  .heroProduct {
+    will-change: opacity;
+
+    position: relative;
+
+    width: 295px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .image1 {
+    z-index: 1;
+  }
+
+  .image2 {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    height: auto;
+
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .image3 {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    height: auto;
+
+    transition: opacity 1.4s ease-in;
+  }
+
+  .image4 {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    height: auto;
+
+    transition: opacity 2s ease-in;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (width >=1268px) {
+  .imageWrapper {
+    .heroProduct {
+      width: 680px;
+    }
+  }
+}

@@ -8,7 +8,7 @@ import {
   Headline,
   Hero,
   Typography,
-  Vorwerk
+  Vorwerk,
 } from "@vorwerk/fibre-react";
 import Link from "next/link";
 import styles from "./page.module.scss";
@@ -106,6 +106,17 @@ const tilesDataLP = [
   },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const tilesDataCoSy = [
+  {
+    dark: {
+      image: "/cosy/cosy_square.png",
+      link: "/landing-page/dark/tm7/",
+    },
+    title: "TM7",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -134,19 +145,14 @@ export default function Home() {
               </Typography>
             </Headline>
           }
-          image={
-            <img alt="Thermomix" src="/landingPage/hero/ds360-hero.png" />
-          }
+          image={<img alt="Thermomix" src="/landingPage/hero/ds360-hero.png" />}
           type="colorFill"
         />
       </div>
       <section className={styles.prominentSection}>
         <GridContainer>
           <GridItem columns={12} className={styles.textCentered}>
-            <Headline
-              spaceBelow="additional"
-              strongColor="green"
-            >
+            <Headline spaceBelow="additional" strongColor="green">
               <Typography component="h2">
                 <span>
                   <strong>Email Template</strong> -
@@ -176,13 +182,27 @@ export default function Home() {
         </GridContainer>
         <ShowcaseTiles tilesData={tilesDataMarketingEmail} />
       </section> */}
-      <section className={styles.prominentSection}>
+      {/* <section className={styles.prominentSection}>
         <GridContainer>
           <GridItem columns={12} className={styles.textCentered}>
             <Headline
               spaceBelow="additional"
               strongColor="green"
             >
+              <Typography component="h2">
+                <span>
+                  <strong>Landing Page Template TM7</strong>
+                </span>
+              </Typography>
+            </Headline>
+          </GridItem>
+        </GridContainer>
+        <ShowcaseTiles tilesData={tilesDataCoSy} />
+      </section> */}
+      <section className={styles.prominentSection}>
+        <GridContainer>
+          <GridItem columns={12} className={styles.textCentered}>
+            <Headline spaceBelow="additional" strongColor="green">
               <Typography component="h2">
                 <span>
                   <strong>Landing Page Template</strong> -
