@@ -85,9 +85,7 @@ const GalleryCarousel = ({
     return [{ mobileCarouselItems: result }];
   };
 
-  if (!mobileSlides) {
-    mobileSlides = extractImages(desktopSlides);
-  }
+  mobileSlides ??= extractImages(desktopSlides);
 
   return (
     <div
