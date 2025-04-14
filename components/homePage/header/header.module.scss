@@ -28,17 +28,6 @@ $focus-state-glow: rgb(55 130 205 / 24%);
   }
 }
 
-/* --- Focus Styles (keep as is) --- */
-a:focus-visible,
-button:focus-visible {
-  border-radius: $radius-0-5r;
-  outline: none;
-  box-shadow:
-    0 0 0 2px $focus-state-inner-border,
-    0 0 0 4px $focus-state-border,
-    0 0 0 8px $focus-state-glow;
-}
-
 /* --- Header Button Styles --- */
 .headerButton {
   cursor: pointer;
@@ -172,6 +161,17 @@ button:focus-visible {
     color 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out,
     transform 0.3s ease-in-out; // Added transform transition
+
+  /* --- Focus Styles (keep as is) --- */
+  a:focus-visible,
+  button:focus-visible {
+    border-radius: $radius-0-5r;
+    outline: none;
+    box-shadow:
+      0 0 0 2px $focus-state-inner-border,
+      0 0 0 4px $focus-state-border,
+      0 0 0 8px $focus-state-glow;
+  }
 
   // --- Styling based on scroll state ---
 
