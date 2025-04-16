@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <>
       {children}
-      <footer>
+      <footer data-observe="footer">
         <FooterSection variant="spacingLogo" borderBottom={true}>
           <FooterLogo logo={<VorwerkWhite size="medium" />} />
         </FooterSection>
