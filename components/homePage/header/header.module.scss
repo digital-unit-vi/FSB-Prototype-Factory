@@ -112,8 +112,8 @@ $focus-state-glow: rgb(55 130 205 / 24%);
   background-color: $color-primary-green;
 
   transition:
-    transform 0.3s ease-in-out,
-    opacity 0.3s ease-in-out; // Added transition
+    transform 0.5s ease-in-out,
+    opacity 0.5s ease-in-out; // Added transition
 }
 
 .navCenter {
@@ -157,10 +157,10 @@ $focus-state-glow: rgb(55 130 205 / 24%);
 
   // Transitions
   transition:
-    background-color 0.3s ease-in-out,
-    color 0.3s ease-in-out,
-    box-shadow 0.3s ease-in-out,
-    transform 0.3s ease-in-out; // Added transform transition
+    background-color 0.5s ease-in-out,
+    color 0.5s ease-in-out,
+    box-shadow 0.5s ease-in-out,
+    transform 0.5s ease-in-out; // Added transform transition
 
   /* --- Focus Styles (keep as is) --- */
   a:focus-visible,
