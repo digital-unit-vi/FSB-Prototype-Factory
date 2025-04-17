@@ -16,9 +16,7 @@ interface AccordionProps {
 
 const Accordion: FC<AccordionProps> = ({ items }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const [animationStates, setAnimationStates] = useState<{
-    [key: number]: 'fadeIn' | 'fadeOut'
-  }>({})
+  const [animationStates, setAnimationStates] = useState<Record<number, 'fadeIn' | 'fadeOut'>>({})
 
   const handleToggle = (index: number) => {
     if (openIndex === index) {

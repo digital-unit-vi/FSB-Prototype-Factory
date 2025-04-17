@@ -61,7 +61,6 @@ import styles from './page.module.scss'
 import CategoryTiles from '@components/landingPage/categoryTiles/categoryTiles'
 import useScreenSize from '@utils/useScreenSize'
 
-
 const Languages = [
   <DropdownItem>
     <Canada />

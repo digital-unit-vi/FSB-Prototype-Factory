@@ -216,7 +216,7 @@ export default function Home() {
               <>
                 <ButtonGroup>
                   <Link href="/sales">
-                    <Button size="large">
+                    <Button size="large" buttonStyle="primary">
                       Go to the showcase
                     </Button>
                   </Link>
@@ -236,25 +236,23 @@ export default function Home() {
               <Headline
                 spaceBelow="additional"
                 strongColor="green"
-                children={
-                  <Typography component="h2">
-                    <span>
-                      <strong>FiBRE Single Blend</strong>
-                      <br />
-                      The source of countless nuances
-                    </span>
-                  </Typography>
-                }
-              />
+              >
+                <Typography component="h2">
+                  <span>
+                    <strong>FiBRE Single Blend</strong>
+                    <br />
+                    The source of countless nuances
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <GridContainer>
             <GridItem columns={12}>
               <Headline
                 strongColor="green"
-                children={
-                  <>
-                    <Typography component="h3" fontWeight="bold" spaceBelow>
+              >
+                                    <Typography component="h3" fontWeight="bold" spaceBelow>
                       <span>FiBRE Single Blend (FSB) in a nutshell</span>
                     </Typography>
                     <Typography spaceBelow>
@@ -270,9 +268,7 @@ export default function Home() {
                       </span>
                       <Spacer size={24} />
                     </Typography>
-                  </>
-                }
-              />
+              </Headline>
             </GridItem>
           </GridContainer>
           <ContentBlock

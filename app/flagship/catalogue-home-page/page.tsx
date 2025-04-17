@@ -578,7 +578,7 @@ export default function Home() {
             </div>
             <div>
               <GridContainer>
-                <GridItem columns={12} className={`${styles.textCentered}`}>
+                <GridItem columns={12} className={styles.textCentered}>
                   <Headline spaceBelow={'additional'} strongColor={'green'}>
                     <Typography component={'h3'}>
                       Our Thermomix® <strong>topseller</strong>
@@ -732,7 +732,7 @@ export default function Home() {
             </div>
             <div>
               <GridContainer>
-                <GridItem columns={12} className={`${styles.textCentered}`}>
+                <GridItem columns={12} className={styles.textCentered}>
                   <Headline spaceBelow={'additional'} strongColor={'green'}>
                     <Typography component={'h3'}>
                       Our Kobold <strong>topseller</strong>

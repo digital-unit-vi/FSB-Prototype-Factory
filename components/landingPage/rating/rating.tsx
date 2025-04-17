@@ -41,8 +41,8 @@ const Rating: FC<RatingProps> = ({
     <div
       className={styles.ratingContainer}
       style={{
-        '--full-star-color': iconColors?.full || '#23282A',
-        '--empty-star-color': iconColors?.empty || 'rgb(196, 196, 196)',
+        '--full-star-color': iconColors.full || '#23282A',
+        '--empty-star-color': iconColors.empty || 'rgb(196, 196, 196)',
       }}
     >
       <svg

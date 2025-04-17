@@ -292,11 +292,6 @@ export default function Home() {
               />
             </AdvisorDropdown>
           }
-          cart={
-            <HeaderButton count={2} label="Cart">
-              <ShoppingCart />
-            </HeaderButton>
-          }
           logo={
             <Link href="/">
               <Vorwerk />
