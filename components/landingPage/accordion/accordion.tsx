@@ -2,7 +2,7 @@ import {
   Typography,
   CaretUp,
   CaretDown,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import styles from './accordion.module.scss'
 import { FC, useState } from 'react'
 

@@ -1,4 +1,4 @@
-import { Typography } from '@components/build-assets/libraryExport'
+import { Typography } from '@vorwerk/fibre-react'
 import Link from 'next/link'
 import styles from './trustBanner.module.scss'
 

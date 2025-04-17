@@ -3,7 +3,7 @@ import {
   Typography,
   GridContainer,
   GridItem,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import { FC } from 'react'
 import styles from './productHeroAEM.module.scss'
 import MainImageWithThumbnails from './mainImageWithThumbnails'

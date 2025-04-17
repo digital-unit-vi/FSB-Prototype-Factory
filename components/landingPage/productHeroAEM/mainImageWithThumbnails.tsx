@@ -1,4 +1,4 @@
-import { MediaContainer } from '@components/build-assets/libraryExport'
+import { MediaContainer } from '@vorwerk/fibre-react'
 import { FC, useState } from 'react'
 import styles from './productHeroAEM.module.scss'
 import { Thumb } from '@components/landingPage/galleryModalCarousel/galleryModalCarouselThumbsButton'

@@ -5,7 +5,7 @@ import {
   GridItem,
   Headline,
   Typography,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import styles from './imageTileCarousel.module.scss'
 import Carousel from './carousel'
 

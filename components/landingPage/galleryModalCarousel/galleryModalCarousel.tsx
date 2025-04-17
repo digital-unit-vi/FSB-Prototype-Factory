@@ -16,7 +16,7 @@ import {
   CaretRight,
   MediaContainer,
   ZoomIn,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 
 interface GalleryModalCarouselProps {
   slides: GalleryItem[]

@@ -52,7 +52,7 @@ import {
   User,
   Vorwerk,
   Youtube,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import Link from 'next/link'
 import styles from './page.module.scss'
 import CategoryTiles from '@components/landingPage/categoryTiles/categoryTiles'

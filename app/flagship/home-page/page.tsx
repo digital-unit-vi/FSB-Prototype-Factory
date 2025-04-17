@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 'use client'
 
 import {
@@ -42,9 +43,7 @@ import {
   Portugal,
   ProductStripe,
   Rezeptwelt,
-  Search,
   SectionSeparator,
-  ShoppingCart,
   Spain,
   Switzerland,
   Taiwan,
@@ -56,11 +55,12 @@ import {
   User,
   Vorwerk,
   Youtube,
-} from '@components/build-assets/libraryExport'
+} from "@vorwerk/fibre-react";
 import Link from 'next/link'
 import styles from './page.module.scss'
 import CategoryTiles from '@components/landingPage/categoryTiles/categoryTiles'
 import useScreenSize from '@utils/useScreenSize'
+
 
 const Languages = [
   <DropdownItem>
@@ -226,7 +226,7 @@ export default function Home() {
       <main className={styles.hp}>
         <Header
           advisor={
-            <AdvisorDropdown buttonLabel="Advisor">
+            <AdvisorDropdown buttonLabel="Advisor" buttonAriaLabel="Your advisors: Thermomix advisor Lisa connected" buttonAvatars={[<img alt="avatar" src="/library/images/avatars/avatar2.png" />]}>
               <AdvisorDropdownMenuItem
                 avatar={
                   <img alt="avatar" src="/library/images/avatars/avatar2.png" />
@@ -281,15 +281,8 @@ export default function Home() {
               />
             </AdvisorDropdown>
           }
-          cart={
-            <HeaderButton count={2} label="Cart">
-              <ShoppingCart />
-            </HeaderButton>
-          }
           logo={
-            <Link href="/">
               <Vorwerk />
-            </Link>
           }
           menu={
             <HeaderButton label="Menu">
@@ -297,7 +290,7 @@ export default function Home() {
             </HeaderButton>
           }
           mobileAccountButton={
-            <Button icon={<User />} size="large" type="transparent">
+            <Button icon={<User />} size="large">
               Login
             </Button>
           }
@@ -372,11 +365,6 @@ export default function Home() {
             <NavItem key="Career" href="#" label="Career" level={1} />,
             <NavItem key="E-shop" href="#" label="E-shop" level={1} />,
           ]}
-          search={
-            <HeaderButton label="Search">
-              <Search />
-            </HeaderButton>
-          }
           landingPageLogo={
             <Link href="/">
               <Vorwerk className={styles.vorwerkLogo} />
@@ -389,10 +377,10 @@ export default function Home() {
           <Hero
             cta={
               <ButtonGroup alignment="center" layout="vertical">
-                <Button invertColors size="medium" type="primary">
+                <Button invertColors size="medium" buttonStyle="primary">
                   Book a Cooking Experience
                 </Button>
-                <Button invertColors size="medium" type="tertiary">
+                <Button invertColors size="medium" buttonStyle="tertiary">
                   Learn more
                 </Button>
               </ButtonGroup>
@@ -441,16 +429,15 @@ export default function Home() {
               <Headline
                 spaceBelow="additional"
                 strongColor="green"
-                children={
-                  <Typography component="h2">
-                    <span>
-                      Thermomix® TM6
-                      <br />
-                      <strong>makes it possible</strong>
-                    </span>
-                  </Typography>
-                }
-              />
+              >
+                <Typography component="h2">
+                  <span>
+                    Thermomix® TM6
+                    <br />
+                    <strong>makes it possible</strong>
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <div className={styles.contentAndCategoryContainer}>
@@ -458,12 +445,12 @@ export default function Home() {
               buttonGroup={
                 <ButtonGroup>
                   <Link href="#">
-                    <Button size="large" type="primary">
+                    <Button size="large" buttonStyle="primary">
                       Book a demo
                     </Button>
                   </Link>
                   <Link href="#">
-                    <Button size="large" type="secondary">
+                    <Button size="large" buttonStyle="secondary">
                       Buy now
                     </Button>
                   </Link>
@@ -535,8 +522,8 @@ export default function Home() {
               >
                 <Headline
                   spaceBelow="additional"
-                  strongColor="orange"
-                  children={
+                  strongColor="orange">
+
                     <Typography component="h2">
                       <span>
                         Kobold VK7s always
@@ -544,8 +531,7 @@ export default function Home() {
                         clean, <strong>always simple</strong>
                       </span>
                     </Typography>
-                  }
-                />
+                  </Headline>
               </GridItem>
             </GridContainer>
             <div className={styles.contentAndCategoryContainer}>
@@ -582,12 +568,12 @@ export default function Home() {
                 buttonGroup={
                   <ButtonGroup>
                     <Link href="#">
-                      <Button size="large" type="primary">
+                      <Button size="large" buttonStyle="primary">
                         Book a demo
                       </Button>
                     </Link>
                     <Link href="#">
-                      <Button size="large" type="secondary">
+                      <Button size="large" buttonStyle="secondary">
                         Buy now
                       </Button>
                     </Link>
@@ -635,8 +621,8 @@ export default function Home() {
             <GridItem columns={12} className={styles.textCentered}>
               <Headline
                 spaceBelow="additional"
-                strongColor="blue"
-                children={
+                strongColor="blue">
+
                   <Typography component="h2">
                     <span>
                       Vorwerk Advisor,
@@ -646,8 +632,8 @@ export default function Home() {
                       <strong> join our sales force</strong>
                     </span>
                   </Typography>
-                }
-              />
+                </Headline>
+
             </GridItem>
           </GridContainer>
           <div className={styles.contentAndCategoryContainer}>
@@ -684,12 +670,12 @@ export default function Home() {
               buttonGroup={
                 <ButtonGroup>
                   <Link href="#">
-                    <Button size="large" type="primary">
+                    <Button size="large" buttonStyle="primary">
                       Join the Thermomix® team
                     </Button>
                   </Link>
                   <Link href="#">
-                    <Button size="large" type="secondary">
+                    <Button size="large" buttonStyle="secondary">
                       Details
                     </Button>
                   </Link>
@@ -729,12 +715,12 @@ export default function Home() {
               buttonGroup={
                 <ButtonGroup>
                   <Link href="#">
-                    <Button size="large" type="primary">
+                    <Button size="large" buttonStyle="primary">
                       Join the Thermomix® team
                     </Button>
                   </Link>
                   <Link href="#">
-                    <Button size="large" type="secondary">
+                    <Button size="large" buttonStyle="secondary">
                       Details
                     </Button>
                   </Link>
@@ -747,7 +733,7 @@ export default function Home() {
       <footer>
         <div className={styles.overriddenProductStripeGap}>
           <ProductStripe
-            logo={<Vorwerk />}
+            // logo={<Vorwerk />}
             text="For over 130 years, our products have impressed millions of families with their superior, innovative technology and their proverbial long service life."
             images={[
               <img
@@ -791,17 +777,15 @@ export default function Home() {
         <FooterSection variant="spacingVertical" borderBottom={true}>
           <NewsletterSubscription
             headline={
-              <Headline
-                children={
+              <Headline>
                   <Typography component="h2">
                     Stay {screenSize.width > 935 && <br />}
                     <strong>informed</strong>
                   </Typography>
-                }
-              />
+              </Headline>
             }
             button={
-              <Button type="primary" size="large">
+              <Button buttonStyle="primary" size="large">
                 Subscribe to newsletter
               </Button>
             }

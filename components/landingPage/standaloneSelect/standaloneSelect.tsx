@@ -3,7 +3,7 @@ import {
   Typography,
   CaretDown,
   CaretUp,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import { FC, useState } from 'react'
 
 interface StandaloneSelectProps {

@@ -1,4 +1,4 @@
-import { Typography } from '@components/build-assets/libraryExport'
+import { Typography } from '@vorwerk/fibre-react'
 import { FC } from 'react'
 import styles from './list.module.scss'
 

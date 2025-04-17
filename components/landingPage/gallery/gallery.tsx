@@ -1,4 +1,4 @@
-import { Button, Typography } from '@components/build-assets/libraryExport'
+import { Button, Typography } from '@vorwerk/fibre-react'
 import { FC, useState } from 'react'
 import styles from './gallery.module.scss'
 import GalleryModal from '../galleryModal/galleryModal'

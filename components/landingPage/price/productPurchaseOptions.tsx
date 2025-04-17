@@ -2,7 +2,7 @@ import {
   Price,
   Button,
   ShoppingCart,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import { FC } from 'react'
 import FinancingSelect from '../financingSelect/financingSelect'
 import styles from './productPurchaseOptions.module.scss'

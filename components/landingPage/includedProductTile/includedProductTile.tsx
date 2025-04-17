@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from './includedProductTile.module.scss'
-import { Typography } from '@components/build-assets/libraryExport'
+import { Typography } from '@vorwerk/fibre-react'
 import { FC } from 'react'
 
 interface IncludedProductTileProps {

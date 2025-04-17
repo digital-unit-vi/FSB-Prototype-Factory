@@ -2,7 +2,7 @@ import {
   InteractiveIcon,
   Close,
   Typography,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import React, { FC, useState } from 'react'
 import styles from './galleryModal.module.scss'
 import { GalleryItem } from '@components/landingPage/gallery/gallery'

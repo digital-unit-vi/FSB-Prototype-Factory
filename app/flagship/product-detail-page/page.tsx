@@ -59,7 +59,7 @@ import {
   CalendarLight,
   CheckmarkCircleLight,
   StickyProductBar,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import Link from 'next/link'
 import styles from './page.module.scss'
 import { ComponentProps, useState, useRef, useEffect } from 'react'

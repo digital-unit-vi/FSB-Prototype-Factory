@@ -39,7 +39,7 @@ import {
   USA,
   Vorwerk,
   Youtube,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import CategoryTile from '@components/landingPage/categoryTile/categoryTile'
 import Link from 'next/link'
 import styles from './page.module.scss'

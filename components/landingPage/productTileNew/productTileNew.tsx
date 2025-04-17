@@ -5,7 +5,7 @@ import {
   Typography,
   ShoppingCart,
   EyeCatcher,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import { ComponentProps } from 'react'
 import styles from './productTileNew.module.scss'
 

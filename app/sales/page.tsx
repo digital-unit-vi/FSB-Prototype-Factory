@@ -40,7 +40,7 @@ import {
   USA,
   Vorwerk,
   Youtube,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import CategoryTile from '@components/landingPage/categoryTile/categoryTile'
 import useScreenSize from '@utils/useScreenSize'
 import Link from 'next/link'

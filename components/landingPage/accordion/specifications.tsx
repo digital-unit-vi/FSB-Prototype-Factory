@@ -1,4 +1,4 @@
-import { Typography } from '@components/build-assets/libraryExport'
+import { Typography } from '@vorwerk/fibre-react'
 import styles from './accordion.module.scss'
 import { FC } from 'react'
 

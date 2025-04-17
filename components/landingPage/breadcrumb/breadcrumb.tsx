@@ -1,5 +1,5 @@
 import styles from './breadcrumb.module.scss'
-import { CaretRight, Typography } from '@components/build-assets/libraryExport'
+import { CaretRight, Typography } from '@vorwerk/fibre-react'
 import { FC, Fragment } from 'react'
 
 interface BreadcrumbProps {

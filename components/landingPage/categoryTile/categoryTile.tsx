@@ -3,7 +3,7 @@ import {
   EyeCatcher,
   Typography,
   Button,
-} from '@components/build-assets/libraryExport'
+} from "@vorwerk/fibre-react"
 import { ComponentProps, FC } from 'react'
 import Link from 'next/link'
 

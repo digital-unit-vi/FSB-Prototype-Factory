@@ -1,6 +1,6 @@
 import { ComponentProps, FC, useState, useEffect } from 'react'
 import CategoryTile from '@components/landingPage/categoryTile/categoryTile'
-import { GridContainer, GridItem } from '@components/build-assets/libraryExport'
+import { GridContainer, GridItem } from '@vorwerk/fibre-react'
 
 const MAX_NUM_GRID_COL = 12
 

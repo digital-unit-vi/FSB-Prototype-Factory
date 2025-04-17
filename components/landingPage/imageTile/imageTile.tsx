@@ -1,5 +1,5 @@
 import { CSSProperties, FC } from 'react'
-import { Typography } from '@components/build-assets/libraryExport'
+import { Typography } from '@vorwerk/fibre-react'
 import styles from './imageTile.module.scss'
 
 interface ImageTileProps {

@@ -3,7 +3,7 @@ import {
   Typography,
   Button,
   MediaContainer,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import { FC } from 'react'
 
 interface TeaserTileProps {

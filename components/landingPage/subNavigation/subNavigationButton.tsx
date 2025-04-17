@@ -1,5 +1,5 @@
 import styles from './subNavigation.module.scss'
-import { Typography } from '@components/build-assets/libraryExport'
+import { Typography } from '@vorwerk/fibre-react'
 import { FC } from 'react'
 
 interface SubNavigationButtonProps {

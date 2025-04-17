@@ -2,7 +2,7 @@ import {
   Button,
   MediaContainer,
   Typography,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import { FC } from 'react'
 import styles from './advisorTile.module.scss'
 import Link from 'next/link'

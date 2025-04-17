@@ -4,7 +4,7 @@ import {
   CaretDown,
   Info,
   Checkmark,
-} from '@components/build-assets/libraryExport'
+} from '@vorwerk/fibre-react'
 import { useState, useEffect, useRef } from 'react'
 import styles from './financingSelect.module.scss'
 
