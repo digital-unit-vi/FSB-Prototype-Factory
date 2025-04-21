@@ -1,0 +1,90 @@
+.tile {
+  position: relative;
+  overflow: hidden;
+  width: 253px;
+  min-height: 339px;
+}
+
+.backgroundVariant {
+  display: flex;
+  align-items: flex-end;
+  background-position: center;
+  background-size: cover;
+
+  .title {
+    display: flex;
+    align-items: center;
+
+    min-height: 60px;
+    margin: 0 16px;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #fff;
+  }
+}
+
+.productVariant {
+  padding: 16px;
+  background: #f3f5f3;
+
+  .title {
+    margin-bottom: 16px;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    color: #23282a;
+  }
+
+  .image {
+    display: block;
+    max-width: 221px;
+    height: auto;
+    margin-bottom: 16px;
+  }
+
+  .price {
+    margin: 0 0 4px;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #23282a;
+  }
+
+  .note {
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #707375;
+  }
+}
+
+.eyecatcher {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #fff;
+}
+
+.eyecatcherSecondary {
+  margin-bottom: -4px;
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 11px;
+}
