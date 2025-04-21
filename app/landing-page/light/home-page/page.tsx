@@ -1,11 +1,20 @@
 "use client";
 
+import AdvisorToggle from "@components/homePage/advisorToggle/advisorToggle";
+import Carousel from "@components/homePage/carousel/carousel";
+import CarouselTile from "@components/homePage/carousel/carouselTile";
 import HomePageHeader from "@components/homePage/header/header";
 import Hero from "@components/homePage/hero/hero";
-import StickyBar from "@components/homePage/stickyBar/stickyBar";
+import ImageCarousel from "@components/homePage/imageCarousel/imageCarousel";
+import SimpleImageCarousel from "@components/homePage/imageCarousel/simpleImageCarousel";
+import ProductAnimation from "@components/homePage/productAnimation/productAnimation";
+import StickyBarPhase1 from "@components/homePage/stickyBar/stickyBarPhase1";
+import StickyBarPhase2 from "@components/homePage/stickyBar/stickyBarPhase2";
 import Spacer from "@components/shared/spacer/spacer";
 import MediaContainerPhoto from "@public/homePage/media_container.png";
 import {
+  Button,
+  ButtonGroup,
   GridContainer,
   GridItem,
   Headline,
@@ -14,6 +23,78 @@ import {
   Typography,
 } from "@vorwerk/fibre-react";
 import Image from "next/image";
+import Link from "next/link";
+
+const thermomixAccessoryTiles = [
+  <CarouselTile
+    variant="background"
+    title="Thermomix® promotions"
+    backgroundImageUrl="/homePage/thermomix_tile_background.png"
+    eyecatcherTextPrimary="45%"
+    eyecatcherTextSecindary="Save"
+    key={1}
+  />,
+  <CarouselTile
+    variant="product"
+    title="Thermomix® Bowl"
+    price="199 €"
+    note="incl. VAT & shipping"
+    productImageUrl="/homePage/tm7_bowl.png"
+    key={2}
+  />,
+  <CarouselTile
+    variant="product"
+    title="Thermomix® Sensor"
+    price="149 €"
+    note="incl. VAT & shipping"
+    productImageUrl="/homePage/sensor.png"
+    key={3}
+  />,
+];
+
+const koboldAccessoryTiles = [
+  <CarouselTile
+    variant="background"
+    title="Kobold promotions"
+    backgroundImageUrl="/homePage/kobold_tile_background.png"
+    eyecatcherTextPrimary="45%"
+    eyecatcherTextSecindary="Save"
+    key={1}
+  />,
+  <CarouselTile
+    variant="product"
+    title="Kobold BY7 Akku"
+    price="149 €"
+    note="incl. VAT & shipping"
+    productImageUrl="/homePage/kobold_akku.png"
+    eyecatcherTextPrimary="25%"
+    eyecatcherTextSecindary="Save"
+    key={2}
+  />,
+  <CarouselTile
+    variant="product"
+    title="Kobold EB7 electric brush"
+    price="400 €"
+    note="incl. VAT & shipping"
+    productImageUrl="/homePage/kobold_brush.png"
+    key={3}
+  />,
+];
+
+const BOTTOM_CAROUSEL_IMAGES = [
+  {
+    url: "/homePage/last_carousel1.png",
+    alt: "Two individuals shaking hands in a warmly lit living room. A lamp, framed artwork, and a plant are visible in the background, creating a welcoming atmosphere",
+  },
+  {
+    url: "/homePage/last_carousel2.png",
+    alt: "A group of people gathered around a kitchen island, sharing a meal and engaging in conversation. Plates of food and glasses are visible on the table, with a warm and inviting kitchen setting in the background.",
+  },
+  {
+    url: "/homePage/last_carousel3.png",
+    alt: "A group of three people sitting on a couch in a cozy living room, engaged in a discussion. One person is holding a tablen and pen, taking notes. A glass of beverage is placed on a wooden coffee table in the foreground.",
+  },
+];
 
 export default function HomePage() {
   return (
@@ -65,56 +146,13 @@ export default function HomePage() {
               </Typography>
             </GridItem>
           </GridContainer>
-        </SectionContainer>
-        <SectionContainer>
-          <GridContainer>
-            <GridItem
-              columns={10}
-              start={2}
-              end={12}
-              columnsXL={8}
-              startXL={3}
-              endXL={11}
-            >
-              <Headline strongColor="green" spaceBelow="default">
-                <Typography component="p" variant="h2">
-                  <span
-                    style={{ display: "block", textAlign: "center" }}
-                    data-observe="phase1-start"
-                  >
-                    Your <strong>Thermomix®</strong>
-                    <br />
-                    journey starts here
-                  </span>
-                </Typography>
-              </Headline>
-            </GridItem>
-          </GridContainer>
-          <GridContainer>
-            <GridItem
-              columns={10}
-              start={2}
-              end={12}
-              columnsXL={8}
-              startXL={3}
-              endXL={11}
-            >
-              <Typography
-                component="p"
-                variant="paragraph18"
-                fontWeight="regular"
-              >
-                <span style={{ display: "block", textAlign: "center" }}>
-                  Experience firsthand the innovation and precision of the
-                  Thermomix® TM7 as our advisors guide you through its
-                  capabilities. Schedule your personal demonstration today and
-                  revolutionise your kitchen experience!
-                </span>
-              </Typography>
-            </GridItem>
-          </GridContainer>
-        </SectionContainer>
-        <SectionContainer>
+          {/* </SectionContainer> */}
+          <div
+            data-scroll-marker="phase1-start"
+            style={{ height: "1px", opacity: 0 }}
+          ></div>
+          <ProductAnimation />
+          {/* <SectionContainer> */}
           <GridContainer>
             <GridItem
               columns={10}
@@ -127,37 +165,17 @@ export default function HomePage() {
               <Headline strongColor="green" spaceBelow="default">
                 <Typography component="p" variant="h2">
                   <span style={{ display: "block", textAlign: "center" }}>
-                    Your <strong>Thermomix®</strong>
+                    Thermomix®
                     <br />
-                    journey starts here
+                    <strong>promotions & accessories</strong>.
                   </span>
                 </Typography>
               </Headline>
             </GridItem>
           </GridContainer>
-          <GridContainer>
-            <GridItem
-              columns={10}
-              start={2}
-              end={12}
-              columnsXL={8}
-              startXL={3}
-              endXL={11}
-            >
-              <Typography
-                component="p"
-                variant="paragraph18"
-                fontWeight="regular"
-              >
-                <span style={{ display: "block", textAlign: "center" }}>
-                  Experience firsthand the innovation and precision of the
-                  Thermomix® TM7 as our advisors guide you through its
-                  capabilities. Schedule your personal demonstration today and
-                  revolutionise your kitchen experience!
-                </span>
-              </Typography>
-            </GridItem>
-          </GridContainer>
+          <Carousel buttonText="All Thermomix® products">
+            {thermomixAccessoryTiles}
+          </Carousel>
         </SectionContainer>
         <SectionContainer>
           <GridContainer>
@@ -169,54 +187,10 @@ export default function HomePage() {
               startXL={3}
               endXL={11}
             >
-              <Headline strongColor="green" spaceBelow="default">
-                <Typography component="p" variant="h2">
-                  <span
-                    style={{ display: "block", textAlign: "center" }}
-                    data-observe="phase1-end"
-                  >
-                    <strong>Cookidoo®</strong>
-                    <br />
-                    elevates the TM7 experience to the next level!
-                  </span>
-                </Typography>
-              </Headline>
-            </GridItem>
-          </GridContainer>
-          <GridContainer>
-            <GridItem
-              columns={10}
-              start={2}
-              end={12}
-              columnsXL={8}
-              startXL={3}
-              endXL={11}
-            >
-              <Typography
-                component="p"
-                variant="paragraph18"
-                fontWeight="regular"
-              >
-                <span style={{ display: "block", textAlign: "center" }}>
-                  Use it to create healthy, delicious meals from scratch for you
-                  and a table full of guests in no time. And the best part, TM7
-                  gets better and better all by itself. Smart at heart, just
-                  like you.
-                </span>
-              </Typography>
-            </GridItem>
-          </GridContainer>
-        </SectionContainer>
-        <SectionContainer>
-          <GridContainer>
-            <GridItem
-              columns={10}
-              start={2}
-              end={12}
-              columnsXL={8}
-              startXL={3}
-              endXL={11}
-            >
+              <div
+                data-scroll-marker="phase1-end"
+                style={{ height: "1px", opacity: 0 }}
+              ></div>
               <Headline strongColor="green" spaceBelow="default">
                 <Typography component="p" variant="h2">
                   <span style={{ display: "block", textAlign: "center" }}>
@@ -253,53 +227,14 @@ export default function HomePage() {
           </GridContainer>
         </SectionContainer>
         <SectionContainer>
-          <GridContainer>
-            <GridItem
-              columns={10}
-              start={2}
-              end={12}
-              columnsXL={8}
-              startXL={3}
-              endXL={11}
-            >
-              <Headline strongColor="green" spaceBelow="default">
-                <Typography component="p" variant="h2">
-                  <span
-                    style={{ display: "block", textAlign: "center" }}
-                    data-observe="phase2-start"
-                  >
-                    <strong>Kobold</strong>
-                    <br />
-                    Always clean, always simple
-                  </span>
-                </Typography>
-              </Headline>
-            </GridItem>
-          </GridContainer>
-          <GridContainer>
-            <GridItem
-              columns={10}
-              start={2}
-              end={12}
-              columnsXL={8}
-              startXL={3}
-              endXL={11}
-            >
-              <Typography
-                component="p"
-                variant="paragraph18"
-                fontWeight="regular"
-              >
-                <span style={{ display: "block", textAlign: "center" }}>
-                  Kobold is the revolution in the household: It combines over 90
-                  years of experience in the development of powerful hoovers
-                  with an ergonomic and elegant design. Whether for families,
-                  single households or allergy sufferers - with Kobold you will
-                  find the right product for every need.
-                </span>
-              </Typography>
-            </GridItem>
-          </GridContainer>
+          <ImageCarousel />
+          <ButtonGroup alignment="center" layout="vertical">
+            <Link href="/ds360">
+              <Button size="large" buttonStyle="primary">
+                Get 3 months of Cookidoo® for free!
+              </Button>
+            </Link>
+          </ButtonGroup>
         </SectionContainer>
         <SectionContainer>
           <GridContainer>
@@ -347,6 +282,15 @@ export default function HomePage() {
             </GridItem>
           </GridContainer>
         </SectionContainer>
+        <div
+          data-scroll-marker="phase2-start"
+          style={{ height: "1px", opacity: 0 }}
+        ></div>
+        <ProductAnimation
+          staticImagePath="/homePage/kobold_teaser.png"
+          useStaticImage={true}
+          text="VK7"
+        />
         <SectionContainer>
           <GridContainer>
             <GridItem
@@ -359,10 +303,36 @@ export default function HomePage() {
             >
               <Headline strongColor="green" spaceBelow="default">
                 <Typography component="p" variant="h2">
-                  <span
-                    style={{ display: "block", textAlign: "center" }}
-                    data-observe="phase2-content-change"
-                  >
+                  <span style={{ display: "block", textAlign: "center" }}>
+                    Kobold
+                    <br />
+                    <strong>promotions & accessories</strong>.
+                  </span>
+                </Typography>
+              </Headline>
+            </GridItem>
+          </GridContainer>
+          <Carousel buttonText="All Kobold products">
+            {koboldAccessoryTiles}
+          </Carousel>
+        </SectionContainer>
+        <SectionContainer>
+          <GridContainer>
+            <GridItem
+              columns={10}
+              start={2}
+              end={12}
+              columnsXL={8}
+              startXL={3}
+              endXL={11}
+            >
+              <div
+                data-scroll-marker="phase2-content-change"
+                style={{ height: "1px", opacity: 0 }}
+              ></div>
+              <Headline strongColor="green" spaceBelow="default">
+                <Typography component="p" variant="h2">
+                  <span style={{ display: "block", textAlign: "center" }}>
                     Turn a passion into an
                     <br />
                     <strong>exciting job</strong>
@@ -451,54 +421,15 @@ export default function HomePage() {
             </GridItem>
           </GridContainer>
         </SectionContainer>
-        <SectionContainer>
-          <GridContainer>
-            <GridItem
-              columns={10}
-              start={2}
-              end={12}
-              columnsXL={8}
-              startXL={3}
-              endXL={11}
-            >
-              <Headline strongColor="green" spaceBelow="default">
-                <Typography component="p" variant="h2">
-                  <span style={{ display: "block", textAlign: "center" }}>
-                    <strong>Vorwerk</strong>
-                    <br />
-                    advisors
-                  </span>
-                </Typography>
-              </Headline>
-            </GridItem>
-          </GridContainer>
-          <GridContainer>
-            <GridItem
-              columns={10}
-              start={2}
-              end={12}
-              columnsXL={8}
-              startXL={3}
-              endXL={11}
-            >
-              <Typography
-                component="p"
-                variant="paragraph18"
-                fontWeight="regular"
-              >
-                <span style={{ display: "block", textAlign: "center" }}>
-                  Vorwerk advisors are dedicated to offering tailored and
-                  professional service to help you discover the perfect product
-                  for your home. You’ll have the opportunity to try out our
-                  products during a free, no-obligation demonstration, allowing
-                  you to explore the Thermomix and Kobold features firsthand.
-                </span>
-              </Typography>
-            </GridItem>
-          </GridContainer>
-        </SectionContainer>
+        <AdvisorToggle />
+        <SimpleImageCarousel images={BOTTOM_CAROUSEL_IMAGES} />
+        <div
+          data-scroll-marker="footer"
+          style={{ height: "1px", opacity: 0 }}
+        ></div>
       </main>
-      <StickyBar />
+      <StickyBarPhase1 />
+      <StickyBarPhase2 />
     </>
   );
 }

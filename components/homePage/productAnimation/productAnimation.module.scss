@@ -1,0 +1,63 @@
+.container {
+  overflow-anchor: none;
+  scroll-behavior: auto;
+
+  position: relative;
+
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 100lvh;
+}
+
+.canvas {
+  position: relative;
+  z-index: 2; // Higher z-index to place canvas in front
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.loading {
+  position: absolute;
+  z-index: 3; // Higher z-index for loading message
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 100lvh;
+  padding: 2rem;
+
+  font-size: 1.2rem;
+  color: #e53e3e;
+  text-align: center;
+}
+
+.text {
+  pointer-events: none; // Prevents text from intercepting mouse events
+
+  position: absolute;
+  z-index: 1; // Lower z-index to place text behind canvas
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 5rem; // Starting with smaller font
+  font-weight: 700;
+  color: #00ac46;
+}
