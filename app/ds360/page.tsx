@@ -10,7 +10,7 @@ import {
   Typography,
   Vorwerk,
 } from "@vorwerk/fibre-react";
-import Link from "next/link";
+// import Link from "next/link";
 import styles from "./page.module.scss";
 
 const tilesDataEmail = [
@@ -117,15 +117,15 @@ const tilesDataCoSy = [
   },
 ];
 
-export default function Home() {
+export default function DS360HomePage() {
   return (
     <main>
       <Header
         isLandingPage
         landingPageLogo={
-          <Link href="/">
+          // <Link href="/">
             <Vorwerk className={styles.vorwerkLogo} />
-          </Link>
+          // </Link>
         }
       />
       <div className={styles.hero}>

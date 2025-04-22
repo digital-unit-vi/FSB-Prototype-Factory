@@ -22,9 +22,9 @@ export default function Home() {
       <Header
         isLandingPage
         landingPageLogo={
-          <a href="/" aria-label="Vorwerk logo">
+          // <a href="/" aria-label="Vorwerk logo">
             <Vorwerk />
-          </a>
+          // </a>
         }
       />
       <Hero

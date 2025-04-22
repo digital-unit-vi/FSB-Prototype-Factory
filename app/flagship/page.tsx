@@ -13,7 +13,7 @@ import styles from './page.module.scss'
 import CategoryTile from '@components/flagships/categoryTile/categoryTile'
 import { Footer } from '@components/flagships/footer/footer'
 
-export default function Home() {
+export default function FlagshipHomePage() {
   return (
     <>
       <main>

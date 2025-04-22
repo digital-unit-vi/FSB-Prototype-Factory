@@ -28,7 +28,7 @@ import useScreenSize from '@utils/useScreenSize'
 import { Footer } from "@components/flagships/footer/footer";
 import CategoryTiles from "@components/flagships/categoryTiles/categoryTiles";
 
-export default function Home() {
+export default function FlagshipHomePage() {
   const screenSize = useScreenSize()
 
   return (
