@@ -1,0 +1,38 @@
+.vorwerkLogo {
+  color: #00ac46 !important;
+}
+
+.prominentSection {
+  color: #23282A;
+  padding: 128px 0 160px;
+  --gap-3: 64px;
+
+  @media (min-width: 936px) and (max-width: 1267px) {
+      padding: 112px 0 144px;
+      --gap-3: 56px;
+  }
+
+  @media (max-width: 935px) {
+      padding: 64px 0 80px;
+      --gap-3: 40px;
+  }
+}
+
+.prominentSection>div {
+  row-gap: var(--gap-3);
+}
+
+.textCentered {
+  text-align: center;
+}
+
+.tiles>a {
+  text-decoration: none;
+}
+
+.tiles div:has(> div:nth-of-type(2)) {
+  &>div:first-child {
+      padding: 0;
+  }
+}
+
