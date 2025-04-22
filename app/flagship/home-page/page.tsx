@@ -1,5 +1,7 @@
-'use client'
+"use client";
 
+import CategoryTiles from "@components/flagship/categoryTiles/categoryTiles";
+import useScreenSize from "@utils/useScreenSize";
 import {
   Button,
   ButtonGroup,
@@ -11,13 +13,11 @@ import {
   TapLight,
   Typography,
 } from "@vorwerk/fibre-react";
-import Link from 'next/link'
-import styles from './page.module.scss'
-import useScreenSize from '@utils/useScreenSize'
-import CategoryTiles from "@components/flagship/categoryTiles/categoryTiles";
+import Link from "next/link";
+import styles from "./page.module.scss";
 
 export default function FlagshipHomePage() {
-  const screenSize = useScreenSize()
+  const screenSize = useScreenSize();
 
   return (
     <main className={styles.hp}>
@@ -39,34 +39,27 @@ export default function FlagshipHomePage() {
                 <span
                   dangerouslySetInnerHTML={{
                     __html:
-                      '<strong>More time</strong><br/>doing the things<br/>you love',
+                      "<strong>More time</strong><br/>doing the things<br/>you love",
                   }}
                 />
               </Typography>
             </Headline>
           }
           image={
-            <img
-              alt="Woman meditating"
-              src="/flagship/hero/home-page.png"
-            />
+            <img alt="Woman meditating" src="/flagship/hero/home-page.png" />
           }
         />
         <div className={styles.overlayIconWrapper}>
-          {screenSize.width > 935 ? (
+          {screenSize.width > 935 ?
             <img
-              src={'/flagship/hero/mouse.svg'}
-              alt={'Scroll down'}
+              src={"/flagship/hero/mouse.svg"}
+              alt={"Scroll down"}
               className={styles.overlayIcon}
             />
-          ) : (
-            <TapLight />
-          )}
+          : <TapLight />}
           <div className={styles.overlayIconText}>
             <Typography variant="paragraph14" fontWeight="medium">
-              <span>
-                {screenSize.width > 935 ? 'Scroll down' : 'Swipe up'}
-              </span>
+              <span>{screenSize.width > 935 ? "Scroll down" : "Swipe up"}</span>
             </Typography>
           </div>
         </div>
@@ -74,10 +67,7 @@ export default function FlagshipHomePage() {
       <section className={styles.defaultSection}>
         <GridContainer>
           <GridItem columns={12} className={styles.textCentered}>
-            <Headline
-              spaceBelow="additional"
-              strongColor="green"
-            >
+            <Headline spaceBelow="additional" strongColor="green">
               <Typography component="h2">
                 <span>
                   Thermomix® TM6
@@ -122,39 +112,39 @@ export default function FlagshipHomePage() {
               <Typography
                 fontWeight="regular"
                 variant={
-                  screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
+                  screenSize.width > 1267 ? "paragraph18" : "paragraph16"
                 }
               >
-                Discover the Thermomix® TM6 and see how it can help you
-                create showstopping dishes and delicious meals from scratch
-                whilst saving you time and money. For everyday inspiration,
-                choose from thousands of dishes on Cookidoo®, our very own
-                smart recipe platform.
+                Discover the Thermomix® TM6 and see how it can help you create
+                showstopping dishes and delicious meals from scratch whilst
+                saving you time and money. For everyday inspiration, choose from
+                thousands of dishes on Cookidoo®, our very own smart recipe
+                platform.
               </Typography>
             }
           />
           <CategoryTiles
             categoryTilesData={[
               {
-                size: 'large',
-                backgroundColor: 'grey',
+                size: "large",
+                backgroundColor: "grey",
                 imageProps: {
-                  src: '/flagship/hero/ds360-hero.png',
-                  alt: 'Thermomix DS360',
+                  src: "/flagship/hero/ds360-hero.png",
+                  alt: "Thermomix DS360",
                 },
-                title: 'Thermomix® TM6 starter pack',
+                title: "Thermomix® TM6 starter pack",
                 button: {
-                  label: 'Explore the product',
-                  size: screenSize.width > 935 ? 'large' : 'medium',
+                  label: "Explore the product",
+                  size: screenSize.width > 935 ? "large" : "medium",
                 },
               },
               {
-                size: 'large',
-                backgroundImageSrc: '/flagship/images/soup.png',
-                title: 'Thousands of recipes – Endless inspiration',
+                size: "large",
+                backgroundImageSrc: "/flagship/images/soup.png",
+                title: "Thousands of recipes – Endless inspiration",
                 button: {
-                  label: 'Join Cookidoo® for free',
-                  size: screenSize.width > 935 ? 'large' : 'medium',
+                  label: "Join Cookidoo® for free",
+                  size: screenSize.width > 935 ? "large" : "medium",
                 },
               },
             ]}
@@ -168,18 +158,15 @@ export default function FlagshipHomePage() {
               columns={12}
               className={`${styles.textCentered} ${styles.overwrittenMargin}`}
             >
-              <Headline
-                spaceBelow="additional"
-                strongColor="orange">
-
-                  <Typography component="h2">
-                    <span>
-                      Kobold VK7s always
-                      <br />
-                      clean, <strong>always simple</strong>
-                    </span>
-                  </Typography>
-                </Headline>
+              <Headline spaceBelow="additional" strongColor="orange">
+                <Typography component="h2">
+                  <span>
+                    Kobold VK7s always
+                    <br />
+                    clean, <strong>always simple</strong>
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <div className={styles.contentAndCategoryContainer}>
@@ -202,15 +189,15 @@ export default function FlagshipHomePage() {
                 <Typography
                   fontWeight="regular"
                   variant={
-                    screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
+                    screenSize.width > 1267 ? "paragraph18" : "paragraph16"
                   }
                 >
-                  Whatever your home situation, the VB100 system brings the
-                  grab and go flexibility you need. With this lightweight,
-                  quiet, all-in-one solution, you can vacuum and mop
-                  simultaneously…and that’s not all. Thanks to its broad range
-                  of attachments, it also cleans carpets, hard floors and
-                  mattresses thoroughly and efficiently.
+                  Whatever your home situation, the VB100 system brings the grab
+                  and go flexibility you need. With this lightweight, quiet,
+                  all-in-one solution, you can vacuum and mop simultaneously…and
+                  that’s not all. Thanks to its broad range of attachments, it
+                  also cleans carpets, hard floors and mattresses thoroughly and
+                  efficiently.
                 </Typography>
               }
               buttonGroup={
@@ -231,32 +218,31 @@ export default function FlagshipHomePage() {
             <CategoryTiles
               categoryTilesData={[
                 {
-                  size: 'large',
-                  backgroundImageSrc:
-                    '/flagship/images/kobold-vk7.png',
-                  title: 'New Kobold VK7s – more powerful than ever',
+                  size: "large",
+                  backgroundImageSrc: "/flagship/images/kobold-vk7.png",
+                  title: "New Kobold VK7s – more powerful than ever",
                   button: {
-                    label: 'Explore the product',
-                    size: screenSize.width > 935 ? 'large' : 'medium',
+                    label: "Explore the product",
+                    size: screenSize.width > 935 ? "large" : "medium",
                   },
                 },
                 {
-                  size: 'large',
-                  backgroundColor: 'white',
+                  size: "large",
+                  backgroundColor: "white",
                   imageProps: {
-                    src: '/flagship/images/kobold.png',
-                    alt: 'Kobold',
+                    src: "/flagship/images/kobold.png",
+                    alt: "Kobold",
                   },
-                  title: 'The Kobold evolution arrived. Put us to the test',
+                  title: "The Kobold evolution arrived. Put us to the test",
                   button: {
-                    label: 'Book a demo',
-                    size: screenSize.width > 935 ? 'large' : 'medium',
+                    label: "Book a demo",
+                    size: screenSize.width > 935 ? "large" : "medium",
                   },
                   eyeCatcherProps: {
-                    firstLine: 'Only until',
-                    secondLine: '25.12.23',
-                    backgroundColor: 'purple',
-                    size: 'small',
+                    firstLine: "Only until",
+                    secondLine: "25.12.23",
+                    backgroundColor: "purple",
+                    size: "small",
                   },
                 },
               ]}
@@ -267,21 +253,17 @@ export default function FlagshipHomePage() {
       <section className={styles.defaultSection}>
         <GridContainer>
           <GridItem columns={12} className={styles.textCentered}>
-            <Headline
-              spaceBelow="additional"
-              strongColor="blue">
-
-                <Typography component="h2">
-                  <span>
-                    Vorwerk Advisor,
-                    <br />
-                    a unique opportunity to
-                    <br />
-                    <strong> join our sales force</strong>
-                  </span>
-                </Typography>
-              </Headline>
-
+            <Headline spaceBelow="additional" strongColor="blue">
+              <Typography component="h2">
+                <span>
+                  Vorwerk Advisor,
+                  <br />
+                  a unique opportunity to
+                  <br />
+                  <strong> join our sales force</strong>
+                </span>
+              </Typography>
+            </Headline>
           </GridItem>
         </GridContainer>
         <div className={styles.contentAndCategoryContainer}>
@@ -304,7 +286,7 @@ export default function FlagshipHomePage() {
               <Typography
                 fontWeight="regular"
                 variant={
-                  screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
+                  screenSize.width > 1267 ? "paragraph18" : "paragraph16"
                 }
               >
                 Whatever your home situation, the VB100 system brings the grab
@@ -349,7 +331,7 @@ export default function FlagshipHomePage() {
               <Typography
                 fontWeight="regular"
                 variant={
-                  screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
+                  screenSize.width > 1267 ? "paragraph18" : "paragraph16"
                 }
               >
                 Whatever your home situation, the VB100 system brings the grab
@@ -378,5 +360,5 @@ export default function FlagshipHomePage() {
         </div>
       </section>
     </main>
-  )
+  );
 }

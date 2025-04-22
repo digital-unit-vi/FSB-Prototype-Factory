@@ -1,16 +1,16 @@
-'use client'
+"use client";
 
+import CategoryTile from "@components/flagship/categoryTile/categoryTile";
 import {
   GridContainer,
   GridItem,
-  Headline,
   Header,
+  Headline,
   Typography,
   Vorwerk,
-} from '@vorwerk/fibre-react'
-import Link from 'next/link'
-import styles from './page.module.scss'
-import CategoryTile from '@components/flagship/categoryTile/categoryTile'
+} from "@vorwerk/fibre-react";
+import Link from "next/link";
+import styles from "./page.module.scss";
 
 export default function FlagshipHomePage() {
   return (
@@ -18,10 +18,8 @@ export default function FlagshipHomePage() {
       <main>
         <Header
           isLandingPage
-          landingPageLogo={
-            <Vorwerk className={styles.vorwerkLogo} />
-          }
-          backgroundType={'transparent'}
+          landingPageLogo={<Vorwerk className={styles.vorwerkLogo} />}
+          backgroundType={"transparent"}
         />
         <section className={styles.prominentSection}>
           <GridContainer>
@@ -42,15 +40,15 @@ export default function FlagshipHomePage() {
               columnsXL={4}
               className={styles.tiles}
             >
-              <Link href={'/flagship/home-page'}>
+              <Link href={"/flagship/home-page"}>
                 <CategoryTile
-                  size={'small'}
+                  size={"small"}
                   imageProps={{
-                    src: '/flagship/images/home-page.png',
-                    alt: 'Screen design',
+                    src: "/flagship/images/home-page.png",
+                    alt: "Screen design",
                   }}
-                  backgroundColor={'grey'}
-                  title={'Home Page - AEM'}
+                  backgroundColor={"grey"}
+                  title={"Home Page - AEM"}
                 />
               </Link>
             </GridItem>
@@ -60,15 +58,15 @@ export default function FlagshipHomePage() {
               columnsXL={4}
               className={styles.tiles}
             >
-              <Link href={'/flagship/product-detail-page'}>
+              <Link href={"/flagship/product-detail-page"}>
                 <CategoryTile
-                  size={'small'}
+                  size={"small"}
                   imageProps={{
-                    src: '/flagship/images/product-detail-page-sapc.png',
-                    alt: 'Screen design',
+                    src: "/flagship/images/product-detail-page-sapc.png",
+                    alt: "Screen design",
                   }}
-                  backgroundColor={'grey'}
-                  title={'Product Detail Page - SAPC'}
+                  backgroundColor={"grey"}
+                  title={"Product Detail Page - SAPC"}
                 />
               </Link>
             </GridItem>
@@ -78,15 +76,15 @@ export default function FlagshipHomePage() {
               columnsXL={4}
               className={styles.tiles}
             >
-              <Link href={'/flagship/product-detail-page-aem'}>
+              <Link href={"/flagship/product-detail-page-aem"}>
                 <CategoryTile
-                  size={'small'}
+                  size={"small"}
                   imageProps={{
-                    src: '/flagship/images/product-detail-page-aem.png',
-                    alt: 'Screen design',
+                    src: "/flagship/images/product-detail-page-aem.png",
+                    alt: "Screen design",
                   }}
-                  backgroundColor={'grey'}
-                  title={'Product Detail Page - AEM'}
+                  backgroundColor={"grey"}
+                  title={"Product Detail Page - AEM"}
                 />
               </Link>
             </GridItem>
@@ -96,15 +94,15 @@ export default function FlagshipHomePage() {
               columnsXL={4}
               className={styles.tiles}
             >
-              <Link href={'/flagship/division-landing-page'}>
+              <Link href={"/flagship/division-landing-page"}>
                 <CategoryTile
-                  size={'small'}
+                  size={"small"}
                   imageProps={{
-                    src: '/flagship/images/division-landing-page.png',
-                    alt: 'Screen design',
+                    src: "/flagship/images/division-landing-page.png",
+                    alt: "Screen design",
                   }}
-                  backgroundColor={'grey'}
-                  title={'Division Landing Page - AEM'}
+                  backgroundColor={"grey"}
+                  title={"Division Landing Page - AEM"}
                 />
               </Link>
             </GridItem>
@@ -114,15 +112,15 @@ export default function FlagshipHomePage() {
               columnsXL={4}
               className={styles.tiles}
             >
-              <Link href={'/flagship/catalogue-home-page'}>
+              <Link href={"/flagship/catalogue-home-page"}>
                 <CategoryTile
-                  size={'small'}
+                  size={"small"}
                   imageProps={{
-                    src: '/flagship/images/catalogue-home-page.png',
-                    alt: 'Screen design',
+                    src: "/flagship/images/catalogue-home-page.png",
+                    alt: "Screen design",
                   }}
-                  backgroundColor={'grey'}
-                  title={'Catalogue Home Page - AEM'}
+                  backgroundColor={"grey"}
+                  title={"Catalogue Home Page - AEM"}
                 />
               </Link>
             </GridItem>
@@ -132,15 +130,15 @@ export default function FlagshipHomePage() {
               columnsXL={4}
               className={styles.tiles}
             >
-              <Link href={'/flagship/product-landing-page'}>
+              <Link href={"/flagship/product-landing-page"}>
                 <CategoryTile
-                  size={'small'}
+                  size={"small"}
                   imageProps={{
-                    src: '/flagship/images/product-landing-page.png',
-                    alt: 'Screen design',
+                    src: "/flagship/images/product-landing-page.png",
+                    alt: "Screen design",
                   }}
-                  backgroundColor={'grey'}
-                  title={'Product Landing Page - AEM'}
+                  backgroundColor={"grey"}
+                  title={"Product Landing Page - AEM"}
                 />
               </Link>
             </GridItem>
@@ -150,15 +148,15 @@ export default function FlagshipHomePage() {
               columnsXL={4}
               className={styles.tiles}
             >
-              <Link href={'/flagship/catalogue-division-landing-page'}>
+              <Link href={"/flagship/catalogue-division-landing-page"}>
                 <CategoryTile
-                  size={'small'}
+                  size={"small"}
                   imageProps={{
-                    src: '/flagship/images/catalogue-division-landing-page.png',
-                    alt: 'Screen design',
+                    src: "/flagship/images/catalogue-division-landing-page.png",
+                    alt: "Screen design",
                   }}
-                  backgroundColor={'grey'}
-                  title={'Catalogue Division Landing Page - SAPC'}
+                  backgroundColor={"grey"}
+                  title={"Catalogue Division Landing Page - SAPC"}
                 />
               </Link>
             </GridItem>
@@ -168,15 +166,15 @@ export default function FlagshipHomePage() {
               columnsXL={4}
               className={styles.tiles}
             >
-              <Link href={'/flagship/catalogue-division-section-page'}>
+              <Link href={"/flagship/catalogue-division-section-page"}>
                 <CategoryTile
-                  size={'small'}
+                  size={"small"}
                   imageProps={{
-                    src: '/flagship/images/catalogue-division-section-page.png',
-                    alt: 'Screen design',
+                    src: "/flagship/images/catalogue-division-section-page.png",
+                    alt: "Screen design",
                   }}
-                  backgroundColor={'grey'}
-                  title={'Catalogue Division Section Page - SAPC'}
+                  backgroundColor={"grey"}
+                  title={"Catalogue Division Section Page - SAPC"}
                 />
               </Link>
             </GridItem>
@@ -184,5 +182,5 @@ export default function FlagshipHomePage() {
         </section>
       </main>
     </>
-  )
+  );
 }
