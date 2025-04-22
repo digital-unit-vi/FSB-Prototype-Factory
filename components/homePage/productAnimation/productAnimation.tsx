@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Parallax } from "react-scroll-parallax";
 import styles from "./productAnimation.module.scss";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -21,7 +22,6 @@ const ProductAnimation = ({
 }: ProductAnimationProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
   const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
   const imagesRef = useRef<HTMLImageElement[] | null>(null);
   const animationFrameRef = useRef<number>();
@@ -63,50 +63,21 @@ const ProductAnimation = ({
       if (!isWindowDefined) return;
 
       const container = containerRef.current;
-      const textElement = textRef.current;
 
-      if (!container || !textElement) {
-        setError("Container or text not found");
+      if (!container) {
+        setError("Container not found");
         return;
       }
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container,
-          start: "top bottom-=250",
+          start: "top bottom-=170",
           scrub: 1,
         },
       });
 
-      if (useStaticImage) {
-        gsap.set(textElement, {
-          y: -100,
-        });
-
-        tl.to(
-          textElement,
-          {
-            y: 150,
-            duration: 2,
-            ease: "power1.out",
-          },
-          0
-        );
-      } else {
-        gsap.set(textElement, {
-          y: -200,
-        });
-
-        tl.to(
-          textElement,
-          {
-            y: 200,
-            duration: 3,
-            ease: "power1.out",
-          },
-          0
-        );
-
+      if (!useStaticImage) {
         const canvas = canvasRef.current;
         if (!canvas) {
           setError("Canvas not found");
@@ -243,9 +214,15 @@ const ProductAnimation = ({
 
   return (
     <div ref={containerRef} className={styles.container}>
-      <div className={styles.text} ref={textRef}>
-        {text}
-      </div>
+      <Parallax
+        translateY={
+          useStaticImage ? [-20, 20, "easeOut"] : [25, -15, "easeOut"]
+        }
+        shouldAlwaysCompleteAnimation={true}
+        className={styles.textContainer}
+      >
+        <div className={styles.text}>{text}</div>
+      </Parallax>
       {useStaticImage ? (
         <div className={styles.staticImageContainer}>
           <Image className={styles.staticImage} src={StaticImage} alt={text} />
