@@ -9,51 +9,51 @@
   text-align: center;
 
   &.padding-large {
-      --container-padding: 24px;
+    --container-padding: 24px;
 
-      @media (min-width: 936px) and (max-width: 1579px) {
-          --container-padding: 32px;
-      }
+    @media (min-width: 936px) and (max-width: 1579px) {
+      --container-padding: 32px;
+    }
 
-      @media (min-width: 1580px) {
-          --container-padding: 40px;
-      }
+    @media (min-width: 1580px) {
+      --container-padding: 40px;
+    }
   }
 
   &.padding-small {
-      --container-padding: 16px;
+    --container-padding: 16px;
 
-      &.horizontal:not(.productImage) {
-          @media (max-width: 739px) {
-              --container-padding: 8px;
-          }
+    &.horizontal:not(.productImage) {
+      @media (max-width: 739px) {
+        --container-padding: 8px;
       }
+    }
 
-      @media (min-width: 936px) and (max-width: 1579px) {
-          --container-padding: 24px;
-      }
+    @media (min-width: 936px) and (max-width: 1579px) {
+      --container-padding: 24px;
+    }
 
-      @media (min-width: 1580px) {
-          --container-padding: 32px;
-      }
+    @media (min-width: 1580px) {
+      --container-padding: 32px;
+    }
   }
 
   &.horizontal:not(.productImage) {
-      aspect-ratio: 3/2;
-      justify-content: flex-end;
+    aspect-ratio: 3/2;
+    justify-content: flex-end;
   }
 
   &.horizontal.large:not(.productImage) {
-      aspect-ratio: 16/9;
+    aspect-ratio: 16/9;
 
-      @media (max-width: 739px) {
-          height: 491px;
-          justify-content: flex-end;
-      }
+    @media (max-width: 739px) {
+      height: 491px;
+      justify-content: flex-end;
+    }
   }
 
   &.horizontal.medium:not(.productImage) {
-      aspect-ratio: 2/1;
+    aspect-ratio: 2/1;
   }
 }
 
@@ -67,12 +67,11 @@
   padding: var(--container-padding);
   width: 100%;
   aspect-ratio: 1/1;
+  flex: 3;
 
   @media (min-width: 936px) {
-      top: 0px;
+    top: 0px;
   }
-
-  flex: 3;
 }
 
 .horizontal.productImage .imageContainer {
@@ -86,12 +85,12 @@
   gap: var(--container-padding);
   flex: 1;
 
-  &>a {
-      text-decoration: none;
+  & > a {
+    text-decoration: none;
 
-      &>button {
-          min-width: 128px;
-      }
+    & > button {
+      min-width: 128px;
+    }
   }
 }
 
@@ -108,15 +107,15 @@
   padding-top: var(--container-padding);
 
   @media (min-width: 936px) and (max-width: 1267px) {
-      height: 184px;
+    height: 184px;
   }
 
   @media (min-width: 1268px) and (max-width: 1579px) {
-      height: 210px;
+    height: 210px;
   }
 
   @media (min-width: 1580px) {
-      height: 234px;
+    height: 234px;
   }
 }
 
@@ -125,34 +124,34 @@
   top: var(--container-padding);
   right: calc(var(--container-padding) + 3px);
 
-  &>* {
-      width: 80px !important;
-      height: 80px !important;
-      padding: 10.67px !important;
+  & > * {
+    width: 80px !important;
+    height: 80px !important;
+    padding: 10.67px !important;
 
-      @media (min-width: 936px) and (max-width: 1267px) {
-          width: 96px !important;
-          height: 96px !important;
-          padding: 12.8px !important;
-      }
+    @media (min-width: 936px) and (max-width: 1267px) {
+      width: 96px !important;
+      height: 96px !important;
+      padding: 12.8px !important;
+    }
 
-      @media (min-width: 1268px) {
-          width: 120px !important;
-          height: 120px !important;
-          padding: 16px !important;
-      }
+    @media (min-width: 1268px) {
+      width: 120px !important;
+      height: 120px !important;
+      padding: 16px !important;
+    }
   }
 
   p {
-      font-size: 1rem !important;
+    font-size: 1rem !important;
 
-      @media (min-width: 936px) and (max-width: 1267px) {
-          font-size: 1.2rem !important;
-      }
+    @media (min-width: 936px) and (max-width: 1267px) {
+      font-size: 1.2rem !important;
+    }
 
-      @media (min-width: 1268px) {
-          font-size: 1.6rem !important;
-      }
+    @media (min-width: 1268px) {
+      font-size: 1.6rem !important;
+    }
   }
 }
 
@@ -174,11 +173,11 @@
   align-content: center;
 
   @media (min-width: 936px) and (max-width: 1267px) {
-      height: 76px;
+    height: 76px;
   }
 
   @media (min-width: 1268px) {
-      height: 96px;
+    height: 96px;
   }
 }
 

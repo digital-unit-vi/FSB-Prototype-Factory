@@ -1,6 +1,10 @@
 "use client";
 
-import { GridContainer, GridItem, Typography } from "@vorwerk/fibre-react";
+import {
+  GridContainer,
+  GridItem,
+  Typography,
+} from "@components/build-assets/index";
 import styles from "./bentoBoxTiles.module.scss";
 
 export interface BentoBoxTilesProps {

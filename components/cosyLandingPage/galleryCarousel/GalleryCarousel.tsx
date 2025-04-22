@@ -1,4 +1,4 @@
-import { GridContainer, GridItem } from "@vorwerk/fibre-react";
+import { GridContainer, GridItem } from "@components/build-assets/index";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { DesktopCarousel } from "./desktopCarousel/DesktopCarousel";
@@ -96,16 +96,17 @@ const GalleryCarousel = ({
         darkMode ? styles.darkMode : ""
       )}
     >
-      {mobileSlider ?
+      {mobileSlider ? (
         <MobileCarousel
           mobileCarouselItems={mobileSlides[0].mobileCarouselItems}
         />
-      : <GridContainer>
+      ) : (
+        <GridContainer>
           <GridItem columns={12}>
             <DesktopCarousel slides={desktopSlides} darkMode={darkMode} />
           </GridItem>
         </GridContainer>
-      }
+      )}
     </div>
   );
 };

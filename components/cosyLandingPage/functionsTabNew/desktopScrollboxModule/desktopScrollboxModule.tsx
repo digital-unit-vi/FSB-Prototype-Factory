@@ -1,6 +1,11 @@
 "use client";
 
-import { GridContainer, GridItem, Pause, Play } from "@vorwerk/fibre-react";
+import {
+  GridContainer,
+  GridItem,
+  Pause,
+  Play,
+} from "@components/build-assets/index";
 import classNames from "classnames";
 import type { MotionValue } from "framer-motion";
 import {
@@ -186,8 +191,9 @@ export default function DesktopScrollboxModule({
           >
             <ul className={styles.desktopScrollbox__list}>
               {listItems.map((item, index) => {
-                const activeClassState =
-                  item.isActive ? styles.active : styles.inactive;
+                const activeClassState = item.isActive
+                  ? styles.active
+                  : styles.inactive;
 
                 return (
                   <li key={item.id} className={classNames(activeClassState)}>
@@ -207,8 +213,9 @@ export default function DesktopScrollboxModule({
             </ul>
             <div className={styles.desktopScrollbox__media}>
               {listItems.map((item, index) => {
-                const activeClassState =
-                  item.isActive ? styles.active : styles.inactive;
+                const activeClassState = item.isActive
+                  ? styles.active
+                  : styles.inactive;
 
                 return (
                   <div
@@ -218,9 +225,9 @@ export default function DesktopScrollboxModule({
                     {item.media.type === "image" && (
                       <img
                         src={
-                          typeof item.media.src === "string" ?
-                            item.media.src
-                          : ""
+                          typeof item.media.src === "string"
+                            ? item.media.src
+                            : ""
                         }
                         alt={item.media.alt}
                         title={item.media.title}
@@ -236,9 +243,10 @@ export default function DesktopScrollboxModule({
                           muted={true}
                           loop={true}
                         >
-                          {typeof item.media.src === "string" ?
+                          {typeof item.media.src === "string" ? (
                             <source src={item.media.src} />
-                          : <>
+                          ) : (
+                            <>
                               <source
                                 src={item.media.src.webm}
                                 type="video/webm"
@@ -248,9 +256,9 @@ export default function DesktopScrollboxModule({
                                 type="video/mp4"
                               />
                             </>
-                          }
+                          )}
                         </video>
-                        {!isVideoPlaying(index) ?
+                        {!isVideoPlaying(index) ? (
                           <button
                             type="button"
                             onClick={() => handlePlayVideo(index)}
@@ -258,14 +266,15 @@ export default function DesktopScrollboxModule({
                           >
                             <Play />
                           </button>
-                        : <button
+                        ) : (
+                          <button
                             type="button"
                             onClick={() => handlePauseVideo(index)}
                             aria-label="Pause button"
                           >
                             <Pause />
                           </button>
-                        }
+                        )}
                       </div>
                     )}
                     {item.description && (

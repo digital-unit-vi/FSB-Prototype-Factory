@@ -19,7 +19,7 @@ import {
   Typography,
   UK as Uk,
   USA as Usa,
-} from "@vorwerk/fibre-react";
+} from "@components/build-assets/index";
 
 export const Languages = [
   <DropdownItem key="canada-english">

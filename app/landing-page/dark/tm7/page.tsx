@@ -1,5 +1,15 @@
 "use client";
 
+import {
+  FooterSocialLinkBlock,
+  GridContainer,
+  GridItem,
+  Headline,
+  ImageCarousel,
+  MediaContainer,
+  SectionContainer,
+  Typography,
+} from "@components/build-assets/index";
 import BentoBoxTiles from "@components/cosyLandingPage/bentoBoxTiles/BentoBoxTiles";
 import FunctionsTab from "@components/cosyLandingPage/functionsTabNew/functionsTab";
 import GalleryCarousel from "@components/cosyLandingPage/galleryCarousel/GalleryCarousel";
@@ -14,16 +24,6 @@ import TelegramIcon from "@public/cosy/socialIcons/telegramIcon";
 import WhatsappIcon from "@public/cosy/socialIcons/whatsappIcon";
 import XIcon from "@public/cosy/socialIcons/xIcon";
 import useScreenSize from "@utils/useScreenSize";
-import {
-  FooterSocialLinkBlock,
-  GridContainer,
-  GridItem,
-  Headline,
-  ImageCarousel,
-  MediaContainer,
-  SectionContainer,
-  Typography,
-} from "@vorwerk/fibre-react";
 import styles from "./page.module.scss";
 
 export default function TM7Page() {
@@ -171,7 +171,7 @@ export default function TM7Page() {
           <ProductAnimation />
           <GridContainer>
             <GridItem columns={12} className={styles.textCentered}>
-              {isDesktop ?
+              {isDesktop ? (
                 <>
                   <Typography component="intro">
                     Redesigned Varoma® for more space.
@@ -183,7 +183,8 @@ export default function TM7Page() {
                     Compact base with an expansive display.
                   </Typography>
                 </>
-              : <>
+              ) : (
+                <>
                   <Typography component="p" variant="paragraph16">
                     Redesigned Varoma® for more space.
                   </Typography>
@@ -194,7 +195,7 @@ export default function TM7Page() {
                     Compact base with an expansive display.
                   </Typography>
                 </>
-              }
+              )}
             </GridItem>
           </GridContainer>
         </SectionContainer>
@@ -353,16 +354,17 @@ export default function TM7Page() {
               >
                 <Headline strongColor="green" spaceBelow="default">
                   <Typography component="p" variant="h2">
-                    {isDesktop ?
+                    {isDesktop ? (
                       <span>
                         Explore <strong>over 1000,000 recipes</strong>
                         <br /> tailored to you.
                       </span>
-                    : <span>
+                    ) : (
+                      <span>
                         Explore <strong>over 1000,000 recipes</strong> tailored
                         to you.
                       </span>
-                    }
+                    )}
                   </Typography>
                 </Headline>
               </GridItem>
@@ -425,16 +427,17 @@ export default function TM7Page() {
               endXL={11}
               className={styles.textCentered}
             >
-              {isDesktop ?
+              {isDesktop ? (
                 <Typography component="intro">
                   From the perfect risotto to beloved classics, let Thermomix®
                   inspire your next culinary adventure.
                 </Typography>
-              : <Typography component="p" variant="paragraph16">
+              ) : (
+                <Typography component="p" variant="paragraph16">
                   From the perfect risotto to beloved classics, let Thermomix®
                   inspire your next culinary adventure.
                 </Typography>
-              }
+              )}
             </GridItem>
           </GridContainer>
         </SectionContainer>

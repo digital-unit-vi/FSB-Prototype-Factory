@@ -5,7 +5,7 @@ import {
   GridItem,
   Price,
   Typography,
-} from "@vorwerk/fibre-react";
+} from "@components/build-assets/index";
 import styles from "./productBlock.module.scss";
 
 interface ProductBlockProps {

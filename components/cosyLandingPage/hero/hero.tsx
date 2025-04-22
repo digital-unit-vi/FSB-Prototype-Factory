@@ -9,7 +9,7 @@ import {
   Thermomix,
   Typography,
   Vorwerk,
-} from "@vorwerk/fibre-react";
+} from "@components/build-assets/index";
 import Image from "next/image";
 // import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -115,12 +115,12 @@ const Hero: React.FC = () => {
             isLandingPage
             landingPageLogo={
               // <Link href="/">
-                <Thermomix size="small" />
+              <Thermomix size="small" />
               // </Link>
             }
             logo={
               // <Link href="/">
-                <Vorwerk />
+              <Vorwerk />
               // </Link>
             }
           />
@@ -166,9 +166,9 @@ const Hero: React.FC = () => {
           shouldAlwaysCompleteAnimation={true}
           translateY={[0, -40, "easeIn"]}
           scale={
-            screenSize.width >= 1268 ?
-              [1.0, 1.2, "easeIn"]
-            : [1.0, 1.4, "easeInOut"]
+            screenSize.width >= 1268
+              ? [1.0, 1.2, "easeIn"]
+              : [1.0, 1.4, "easeInOut"]
           }
           className={styles.parallax}
         >

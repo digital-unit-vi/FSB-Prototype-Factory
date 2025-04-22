@@ -3,7 +3,7 @@ import {
   GridItem,
   Headline,
   Typography,
-} from "@vorwerk/fibre-react";
+} from "@components/build-assets/index";
 import classNames from "classnames";
 import styles from "./imageLayout.module.scss";
 

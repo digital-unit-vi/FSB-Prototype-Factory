@@ -1,7 +1,5 @@
 "use client";
 
-import Hero from "@components/landingPage/hero/hero";
-import Spacer from "@components/shared/spacer/spacer";
 import {
   BentoBoxTiles,
   BlendIllustration,
@@ -28,7 +26,9 @@ import {
   Typography,
   UserReview,
   WifiLight,
-} from "@vorwerk/fibre-react";
+} from "@components/build-assets/index";
+import Hero from "@components/landingPage/hero/hero";
+import Spacer from "@components/shared/spacer/spacer";
 import styles from "./page.module.scss";
 
 export default function TM6VariantADarkLandingPage() {

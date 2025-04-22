@@ -1,6 +1,5 @@
 "use client";
 
-import Spacer from "@components/shared/spacer/spacer";
 import {
   Button,
   ButtonGroup,
@@ -12,7 +11,8 @@ import {
   Hero,
   Typography,
   Vorwerk,
-} from "@vorwerk/fibre-react";
+} from "@components/build-assets/index";
+import Spacer from "@components/shared/spacer/spacer";
 import Link from "next/link";
 import styles from "./page.module.scss";
 
@@ -23,7 +23,7 @@ export default function Home() {
         isLandingPage
         landingPageLogo={
           // <a href="/" aria-label="Vorwerk logo">
-            <Vorwerk />
+          <Vorwerk />
           // </a>
         }
       />

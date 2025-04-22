@@ -1,6 +1,5 @@
 "use client";
 
-import ShowcaseTiles from "@components/landingPage/showcaseTiles/showcaseTiles";
 import {
   GridContainer,
   GridItem,
@@ -9,7 +8,8 @@ import {
   Hero,
   Typography,
   Vorwerk,
-} from "@vorwerk/fibre-react";
+} from "@components/build-assets/index";
+import ShowcaseTiles from "@components/landingPage/showcaseTiles/showcaseTiles";
 // import Link from "next/link";
 import styles from "./page.module.scss";
 
@@ -124,7 +124,7 @@ export default function DS360HomePage() {
         isLandingPage
         landingPageLogo={
           // <Link href="/">
-            <Vorwerk className={styles.vorwerkLogo} />
+          <Vorwerk className={styles.vorwerkLogo} />
           // </Link>
         }
       />

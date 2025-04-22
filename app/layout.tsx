@@ -25,8 +25,8 @@ import {
   Typography,
   VorwerkWhite,
   Youtube,
-} from "@vorwerk/fibre-react";
-import "@vorwerk/fibre-react/main.css";
+} from "@components/build-assets/index";
+import "@components/build-assets/style.css";
 import { Languages } from "const";
 import localFont from "next/font/local";
 import { usePathname } from "next/navigation";
@@ -78,7 +78,11 @@ export default function RootLayout({
     }
   }, [pathname]);
 
-  const excludedFooterPaths = ["/landing-page/dark/tm7", "/flagship", "/flagship/home-page"];
+  const excludedFooterPaths = [
+    "/landing-page/dark/tm7",
+    "/flagship",
+    "/flagship/home-page",
+  ];
 
   const showDefaultFooter = !excludedFooterPaths.includes(pathname);
 

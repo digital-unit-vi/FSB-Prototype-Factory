@@ -5,7 +5,7 @@ import {
   GridItem,
   Headline,
   Typography,
-} from "@vorwerk/fibre-react";
+} from "@components/build-assets/index";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./showcaseTiles.module.scss";

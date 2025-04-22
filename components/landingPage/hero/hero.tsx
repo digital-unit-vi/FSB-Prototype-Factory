@@ -1,10 +1,5 @@
 "use client";
 
-import Button from "@components/shared/button/button";
-import ParallaxLogoDark from "@public/landingPage/hero/logos-dark.png";
-import ParallaxLogo from "@public/landingPage/hero/logos.png";
-import SensorProductImage from "@public/landingPage/hero/sensor-hero-landing-page.png";
-import TM6ProductImage from "@public/shared/product/tm6-product-light.png";
 import {
   GridContainer,
   GridItem,
@@ -13,7 +8,12 @@ import {
   Thermomix,
   Typography,
   Vorwerk,
-} from "@vorwerk/fibre-react";
+} from "@components/build-assets/index";
+import Button from "@components/shared/button/button";
+import ParallaxLogoDark from "@public/landingPage/hero/logos-dark.png";
+import ParallaxLogo from "@public/landingPage/hero/logos.png";
+import SensorProductImage from "@public/landingPage/hero/sensor-hero-landing-page.png";
+import TM6ProductImage from "@public/shared/product/tm6-product-light.png";
 import Image, { type StaticImageData } from "next/image";
 // import Link from "next/link";
 import { useEffect, useRef } from "react";
@@ -105,12 +105,12 @@ const Hero = ({
             isLandingPage
             landingPageLogo={
               // <Link href="/">
-                <Thermomix size="small" />
+              <Thermomix size="small" />
               // </Link>
             }
             logo={
               // <Link href="/">
-                <Vorwerk />
+              <Vorwerk />
               // </Link>
             }
           />

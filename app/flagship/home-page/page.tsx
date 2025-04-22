@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   AdvisorDropdown,
@@ -21,22 +21,32 @@ import {
   Typography,
   User,
   Vorwerk,
-} from "@vorwerk/fibre-react";
-import Link from 'next/link'
-import styles from './page.module.scss'
-import useScreenSize from '@utils/useScreenSize'
-import { Footer } from "@components/flagships/footer/footer";
+} from "@components/build-assets/index.js";
 import CategoryTiles from "@components/flagships/categoryTiles/categoryTiles";
+import { Footer } from "@components/flagships/footer/footer";
+import useScreenSize from "@utils/useScreenSize";
+import Link from "next/link";
+import styles from "./page.module.scss";
 
 export default function FlagshipHomePage() {
-  const screenSize = useScreenSize()
+  const screenSize = useScreenSize();
 
   return (
     <>
       <main className={styles.hp}>
         <Header
           advisor={
-            <AdvisorDropdown buttonLabel="Advisor" buttonAriaLabel="Your advisors: Thermomix advisor Lisa connected" buttonAvatars={[<img alt="avatar" src="/library/images/avatars/avatar2.png" key='1' />]}>
+            <AdvisorDropdown
+              buttonLabel="Advisor"
+              buttonAriaLabel="Your advisors: Thermomix advisor Lisa connected"
+              buttonAvatars={[
+                <img
+                  alt="avatar"
+                  src="/library/images/avatars/avatar2.png"
+                  key="1"
+                />,
+              ]}
+            >
               <AdvisorDropdownMenuItem
                 avatar={
                   <img alt="avatar" src="/library/images/avatars/avatar2.png" />
@@ -91,9 +101,7 @@ export default function FlagshipHomePage() {
               />
             </AdvisorDropdown>
           }
-          logo={
-              <Vorwerk />
-          }
+          logo={<Vorwerk />}
           menu={
             <HeaderButton label="Menu">
               <Menu />
@@ -115,19 +123,54 @@ export default function FlagshipHomePage() {
                   href="#"
                   label="Thermomix®"
                   level={2}
-                  key='tm'
+                  key="tm"
                   navItems={[
-                    <NavItem href="#" label="Overview" level={3} key='tm-overview' />,
-                    <NavItem href="#" label="Thermomix® TM6" level={3} key='tm-tm6' />,
-                    <NavItem href="#" label="Accessories" level={3} key='tm-accessories' />,
-                    <NavItem href="#" label="Specials" level={3} key='tm-specials' />,
-                    <NavItem href="#" label="Spare Parts" level={3} key='tm-parts' />,
-                    <NavItem href="#" label="Cookbooks" level={3} key='tm-books' />,
-                    <NavItem href="#" label="Current offers" level={3} key='tm-offers' />,
+                    <NavItem
+                      href="#"
+                      label="Overview"
+                      level={3}
+                      key="tm-overview"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Thermomix® TM6"
+                      level={3}
+                      key="tm-tm6"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Accessories"
+                      level={3}
+                      key="tm-accessories"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Specials"
+                      level={3}
+                      key="tm-specials"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Spare Parts"
+                      level={3}
+                      key="tm-parts"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Cookbooks"
+                      level={3}
+                      key="tm-books"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Current offers"
+                      level={3}
+                      key="tm-offers"
+                    />,
                   ]}
                 />,
-                <NavItem href="#" label="Kobold" level={2} key='kobold' />,
-                <NavItem href="#" label="E-shop" level={2} key='shop' />,
+                <NavItem href="#" label="Kobold" level={2} key="kobold" />,
+                <NavItem href="#" label="E-shop" level={2} key="shop" />,
               ]}
             />,
             <NavItem
@@ -146,14 +189,29 @@ export default function FlagshipHomePage() {
                   href="#"
                   label="column 1"
                   level={2}
-                  key='col-1'
+                  key="col-1"
                   navItems={[
-                    <NavItem href="col1-1" label="col1-1" level={3} key='col-1-1' />,
-                    <NavItem href="col1-2" label="col1-2" level={3} key='col-1-2' />,
-                    <NavItem href="col1-3" label="col1-3" level={3} key='col-1-3' />,
+                    <NavItem
+                      href="col1-1"
+                      label="col1-1"
+                      level={3}
+                      key="col-1-1"
+                    />,
+                    <NavItem
+                      href="col1-2"
+                      label="col1-2"
+                      level={3}
+                      key="col-1-2"
+                    />,
+                    <NavItem
+                      href="col1-3"
+                      label="col1-3"
+                      level={3}
+                      key="col-1-3"
+                    />,
                   ]}
                 />,
-                <NavItem href="#" label="column 2" level={2} key='col-2' />,
+                <NavItem href="#" label="column 2" level={2} key="col-2" />,
               ]}
             />,
             <NavItem
@@ -164,13 +222,28 @@ export default function FlagshipHomePage() {
               navItems={[
                 <NavItem
                   href="#"
-                  key='support'
+                  key="support"
                   label="column 1"
                   level={2}
                   navItems={[
-                    <NavItem href="col1-1" label="col1-1" level={3} key='support-1-1' />,
-                    <NavItem href="col1-2" label="col1-2" level={3} key='support-1-2' />,
-                    <NavItem href="col1-3" label="col1-3" level={3} key='support-1-3'/>,
+                    <NavItem
+                      href="col1-1"
+                      label="col1-1"
+                      level={3}
+                      key="support-1-1"
+                    />,
+                    <NavItem
+                      href="col1-2"
+                      label="col1-2"
+                      level={3}
+                      key="support-1-2"
+                    />,
+                    <NavItem
+                      href="col1-3"
+                      label="col1-3"
+                      level={3}
+                      key="support-1-3"
+                    />,
                   ]}
                 />,
               ]}
@@ -199,24 +272,21 @@ export default function FlagshipHomePage() {
                   <span
                     dangerouslySetInnerHTML={{
                       __html:
-                        '<strong>More time</strong><br/>doing the things<br/>you love',
+                        "<strong>More time</strong><br/>doing the things<br/>you love",
                     }}
                   />
                 </Typography>
               </Headline>
             }
             image={
-              <img
-                alt="Woman meditating"
-                src="/flagship/hero/home-page.png"
-              />
+              <img alt="Woman meditating" src="/flagship/hero/home-page.png" />
             }
           />
           <div className={styles.overlayIconWrapper}>
             {screenSize.width > 935 ? (
               <img
-                src={'/flagship/hero/mouse.svg'}
-                alt={'Scroll down'}
+                src={"/flagship/hero/mouse.svg"}
+                alt={"Scroll down"}
                 className={styles.overlayIcon}
               />
             ) : (
@@ -225,7 +295,7 @@ export default function FlagshipHomePage() {
             <div className={styles.overlayIconText}>
               <Typography variant="paragraph14" fontWeight="medium">
                 <span>
-                  {screenSize.width > 935 ? 'Scroll down' : 'Swipe up'}
+                  {screenSize.width > 935 ? "Scroll down" : "Swipe up"}
                 </span>
               </Typography>
             </div>
@@ -234,10 +304,7 @@ export default function FlagshipHomePage() {
         <section className={styles.defaultSection}>
           <GridContainer>
             <GridItem columns={12} className={styles.textCentered}>
-              <Headline
-                spaceBelow="additional"
-                strongColor="green"
-              >
+              <Headline spaceBelow="additional" strongColor="green">
                 <Typography component="h2">
                   <span>
                     Thermomix® TM6
@@ -282,7 +349,7 @@ export default function FlagshipHomePage() {
                 <Typography
                   fontWeight="regular"
                   variant={
-                    screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
+                    screenSize.width > 1267 ? "paragraph18" : "paragraph16"
                   }
                 >
                   Discover the Thermomix® TM6 and see how it can help you
@@ -296,25 +363,25 @@ export default function FlagshipHomePage() {
             <CategoryTiles
               categoryTilesData={[
                 {
-                  size: 'large',
-                  backgroundColor: 'grey',
+                  size: "large",
+                  backgroundColor: "grey",
                   imageProps: {
-                    src: '/flagship/hero/ds360-hero.png',
-                    alt: 'Thermomix DS360',
+                    src: "/flagship/hero/ds360-hero.png",
+                    alt: "Thermomix DS360",
                   },
-                  title: 'Thermomix® TM6 starter pack',
+                  title: "Thermomix® TM6 starter pack",
                   button: {
-                    label: 'Explore the product',
-                    size: screenSize.width > 935 ? 'large' : 'medium',
+                    label: "Explore the product",
+                    size: screenSize.width > 935 ? "large" : "medium",
                   },
                 },
                 {
-                  size: 'large',
-                  backgroundImageSrc: '/flagship/images/soup.png',
-                  title: 'Thousands of recipes – Endless inspiration',
+                  size: "large",
+                  backgroundImageSrc: "/flagship/images/soup.png",
+                  title: "Thousands of recipes – Endless inspiration",
                   button: {
-                    label: 'Join Cookidoo® for free',
-                    size: screenSize.width > 935 ? 'large' : 'medium',
+                    label: "Join Cookidoo® for free",
+                    size: screenSize.width > 935 ? "large" : "medium",
                   },
                 },
               ]}
@@ -328,18 +395,15 @@ export default function FlagshipHomePage() {
                 columns={12}
                 className={`${styles.textCentered} ${styles.overwrittenMargin}`}
               >
-                <Headline
-                  spaceBelow="additional"
-                  strongColor="orange">
-
-                    <Typography component="h2">
-                      <span>
-                        Kobold VK7s always
-                        <br />
-                        clean, <strong>always simple</strong>
-                      </span>
-                    </Typography>
-                  </Headline>
+                <Headline spaceBelow="additional" strongColor="orange">
+                  <Typography component="h2">
+                    <span>
+                      Kobold VK7s always
+                      <br />
+                      clean, <strong>always simple</strong>
+                    </span>
+                  </Typography>
+                </Headline>
               </GridItem>
             </GridContainer>
             <div className={styles.contentAndCategoryContainer}>
@@ -362,7 +426,7 @@ export default function FlagshipHomePage() {
                   <Typography
                     fontWeight="regular"
                     variant={
-                      screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
+                      screenSize.width > 1267 ? "paragraph18" : "paragraph16"
                     }
                   >
                     Whatever your home situation, the VB100 system brings the
@@ -391,32 +455,31 @@ export default function FlagshipHomePage() {
               <CategoryTiles
                 categoryTilesData={[
                   {
-                    size: 'large',
-                    backgroundImageSrc:
-                      '/flagship/images/kobold-vk7.png',
-                    title: 'New Kobold VK7s – more powerful than ever',
+                    size: "large",
+                    backgroundImageSrc: "/flagship/images/kobold-vk7.png",
+                    title: "New Kobold VK7s – more powerful than ever",
                     button: {
-                      label: 'Explore the product',
-                      size: screenSize.width > 935 ? 'large' : 'medium',
+                      label: "Explore the product",
+                      size: screenSize.width > 935 ? "large" : "medium",
                     },
                   },
                   {
-                    size: 'large',
-                    backgroundColor: 'white',
+                    size: "large",
+                    backgroundColor: "white",
                     imageProps: {
-                      src: '/flagship/images/kobold.png',
-                      alt: 'Kobold',
+                      src: "/flagship/images/kobold.png",
+                      alt: "Kobold",
                     },
-                    title: 'The Kobold evolution arrived. Put us to the test',
+                    title: "The Kobold evolution arrived. Put us to the test",
                     button: {
-                      label: 'Book a demo',
-                      size: screenSize.width > 935 ? 'large' : 'medium',
+                      label: "Book a demo",
+                      size: screenSize.width > 935 ? "large" : "medium",
                     },
                     eyeCatcherProps: {
-                      firstLine: 'Only until',
-                      secondLine: '25.12.23',
-                      backgroundColor: 'purple',
-                      size: 'small',
+                      firstLine: "Only until",
+                      secondLine: "25.12.23",
+                      backgroundColor: "purple",
+                      size: "small",
                     },
                   },
                 ]}
@@ -427,21 +490,17 @@ export default function FlagshipHomePage() {
         <section className={styles.defaultSection}>
           <GridContainer>
             <GridItem columns={12} className={styles.textCentered}>
-              <Headline
-                spaceBelow="additional"
-                strongColor="blue">
-
-                  <Typography component="h2">
-                    <span>
-                      Vorwerk Advisor,
-                      <br />
-                      a unique opportunity to
-                      <br />
-                      <strong> join our sales force</strong>
-                    </span>
-                  </Typography>
-                </Headline>
-
+              <Headline spaceBelow="additional" strongColor="blue">
+                <Typography component="h2">
+                  <span>
+                    Vorwerk Advisor,
+                    <br />
+                    a unique opportunity to
+                    <br />
+                    <strong> join our sales force</strong>
+                  </span>
+                </Typography>
+              </Headline>
             </GridItem>
           </GridContainer>
           <div className={styles.contentAndCategoryContainer}>
@@ -464,7 +523,7 @@ export default function FlagshipHomePage() {
                 <Typography
                   fontWeight="regular"
                   variant={
-                    screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
+                    screenSize.width > 1267 ? "paragraph18" : "paragraph16"
                   }
                 >
                   Whatever your home situation, the VB100 system brings the grab
@@ -509,7 +568,7 @@ export default function FlagshipHomePage() {
                 <Typography
                   fontWeight="regular"
                   variant={
-                    screenSize.width > 1267 ? 'paragraph18' : 'paragraph16'
+                    screenSize.width > 1267 ? "paragraph18" : "paragraph16"
                   }
                 >
                   Whatever your home situation, the VB100 system brings the grab
@@ -541,5 +600,5 @@ export default function FlagshipHomePage() {
 
       <Footer />
     </>
-  )
+  );
 }

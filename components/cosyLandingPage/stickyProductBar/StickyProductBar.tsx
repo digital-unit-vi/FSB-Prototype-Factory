@@ -1,11 +1,11 @@
-import ProductPicture from "@public/cosy/cosy_square.png";
-import useScreenSize from "@utils/useScreenSize";
 import {
   Button,
   GridContainer,
   GridItem,
   Typography,
-} from "@vorwerk/fibre-react";
+} from "@components/build-assets/index";
+import ProductPicture from "@public/cosy/cosy_square.png";
+import useScreenSize from "@utils/useScreenSize";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./stickyProductBar.module.scss";
@@ -80,7 +80,7 @@ const StickyProductBar: React.FC = () => {
         isVisible ? styles.visible : styles.hidden
       }`}
     >
-      {screenSize.width >= 1268 ?
+      {screenSize.width >= 1268 ? (
         <div className={styles.stickyProductBarInner}>
           <div className={styles.imageWrapper}>
             <Image src={ProductPicture} alt="TM7" />
@@ -97,7 +97,8 @@ const StickyProductBar: React.FC = () => {
             </Button>
           </div>
         </div>
-      : <GridContainer>
+      ) : (
+        <GridContainer>
           <GridItem columns={12}>
             <div className={styles.stickyProductBarInner}>
               <div className={styles.titleWrapper}>
@@ -114,7 +115,7 @@ const StickyProductBar: React.FC = () => {
             </div>
           </GridItem>
         </GridContainer>
-      }
+      )}
     </div>
   );
 };

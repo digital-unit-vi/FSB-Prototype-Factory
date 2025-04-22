@@ -6,7 +6,7 @@ import {
   FooterSection,
   FooterSmallLinks,
   Typography,
-} from "@vorwerk/fibre-react";
+} from "@components/build-assets/index";
 import Link from "next/link";
 import { ReactNode } from "react";
 import "../../../globals.scss";
