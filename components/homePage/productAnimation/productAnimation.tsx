@@ -73,27 +73,40 @@ const ProductAnimation = ({
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container,
-          start: "top bottom-=180",
-          end: "bottom top",
+          start: "top bottom-=250",
           scrub: 1,
         },
       });
 
-      gsap.set(textElement, {
-        y: -100,
-      });
+      if (useStaticImage) {
+        gsap.set(textElement, {
+          y: -100,
+        });
 
-      tl.to(
-        textElement,
-        {
-          y: 150,
-          duration: 1,
-          ease: "power1.inOut",
-        },
-        0
-      );
+        tl.to(
+          textElement,
+          {
+            y: 150,
+            duration: 2,
+            ease: "power1.out",
+          },
+          0
+        );
+      } else {
+        gsap.set(textElement, {
+          y: -200,
+        });
 
-      if (!useStaticImage) {
+        tl.to(
+          textElement,
+          {
+            y: 200,
+            duration: 3,
+            ease: "power1.out",
+          },
+          0
+        );
+
         const canvas = canvasRef.current;
         if (!canvas) {
           setError("Canvas not found");
@@ -193,6 +206,7 @@ const ProductAnimation = ({
             snap: "frame",
             onUpdate: render,
             immediateRender: true,
+            duration: 2,
           },
           0
         );
