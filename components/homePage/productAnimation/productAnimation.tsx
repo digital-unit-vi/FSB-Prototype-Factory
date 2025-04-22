@@ -73,24 +73,24 @@ const ProductAnimation = ({
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container,
-          start: "top bottom",
+          start: "top bottom-=180",
           end: "bottom top",
           scrub: 1,
         },
       });
 
       gsap.set(textElement, {
-        y: -50,
+        y: -100,
       });
 
       tl.to(
         textElement,
         {
-          y: 100,
+          y: 150,
           duration: 1,
           ease: "power1.inOut",
         },
-        -0.15
+        0
       );
 
       if (!useStaticImage) {
