@@ -25,30 +25,35 @@ const AdvisorToggle: React.FC = () => {
         role="tablist"
         aria-label="Advisor type selector"
       >
-        <button
-          className={
-            activeTab === "thermomix"
-              ? `${styles.toggleBtn} ${styles.active}`
-              : styles.toggleBtn
-          }
-          onClick={() => handleTabChange("thermomix")}
-          role="tab"
-          aria-selected={activeTab === "thermomix"}
-        >
-          Thermomix®
-        </button>
-        <button
-          className={
-            activeTab === "kobold"
-              ? `${styles.toggleBtn} ${styles.active}`
-              : styles.toggleBtn
-          }
-          onClick={() => handleTabChange("kobold")}
-          role="tab"
-          aria-selected={activeTab === "kobold"}
-        >
-          Kobold
-        </button>
+        <div className={styles.toggleTrack}>
+          <div
+            className={`${styles.toggleIndicator} ${activeTab === "thermomix" ? styles.left : styles.right}`}
+          />
+          <button
+            className={
+              activeTab === "thermomix"
+                ? `${styles.toggleBtn} ${styles.active}`
+                : styles.toggleBtn
+            }
+            onClick={() => handleTabChange("thermomix")}
+            role="tab"
+            aria-selected={activeTab === "thermomix"}
+          >
+            Thermomix®
+          </button>
+          <button
+            className={
+              activeTab === "kobold"
+                ? `${styles.toggleBtn} ${styles.active}`
+                : styles.toggleBtn
+            }
+            onClick={() => handleTabChange("kobold")}
+            role="tab"
+            aria-selected={activeTab === "kobold"}
+          >
+            Kobold
+          </button>
+        </div>
       </div>
 
       {/* Active panel with animation container */}

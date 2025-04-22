@@ -10,7 +10,6 @@
   justify-content: center;
 
   width: 100%;
-  min-height: 100lvh;
 }
 
 .canvas {
@@ -23,15 +22,10 @@
   height: 100%;
 }
 
-.loading {
-  position: absolute;
-  z-index: 3; // Higher z-index for loading message
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  font-size: 1.2rem;
-  color: #333;
+.staticImageContainer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 
 .error {
@@ -57,7 +51,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  font-size: 5rem; // Starting with smaller font
+  font-size: 30rem; // Starting with large font for parallax effect
   font-weight: 700;
   color: #00ac46;
+  letter-spacing: -8px;
 }

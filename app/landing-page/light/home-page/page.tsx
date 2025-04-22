@@ -146,13 +146,13 @@ export default function HomePage() {
               </Typography>
             </GridItem>
           </GridContainer>
-          {/* </SectionContainer> */}
-          <div
-            data-scroll-marker="phase1-start"
-            style={{ height: "1px", opacity: 0 }}
-          ></div>
-          <ProductAnimation />
-          {/* <SectionContainer> */}
+        </SectionContainer>
+        <div
+          data-scroll-marker="phase1-start"
+          style={{ height: "1px", opacity: 0 }}
+        ></div>
+        <ProductAnimation />
+        <SectionContainer>
           <GridContainer>
             <GridItem
               columns={10}
@@ -286,11 +286,7 @@ export default function HomePage() {
           data-scroll-marker="phase2-start"
           style={{ height: "1px", opacity: 0 }}
         ></div>
-        <ProductAnimation
-          staticImagePath="/homePage/kobold_teaser.png"
-          useStaticImage={true}
-          text="VK7"
-        />
+        <ProductAnimation useStaticImage={true} text="VK7" />
         <SectionContainer>
           <GridContainer>
             <GridItem
@@ -388,9 +384,9 @@ export default function HomePage() {
               <Headline strongColor="green" spaceBelow="default">
                 <Typography component="p" variant="h2">
                   <span style={{ display: "block", textAlign: "center" }}>
-                    <strong>Vorwerk</strong>
+                    Your Vorwerk
                     <br />
-                    advisors
+                    <strong>advisors</strong>
                   </span>
                 </Typography>
               </Headline>
