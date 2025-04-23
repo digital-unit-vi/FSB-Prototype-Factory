@@ -38,10 +38,10 @@ export default function FlagshipHomePage() {
           advisor={
             <AdvisorDropdown
               buttonLabel="Advisor"
-              buttonAriaLabel="Your advisors: Thermomix advisor Lisa connected"
+              buttonAriaLabel="Your advisors: Thermomix® advisor Lisa connected"
               buttonAvatars={[
                 <img
-                  alt="avatar"
+                  alt=""
                   src="/library/images/avatars/avatar2.png"
                   key="1"
                 />,
@@ -49,7 +49,7 @@ export default function FlagshipHomePage() {
             >
               <AdvisorDropdownMenuItem
                 avatar={
-                  <img alt="avatar" src="/library/images/avatars/avatar2.png" />
+                  <img alt="" src="/library/images/avatars/avatar2.png" />
                 }
                 href="#"
                 labels={
@@ -283,15 +283,13 @@ export default function FlagshipHomePage() {
             }
           />
           <div className={styles.overlayIconWrapper}>
-            {screenSize.width > 935 ? (
+            {screenSize.width > 935 ?
               <img
                 src={"/flagship/hero/mouse.svg"}
                 alt={"Scroll down"}
                 className={styles.overlayIcon}
               />
-            ) : (
-              <TapLight />
-            )}
+            : <TapLight />}
             <div className={styles.overlayIconText}>
               <Typography variant="paragraph14" fontWeight="medium">
                 <span>
