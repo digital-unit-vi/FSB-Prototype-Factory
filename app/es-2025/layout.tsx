@@ -10,7 +10,7 @@ import {
   VorwerkWhite,
 } from "@vorwerk/fibre-react";
 import type { ReactNode } from "react";
-import "../../../globals.scss";
+import "../globals.scss";
 
 export default function RootLayout({
   children,

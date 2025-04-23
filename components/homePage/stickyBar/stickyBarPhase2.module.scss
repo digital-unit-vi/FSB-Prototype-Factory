@@ -59,11 +59,12 @@
   }
 
   button {
-    min-height: unset;
+    min-height: 32px;
     padding: 6px 14px;
 
     font-size: 12px;
     line-height: 20px;
+    white-space: nowrap;
 
     transition: all 0.3s ease;
   }
@@ -132,6 +133,14 @@
     transform 0.3s ease;
 
   p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    line-clamp: 2; /* Limit to 2 lines */
+
+    max-height: 30px; /* Limit to 2 lines (15px * 2) */
+
     line-height: 15px;
   }
 }
@@ -156,14 +165,13 @@
 
 // Button wrapper should keep position stable during transitions
 .buttonWrapper {
-  // Make sure this doesn't participate in the animation
   z-index: 2;
 
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
 
-  // Optional: add transition for the button text change
   transition: opacity 0.3s ease;
 }
 

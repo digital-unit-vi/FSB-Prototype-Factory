@@ -96,7 +96,7 @@ const BOTTOM_CAROUSEL_IMAGES = [
   },
 ];
 
-export default function HomePage() {
+export default function HomePageES() {
   return (
     <>
       <main>
