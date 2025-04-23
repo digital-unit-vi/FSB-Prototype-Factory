@@ -109,9 +109,9 @@ const StickyBarPhase1 = () => {
                     variant="paragraph12"
                     fontWeight="regular"
                   >
-                    The all-new TM7&nbsp;starts at
+                    The all-new TM7 starts at
                     <br />
-                    1&apos;599&nbsp;EUR
+                    1&apos;599 EUR
                   </Typography>
                 </div>
               </div>

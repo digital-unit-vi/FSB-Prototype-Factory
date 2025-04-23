@@ -1,0 +1,56 @@
+.tileContent {
+  flex: 1;
+}
+
+.bentoBoxTile {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  background: #f3f5f3;
+
+  &:nth-child(1) {
+    grid-column: 1;
+    grid-row: span 2;
+  }
+
+  &:nth-child(2) {
+    grid-column: 2;
+    grid-row: span 1;
+  }
+
+  &:nth-child(3) {
+    grid-column: 2;
+    grid-row: span 2;
+  }
+
+  &:nth-child(4) {
+    grid-column: 1;
+    grid-row: span 1;
+  }
+}
+
+.bentoBoxTiles {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+}
+
+.tileImageContainer {
+  transform: translateX(-16px);
+
+  width: calc(100% + 32px);
+  margin-top: -24px;
+  margin-bottom: 16px;
+
+  text-align: left;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.tileTitle {
+  margin-bottom: 8px;
+}

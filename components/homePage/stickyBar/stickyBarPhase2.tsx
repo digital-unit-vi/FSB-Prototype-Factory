@@ -150,7 +150,7 @@ const StickyBarPhase2 = () => {
         <Typography component="p" variant="paragraph12" fontWeight="regular">
           The amazing VK7 starts at
           <br />
-          979&nbsp;EUR
+          979 EUR
         </Typography>
       </div>
     </div>
