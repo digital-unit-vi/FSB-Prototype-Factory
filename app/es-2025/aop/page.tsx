@@ -1,8 +1,9 @@
 "use client";
 
-import BentoBoxTiles from "@components/homePage/bentoBoxTiles/BentoBoxTiles";
-import HomePageHeader from "@components/homePage/header/header";
-import Hero from "@components/aop/hero/hero";
+import BentoBoxTiles from "@components/es2025/aop/bentoBoxTiles/BentoBoxTiles";
+import EventList from "@components/es2025/aop/eventList/EventList";
+import HomePageHeader from "@components/es2025/homePage/header/header";
+import Hero from "@components/es2025/homePage/hero/hero";
 import {
   GridContainer,
   GridItem,
@@ -12,6 +13,24 @@ import {
 } from "@vorwerk/fibre-react";
 
 export default function AOPES() {
+  const events = [
+    {
+      dates: ["21. Mar"],
+      title: "Cours de cuisine Grandes Tablées",
+      url: "#", // Replace with actual URL
+    },
+    {
+      dates: ["30. Mar", "04. Apr"],
+      title: "The Future of Food Writing",
+      url: "#", // Replace with actual URL
+    },
+    {
+      dates: ["21. Apr"],
+      title: "Cooking class",
+      url: "#", // Replace with actual URL
+    },
+  ];
+
   return (
     <>
       <main>
@@ -23,7 +42,8 @@ export default function AOPES() {
               <Headline strongColor="green" spaceBelow="default">
                 <Typography component="p" variant="h2">
                   <span style={{ display: "block", textAlign: "center" }}>
-                    <strong>Why</strong> a demo with me is important?
+                    <strong>Why</strong> does a demo with me make all the
+                    difference?
                   </span>
                 </Typography>
               </Headline>
@@ -36,16 +56,16 @@ export default function AOPES() {
               {
                 image: "/homePage/aop/pasta.png",
                 title: "In homemade I trust!",
-                text: "I will show you that homemade food not only tastes better but it is also a more sustainable choice.",
+                text: "Why homemade? Because it tastes better and saves you money. I’d love to show you how easy it is.",
               },
               {
                 title: "I can work magic out of simple things!",
                 text: "I will show you how the TM7 works with Cookidoo to add a chef-like touch to even the simplest meals.",
               },
               {
-                image: "/homePage/aop/macaroons.png",
+                image: "/homePage/aop/tacos.png",
                 title: "I open a window to the world!",
-                text: "With my TM7 I can cook a Japanese dinner with a Parisian dessert. No plane ticket is needed!",
+                text: "A taste of Japan for dinner, and a taco from Mexico — all with my TM7, no travel required!",
               },
               {
                 title: "I celebrate uniqueness!",
@@ -53,6 +73,21 @@ export default function AOPES() {
               },
             ]}
           />
+        </SectionContainer>
+        <SectionContainer>
+          <GridContainer>
+            <GridItem columns={10} start={2} end={12}>
+              <Headline strongColor="green" spaceBelow="default">
+                <Typography component="p" variant="h2">
+                  <span style={{ display: "block", textAlign: "center" }}>
+                    <strong>How</strong> does
+                    <br />
+                    my demo work?
+                  </span>
+                </Typography>
+              </Headline>
+            </GridItem>
+          </GridContainer>
         </SectionContainer>
         <SectionContainer>
           <GridContainer>
@@ -83,6 +118,11 @@ export default function AOPES() {
               </Headline>
             </GridItem>
           </GridContainer>
+          <GridContainer>
+            <GridItem columns={10} start={2} end={12}>
+              <EventList events={events} />
+            </GridItem>
+          </GridContainer>
         </SectionContainer>
         <SectionContainer>
           <GridContainer>
@@ -99,6 +139,23 @@ export default function AOPES() {
         </SectionContainer>
         <SectionContainer>
           <GridContainer>
+            <GridItem>
+              <video
+                controls
+                preload="metadata"
+                aria-label="Thermomix demo video"
+              >
+                <source
+                  src="/homePage/aop/container_video.mp4"
+                  type="video/mp4"
+                />
+                Your browser doesn&apos;t support embedded videos.
+              </video>
+            </GridItem>
+          </GridContainer>
+        </SectionContainer>
+        <SectionContainer>
+          <GridContainer>
             <GridItem columns={10} start={2} end={12}>
               <Typography
                 component="p"
@@ -106,10 +163,9 @@ export default function AOPES() {
                 fontWeight="regular"
               >
                 <span style={{ display: "block", textAlign: "center" }}>
-                  Now&apos;s your chance to transform your love for delicious
-                  food made with Thermomix® into an exciting career
-                  opportunity. The Vorwerk talent team can&apos;t wait to meet
-                  you!
+                  Ready to turn your love for the Thermomix® into something
+                  even bigger? Join us — the Vorwerk talent team is excited to
+                  meet you!
                 </span>
               </Typography>
             </GridItem>
