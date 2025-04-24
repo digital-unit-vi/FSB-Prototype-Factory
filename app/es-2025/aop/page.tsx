@@ -2,7 +2,7 @@
 
 import BentoBoxTiles from "@components/homePage/bentoBoxTiles/BentoBoxTiles";
 import HomePageHeader from "@components/homePage/header/header";
-import Hero from "@components/homePage/hero/hero";
+import Hero from "@components/aop/hero/hero";
 import {
   GridContainer,
   GridItem,
