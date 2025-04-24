@@ -3,7 +3,6 @@
 import {
   AdvisorDropdown,
   AdvisorDropdownMenuItem,
-  AdvisorUnassigned,
   Button,
   ButtonGroup,
   ContentBlock,
@@ -16,6 +15,7 @@ import {
   Location,
   Menu,
   NavItem,
+  Search,
   SectionSeparator,
   TapLight,
   Typography,
@@ -74,7 +74,7 @@ export default function FlagshipHomePage() {
               />
               <AdvisorDropdownMenuItem
                 href="#"
-                icon={<AdvisorUnassigned />}
+                icon={<Search />}
                 labels={
                   <Typography
                     component="p"
@@ -127,12 +127,6 @@ export default function FlagshipHomePage() {
                   navItems={[
                     <NavItem
                       href="#"
-                      label="Overview"
-                      level={3}
-                      key="tm-overview"
-                    />,
-                    <NavItem
-                      href="#"
                       label="Thermomix® TM6"
                       level={3}
                       key="tm-tm6"
@@ -157,7 +151,7 @@ export default function FlagshipHomePage() {
                     />,
                     <NavItem
                       href="#"
-                      label="Cookbooks"
+                      label="Cooking books"
                       level={3}
                       key="tm-books"
                     />,
@@ -169,8 +163,102 @@ export default function FlagshipHomePage() {
                     />,
                   ]}
                 />,
-                <NavItem href="#" label="Kobold" level={2} key="kobold" />,
-                <NavItem href="#" label="E-shop" level={2} key="shop" />,
+                <NavItem
+                  href="#"
+                  label="Kobold"
+                  level={2}
+                  key="kobold"
+                  navItems={[
+                    <NavItem
+                      href="#"
+                      label="Accessories"
+                      level={3}
+                      key="kobold-accessories"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Specials"
+                      level={3}
+                      key="kobold-specials"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Spare Parts"
+                      level={3}
+                      key="kobold-parts"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Current offers"
+                      level={3}
+                      key="tm-offers"
+                    />,
+                  ]}
+                />,
+                <NavItem
+                  href="#"
+                  label="Kobold Configurator"
+                  level={2}
+                  key="kobold-configurator"
+                  navItems={[
+                    <NavItem
+                      href="#"
+                      label="Configure vacuum cleaner"
+                      level={3}
+                      key="configurator-vacuum-cleaner"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Hard floor cleaning"
+                      level={3}
+                      key="configurator-hard-floor-cleaning"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Carpet cleaning"
+                      level={3}
+                      key="configurator-carpet-cleaning"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Upholstery & mattress cleaning"
+                      level={3}
+                      key="configurator-upholstery-mattress-cleaning"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Other fields of application"
+                      level={3}
+                      key="configurator-other-fields-of-application"
+                    />,
+                  ]}
+                />,
+                <NavItem
+                  href="#"
+                  label="E-shop"
+                  level={2}
+                  key="shop"
+                  navItems={[
+                    <NavItem
+                      href="#"
+                      label="Thermomix® products"
+                      level={3}
+                      key="eshop-thermomix-products"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Kobold products"
+                      level={3}
+                      key="eshop-kobold-products"
+                    />,
+                    <NavItem
+                      href="#"
+                      label="Vouchers"
+                      level={3}
+                      key="vouchers"
+                    />,
+                  ]}
+                />,
               ]}
             />,
             <NavItem
@@ -283,13 +371,15 @@ export default function FlagshipHomePage() {
             }
           />
           <div className={styles.overlayIconWrapper}>
-            {screenSize.width > 935 ?
+            {screenSize.width > 935 ? (
               <img
                 src={"/flagship/hero/mouse.svg"}
                 alt={"Scroll down"}
                 className={styles.overlayIcon}
               />
-            : <TapLight />}
+            ) : (
+              <TapLight />
+            )}
             <div className={styles.overlayIconText}>
               <Typography variant="paragraph14" fontWeight="medium">
                 <span>
