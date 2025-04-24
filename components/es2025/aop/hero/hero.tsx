@@ -28,22 +28,31 @@ const Hero: React.FC = () => {
           />
           <GridContainer>
             <GridItem columns={12}>
-              <Typography component="p" variant="paragraph16" fontWeight="regular">Your Thermomix® Advisor</Typography>
+              <Typography
+                component="p"
+                variant="paragraph16"
+                fontWeight="regular"
+              >
+                Your Thermomix® Advisor
+              </Typography>
               <Headline>
                 <Typography component="h2" fontWeight="bold">
                   Mary Cook
                 </Typography>
               </Headline>
               <div className={styles.location}>
-                <Location width={20} height={20}/>
-                <Typography variant="paragraph16" fontWeight="regular">00100 Somewhere</Typography>
+                <Location width={20} height={20} />
+                <Typography variant="paragraph16" fontWeight="regular">
+                  00100 Somewhere
+                </Typography>
               </div>
             </GridItem>
           </GridContainer>
           <GridContainer>
             <GridItem columns={12}>
               <Typography component="p" className={styles.description}>
-                “I love showing how easy and fun cooking can be with the Thermomix.”
+                “I love showing how easy and fun cooking can be with the
+                Thermomix.”
               </Typography>
             </GridItem>
           </GridContainer>
