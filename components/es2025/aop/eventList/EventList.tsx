@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, Typography } from "@vorwerk/fibre-react";
-import styles from "./EventList.module.scss";
+import styles from "./eventList.module.scss";
 
 interface Event {
   dates: string[];

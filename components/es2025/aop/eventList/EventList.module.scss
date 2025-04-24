@@ -18,7 +18,7 @@
   }
 
   div {
-    align-items: start;
+    align-items: flex-start;
   }
 
   svg {
@@ -29,7 +29,9 @@
 .eventDates {
   display: flex;
   flex-direction: column;
-  align-self: start;
+  gap: 4px;
+  align-self: flex-start;
+
   text-align: right;
 
   span,

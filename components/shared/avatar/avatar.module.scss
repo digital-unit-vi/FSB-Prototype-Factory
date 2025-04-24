@@ -1,10 +1,12 @@
 .avatar {
   overflow: hidden;
-  background-color: #F3F5F3;
-  border-radius: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  border-radius: 100%;
+
+  background-color: #f3f5f3;
 
   span {
     font-size: 100%;
