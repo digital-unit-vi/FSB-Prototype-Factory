@@ -1,15 +1,14 @@
 "use client";
 
-import AdvisorToggle from "@components/homePage/advisorToggle/advisorToggle";
-import Carousel from "@components/homePage/carousel/carousel";
-import CarouselTile from "@components/homePage/carousel/carouselTile";
-import HomePageHeader from "@components/homePage/header/header";
-import Hero from "@components/homePage/hero/hero";
-import ImageCarousel from "@components/homePage/imageCarousel/imageCarousel";
-import SimpleImageCarousel from "@components/homePage/imageCarousel/simpleImageCarousel";
-import ProductAnimation from "@components/homePage/productAnimation/productAnimation";
-import StickyBarPhase1 from "@components/homePage/stickyBar/stickyBarPhase1";
-import StickyBarPhase2 from "@components/homePage/stickyBar/stickyBarPhase2";
+import AdvisorToggle from "@components/es2025/homePage/advisorToggle/advisorToggle";
+import Carousel from "@components/es2025/homePage/carousel/carousel";
+import CarouselTile from "@components/es2025/homePage/carousel/carouselTile";
+import HomePageHeader from "@components/es2025/homePage/header/header";
+import Hero from "@components/es2025/homePage/hero/hero";
+import ImageCarousel from "@components/es2025/homePage/imageCarousel/imageCarousel";
+import ProductAnimation from "@components/es2025/homePage/productAnimation/productAnimation";
+import StickyBarPhase1 from "@components/es2025/homePage/stickyBar/stickyBarPhase1";
+import StickyBarPhase2 from "@components/es2025/homePage/stickyBar/stickyBarPhase2";
 import Spacer from "@components/shared/spacer/spacer";
 import MediaContainerPhoto from "@public/homePage/media_container.png";
 import {
@@ -79,21 +78,6 @@ const koboldAccessoryTiles = [
     productImageUrl="/homePage/kobold_brush.png"
     key={3}
   />,
-];
-
-const BOTTOM_CAROUSEL_IMAGES = [
-  {
-    url: "/homePage/last_carousel1.png",
-    alt: "Two individuals shaking hands in a warmly lit living room. A lamp, framed artwork, and a plant are visible in the background, creating a welcoming atmosphere",
-  },
-  {
-    url: "/homePage/last_carousel2.png",
-    alt: "A group of people gathered around a kitchen island, sharing a meal and engaging in conversation. Plates of food and glasses are visible on the table, with a warm and inviting kitchen setting in the background.",
-  },
-  {
-    url: "/homePage/last_carousel3.png",
-    alt: "A group of three people sitting on a couch in a cozy living room, engaged in a discussion. One person is holding a tablen and pen, taking notes. A glass of beverage is placed on a wooden coffee table in the foreground.",
-  },
 ];
 
 export default function HomePageES() {
@@ -418,7 +402,6 @@ export default function HomePageES() {
           </GridContainer>
         </SectionContainer>
         <AdvisorToggle />
-        <SimpleImageCarousel images={BOTTOM_CAROUSEL_IMAGES} />
         <div
           data-scroll-marker="footer"
           style={{ height: "1px", opacity: 0 }}
