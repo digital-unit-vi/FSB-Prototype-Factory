@@ -1,9 +1,9 @@
 "use client";
 
 import BentoBoxTiles from "@components/es2025/aop/bentoBoxTiles/BentoBoxTiles";
-import EventList from "@components/es2025/aop/eventList/EventList";
+import EventList from "@components/es2025/aop/eventList/eventList";
+import Hero from "@components/es2025/aop/hero/hero";
 import HomePageHeader from "@components/es2025/homePage/header/header";
-import Hero from "@components/es2025/homePage/hero/hero";
 import {
   GridContainer,
   GridItem,

@@ -19,12 +19,13 @@
 
   display: flex;
   flex-direction: column;
+  gap: 16px;
   align-items: center;
   justify-content: flex-end;
 
   margin-top: -67px;
+
   text-align: center;
-  gap: 16px;
 
   a,
   button {
@@ -33,21 +34,24 @@
 }
 
 .description {
-  color: #707375;
   font-size: 16px;
+  font-weight: 400;
   font-style: italic;
   line-height: 24px;
+  color: #707375;
 }
 
 .heroBackground {
-  height: 250px;
-  width: 100%;
-  background-size: cover;
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 8px;
+  align-items: center;
   align-self: stretch;
+  justify-content: center;
+
+  width: 100%;
+  height: 250px;
+
+  background-size: cover;
 }
 
 .heroOverlay {
