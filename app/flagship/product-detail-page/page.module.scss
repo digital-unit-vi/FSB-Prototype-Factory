@@ -1,0 +1,453 @@
+.pdp {
+    --padding-3: 40px;
+    --padding-4: 48px;
+    --padding-5: 64px;
+    --padding-6: 80px;
+    --gap-1: 24px;
+    --gap-2: 40px;
+    --radiusRoundedCorner: 64px;
+    color: #23282A;
+
+    @media (min-width: 740px) and (max-width: 935px) {
+        --radiusRoundedCorner: 88px;
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        --padding-3: 56px;
+        --padding-4: 64px;
+        --padding-5: 112px;
+        --padding-6: 144px;
+        --radiusRoundedCorner: 128px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1569px) {
+        --gap-1: 32px;
+        --radiusRoundedCorner: 144px;
+    }
+
+    @media (min-width: 1268px) {
+        --padding-3: 64px;
+        --padding-4: 80px;
+        --padding-5: 128px;
+        --padding-6: 160px;
+        --gap-2: 56px
+    }
+
+    @media (min-width: 1570px) {
+        --gap-1: 40px;
+        --radiusRoundedCorner: 168px;
+    }
+}
+
+.prominentSection {
+    padding-bottom: var(--padding-4);
+
+    @media (min-width: 740px) {
+        padding: var(--padding-3) 0 var(--padding-4);
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.additionalSectionPadding {
+    @media (max-width: 935px) {
+        padding-top: 0;
+    }
+
+    &>div {
+        row-gap: 64px;
+
+        @media (min-width: 936px) and (max-width: 1267px) {
+            row-gap: 112px;
+        }
+
+        @media (min-width: 1580px) {
+            row-gap: 128px;
+        }
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+}
+
+.gridProductHero>div {
+    grid-template-rows: auto;
+    row-gap: var(--padding-5);
+
+    @media (min-width: 936px) {
+        column-gap: var(--gap-1);
+    }
+}
+
+.gridItem1 {
+    @media (min-width: 936px) {
+        grid-row: 1 / 2;
+    }
+}
+
+.gridItem2 {
+    @media (min-width: 936px) {
+        grid-row: 1 / 4;
+        position: relative;
+    }
+}
+
+.gridItem3 {
+    @media (min-width: 936px) {
+        grid-row: 2 / 3;
+    }
+}
+
+.gridItem4 {
+    @media (min-width: 936px) {
+        grid-row: 3 / 4;
+    }
+}
+
+.productDetailsContainer {
+    @media (min-width: 740px) and (max-width: 935px) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        &>div {
+            @media (min-width: 740px) and (max-width: 935px) {
+                padding: 0;
+                width: 700px;
+            }
+        }
+    }
+}
+
+.productDetailsWrapper {
+    padding: 16px 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @media (min-width: 740px) {
+        padding: 16px 0 0;
+    }
+}
+
+.headingAndRating {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.deliveryText > p {
+    display: inline;
+}
+
+.headingWithParagraph>h6 {
+    padding-bottom: 1.6rem;
+}
+
+.headingWithParagraph {
+    padding: 0 16px;
+
+    @media (min-width: 740px) {
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    @media (min-width: 740px) and (max-width: 935px) {
+        width: 700px;
+    }
+}
+
+.textCentered {
+    text-align: center;
+}
+
+.includedProductTileGallery {
+    width: 100%;
+}
+
+.contentBlockContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (min-width: 740px) and (max-width: 935px) {
+        gap: 48px;
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        gap: 64px;
+    }
+
+    @media (min-width: 1268px) {
+        gap: 80px;
+    }
+}
+
+.contentBlockLeft div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
+    &>div:first-of-type {
+        @media (min-width: 740px) {
+            align-self: self-start !important;
+        }
+
+        @media (min-width: 740px) and (max-width: 935px) {
+            grid-column: 1/8;
+        }
+
+        @media (min-width: 936px) {
+            grid-column: 1/9;
+        }
+    }
+
+    &>div:last-of-type {
+        @media (min-width: 740px) and (max-width: 935px) {
+            padding-left: 20px;
+            grid-column: 8/13;
+        }
+
+        @media (min-width: 936px) {
+            padding-left: 24px;
+            grid-column: 9/13;
+            align-self: center !important;
+
+            &>div {
+                gap: 0;
+                padding-left: 0;
+            }
+        }
+
+        @media (min-width: 1580px) {
+            padding-left: 40px;
+        }
+    }
+}
+
+.contentBlockRight div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
+    &>div:first-of-type {
+        @media (min-width: 740px) and (max-width: 935px) {
+            grid-column: 6/13;
+            align-self: self-start !important;
+            grid-row: 1;
+        }
+
+        @media (min-width: 936px) {
+            grid-column: 5/13;
+        }
+    }
+
+    &>div:last-of-type {
+        @media (min-width: 740px) and (max-width: 935px) {
+            padding-right: 20px;
+            grid-column: 1/6;
+            grid-row: 1;
+        }
+
+        @media (min-width: 936px) {
+            padding-right: 24px;
+            grid-column: 1/5;
+
+            &>div {
+                gap: 0;
+                padding-right: 0;
+            }
+        }
+
+        @media (min-width: 1580px) {
+            padding-right: 40px;
+        }
+    }
+}
+
+.contentBlockContainer video {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+div:has(> .filesContainer) {
+    @media (min-width: 740px) {
+        grid-column: 3/11;
+    }
+}
+
+.filesContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.awardsContainer {
+    padding: 0 24px;
+}
+
+.awardsMediaContainer {
+    display: flex;
+    gap: 24px;
+
+    @media (min-width: 740px) {
+        justify-content: center;
+    }
+
+    @media (min-width: 936px) {
+        gap: 32px;
+    }
+}
+
+.awardsMediaContainer>div {
+    @media (min-width: 740px) {
+        width: fit-content;
+    }
+}
+
+.awardsMediaContainer img {
+    @media (min-width: 740px) and (max-width: 935px) {
+        width: 100px;
+    }
+
+    @media (min-width: 940px) and (max-width: 1267px) {
+        width: 128px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1578px) {
+        width: 160px;
+    }
+}
+
+.sectionWithBiggerPadding,
+.defaultSection {
+    padding: var(--padding-5) 0 var(--padding-6);
+}
+
+.sectionWithBiggerPadding {
+    @media (min-width: 936px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.productTilesContainer {
+    display: flex;
+    gap: 24px;
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        width: 928px;
+    }
+
+    @media (min-width: 936px) {
+        gap: 32px;
+    }
+}
+
+.overwrittenMargin>div {
+    @media (max-width: 935px) {
+        margin-bottom: 40px !important;
+    }
+}
+
+div:has(> .overwrittenGap) {
+    row-gap: 0;
+}
+
+.defaultSection {
+    background-color: #F3F5F3;
+    border-radius: 0 0 var(--radiusRoundedCorner);
+}
+
+.overwrittenContentBlockWidth div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
+    @media (min-width: 740px) and (max-width: 935px) {
+        &>div {
+            max-width: 460px;
+            min-width: 460px;
+        }
+    }
+
+    @media (min-width: 936px) {
+        column-gap: var(--gap-2);
+    }
+}
+
+.overriddenProductStripeGap div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
+    @media (min-width: 936px) and (max-width: 1267px) {
+        gap: 24px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        align-items: flex-start;
+    }
+}
+
+.overriddenProductStripeGap div:has(>img) {
+
+    @media (max-width: 739px),
+    (min-width: 936px) and (max-width: 1267px) {
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.overriddenProductStripeGap img {
+    max-width: 100%;
+    max-height: 54px;
+    object-fit: contain;
+
+    @media (min-width: 740px) and (max-width: 935px) {
+        max-height: 149px;
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        max-height: 99px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        max-height: 113px;
+    }
+
+    @media (min-width: 1580px) {
+        max-height: 124px;
+    }
+}
+
+.overriddenLanguageSelector {
+    grid-column: span 6;
+
+    @media (min-width: 936px) {
+        grid-column: span 4;
+    }
+}
+
+.overriddenFooterSocialLinks div:has(> div:nth-of-type(3)):not(:has(> div:nth-of-type(4)))>div:not(:last-child) {
+    @media (min-width: 740px) and (max-width: 935px) {
+        grid-column: span 6;
+        padding-bottom: 56px;
+    }
+}
+
+.overwrittenHeadline {
+    @media (min-width: 740px) {
+        grid-column: 3/11;
+    }
+
+    @media(min-width: 740px) and (max-width: 935px) {
+        & p {
+            font-size: 1.8rem;
+            line-height: 2.7rem;
+        }
+    }
+}
+
+.overwrittenZIndex>div {
+    z-index: 11;
+}
+
+.additionalFooterMargin {
+    @media (max-width: 935px) {
+        margin-bottom: 72px; //height of StickyProductBar
+    }
+}

@@ -1,0 +1,266 @@
+.imageGallery {
+  --slide-height: 258px;
+  --slide-spacing: 1rem;
+  --slide-size: 100%;
+
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageGalleryContainer {
+  touch-action: pan-y pinch-zoom;
+  display: flex;
+  // margin-left: calc(var(--slide-spacing) * -1);
+  backface-visibility: hidden;
+  gap: var(--slide-spacing);
+}
+
+.overriddenImageGalleryContainer {
+  touch-action: pan-y pinch-zoom;
+  backface-visibility: hidden;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+  width: 1120px;
+
+  @media (min-width: 1580px) {
+    gap: 40px;
+    width: 1400px;
+  }
+}
+
+.imageGallerySlide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  // padding-left: var(--slide-spacing);
+}
+
+.overriddenImageGallerySlide {
+  min-width: 0;
+  grid-column: span 4;
+}
+
+.imageGallerySlideImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.imageGalleryControls {
+  display: grid;
+  margin-top: 28px;
+  grid-template-columns: repeat(3, 1fr);
+  
+  @media (min-width: 1268px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.imageGalleryButtons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.imageGalleryButton {
+  touch-action: manipulation;
+  cursor: pointer;
+
+  z-index: 1;
+
+  display: inline-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3.6rem;
+  height: 3.6rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+
+  color: var(--text-body);
+  text-decoration: none;
+
+  appearance: none;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
+
+  -webkit-tap-highlight-color: rgb(var(--text-high-contrast-rgb-value) 0.5);
+
+  &:disabled {
+    color: var(--detail-high-contrast);
+  }
+}
+
+.imageGalleryButtonSvg {
+  width: 35%;
+  height: 35%;
+}
+
+.imageGalleryDots {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  grid-column: 2/3;
+  justify-content: center;
+}
+
+.imageGalleryDot {
+  touch-action: manipulation;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 6px;
+  height: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  appearance: none;
+  background-color: #cccecc;
+
+  transition: all 0.4s;
+
+  -webkit-tap-highlight-color: rgb(var(--text-high-contrast-rgb-value) 0.5);
+
+  &Selected {
+    width: 16px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #23282a;
+  }
+}
+
+.imageGalleryParallax {
+  // overflow: hidden;
+  height: 100%;
+}
+
+.imageGalleryParallaxLayer {
+  position: relative;
+
+  display: flex;
+
+  width: 100%;
+}
+
+.imageGalleryParallaxLayer:has(> .image), .imageGalleryParallaxLayer:has(> a) {
+  height: 100%;
+}
+
+.image {
+  width: 100%;
+}
+
+.imageGalleryParallaxLayer>video {
+  grid-column: span 1;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.imageGalleryParallaxImg {
+  flex: 0 0 calc(115% + (var(--slide-spacing) * 2));
+  max-width: none;
+  object-fit: cover;
+}
+
+.overwriteMaxWidth > img {
+  max-width: 100%;
+}
+
+.imageGalleryDark {
+  .imageGalleryDot {
+    background-color: #5b6266;
+
+    &Selected {
+      background-color: #fff;
+    }
+  }
+}
+
+.imageGalleryArrows {
+  grid-column: 3/4;
+  justify-self: end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.imageGalleryPrev,
+.imageGalleryNext {
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.07);
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.imageGalleryPrev>svg,
+.imageGalleryNext>svg {
+  width: 24px;
+  height: 24px;
+
+  &>path {
+    fill: #23282a;
+  }
+}
+
+.overriddenImageGallery {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.overriddenImageGallery .imageGalleryViewport {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overriddenImageGallery .imageGalleryContainer,
+.overriddenImageGallery .imageGallerySlide {
+  aspect-ratio: 1/1;
+}
+
+.overriddenImageGallery .imageGallerySlide img {
+  flex: 0;
+  object-fit: cover;
+  aspect-ratio: 1/1 !important;
+}
+
+.overriddenImageGallery .imageGalleryControls {
+  margin-top: 0;
+}
+
+.carouselInfo {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+
+.carouselInfoContent {
+  border-radius: 24px;
+  padding: 8px 12px;
+  display: flex;
+  gap: 8px;
+  background-color: #FFFFFF;
+  color: #4B4A4B;
+  justify-content: center;
+  width: fit-content;
+}

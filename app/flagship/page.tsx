@@ -10,8 +10,7 @@ import {
 } from '@vorwerk/fibre-react'
 import Link from 'next/link'
 import styles from './page.module.scss'
-import CategoryTile from '@components/flagships/categoryTile/categoryTile'
-import { Footer } from '@components/flagships/footer/footer'
+import CategoryTile from '@components/flagship/categoryTile/categoryTile'
 
 export default function FlagshipHomePage() {
   return (
@@ -184,8 +183,6 @@ export default function FlagshipHomePage() {
           </GridContainer>
         </section>
       </main>
-
-      <Footer />
     </>
   )
 }

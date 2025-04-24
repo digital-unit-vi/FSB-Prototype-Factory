@@ -1,0 +1,21 @@
+.trustBannerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trustBannerItem {
+  display: flex;
+  gap: 8px;
+}
+
+.trustBannerIcon {
+  width: 24px;
+  aspect-ratio: 1/1;
+}
+
+.trustBannerText {
+  display: flex;
+  gap: 4px;
+  color: #3F4447;
+}

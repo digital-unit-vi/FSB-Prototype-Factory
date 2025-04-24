@@ -1,0 +1,85 @@
+.cdlp {
+  --padding-4: 48px;
+  --padding-5: 64px;
+  --padding-6: 80px;
+  --gap-2: 32px;
+  --radius-rounded-corner: 64px;
+  --container-min-width: 460px;
+  color: #23282a;
+
+  @media (min-width: 740px) and (max-width: 935px) {
+    --radius-rounded-corner: 88px;
+  }
+
+  @media (min-width: 936px) and (max-width: 1267px) {
+    --padding-4: 64px;
+    --padding-5: 112px;
+    --padding-6: 144px;
+    --radius-rounded-corner: 128px;
+    --container-min-width: 552px;
+  }
+
+  @media (min-width: 1268px) and (max-width: 1569px) {
+    --radius-rounded-corner: 144px;
+    --container-min-width: 736px;
+  }
+
+  @media (min-width: 1268px) {
+    --padding-4: 80px;
+    --padding-5: 128px;
+    --padding-6: 160px;
+    --gap-2: 56px
+  }
+
+  @media (min-width: 1570px) {
+    --radius-rounded-corner: 168px;
+    --container-min-width: 920px;
+  }
+}
+
+.topSection {
+  padding-top: var(--padding-4);
+}
+
+.menuTileGridItem {
+  grid-row: 1/1;
+}
+
+.textCentered {
+  text-align: center;
+}
+
+.prominentSection,
+.sectionRadius {
+  padding: var(--padding-5) 0 var(--padding-6);
+}
+
+.overwrittenMargin>div:first-child {
+  @media (max-width: 935px) {
+    margin-bottom: 40px !important;
+  }
+}
+
+.tilesSliderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-2);
+  align-self: stretch;
+
+  &>div:last-child {
+    place-items: center;
+  }
+}
+
+.overwrittenHeadline>div {
+  @media (min-width: 740px) {
+    max-width: var(--container-min-width);
+    margin-inline: auto;
+  }
+}
+
+.sectionRadius {
+  background-color: #f3f5f3;
+  border-radius: 0 0 var(--radius-rounded-corner) 0;
+}

@@ -1,0 +1,34 @@
+.galleryContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 1136px;
+}
+
+.galleryContainer > img:first-child {
+  grid-column: span 2;
+  aspect-ratio: 3/2 !important;
+  min-width: 480px;
+  width: 100%;
+}
+
+.galleryContainer > img:not(first-child), .galleryContainer > video:not(first-child) {
+  grid-column: span 1;
+  min-width: 232px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.galleryInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  grid-column: span 2;
+  padding: 8px 24px;
+  gap: 10px;
+}
+
+.image {
+  cursor: pointer;
+}
