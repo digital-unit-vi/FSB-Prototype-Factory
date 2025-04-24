@@ -100,7 +100,7 @@ export default function HomePageES() {
   return (
     <>
       <main>
-        <HomePageHeader />
+        <HomePageHeader showBanner />
         <Hero />
         <SectionContainer>
           <GridContainer>

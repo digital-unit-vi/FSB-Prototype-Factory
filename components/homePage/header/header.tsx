@@ -79,7 +79,11 @@ const HeaderButton = ({
 // Define possible scroll states
 type ScrollState = "at-top" | "scrolling-up" | "scrolling-down";
 
-export default function HomePageHeader() {
+interface HomePageHeaderProps {
+  showBanner?: boolean
+}
+
+export default function HomePageHeader({showBanner}: HomePageHeaderProps) {
   const [scrollState, setScrollState] = useState<ScrollState>("at-top");
   const prevScrollY = useRef<number>(0); // Use ref to store previous scroll position
 
@@ -181,38 +185,40 @@ export default function HomePageHeader() {
     // Use data-attribute for state instead of multiple classes
     <header className={styles.stickyHeader} data-scroll-state={scrollState}>
       {/* Banner */}
-      <div className={styles.bannerContainer} ref={bannerRef}>
-        <Typography component="p" fontWeight="regular">
-          Get in touch with your Vorwerk advisors!
-        </Typography>
-        <div
-          style={{
-            position: "absolute",
-            bottom: -12,
-            left: position.left,
-            transform: "translateX(-50%)",
-            zIndex: 10,
-            color: "#00AC46",
-            opacity: position.opacity,
-            transition: position.ready ? "opacity 0.3s ease-in" : "none",
-          }}
-        >
-          <div style={{ width: 24, height: 12, display: "flex" }}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="12"
-              viewBox="0 0 24 12"
-              fill="none"
-            >
-              <path
-                d="M12 0H0C6.62625 0 12 5.37375 12 12C12 5.37375 17.3738 0 24 0H12Z"
-                fill="#00AC46"
-              />
-            </svg>
+      {showBanner && (
+        <div className={styles.bannerContainer} ref={bannerRef}>
+          <Typography component="p" fontWeight="regular">
+            Get in touch with your Vorwerk advisors!
+          </Typography>
+          <div
+            style={{
+              position: "absolute",
+              bottom: -12,
+              left: position.left,
+              transform: "translateX(-50%)",
+              zIndex: 10,
+              color: "#00AC46",
+              opacity: position.opacity,
+              transition: position.ready ? "opacity 0.3s ease-in" : "none",
+            }}
+          >
+            <div style={{ width: 24, height: 12, display: "flex" }}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="12"
+                viewBox="0 0 24 12"
+                fill="none"
+              >
+                <path
+                  d="M12 0H0C6.62625 0 12 5.37375 12 12C12 5.37375 17.3738 0 24 0H12Z"
+                  fill="#00AC46"
+                />
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Main Navigation */}
       <nav className={styles.headerNav}>
