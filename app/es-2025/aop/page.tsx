@@ -1,10 +1,13 @@
 "use client";
 
 import BentoBoxTiles from "@components/es2025/aop/bentoBoxTiles/BentoBoxTiles";
+import { DemoBanner } from "@components/es2025/aop/demoBanner/demoBanner";
+import { Carousel } from "@components/es2025/aop/carousel/carousel";
 import EventList from "@components/es2025/aop/eventList/eventList";
 import Hero from "@components/es2025/aop/hero/hero";
 import ProductGrid from "@components/es2025/aop/productGrid/productGrid";
 import HomePageHeader from "@components/es2025/homePage/header/header";
+import useScreenSize from "@utils/useScreenSize";
 import {
   GridContainer,
   GridItem,
@@ -62,15 +65,35 @@ export default function AOPES() {
     },
   ];
 
+  const demoCarouselTiles = [
+    {
+      title: 'We make an appointment',
+      text: 'Simply fill out the online contact form and I will get back to you shortly to arrange a demonstration with you.',
+      src: '/homePage/aop/demoTile_image1.png'
+    },
+    {
+      title: 'I bring the Thermomix® experience at your place',
+      text: 'The cooking experience takes place at a location of your choice. Please let me know in advance what you would be particularly interested in during the cooking experience so that I can get the best out of the Thermomix® for you.',
+      src: '/homePage/aop/demoTile_image2.png'
+    },
+    {
+      title: 'You are in control on what to do next!',
+      text: "It's entirely up to you. If you are convinced after the cooking experience that the Thermomix® will make your life easier and more delicious, you can order it directly from me. And even after your purchase, I'm always on hand with valuable tips and tricks.",
+      src: '/homePage/aop/demoTile_image3.png'
+    }
+  ]
+
   return (
     <>
       <main>
         <HomePageHeader />
         <Hero />
+
         <SectionContainer>
+          <DemoBanner />
           <GridContainer>
             <GridItem columns={10} start={2} end={12}>
-              <Headline strongColor="green" spaceBelow="default">
+              <Headline strongColor="green" spaceBelow="additional">
                 <Typography component="p" variant="h2">
                   <span style={{ display: "block", textAlign: "center" }}>
                     <strong>Why</strong> does a demo with me make all the
@@ -80,8 +103,6 @@ export default function AOPES() {
               </Headline>
             </GridItem>
           </GridContainer>
-        </SectionContainer>
-        <SectionContainer>
           <BentoBoxTiles
             tiles={[
               {
@@ -108,7 +129,7 @@ export default function AOPES() {
         <SectionContainer>
           <GridContainer>
             <GridItem columns={10} start={2} end={12}>
-              <Headline strongColor="green" spaceBelow="default">
+              <Headline strongColor="green" spaceBelow="additional">
                 <Typography component="p" variant="h2">
                   <span style={{ display: "block", textAlign: "center" }}>
                     <strong>How</strong> does
@@ -119,6 +140,7 @@ export default function AOPES() {
               </Headline>
             </GridItem>
           </GridContainer>
+          <Carousel items={demoCarouselTiles} screenSize={useScreenSize()} />
         </SectionContainer>
         <SectionContainer>
           <GridContainer>
