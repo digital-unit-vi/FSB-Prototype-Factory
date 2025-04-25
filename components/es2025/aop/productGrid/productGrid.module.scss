@@ -1,0 +1,130 @@
+.productGridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.productCard {
+  position: relative;
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px;
+
+  background-color: #f3f5f3;
+}
+
+.imageContainer {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin-bottom: 16px;
+  padding-top: 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+  }
+}
+
+.discountBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+  padding: 8px;
+  border-radius: 50%;
+
+  color: white;
+
+  background-color: #734ba5;
+
+  &Text {
+    font-size: 7.5px;
+    font-weight: 400;
+    line-height: 8px;
+  }
+
+  &Value {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 15.5px;
+  }
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: flex-start;
+
+  text-align: left;
+}
+
+.title {
+  margin-bottom: 16px;
+  line-height: 18px;
+}
+
+.priceAndCartContainer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  margin-right: 8px;
+
+  &TopRow {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+}
+
+.price {
+  margin-right: 8px;
+  color: #23282a;
+}
+
+.newPrice {
+  font-weight: 700;
+  color: #734ba5;
+}
+
+.originalPrice {
+  line-height: 14px;
+  color: #707375;
+  text-decoration: line-through;
+}
+
+.shippingInfo {
+  color: #707375;
+}
+
+.spanTwoColumns {
+  grid-column: span 2;
+}
