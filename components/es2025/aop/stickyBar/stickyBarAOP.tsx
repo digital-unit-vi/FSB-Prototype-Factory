@@ -1,4 +1,6 @@
-import KoboldLogo from "@public/homePage/kobold_logo_cropped.svg";
+"use client";
+
+import AdvisorButton from "@public/homePage/avatar_button.png";
 import ThermomixLogo from "@public/homePage/thermomix_logo_cropped.svg";
 import {
   Button,
@@ -8,19 +10,19 @@ import {
 } from "@vorwerk/fibre-react";
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useRef, useState } from "react";
-import styles from "./stickyBarPhase2.module.scss";
+import styles from "./stickyBarAOP.module.scss";
 
-type ContentVariant = "default" | "alternate";
+type ContentVariant = "initial" | "alternate";
 
-const StickyBarPhase2 = () => {
+const StickyBarAOP = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [contentVariant, setContentVariant] =
-    useState<ContentVariant>("default");
+    useState<ContentVariant>("initial");
   const [slideDirection, setSlideDirection] = useState<"up" | "down" | null>(
     null
   );
 
-  const prevVariantRef = useRef<ContentVariant>("default");
+  const prevVariantRef = useRef<ContentVariant>("initial");
   const prevVisibleRef = useRef<boolean>(false);
 
   const contentWrapperRef = useRef<HTMLDivElement>(null);
@@ -29,16 +31,16 @@ const StickyBarPhase2 = () => {
     if (typeof window === "undefined") return;
 
     const startEl = document.querySelector(
-      '[data-scroll-marker="phase2-start"]'
+      '[data-scroll-marker="aop-sticky-start"]'
     );
     const changeEl = document.querySelector(
-      '[data-scroll-marker="phase2-content-change"]'
+      '[data-scroll-marker="aop-sticky-change"]'
     );
     const footerEl = document.querySelector('[data-scroll-marker="footer"]');
 
     if (!startEl || !changeEl || !footerEl) {
       console.warn(
-        "StickyBarPhase2: One or more scroll markers (phase2-start / phase2-content-change / footer) are missing."
+        "StickyBarAOP: One or more scroll markers (aop-sticky-start / aop-sticky-change / footer) are missing."
       );
       return;
     }
@@ -54,17 +56,17 @@ const StickyBarPhase2 = () => {
         viewportBottom >= startRect.top && viewportBottom <= footerRect.bottom;
 
       const newVariant: ContentVariant =
-        viewportBottom >= changeRect.top ? "alternate" : "default";
+        viewportBottom >= changeRect.top ? "alternate" : "initial";
 
       if (withinRange !== prevVisibleRef.current) {
         setSlideDirection(withinRange ? "up" : "down");
         prevVisibleRef.current = withinRange;
       } else if (
         newVariant !== prevVariantRef.current &&
-        contentWrapperRef.current
+        contentWrapperRef.current &&
+        withinRange
       ) {
         setSlideDirection(newVariant === "alternate" ? "up" : "down");
-
         prevVariantRef.current = newVariant;
       }
 
@@ -102,21 +104,17 @@ const StickyBarPhase2 = () => {
     : ""
   }`;
 
-  const renderDefaultContent = () => (
+  const renderInitialContent = () => (
     <div className={styles.wrapperContainer}>
-      <div className={styles.imageWrapperIcon}>
-        <Image
-          src={KoboldLogo as StaticImageData}
-          unoptimized
-          alt="Kobold Logo"
-        />
+      <div className={styles.imageWrapper}>
+        <Image src={AdvisorButton} alt="Advisor" />
       </div>
       <div className={styles.separator} />
       <div className={styles.titleWrapper}>
         <Typography component="p" variant="paragraph12" fontWeight="regular">
-          The amazing VK7 starts at
+          The all-new TM7 starts at
           <br />
-          979 EUR
+          1&apos;599 EUR
         </Typography>
       </div>
     </div>
@@ -129,14 +127,6 @@ const StickyBarPhase2 = () => {
           src={ThermomixLogo as StaticImageData}
           unoptimized
           alt="Thermomix Logo"
-        />
-      </div>
-      <div className={styles.separator} />
-      <div className={styles.imageWrapperIcon}>
-        <Image
-          src={KoboldLogo as StaticImageData}
-          unoptimized
-          alt="Kobold Logo"
         />
       </div>
     </div>
@@ -153,7 +143,7 @@ const StickyBarPhase2 = () => {
             <div className={contentClasses} ref={contentWrapperRef}>
               {contentVariant === "alternate" ?
                 renderAlternateContent()
-              : renderDefaultContent()}
+              : renderInitialContent()}
             </div>
             <div className={styles.buttonWrapper}>
               <Button buttonStyle="primary" size="medium">
@@ -167,4 +157,4 @@ const StickyBarPhase2 = () => {
   );
 };
 
-export default StickyBarPhase2;
+export default StickyBarAOP;

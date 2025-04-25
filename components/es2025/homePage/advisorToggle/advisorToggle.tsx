@@ -1,5 +1,6 @@
-import { CloseCircleFilled } from "@vorwerk/fibre-react";
+import { Button, ButtonGroup, CloseCircleFilled } from "@vorwerk/fibre-react";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import styles from "./advisorToggle.module.scss";
 
@@ -83,7 +84,13 @@ const ThermomixPanel: React.FC = () => (
     <h4 className={styles.subtitle}>Your Thermomix® Advisor</h4>
     <h2 className={styles.title}>Mary Cook</h2>
 
-    <button className={styles.primaryBtn}>Visit profile</button>
+    <ButtonGroup alignment="center">
+      <Link href="/es-2025/aop">
+        <Button size="large" buttonStyle="primary">
+          Visit profile
+        </Button>
+      </Link>
+    </ButtonGroup>
   </div>
 );
 
