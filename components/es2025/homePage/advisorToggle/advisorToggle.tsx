@@ -31,9 +31,9 @@ const AdvisorToggle: React.FC = () => {
           />
           <button
             className={
-              activeTab === "thermomix"
-                ? `${styles.toggleBtn} ${styles.active}`
-                : styles.toggleBtn
+              activeTab === "thermomix" ?
+                `${styles.toggleBtn} ${styles.active}`
+              : styles.toggleBtn
             }
             onClick={() => handleTabChange("thermomix")}
             role="tab"
@@ -43,9 +43,9 @@ const AdvisorToggle: React.FC = () => {
           </button>
           <button
             className={
-              activeTab === "kobold"
-                ? `${styles.toggleBtn} ${styles.active}`
-                : styles.toggleBtn
+              activeTab === "kobold" ?
+                `${styles.toggleBtn} ${styles.active}`
+              : styles.toggleBtn
             }
             onClick={() => handleTabChange("kobold")}
             role="tab"
@@ -58,7 +58,9 @@ const AdvisorToggle: React.FC = () => {
 
       {/* Active panel with animation container */}
       <div className={styles.panelContainer}>
-        {activeTab === "thermomix" ? <ThermomixPanel /> : <KoboldPanel />}
+        {activeTab === "thermomix" ?
+          <ThermomixPanel />
+        : <KoboldPanel />}
       </div>
     </section>
   );
@@ -73,13 +75,13 @@ const ThermomixPanel: React.FC = () => (
     <Image
       className={styles.avatar}
       src="/homePage/avatar_button.png" // ⇦ replace with your asset path
-      alt="Lisa Holtzman-Cortez"
+      alt="Mary Cook"
       width={80}
       height={80}
     />
 
     <h4 className={styles.subtitle}>Your Thermomix® Advisor</h4>
-    <h2 className={styles.title}>Lisa Holtzman-Cortez</h2>
+    <h2 className={styles.title}>Mary Cook</h2>
 
     <button className={styles.primaryBtn}>Visit profile</button>
   </div>
