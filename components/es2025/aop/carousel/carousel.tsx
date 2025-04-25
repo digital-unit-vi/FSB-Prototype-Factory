@@ -121,7 +121,7 @@ export const Carousel = ({ items, screenSize }: CarouselProps) => {
             <div className={styles.tileContainer} key={index}>
               <div className={styles.imageWrapper}>
                 <div className={styles.image} style={{
-                  backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.54) 100%), url(${item.src})`,
+                  backgroundImage: `url(${item.src})`,
                   width: `${(mainImageWidth * scale).toString()}px`,
                   height: `${(mainImageWidth * scale).toString()}px`,
                   transition: 'width 0.5s ease, height 0.5s ease'}}
