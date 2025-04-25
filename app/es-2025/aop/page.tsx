@@ -89,65 +89,65 @@ export default function AOPES() {
       <main>
         <HomePageHeader />
         <Hero />
-
-        <SectionContainer>
+        <SectionContainer gap="gap04">
           <DemoBanner />
+          <div>
+            <GridContainer>
+              <GridItem columns={10} start={2} end={12}>
+                <Headline strongColor="green" spaceBelow="additional">
+                  <Typography component="p" variant="h2">
+                    <span style={{ display: "block", textAlign: "center" }}>
+                      <strong>Why</strong> does a demo with me make all the
+                      difference?
+                    </span>
+                  </Typography>
+                </Headline>
+              </GridItem>
+            </GridContainer>
+            <BentoBoxTiles
+              tiles={[
+                {
+                  image: "/homePage/aop/pasta.png",
+                  title: "In homemade I trust!",
+                  text: "Why homemade? Because it tastes better and saves you money. I’d love to show you how easy it is.",
+                },
+                {
+                  title: "I can work magic out of simple things!",
+                  text: "I will show you how the TM7 works with Cookidoo to add a chef-like touch to even the simplest meals.",
+                },
+                {
+                  image: "/homePage/aop/tacos.png",
+                  title: "I open a window to the world!",
+                  text: "A taste of Japan for dinner, and a taco from Mexico — all with my TM7, no travel required!",
+                },
+                {
+                  title: "I celebrate uniqueness!",
+                  text: "In a kitchen with a TM7 everyone is welcome, vegans, meat lovers, picky kids ans solo chefs alike.",
+                },
+              ]}
+            />
+          </div>
+          <div>
+            <GridContainer>
+              <GridItem columns={10} start={2} end={12}>
+                <Headline strongColor="green" spaceBelow="additional">
+                  <Typography component="p" variant="h2">
+                    <span style={{ display: "block", textAlign: "center" }}>
+                      <strong>How</strong> does
+                      <br />
+                      my demo work?
+                    </span>
+                  </Typography>
+                </Headline>
+              </GridItem>
+            </GridContainer>
+            <Carousel items={demoCarouselTiles} screenSize={useScreenSize()} />
+          </div>
+        </SectionContainer>
+        <SectionContainer>
           <GridContainer>
             <GridItem columns={10} start={2} end={12}>
               <Headline strongColor="green" spaceBelow="additional">
-                <Typography component="p" variant="h2">
-                  <span style={{ display: "block", textAlign: "center" }}>
-                    <strong>Why</strong> does a demo with me make all the
-                    difference?
-                  </span>
-                </Typography>
-              </Headline>
-            </GridItem>
-          </GridContainer>
-          <BentoBoxTiles
-            tiles={[
-              {
-                image: "/homePage/aop/pasta.png",
-                title: "In homemade I trust!",
-                text: "Why homemade? Because it tastes better and saves you money. I’d love to show you how easy it is.",
-              },
-              {
-                title: "I can work magic out of simple things!",
-                text: "I will show you how the TM7 works with Cookidoo to add a chef-like touch to even the simplest meals.",
-              },
-              {
-                image: "/homePage/aop/tacos.png",
-                title: "I open a window to the world!",
-                text: "A taste of Japan for dinner, and a taco from Mexico — all with my TM7, no travel required!",
-              },
-              {
-                title: "I celebrate uniqueness!",
-                text: "In a kitchen with a TM7 everyone is welcome, vegans, meat lovers, picky kids ans solo chefs alike.",
-              },
-            ]}
-          />
-        </SectionContainer>
-        <SectionContainer>
-          <GridContainer>
-            <GridItem columns={10} start={2} end={12}>
-              <div data-scroll-marker="aop-sticky-start" />
-              <Headline strongColor="green" spaceBelow="default">
-                <Typography component="p" variant="h2">
-                  <span style={{ display: "block", textAlign: "center" }}>
-                    <strong>How</strong> does
-                    <br />
-                    my demo work?
-                  </span>
-                </Typography>
-              </Headline>
-            </GridItem>
-          </GridContainer>
-          <Carousel items={demoCarouselTiles} screenSize={useScreenSize()} />
-        </SectionContainer>
-        <SectionContainer>
-          <GridContainer>
-            <GridItem columns={10} start={2} end={12}>
-              <Headline strongColor="green" spaceBelow="default">
                 <Typography component="p" variant="h2">
                   <span style={{ display: "block", textAlign: "center" }}>
                     My top picks for Thermomix®
@@ -158,14 +158,12 @@ export default function AOPES() {
               </Headline>
             </GridItem>
           </GridContainer>
-        </SectionContainer>
-        <SectionContainer>
           <ProductGrid products={products} />
         </SectionContainer>
         <SectionContainer>
           <GridContainer>
             <GridItem columns={10} start={2} end={12}>
-              <Headline strongColor="green" spaceBelow="default">
+              <Headline strongColor="green" spaceBelow="additional">
                 <Typography component="p" variant="h2">
                   <span style={{ display: "block", textAlign: "center" }}>
                     My upcoming
@@ -182,38 +180,37 @@ export default function AOPES() {
             </GridItem>
           </GridContainer>
         </SectionContainer>
-        <SectionContainer>
-          <GridContainer>
-            <GridItem columns={10} start={2} end={12}>
-              <Headline strongColor="green" spaceBelow="default">
-                <Typography component="p" variant="h2">
-                  <span style={{ display: "block", textAlign: "center" }}>
-                    Let&apos;s spread the Thermomix® <strong>passion!</strong>
-                  </span>
-                </Typography>
-              </Headline>
-              <div data-scroll-marker="aop-sticky-change" />
-            </GridItem>
-          </GridContainer>
-        </SectionContainer>
-        <SectionContainer>
-          <GridContainer>
-            <GridItem columns={12}>
-              <video
-                controls
-                aria-label="Thermomix demo video"
-                poster="/homePage/aop/video-poster.png"
-              >
-                <source
-                  src="/homePage/aop/container_video.mp4"
-                  type="video/mp4"
-                />
-                Your browser doesn&apos;t support embedded videos.
-              </video>
-            </GridItem>
-          </GridContainer>
-        </SectionContainer>
-        <SectionContainer>
+        <SectionContainer gap="gap04">
+          <div>
+            <GridContainer>
+              <GridItem columns={10} start={2} end={12}>
+                <Headline strongColor="green" spaceBelow="additional">
+                  <Typography component="p" variant="h2">
+                    <span style={{ display: "block", textAlign: "center" }}>
+                      Let&apos;s spread the Thermomix®{" "}
+                      <strong>passion!</strong>
+                    </span>
+                  </Typography>
+                </Headline>
+                <div data-scroll-marker="aop-sticky-change" />
+              </GridItem>
+            </GridContainer>
+            <GridContainer>
+              <GridItem columns={12}>
+                <video
+                  controls
+                  aria-label="Thermomix demo video"
+                  poster="/homePage/aop/video-poster.png"
+                >
+                  <source
+                    src="/homePage/aop/container_video.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser doesn&apos;t support embedded videos.
+                </video>
+              </GridItem>
+            </GridContainer>
+          </div>
           <GridContainer>
             <GridItem columns={10} start={2} end={12}>
               <Typography
