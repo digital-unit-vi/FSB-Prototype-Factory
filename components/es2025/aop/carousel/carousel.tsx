@@ -12,17 +12,7 @@ interface CarouselProps {
 }
 
 const setDimensions = (width: number): { width: number; gap: number } => {
-  if (width < 740) {
-    return { width: 294, gap: 16 }
-  } else if (width >= 740 && width <= 935) {
-    return { width: 400, gap: 20 }
-  } else if (width >= 936 && width <= 1267) {
-    return { width: 560, gap: 24 }
-  } else if (width >= 1268 && width <= 1580) {
-    return { width: 740, gap: 32 }
-  } else {
-    return { width: 860, gap: 40 }
-  }
+  return { width: width - 64, gap: 16 }
 }
 
 export const Carousel = ({ items, screenSize }: CarouselProps) => {
@@ -53,22 +43,15 @@ export const Carousel = ({ items, screenSize }: CarouselProps) => {
     if (containerWidth === 0) return 0
 
     // Calculate cumulative width up to the currentIndex
-    let cumulativeWidth = 0
+    let cumulativeWidth = -16;
     for (let i = 0; i < currentIndex; i++) {
       const distance = Math.abs(currentIndex - i)
       const scale = distance === 0 ? 1 : distance === 1 ? 0.6 : 0.4
       cumulativeWidth += mainImageWidth * scale + gap
     }
 
-    const currentImageScale = 1 // Current image is always full size
-    const currentImageWidth = mainImageWidth * currentImageScale
-
-    // Calculate the center of the container and the offset
-    const center = containerWidth / 2
-    const offset = cumulativeWidth + currentImageWidth / 2 - center
-
     // Negative offset to shift left and center the current image
-    return -offset
+    return -cumulativeWidth
   }
 
   const updateIndex = (newIndex: number) => {
