@@ -119,7 +119,7 @@ export const Carousel = ({ items, screenSize }: CarouselProps) => {
 
           return (
             <div className={styles.tileContainer} key={index}>
-              <div className={styles.imageWrapper}>
+              <div className={styles.imageWrapper} style={{height: mainImageWidth}}>
                 <div className={styles.image} style={{
                   backgroundImage: `url(${item.src})`,
                   width: `${(mainImageWidth * scale).toString()}px`,
@@ -135,7 +135,7 @@ export const Carousel = ({ items, screenSize }: CarouselProps) => {
                   <Typography variant="h5" fontWeight="bold">
                     {item.title}
                   </Typography>
-                  <Typography variant='paragraph12'>
+                  <Typography variant='paragraph12' fontWeight='regular'>
                     {item.text}
                   </Typography>
                 </div>
