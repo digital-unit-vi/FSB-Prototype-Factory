@@ -3,6 +3,7 @@
 import BentoBoxTiles from "@components/es2025/aop/bentoBoxTiles/BentoBoxTiles";
 import EventList from "@components/es2025/aop/eventList/eventList";
 import Hero from "@components/es2025/aop/hero/hero";
+import ProductGrid from "@components/es2025/aop/productGrid/productGrid";
 import HomePageHeader from "@components/es2025/homePage/header/header";
 import {
   GridContainer,
@@ -15,19 +16,49 @@ import {
 export default function AOPES() {
   const events = [
     {
-      dates: ["21. Mar"],
-      title: "Cours de cuisine Grandes Tablées",
-      url: "#", // Replace with actual URL
+      dates: ["12. May"],
+      title: "Taco Night: Mexican Cooking Made Easy",
+      url: "#",
     },
     {
-      dates: ["30. Mar", "04. Apr"],
-      title: "The Future of Food Writing",
-      url: "#", // Replace with actual URL
+      dates: ["24. May", "26. May"],
+      title: "Veggie Festival: A Vegetarian Cooking Adventure",
+      url: "#",
     },
     {
-      dates: ["21. Apr"],
-      title: "Cooking class",
-      url: "#", // Replace with actual URL
+      dates: ["01. Jun"],
+      title: "Antipasti Love: Small Bites, Big Flavor",
+      url: "#",
+    },
+  ];
+
+  const products = [
+    {
+      image: "/homePage/aop/cutter.png",
+      title: "Thermomix® Vegetable Styler",
+      price: "99 €",
+      originalPrice: "129 €",
+      discount: "25%",
+    },
+    {
+      image: "/homePage/aop/bowl.png",
+      title: "Thermomix® Bowl",
+      price: "199 €",
+    },
+    {
+      image: "/homePage/aop/sensor.png",
+      title: "Thermomix® Sensor",
+      price: "149 €",
+    },
+    {
+      image: "/homePage/aop/flask.png",
+      title: "FLSK Drinking Bottle Green",
+      price: "47 €",
+    },
+    {
+      image: "/homePage/aop/stoneware.png",
+      title: 'Stoneware Shape "Betty Roaster"',
+      price: "95 €",
     },
   ];
 
@@ -103,6 +134,9 @@ export default function AOPES() {
               </Headline>
             </GridItem>
           </GridContainer>
+        </SectionContainer>
+        <SectionContainer>
+          <ProductGrid products={products} />
         </SectionContainer>
         <SectionContainer>
           <GridContainer>
