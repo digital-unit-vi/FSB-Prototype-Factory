@@ -139,11 +139,11 @@ export default function AOPES() {
         </SectionContainer>
         <SectionContainer>
           <GridContainer>
-            <GridItem>
+            <GridItem columns={12}>
               <video
                 controls
-                preload="metadata"
                 aria-label="Thermomix demo video"
+                poster="/homePage/aop/video-poster.png"
               >
                 <source
                   src="/homePage/aop/container_video.mp4"

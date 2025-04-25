@@ -20,18 +20,22 @@ const Hero: React.FC = () => {
           style={{ backgroundImage: "url(/homePage/aop/hero_background.png)" }}
         />
         <div className={styles.heroContent}>
-          <Avatar size={128} image="/homePage/avatar_button.png" text="LH" />
+          <Avatar
+            size={128}
+            image="/homePage/avatar_button.png"
+            text="Mary Cook"
+          />
           <GridContainer>
-            <GridItem>
+            <GridItem columns={12}>
               <Headline>
                 <Typography component="h3" fontWeight="bold">
-                  Lisa Holtzman-Cortez
+                  Mary Cook
                 </Typography>
               </Headline>
             </GridItem>
           </GridContainer>
           <GridContainer>
-            <GridItem>
+            <GridItem columns={12}>
               <Typography component="p" className={styles.description}>
                 I love showing how easy and fun cooking can be with the
                 Thermomix.
@@ -45,7 +49,7 @@ const Hero: React.FC = () => {
             componentNode="a"
             url="#"
           >
-            Contact Lisa
+            Contact Mary
           </Button>
         </div>
       </div>
