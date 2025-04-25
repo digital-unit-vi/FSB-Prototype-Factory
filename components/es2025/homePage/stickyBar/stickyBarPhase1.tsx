@@ -10,21 +10,14 @@ import { useEffect, useState } from "react";
 import styles from "./stickyBarPhase1.module.scss";
 
 const StickyBarPhase1 = () => {
-  /*  ──────────────────────────────────────────────────────────────
-      LOCAL STATE
-  ──────────────────────────────────────────────────────────────── */
   const [isVisible, setIsVisible] = useState(false);
   const [slideDirection, setSlideDirection] = useState<"up" | "down" | null>(
     null
   );
 
-  /*  ──────────────────────────────────────────────────────────────
-      SCROLL‑BASED VISIBILITY
-  ──────────────────────────────────────────────────────────────── */
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Locate marker elements once on mount
     const startEl = document.querySelector(
       '[data-scroll-marker="phase1-start"]'
     );
@@ -37,11 +30,9 @@ const StickyBarPhase1 = () => {
       return;
     }
 
-    let prevVisible = false; // used to decide slide direction
+    let prevVisible = false;
 
     const updateVisibility = () => {
-      /* Bottom edge of viewport, expressed in pixels from the top
-         of the *viewport* (not the document) is always window.innerHeight. */
       const viewportBottom = window.innerHeight;
 
       const startRect = startEl.getBoundingClientRect();
@@ -57,7 +48,6 @@ const StickyBarPhase1 = () => {
       }
     };
 
-    // Initial check + listeners
     updateVisibility();
     window.addEventListener("scroll", updateVisibility, { passive: true });
     window.addEventListener("resize", updateVisibility);
@@ -68,28 +58,20 @@ const StickyBarPhase1 = () => {
     };
   }, []);
 
-  /*  ──────────────────────────────────────────────────────────────
-      RESET SLIDE DIRECTION AFTER CSS ANIMATION
-  ──────────────────────────────────────────────────────────────── */
   useEffect(() => {
     if (!slideDirection) return;
-    const timer = setTimeout(() => setSlideDirection(null), 500); // keep in sync with CSS
+    const timer = setTimeout(() => setSlideDirection(null), 500);
     return () => clearTimeout(timer);
   }, [slideDirection]);
 
-  /*  ──────────────────────────────────────────────────────────────
-      RENDER
-  ──────────────────────────────────────────────────────────────── */
   const rootClasses = `${styles.stickyBarRoot} ${
     isVisible ? styles.visible : styles.hidden
   }`;
 
   const contentClasses = `${styles.contentWrapper} ${
-    slideDirection === "up"
-      ? styles.slideUp
-      : slideDirection === "down"
-        ? styles.slideDown
-        : ""
+    slideDirection === "up" ? styles.slideUp
+    : slideDirection === "down" ? styles.slideDown
+    : ""
   }`;
 
   return (

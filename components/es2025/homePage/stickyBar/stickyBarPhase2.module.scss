@@ -6,7 +6,6 @@
   left: 0;
   transform: translateY(100%);
 
-  // Hide any overflowing content during transitions
   overflow: hidden;
 
   margin: 8px;
@@ -49,15 +48,6 @@
     opacity: 1;
   }
 
-  // Phase 2 styles
-  &.phase2 {
-    z-index: 1000;
-
-    &::before {
-      transition: background-color 0.4s ease;
-    }
-  }
-
   button {
     min-height: 32px;
     padding: 6px 14px;
@@ -70,16 +60,12 @@
   }
 }
 
-// Content wrapper with slide animations - now only wraps the left side content
 .contentWrapper {
   position: relative;
-  overflow: hidden; // Important for the slide animation
-
-  // Reduced width to only include left content, not the button
+  overflow: hidden;
   flex-grow: 1;
   height: 100%;
 
-  // Slide animation classes
   &.slideUp {
     animation: slide-up-animation 0.5s ease-in-out forwards;
   }
@@ -105,15 +91,15 @@
 .wrapperContainer {
   display: flex;
   align-items: center;
-  width: 100%; // Make sure this takes available space
+  width: 100%;
 }
 
 .separator {
   display: inline-block;
-  align-self: stretch; // Ensures it fills the flex container's height
+  align-self: stretch;
 
   width: 1px;
-  min-height: 100%; // Or 100% if you want it to stretch fully
+  min-height: 100%;
   margin: 0 8px;
   border-radius: 1px;
 
@@ -127,7 +113,6 @@
 
   color: #fff;
 
-  // Add transition for content change
   transition:
     opacity 0.3s ease,
     transform 0.3s ease;
@@ -136,10 +121,10 @@
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; /* Limit to 2 lines */
-    line-clamp: 2; /* Limit to 2 lines */
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
 
-    max-height: 30px; /* Limit to 2 lines (15px * 2) */
+    max-height: 30px;
 
     line-height: 15px;
   }
@@ -163,7 +148,6 @@
   justify-content: center;
 }
 
-// Button wrapper should keep position stable during transitions
 .buttonWrapper {
   z-index: 2;
 
@@ -175,7 +159,6 @@
   transition: opacity 0.3s ease;
 }
 
-// Slide animations
 @keyframes slide-up-animation {
   0% {
     transform: translateY(100%);

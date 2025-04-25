@@ -22,7 +22,6 @@ import {
   Typography,
 } from "@vorwerk/fibre-react";
 import Image from "next/image";
-import Link from "next/link";
 
 const thermomixAccessoryTiles = [
   <CarouselTile
@@ -131,10 +130,7 @@ export default function HomePageES() {
             </GridItem>
           </GridContainer>
         </SectionContainer>
-        <div
-          data-scroll-marker="phase1-start"
-          style={{ height: "1px", opacity: 0 }}
-        ></div>
+        <div data-scroll-marker="phase1-start" />
         <ProductAnimation />
         <SectionContainer>
           <GridContainer>
@@ -171,10 +167,7 @@ export default function HomePageES() {
               startXL={3}
               endXL={11}
             >
-              <div
-                data-scroll-marker="phase1-end"
-                style={{ height: "1px", opacity: 0 }}
-              ></div>
+              <div data-scroll-marker="phase1-end" />
               <Headline strongColor="green" spaceBelow="default">
                 <Typography component="p" variant="h2">
                   <span style={{ display: "block", textAlign: "center" }}>
@@ -213,11 +206,9 @@ export default function HomePageES() {
         <SectionContainer>
           <ImageCarousel />
           <ButtonGroup alignment="center" layout="vertical">
-            <Link href="/ds360">
-              <Button size="large" buttonStyle="primary">
-                Get 3 months of Cookidoo® for free!
-              </Button>
-            </Link>
+            <Button size="large" buttonStyle="primary">
+              Get 3 months of Cookidoo® for free!
+            </Button>
           </ButtonGroup>
         </SectionContainer>
         <SectionContainer>
@@ -266,10 +257,7 @@ export default function HomePageES() {
             </GridItem>
           </GridContainer>
         </SectionContainer>
-        <div
-          data-scroll-marker="phase2-start"
-          style={{ height: "1px", opacity: 0 }}
-        ></div>
+        <div data-scroll-marker="phase2-start" />
         <ProductAnimation useStaticImage={true} text="VK7" />
         <SectionContainer>
           <GridContainer>
@@ -306,10 +294,7 @@ export default function HomePageES() {
               startXL={3}
               endXL={11}
             >
-              <div
-                data-scroll-marker="phase2-content-change"
-                style={{ height: "1px", opacity: 0 }}
-              ></div>
+              <div data-scroll-marker="phase2-content-change" />
               <Headline strongColor="green" spaceBelow="default">
                 <Typography component="p" variant="h2">
                   <span style={{ display: "block", textAlign: "center" }}>
@@ -402,10 +387,7 @@ export default function HomePageES() {
           </GridContainer>
         </SectionContainer>
         <AdvisorToggle />
-        <div
-          data-scroll-marker="footer"
-          style={{ height: "1px", opacity: 0 }}
-        ></div>
+        <div data-scroll-marker="footer" />
       </main>
       <StickyBarPhase1 />
       <StickyBarPhase2 />
