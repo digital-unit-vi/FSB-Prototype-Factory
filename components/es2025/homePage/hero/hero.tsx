@@ -51,10 +51,10 @@ const Hero: React.FC = () => {
             loop
             preload="metadata"
             disableRemotePlayback
-            poster="/homePage/hero_video_poster.webp"
+            poster="/es2025/homePage/hero_video_poster.webp"
           >
-            <source src="/homePage/hero_video.webm" type="video/webm" />
-            <source src="/homePage/hero_video.mp4" type="video/mp4" />
+            <source src="/es2025/homePage/hero_video.webm" type="video/webm" />
+            <source src="/es2025/homePage/hero_video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className={styles.heroOverlay} />

@@ -75,7 +75,7 @@ const ThermomixPanel: React.FC = () => (
   <div className={styles.panel}>
     <Image
       className={styles.avatar}
-      src="/homePage/avatar_button.png" // ⇦ replace with your asset path
+      src="/es2025/avatar_button.png" // ⇦ replace with your asset path
       alt="Mary Cook"
       width={80}
       height={80}
@@ -110,9 +110,9 @@ const KoboldPanel: React.FC = () => {
     <div className={styles.panel}>
       <div className={styles.avatarsRow}>
         {[
-          "/homePage/avatar_stack1.png",
-          "/homePage/avatar_stack2.png",
-          "/homePage/avatar_stack3.png",
+          "/es2025/homePage/avatar_stack1.png",
+          "/es2025/homePage/avatar_stack2.png",
+          "/es2025/homePage/avatar_stack3.png",
         ].map((src) => (
           <Image
             key={src}

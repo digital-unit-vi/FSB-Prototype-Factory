@@ -1,5 +1,5 @@
-import KoboldLogo from "@public/homePage/kobold_logo_cropped.svg";
-import ThermomixLogo from "@public/homePage/thermomix_logo_cropped.svg";
+import KoboldLogo from "@public/es2025/homePage/kobold_logo_cropped.svg";
+import ThermomixLogo from "@public/es2025/thermomix_logo_cropped.svg";
 import {
   Button,
   GridContainer,

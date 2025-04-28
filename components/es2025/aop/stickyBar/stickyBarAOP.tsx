@@ -1,7 +1,7 @@
 "use client";
 
-import AdvisorButton from "@public/homePage/avatar_button.png";
-import ThermomixLogo from "@public/homePage/thermomix_logo_cropped.svg";
+import AdvisorButton from "@public/es2025/avatar_button.png";
+import ThermomixLogo from "@public/es2025/thermomix_logo_cropped.svg";
 import {
   Button,
   GridContainer,

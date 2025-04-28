@@ -7,7 +7,7 @@ import EventList from "@components/es2025/aop/eventList/eventList";
 import Hero from "@components/es2025/aop/hero/hero";
 import ProductGrid from "@components/es2025/aop/productGrid/productGrid";
 import StickyBarAOP from "@components/es2025/aop/stickyBar/stickyBarAOP";
-import HomePageHeader from "@components/es2025/homePage/header/header";
+import HomePageHeader from "@components/es2025/header/header";
 import useScreenSize from "@utils/useScreenSize";
 import {
   GridContainer,
@@ -38,29 +38,29 @@ export default function AOPES() {
 
   const products = [
     {
-      image: "/homePage/aop/cutter.png",
+      image: "/es2025/aop/cutter.png",
       title: "Thermomix® Vegetable Styler",
       price: "99 €",
       originalPrice: "129 €",
       discount: "25%",
     },
     {
-      image: "/homePage/aop/bowl.png",
+      image: "/es2025/aop/bowl.png",
       title: "Thermomix® Bowl",
       price: "199 €",
     },
     {
-      image: "/homePage/aop/sensor.png",
+      image: "/es2025/aop/sensor.png",
       title: "Thermomix® Sensor",
       price: "149 €",
     },
     {
-      image: "/homePage/aop/flask.png",
+      image: "/es2025/aop/flask.png",
       title: "FLSK Drinking Bottle Green",
       price: "47 €",
     },
     {
-      image: "/homePage/aop/stoneware.png",
+      image: "/es2025/aop/stoneware.png",
       title: 'Stoneware Shape "Betty Roaster"',
       price: "95 €",
     },
@@ -70,17 +70,17 @@ export default function AOPES() {
     {
       title: "We make an appointment",
       text: "Simply fill out the online contact form and I will get back to you shortly to arrange a demonstration with you.",
-      src: "/homePage/aop/demoTile_image1.png",
+      src: "/es2025/aop/demoTile_image1.png",
     },
     {
       title: "I bring the Thermomix® experience at your place",
       text: "The cooking experience takes place at a location of your choice. Please let me know in advance what you would be particularly interested in during the cooking experience so that I can get the best out of the Thermomix® for you.",
-      src: "/homePage/aop/demoTile_image2.png",
+      src: "/es2025/aop/demoTile_image2.png",
     },
     {
       title: "You are in control on what to do next!",
       text: "It's entirely up to you. If you are convinced after the cooking experience that the Thermomix® will make your life easier and more delicious, you can order it directly from me. And even after your purchase, I'm always on hand with valuable tips and tricks.",
-      src: "/homePage/aop/demoTile_image3.png",
+      src: "/es2025/aop/demoTile_image3.png",
     },
   ];
 
@@ -107,7 +107,7 @@ export default function AOPES() {
             <BentoBoxTiles
               tiles={[
                 {
-                  image: "/homePage/aop/pasta.png",
+                  image: "/es2025/aop/pasta.png",
                   title: "In homemade I trust!",
                   text: "Why homemade? Because it tastes better and saves you money. I’d love to show you how easy it is.",
                 },
@@ -116,7 +116,7 @@ export default function AOPES() {
                   text: "I will show you how the TM7 works with Cookidoo to add a chef-like touch to even the simplest meals.",
                 },
                 {
-                  image: "/homePage/aop/tacos.png",
+                  image: "/es2025/aop/tacos.png",
                   title: "I open a window to the world!",
                   text: "A taste of Japan for dinner, and a taco from Mexico — all with my TM7, no travel required!",
                 },
@@ -200,10 +200,10 @@ export default function AOPES() {
                 <video
                   controls
                   aria-label="Thermomix demo video"
-                  poster="/homePage/aop/video-poster.png"
+                  poster="/es2025/aop/video-poster.png"
                 >
                   <source
-                    src="/homePage/aop/container_video.mp4"
+                    src="/es2025/aop/container_video.mp4"
                     type="video/mp4"
                   />
                   Your browser doesn&apos;t support embedded videos.

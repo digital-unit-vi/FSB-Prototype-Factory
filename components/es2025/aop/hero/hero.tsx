@@ -6,6 +6,7 @@ import {
   GridContainer,
   GridItem,
   Headline,
+  Location,
   Typography,
 } from "@vorwerk/fibre-react";
 import styles from "./hero.module.scss";
@@ -17,28 +18,32 @@ const Hero: React.FC = () => {
         <div className={styles.heroOverlay} />
         <div
           className={styles.heroBackground}
-          style={{ backgroundImage: "url(/homePage/aop/hero_background.png)" }}
+          style={{ backgroundImage: "url(/es2025/aop/hero_background.png)" }}
         />
         <div className={styles.heroContent}>
           <Avatar
             size={128}
-            image="/homePage/avatar_button.png"
+            image="/es2025/avatar_button.png"
             text="Mary Cook"
           />
           <GridContainer>
             <GridItem columns={12}>
+              <Typography component="p" variant="paragraph16" fontWeight="regular">Your Thermomix® Advisor</Typography>
               <Headline>
-                <Typography component="h3" fontWeight="bold">
+                <Typography component="h2" fontWeight="bold">
                   Mary Cook
                 </Typography>
               </Headline>
+              <div className={styles.location}>
+                <Location width={20} height={20}/>
+                <Typography variant="paragraph16" fontWeight="regular">00100 Somewhere</Typography>
+              </div>
             </GridItem>
           </GridContainer>
           <GridContainer>
             <GridItem columns={12}>
               <Typography component="p" className={styles.description}>
-                I love showing how easy and fun cooking can be with the
-                Thermomix.
+                “I love showing how easy and fun cooking can be with the Thermomix.”
               </Typography>
             </GridItem>
           </GridContainer>

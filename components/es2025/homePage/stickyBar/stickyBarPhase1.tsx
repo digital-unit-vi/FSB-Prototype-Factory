@@ -1,4 +1,4 @@
-import AdvisorButton from "@public/homePage/avatar_button.png";
+import AdvisorButton from "@public/es2025/avatar_button.png";
 import {
   Button,
   GridContainer,

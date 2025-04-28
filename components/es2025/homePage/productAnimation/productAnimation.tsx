@@ -1,7 +1,7 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import StaticImage from "@public/homePage/kobold_teaser.png";
+import StaticImage from "@public/es2025/homePage/kobold_teaser.png";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
@@ -100,7 +100,7 @@ const ProductAnimation = ({
         };
 
         const currentFrame = (index: number) =>
-          `/homePage/tm7Animation/simple${String(index).padStart(2, "0")}.webp`;
+          `/es2025/homePage/tm7Animation/simple${String(index).padStart(2, "0")}.webp`;
 
         const preloadImages = () => {
           const images = imagesRef.current ?? [];
