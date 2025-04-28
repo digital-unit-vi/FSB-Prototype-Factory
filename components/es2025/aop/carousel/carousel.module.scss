@@ -51,15 +51,15 @@
   align-items: flex-start;
   gap: 8px;
   align-self: stretch;
-  max-height: 250px;
+  max-height: 180px;
   transition: opacity 0.3s ease, max-height 0.3s ease;
-  min-height: auto;
 }
 
 .hidden {
   opacity: 0;
-  max-height: 100px;
+  max-height: 90px;
   pointer-events: none;
+  transition: opacity 0.1s 0.3s ease, max-height 0.3s ease;
 }
 
 .step {

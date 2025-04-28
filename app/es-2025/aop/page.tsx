@@ -95,7 +95,7 @@ export default function AOPES() {
             <GridContainer>
               <GridItem columns={10} start={2} end={12}>
                 <Headline strongColor="green" spaceBelow="additional">
-                  <Typography component="p" variant="h2">
+                  <Typography component="h3">
                     <span style={{ display: "block", textAlign: "center" }}>
                       <strong>Why</strong> does a demo with me make all the
                       difference?
@@ -131,7 +131,7 @@ export default function AOPES() {
             <GridContainer>
               <GridItem columns={10} start={2} end={12}>
                 <Headline strongColor="green" spaceBelow="additional">
-                  <Typography component="p" variant="h2">
+                  <Typography component="h3">
                     <span style={{ display: "block", textAlign: "center" }}>
                       <strong>How</strong> does
                       <br />
