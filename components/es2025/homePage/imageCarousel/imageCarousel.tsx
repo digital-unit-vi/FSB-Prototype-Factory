@@ -1,6 +1,6 @@
 "use client";
 
-import ProductImage from "@public/homePage/phone_cookidoo.png";
+import ProductImage from "@public/es2025/homePage/phone_cookidoo.png";
 import {
   motion,
   useAnimationFrame,
@@ -21,14 +21,14 @@ interface CarouselImage {
   title?: string;
 }
 const IMAGES: CarouselImage[] = [
-  { url: "/homePage/carousel_image1.png", alt: "Image 1" },
-  { url: "/homePage/carousel_image2.jpeg", alt: "Image 2" },
-  { url: "/homePage/carousel_image3.jpeg", alt: "Image 3" },
-  { url: "/homePage/carousel_image4.jpeg", alt: "Image 4" },
-  { url: "/homePage/carousel_image5.jpeg", alt: "Image 5" },
-  { url: "/homePage/carousel_image6.jpeg", alt: "Image 6" },
-  { url: "/homePage/carousel_image7.jpeg", alt: "Image 7" },
-  { url: "/homePage/carousel_image8.jpeg", alt: "Image 8" },
+  { url: "/es2025/homePage/carousel_image1.png", alt: "Image 1" },
+  { url: "/es2025/homePage/carousel_image2.jpeg", alt: "Image 2" },
+  { url: "/es2025/homePage/carousel_image3.jpeg", alt: "Image 3" },
+  { url: "/es2025/homePage/carousel_image4.jpeg", alt: "Image 4" },
+  { url: "/es2025/homePage/carousel_image5.jpeg", alt: "Image 5" },
+  { url: "/es2025/homePage/carousel_image6.jpeg", alt: "Image 6" },
+  { url: "/es2025/homePage/carousel_image7.jpeg", alt: "Image 7" },
+  { url: "/es2025/homePage/carousel_image8.jpeg", alt: "Image 8" },
 ];
 
 const BASE_SPEED = 30;

@@ -3,14 +3,14 @@
 import AdvisorToggle from "@components/es2025/homePage/advisorToggle/advisorToggle";
 import Carousel from "@components/es2025/homePage/carousel/carousel";
 import CarouselTile from "@components/es2025/homePage/carousel/carouselTile";
-import HomePageHeader from "@components/es2025/homePage/header/header";
+import HomePageHeader from "@components/es2025/header/header";
 import Hero from "@components/es2025/homePage/hero/hero";
 import ImageCarousel from "@components/es2025/homePage/imageCarousel/imageCarousel";
 import ProductAnimation from "@components/es2025/homePage/productAnimation/productAnimation";
 import StickyBarPhase1 from "@components/es2025/homePage/stickyBar/stickyBarPhase1";
 import StickyBarPhase2 from "@components/es2025/homePage/stickyBar/stickyBarPhase2";
 import Spacer from "@components/shared/spacer/spacer";
-import MediaContainerPhoto from "@public/homePage/media_container.png";
+import MediaContainerPhoto from "@public/es2025/homePage/media_container.png";
 import {
   Button,
   ButtonGroup,
@@ -27,7 +27,7 @@ const thermomixAccessoryTiles = [
   <CarouselTile
     variant="background"
     title="Thermomix® promotions"
-    backgroundImageUrl="/homePage/thermomix_tile_background.png"
+    backgroundImageUrl="/es2025/homePage/thermomix_tile_background.png"
     eyecatcherTextPrimary="45%"
     eyecatcherTextSecindary="Save"
     key={1}
@@ -37,7 +37,7 @@ const thermomixAccessoryTiles = [
     title="Thermomix® Bowl"
     price="199 €"
     note="incl. VAT & shipping"
-    productImageUrl="/homePage/tm7_bowl.png"
+    productImageUrl="/es2025/homePage/tm7_bowl.png"
     key={2}
   />,
   <CarouselTile
@@ -45,7 +45,7 @@ const thermomixAccessoryTiles = [
     title="Thermomix® Sensor"
     price="149 €"
     note="incl. VAT & shipping"
-    productImageUrl="/homePage/sensor.png"
+    productImageUrl="/es2025/homePage/sensor.png"
     key={3}
   />,
 ];
@@ -54,7 +54,7 @@ const koboldAccessoryTiles = [
   <CarouselTile
     variant="background"
     title="Kobold promotions"
-    backgroundImageUrl="/homePage/kobold_tile_background.png"
+    backgroundImageUrl="/es2025/homePage/kobold_tile_background.png"
     eyecatcherTextPrimary="45%"
     eyecatcherTextSecindary="Save"
     key={1}
@@ -64,7 +64,7 @@ const koboldAccessoryTiles = [
     title="Kobold BY7 Akku"
     price="149 €"
     note="incl. VAT & shipping"
-    productImageUrl="/homePage/kobold_akku.png"
+    productImageUrl="/es2025/homePage/kobold_akku.png"
     eyecatcherTextPrimary="25%"
     eyecatcherTextSecindary="Save"
     key={2}
@@ -74,7 +74,7 @@ const koboldAccessoryTiles = [
     title="Kobold EB7 electric brush"
     price="400 €"
     note="incl. VAT & shipping"
-    productImageUrl="/homePage/kobold_brush.png"
+    productImageUrl="/es2025/homePage/kobold_brush.png"
     key={3}
   />,
 ];

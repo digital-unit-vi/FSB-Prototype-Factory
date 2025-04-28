@@ -40,10 +40,10 @@ export const Carousel = ({ items, screenSize }: CarouselProps) => {
 
   const calculateOffset = () => {
     if (containerWidth === 0) return 0
-    let cumulativeWidth = -15;
+    let cumulativeWidth = -16;
     for (let i = 0; i < currentIndex; i++) {
       const distance = Math.abs(currentIndex - i)
-      const scale = distance === 0 ? 1 : distance === 1 ? 0.6 : 0.4
+      const scale = distance === 0 ? 1 : 0.6
       cumulativeWidth += mainImageWidth * scale + gap
     }
     return -cumulativeWidth
@@ -115,7 +115,7 @@ export const Carousel = ({ items, screenSize }: CarouselProps) => {
         {items.map((item, index) => {
           const distance = Math.abs(currentIndex - index)
 
-          const scale = distance === 0 ? 1 : distance === 1 ? 0.6 : 0.4
+          const scale = distance === 0 ? 1 : 0.6
 
           return (
             <div className={styles.tileContainer} key={index}>
