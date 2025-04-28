@@ -81,7 +81,7 @@ export default function RootLayout({
   const excludedFooterPaths = [
     "/landing-page/dark/tm7",
     "/landing-page/light/home-page",
-    "/es-2025/home-page",
+    "/es-2025",
     "/es-2025/aop",
     "/flagship",
     "/flagship/home-page",

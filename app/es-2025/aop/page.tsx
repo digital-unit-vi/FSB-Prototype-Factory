@@ -7,6 +7,7 @@ import EventList from "@components/es2025/aop/eventList/eventList";
 import Hero from "@components/es2025/aop/hero/hero";
 import ProductGrid from "@components/es2025/aop/productGrid/productGrid";
 import StickyBarAOP from "@components/es2025/aop/stickyBar/stickyBarAOP";
+import { Footer } from "@components/es2025/footer/footer";
 import HomePageHeader from "@components/es2025/header/header";
 import useScreenSize from "@utils/useScreenSize";
 import {
@@ -112,7 +113,7 @@ export default function AOPES() {
                   text: "Why homemade? Because it tastes better and saves you money. I’d love to show you how easy it is.",
                 },
                 {
-                  title: "I can work magic out of simple things!",
+                  title: "I create magic out of simple things!",
                   text: "I will show you how the TM7 works with Cookidoo to add a chef-like touch to even the simplest meals.",
                 },
                 {
@@ -122,7 +123,7 @@ export default function AOPES() {
                 },
                 {
                   title: "I celebrate uniqueness!",
-                  text: "In a kitchen with a TM7 everyone is welcome, vegans, meat lovers, picky kids ans solo chefs alike.",
+                  text: "In a kitchen with a TM7 everyone is welcome, vegans, meat lovers, picky kids and solo chefs alike.",
                 },
               ]}
             />
@@ -227,8 +228,9 @@ export default function AOPES() {
             </GridItem>
           </GridContainer>
         </SectionContainer>
-        <div data-scroll-marker="footer" />
       </main>
+      <Footer />
+      <div data-scroll-marker="footer" />
       <StickyBarAOP />
     </>
   );

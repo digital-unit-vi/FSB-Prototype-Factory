@@ -22,6 +22,7 @@ import {
   Typography,
 } from "@vorwerk/fibre-react";
 import Image from "next/image";
+import { Footer } from "@components/es2025/footer/footer";
 
 const thermomixAccessoryTiles = [
   <CarouselTile
@@ -391,6 +392,7 @@ export default function HomePageES() {
       </main>
       <StickyBarPhase1 />
       <StickyBarPhase2 />
+      <Footer />
     </>
   );
 }

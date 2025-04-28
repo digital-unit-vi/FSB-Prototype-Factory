@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
 
           <Button
             buttonStyle="secondary"
-            size="large"
+            size="medium"
             componentNode="a"
             url="#"
           >
