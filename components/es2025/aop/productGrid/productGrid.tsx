@@ -111,7 +111,7 @@ const ProductGrid = ({ products }: ProductGridProps) => {
           ))}
         </div>
         <ButtonGroup alignment="center">
-          <Button buttonStyle="tertiary" size="large">
+          <Button buttonStyle="tertiary" size="medium">
             Show more
           </Button>
         </ButtonGroup>
