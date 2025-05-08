@@ -32,9 +32,9 @@
     "stylelint": "^16.19.0",
     "stylelint-config-clean-order": "^7.0.0",
     "stylelint-config-standard-scss": "^14.0.0",
-    "stylelint-scss": "^6.11.1",
+    "stylelint-scss": "^6.12.0",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.31.0"
+    "typescript-eslint": "^8.31.1"
   },
   "name": "ds360",
   "private": true,
