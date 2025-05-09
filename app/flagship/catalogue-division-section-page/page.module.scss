@@ -1,0 +1,191 @@
+.cdsp {
+    color: #23282A;
+    --gap-1: 16px;
+    --gap-3: 40px;
+    --padding-4: 48px;
+    --padding-5: 64px;
+    --padding-6: 80px;
+    --radiusRoundedCorner: 64px;
+
+    @media (min-width: 740px) and (max-width: 935px) {
+        --radiusRoundedCorner: 88px;
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        --padding-4: 64px;
+        --padding-5: 112px;
+        --padding-6: 144px;
+        --radiusRoundedCorner: 128px;
+        --gap-3: 56px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1569px) {
+        --gap-1: 32px;
+        --radiusRoundedCorner: 144px;
+    }
+
+    @media (min-width: 1268px) {
+        --padding-4: 80px;
+        --padding-5: 128px;
+        --padding-6: 160px;
+        --gap-2: 56px;
+        --gap-3: 64px;
+    }
+
+    @media (min-width: 1570px) {
+        --gap-1: 40px;
+        --radiusRoundedCorner: 168px;
+    }
+}
+
+.topHeadline {
+    padding: var(--padding-4) 0;
+    text-align: center;
+}
+
+.sectionWithPadding {
+    padding-bottom: var(--padding-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+}
+
+.settingsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-1);
+    align-self: stretch;
+}
+
+.settingsContainer>div {
+    flex: 1 0 0;
+}
+
+.viewContainer {
+    display: flex;
+    justify-content: center;
+}
+
+//disabled attribute doesn't work on InteractiveIcon so it had to be overwritten
+.viewContainer>button:last-child {
+    color: #919394;
+    cursor: default;
+}
+
+//disabled attribute doesn't work on InteractiveIcon so it had to be overwritten
+.viewContainer>button:last-child:hover::before {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.filter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.overwrittenGridItemCol>div {
+
+    &>div:nth-child(n+3):not(:nth-child(9)) {
+        @media (max-width: 739px) {
+            grid-column: span 3 !important;
+        }
+    }
+
+    &>div:nth-child(2),
+    &>div:nth-child(9) {
+        grid-row: span 2;
+
+        &>div>div:first-child {
+            flex-grow: 1;
+        }
+
+        &>div>div:last-child {
+            height: fit-content;
+        }
+    }
+}
+
+.centeredButton {
+    display: flex;
+    justify-content: center;
+}
+
+.sectionRadius {
+    border-radius: 0 0 var(--radiusRoundedCorner) 0;
+    background-color: #F2F2F2;
+}
+
+.sectionRadius,
+.prominentSection {
+    padding: 80px 0 96px;
+
+    @media (min-width: 740px) {
+        padding: var(--padding-5) 0 var(--padding-6);
+    }
+}
+
+.overwrittenMargin>div {
+    margin-bottom: 40px !important;
+}
+
+.textCentered {
+    text-align: center;
+}
+
+.overriddenProductStripeGap div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
+    @media (min-width: 936px) and (max-width: 1267px) {
+        gap: 24px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        align-items: flex-start;
+    }
+}
+
+.overriddenProductStripeGap div:has(> img) {
+
+    @media (max-width: 739px),
+    (min-width: 936px) and (max-width: 1267px) {
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.overriddenProductStripeGap img {
+    max-width: 100%;
+    max-height: 54px;
+    object-fit: contain;
+
+    @media (min-width: 740px) and (max-width: 935px) {
+        max-height: 149px;
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        max-height: 99px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        max-height: 113px;
+    }
+
+    @media (min-width: 1580px) {
+        max-height: 124px;
+    }
+}
+
+.overriddenLanguageSelector {
+    grid-column: span 6;
+
+    @media (min-width: 936px) {
+        grid-column: span 4;
+    }
+}
+
+.overriddenFooterSocialLinks div:has(> div:nth-of-type(3)):not(:has(> div:nth-of-type(4)))>div:not(:last-child) {
+    @media (min-width: 740px) and (max-width: 935px) {
+        grid-column: span 6;
+        padding-bottom: 56px;
+    }
+}

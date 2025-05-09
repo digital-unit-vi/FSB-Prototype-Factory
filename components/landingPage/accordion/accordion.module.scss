@@ -1,0 +1,108 @@
+.accordionContainer {
+  padding: 0 16px;
+
+  @media (min-width: 936px) {
+    padding: 0;
+  }
+}
+
+.accordionContainer>div:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.accordion {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-left: none;
+  border-right: none;
+  padding: 24px 8px 24px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  border-top: none;
+  color: #23282a;
+  transition: padding-left 0.3s ease-out;
+}
+
+.accordion:hover {
+  background-color: #ededed;
+  padding-left: 16px;
+  border-radius: 8px;
+  border-bottom: none;
+}
+
+.accordionWithInfo {
+  align-items: center;
+}
+
+.accordionTitleAndInfo {
+  display: flex;
+  gap: 16px;
+}
+
+.accordionCaret {
+  cursor: pointer;
+}
+
+.accordionCaret>svg {
+  width: 24px;
+  aspect-ratio: 1/1;
+}
+
+.accordionContent {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  transition:
+    opacity 0.3s ease-out,
+    visibility 0.3s ease-out,
+    max-height 0.3s ease-out;
+}
+
+.fadeIn {
+  opacity: 1;
+  visibility: visible;
+  max-height: fit-content;
+  padding: 8px 0 24px;
+}
+
+.accordion.clicked {
+  border-bottom: none;
+}
+
+.specificationsContainer {
+  display: flex;
+  width: 100%;
+  padding: 16px 56px 40px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.table {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  align-self: stretch;
+
+  &>*:first-child {
+    width: 200px;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  flex: 1 0 0;
+}
+
+.dataItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}

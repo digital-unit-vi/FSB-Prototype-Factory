@@ -1,0 +1,30 @@
+.fileButton {
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    border: 1px solid #B2B4B5;
+    padding: 11px 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.fileButton:hover {
+    background-color: #EDEDED;
+    border: 1px solid #919394;
+}
+
+.fileButton>svg {
+    min-width: 24px;
+    max-width: 24px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+
+    &>path {
+        fill: #00AC46;
+    }
+}
+
+.fileButtonLabel {
+    color: #23282A;
+    text-align: start;
+}

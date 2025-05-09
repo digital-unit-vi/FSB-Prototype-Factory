@@ -1,0 +1,94 @@
+.vorwerkLogo {
+    color: #00ac46 !important;
+}
+
+.prominentSection {
+    color: #23282A;
+    padding: 128px 0 160px;
+    --gap-3: 64px;
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        padding: 112px 0 144px;
+        --gap-3: 56px;
+    }
+
+    @media (max-width: 935px) {
+        padding: 64px 0 80px;
+        --gap-3: 40px;
+    }
+}
+
+.prominentSection>div {
+    row-gap: var(--gap-3);
+}
+
+.textCentered {
+    text-align: center;
+}
+
+.tiles>a {
+    text-decoration: none;
+}
+
+.tiles div:has(> div:nth-of-type(2)) {
+    &>div:first-child {
+        padding: 0;
+    }
+}
+
+.overwrittenProductStripeGap div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
+    @media (min-width: 936px) and (max-width: 1267px) {
+        gap: 24px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        align-items: flex-start;
+    }
+}
+
+.overwrittenProductStripeGap div:has(>img) {
+
+    @media (max-width: 739px),
+    (min-width: 936px) and (max-width: 1267px) {
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.overwrittenProductStripeGap img {
+    max-width: 100%;
+    max-height: 54px;
+    object-fit: contain;
+
+    @media (min-width: 740px) and (max-width: 935px) {
+        max-height: 149px;
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        max-height: 99px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        max-height: 113px;
+    }
+
+    @media (min-width: 1580px) {
+        max-height: 124px;
+    }
+}
+
+.overwrittenLanguageSelector {
+    grid-column: span 6;
+
+    @media (min-width: 936px) {
+        grid-column: span 4;
+    }
+}
+
+.overwrittenFooterSocialLinks div:has(> div:nth-of-type(3)):not(:has(> div:nth-of-type(4)))>div:not(:last-child) {
+    @media (min-width: 740px) and (max-width: 935px) {
+        grid-column: span 6;
+        padding-bottom: 56px;
+    }
+}

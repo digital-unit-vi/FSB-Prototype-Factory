@@ -1,0 +1,194 @@
+.hp {
+    --gap-4: 64px;
+    --padding-6: 80px;
+    --radiusRoundedCorner: 0;
+
+    @media (min-width: 740px) and (max-width: 935px) {
+        --radiusRoundedCorner: 88px;
+    }
+
+    @media(min-width: 936px) and (max-width: 1267px) {
+        --gap-4: 112px;
+        --padding-6: 144px;
+        --radiusRoundedCorner: 128px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1569px) {
+        --radiusRoundedCorner: 144px;
+    }
+
+    @media (min-width: 1570px) {
+        --radiusRoundedCorner: 168px;
+    }
+
+    @media(min-width: 1268px) {
+        --gap-4: 128px;
+        --padding-6: 160px;
+    }
+}
+
+.hero {
+    text-wrap: balance;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.prominentSection,
+.defaultSection {
+    padding: var(--gap-4) 0px var(--padding-6);
+}
+
+.prominentSection {
+    background-color: #F3F5F3;
+    border-radius: 0 0 var(--radiusRoundedCorner);
+}
+
+.textCentered,
+.overlayIconText {
+    text-align: center;
+}
+
+.contentAndCategoryContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-4);
+    align-self: stretch;
+}
+
+.headlineAndContentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    flex: 1 0 0;
+
+    @media (min-width: 740px) {
+        gap: 0px;
+    }
+}
+
+.overwrittenMargin>div {
+    @media (max-width: 935px) {
+        margin-bottom: 40px !important;
+    }
+}
+
+.overlayIconWrapper {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 72px;
+    color: #FFFFFF;
+    z-index: 3;
+}
+
+.overlayIcon,
+.overlayIconText,
+.overlayIconWrapper>svg {
+    position: absolute;
+}
+
+.overlayIcon,
+.overlayIconWrapper>svg {
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: opacity 1s ease-in-out;
+    animation: icon-animation 3s infinite;
+    animation-delay: 1ms;
+
+    @media (min-width: 936px) {
+        top: 0px;
+    }
+}
+
+.overlayIconWrapper>svg {
+    top: 12px;
+    width: 36px;
+    aspect-ratio: 1/1;
+}
+
+@keyframes icon-animation {
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-50%, -12px);
+        opacity: 1;
+        animation-timing-function: cubic-bezier(0.6, -0.01, 0.46, 1);
+    }
+
+    100% {
+        transform: translate(-50%, -12px);
+        opacity: 0;
+    }
+}
+
+.overlayIconText {
+    top: 48px;
+    width: 100%;
+}
+
+.overriddenProductStripeGap div:has(> div:nth-of-type(2)):not(:has(> div:nth-of-type(3))) {
+    @media (min-width: 936px) and (max-width: 1267px) {
+        gap: 24px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        align-items: flex-start;
+    }
+}
+
+.overriddenProductStripeGap div:has(>img) {
+
+    @media (max-width: 739px),
+    (min-width: 936px) and (max-width: 1267px) {
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.overriddenProductStripeGap img {
+    max-width: 100%;
+    max-height: 54px;
+    object-fit: contain;
+
+    @media (min-width: 740px) and (max-width: 935px) {
+        max-height: 149px;
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        max-height: 99px;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        max-height: 113px;
+    }
+
+    @media (min-width: 1580px) {
+        max-height: 124px;
+    }
+}
+
+.overriddenLanguageSelector {
+    grid-column: span 6;
+
+    @media (min-width: 936px) {
+        grid-column: span 4;
+    }
+}
+
+.overriddenFooterSocialLinks div:has(> div:nth-of-type(3)):not(:has(> div:nth-of-type(4)))>div:not(:last-child) {
+    @media (min-width: 740px) and (max-width: 935px) {
+        grid-column: span 6;
+        padding-bottom: 56px;
+    }
+}
+
+.overriddenLineHeight {
+    line-height: 2.8rem;
+}

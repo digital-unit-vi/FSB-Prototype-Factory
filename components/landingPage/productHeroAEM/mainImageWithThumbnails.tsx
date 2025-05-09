@@ -1,0 +1,39 @@
+import { MediaContainer } from '@vorwerk/fibre-react'
+import { FC, useState } from 'react'
+import styles from './productHeroAEM.module.scss'
+import { Thumb } from '@components/landingPage/galleryModalCarousel/galleryModalCarouselThumbsButton'
+import { GalleryItem } from '../gallery/gallery'
+
+interface MainImageWithThumbnailsProps {
+  images: GalleryItem[]
+}
+
+const MainImageWithThumbnails: FC<MainImageWithThumbnailsProps> = ({
+  images,
+}) => {
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const onThumbClick = (index: number) => setSelectedIndex(index)
+
+  return (
+    <div className={styles.mediaContainer}>
+      <div className={styles.stepper}>
+        {images.map((item, index) => (
+          <Thumb
+            key={`${item.url} - ${index}`}
+            onClick={() => onThumbClick(index)}
+            selected={index === selectedIndex}
+            item={item}
+            isAEM
+          />
+        ))}
+      </div>
+      <div className={styles.mainImage}>
+        <MediaContainer aspectRatio={'1/1'}>
+          <img src={images[selectedIndex].url} alt={'Selected'} />
+        </MediaContainer>
+      </div>
+    </div>
+  )
+}
+
+export default MainImageWithThumbnails

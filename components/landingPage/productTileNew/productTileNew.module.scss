@@ -1,0 +1,152 @@
+.componentWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    --image-wrapper-padding: 16px;
+
+    @media (min-width: 740px) {
+        width: 100%;
+    }
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        --image-wrapper-padding: 0;
+    }
+
+    @media (min-width: 1268px) and (max-width: 1579px) {
+        --image-wrapper-padding: 24px;
+    }
+
+    @media (min-width: 1580px) {
+        --image-wrapper-padding: 32px;
+    }
+}
+
+.imageWrapper {
+    padding: var(--image-wrapper-padding);
+    position: relative;
+
+    @media (min-width: 936px) and (max-width: 1267px) {
+        padding: 0;
+    }
+}
+
+.productTileEyeCatcher {
+    position: absolute;
+    top: var(--image-wrapper-padding);
+    right: var(--image-wrapper-padding);
+
+    &>* {
+        width: 48px !important;
+        height: 48px !important;
+        padding: 6.4px !important;
+
+        @media (min-width: 740px) {
+            padding: 7.47px !important;
+        }
+
+        @media (min-width: 740px) and (max-width: 935px) {
+            width: 56px !important;
+            height: 56px !important;
+        }
+
+        @media (min-width: 936px) and (max-width: 1267px) {
+            width: 64px !important;
+            height: 64px !important;
+        }
+
+        @media (min-width: 1268px) {
+            width: 80px !important;
+            height: 80px !important;
+            padding: 10.67 !important;
+        }
+
+    }
+}
+
+.productTileEyeCatcher.slider {
+    @media (max-width: 739px) {
+        &>* {
+            width: 56px !important;
+            height: 56px !important;
+            padding: 7.47px !important;
+        }
+    }
+}
+
+.productTileEyeCatcher p:first-of-type {
+    font-size: 0.64rem !important;
+
+    @media (min-width: 740px) {
+        font-size: 0.747rem !important;
+    }
+
+    @media (min-width: 1268px) {
+        font-size: 1.067rem !important;
+    }
+}
+
+.productTileEyeCatcher p:last-of-type {
+    font-size: 1.2rem !important;
+
+    @media (min-width: 740px) {
+        font-size: 1.4rem !important;
+    }
+
+    @media (min-width: 1268px) {
+        font-size: 2rem !important;
+    }
+}
+
+.contentWrapper {
+    padding: 0 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #23282A;
+    justify-content: space-between;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    align-content: flex-end;
+
+    @media (min-width: 740px) and (max-width: 935px) {
+        gap: 8px;
+    }
+
+    @media (min-width: 936px) and (max-width: 1579px) {
+        padding: 0 24px 24px 24px;
+    }
+
+    @media (min-width: 1580px) {
+        padding: 0 32px 32px 32px;
+    }
+}
+
+.contentWrapper p {
+    margin: 0;
+    line-height: 22px !important;
+}
+
+.contentWrapper>* {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.priceAndButton {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+
+    @media (min-width: 1268px) {
+        align-items: flex-end;
+    }
+}
+
+.priceAndButton button {
+    padding: 8px;
+    align-self: flex-end;
+
+    @media (min-width: 1268px) {
+        padding: 12px !important;
+    }
+}
