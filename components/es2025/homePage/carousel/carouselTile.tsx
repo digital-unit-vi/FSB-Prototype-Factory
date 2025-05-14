@@ -5,7 +5,7 @@ export interface CarouselTileProps {
   variant: "background" | "product";
   title: string;
   eyecatcherTextPrimary?: string;
-  eyecatcherTextSecindary?: string;
+  eyecatcherTextSecondary?: string;
   eyecatcherBgColor?: string;
   backgroundImageUrl?: string;
   productImageUrl?: string;
@@ -17,7 +17,7 @@ const CarouselTile: FC<CarouselTileProps> = ({
   variant,
   title,
   eyecatcherTextPrimary,
-  eyecatcherTextSecindary,
+  eyecatcherTextSecondary,
   eyecatcherBgColor = "#734BA5",
   backgroundImageUrl,
   productImageUrl,
@@ -40,9 +40,9 @@ const CarouselTile: FC<CarouselTileProps> = ({
           className={styles.eyecatcher}
           style={{ backgroundColor: eyecatcherBgColor }}
         >
-          {eyecatcherTextSecindary && (
+          {eyecatcherTextSecondary && (
             <span className={styles.eyecatcherSecondary}>
-              {eyecatcherTextSecindary}
+              {eyecatcherTextSecondary}
             </span>
           )}
           {eyecatcherTextPrimary}

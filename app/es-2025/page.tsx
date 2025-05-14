@@ -1,9 +1,10 @@
 "use client";
 
+import { Footer } from "@components/es2025/footer/footer";
+import HomePageHeader from "@components/es2025/header/header";
 import AdvisorToggle from "@components/es2025/homePage/advisorToggle/advisorToggle";
 import Carousel from "@components/es2025/homePage/carousel/carousel";
 import CarouselTile from "@components/es2025/homePage/carousel/carouselTile";
-import HomePageHeader from "@components/es2025/header/header";
 import Hero from "@components/es2025/homePage/hero/hero";
 import ImageCarousel from "@components/es2025/homePage/imageCarousel/imageCarousel";
 import ProductAnimation from "@components/es2025/homePage/productAnimation/productAnimation";
@@ -22,7 +23,6 @@ import {
   Typography,
 } from "@vorwerk/fibre-react";
 import Image from "next/image";
-import { Footer } from "@components/es2025/footer/footer";
 
 const thermomixAccessoryTiles = [
   <CarouselTile
@@ -30,7 +30,7 @@ const thermomixAccessoryTiles = [
     title="Thermomix® promotions"
     backgroundImageUrl="/es2025/homePage/thermomix_tile_background.png"
     eyecatcherTextPrimary="45%"
-    eyecatcherTextSecindary="Save"
+    eyecatcherTextSecondary="Save"
     key={1}
   />,
   <CarouselTile
@@ -57,7 +57,7 @@ const koboldAccessoryTiles = [
     title="Kobold promotions"
     backgroundImageUrl="/es2025/homePage/kobold_tile_background.png"
     eyecatcherTextPrimary="45%"
-    eyecatcherTextSecindary="Save"
+    eyecatcherTextSecondary="Save"
     key={1}
   />,
   <CarouselTile
@@ -67,7 +67,7 @@ const koboldAccessoryTiles = [
     note="incl. VAT & shipping"
     productImageUrl="/es2025/homePage/kobold_akku.png"
     eyecatcherTextPrimary="25%"
-    eyecatcherTextSecindary="Save"
+    eyecatcherTextSecondary="Save"
     key={2}
   />,
   <CarouselTile
