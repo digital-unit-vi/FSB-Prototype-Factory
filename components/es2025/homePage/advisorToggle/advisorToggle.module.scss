@@ -1,0 +1,292 @@
+.container {
+  position: relative;
+
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 32px;
+
+  background-color: #f3f5f3;
+}
+
+.toggle {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 32px;
+  padding: 4px;
+  border-radius: 8px;
+
+  background: rgb(0 0 0 / 7%);
+}
+
+.toggleTrack {
+  position: relative;
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
+.toggleIndicator {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+
+  width: 50%;
+  border-radius: 6px;
+
+  background: #fff;
+  box-shadow: 0 2px 4px 2px rgb(35 40 42 / 8%);
+
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.toggleIndicator.left {
+  transform: translateX(0);
+}
+
+.toggleIndicator.right {
+  transform: translateX(100%);
+}
+
+.toggleBtn {
+  cursor: pointer;
+
+  position: relative;
+  z-index: 2;
+
+  flex: 1;
+
+  padding: 7px 12px;
+  border: none;
+  border-radius: 6px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  color: #23282a;
+
+  background: transparent;
+
+  transition: color 0.3s ease;
+}
+
+.toggleBtn:not(.active):hover {
+  background: rgb(0 0 0 / 5%);
+}
+
+.panelContainer {
+  position: relative;
+  width: 100%;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  animation: fade-in 0.4s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.avatar {
+  margin-bottom: 16px;
+  animation: scale-in 0.5s ease-out;
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.subtitle {
+  margin-bottom: 8px;
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #23282a;
+  text-align: center;
+
+  animation: slide-up 0.5s ease-out 0.1s both;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.title {
+  margin-bottom: 32px;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  color: #23282a;
+  text-align: center;
+
+  animation: slide-up 0.5s ease-out 0.2s both;
+}
+
+.primaryBtn {
+  cursor: pointer;
+
+  display: block;
+
+  width: fit-content;
+  min-height: 40px;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 6px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  color: #fff;
+
+  background: #00ac46;
+
+  transition: all 0.3s ease;
+  animation: slide-up 0.5s ease-out 0.3s both;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  background: #00913c;
+  box-shadow: 0 4px 8px rgb(0 172 70 / 30%);
+}
+
+.avatarsRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  animation: fade-in 0.5s ease-out;
+}
+
+.smallAvatar {
+  border: 1px solid rgb(0 0 0 / 20%);
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+
+  &:not(:first-child) {
+    margin-left: -15px;
+  }
+
+  &:hover {
+    z-index: 1;
+    transform: translateY(-5px);
+  }
+}
+
+.form {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  animation: fade-in 0.5s ease-out 0.2s both;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #23282a;
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form input {
+  flex-grow: 1;
+
+  padding: 11px 16px;
+  padding-right: 36px;
+  border: 1px solid #b2b4b5;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:focus {
+    border: 2px solid #2175c2;
+    outline: none;
+    box-shadow: 0 0 0 4px rgb(55 130 205 / 24%);
+  }
+}
+
+.clearButton {
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+
+  padding: 4px;
+  border: none;
+
+  font-size: 18px;
+  line-height: 1;
+  color: #888;
+
+  background: none;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.clearButton:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: #555;
+}
+
+.form button[type="submit"] {
+  justify-self: center;
+  margin-top: 16px;
+}

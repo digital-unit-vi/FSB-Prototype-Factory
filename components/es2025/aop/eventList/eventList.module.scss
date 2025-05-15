@@ -1,0 +1,64 @@
+.eventList {
+  width: 100%;
+}
+
+.eventItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 20px 16px;
+  border-bottom: 1px solid rgb(0 0 0 / 12%);
+
+  color: inherit;
+  text-decoration: none;
+
+  &:first-child {
+    border-top: 1px solid rgb(0 0 0 / 12%);
+  }
+
+  div {
+    align-items: flex-start;
+  }
+
+  svg {
+    color: #b2b4b5;
+  }
+}
+
+.eventDates {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-self: flex-start;
+
+  text-align: right;
+
+  span,
+  p {
+    display: block;
+    white-space: nowrap;
+  }
+}
+
+.eventDate {
+  line-height: 18px;
+}
+
+.separator {
+  display: inline-block;
+  align-self: stretch;
+
+  width: 1px;
+  min-height: 100%;
+  margin: 0 16px;
+  border-radius: 1px;
+
+  background: rgb(0 0 0 / 12%);
+}
+
+.eventTitle {
+  flex: 1;
+  margin-right: 8px;
+  line-height: 18px;
+}

@@ -1,0 +1,13 @@
+.bannerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 334px;
+
+  color: #fff;
+  text-align: center;
+}

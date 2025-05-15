@@ -78,7 +78,11 @@ export default function RootLayout({
     }
   }, [pathname]);
 
-  const excludedFooterPaths = ["/landing-page/dark/tm7"];
+  const excludedFooterPaths = [
+    "/landing-page/dark/tm7",
+    "/es-2025",
+    "/es-2025/aop",
+  ];
 
   const showDefaultFooter = !excludedFooterPaths.includes(pathname);
 

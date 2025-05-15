@@ -1,0 +1,78 @@
+.carouselContainer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.carouselInner {
+  display: flex;
+  height: 100%;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.tileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+
+.image {
+  display: flex;
+  background-size: cover;
+  background-position: center;
+  width: 298px;
+  height: 298px;
+  transition: transform 0.5s ease;
+  transform-origin: top left; 
+}
+.imageWrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.textBlockWrapper {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  max-height: 180px;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.hidden {
+  opacity: 0;
+  max-height: 90px;
+  pointer-events: none;
+  transition: opacity 0.1s 0.3s ease, max-height 0.3s ease;
+}
+
+.step {
+  display: flex;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: #23282A;
+  color: #fff;
+  border-radius: 40px;
+}
