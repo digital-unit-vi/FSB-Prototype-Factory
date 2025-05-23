@@ -1,10 +1,19 @@
-@vorwerk:registry=https://pkgs.dev.azure.com/vorwerk-cloudsolutions/vw-storybook-weu-rg/_packaging/vw-storybook-weu-rg/npm/registry/ 
+# @vorwerk:registry=https://pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend/npm/registry/
+@vorwerk:registry=https://pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend-TESTING/npm/registry/
+always-auth=true
 
-//pkgs.dev.azure.com/vorwerk-cloudsolutions/vw-storybook-weu-rg/_packaging/vw-storybook-weu-rg/npm/registry/:always-auth=true
-//pkgs.dev.azure.com/vorwerk-cloudsolutions/vw-storybook-weu-rg/_packaging/vw-storybook-weu-rg/npm/registry/:username=VssSessionToken
-//pkgs.dev.azure.com/vorwerk-cloudsolutions/vw-storybook-weu-rg/_packaging/vw-storybook-weu-rg/npm/registry/:_password=[BASE64_ENCODED_ACCESS_TOKEN]
-//pkgs.dev.azure.com/vorwerk-cloudsolutions/vw-storybook-weu-rg/_packaging/vw-storybook-weu-rg/npm/registry/:email=[YOUR_EMAIL_ADDRESS]
-//pkgs.dev.azure.com/vorwerk-cloudsolutions/vw-storybook-weu-rg/_packaging/vw-storybook-weu-rg/npm/:always-auth=true
-//pkgs.dev.azure.com/vorwerk-cloudsolutions/vw-storybook-weu-rg/_packaging/vw-storybook-weu-rg/npm/:username=VssSessionToken
-//pkgs.dev.azure.com/vorwerk-cloudsolutions/vw-storybook-weu-rg/_packaging/vw-storybook-weu-rg/npm/:_password=[BASE64_ENCODED_ACCESS_TOKEN]
-//pkgs.dev.azure.com/vorwerk-cloudsolutions/vw-storybook-weu-rg/_packaging/vw-storybook-weu-rg/npm/:email=[YOUR_EMAIL_ADDRESS]
+; begin auth token
+# //pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend/npm/registry/:username=Vorwerk-FibreSingleBlend
+# //pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend/npm/registry/:_password=[BASE64_ENCODED_ACCESS_TOKEN]
+# //pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend/npm/registry/:email=[USER_EMAIL]
+# //pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend/npm/:username=Vorwerk-FibreSingleBlend
+# //pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend/npm/:_password=[BASE64_ENCODED_ACCESS_TOKEN]
+# //pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend/npm/:email=[USER_EMAIL]
+//pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend-TESTING/npm/registry/:username=Vorwerk-FibreSingleBlend
+//pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend-TESTING/npm/registry/:_password=[BASE64_ENCODED_ACCESS_TOKEN]
+//pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend-TESTING/npm/registry/:email=[USER_EMAIL]
+//pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend-TESTING/npm/:username=Vorwerk-FibreSingleBlend
+//pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend-TESTING/npm/:_password=[BASE64_ENCODED_ACCESS_TOKEN]
+//pkgs.dev.azure.com/Vorwerk-FibreSingleBlend/_packaging/Vorwerk-FibreSingleBlend-TESTING/npm/:email=[USER_EMAIL]
+; end auth token
+
