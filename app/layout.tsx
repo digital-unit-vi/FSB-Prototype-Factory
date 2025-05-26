@@ -11,7 +11,7 @@ import {
   FooterShopLogo,
   FooterShopLogos,
   FooterShopLogosBlock,
-  FooterSmallLinks,
+  // FooterSmallLinks,
   FooterSocialLinkBlock,
   FooterSocialLinks,
   Germany,
@@ -436,8 +436,8 @@ export default function RootLayout({
                   />
                 </FooterShopLogos>
               </FooterSection>
-              <FooterSection variant="spacingSmallLink">
-                <FooterSmallLinks>
+              {/* <FooterSection variant="spacingSmallLink"> */}
+                {/* <FooterSmallLinks>
                   <ul>
                     <li key="about-us">
                       <Typography variant="paragraph12">
@@ -487,8 +487,8 @@ export default function RootLayout({
                       </Typography>
                     </li>
                   </ul>
-                </FooterSmallLinks>
-              </FooterSection>
+                </FooterSmallLinks> */}
+              {/* </FooterSection> */}
             </footer>
           )}
         </Providers>

@@ -14,7 +14,7 @@ import {
   FooterSection,
   FooterShopLogos,
   FooterShopLogosBlock,
-  FooterSmallLinks,
+  FooterMetaLinks,
   Typography,
 } from "@vorwerk/fibre-react";
 import Image from "next/image";
@@ -126,7 +126,7 @@ const FooterLandingPage = () => {
         </FooterShopLogos>
       </FooterSection>
       <FooterSection>
-        <FooterSmallLinks>
+        <FooterMetaLinks>
           <ul>
             <li>
               <Typography variant="paragraph12">© 2021 Vorwerk</Typography>
@@ -179,7 +179,7 @@ const FooterLandingPage = () => {
               </Typography>
             </li>
           </ul>
-        </FooterSmallLinks>
+        </FooterMetaLinks>
       </FooterSection>
     </footer>
   );
