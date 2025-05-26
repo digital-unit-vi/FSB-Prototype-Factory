@@ -35,16 +35,13 @@ html {
   position: relative;
 }
 
-p,
-body {
-  margin: 0;
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
+h6,
+blockquote,
 span,
 p {
   font-family: Vorwerk, system-ui, arial, sans-serif !important;
@@ -121,6 +118,16 @@ h6 {
 /* 9. Improve line wrapping */
 p {
   text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote {
+  text-wrap: balance;
 }
 
 /*
