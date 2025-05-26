@@ -1,4 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# VorWerk Prototypes
+
+## Stack
+- TypeScript
+- React
+- Next.js
 
 ## Configuration
 
@@ -7,8 +12,10 @@ Authenticate private package `@vorwerk/fibre-react` following the instruction:
 - [TEST env](https://dev.azure.com/Vorwerk-FibreSingleBlend/Storybook/_artifacts/feed/Vorwerk-FibreSingleBlend-TESTING/connect). 
 
 Alternatively, you can use the `.npmrc.template` file:
-1. Copy the content of `.npmrc.template` to a new file named `.npmrc` in the same directory.
+1. Copy the content of `.npmrc.template` to a new file named `.npmrc` locally (~/.npmrc).
 2. Provide the missing values in the `.npmrc` file.
+
+**Please do not update .nmprc file in the root project.**
 
 ## Getting Started
 
@@ -46,7 +53,7 @@ root
 |   |-- [utility.ts] # Helper functions and utilities
 ```
 
-### Key Folders:
+#### Key Folders:
 
 - `app/`: Contains the main application logic, including pages and API routes.
 - `components/`: Houses reusable React components to maintain modularity.
@@ -68,7 +75,7 @@ After building, you can start the production server with:
 npm start
 ```
 
-### Test Server Deployment
+#### Test Server Deployment
 The deployment to the test server is handled automatically via Cloudflare. The process is as follows:
 
 1. Create a Pull Request (PR) in the repository.
@@ -79,7 +86,7 @@ The deployment to the test server is handled automatically via Cloudflare. The p
 
 This allows you to preview and test the changes in a staging environment before merging the PR.
 
-### Production Deployment
+#### Production Deployment
 For production deployment, ensure the build is complete and the code is merged into the main branch. The deployment process will follow the organization's defined CI/CD pipeline.
 
 ## License
