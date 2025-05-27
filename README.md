@@ -1,23 +1,112 @@
 # VorWerk Prototypes
 
 ## Stack
-- TypeScript
-- React
-- Next.js
+
+The project leverages the following technologies:
+
+- **TypeScript**: A strongly typed programming language that builds on JavaScript, providing better tooling and reducing runtime errors.
+- **React**: A JavaScript library for building user interfaces, focusing on component-based architecture and efficient rendering.
+- **Next.js**: A React framework that enables server-side rendering (SSR), static site generation (SSG), and other advanced features like API routes and image optimization.
+- **Node.js**: Used as the runtime environment for server-side logic and API routes.
+- **Stylelint**: A modern CSS/SCSS linter to enforce consistent styling and avoid errors in stylesheets.
+- **ESLint**: A tool for identifying and fixing problems in JavaScript/TypeScript code, ensuring code quality and consistency.
+- **Prettier**: An opinionated code formatter to maintain consistent code style across the project.
+- **direnv**: A tool for managing environment variables, simplifying the configuration process for local development.
+- **Cloudflare**: Used for automated deployments to the test server, providing a seamless CI/CD pipeline.
+
+This stack was chosen to ensure a balance between developer productivity, code quality, and application performance.
 
 ## Configuration
 
-Authenticate private package `@vorwerk/fibre-react` following the instruction: 
-- [PROD env](https://dev.azure.com/Vorwerk-FibreSingleBlend/Storybook/_artifacts/feed/Vorwerk-FibreSingleBlend/connect)
-- [TEST env](https://dev.azure.com/Vorwerk-FibreSingleBlend/Storybook/_artifacts/feed/Vorwerk-FibreSingleBlend-TESTING/connect). 
+To authenticate the private package `@vorwerk/fibre-react`, follow these steps:
 
-Alternatively, you can use the `.npmrc.template` file:
-1. Copy the content of `.npmrc.template` to a new file named `.npmrc` locally (~/.npmrc).
-2. Provide the missing values in the `.npmrc` file.
+1. **Create an Environment File**:
+   - Copy the content of `.env.template` to a new file named `.env`.
 
-**Please do not update .nmprc file in the root project.**
+2. **Generate a Personal Access Token (PAT)**:
+   - Go to [Azure DevOps Personal Access Tokens](https://dev.azure.com/Vorwerk-FibreSingleBlend/_usersSettings/tokens).
+   - Generate a token with `Packaging` read & write scopes.
 
-## Getting Started
+3. **Base64 Encode the Token**:
+   - Use the following command to encode your token:
+     ```bash
+     node -e "require('readline') .createInterface({input:process.stdin,output:process.stdout,historySize:0}) .question('PAT> ',p => { b64=Buffer.from(p.trim()).toString('base64');console.log(b64);process.exit(); })"
+     ```
+   - Paste your Personal Access Token (PAT) when prompted and press Enter.
+   - Copy the Base64-encoded value.
+
+4. **Update the `.env` File**:
+   - Replace `[BASE64_ENCODED_PERSONAL_ACCESS_TOKEN]` in your `.env` file with the encoded value from Step 3.
+
+5. **Enable Environment Variables in `.npmrc`**:
+   - To use variables in the `.npmrc` file, install and configure `direnv` as described below.
+
+### Using `direnv` to Manage Environment Variables
+
+1. **Install `direnv`**:
+   - On Linux:
+     ```bash
+     apt-get install direnv
+     ```
+   - On macOS:
+     ```bash
+     brew install direnv
+     ```
+
+2. **Hook `direnv` into Your Shell**:
+   - For **Bash**:
+     Add the following line to the end of your `~/.bashrc` file:
+     ```bash
+     eval "$(direnv hook bash)"
+     ```
+   - For **Zsh**:
+     Add the following line to the end of your `~/.zshrc` file:
+     ```bash
+     eval "$(direnv hook zsh)"
+     ```
+
+3. **Load Variables Globally**:
+   - Run the following command to allow `direnv` to load variables:
+     ```bash
+     direnv allow
+     ```
+
+## Troubleshooting
+
+#### Direnv still doesn't load `.env` variables
+
+If `direnv` is not loading your `.env` variables, follow these steps:
+
+1. **Create a Configuration Directory**:
+   ```bash
+   mkdir -p ~/.config/direnv
+   ```
+
+2. **Create a Configuration File**:
+   ```bash
+   touch ~/.config/direnv/direnv.toml
+   ```
+
+3. **Add Global Settings**:
+   Open the configuration file and add the following:
+   ```toml
+   [global]
+   load_dotenv = true
+   ```
+
+4. **Reload Your Shell**:
+   Save the file and reload your shell:
+   ```bash
+   exec $SHELL
+   ```
+
+5. **Re-run `direnv`**:
+   Run the following command to apply the changes:
+   ```bash
+   direnv allow
+   ```
+
+## Running the project locally
 
 First, run the development server:
 
@@ -26,8 +115,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 ## Project structure
 
@@ -89,9 +176,6 @@ This allows you to preview and test the changes in a staging environment before 
 #### Production Deployment
 For production deployment, ensure the build is complete and the code is merged into the main branch. The deployment process will follow the organization's defined CI/CD pipeline.
 
-## License
-This project is licensed under the terms defined by the organization.
-
 ## Workflow
 
 The development and deployment workflow for this project follows these steps:
@@ -129,4 +213,5 @@ The development and deployment workflow for this project follows these steps:
 
 This workflow ensures a smooth and efficient development process while maintaining high code quality and minimizing risks during deployment.
 
-
+## License
+This project is licensed under the terms defined by the organization.
