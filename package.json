@@ -1,53 +1,53 @@
 {
-  "browserslist": [
-    "defaults"
-  ],
-  "dependencies": {
-    "@gsap/react": "^2.1.2",
-    "@vorwerk/fibre-react": "^1.1.56",
-    "embla-carousel": "^8.6.0",
-    "embla-carousel-react": "^8.6.0",
-    "gsap": "^3.13.0",
-    "next": "^14.2.28",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-fast-marquee": "^1.6.5",
-    "react-scroll-parallax": "^3.4.5",
-    "sharp": "^0.34.1"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.26.0",
-    "@types/node": "^22.15.18",
-    "@types/react": "^18.3.21",
-    "@types/react-dom": "^18.3.7",
-    "classnames": "^2.5.1",
-    "eslint": "^9.26.0",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "framer-motion": "^12.11.1",
-    "globals": "^16.1.0",
-    "prettier": "^3.5.3",
-    "sass": "^1.88.0",
-    "stylelint": "^16.19.1",
-    "stylelint-config-clean-order": "^7.0.0",
-    "stylelint-config-standard-scss": "^15.0.0",
-    "stylelint-scss": "^6.12.0",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.32.1"
-  },
-  "name": "ds360",
-  "private": true,
-  "scripts": {
-    "build": "next build",
-    "dev": "next dev --turbo",
-    "export": "next export",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "lint:styles": "stylelint '**/*.scss'",
-    "lint:styles:fix": "stylelint '**/*.scss' --fix",
-    "start": "next start"
-  },
-  "type": "module",
-  "version": "0.1.0"
+	"browserslist": [
+		"defaults"
+	],
+	"dependencies": {
+		"@gsap/react": "^2.1.2",
+		"@vorwerk/fibre-react": "^1.1.56",
+		"embla-carousel": "^8.6.0",
+		"embla-carousel-react": "^8.6.0",
+		"gsap": "^3.13.0",
+		"next": "^14.2.28",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-fast-marquee": "^1.6.5",
+		"react-scroll-parallax": "^3.4.5",
+		"sharp": "^0.34.1"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.26.0",
+		"@types/node": "^22.15.18",
+		"@types/react": "^18.3.21",
+		"@types/react-dom": "^18.3.7",
+		"classnames": "^2.5.1",
+		"eslint": "^9.26.0",
+		"eslint-config-prettier": "^10.1.5",
+		"eslint-plugin-react": "^7.37.5",
+		"eslint-plugin-react-hooks": "^5.2.0",
+		"framer-motion": "^12.11.1",
+		"globals": "^16.1.0",
+		"prettier": "^3.5.3",
+		"sass": "^1.88.0",
+		"stylelint": "^16.19.1",
+		"stylelint-config-clean-order": "^7.0.0",
+		"stylelint-config-standard-scss": "^15.0.0",
+		"stylelint-scss": "^6.12.0",
+		"typescript": "^5.8.3",
+		"typescript-eslint": "^8.32.1"
+	},
+	"name": "ds360",
+	"private": true,
+	"scripts": {
+		"build": "next build",
+		"dev": "next dev --turbo",
+		"export": "next export",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix",
+		"lint:styles": "stylelint '**/*.scss'",
+		"lint:styles:fix": "stylelint '**/*.scss' --fix",
+		"start": "next start"
+	},
+	"type": "module",
+	"version": "0.1.0"
 }
