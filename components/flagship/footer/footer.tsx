@@ -1,163 +1,196 @@
-import { Austria, Canada, China, Czechia, DropdownItem, Facebook, FooterLinks, FooterLinksBlock, FooterSection, FooterSmallLinks, FooterSocialLinkBlock, FooterSocialLinks, France, Germany, Greece, Instagram, Ireland, Italy, LanguageSelector, Mexico, Pinterest, Poland, Portugal, ProductStripe, Rezeptwelt, Spain, Switzerland, Taiwan, Turkey, Typography, UK, USA, Youtube } from "@vorwerk/fibre-react";
-import styles from './footer.module.scss'
+import {
+  Austria,
+  Canada,
+  China,
+  Czechia,
+  DropdownItem,
+  Facebook,
+  FooterLinks,
+  FooterLinksBlock,
+  FooterSection,
+  FooterSocialLinkBlock,
+  FooterSocialLinks,
+  France,
+  Germany,
+  Greece,
+  Instagram,
+  Ireland,
+  Italy,
+  LanguageSelector,
+  Mexico,
+  Pinterest,
+  Poland,
+  Portugal,
+  ProductStripe,
+  Rezeptwelt,
+  Spain,
+  Switzerland,
+  Taiwan,
+  Turkey,
+  Typography,
+  UK,
+  USA,
+  Youtube,
+} from "@vorwerk/fibre-react";
+import styles from "./footer.module.scss";
 
 export const Footer = () => {
   const Languages = [
-    <DropdownItem key='canada-en'>
+    <DropdownItem key="canada-en">
       <Canada />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Canada <span>(English)</span>
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='canada=fr'>
+
+    <DropdownItem key="canada=fr">
       <Canada />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Canada <span>(Français)</span>
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='czechia'>
+
+    <DropdownItem key="czechia">
       <Czechia />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Česko
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='china-tm'>
+
+    <DropdownItem key="china-tm">
       <China />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         中国大陆 (Thermomix)
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='china-kobold'>
+
+    <DropdownItem key="china-kobold">
       <China />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         中国大陆 (Kobold)
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='germany'>
+
+    <DropdownItem key="germany">
       <Germany />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Deutschland
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='spain'>
+
+    <DropdownItem key="spain">
       <Spain />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         España
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='france'>
+
+    <DropdownItem key="france">
       <France />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         France
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='greece'>
+
+    <DropdownItem key="greece">
       <Greece />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Ελλάδα
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='irland'>
+
+    <DropdownItem key="irland">
       <Ireland />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Ireland
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='italy'>
+
+    <DropdownItem key="italy">
       <Italy />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Italia
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='mexico'>
+
+    <DropdownItem key="mexico">
       <Mexico />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         México
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='austria'>
+
+    <DropdownItem key="austria">
       <Austria />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Österreich
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='poland'>
+
+    <DropdownItem key="poland">
       <Poland />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Polska
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='portugal'>
+
+    <DropdownItem key="portugal">
       <Portugal />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Portugal
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='switzerland-de'>
+
+    <DropdownItem key="switzerland-de">
       <Switzerland />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Schweiz <span>(Deutsch)</span>
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='switzerland-fr'>
+
+    <DropdownItem key="switzerland-fr">
       <Switzerland />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Suisse <span>(Français)</span>
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='switzerland-it'>
+
+    <DropdownItem key="switzerland-it">
       <Switzerland />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Svizzera <span>(Italiano)</span>
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='taiwan'>
+
+    <DropdownItem key="taiwan">
       <Taiwan />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         台灣
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='turkey'>
+
+    <DropdownItem key="turkey">
       <Turkey />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         Türkiye
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='usa'>
+
+    <DropdownItem key="usa">
       <USA />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         USA
       </Typography>
     </DropdownItem>,
-  
-    <DropdownItem key='uk'>
+
+    <DropdownItem key="uk">
       <UK />
       <Typography component="span" variant="paragraph16" fontWeight="regular">
         United Kingdom
       </Typography>
-    </DropdownItem>
-  ]
-  
+    </DropdownItem>,
+  ];
+
   return (
     <footer>
       <div className={styles.overwrittenProductStripeGap}>
@@ -211,10 +244,10 @@ export const Footer = () => {
               </Typography>
             }
             links={[
-              <Typography variant="paragraph16" key='contact'>
+              <Typography variant="paragraph16" key="contact">
                 <a href="#contact">Contact us</a>
               </Typography>,
-              <Typography variant="paragraph16" key='support'>
+              <Typography variant="paragraph16" key="support">
                 <a href="#support">Vorwerk Support Center</a>
               </Typography>,
             ]}
@@ -226,10 +259,10 @@ export const Footer = () => {
               </Typography>
             }
             links={[
-              <Typography variant="paragraph16" key='experience-live'>
+              <Typography variant="paragraph16" key="experience-live">
                 <a href="#experience-live">Experience live</a>
               </Typography>,
-              <Typography variant="paragraph16" key='vorwerk-stores'>
+              <Typography variant="paragraph16" key="vorwerk-stores">
                 <a href="#vorwerk-stores">Vorwerk Stores</a>
               </Typography>,
             ]}
@@ -241,13 +274,13 @@ export const Footer = () => {
               </Typography>
             }
             links={[
-              <Typography variant="paragraph16" key='payment-methods'>
+              <Typography variant="paragraph16" key="payment-methods">
                 <a href="#paymentmethods">Payment methods</a>
               </Typography>,
-              <Typography variant="paragraph16" key='shipping'>
+              <Typography variant="paragraph16" key="shipping">
                 <a href="#shipping-delivery">Shipping & delivery</a>
               </Typography>,
-              <Typography variant="paragraph16" key='security'>
+              <Typography variant="paragraph16" key="security">
                 <a href="#security">Security</a>
               </Typography>,
             ]}
@@ -264,19 +297,19 @@ export const Footer = () => {
                 </Typography>
               }
               links={[
-                <a href="#facebook" key='tm-fb'>
+                <a href="#facebook" key="tm-fb">
                   <Facebook />
                 </a>,
-                <a href="#instagram" key='tm-instagram'>
+                <a href="#instagram" key="tm-instagram">
                   <Instagram />
                 </a>,
-                <a href="#pinterest" key='tm-pinterest'>
+                <a href="#pinterest" key="tm-pinterest">
                   <Pinterest />
                 </a>,
-                <a href="#youtube" key='tm-youtube'>
+                <a href="#youtube" key="tm-youtube">
                   <Youtube />
                 </a>,
-                <a href="#receptwelt" key='tm-rezeptwelt'>
+                <a href="#receptwelt" key="tm-rezeptwelt">
                   <Rezeptwelt />
                 </a>,
               ]}
@@ -288,16 +321,16 @@ export const Footer = () => {
                 </Typography>
               }
               links={[
-                <a href="#facebook" key='kb-fb'>
+                <a href="#facebook" key="kb-fb">
                   <Facebook />
                 </a>,
-                <a href="#instagram" key='kb-instagram'>
+                <a href="#instagram" key="kb-instagram">
                   <Instagram />
                 </a>,
-                <a href="#pinterest" key='kb-pinterest'>
+                <a href="#pinterest" key="kb-pinterest">
                   <Pinterest />
                 </a>,
-                <a href="#youtube" key='kb-youtube'>
+                <a href="#youtube" key="kb-youtube">
                   <Youtube />
                 </a>,
               ]}
@@ -313,7 +346,7 @@ export const Footer = () => {
                 modalTitle="Select your country"
                 suggestedLabel="Suggested"
                 suggestedLanguages={[
-                  <DropdownItem key='germany'>
+                  <DropdownItem key="germany">
                     <Germany />
                     <Typography
                       component="span"
@@ -331,7 +364,7 @@ export const Footer = () => {
         </div>
       </FooterSection>
       <FooterSection>
-        <FooterSmallLinks>
+        <FooterLinks>
           <ul>
             <li>
               <Typography variant="paragraph12">© 2021 Vorwerk</Typography>
@@ -384,8 +417,8 @@ export const Footer = () => {
               </Typography>
             </li>
           </ul>
-        </FooterSmallLinks>
+        </FooterLinks>
       </FooterSection>
     </footer>
-  )
-}
+  );
+};

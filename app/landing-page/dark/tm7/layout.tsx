@@ -9,7 +9,6 @@ import {
 import Link from "next/link";
 import { ReactNode } from "react";
 import "../../../globals.scss";
-import styles from "./layout.module.scss";
 
 export default function RootLayout({
   children,
@@ -67,52 +66,50 @@ export default function RootLayout({
           </FooterLinks>
         </FooterSection>
         <FooterSection>
-          <div className={styles.footerSmallLinks}>
-            <FooterLinks>
-              <ul>
-                <li key="2021 Vorwerk">
-                  <Typography variant="paragraph12">© 2021 Vorwerk</Typography>
-                </li>
+          <FooterLinks>
+            <ul>
+              <li key="2021 Vorwerk">
+                <Typography variant="paragraph12">© 2021 Vorwerk</Typography>
+              </li>
 
-                <li key="About us">
-                  <Typography variant="paragraph12">
-                    <Link href="#about-us">About us</Link>
-                  </Typography>
-                </li>
+              <li key="About us">
+                <Typography variant="paragraph12">
+                  <Link href="#about-us">About us</Link>
+                </Typography>
+              </li>
 
-                <li key="Press">
-                  <Typography variant="paragraph12">
-                    <Link href="#press">Press</Link>
-                  </Typography>
-                </li>
-                <li key="Privacy">
-                  <Typography variant="paragraph12">
-                    <Link href="#privacy">Privacy</Link>
-                  </Typography>
-                </li>
-                <li key="Imprint">
-                  <Typography variant="paragraph12">
-                    <Link href="#imprint">Imprint</Link>
-                  </Typography>
-                </li>
-                <li key="Cookies">
-                  <Typography variant="paragraph12">
-                    <Link href="#cookies">Cookies</Link>
-                  </Typography>
-                </li>
-                <li key="Terms of service">
-                  <Typography variant="paragraph12">
-                    <Link href="#terms">Terms of Service</Link>
-                  </Typography>
-                </li>
-                <li key="Mandatory">
-                  <Typography variant="paragraph12">
-                    <Link href="#mandatory">Mandatory information</Link>
-                  </Typography>
-                </li>
-              </ul>
-            </FooterLinks>
-          </div>
+              <li key="Press">
+                <Typography variant="paragraph12">
+                  <Link href="#press">Press</Link>
+                </Typography>
+              </li>
+              <li key="Privacy">
+                <Typography variant="paragraph12">
+                  <Link href="#privacy">Privacy</Link>
+                </Typography>
+              </li>
+              <li key="Imprint">
+                <Typography variant="paragraph12">
+                  <Link href="#imprint">Imprint</Link>
+                </Typography>
+              </li>
+              <li key="Cookies">
+                <Typography variant="paragraph12">
+                  <Link href="#cookies">Cookies</Link>
+                </Typography>
+              </li>
+              <li key="Terms of service">
+                <Typography variant="paragraph12">
+                  <Link href="#terms">Terms of Service</Link>
+                </Typography>
+              </li>
+              <li key="Mandatory">
+                <Typography variant="paragraph12">
+                  <Link href="#mandatory">Mandatory information</Link>
+                </Typography>
+              </li>
+            </ul>
+          </FooterLinks>
         </FooterSection>
       </footer>
     </>
