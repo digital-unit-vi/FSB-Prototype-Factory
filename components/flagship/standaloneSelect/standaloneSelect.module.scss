@@ -5,31 +5,35 @@
 .standaloneSelectContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   align-self: stretch;
-  color: #00AC46;
-  background-color: transparent;
+  justify-content: center;
+
   padding: 0;
   border: none;
+
+  color: #00ac46;
+
+  background-color: transparent;
 }
 
 .standaloneSelectContainer:hover {
-  color: #00973D;
+  color: #00973d;
 }
 
 .selectContainer {
   display: flex;
-  padding: 11px 16px 11px 0px;
-  align-items: center;
   gap: 6px;
+  align-items: center;
   align-self: stretch;
+
+  padding: 11px 16px 11px 0;
 }
 
 .select {
   display: flex;
-  align-items: center;
   gap: 6px;
+  align-items: center;
 }
 
 .selectContainer svg {
@@ -43,42 +47,48 @@
 }
 
 .dropdownMenu {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #FFFFFF;
-  position: absolute;
-  top: 100%;
-  left: 0;
+
   width: 100%;
-  border-radius: 8px;
-  list-style: none;
-  padding: 8px 4px;
-  box-shadow: 0 2px 4px 2px rgba(35, 40, 42, 0.08);
-  z-index: 10;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-  color: #23282A;
   margin: 0;
+  padding: 8px 4px;
+  border-radius: 8px;
+
+  color: #23282a;
+  list-style: none;
+
+  visibility: hidden;
+  opacity: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 2px rgb(35 40 42 / 8%);
+
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
 }
 
 .dropdownMenu.fadeIn {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 }
 
-
 .dropdownMenu.fadeOut {
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
 }
 
 .dropdownMenuItem {
-  padding: 11px 12px;
   cursor: pointer;
-  box-sizing: border-box;
   position: relative;
+  box-sizing: border-box;
+  padding: 11px 12px;
 }
 
 .dropdownMenu.upMenu {

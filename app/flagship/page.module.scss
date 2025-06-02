@@ -3,22 +3,25 @@
 }
 
 .prominentSection {
-  color: #23282A;
-  padding: 128px 0 160px;
   --gap-3: 64px;
 
-  @media (min-width: 936px) and (max-width: 1267px) {
-      padding: 112px 0 144px;
-      --gap-3: 56px;
+  padding: 128px 0 160px;
+  color: #23282a;
+
+  @media (width >= 936px) and (width <= 1267px) {
+    --gap-3: 56px;
+
+    padding: 112px 0 144px;
   }
 
-  @media (max-width: 935px) {
-      padding: 64px 0 80px;
-      --gap-3: 40px;
+  @media (width <= 935px) {
+    --gap-3: 40px;
+
+    padding: 64px 0 80px;
   }
 }
 
-.prominentSection>div {
+.prominentSection > div {
   row-gap: var(--gap-3);
 }
 
@@ -26,13 +29,12 @@
   text-align: center;
 }
 
-.tiles>a {
+.tiles > a {
   text-decoration: none;
 }
 
 .tiles div:has(> div:nth-of-type(2)) {
-  &>div:first-child {
-      padding: 0;
+  & > div:first-child {
+    padding: 0;
   }
 }
-

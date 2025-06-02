@@ -4,7 +4,6 @@ import {
   FooterLinks,
   FooterLinksBlock,
   FooterSection,
-  FooterSmallLinks,
   Typography,
 } from "@vorwerk/fibre-react";
 import Link from "next/link";
@@ -69,7 +68,7 @@ export default function RootLayout({
         </FooterSection>
         <FooterSection>
           <div className={styles.footerSmallLinks}>
-            <FooterSmallLinks>
+            <FooterLinks>
               <ul>
                 <li key="2021 Vorwerk">
                   <Typography variant="paragraph12">© 2021 Vorwerk</Typography>
@@ -112,7 +111,7 @@ export default function RootLayout({
                   </Typography>
                 </li>
               </ul>
-            </FooterSmallLinks>
+            </FooterLinks>
           </div>
         </FooterSection>
       </footer>

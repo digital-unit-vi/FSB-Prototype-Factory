@@ -1,150 +1,153 @@
 .plp {
-    --padding-5: 64px;
-    --padding-6: 80px;
-    --gap-2: 32px;
-    --container-min-width: 460px;
-    --radius-rounded-corner: 88px;
+  --padding-5: 64px;
+  --padding-6: 80px;
+  --gap-2: 32px;
+  --container-min-width: 460px;
+  --radius-rounded-corner: 88px;
 
-    @media (min-width: 936px) and (max-width: 1267px) {
-        --padding-5: 112px;
-        --padding-6: 144px;
-        --gap-2: 40px;
-        --container-min-width: 552px;
-        --radius-rounded-corner: 128px;
-    }
+  @media (width >= 936px) and (width <= 1267px) {
+    --padding-5: 112px;
+    --padding-6: 144px;
+    --gap-2: 40px;
+    --container-min-width: 552px;
+    --radius-rounded-corner: 128px;
+  }
 
-    @media (min-width: 1268px) {
-        --padding-5: 128px;
-        --padding-6: 160px;
-        --gap-2: 56px;
-    }
+  @media (width >= 1268px) {
+    --padding-5: 128px;
+    --padding-6: 160px;
+    --gap-2: 56px;
+  }
 
-    @media (min-width: 1268px) and (max-width: 1579px) {
-        --container-min-width: 736px;
-        --radius-rounded-corner: 144px;
-    }
+  @media (width >= 1268px) and (width <= 1579px) {
+    --container-min-width: 736px;
+    --radius-rounded-corner: 144px;
+  }
 
-    @media (min-width: 1580px) {
-        --container-min-width: 920px;
-        --radius-rounded-corner: 168px;
-    }
+  @media (width >= 1580px) {
+    --container-min-width: 920px;
+    --radius-rounded-corner: 168px;
+  }
 }
 
 .hero {
-    text-wrap: balance;
-    margin-bottom: 16px;
-    position: relative;
+  position: relative;
+  margin-bottom: 16px;
+  text-wrap: balance;
 }
 
 .overlayIconWrapper {
-    position: absolute;
-    bottom: calc(16px + 88px); //88px is from Hero::after
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 72px;
-    color: #23282A;
-    z-index: 3;
+  position: absolute;
+  z-index: 3;
+  bottom: calc(16px + 88px); // 88px is from Hero::after
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 80px;
+  height: 72px;
+
+  color: #23282a;
 }
 
 .overlayIcon,
 .overlayIconText,
-.overlayIconWrapper>svg {
-    position: absolute;
+.overlayIconWrapper > svg {
+  position: absolute;
 }
 
 .overlayIcon,
-.overlayIconWrapper>svg {
-    left: 50%;
-    transform: translate(-50%, 0);
-    transition: opacity 1s ease-in-out;
-    animation: icon-animation 3s infinite;
-    animation-delay: 1ms;
+.overlayIconWrapper > svg {
+  left: 50%;
+  transform: translate(-50%, 0);
 
-    @media (min-width: 936px) {
-        top: 0px;
-    }
+  transition: opacity 1s ease-in-out;
+  animation: icon-animation 3s infinite;
+  animation-delay: 1ms;
+
+  @media (width >= 936px) {
+    top: 0;
+  }
 }
 
-.overlayIconWrapper>svg {
-    top: 12px;
-    width: 48px;
-    aspect-ratio: 1/1;
+.overlayIconWrapper > svg {
+  top: 12px;
+  aspect-ratio: 1/1;
+  width: 48px;
 }
 
 @keyframes icon-animation {
-    0% {
-        transform: translate(-50%, 0);
-        opacity: 1;
-    }
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
 
-    50% {
-        transform: translate(-50%, -12px);
-        opacity: 1;
-        animation-timing-function: cubic-bezier(0.6, -0.01, 0.46, 1);
-    }
+  50% {
+    transform: translate(-50%, -12px);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.6, -0.01, 0.46, 1);
+  }
 
-    100% {
-        transform: translate(-50%, -12px);
-        opacity: 0;
-    }
+  100% {
+    transform: translate(-50%, -12px);
+    opacity: 0;
+  }
 }
 
 .overlayIconText {
-    top: 48px;
-    width: 100%;
+  top: 48px;
+  width: 100%;
 }
 
 .overlayIconText,
 .textCentered {
-    text-align: center;
+  text-align: center;
 }
 
 .prominentSection {
-    padding: var(--padding-5) 0 var(--padding-6);
+  padding: var(--padding-5) 0 var(--padding-6);
 }
 
-.overwrittenMargin>div:first-child {
-    @media (max-width: 935px) {
-        margin-bottom: 40px !important;
-    }
+.overwrittenMargin > div:first-child {
+  @media (width <= 935px) {
+    margin-bottom: 40px !important;
+  }
 }
 
 .tilesContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--gap-2);
-    align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-2);
+  align-items: flex-start;
+  align-self: stretch;
 }
 
 .sectionWithRadius {
-    border-radius: 0 0 var(--radius-rounded-corner) 0;
-    background-color: #F3F5F3;
+  border-radius: 0 0 var(--radius-rounded-corner) 0;
+  background-color: #f3f5f3;
 }
 
 .overwrittenHeadline {
-    @media (min-width: 740px) {
-        max-width: var(--container-min-width);
-        margin-inline: auto;
-    }
+  @media (width >= 740px) {
+    max-width: var(--container-min-width);
+    margin-inline: auto;
+  }
 }
 
 .videoWithTextBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  align-self: stretch;
 }
 
 .textBlock {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
 
-    @media (min-width: 740px) {
-        max-width: var(--container-min-width);
-    }
+  @media (width >= 740px) {
+    max-width: var(--container-min-width);
+  }
 }

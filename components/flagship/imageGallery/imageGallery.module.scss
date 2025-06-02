@@ -3,29 +3,33 @@
   --slide-spacing: 1rem;
   --slide-size: 100%;
 
-  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto;
 }
 
 .imageGalleryContainer {
   touch-action: pan-y pinch-zoom;
   display: flex;
+  gap: var(--slide-spacing);
+
   // margin-left: calc(var(--slide-spacing) * -1);
   backface-visibility: hidden;
-  gap: var(--slide-spacing);
 }
 
 .overriddenImageGalleryContainer {
   touch-action: pan-y pinch-zoom;
-  backface-visibility: hidden;
+
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 32px;
+
   width: 1120px;
 
-  @media (min-width: 1580px) {
+  backface-visibility: hidden;
+
+  @media (width >= 1580px) {
     gap: 40px;
     width: 1400px;
   }
@@ -34,12 +38,13 @@
 .imageGallerySlide {
   flex: 0 0 var(--slide-size);
   min-width: 0;
+
   // padding-left: var(--slide-spacing);
 }
 
 .overriddenImageGallerySlide {
-  min-width: 0;
   grid-column: span 4;
+  min-width: 0;
 }
 
 .imageGallerySlideImg {
@@ -51,12 +56,12 @@
 
 .imageGalleryControls {
   display: grid;
-  margin-top: 28px;
   grid-template-columns: repeat(3, 1fr);
-  
-  @media (min-width: 1268px) {
-    width: 100%;
+  margin-top: 28px;
+
+  @media (width >= 1268px) {
     justify-content: space-between;
+    width: 100%;
   }
 }
 
@@ -106,9 +111,9 @@
 
 .imageGalleryDots {
   display: flex;
+  grid-column: 2/3;
   gap: 10px;
   align-items: center;
-  grid-column: 2/3;
   justify-content: center;
 }
 
@@ -151,13 +156,12 @@
 
 .imageGalleryParallaxLayer {
   position: relative;
-
   display: flex;
-
   width: 100%;
 }
 
-.imageGalleryParallaxLayer:has(> .image), .imageGalleryParallaxLayer:has(> a) {
+.imageGalleryParallaxLayer:has(> .image),
+.imageGalleryParallaxLayer:has(> a) {
   height: 100%;
 }
 
@@ -165,10 +169,10 @@
   width: 100%;
 }
 
-.imageGalleryParallaxLayer>video {
+.imageGalleryParallaxLayer > video {
   grid-column: span 1;
-  width: 100%;
   aspect-ratio: 1 / 1;
+  width: 100%;
 }
 
 .imageGalleryParallaxImg {
@@ -192,45 +196,47 @@
 }
 
 .imageGalleryArrows {
-  grid-column: 3/4;
-  justify-self: end;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  grid-column: 3/4;
   gap: 8px;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
 }
 
 .imageGalleryPrev,
 .imageGalleryNext {
-  width: 40px;
-  border-radius: 50%;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.07);
-  border: none;
-  padding: 8px;
   cursor: pointer;
+
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border: none;
+  border-radius: 50%;
+
+  background-color: rgb(0 0 0 / 7%);
 }
 
-.imageGalleryPrev>svg,
-.imageGalleryNext>svg {
+.imageGalleryPrev > svg,
+.imageGalleryNext > svg {
   width: 24px;
   height: 24px;
 
-  &>path {
+  & > path {
     fill: #23282a;
   }
 }
 
 .overriddenImageGallery {
-  padding-left: 0;
   padding-right: 0;
+  padding-left: 0;
 }
 
 .overriddenImageGallery .imageGalleryViewport {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .overriddenImageGallery .imageGalleryContainer,
@@ -240,8 +246,8 @@
 
 .overriddenImageGallery .imageGallerySlide img {
   flex: 0;
-  object-fit: cover;
   aspect-ratio: 1/1 !important;
+  object-fit: cover;
 }
 
 .overriddenImageGallery .imageGalleryControls {
@@ -249,18 +255,21 @@
 }
 
 .carouselInfo {
+  transform: translateY(-50%);
   display: flex;
   justify-content: center;
-  transform: translateY(-50%);
 }
 
 .carouselInfoContent {
-  border-radius: 24px;
-  padding: 8px 12px;
   display: flex;
   gap: 8px;
-  background-color: #FFFFFF;
-  color: #4B4A4B;
   justify-content: center;
+
   width: fit-content;
+  padding: 8px 12px;
+  border-radius: 24px;
+
+  color: #4b4a4b;
+
+  background-color: #fff;
 }

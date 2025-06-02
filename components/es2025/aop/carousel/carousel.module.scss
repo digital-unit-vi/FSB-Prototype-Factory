@@ -1,10 +1,13 @@
 .carouselContainer {
-  overflow: hidden;
+  cursor: grab;
+
   position: relative;
-  width: 100%;
+
+  overflow: hidden;
   display: flex;
   align-items: flex-end;
-  cursor: grab;
+
+  width: 100%;
 
   &:active {
     cursor: grabbing;
@@ -13,28 +16,32 @@
 
 .carouselInner {
   display: flex;
-  height: 100%;
-  align-items: flex-start;
   gap: 16px;
+  align-items: flex-start;
+  height: 100%;
 }
 
 .tileContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 16px;
+  align-items: center;
 }
-
 
 .image {
+  transform-origin: top left;
+
   display: flex;
-  background-size: cover;
-  background-position: center;
+
   width: 298px;
   height: 298px;
+
+  background-position: center;
+  background-size: cover;
+
   transition: transform 0.5s ease;
-  transform-origin: top left; 
 }
+
 .imageWrapper {
   display: flex;
   align-items: flex-end;
@@ -49,30 +56,39 @@
 .textBlock {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 8px;
+  align-items: flex-start;
   align-self: stretch;
+
   max-height: 180px;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
+
+  transition:
+    opacity 0.3s ease,
+    max-height 0.3s ease;
 }
 
 .hidden {
-  opacity: 0;
-  max-height: 90px;
   pointer-events: none;
-  transition: opacity 0.1s 0.3s ease, max-height 0.3s ease;
+  max-height: 90px;
+  opacity: 0;
+  transition:
+    opacity 0.1s 0.3s ease,
+    max-height 0.3s ease;
 }
 
 .step {
   display: flex;
+  flex-direction: column;
   flex-shrink: 0;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
   width: 24px;
   height: 24px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  background-color: #23282A;
-  color: #fff;
   border-radius: 40px;
+
+  color: #fff;
+
+  background-color: #23282a;
 }

@@ -4,50 +4,58 @@
 
 .menuTileContainer {
   display: flex;
-  width: 134px;
   flex-direction: column;
   align-items: flex-start;
-  border-radius: 8px;
-  color: #23282A;
-  background-color: #F3F5F3;
-  height: 100%;
 
-  @media (min-width: 740px) {
-      width: 160px;
+  width: 134px;
+  height: 100%;
+  border-radius: 8px;
+
+  color: #23282a;
+
+  background-color: #f3f5f3;
+
+  @media (width >= 740px) {
+    width: 160px;
   }
 
-  @media (min-width: 936px) {
-      width: 100%;
+  @media (width >= 936px) {
+    width: 100%;
   }
 }
 
 .menuTileContainer.cta {
-  padding: 32px 16px 16px 16px;
-  justify-content: space-between;
   flex-shrink: 0;
-  background-color: #00AC46;
-  color: #FFFFFF;
+  justify-content: space-between;
+
+  padding: 32px 16px 16px;
+
+  color: #fff;
+
+  background-color: #00ac46;
 }
 
 .label {
+  overflow: hidden;
   display: flex;
-  padding: 16px;
   flex-direction: column;
   align-items: center;
   align-self: stretch;
-  overflow: hidden;
+  justify-content: center;
+
+  box-sizing: content-box;
+  min-height: 52px;
+  padding: 16px;
+
   text-align: center;
   text-overflow: ellipsis;
-  justify-content: center;
-  min-height: 52px;
-  box-sizing: content-box;
 
-  @media (min-width: 1580px) {
-      padding-inline: 24px;
+  @media (width >= 1580px) {
+    padding-inline: 24px;
   }
 }
 
 .cta {
-  padding: 0;
   align-items: flex-start;
+  padding: 0;
 }

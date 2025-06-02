@@ -1,50 +1,53 @@
 .teaserTileContainer {
   --spacing: 16px;
+
   display: flex;
-  width: 223px;
   flex-direction: column;
+  gap: var(--spacing);
   align-items: flex-start;
 
-  @media (min-width: 740px) and (max-width: 935px) {
+  width: 223px;
+
+  @media (width >= 740px) and (width <= 935px) {
     width: 224px;
   }
 
-  @media (min-width: 936px) and (max-width: 1267px) {
+  @media (width >= 936px) and (width <= 1267px) {
     width: 264px;
   }
 
-  @media (min-width: 1267px) and (max-width: 1579px) {
+  @media (width >= 1267px) and (width <= 1579px) {
     width: 352px;
   }
 
-  @media (min-width: 1267px) {
+  @media (width >= 1267px) {
     --spacing: 24px;
   }
 
-  @media (min-width: 1580px) {
+  @media (width >= 1580px) {
     width: 440px;
   }
-
-  gap: var(--spacing);
 }
 
 .contentContainer {
   display: flex;
-  padding: 0;
   flex-direction: column;
   align-items: flex-start;
   align-self: stretch;
+
+  padding: 0;
 }
 
 .textContainer {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 8px;
+  align-items: flex-start;
   align-self: stretch;
+
   text-align: start;
 
-  @media (min-width: 1267px) {
+  @media (width >= 1267px) {
     gap: 16px;
   }
 }

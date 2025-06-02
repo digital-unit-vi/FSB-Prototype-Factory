@@ -1,34 +1,38 @@
 .accordionContainer {
   padding: 0 16px;
 
-  @media (min-width: 936px) {
+  @media (width >= 936px) {
     padding: 0;
   }
 }
 
-.accordionContainer>div:first-child {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+.accordionContainer > div:first-child {
+  border-top: 1px solid rgb(0 0 0 / 20%);
 }
 
 .accordion {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  border-left: none;
-  border-right: none;
-  padding: 24px 8px 24px 0;
-  width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: transparent;
+
+  width: 100%;
+  padding: 24px 8px 24px 0;
   border-top: none;
+  border-right: none;
+  border-bottom: 1px solid rgb(0 0 0 / 20%);
+  border-left: none;
+
   color: #23282a;
+
+  background-color: transparent;
+
   transition: padding-left 0.3s ease-out;
 }
 
 .accordion:hover {
-  background-color: #ededed;
   padding-left: 16px;
-  border-radius: 8px;
   border-bottom: none;
+  border-radius: 8px;
+  background-color: #ededed;
 }
 
 .accordionWithInfo {
@@ -44,17 +48,20 @@
   cursor: pointer;
 }
 
-.accordionCaret>svg {
-  width: 24px;
+.accordionCaret > svg {
   aspect-ratio: 1/1;
+  width: 24px;
 }
 
 .accordionContent {
-  opacity: 0;
-  visibility: hidden;
-  max-height: 0;
   overflow: hidden;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  max-height: 0;
+  border-bottom: 1px solid rgb(0 0 0 / 20%);
+
+  visibility: hidden;
+  opacity: 0;
+
   transition:
     opacity 0.3s ease-out,
     visibility 0.3s ease-out,
@@ -62,10 +69,10 @@
 }
 
 .fadeIn {
-  opacity: 1;
-  visibility: visible;
   max-height: fit-content;
   padding: 8px 0 24px;
+  visibility: visible;
+  opacity: 1;
 }
 
 .accordion.clicked {
@@ -74,35 +81,36 @@
 
 .specificationsContainer {
   display: flex;
-  width: 100%;
-  padding: 16px 56px 40px 0px;
   flex-direction: column;
-  align-items: flex-start;
   gap: 40px;
+  align-items: flex-start;
+
+  width: 100%;
+  padding: 16px 56px 40px 0;
 }
 
 .table {
   display: flex;
-  align-items: flex-start;
   gap: 40px;
+  align-items: flex-start;
   align-self: stretch;
 
-  &>*:first-child {
+  & > *:first-child {
     width: 200px;
   }
 }
 
 .column {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
   flex: 1 0 0;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
 }
 
 .dataItem {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 8px;
+  align-items: flex-start;
 }

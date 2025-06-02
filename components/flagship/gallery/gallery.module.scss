@@ -8,25 +8,27 @@
 .galleryContainer > img:first-child {
   grid-column: span 2;
   aspect-ratio: 3/2 !important;
-  min-width: 480px;
   width: 100%;
+  min-width: 480px;
 }
 
-.galleryContainer > img:not(first-child), .galleryContainer > video:not(first-child) {
+.galleryContainer > img:not(first-child),
+.galleryContainer > video:not(first-child) {
   grid-column: span 1;
-  min-width: 232px;
-  width: 100%;
   aspect-ratio: 1 / 1;
+  width: 100%;
+  min-width: 232px;
 }
 
 .galleryInfo {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   grid-column: span 2;
-  padding: 8px 24px;
+  flex-direction: row;
   gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 24px;
 }
 
 .image {

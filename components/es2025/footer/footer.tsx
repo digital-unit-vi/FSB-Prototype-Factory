@@ -3,7 +3,6 @@ import {
   FooterLinksBlock,
   FooterLogo,
   FooterSection,
-  FooterSmallLinks,
   Typography,
   VorwerkWhite,
 } from "@vorwerk/fibre-react";
@@ -66,8 +65,8 @@ export const Footer = () => {
           />
         </FooterLinks>
       </FooterSection>
-      <FooterSection variant="spacingSmallLink">
-        <FooterSmallLinks>
+      <FooterSection variant="spacingMetaLink">
+        <FooterLinks>
           <ul>
             <li key="about-us">
               <Typography variant="paragraph12">
@@ -115,8 +114,8 @@ export const Footer = () => {
               </Typography>
             </li>
           </ul>
-        </FooterSmallLinks>
+        </FooterLinks>
       </FooterSection>
     </footer>
-  )
-}
+  );
+};

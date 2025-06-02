@@ -1,17 +1,19 @@
 .advisorTileContainer {
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.16);
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 16px 24px 16px 16px;
-  gap: 16px;
   display: flex;
+  gap: 16px;
   align-items: center;
+
+  padding: 16px 24px 16px 16px;
+  border: 1px solid rgb(0 0 0 / 16%);
+  border-radius: 8px;
+
+  background-color: rgb(255 255 255 / 50%);
 }
 
-.advisorTileContainer>div:has(> img) {
+.advisorTileContainer > div:has(> img) {
+  flex-shrink: 0;
   width: 56px;
   height: 56px;
-  flex-shrink: 0;
 }
 
 .advisorTileContainer img {
