@@ -1,140 +1,36 @@
-.hp {
-  --gap-4: 64px;
-  --padding-6: 80px;
-  --radiusRoundedCorner: 0;
-
-  strong {
-    font-weight: 400;
-  }
-
-  @media (width >= 740px) and (width <= 935px) {
-    --radiusRoundedCorner: 88px;
-  }
-
-  @media (width >= 936px) and (width <= 1267px) {
-    --gap-4: 112px;
-    --padding-6: 144px;
-    --radiusRoundedCorner: 128px;
-  }
-
-  @media (width >= 1268px) and (width <= 1569px) {
-    --radiusRoundedCorner: 144px;
-  }
-
-  @media (width >= 1570px) {
-    --radiusRoundedCorner: 168px;
-  }
-
-  @media (width >= 1268px) {
-    --gap-4: 128px;
-    --padding-6: 160px;
-  }
-}
-
-.hero {
-  position: relative;
-  margin-bottom: 16px;
-  text-wrap: balance;
-}
-
-.prominentSection,
-.defaultSection {
-  padding: var(--gap-4) 0 var(--padding-6);
-}
-
-.prominentSection {
-  border-radius: 0 0 var(--radiusRoundedCorner);
+.backgroundSection {
   background-color: #f3f5f3;
 }
 
-.textCentered,
-.overlayIconText {
-  text-align: center;
-}
-
-.contentAndCategoryContainer {
+.sectionContainer {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-4);
-  align-self: stretch;
 }
 
-.headlineAndContentContainer {
-  display: flex;
-  flex: 1 0 0;
-  flex-direction: column;
-  gap: 48px;
-  align-items: center;
+.gap04 {
+  gap: 64px;
+}
 
-  @media (width >= 740px) {
-    gap: 0;
+@media screen and (width >= 740px) {
+  .gap04 {
+    gap: 64px;
   }
 }
 
-.overwrittenMargin > div {
-  @media (width <= 935px) {
-    margin-bottom: 40px !important;
+@media screen and (width >= 936px) {
+  .gap04 {
+    gap: 112px;
   }
 }
 
-.overlayIconWrapper {
-  position: absolute;
-  z-index: 3;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 80px;
-  height: 72px;
-
-  color: #fff;
-}
-
-.overlayIcon,
-.overlayIconText,
-.overlayIconWrapper > svg {
-  position: absolute;
-}
-
-.overlayIcon,
-.overlayIconWrapper > svg {
-  left: 50%;
-  transform: translate(-50%, 0);
-
-  transition: opacity 1s ease-in-out;
-  animation: icon-animation 3s infinite;
-  animation-delay: 1ms;
-
-  @media (width >= 936px) {
-    top: 0;
+@media screen and (width >= 1268px) {
+  .gap04 {
+    gap: 128px;
   }
 }
 
-.overlayIconWrapper > svg {
-  top: 12px;
-  aspect-ratio: 1/1;
-  width: 36px;
-}
-
-@keyframes icon-animation {
-  0% {
-    transform: translate(-50%, 0);
-    opacity: 1;
+@media screen and (width >= 1580px) {
+  .gap04 {
+    gap: 128px;
   }
-
-  50% {
-    transform: translate(-50%, -12px);
-    opacity: 1;
-    animation-timing-function: cubic-bezier(0.6, -0.01, 0.46, 1);
-  }
-
-  100% {
-    transform: translate(-50%, -12px);
-    opacity: 0;
-  }
-}
-
-.overlayIconText {
-  top: 48px;
-  width: 100%;
 }
