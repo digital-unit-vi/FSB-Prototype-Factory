@@ -1,11 +1,11 @@
-import styles from './subNavigation.module.scss'
-import { Typography } from '@vorwerk/fibre-react'
-import { FC } from 'react'
+import { Typography } from "@vorwerk/fibre-react";
+import { FC } from "react";
+import styles from "./subNavigation.module.scss";
 
 interface SubNavigationButtonProps {
-  item: string
-  isActive: boolean
-  onClick: () => void
+  item: string;
+  isActive: boolean;
+  onClick: () => void;
 }
 
 const SubNavigationButton: FC<SubNavigationButtonProps> = ({
@@ -15,13 +15,13 @@ const SubNavigationButton: FC<SubNavigationButtonProps> = ({
 }) => (
   <button
     type="button"
-    className={`${styles.subNavigationItem} ${isActive ? styles.active : ''}`}
+    className={`${styles.subNavigationItem} ${isActive ? styles.active : ""}`}
     onClick={onClick}
   >
     <Typography variant="paragraph16" fontWeight="regular">
       {item}
     </Typography>
   </button>
-)
+);
 
-export default SubNavigationButton
+export default SubNavigationButton;

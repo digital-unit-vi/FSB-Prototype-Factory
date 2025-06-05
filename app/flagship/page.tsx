@@ -18,7 +18,12 @@ export default function FlagshipHomePage() {
       <main>
         <Header
           isLandingPage
-          landingPageLogo={<Vorwerk className={styles.vorwerkLogo} />}
+          landingPageLogo={
+            <Vorwerk
+              className={styles.vorwerkLogo}
+              aria-label="Go to home page"
+            />
+          }
           backgroundType={"transparent"}
         />
         <section className={styles.prominentSection}>

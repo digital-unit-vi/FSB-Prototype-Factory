@@ -80,10 +80,10 @@ const HeaderButton = ({
 type ScrollState = "at-top" | "scrolling-up" | "scrolling-down";
 
 interface HomePageHeaderProps {
-  showBanner?: boolean
+  showBanner?: boolean;
 }
 
-export default function HomePageHeader({showBanner}: HomePageHeaderProps) {
+export default function HomePageHeader({ showBanner }: HomePageHeaderProps) {
   const [scrollState, setScrollState] = useState<ScrollState>("at-top");
   const prevScrollY = useRef<number>(0); // Use ref to store previous scroll position
 

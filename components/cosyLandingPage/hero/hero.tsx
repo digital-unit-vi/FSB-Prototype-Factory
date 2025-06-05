@@ -11,7 +11,6 @@ import {
   Vorwerk,
 } from "@vorwerk/fibre-react";
 import Image from "next/image";
-// import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 import styles from "./hero.module.scss";
@@ -114,15 +113,9 @@ const Hero: React.FC = () => {
           <Header
             isLandingPage
             landingPageLogo={
-              // <Link href="/">
-                <Thermomix size="small" />
-              // </Link>
+              <Thermomix size="small" aria-label="Go to home page" />
             }
-            logo={
-              // <Link href="/">
-                <Vorwerk />
-              // </Link>
-            }
+            logo={<Vorwerk aria-label="Go to home page" />}
           />
         </div>
 

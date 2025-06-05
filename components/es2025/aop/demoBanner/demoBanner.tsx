@@ -4,8 +4,8 @@ import {
   Headline,
   Typography,
 } from "@vorwerk/fibre-react";
-import styles from "./demoBanner.module.scss";
 import { Parallax } from "react-scroll-parallax";
+import styles from "./demoBanner.module.scss";
 
 export const DemoBanner = () => {
   return (
@@ -19,7 +19,7 @@ export const DemoBanner = () => {
     >
       <GridContainer>
         <GridItem columns={12}>
-          <Parallax translateY={[-50, 50, 'easeIn']}>
+          <Parallax translateY={[-50, 50, "easeIn"]}>
             <Headline strongColor="white">
               <Typography variant="h1">
                 <strong>Try</strong> before buy

@@ -1,18 +1,18 @@
-import { MediaContainer } from '@vorwerk/fibre-react'
-import { FC, useState } from 'react'
-import styles from './productHeroAEM.module.scss'
-import { Thumb } from '@components/flagship/galleryModalCarousel/galleryModalCarouselThumbsButton'
-import { GalleryItem } from '../gallery/gallery'
+import { Thumb } from "@components/flagship/galleryModalCarousel/galleryModalCarouselThumbsButton";
+import { MediaContainer } from "@vorwerk/fibre-react";
+import { FC, useState } from "react";
+import { GalleryItem } from "../gallery/gallery";
+import styles from "./productHeroAEM.module.scss";
 
 interface MainImageWithThumbnailsProps {
-  images: GalleryItem[]
+  images: GalleryItem[];
 }
 
 const MainImageWithThumbnails: FC<MainImageWithThumbnailsProps> = ({
   images,
 }) => {
-  const [selectedIndex, setSelectedIndex] = useState(0)
-  const onThumbClick = (index: number) => setSelectedIndex(index)
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const onThumbClick = (index: number) => setSelectedIndex(index);
 
   return (
     <div className={styles.mediaContainer}>
@@ -28,12 +28,12 @@ const MainImageWithThumbnails: FC<MainImageWithThumbnailsProps> = ({
         ))}
       </div>
       <div className={styles.mainImage}>
-        <MediaContainer aspectRatio={'1/1'}>
-          <img src={images[selectedIndex].url} alt={'Selected'} />
+        <MediaContainer aspectRatio={"1/1"}>
+          <img src={images[selectedIndex].url} alt={"Selected"} />
         </MediaContainer>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MainImageWithThumbnails
+export default MainImageWithThumbnails;

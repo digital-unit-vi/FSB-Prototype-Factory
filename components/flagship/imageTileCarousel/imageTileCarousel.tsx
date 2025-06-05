@@ -1,20 +1,20 @@
-import { FC } from 'react'
 import {
   Button,
   GridContainer,
   GridItem,
   Headline,
   Typography,
-} from '@vorwerk/fibre-react'
-import styles from './imageTileCarousel.module.scss'
-import Carousel from './carousel'
+} from "@vorwerk/fibre-react";
+import { FC } from "react";
+import Carousel from "./carousel";
+import styles from "./imageTileCarousel.module.scss";
 
 interface ImageTileCarouselProps {
   images: {
-    src: string
-    title: string
-  }[]
-  screenSize: { width: number; height: number }
+    src: string;
+    title: string;
+  }[];
+  screenSize: { width: number; height: number };
 }
 
 const ImageTileCarousel: FC<ImageTileCarouselProps> = ({
@@ -28,8 +28,8 @@ const ImageTileCarousel: FC<ImageTileCarouselProps> = ({
           <GridItem columns={12}>
             <div className={styles.textBlock}>
               <div className={styles.overwrittenMargin}>
-                <Headline spaceBelow={'default'} strongColor={'orange'}>
-                  <Typography component={'h2'}>
+                <Headline spaceBelow={"default"} strongColor={"orange"}>
+                  <Typography component={"h2"}>
                     Thousands of recipes –
                     <br />
                     <strong> Endless inspiration</strong>
@@ -37,15 +37,15 @@ const ImageTileCarousel: FC<ImageTileCarouselProps> = ({
                 </Headline>
                 <Typography
                   variant={
-                    screenSize.width > 1268 ? 'paragraph18' : 'paragraph16'
+                    screenSize.width > 1268 ? "paragraph18" : "paragraph16"
                   }
-                  fontWeight={'regular'}
+                  fontWeight={"regular"}
                 >
                   From a quick lunch for the home office to homemade sourdough
                   bread - Cookidoo® has the right recipes for you!
                 </Typography>
               </div>
-              <Button buttonStyle={'primary'} size={'large'}>
+              <Button buttonStyle={"primary"} size={"large"}>
                 Join Cookidoo for free
               </Button>
             </div>
@@ -54,7 +54,7 @@ const ImageTileCarousel: FC<ImageTileCarouselProps> = ({
         <Carousel images={images} screenSize={screenSize} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ImageTileCarousel
+export default ImageTileCarousel;

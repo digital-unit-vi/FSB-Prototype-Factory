@@ -1,18 +1,18 @@
-import { Typography } from '@vorwerk/fibre-react'
-import { FC } from 'react'
-import styles from './rating.module.scss'
+import { Typography } from "@vorwerk/fibre-react";
+import { FC } from "react";
+import styles from "./rating.module.scss";
 
-type RatingSize = 'small' | 'medium' | 'large' | 'sapcVersion'
+type RatingSize = "small" | "medium" | "large" | "sapcVersion";
 interface RatingProps {
-  rate: number
-  counter: number
-  size: RatingSize
+  rate: number;
+  counter: number;
+  size: RatingSize;
   iconColors: {
-    full: string
-    empty: string
-  }
-  showCounter?: boolean
-  showAmount?: boolean
+    full: string;
+    empty: string;
+  };
+  showCounter?: boolean;
+  showAmount?: boolean;
 }
 
 const Rating: FC<RatingProps> = ({
@@ -24,30 +24,33 @@ const Rating: FC<RatingProps> = ({
   showAmount = false,
 }) => {
   const sizeMap = {
-    small: { iconSize: 13.5, ratingGap: '4px', starGap: '1px' },
-    medium: { iconSize: 20, ratingGap: '8px', starGap: '2px' },
-    large: { iconSize: 24, ratingGap: '8px', starGap: '3px' },
-    sapcVersion: { iconSize: 16, ratingGap: '6px', starGap: '0' }, //there was no linked component in figma
-  }
+    small: { iconSize: 13.5, ratingGap: "4px", starGap: "1px" },
+    medium: { iconSize: 20, ratingGap: "8px", starGap: "2px" },
+    large: { iconSize: 24, ratingGap: "8px", starGap: "3px" },
+    sapcVersion: { iconSize: 16, ratingGap: "6px", starGap: "0" }, //there was no linked component in figma
+  };
 
-  const { iconSize, ratingGap, starGap } = sizeMap[size]
-  const fullStars = Math.floor(rate)
-  const decimalPart = rate - fullStars
-  const hasHalfStar = decimalPart > 0.25 && decimalPart <= 0.75
-  const adjustedFullStars = decimalPart > 0.75 ? fullStars + 1 : fullStars
-  const emptyStars = 5 - adjustedFullStars - (hasHalfStar ? 1 : 0)
+  const { iconSize, ratingGap, starGap } = sizeMap[size];
+  const fullStars = Math.floor(rate);
+  const decimalPart = rate - fullStars;
+  const hasHalfStar = decimalPart > 0.25 && decimalPart <= 0.75;
+  const adjustedFullStars = decimalPart > 0.75 ? fullStars + 1 : fullStars;
+  const emptyStars = 5 - adjustedFullStars - (hasHalfStar ? 1 : 0);
 
   return (
     <div className={styles.ratingContainer}>
       <svg
-        style={{ width: '0', height: '0' }}
+        style={{ width: "0", height: "0" }}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 0 0"
       >
         <defs>
           <linearGradient id={`half-gradient-${iconSize.toString()}`}>
-            <stop offset="50%" stopColor={iconColors.full || '#23282A'} />
-            <stop offset="50%" stopColor={iconColors.empty || 'rgb(196, 196, 196)'} />
+            <stop offset="50%" stopColor={iconColors.full || "#23282A"} />
+            <stop
+              offset="50%"
+              stopColor={iconColors.empty || "rgb(196, 196, 196)"}
+            />
           </linearGradient>
           <symbol
             xmlns="http://www.w3.org/2000/svg"
@@ -99,15 +102,15 @@ const Rating: FC<RatingProps> = ({
           style={{ color: iconColors.full }}
         >
           {showAmount && (
-            <Typography variant={'paragraph14'} fontWeight="bold">
+            <Typography variant={"paragraph14"} fontWeight="bold">
               <span>{rate.toFixed(1)}</span>
             </Typography>
           )}
           {showCounter && (
             <div className={styles.counter}>
-              <Typography variant={'paragraph14'} fontWeight={'regular'}>
+              <Typography variant={"paragraph14"} fontWeight={"regular"}>
                 <span>
-                  {counter} {counter === 1 ? 'review' : 'reviews'}
+                  {counter} {counter === 1 ? "review" : "reviews"}
                 </span>
               </Typography>
             </div>
@@ -115,7 +118,7 @@ const Rating: FC<RatingProps> = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Rating
+export default Rating;

@@ -1,25 +1,25 @@
+import AdvisorTile from "@components/flagship/advisorTile/advisorTile";
+import { GalleryItem } from "@components/flagship/gallery/gallery";
+import ImageGallery from "@components/flagship/imageGallery/imageGallery";
+import List from "@components/flagship/list/list";
+import Rating from "@components/flagship/rating/rating";
 import {
   Button,
-  Typography,
   GridContainer,
   GridItem,
-} from '@vorwerk/fibre-react'
-import { FC, JSX } from 'react'
-import styles from './productHeroAEM.module.scss'
-import MainImageWithThumbnails from './mainImageWithThumbnails'
-import ImageGallery from '@components/flagship/imageGallery/imageGallery'
-import Rating from '@components/flagship/rating/rating'
-import List from '@components/flagship/list/list'
-import AdvisorTile from '@components/flagship/advisorTile/advisorTile'
-import { GalleryItem } from '@components/flagship/gallery/gallery'
+  Typography,
+} from "@vorwerk/fibre-react";
+import { FC, JSX } from "react";
+import MainImageWithThumbnails from "./mainImageWithThumbnails";
+import styles from "./productHeroAEM.module.scss";
 
 interface ProductHeroAEMProps {
   screenSize: {
-    width: number
-    height: number
-  }
-  imagesForImageGallery?: JSX.Element[]
-  imagesForThumbnails?: GalleryItem[]
+    width: number;
+    height: number;
+  };
+  imagesForImageGallery?: JSX.Element[];
+  imagesForThumbnails?: GalleryItem[];
 }
 
 const ProductHeroAEM: FC<ProductHeroAEMProps> = ({
@@ -31,15 +31,14 @@ const ProductHeroAEM: FC<ProductHeroAEMProps> = ({
     <div className={styles.productHeroContainer}>
       <GridContainer>
         <GridItem columns={12} columnsL={7} columnsXL={8}>
-          {screenSize.width > 935 && imagesForThumbnails ? (
+          {screenSize.width > 935 && imagesForThumbnails ?
             <MainImageWithThumbnails images={imagesForThumbnails} />
-          ) : (
-            <ImageGallery
+          : <ImageGallery
               slides={imagesForImageGallery}
-              imageMaxWidth={'280px'}
+              imageMaxWidth={"280px"}
               options={{ loop: false }}
             />
-          )}
+          }
         </GridItem>
         <GridItem columns={12} columnsL={5} columnsXL={4}>
           <div className={styles.productDetailsContainer}>
@@ -47,10 +46,10 @@ const ProductHeroAEM: FC<ProductHeroAEMProps> = ({
               <Rating
                 rate={5}
                 counter={42}
-                size={'large'}
+                size={"large"}
                 iconColors={{
-                  full: '#23282A',
-                  empty: 'rgb(196, 196, 196)',
+                  full: "#23282A",
+                  empty: "rgb(196, 196, 196)",
                 }}
                 showCounter={true}
                 showAmount={true}
@@ -61,35 +60,35 @@ const ProductHeroAEM: FC<ProductHeroAEMProps> = ({
             </div>
             <List
               items={[
-                'Delicious dishes prepared quickly and easily',
-                'Thousands of recipes with guaranteed success directly on your device',
-                'A real all-rounder: Numerous cooking functions and modes',
+                "Delicious dishes prepared quickly and easily",
+                "Thousands of recipes with guaranteed success directly on your device",
+                "A real all-rounder: Numerous cooking functions and modes",
               ]}
               decoratorType="check"
               size="medium"
             />
             <AdvisorTile
-              imageSrc={'/flagship/images/kobold-advisor.png'}
-              text={'Try the Thermomix® live for free'}
+              imageSrc={"/flagship/images/kobold-advisor.png"}
+              text={"Try the Thermomix® live for free"}
             />
             <div className={styles.containerPrice}>
               <Button buttonStyle="primary" size="large">
                 Add to cart — 1.399 €
               </Button>
               <div className={styles.additionalInfoPrice}>
-                <Typography variant={'paragraph12'} fontWeight={'regular'}>
+                <Typography variant={"paragraph12"} fontWeight={"regular"}>
                   incl. 19% VAT
                 </Typography>
-                <Typography variant={'paragraph12'} fontWeight={'regular'}>
+                <Typography variant={"paragraph12"} fontWeight={"regular"}>
                   ·
                 </Typography>
-                <Typography variant={'paragraph12'} fontWeight={'regular'}>
+                <Typography variant={"paragraph12"} fontWeight={"regular"}>
                   free shipping
                 </Typography>
-                <Typography variant={'paragraph12'} fontWeight={'regular'}>
+                <Typography variant={"paragraph12"} fontWeight={"regular"}>
                   ·
                 </Typography>
-                <Typography variant={'paragraph12'} fontWeight={'regular'}>
+                <Typography variant={"paragraph12"} fontWeight={"regular"}>
                   delivery time 7-10 workdays
                 </Typography>
               </div>
@@ -98,7 +97,7 @@ const ProductHeroAEM: FC<ProductHeroAEMProps> = ({
         </GridItem>
       </GridContainer>
     </div>
-  )
-}
+  );
+};
 
-export default ProductHeroAEM
+export default ProductHeroAEM;

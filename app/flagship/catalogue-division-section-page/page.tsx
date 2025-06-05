@@ -1,42 +1,40 @@
-'use client'
+"use client";
 
+import Breadcrumb from "@components/flagship/breadcrumb/breadcrumb";
+import CategoryTiles from "@components/flagship/categoryTiles/categoryTiles";
+import ProductTileNew from "@components/flagship/productTile/productTile";
+import StandaloneSelect from "@components/flagship/standaloneSelect/standaloneSelect";
+import SubNavigation from "@components/flagship/subNavigation/subNavigation";
+import useScreenSize from "@utils/useScreenSize";
 import {
   Button,
+  Filter,
   GalleryView,
   GridContainer,
   GridItem,
   Headline,
-  Sort,
-  Typography,
-  Filter,
   InteractiveIcon,
   ListView,
-} from '@vorwerk/fibre-react'
-import styles from './page.module.scss'
-import CategoryTiles from '@components/flagship/categoryTiles/categoryTiles'
-import useScreenSize from '@utils/useScreenSize'
-import Breadcrumb from '@components/flagship/breadcrumb/breadcrumb'
-import SubNavigation from '@components/flagship/subNavigation/subNavigation'
-import StandaloneSelect from '@components/flagship/standaloneSelect/standaloneSelect'
-import ProductTileNew from '@components/flagship/productTile/productTile'
+  Sort,
+  Typography,
+} from "@vorwerk/fibre-react";
+import styles from "./page.module.scss";
 
 export default function Home() {
-  const screenSize = useScreenSize()
+  const screenSize = useScreenSize();
   const buttonSize =
-    screenSize.width > 1267
-      ? 'large'
-      : screenSize.width > 935
-        ? 'medium'
-        : 'small'
+    screenSize.width > 1267 ? "large"
+    : screenSize.width > 935 ? "medium"
+    : "small";
 
   return (
     <main className={styles.cdsp}>
       <section className={styles.topHeadline}>
         <GridContainer>
           <GridItem columns={12}>
-            <Breadcrumb nodes={['Product', 'Online-Shop', 'Thermomix®']} />
+            <Breadcrumb nodes={["Product", "Online-Shop", "Thermomix®"]} />
             <Headline>
-              <Typography component={'h1'}>Specials</Typography>
+              <Typography component={"h1"}>Specials</Typography>
             </Headline>
           </GridItem>
         </GridContainer>
@@ -46,11 +44,11 @@ export default function Home() {
           <GridItem columns={12}>
             <SubNavigation
               items={[
-                'Storage',
-                'Baking & Preparing',
-                'Cutlery & Crockery',
-                'Kitchen utensils',
-                'Varoma® Rims',
+                "Storage",
+                "Baking & Preparing",
+                "Cutlery & Crockery",
+                "Kitchen utensils",
+                "Varoma® Rims",
               ]}
               screenSizeWidth={screenSize.width}
             />
@@ -62,11 +60,11 @@ export default function Home() {
               <div className={styles.settingsContainer}>
                 <StandaloneSelect
                   icon={<Sort />}
-                  text={'Relevance'}
+                  text={"Relevance"}
                   items={[
-                    'dropdownlistItem',
-                    'dropdownlistItem',
-                    'dropdownlistItem',
+                    "dropdownlistItem",
+                    "dropdownlistItem",
+                    "dropdownlistItem",
                   ]}
                 />
                 {screenSize.width > 739 && (
@@ -77,12 +75,12 @@ export default function Home() {
                 )}
                 <div className={styles.filter}>
                   <Button
-                    buttonStyle={'tertiary'}
-                    size={'large'}
+                    buttonStyle={"tertiary"}
+                    size={"large"}
                     icon={<Filter />}
-                    iconPosition={'left'}
+                    iconPosition={"left"}
                   >
-                    <Typography variant={'paragraph16'} fontWeight={'medium'}>
+                    <Typography variant={"paragraph16"} fontWeight={"medium"}>
                       Filter
                     </Typography>
                   </Button>
@@ -91,157 +89,153 @@ export default function Home() {
             </GridItem>
             <GridItem columns={screenSize.width < 740 ? 12 : 8}>
               <ProductTileNew
-                productImageSrc={'/flagship/images/stoneware.png'}
+                productImageSrc={"/flagship/images/stoneware.png"}
                 heading={'Stoneware Shape "Betty Roaster"'}
                 price={{
-                  price: '1499,00 €',
+                  price: "1499,00 €",
                 }}
                 screenSizes={screenSize}
-                color={'grey'}
+                color={"grey"}
               />
             </GridItem>
             <GridItem columns={screenSize.width < 740 ? 12 : 4}>
               <ProductTileNew
-                productImageSrc={'/flagship/images/earthenware.png'}
-                heading={'Earthenware mould'}
+                productImageSrc={"/flagship/images/earthenware.png"}
+                heading={"Earthenware mould"}
                 price={{
-                  price: '1499,00 €',
+                  price: "1499,00 €",
                 }}
                 screenSizes={screenSize}
-                color={'grey'}
+                color={"grey"}
               />
             </GridItem>
             <GridItem columns={screenSize.width < 740 ? 12 : 4}>
               <ProductTileNew
-                productImageSrc={'/flagship/images/stoneware-2.png'}
-                heading={'Stoneware Shape'}
+                productImageSrc={"/flagship/images/stoneware-2.png"}
+                heading={"Stoneware Shape"}
                 price={{
-                  price: '1499,00 €',
+                  price: "1499,00 €",
                 }}
                 screenSizes={screenSize}
-                color={'grey'}
+                color={"grey"}
                 eyeCatcherProps={{
-                  firstLine: 'Save',
-                  secondLine: '45%',
-                  backgroundColor: 'purple',
-                  size: 'large',
+                  firstLine: "Save",
+                  secondLine: "45%",
+                  backgroundColor: "purple",
+                  size: "large",
                 }}
               />
             </GridItem>
             <GridItem columns={screenSize.width < 740 ? 12 : 4}>
               <ProductTileNew
-                productImageSrc={'/flagship/images/stoneware-3.png'}
+                productImageSrc={"/flagship/images/stoneware-3.png"}
                 heading={'Stoneware Shape "Anna Casserole Dish"'}
                 price={{
-                  price: '1499,00 €',
+                  price: "1499,00 €",
                 }}
                 screenSizes={screenSize}
-                color={'grey'}
+                color={"grey"}
               />
             </GridItem>
             <GridItem columns={screenSize.width < 740 ? 12 : 4}>
               <ProductTileNew
-                productImageSrc={'/flagship/images/bowl.png'}
-                heading={'Bowl GOURMET, 500 ml (6 pcs.)'}
+                productImageSrc={"/flagship/images/bowl.png"}
+                heading={"Bowl GOURMET, 500 ml (6 pcs.)"}
                 price={{
-                  price: '1499,00 €',
+                  price: "1499,00 €",
                 }}
                 screenSizes={screenSize}
-                color={'grey'}
+                color={"grey"}
               />
             </GridItem>
             <GridItem columns={screenSize.width < 740 ? 12 : 4}>
               <ProductTileNew
-                productImageSrc={'/flagship/images/serving-bowl.png'}
+                productImageSrc={"/flagship/images/serving-bowl.png"}
                 heading={`L'Econome by Starck" serving bowl 18cm, 1.3l rosé`}
                 price={{
-                  price: '1499,00 €',
+                  price: "1499,00 €",
                 }}
                 screenSizes={screenSize}
-                color={'grey'}
+                color={"grey"}
               />
             </GridItem>
             <GridItem columns={screenSize.width < 740 ? 12 : 4}>
               <ProductTileNew
-                productImageSrc={
-                  '/flagship/images/drinking-bottle-silver.png'
-                }
-                heading={'FLSK Silver Drinking Bottle'}
+                productImageSrc={"/flagship/images/drinking-bottle-silver.png"}
+                heading={"FLSK Silver Drinking Bottle"}
                 price={{
-                  price: '1499,00 €',
+                  price: "1499,00 €",
                 }}
                 screenSizes={screenSize}
-                color={'grey'}
+                color={"grey"}
               />
             </GridItem>
             <GridItem columns={screenSize.width < 740 ? 12 : 8}>
               <ProductTileNew
-                productImageSrc={
-                  '/flagship/images/drinking-bottle-green.png'
-                }
+                productImageSrc={"/flagship/images/drinking-bottle-green.png"}
                 heading={'Stoneware Shape "Betty Roaster"'}
                 price={{
-                  price: '1499,00 €',
+                  price: "1499,00 €",
                 }}
                 screenSizes={screenSize}
-                color={'grey'}
+                color={"grey"}
               />
             </GridItem>
             <GridItem columns={screenSize.width < 740 ? 12 : 4}>
               <ProductTileNew
-                productImageSrc={'/flagship/images/earthenware.png'}
+                productImageSrc={"/flagship/images/earthenware.png"}
                 heading={'Earthenware mould "flat baking dish Ben”'}
                 price={{
-                  price: '1499,00 €',
+                  price: "1499,00 €",
                 }}
                 screenSizes={screenSize}
-                color={'grey'}
+                color={"grey"}
               />
             </GridItem>
             <GridItem columns={screenSize.width < 740 ? 12 : 4}>
               <ProductTileNew
-                productImageSrc={'/flagship/images/stoneware.png'}
+                productImageSrc={"/flagship/images/stoneware.png"}
                 heading={'Stoneware Shape "Betty Roaster"'}
                 price={{
-                  price: '1499,00 €',
+                  price: "1499,00 €",
                 }}
                 screenSizes={screenSize}
-                color={'grey'}
+                color={"grey"}
               />
             </GridItem>
             <GridItem columns={screenSize.width < 740 ? 12 : 4}>
               <ProductTileNew
-                productImageSrc={'/flagship/images/stoneware-2.png'}
+                productImageSrc={"/flagship/images/stoneware-2.png"}
                 heading={'Stoneware Shape "Pizza Stone Paul”'}
                 price={{
-                  price: '1499,00 €',
+                  price: "1499,00 €",
                 }}
                 screenSizes={screenSize}
-                color={'grey'}
+                color={"grey"}
                 eyeCatcherProps={{
-                  firstLine: 'Save',
-                  secondLine: '45%',
-                  backgroundColor: 'purple',
-                  size: 'large',
+                  firstLine: "Save",
+                  secondLine: "45%",
+                  backgroundColor: "purple",
+                  size: "large",
                 }}
               />
             </GridItem>
             <GridItem columns={screenSize.width < 740 ? 12 : 4}>
               <ProductTileNew
-                productImageSrc={'/flagship/images/stoneware-3.png'}
+                productImageSrc={"/flagship/images/stoneware-3.png"}
                 heading={'Stoneware Shape "Anna Casserole Dish"'}
                 price={{
-                  price: '1499,00 €',
+                  price: "1499,00 €",
                 }}
                 screenSizes={screenSize}
-                color={'grey'}
+                color={"grey"}
               />
             </GridItem>
           </GridContainer>
         </div>
         <GridContainer>
           <GridItem columns={12} className={styles.centeredButton}>
-            <Button buttonStyle={'primary'} size={'large'}>
+            <Button buttonStyle={"primary"} size={"large"}>
               Load more
             </Button>
           </GridItem>
@@ -253,8 +247,8 @@ export default function Home() {
             columns={12}
             className={`${styles.textCentered} ${styles.overwrittenMargin}`}
           >
-            <Headline spaceBelow={'additional'} strongColor={'green'}>
-              <Typography component={'h2'}>
+            <Headline spaceBelow={"additional"} strongColor={"green"}>
+              <Typography component={"h2"}>
                 <strong>Related</strong> categories
               </Typography>
             </Headline>
@@ -263,30 +257,30 @@ export default function Home() {
         <CategoryTiles
           categoryTilesData={[
             {
-              layout: 'horizontal',
-              size: 'medium',
-              backgroundColor: 'white',
-              title: 'Cooking books',
+              layout: "horizontal",
+              size: "medium",
+              backgroundColor: "white",
+              title: "Cooking books",
               imageProps: {
-                src: '/flagship/images/cooking-books.png',
-                alt: 'Cooking books',
+                src: "/flagship/images/cooking-books.png",
+                alt: "Cooking books",
               },
               button: {
-                label: 'Explore more',
+                label: "Explore more",
                 size: buttonSize,
               },
             },
             {
-              layout: 'horizontal',
-              size: 'medium',
-              backgroundColor: 'white',
-              title: 'Accessories',
+              layout: "horizontal",
+              size: "medium",
+              backgroundColor: "white",
+              title: "Accessories",
               imageProps: {
-                src: '/flagship/images/accessories.png',
-                alt: 'Accessories',
+                src: "/flagship/images/accessories.png",
+                alt: "Accessories",
               },
               button: {
-                label: 'Explore more',
+                label: "Explore more",
                 size: buttonSize,
               },
             },
@@ -299,8 +293,8 @@ export default function Home() {
             columns={12}
             className={`${styles.textCentered} ${styles.overwrittenMargin}`}
           >
-            <Headline spaceBelow={'additional'} strongColor={'green'}>
-              <Typography component={'h2'}>
+            <Headline spaceBelow={"additional"} strongColor={"green"}>
+              <Typography component={"h2"}>
                 Interested in
                 <br />
                 Thermomix® <strong>products?</strong>
@@ -311,28 +305,27 @@ export default function Home() {
         <CategoryTiles
           categoryTilesData={[
             {
-              size: 'large',
-              title: 'Request a Cooking Experience',
+              size: "large",
+              title: "Request a Cooking Experience",
               backgroundImageSrc:
-                '/flagship/images/serving-chocolate-mousse-cropped.png',
+                "/flagship/images/serving-chocolate-mousse-cropped.png",
               button: {
-                label: 'Book a demo',
-                size: screenSize.width < 936 ? 'medium' : 'large',
+                label: "Book a demo",
+                size: screenSize.width < 936 ? "medium" : "large",
               },
             },
             {
-              size: 'large',
-              title: 'Experience in the Vorwerk Store',
-              backgroundImageSrc:
-                '/flagship/images/vorwerk-worker.png',
+              size: "large",
+              title: "Experience in the Vorwerk Store",
+              backgroundImageSrc: "/flagship/images/vorwerk-worker.png",
               button: {
-                label: 'Find a store',
-                size: screenSize.width < 936 ? 'medium' : 'large',
+                label: "Find a store",
+                size: screenSize.width < 936 ? "medium" : "large",
               },
             },
           ]}
         />
       </section>
     </main>
-  )
+  );
 }

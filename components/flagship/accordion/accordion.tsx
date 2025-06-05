@@ -1,32 +1,30 @@
-import {
-  Typography,
-  CaretUp,
-  CaretDown,
-} from '@vorwerk/fibre-react'
-import styles from './accordion.module.scss'
-import { FC, useState, JSX } from 'react'
+import { CaretDown, CaretUp, Typography } from "@vorwerk/fibre-react";
+import { FC, JSX, useState } from "react";
+import styles from "./accordion.module.scss";
 
 interface AccordionProps {
   items: {
-    title: string
-    content: JSX.Element
-    additionalInfo?: JSX.Element
-  }[]
+    title: string;
+    content: JSX.Element;
+    additionalInfo?: JSX.Element;
+  }[];
 }
 
 const Accordion: FC<AccordionProps> = ({ items }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const [animationStates, setAnimationStates] = useState<Record<number, 'fadeIn' | 'fadeOut'>>({})
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [animationStates, setAnimationStates] = useState<
+    Record<number, "fadeIn" | "fadeOut">
+  >({});
 
   const handleToggle = (index: number) => {
     if (openIndex === index) {
-      setAnimationStates(prev => ({ ...prev, [index]: 'fadeOut' }))
-      setTimeout(() => setOpenIndex(null), 300)
+      setAnimationStates((prev) => ({ ...prev, [index]: "fadeOut" }));
+      setTimeout(() => setOpenIndex(null), 300);
     } else {
-      setOpenIndex(index)
-      setAnimationStates(prev => ({ ...prev, [index]: 'fadeIn' }))
+      setOpenIndex(index);
+      setAnimationStates((prev) => ({ ...prev, [index]: "fadeIn" }));
     }
-  }
+  };
 
   return (
     <div className={styles.accordionContainer}>
@@ -34,7 +32,7 @@ const Accordion: FC<AccordionProps> = ({ items }) => {
         <div key={item.title} className={styles.accordionWrapper}>
           <button
             className={`${styles.accordion} ${
-              animationStates[index] === 'fadeIn' ? styles.clicked : ''
+              animationStates[index] === "fadeIn" ? styles.clicked : ""
             }`}
             type="button"
             onClick={() => handleToggle(index)}
@@ -44,7 +42,7 @@ const Accordion: FC<AccordionProps> = ({ items }) => {
           >
             <span
               className={`${styles.accordionTitleAndInfo} ${
-                item.additionalInfo ? styles.accordionWithInfo : ''
+                item.additionalInfo ? styles.accordionWithInfo : ""
               }`}
             >
               <Typography variant="h4" fontWeight="bold">
@@ -53,17 +51,15 @@ const Accordion: FC<AccordionProps> = ({ items }) => {
               {item.additionalInfo}
             </span>
             <span className={styles.accordionCaret}>
-              {animationStates[index] === 'fadeIn' ? (
+              {animationStates[index] === "fadeIn" ?
                 <CaretUp />
-              ) : (
-                <CaretDown />
-              )}
+              : <CaretDown />}
             </span>
           </button>
           <div
             id={`accordion-content-${index.toString()}`}
             className={`${styles.accordionContent} ${
-              animationStates[index] === 'fadeIn' ? styles.fadeIn : ''
+              animationStates[index] === "fadeIn" ? styles.fadeIn : ""
             }`}
           >
             {item.content}
@@ -71,7 +67,7 @@ const Accordion: FC<AccordionProps> = ({ items }) => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default Accordion
+export default Accordion;

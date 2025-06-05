@@ -1,9 +1,9 @@
-import styles from './breadcrumb.module.scss'
-import { CaretRight, Typography } from '@vorwerk/fibre-react'
-import { FC, Fragment } from 'react'
+import { CaretRight, Typography } from "@vorwerk/fibre-react";
+import { FC, Fragment } from "react";
+import styles from "./breadcrumb.module.scss";
 
 interface BreadcrumbProps {
-  nodes: string[]
+  nodes: string[];
 }
 
 const Breadcrumb: FC<BreadcrumbProps> = ({ nodes }) => {
@@ -12,7 +12,7 @@ const Breadcrumb: FC<BreadcrumbProps> = ({ nodes }) => {
       {nodes.map((node, index) => (
         <Fragment key={`${node}-${index.toString()}`}>
           <div className={styles.breadcrumbItem}>
-            <Typography variant={'paragraph14'} fontWeight={'regular'}>
+            <Typography variant={"paragraph14"} fontWeight={"regular"}>
               {node}
             </Typography>
           </div>
@@ -24,7 +24,7 @@ const Breadcrumb: FC<BreadcrumbProps> = ({ nodes }) => {
         </Fragment>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default Breadcrumb
+export default Breadcrumb;

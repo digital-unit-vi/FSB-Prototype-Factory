@@ -1,17 +1,13 @@
-import {
-  Price,
-  Button,
-  ShoppingCart,
-} from '@vorwerk/fibre-react'
-import { FC, JSX } from 'react'
-import FinancingSelect from '../financingSelect/financingSelect'
-import styles from './productPurchaseOptions.module.scss'
+import { Button, Price, ShoppingCart } from "@vorwerk/fibre-react";
+import { FC, JSX } from "react";
+import FinancingSelect from "../financingSelect/financingSelect";
+import styles from "./productPurchaseOptions.module.scss";
 
 interface ProductPurchaseOptionsProps {
-  price: string
-  delivery: JSX.Element
-  onToggle?: (isOpen: boolean) => void
-  onScroll?: (scrollTarget: number) => void
+  price: string;
+  delivery: JSX.Element;
+  onToggle?: (isOpen: boolean) => void;
+  onScroll?: (scrollTarget: number) => void;
 }
 
 const ProductPurchaseOptions: FC<ProductPurchaseOptionsProps> = ({
@@ -30,29 +26,29 @@ const ProductPurchaseOptions: FC<ProductPurchaseOptionsProps> = ({
       </div>
       <FinancingSelect
         primaryButtonLabel={{
-          label: 'Payment plans available',
-          subLine: 'starting from 37,75 € per month',
+          label: "Payment plans available",
+          subLine: "starting from 37,75 € per month",
         }}
         items={[
           {
-            label: 'Pay in full',
+            label: "Pay in full",
           },
           {
-            label: 'Klarna Pay in 3',
-            description: 'Pay over 3 installments of 466,34 € with Klarna.',
+            label: "Klarna Pay in 3",
+            description: "Pay over 3 installments of 466,34 € with Klarna.",
             info: true,
           },
           {
-            label: '0% Financing',
-            description: 'Pay in interest-free monthly installments.',
-            descriptionInColor: 'Simulate payments',
+            label: "0% Financing",
+            description: "Pay in interest-free monthly installments.",
+            descriptionInColor: "Simulate payments",
             info: true,
-            slot: 'Hurry! Only until 31.12.21',
+            slot: "Hurry! Only until 31.12.21",
           },
           {
-            label: 'Leasing',
-            description: 'Lease with Option Thermomix for up to 36 months.',
-            descriptionInColor: 'Simulate payments',
+            label: "Leasing",
+            description: "Lease with Option Thermomix for up to 36 months.",
+            descriptionInColor: "Simulate payments",
             info: true,
           },
         ]}
@@ -68,7 +64,7 @@ const ProductPurchaseOptions: FC<ProductPurchaseOptionsProps> = ({
         Add to cart
       </Button>
     </div>
-  )
-}
+  );
+};
 
-export default ProductPurchaseOptions
+export default ProductPurchaseOptions;
