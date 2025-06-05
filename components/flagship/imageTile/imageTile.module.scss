@@ -1,0 +1,21 @@
+.imageTile {
+  transform-origin: top left;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  width: 224px;
+  height: 224px;
+
+  background-position: center;
+  background-size: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.text {
+  padding: 8px;
+  color: #fff;
+}

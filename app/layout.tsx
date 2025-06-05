@@ -11,7 +11,6 @@ import {
   FooterShopLogo,
   FooterShopLogos,
   FooterShopLogosBlock,
-  FooterSmallLinks,
   FooterSocialLinkBlock,
   FooterSocialLinks,
   Germany,
@@ -82,6 +81,15 @@ export default function RootLayout({
     "/landing-page/dark/tm7",
     "/es-2025",
     "/es-2025/aop",
+    "/flagship",
+    "/flagship/home-page",
+    "/flagship/product-detail-page",
+    "/flagship/product-detail-page-aem",
+    "/flagship/product-landing-page",
+    "/flagship/catalogue-division-section-page",
+    "/flagship/catalogue-division-landing-page",
+    "/flagship/division-landing-page",
+    "/flagship/catalogue-home-page",
   ];
 
   const showDefaultFooter = !excludedFooterPaths.includes(pathname);
@@ -436,8 +444,8 @@ export default function RootLayout({
                   />
                 </FooterShopLogos>
               </FooterSection>
-              <FooterSection variant="spacingSmallLink">
-                <FooterSmallLinks>
+              <FooterSection variant="spacingMetaLink">
+                <FooterLinks>
                   <ul>
                     <li key="about-us">
                       <Typography variant="paragraph12">
@@ -487,7 +495,7 @@ export default function RootLayout({
                       </Typography>
                     </li>
                   </ul>
-                </FooterSmallLinks>
+                </FooterLinks>
               </FooterSection>
             </footer>
           )}

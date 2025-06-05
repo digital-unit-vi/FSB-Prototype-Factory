@@ -1,0 +1,25 @@
+.ratingContainer {
+  display: flex;
+}
+
+.ratingWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  padding: 1px 0;
+}
+
+.starRating {
+  display: flex;
+  padding-top: 2px;
+}
+
+.counterWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.counter {
+  text-decoration: underline;
+}

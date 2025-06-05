@@ -1,0 +1,24 @@
+.breadcrumbContainer {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  width: 100%;
+}
+
+.breadcrumbItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px 8px;
+}
+
+.breadcrumbDivider {
+  width: 14px;
+  height: 14px;
+  color: #707375;
+
+  & > svg {
+    padding-top: 8px;
+    vertical-align: text-top;
+  }
+}

@@ -1,0 +1,121 @@
+.catalogueHomePage {
+  --padding-4: 48px;
+  --padding-5: 64px;
+  --padding-6: 80px;
+  --radius-rounded-corner: 64px;
+  --gap-2: 32px;
+  --gap-4: 64px;
+
+  color: #23282a;
+
+  @media (width >= 740px) and (width <= 935px) {
+    --radius-rounded-corner: 88px;
+  }
+
+  @media (width >= 936px) and (width <= 1267px) {
+    --padding-4: 64px;
+    --padding-5: 112px;
+    --padding-6: 144px;
+    --gap-2: 40px;
+    --gap-4: 112px;
+    --radius-rounded-corner: 128px;
+  }
+
+  @media (width >= 1268px) {
+    --padding-4: 80px;
+    --padding-5: 128px;
+    --padding-6: 160px;
+    --gap-2: 56px;
+    --gap-4: 128px;
+  }
+
+  @media (width >= 1268px) and (width <= 1579px) {
+    --radius-rounded-corner: 144px;
+  }
+
+  @media (width >= 1580px) {
+    --radius-rounded-corner: 168px;
+  }
+}
+
+.topHeadline {
+  padding-block: var(--padding-4);
+}
+
+.textCentered {
+  text-align: center;
+}
+
+.overwrittenGridCol > div {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.prominentSection,
+.sectionRadius {
+  padding: var(--padding-5) 0 var(--padding-6);
+}
+
+.sectionRadius {
+  border-radius: 0 0 var(--radius-rounded-corner) 0;
+  background-color: #f3f5f3;
+}
+
+.overwrittenMargin > div {
+  @media (width <= 935px) {
+    margin-bottom: 40px !important;
+  }
+}
+
+.tilesContainer,
+.categoryTilesContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.tilesContainer {
+  gap: var(--gap-4);
+}
+
+.categoryTilesContainer {
+  gap: var(--gap-2);
+}
+
+.tilesSliderContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-2);
+
+  & > div:last-child {
+    place-items: center;
+  }
+}
+
+.overwrittenGridItemCol > div {
+  & > div:first-child {
+    @media (width >= 740px) {
+      grid-row: 1/2;
+    }
+  }
+
+  & > div:nth-child(2) {
+    @media (width >= 740px) {
+      grid-row: 2/3;
+    }
+  }
+
+  & > div:not(:last-child) {
+    @media (width <= 739px) {
+      grid-column: span 6 !important;
+    }
+  }
+
+  & > div:last-child {
+    @media (width <= 739px) {
+      grid-column: span 12 !important;
+    }
+
+    @media (width >= 740px) {
+      grid-row: 1/3;
+    }
+  }
+}

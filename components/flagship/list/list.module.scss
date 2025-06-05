@@ -1,0 +1,25 @@
+.list {
+  margin: 0;
+  padding: 0;
+}
+
+.list.checkList li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.list > li:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.list img {
+  display: inline-block;
+
+  aspect-ratio: 1/1;
+  margin-top: calc(0.44em - 6.25px);
+  margin-right: 8px;
+  padding: 6.25px 5.04px;
+
+  vertical-align: middle;
+}

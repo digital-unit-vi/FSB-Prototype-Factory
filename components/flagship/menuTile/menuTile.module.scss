@@ -1,0 +1,61 @@
+.menuTileLink {
+  text-decoration: none;
+}
+
+.menuTileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 134px;
+  height: 100%;
+  border-radius: 8px;
+
+  color: #23282a;
+
+  background-color: #f3f5f3;
+
+  @media (width >= 740px) {
+    width: 160px;
+  }
+
+  @media (width >= 936px) {
+    width: 100%;
+  }
+}
+
+.menuTileContainer.cta {
+  flex-shrink: 0;
+  justify-content: space-between;
+
+  padding: 32px 16px 16px;
+
+  color: #fff;
+
+  background-color: #00ac46;
+}
+
+.label {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  justify-content: center;
+
+  box-sizing: content-box;
+  min-height: 52px;
+  padding: 16px;
+
+  text-align: center;
+  text-overflow: ellipsis;
+
+  @media (width >= 1580px) {
+    padding-inline: 24px;
+  }
+}
+
+.cta {
+  align-items: flex-start;
+  padding: 0;
+}

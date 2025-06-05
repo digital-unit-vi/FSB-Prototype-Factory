@@ -21,11 +21,7 @@ export default function Home() {
     <main>
       <Header
         isLandingPage
-        landingPageLogo={
-          <a href="/" aria-label="Vorwerk logo">
-            <Vorwerk />
-          </a>
-        }
+        landingPageLogo={<Vorwerk aria-label="Go to home page" />}
       />
       <Hero
         cta={
