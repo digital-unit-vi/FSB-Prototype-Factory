@@ -116,12 +116,6 @@ export const Header = () => {
               navItems={[
                 <NavItem
                   href="#"
-                  label="Overview"
-                  level={3}
-                  key="tm-overview"
-                />,
-                <NavItem
-                  href="#"
                   label="Thermomix® TM6"
                   level={3}
                   key="tm-tm6"
@@ -144,7 +138,12 @@ export const Header = () => {
                   level={3}
                   key="tm-parts"
                 />,
-                <NavItem href="#" label="Cookbooks" level={3} key="tm-books" />,
+                <NavItem
+                  href="#"
+                  label="Cooking books"
+                  level={3}
+                  key="tm-books"
+                />,
                 <NavItem
                   href="#"
                   label="Current offers"
@@ -153,8 +152,102 @@ export const Header = () => {
                 />,
               ]}
             />,
-            <NavItem href="#" label="Kobold" level={2} key="kobold" />,
-            <NavItem href="#" label="E-shop" level={2} key="shop" />,
+            <NavItem
+              href="#"
+              label="Kobold"
+              level={2}
+              key="kobold"
+              navItems={[
+                <NavItem
+                  href="#"
+                  label="Accessories"
+                  level={3}
+                  key="kb-accessories"
+                />,
+                <NavItem
+                  href="#"
+                  label="Specials"
+                  level={3}
+                  key="kb-specials"
+                />,
+                <NavItem
+                  href="#"
+                  label="Spare Parts"
+                  level={3}
+                  key="kb-parts"
+                />,
+                <NavItem
+                  href="#"
+                  label="Current offers"
+                  level={3}
+                  key="kb-offers"
+                />,
+              ]}
+            />,
+            <NavItem
+              href="#"
+              label="Kobold Configurator"
+              level={2}
+              key="kobold-configurator"
+              navItems={[
+                <NavItem
+                  href="#"
+                  label="Configure vacuum cleaner"
+                  level={3}
+                  key="kc-configure"
+                />,
+                <NavItem
+                  href="#"
+                  label="Hard floor cleaning"
+                  level={3}
+                  key="kc-hard-floor"
+                />,
+                <NavItem
+                  href="#"
+                  label="Carpet cleaning"
+                  level={3}
+                  key="kc-carpet"
+                />,
+                <NavItem
+                  href="#"
+                  label="Upholstery & mattress cleaning"
+                  level={3}
+                  key="kc-upholstery"
+                />,
+                <NavItem
+                  href="#"
+                  label="Other fields of application"
+                  level={3}
+                  key="kc-other"
+                />,
+              ]}
+            />,
+            <NavItem
+              href="#"
+              label="E-shop"
+              level={2}
+              key="shop"
+              navItems={[
+                <NavItem
+                  href="#"
+                  label="Thermomix® products"
+                  level={3}
+                  key="shop-thermomix"
+                />,
+                <NavItem
+                  href="#"
+                  label="Kobold products"
+                  level={3}
+                  key="shop-kobold"
+                />,
+                <NavItem
+                  href="#"
+                  label="Vouchers"
+                  level={3}
+                  key="shop-vouchers"
+                />,
+              ]}
+            />,
           ]}
         />,
         <NavItem key="Product Demo" href="#" label="Product Demo" level={1} />,
