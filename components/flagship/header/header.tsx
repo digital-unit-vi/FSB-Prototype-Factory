@@ -97,7 +97,7 @@ export const Header = () => {
         </HeaderButton>
       }
       mobileAccountButton={
-        <Button icon={<User />} size="large">
+        <Button icon={<User />} size="large" buttonStyle="secondary">
           Login
         </Button>
       }
