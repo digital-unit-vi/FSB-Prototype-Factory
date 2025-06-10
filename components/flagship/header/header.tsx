@@ -24,6 +24,7 @@ export const Header = () => {
   const isBackgroundGradient = darkThemePaths.includes(pathname);
   return (
     <HeaderComponent
+      stickyMode="sticky"
       advisor={
         <AdvisorDropdown
           buttonLabel="Advisor"
@@ -324,7 +325,6 @@ export const Header = () => {
         <NavItem key="E-shop" href="#" label="E-shop" level={1} />,
       ]}
       backgroundType={isBackgroundGradient ? "blackGradient" : "transparent"}
-      stickyMode="normal"
     />
   );
 };
