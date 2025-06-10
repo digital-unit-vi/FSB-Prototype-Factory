@@ -23,7 +23,7 @@ export default function FlagshipHomePage() {
   });
 
   return (
-    <main>
+    <>
       <Hero
         cta={
           <ButtonGroup alignment="center" layout="vertical">
@@ -89,6 +89,7 @@ export default function FlagshipHomePage() {
                 buttonText="Discover Thermomix®"
                 backgroundVariant="solid"
                 backgroundColorVariant="lightGrey"
+                url="#"
               />
               <CategoryTile
                 title="Cleaning with Kobold"
@@ -97,6 +98,7 @@ export default function FlagshipHomePage() {
                 buttonText="Discover Kobold"
                 backgroundVariant="solid"
                 backgroundColorVariant="lightGrey"
+                url="#"
               />
             </CategoryTileContainer>
           </GridItem>
@@ -173,6 +175,7 @@ export default function FlagshipHomePage() {
                     buttonText="Explore catalogue"
                     backgroundVariant="solid"
                     backgroundColorVariant="white"
+                    url="#"
                   />
                   <CategoryTile
                     title="Thousands of recipes - endless inspiration"
@@ -188,6 +191,7 @@ export default function FlagshipHomePage() {
                       secondLine: "every week",
                       size: "small",
                     }}
+                    url="#"
                   />
                 </CategoryTileContainer>
               </GridItem>
@@ -264,6 +268,7 @@ export default function FlagshipHomePage() {
                   buttonText="Explore catalogue"
                   backgroundVariant="solid"
                   backgroundColorVariant="lightGrey"
+                  url="#"
                 />
                 <CategoryTile
                   title="Experience Kobold at the comfort of your home"
@@ -272,6 +277,7 @@ export default function FlagshipHomePage() {
                   buttonText="Book a demo"
                   backgroundVariant="solid"
                   backgroundColorVariant="lightGrey"
+                  url="#"
                 />
               </CategoryTileContainer>
             </GridItem>
@@ -307,6 +313,7 @@ export default function FlagshipHomePage() {
                   image="/flagship/categoryTile/hp_full_tm7.png"
                   buttonText="Join the Thermomix® team"
                   backgroundVariant="image"
+                  url="#"
                 />
                 <CategoryTile
                   title="Become a Kobold advisor"
@@ -314,12 +321,13 @@ export default function FlagshipHomePage() {
                   image="/flagship/categoryTile/hp_full_kobold.png"
                   buttonText="Join the Kobold team"
                   backgroundVariant="image"
+                  url="#"
                 />
               </CategoryTileContainer>
             </GridItem>
           </GridContainer>
         </SectionContainer>
       </div>
-    </main>
+    </>
   );
 }
