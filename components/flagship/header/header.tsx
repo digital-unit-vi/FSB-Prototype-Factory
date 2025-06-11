@@ -27,6 +27,7 @@ export const Header = () => {
       stickyMode="sticky"
       advisor={
         <AdvisorDropdown
+          advisorHeadline="Your Thermomix® advisor"
           buttonLabel="Advisor"
           buttonAriaLabel="Your advisors: Thermomix advisor Lisa connected"
           buttonAvatars={[
