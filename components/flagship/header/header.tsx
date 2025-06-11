@@ -1,13 +1,13 @@
 import {
   AdvisorDropdown,
   AdvisorDropdownMenuItem,
-  AdvisorUnassigned,
   Button,
   HeaderButton,
   Header as HeaderComponent,
   Location,
   Menu,
   NavItem,
+  Search,
   SectionSeparator,
   Typography,
   User,
@@ -65,7 +65,7 @@ export const Header = () => {
           />
           <AdvisorDropdownMenuItem
             href="#"
-            icon={<AdvisorUnassigned />}
+            icon={<Search />}
             labels={
               <Typography
                 component="p"
