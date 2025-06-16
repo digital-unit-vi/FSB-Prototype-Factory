@@ -1,0 +1,29 @@
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.priceAndDelivery {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.price > div {
+  gap: 2px !important;
+}
+
+.price span,
+.price p {
+  line-height: 2rem !important;
+}
+
+.price span {
+  font-weight: bold;
+}
+
+.price p {
+  font-size: 1.2rem !important;
+  color: #707375;
+}

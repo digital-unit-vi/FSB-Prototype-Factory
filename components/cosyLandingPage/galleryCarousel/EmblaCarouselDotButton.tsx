@@ -10,7 +10,7 @@ interface UseDotButtonType {
 }
 
 const useDotButton = (
-  emblaApi: EmblaCarouselType | undefined
+  emblaApi: EmblaCarouselType | undefined,
 ): UseDotButtonType => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
@@ -20,7 +20,7 @@ const useDotButton = (
       if (!emblaApi) return;
       emblaApi.scrollTo(index);
     },
-    [emblaApi]
+    [emblaApi],
   );
 
   const onInit = useCallback((api: EmblaCarouselType) => {
@@ -120,9 +120,9 @@ export const DotButtons = ({
             hiddenClass ? styles.swiper__dothidden : "",
             dotSelected,
             continuePrev,
-            continueNext
+            continueNext,
           )}
-        />
+        />,
       );
     }
 

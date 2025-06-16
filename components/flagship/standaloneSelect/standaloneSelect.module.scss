@@ -1,0 +1,97 @@
+.standaloneSelectWrapper {
+  position: relative;
+}
+
+.standaloneSelectContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  justify-content: center;
+
+  padding: 0;
+  border: none;
+
+  color: #00ac46;
+
+  background-color: transparent;
+}
+
+.standaloneSelectContainer:hover {
+  color: #00973d;
+}
+
+.selectContainer {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  align-self: stretch;
+
+  padding: 11px 16px 11px 0;
+}
+
+.select {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.selectContainer svg {
+  width: 16px;
+  height: 16px;
+}
+
+.select svg {
+  width: 20px;
+  height: 20px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  margin: 0;
+  padding: 8px 4px;
+  border-radius: 8px;
+
+  color: #23282a;
+  list-style: none;
+
+  visibility: hidden;
+  opacity: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 2px rgb(35 40 42 / 8%);
+
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+}
+
+.dropdownMenu.fadeIn {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropdownMenu.fadeOut {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.dropdownMenuItem {
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  padding: 11px 12px;
+}
+
+.dropdownMenu.upMenu {
+  top: auto;
+  bottom: 100%;
+}

@@ -1,0 +1,153 @@
+.componentWrapper {
+  --image-wrapper-padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @media (width >= 740px) {
+    width: 100%;
+  }
+
+  @media (width >= 936px) and (width <= 1267px) {
+    --image-wrapper-padding: 0;
+  }
+
+  @media (width >= 1268px) and (width <= 1579px) {
+    --image-wrapper-padding: 24px;
+  }
+
+  @media (width >= 1580px) {
+    --image-wrapper-padding: 32px;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  padding: var(--image-wrapper-padding);
+
+  @media (width >= 936px) and (width <= 1267px) {
+    padding: 0;
+  }
+}
+
+.productTileEyeCatcher {
+  position: absolute;
+  top: var(--image-wrapper-padding);
+  right: var(--image-wrapper-padding);
+
+  & > * {
+    width: 48px !important;
+    height: 48px !important;
+    padding: 6.4px !important;
+
+    @media (width >= 740px) {
+      padding: 7.47px !important;
+    }
+
+    @media (width >= 740px) and (width <= 935px) {
+      width: 56px !important;
+      height: 56px !important;
+    }
+
+    @media (width >= 936px) and (width <= 1267px) {
+      width: 64px !important;
+      height: 64px !important;
+    }
+
+    @media (width >= 1268px) {
+      width: 80px !important;
+      height: 80px !important;
+      padding: 10.67 !important;
+    }
+  }
+}
+
+.productTileEyeCatcher.slider {
+  @media (width <= 739px) {
+    & > * {
+      width: 56px !important;
+      height: 56px !important;
+      padding: 7.47px !important;
+    }
+  }
+}
+
+.productTileEyeCatcher p:first-of-type {
+  font-size: 0.64rem !important;
+
+  @media (width >= 740px) {
+    font-size: 0.747rem !important;
+  }
+
+  @media (width >= 1268px) {
+    font-size: 1.067rem !important;
+  }
+}
+
+.productTileEyeCatcher p:last-of-type {
+  font-size: 1.2rem !important;
+
+  @media (width >= 740px) {
+    font-size: 1.4rem !important;
+  }
+
+  @media (width >= 1268px) {
+    font-size: 2rem !important;
+  }
+}
+
+.contentWrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  place-content: flex-end space-between;
+
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0 16px 16px;
+
+  color: #23282a;
+
+  @media (width >= 740px) and (width <= 935px) {
+    gap: 8px;
+  }
+
+  @media (width >= 936px) and (width <= 1579px) {
+    padding: 0 24px 24px;
+  }
+
+  @media (width >= 1580px) {
+    padding: 0 32px 32px;
+  }
+}
+
+.contentWrapper p {
+  margin: 0;
+  line-height: 22px !important;
+}
+
+.contentWrapper > * {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.priceAndButton {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+
+  @media (width >= 1268px) {
+    align-items: flex-end;
+  }
+}
+
+.priceAndButton button {
+  align-self: flex-end;
+  padding: 8px;
+
+  @media (width >= 1268px) {
+    padding: 12px !important;
+  }
+}

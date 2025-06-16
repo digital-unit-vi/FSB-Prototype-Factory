@@ -1,0 +1,36 @@
+.backgroundSection {
+  background-color: #f3f5f3;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.gap04 {
+  gap: 64px;
+}
+
+@media screen and (width >= 740px) {
+  .gap04 {
+    gap: 64px;
+  }
+}
+
+@media screen and (width >= 936px) {
+  .gap04 {
+    gap: 112px;
+  }
+}
+
+@media screen and (width >= 1268px) {
+  .gap04 {
+    gap: 128px;
+  }
+}
+
+@media screen and (width >= 1580px) {
+  .gap04 {
+    gap: 128px;
+  }
+}

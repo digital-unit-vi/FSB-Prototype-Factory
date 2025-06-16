@@ -7,27 +7,15 @@
     "incremental": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "noEmit": true,
     "paths": {
-      "@components/*": [
-        "components/*"
-      ],
-      "@const/*": [
-        "const/*"
-      ],
-      "@public/*": [
-        "public/*"
-      ],
-      "@utils/*": [
-        "utils/*"
-      ]
+      "@components/*": ["components/*"],
+      "@const/*": ["const/*"],
+      "@public/*": ["public/*"],
+      "@utils/*": ["utils/*"]
     },
     "plugins": [
       {
@@ -38,15 +26,9 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext",
-    "types": [
-      "node",
-      "react",
-      "react-dom"
-    ]
+    "types": ["node", "react", "react-dom"]
   },
-  "exclude": [
-    "node_modules"
-  ],
+  "exclude": ["node_modules"],
   "include": [
     "**/*.ts",
     "**/*.tsx",

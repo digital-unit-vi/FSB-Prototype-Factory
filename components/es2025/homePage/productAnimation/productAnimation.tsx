@@ -223,13 +223,11 @@ const ProductAnimation = ({
       >
         <div className={styles.text}>{text}</div>
       </Parallax>
-      {useStaticImage ? (
+      {useStaticImage ?
         <div className={styles.staticImageContainer}>
           <Image className={styles.staticImage} src={StaticImage} alt={text} />
         </div>
-      ) : (
-        <canvas ref={canvasRef} className={styles.canvas} />
-      )}
+      : <canvas ref={canvasRef} className={styles.canvas} />}
     </div>
   );
 };

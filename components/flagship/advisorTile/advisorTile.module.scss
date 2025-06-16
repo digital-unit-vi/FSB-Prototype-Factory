@@ -1,0 +1,30 @@
+.advisorTileContainer {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  padding: 16px 24px 16px 16px;
+  border: 1px solid rgb(0 0 0 / 16%);
+  border-radius: 8px;
+
+  background-color: rgb(255 255 255 / 50%);
+}
+
+.advisorTileContainer > div:has(> img) {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+}
+
+.advisorTileContainer img {
+  clip-path: circle(50%);
+}
+
+.advisorTileTextContainer button {
+  padding: 0;
+}
+
+.advisorTileTextContainer button p {
+  font-weight: 600;
+  text-decoration: underline;
+}
