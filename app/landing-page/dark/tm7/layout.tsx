@@ -3,6 +3,7 @@
 import {
   FooterLinks,
   FooterLinksBlock,
+  FooterMetaLinks,
   FooterSection,
   Typography,
 } from "@vorwerk/fibre-react";
@@ -65,8 +66,8 @@ export default function RootLayout({
             />
           </FooterLinks>
         </FooterSection>
-        <FooterSection>
-          <FooterLinks>
+        <FooterSection variant="spacingMetaLink">
+          <FooterMetaLinks>
             <ul>
               <li key="2021 Vorwerk">
                 <Typography variant="paragraph12">© 2021 Vorwerk</Typography>
@@ -109,7 +110,7 @@ export default function RootLayout({
                 </Typography>
               </li>
             </ul>
-          </FooterLinks>
+          </FooterMetaLinks>
         </FooterSection>
       </footer>
     </>

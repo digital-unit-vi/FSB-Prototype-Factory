@@ -17,7 +17,7 @@ import {
 } from "@vorwerk/fibre-react";
 import styles from "./page.module.scss";
 
-export default function FlagshipHomePage() {
+export default function HomePage() {
   usePageTitle({
     title: "Home Page - Vorwerk One Website",
   });

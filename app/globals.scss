@@ -45,6 +45,7 @@ h2,
 h3,
 h4,
 h5,
+h6,
 span,
 p {
   font-family: Vorwerk, system-ui, arial, sans-serif !important;
@@ -115,7 +116,9 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+  hyphens: auto !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
 }
 
 /* 9. Improve line wrapping */

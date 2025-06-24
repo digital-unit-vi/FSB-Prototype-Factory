@@ -7,6 +7,7 @@ import {
   Facebook,
   FooterLinks,
   FooterLinksBlock,
+  FooterMetaLinks,
   FooterSection,
   FooterSocialLinkBlock,
   FooterSocialLinks,
@@ -363,8 +364,8 @@ export const Footer = () => {
           </FooterSocialLinks>
         </div>
       </FooterSection>
-      <FooterSection>
-        <FooterLinks>
+      <FooterSection variant="spacingMetaLink">
+        <FooterMetaLinks>
           <ul>
             <li>
               <Typography variant="paragraph12">© 2021 Vorwerk</Typography>
@@ -417,7 +418,7 @@ export const Footer = () => {
               </Typography>
             </li>
           </ul>
-        </FooterLinks>
+        </FooterMetaLinks>
       </FooterSection>
     </footer>
   );
