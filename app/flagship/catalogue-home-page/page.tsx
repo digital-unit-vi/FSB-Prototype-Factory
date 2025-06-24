@@ -18,20 +18,27 @@ import {
   Typography,
 } from "@vorwerk/fibre-react";
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import styles from "./page.module.scss";
+
+//remove after viewport.ts, useBreakpoint.ts is SSR-safe fixed in Storybook
+const CarouselDynamic = dynamic(
+  () => import("@components/ssrWrappers/CarouselWrapper"),
+  { ssr: false }
+);
 
 export default function VOWCatalogueHomePage() {
   usePageTitle({
     title: "Catalogue Home Page - Vorwerk One Website",
   });
 
+  const [mounted, setMounted] = useState(false);
+
   const screenSize = useScreenSize();
 
-  //remove after viewport.ts, useBreakpoint.ts is SSR-safe fixed in Storybook
-  const CarouselDynamic = dynamic(
-    () => import("@components/ssrWrappers/CarouselWrapper"),
-    { ssr: false }
-  );
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <main>
@@ -173,71 +180,73 @@ export default function VOWCatalogueHomePage() {
                   </Headline>
                 </GridItem>
               </GridContainer>
-              <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
-                <ProductTile
-                  ariaLabel="Product Tile"
-                  background="primary"
-                  categories={["TM7", "TM6"]}
-                  description="Single sentence product description."
-                  headline="Thermomix Friend® with TM6 Mixtopf"
-                  image="/flagship/productTile/chp_pt_tm_friend.png"
-                  imageAlt="Thermomix Friend, a compact cooking assistant with a stainless steel mixing bowl and digital control dial."
-                  imageTitle="Thermomix Friend®"
-                  openInNewTab
-                  price={{
-                    align: "left",
-                    layout: "default",
-                    price: "499,00 €",
-                    showVat: true,
-                    vatText: "incl. VAT & shipping",
-                  }}
-                  url="#link"
-                  variant="grid"
-                  visibleCategories={2}
-                />
-                <ProductTile
-                  ariaLabel="Product Tile"
-                  background="primary"
-                  categories={["TM7", "TM6"]}
-                  description="Single sentence product description."
-                  headline="Knife cover “Shaft” with peeler"
-                  image="/flagship/productTile/chp_pt_cover_with_peeler.png"
-                  imageAlt="Thermomix blade cover with peeler attachment, featuring a curved stainless steel design with grating holes and a central plastic mount."
-                  imageTitle="Thermomix blade cover with peeler"
-                  openInNewTab
-                  price={{
-                    align: "left",
-                    layout: "default",
-                    price: "34,00 €",
-                    showVat: true,
-                    vatText: "incl. VAT & shipping",
-                  }}
-                  url="#link"
-                  variant="grid"
-                  visibleCategories={2}
-                />
-                <ProductTile
-                  ariaLabel="Product Tile"
-                  background="primary"
-                  categories={["TM7", "TM6"]}
-                  description="Single sentence product description."
-                  headline="Blade cover “Shaft”"
-                  image="/flagship/productTile/chp_pt_blade_cover.png"
-                  imageAlt="Thermomix blade cover accessory in black, featuring a curved design with radial slits and a central locking mechanism."
-                  imageTitle="Thermomix blade cover"
-                  openInNewTab
-                  price={{
-                    align: "left",
-                    layout: "default",
-                    price: "24,90 €",
-                    showVat: true,
-                    vatText: "incl. VAT & shipping",
-                  }}
-                  url="#link"
-                  variant="grid"
-                  visibleCategories={2}
-                />
-              </CarouselDynamic>
+              {mounted && (
+                <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
+                  <ProductTile
+                    ariaLabel="Product Tile"
+                    background="primary"
+                    categories={["TM7", "TM6"]}
+                    description="Single sentence product description."
+                    headline="Thermomix Friend® with TM6 Mixtopf"
+                    image="/flagship/productTile/chp_pt_tm_friend.png"
+                    imageAlt="Thermomix Friend, a compact cooking assistant with a stainless steel mixing bowl and digital control dial."
+                    imageTitle="Thermomix Friend®"
+                    openInNewTab
+                    price={{
+                      align: "left",
+                      layout: "default",
+                      price: "499,00 €",
+                      showVat: true,
+                      vatText: "incl. VAT & shipping",
+                    }}
+                    url="#link"
+                    variant="grid"
+                    visibleCategories={2}
+                  />
+                  <ProductTile
+                    ariaLabel="Product Tile"
+                    background="primary"
+                    categories={["TM7", "TM6"]}
+                    description="Single sentence product description."
+                    headline="Knife cover “Shaft” with peeler"
+                    image="/flagship/productTile/chp_pt_cover_with_peeler.png"
+                    imageAlt="Thermomix blade cover with peeler attachment, featuring a curved stainless steel design with grating holes and a central plastic mount."
+                    imageTitle="Thermomix blade cover with peeler"
+                    openInNewTab
+                    price={{
+                      align: "left",
+                      layout: "default",
+                      price: "34,00 €",
+                      showVat: true,
+                      vatText: "incl. VAT & shipping",
+                    }}
+                    url="#link"
+                    variant="grid"
+                    visibleCategories={2}
+                  />
+                  <ProductTile
+                    ariaLabel="Product Tile"
+                    background="primary"
+                    categories={["TM7", "TM6"]}
+                    description="Single sentence product description."
+                    headline="Blade cover “Shaft”"
+                    image="/flagship/productTile/chp_pt_blade_cover.png"
+                    imageAlt="Thermomix blade cover accessory in black, featuring a curved design with radial slits and a central locking mechanism."
+                    imageTitle="Thermomix blade cover"
+                    openInNewTab
+                    price={{
+                      align: "left",
+                      layout: "default",
+                      price: "24,90 €",
+                      showVat: true,
+                      vatText: "incl. VAT & shipping",
+                    }}
+                    url="#link"
+                    variant="grid"
+                    visibleCategories={2}
+                  />
+                </CarouselDynamic>
+              )}
             </div>
             <ButtonGroup alignment="center">
               <Button
@@ -337,71 +346,73 @@ export default function VOWCatalogueHomePage() {
                   </Headline>
                 </GridItem>
               </GridContainer>
-              <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
-                <ProductTile
-                  ariaLabel="Product Tile"
-                  background="secondary"
-                  categories={["SPB100", "TM7", "TM6", "SP7"]}
-                  description="Single sentence product description."
-                  headline="Kobold VR7 Vacuum Robot"
-                  image="/flagship/productTile/chp_pt_kobold_vr7.png"
-                  imageAlt="Image alt"
-                  imageTitle="Image Title"
-                  openInNewTab
-                  price={{
-                    align: "left",
-                    layout: "default",
-                    price: "999,00 €",
-                    showVat: true,
-                    vatText: "incl. VAT & shipping",
-                  }}
-                  url="#link"
-                  variant="grid"
-                  visibleCategories={0}
-                />
-                <ProductTile
-                  ariaLabel="Product Tile"
-                  background="secondary"
-                  categories={["SPB100", "TM7", "TM6", "SP7"]}
-                  description="Single sentence product description."
-                  headline="Kobold VC100 Handheld Vacuum Cleaner"
-                  image="/flagship/productTile/chp_pt_kobold_vc100.png"
-                  imageAlt="Image alt"
-                  imageTitle="Image Title"
-                  openInNewTab
-                  price={{
-                    align: "left",
-                    layout: "default",
-                    price: "90,00 €",
-                    showVat: true,
-                    vatText: "incl. VAT & shipping",
-                  }}
-                  url="#link"
-                  variant="grid"
-                  visibleCategories={0}
-                />
-                <ProductTile
-                  ariaLabel="Product Tile"
-                  background="secondary"
-                  categories={["SPB100", "TM7", "TM6", "SP7"]}
-                  description="Single sentence product description."
-                  headline="Kobold VK7 Cordless Vacuum Cleaner"
-                  image="/flagship/productTile/chp_pt_kobold_vk7.png"
-                  imageAlt="Image alt"
-                  imageTitle="Image Title"
-                  openInNewTab
-                  price={{
-                    align: "left",
-                    layout: "default",
-                    price: "979,00 €",
-                    showVat: true,
-                    vatText: "incl. VAT & shipping",
-                  }}
-                  url="#link"
-                  variant="grid"
-                  visibleCategories={0}
-                />
-              </CarouselDynamic>
+              {mounted && (
+                <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
+                  <ProductTile
+                    ariaLabel="Product Tile"
+                    background="secondary"
+                    categories={["SPB100", "TM7", "TM6", "SP7"]}
+                    description="Single sentence product description."
+                    headline="Kobold VR7 Vacuum Robot"
+                    image="/flagship/productTile/chp_pt_kobold_vr7.png"
+                    imageAlt="Image alt"
+                    imageTitle="Image Title"
+                    openInNewTab
+                    price={{
+                      align: "left",
+                      layout: "default",
+                      price: "999,00 €",
+                      showVat: true,
+                      vatText: "incl. VAT & shipping",
+                    }}
+                    url="#link"
+                    variant="grid"
+                    visibleCategories={0}
+                  />
+                  <ProductTile
+                    ariaLabel="Product Tile"
+                    background="secondary"
+                    categories={["SPB100", "TM7", "TM6", "SP7"]}
+                    description="Single sentence product description."
+                    headline="Kobold VC100 Handheld Vacuum Cleaner"
+                    image="/flagship/productTile/chp_pt_kobold_vc100.png"
+                    imageAlt="Image alt"
+                    imageTitle="Image Title"
+                    openInNewTab
+                    price={{
+                      align: "left",
+                      layout: "default",
+                      price: "90,00 €",
+                      showVat: true,
+                      vatText: "incl. VAT & shipping",
+                    }}
+                    url="#link"
+                    variant="grid"
+                    visibleCategories={0}
+                  />
+                  <ProductTile
+                    ariaLabel="Product Tile"
+                    background="secondary"
+                    categories={["SPB100", "TM7", "TM6", "SP7"]}
+                    description="Single sentence product description."
+                    headline="Kobold VK7 Cordless Vacuum Cleaner"
+                    image="/flagship/productTile/chp_pt_kobold_vk7.png"
+                    imageAlt="Image alt"
+                    imageTitle="Image Title"
+                    openInNewTab
+                    price={{
+                      align: "left",
+                      layout: "default",
+                      price: "979,00 €",
+                      showVat: true,
+                      vatText: "incl. VAT & shipping",
+                    }}
+                    url="#link"
+                    variant="grid"
+                    visibleCategories={0}
+                  />
+                </CarouselDynamic>
+              )}
             </div>
             <ButtonGroup alignment="center">
               <Button
@@ -433,26 +444,28 @@ export default function VOWCatalogueHomePage() {
                 </Headline>
               </GridItem>
             </GridContainer>
-            <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
-              <TeaserTile
-                image="/flagship/teaserTile/chp_thermomix.png"
-                imageAlt="Thermomix TM7"
-                isExternal
-                url="https://www.thermomix.com"
-              />
-              <TeaserTile
-                image="/flagship/teaserTile/chp_kobold.png"
-                imageAlt="Kobold"
-                isExternal
-                url="https://www.thermomix.com"
-              />
-              <TeaserTile
-                image="/flagship/teaserTile/chp_vouchers.png"
-                imageAlt="Vouchers"
-                isExternal
-                url="https://www.thermomix.com"
-              />
-            </CarouselDynamic>
+            {mounted && (
+              <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
+                <TeaserTile
+                  image="/flagship/teaserTile/chp_thermomix.png"
+                  imageAlt="Thermomix TM7"
+                  isExternal
+                  url="https://www.thermomix.com"
+                />
+                <TeaserTile
+                  image="/flagship/teaserTile/chp_kobold.png"
+                  imageAlt="Kobold"
+                  isExternal
+                  url="https://www.thermomix.com"
+                />
+                <TeaserTile
+                  image="/flagship/teaserTile/chp_vouchers.png"
+                  imageAlt="Vouchers"
+                  isExternal
+                  url="https://www.thermomix.com"
+                />
+              </CarouselDynamic>
+            )}
           </div>
         </div>
       </section>
