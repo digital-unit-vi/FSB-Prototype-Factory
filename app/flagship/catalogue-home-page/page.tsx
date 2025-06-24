@@ -20,7 +20,7 @@ import {
 } from "@vorwerk/fibre-react";
 import styles from "./page.module.scss";
 
-export default function CatalogueHomePage() {
+export default function VOWCatalogueHomePage() {
   usePageTitle({
     title: "Catalogue Home Page - Vorwerk One Website",
   });
