@@ -6,7 +6,6 @@ import {
   Button,
   ButtonGroup,
   CaretRight,
-  Carousel,
   CategoryTile,
   CategoryTileContainer,
   ContentBlock,
@@ -18,6 +17,7 @@ import {
   TeaserTile,
   Typography,
 } from "@vorwerk/fibre-react";
+import dynamic from "next/dynamic";
 import styles from "./page.module.scss";
 
 export default function VOWCatalogueHomePage() {
@@ -26,6 +26,12 @@ export default function VOWCatalogueHomePage() {
   });
 
   const screenSize = useScreenSize();
+
+  //remove after viewport.ts, useBreakpoint.ts is SSR-safe fixed in Storybook
+  const CarouselDynamic = dynamic(
+    () => import("@components/ssrWrappers/CarouselWrapper"),
+    { ssr: false }
+  );
 
   return (
     <main>
@@ -167,7 +173,7 @@ export default function VOWCatalogueHomePage() {
                   </Headline>
                 </GridItem>
               </GridContainer>
-              <Carousel layout={{ xs: 1.5, m: 3, l: 3 }}>
+              <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
                 <ProductTile
                   ariaLabel="Product Tile"
                   background="primary"
@@ -231,7 +237,7 @@ export default function VOWCatalogueHomePage() {
                   variant="grid"
                   visibleCategories={2}
                 />
-              </Carousel>
+              </CarouselDynamic>
             </div>
             <ButtonGroup alignment="center">
               <Button
@@ -331,7 +337,7 @@ export default function VOWCatalogueHomePage() {
                   </Headline>
                 </GridItem>
               </GridContainer>
-              <Carousel layout={{ xs: 1.5, m: 3, l: 3 }}>
+              <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
                 <ProductTile
                   ariaLabel="Product Tile"
                   background="secondary"
@@ -395,7 +401,7 @@ export default function VOWCatalogueHomePage() {
                   variant="grid"
                   visibleCategories={0}
                 />
-              </Carousel>
+              </CarouselDynamic>
             </div>
             <ButtonGroup alignment="center">
               <Button
@@ -427,7 +433,7 @@ export default function VOWCatalogueHomePage() {
                 </Headline>
               </GridItem>
             </GridContainer>
-            <Carousel layout={{ xs: 1.5, m: 3, l: 3 }}>
+            <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
               <TeaserTile
                 image="/flagship/teaserTile/chp_thermomix.png"
                 imageAlt="Thermomix TM7"
@@ -446,7 +452,7 @@ export default function VOWCatalogueHomePage() {
                 isExternal
                 url="https://www.thermomix.com"
               />
-            </Carousel>
+            </CarouselDynamic>
           </div>
         </div>
       </section>
