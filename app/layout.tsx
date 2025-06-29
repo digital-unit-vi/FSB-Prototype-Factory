@@ -7,6 +7,7 @@ import {
   FooterLinks,
   FooterLinksBlock,
   FooterLogo,
+  FooterMetaLinks,
   FooterSection,
   FooterShopLogo,
   FooterShopLogos,
@@ -445,7 +446,7 @@ export default function RootLayout({
                 </FooterShopLogos>
               </FooterSection>
               <FooterSection variant="spacingMetaLink">
-                <FooterLinks>
+                <FooterMetaLinks>
                   <ul>
                     <li key="about-us">
                       <Typography variant="paragraph12">
@@ -495,7 +496,7 @@ export default function RootLayout({
                       </Typography>
                     </li>
                   </ul>
-                </FooterLinks>
+                </FooterMetaLinks>
               </FooterSection>
             </footer>
           )}

@@ -12,7 +12,7 @@ import {
 import Link from "next/link";
 import styles from "./page.module.scss";
 
-export default function FlagshipHomePage() {
+export default function VOW() {
   return (
     <>
       <main>

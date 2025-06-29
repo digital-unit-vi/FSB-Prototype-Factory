@@ -84,7 +84,7 @@ const GalleryModalCarousel: React.FC<GalleryModalCarouselProps> = ({
                     </MediaContainer>
                     {isSmallOrMediumSize && (
                       <Button
-                        buttonStyle={"transparent"}
+                        buttonStyle="secondary"
                         size={"medium"}
                         icon={<ZoomIn />}
                       />

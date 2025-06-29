@@ -20,7 +20,7 @@ const ProductPurchaseOptions: FC<ProductPurchaseOptionsProps> = ({
     <div className={styles.priceContainer}>
       <div className={styles.priceAndDelivery}>
         <div className={styles.price}>
-          <Price size="medium" price={price} vat="incl. VAT & shipping" />
+          <Price size="medium" price={price} vatText="incl. VAT & shipping" />
         </div>
         {delivery}
       </div>

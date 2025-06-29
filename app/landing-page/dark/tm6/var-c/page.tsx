@@ -11,7 +11,6 @@ import {
   DoughIllustration,
   FermentationIllustration,
   FullwidthImage,
-  GalleryCarousel,
   GridContainer,
   GridItem,
   Headline,
@@ -29,9 +28,16 @@ import {
   UserReview,
   WifiLight,
 } from "@vorwerk/fibre-react";
+import dynamic from "next/dynamic";
 import styles from "./page.module.scss";
 
 export default function TM6VariantCDarkLandingPage() {
+  //remove after viewport.ts, useBreakpoint.ts is SSR-safe fixed in Storybook
+  const GalleryCarouselDynamic = dynamic(
+    () => import("@components/ssrWrappers/GalleryCarouselWrapper"),
+    { ssr: false }
+  );
+
   return (
     <main>
       <Hero
@@ -174,7 +180,7 @@ export default function TM6VariantCDarkLandingPage() {
         />
       </SectionContainer>
       <SectionContainer>
-        <GalleryCarousel
+        <GalleryCarouselDynamic
           darkMode
           desktopSlides={[
             {
