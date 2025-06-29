@@ -52,10 +52,7 @@ export default function VOWCatalogueHomePage() {
             >
               <Typography component="h1">
                 <span>
-                  Cook & clean{" "}
-                  {screenSize.width < 768 ?
-                    <br />
-                  : ""}
+                  Cook & clean {screenSize.width < 768 ? <br /> : ""}
                   <strong>like never before</strong>.
                 </span>
               </Typography>
@@ -100,10 +97,7 @@ export default function VOWCatalogueHomePage() {
                 >
                   <Typography component="h2">
                     <span>
-                      Everything about{" "}
-                      {screenSize.width < 768 ?
-                        <br />
-                      : ""}
+                      Everything about {screenSize.width < 768 ? <br /> : ""}
                       <strong>cooking</strong>.
                     </span>
                   </Typography>
@@ -274,10 +268,7 @@ export default function VOWCatalogueHomePage() {
                 >
                   <Typography component="h2">
                     <span>
-                      Everything about{" "}
-                      {screenSize.width < 768 ?
-                        <br />
-                      : ""}
+                      Everything about {screenSize.width < 768 ? <br /> : ""}
                       <strong>cleaning</strong>.
                     </span>
                   </Typography>
@@ -434,11 +425,11 @@ export default function VOWCatalogueHomePage() {
             <GridContainer>
               <GridItem columns={12}>
                 <Headline
-                  spaceBelow={"additional"}
-                  strongColor={"green"}
+                  spaceBelow="additional"
+                  strongColor="green"
                   isHeadlineCentered
                 >
-                  <Typography component={"h2"}>
+                  <Typography component="h2">
                     <strong>Products</strong> for Thermomix® & Kobold.
                   </Typography>
                 </Headline>
@@ -447,21 +438,24 @@ export default function VOWCatalogueHomePage() {
             {mounted && (
               <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
                 <TeaserTile
-                  image="/flagship/teaserTile/chp_thermomix.png"
+                  title="Thermomix® products"
+                  buttonText="Explore products"
+                  image="/flagship/teaserTile/chp_thermomix_clear.png"
                   imageAlt="Thermomix TM7"
-                  isExternal
                   url="https://www.thermomix.com"
                 />
                 <TeaserTile
-                  image="/flagship/teaserTile/chp_kobold.png"
+                  title="Kobold products"
+                  buttonText="Explore products"
+                  image="/flagship/teaserTile/chp_kobold_clear.png"
                   imageAlt="Kobold"
-                  isExternal
                   url="https://www.thermomix.com"
                 />
                 <TeaserTile
-                  image="/flagship/teaserTile/chp_vouchers.png"
+                  title="Vorwerk vouchers"
+                  buttonText="Explore vouchers"
+                  image="/flagship/teaserTile/chp_vouchers_clear.png"
                   imageAlt="Vouchers"
-                  isExternal
                   url="https://www.thermomix.com"
                 />
               </CarouselDynamic>
@@ -475,8 +469,8 @@ export default function VOWCatalogueHomePage() {
           <GridContainer>
             <GridItem columns={12}>
               <Headline
-                spaceBelow={"additional"}
-                strongColor={"green"}
+                spaceBelow="additional"
+                strongColor="green"
                 isHeadlineCentered
               >
                 <Typography component={"h2"}>
