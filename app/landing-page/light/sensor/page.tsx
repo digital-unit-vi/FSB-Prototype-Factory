@@ -9,7 +9,6 @@ import {
   BentoBoxTiles,
   BluetoothLight,
   CleaningLight,
-  GalleryCarousel,
   GridContainer,
   GridItem,
   Headline,
@@ -21,10 +20,16 @@ import {
   Typography,
   UserReview,
 } from "@vorwerk/fibre-react";
+import dynamic from "next/dynamic";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPage() {
   const screenSize = useScreenSize();
+
+  const GalleryCarouselDynamic = dynamic(
+    () => import("@components/ssrWrappers/GalleryCarouselWrapper"),
+    { ssr: false }
+  );
 
   return (
     <main>
@@ -55,7 +60,7 @@ export default function SensorLightLandingPage() {
         </GridContainer>
       </SectionContainer>
       <SectionContainer>
-        <GalleryCarousel
+        <GalleryCarouselDynamic
           desktopSlides={[
             {
               bigImagePosLeft: false,

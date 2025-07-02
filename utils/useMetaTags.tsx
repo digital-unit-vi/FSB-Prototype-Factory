@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 
-interface UsePageTitleOptions {
+interface UseMetaTagsOptions {
   title: string;
   description?: string;
 }
 
-export function usePageTitle({ title, description }: UsePageTitleOptions) {
+export function useMetaTags({ title, description }: UseMetaTagsOptions) {
   useEffect(() => {
     document.title = title;
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { usePageTitle } from "@utils/usePageTitle";
+import { useMetaTags } from "@utils/useMetaTags";
 import useScreenSize from "@utils/useScreenSize";
 import {
   Button,
@@ -22,8 +22,9 @@ import { useEffect, useState } from "react";
 import styles from "./page.module.scss";
 
 export default function VOWCatalogueHomePage() {
-  usePageTitle({
+  useMetaTags({
     title: "Catalogue Home Page - Vorwerk One Website",
+    description: "Catalogue Home Page - Vorwerk One Website",
   });
 
   const [mounted, setMounted] = useState(false);
@@ -276,6 +277,8 @@ export default function VOWCatalogueHomePage() {
                     <CategoryTile
                       title="Battery Vacuum Cleaner"
                       image="/flagship/categoryTile/chp_kobold_battery_vacuum.png"
+                      imageTitle="Battery Vacuum Cleaner"
+                      imageAlt="Battery Vacuum Cleaner"
                       buttonText="Discover products"
                       backgroundVariant="solid"
                       backgroundColorVariant="lightGrey"
@@ -284,6 +287,8 @@ export default function VOWCatalogueHomePage() {
                     <CategoryTile
                       title="Upright Vacuum Cleaner"
                       image="/flagship/categoryTile/chp_kobold_upright.png"
+                      imageTitle="Upright Vacuum Cleaner"
+                      imageAlt="Upright Vacuum Cleaner"
                       buttonText="Discover products"
                       backgroundVariant="solid"
                       backgroundColorVariant="lightGrey"
@@ -298,6 +303,8 @@ export default function VOWCatalogueHomePage() {
                     <CategoryTile
                       title="Cleaning Robots"
                       image="/flagship/categoryTile/chp_kobold_robot.png"
+                      imageTitle="Cleaning Robots"
+                      imageAlt="Cleaning Robots"
                       buttonText="Discover products"
                       backgroundVariant="solid"
                       backgroundColorVariant="lightGrey"
@@ -306,6 +313,8 @@ export default function VOWCatalogueHomePage() {
                     <CategoryTile
                       title="Kobold Accessories"
                       image="/flagship/categoryTile/hp_kobold_parts.png"
+                      imageTitle="Kobold Accessories"
+                      imageAlt="Kobold Accessories"
                       buttonText="Discover products"
                       backgroundVariant="solid"
                       backgroundColorVariant="lightGrey"
@@ -334,14 +343,13 @@ export default function VOWCatalogueHomePage() {
               {mounted && (
                 <Carousel layout={{ xs: 1.5, m: 3, l: 3 }}>
                   <ProductTile
-                    ariaLabel="Product Tile"
+                    ariaLabel="Kobold VR7 Vacuum Robot"
                     background="secondary"
-                    categories={["SPB100", "TM7", "TM6", "SP7"]}
                     description="Single sentence product description."
                     headline="Kobold VR7 Vacuum Robot"
                     image="/flagship/productTile/chp_pt_kobold_vr7.png"
-                    imageAlt="Image alt"
-                    imageTitle="Image Title"
+                    imageAlt="Kobold VR7 Vacuum Robot"
+                    imageTitle="Kobold VR7 Vacuum Robot"
                     openInNewTab
                     price={{
                       align: "left",
@@ -352,17 +360,15 @@ export default function VOWCatalogueHomePage() {
                     }}
                     url="#link"
                     variant="grid"
-                    visibleCategories={0}
                   />
                   <ProductTile
-                    ariaLabel="Product Tile"
+                    ariaLabel="Kobold VC100 Handheld Vacuum Cleaner"
                     background="secondary"
-                    categories={["SPB100", "TM7", "TM6", "SP7"]}
                     description="Single sentence product description."
                     headline="Kobold VC100 Handheld Vacuum Cleaner"
                     image="/flagship/productTile/chp_pt_kobold_vc100.png"
-                    imageAlt="Image alt"
-                    imageTitle="Image Title"
+                    imageAlt="Kobold VC100 Handheld Vacuum Cleaner"
+                    imageTitle="Kobold VC100 Handheld Vacuum Cleaner"
                     openInNewTab
                     price={{
                       align: "left",
@@ -373,17 +379,15 @@ export default function VOWCatalogueHomePage() {
                     }}
                     url="#link"
                     variant="grid"
-                    visibleCategories={0}
                   />
                   <ProductTile
-                    ariaLabel="Product Tile"
+                    ariaLabel="Kobold VK7 Cordless Vacuum Cleaner"
                     background="secondary"
-                    categories={["SPB100", "TM7", "TM6", "SP7"]}
                     description="Single sentence product description."
                     headline="Kobold VK7 Cordless Vacuum Cleaner"
                     image="/flagship/productTile/chp_pt_kobold_vk7.png"
-                    imageAlt="Image alt"
-                    imageTitle="Image Title"
+                    imageAlt="Kobold VK7 Cordless Vacuum Cleaner"
+                    imageTitle="Kobold VK7 Cordless Vacuum Cleaner"
                     openInNewTab
                     price={{
                       align: "left",
@@ -394,7 +398,6 @@ export default function VOWCatalogueHomePage() {
                     }}
                     url="#link"
                     variant="grid"
-                    visibleCategories={0}
                   />
                 </Carousel>
               )}
@@ -475,7 +478,7 @@ export default function VOWCatalogueHomePage() {
           </GridContainer>
           <ContentBlock
             mediaAlignment="left"
-            media={<img src="/flagship/images/vorwerk-content.png" />}
+            media={<img src="/flagship/images/vorwerk-content.png" alt="" />}
             headline={
               <Headline spaceBelow="default">
                 <Typography component="h3" fontWeight="bold">
@@ -503,7 +506,7 @@ export default function VOWCatalogueHomePage() {
         </div>
         <ContentBlock
           mediaAlignment="right"
-          media={<img src="/flagship/images/content-1.png" />}
+          media={<img src="/flagship/images/content-1.png" alt="" />}
           headline={
             <Headline spaceBelow="default">
               <Typography component="h3" fontWeight="bold">
