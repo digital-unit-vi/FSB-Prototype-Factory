@@ -67,8 +67,8 @@ export default function ProductTileNew({
             size={size}
             price={price.price}
             lowestPrice={price.lowestPrice}
-            vat="incl. VAT & shipping"
-            delivery={price.delivery}
+            vatText="incl. VAT & shipping"
+            deliveryText={price.delivery}
           />
           <Button buttonStyle={"primary"} size={size} icon={<ShoppingCart />} />
         </div>

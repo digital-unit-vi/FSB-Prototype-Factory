@@ -1,6 +1,6 @@
 "use client";
 
-import { usePageTitle } from "@utils/usePageTitle";
+import { useMetaTags } from "@utils/useMetaTags";
 import {
   Button,
   ButtonGroup,
@@ -17,9 +17,10 @@ import {
 } from "@vorwerk/fibre-react";
 import styles from "./page.module.scss";
 
-export default function FlagshipHomePage() {
-  usePageTitle({
+export default function VOWHomePage() {
+  useMetaTags({
     title: "Home Page - Vorwerk One Website",
+    description: "Home Page - Vorwerk One Website",
   });
 
   return (
