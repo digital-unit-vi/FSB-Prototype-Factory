@@ -6,6 +6,7 @@ import {
   Button,
   ButtonGroup,
   CaretRight,
+  Carousel,
   CategoryTile,
   CategoryTileContainer,
   ContentBlock,
@@ -17,15 +18,8 @@ import {
   TeaserTile,
   Typography,
 } from "@vorwerk/fibre-react";
-import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import styles from "./page.module.scss";
-
-//remove after viewport.ts, useBreakpoint.ts is SSR-safe fixed in Storybook
-const CarouselDynamic = dynamic(
-  () => import("@components/ssrWrappers/CarouselWrapper"),
-  { ssr: false }
-);
 
 export default function VOWCatalogueHomePage() {
   usePageTitle({
@@ -164,8 +158,8 @@ export default function VOWCatalogueHomePage() {
               <GridContainer>
                 <GridItem columns={12}>
                   <Headline
-                    spaceBelow={"additional"}
-                    strongColor={"green"}
+                    spaceBelow="additional"
+                    strongColor="green"
                     isHeadlineCentered
                   >
                     <Typography component="h3">
@@ -175,7 +169,7 @@ export default function VOWCatalogueHomePage() {
                 </GridItem>
               </GridContainer>
               {mounted && (
-                <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
+                <Carousel layout={{ xs: 1.5, m: 3, l: 3 }}>
                   <ProductTile
                     ariaLabel="Product Tile"
                     background="primary"
@@ -239,7 +233,7 @@ export default function VOWCatalogueHomePage() {
                     variant="grid"
                     visibleCategories={2}
                   />
-                </CarouselDynamic>
+                </Carousel>
               )}
             </div>
             <ButtonGroup alignment="center">
@@ -327,8 +321,8 @@ export default function VOWCatalogueHomePage() {
               <GridContainer>
                 <GridItem columns={12}>
                   <Headline
-                    spaceBelow={"additional"}
-                    strongColor={"green"}
+                    spaceBelow="additional"
+                    strongColor="green"
                     isHeadlineCentered
                   >
                     <Typography component="h3">
@@ -338,7 +332,7 @@ export default function VOWCatalogueHomePage() {
                 </GridItem>
               </GridContainer>
               {mounted && (
-                <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
+                <Carousel layout={{ xs: 1.5, m: 3, l: 3 }}>
                   <ProductTile
                     ariaLabel="Product Tile"
                     background="secondary"
@@ -402,7 +396,7 @@ export default function VOWCatalogueHomePage() {
                     variant="grid"
                     visibleCategories={0}
                   />
-                </CarouselDynamic>
+                </Carousel>
               )}
             </div>
             <ButtonGroup alignment="center">
@@ -436,7 +430,7 @@ export default function VOWCatalogueHomePage() {
               </GridItem>
             </GridContainer>
             {mounted && (
-              <CarouselDynamic layout={{ xs: 1.5, m: 3, l: 3 }}>
+              <Carousel layout={{ xs: 1.5, m: 3, l: 3 }}>
                 <TeaserTile
                   title="Thermomix® products"
                   buttonText="Explore products"
@@ -458,7 +452,7 @@ export default function VOWCatalogueHomePage() {
                   imageAlt="Vouchers"
                   url="https://www.thermomix.com"
                 />
-              </CarouselDynamic>
+              </Carousel>
             )}
           </div>
         </div>
@@ -473,7 +467,7 @@ export default function VOWCatalogueHomePage() {
                 strongColor="green"
                 isHeadlineCentered
               >
-                <Typography component={"h2"}>
+                <Typography component="h2">
                   Current <strong>offers</strong>.
                 </Typography>
               </Headline>

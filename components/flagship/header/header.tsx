@@ -1,3 +1,5 @@
+"use client";
+
 import {
   AdvisorDropdown,
   AdvisorDropdownMenuItem,
@@ -9,11 +11,16 @@ import {
   NavItem,
   Search,
   SectionSeparator,
+  SkeletonContainer,
+  SkeletonDropdownItem,
+  SkeletonHeadline,
+  SkeletonText,
   Typography,
   User,
   Vorwerk,
 } from "@vorwerk/fibre-react";
 import { usePathname } from "next/navigation";
+import { useRef, useState } from "react";
 
 export const Header = () => {
   const pathname = usePathname();
@@ -22,6 +29,11 @@ export const Header = () => {
     "/flagship/division-landing-page",
   ];
   const isBackgroundGradient = darkThemePaths.includes(pathname);
+
+  const [currentSearchValue, setCurrentSearchValue] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout>();
+
   return (
     <HeaderComponent
       stickyMode="sticky"
@@ -326,6 +338,117 @@ export const Header = () => {
         <NavItem key="E-shop" href="#" label="E-shop" level={1} />,
       ]}
       backgroundType={isBackgroundGradient ? "blackGradient" : "transparent"}
+      searchFlyout={{
+        darkMode: false,
+        currentSearchValue,
+        onValueChange: (value: string) => {
+          setIsLoading(true);
+          clearTimeout(timeoutRef.current);
+          timeoutRef.current = setTimeout(() => setIsLoading(false), 1000);
+          setCurrentSearchValue(value);
+        },
+        placeholder: "Search",
+        isLoading,
+        searchLabel: "Search products",
+        searchSuggestions: [
+          {
+            name: "Products",
+            suggestions: [
+              {
+                name: "Thermo<strong>mix TM6</strong>",
+                value: "Thermomix TM6",
+                onClick: () =>
+                  setTimeout(() => setCurrentSearchValue("Thermomix TM6"), 100),
+              },
+              {
+                name: "<strong>Cookbook “Fit with</strong> Thermo<strong>mix®”</strong>",
+                value: "Cookbook “Fit with Thermomix®”",
+                onClick: () =>
+                  setTimeout(
+                    () =>
+                      setCurrentSearchValue("Cookbook “Fit with Thermomix®”"),
+                    100
+                  ),
+              },
+            ],
+          },
+          {
+            name: "Articles",
+            suggestions: [
+              {
+                name: "<strong>Tips and tricks for</strong> Thermo<strong>mix®</strong>",
+                value: "Tips and tricks for Thermomix®",
+                onClick: () =>
+                  setTimeout(
+                    () =>
+                      setCurrentSearchValue("Tips and tricks for Thermomix®"),
+                    100
+                  ),
+              },
+              {
+                name: "<strong>How Star chefs use</strong> Thermo<strong>mix®</strong>",
+                value: "How Star chefs use Thermomix®",
+                onClick: () =>
+                  setTimeout(
+                    () =>
+                      setCurrentSearchValue("How Star chefs use Thermomix®"),
+                    100
+                  ),
+              },
+            ],
+          },
+        ],
+        oftenSearchedHeadline: "Searched most often",
+        oftenSearchedTags: [
+          {
+            label: "Thermomix TM6",
+            onClick: () =>
+              setTimeout(() => setCurrentSearchValue("Thermomix TM6"), 100),
+          },
+          {
+            label: "Kobold VK7",
+            onClick: () =>
+              setTimeout(() => setCurrentSearchValue("Kobold VK7"), 100),
+          },
+          {
+            label: "Robot",
+            onClick: () =>
+              setTimeout(() => setCurrentSearchValue("Robot"), 100),
+          },
+          {
+            label: "Hotline",
+            onClick: () =>
+              setTimeout(() => setCurrentSearchValue("Hotline"), 100),
+          },
+          {
+            label: "Accessories",
+            onClick: () =>
+              setTimeout(() => setCurrentSearchValue("Accessories"), 100),
+          },
+        ],
+        loadingSkeleton: (
+          <SkeletonContainer>
+            <SkeletonDropdownItem type="heading">
+              <SkeletonHeadline size="large" />
+            </SkeletonDropdownItem>
+            <SkeletonDropdownItem type="option">
+              <SkeletonText size="extraLarge" />
+            </SkeletonDropdownItem>
+            <SkeletonDropdownItem type="option">
+              <SkeletonText size="large" />
+            </SkeletonDropdownItem>
+            <SkeletonDropdownItem type="heading">
+              <SkeletonHeadline size="small" />
+            </SkeletonDropdownItem>
+            <SkeletonDropdownItem type="option">
+              <SkeletonText size="medium" />
+            </SkeletonDropdownItem>
+            <SkeletonDropdownItem type="option">
+              <SkeletonText size="small" />
+            </SkeletonDropdownItem>
+          </SkeletonContainer>
+        ),
+      }}
     />
   );
 };

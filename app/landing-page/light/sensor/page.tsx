@@ -9,6 +9,7 @@ import {
   BentoBoxTiles,
   BluetoothLight,
   CleaningLight,
+  GalleryCarousel,
   GridContainer,
   GridItem,
   Headline,
@@ -20,17 +21,10 @@ import {
   Typography,
   UserReview,
 } from "@vorwerk/fibre-react";
-import dynamic from "next/dynamic";
 import styles from "./page.module.scss";
 
 export default function SensorLightLandingPage() {
   const screenSize = useScreenSize();
-
-  //remove after viewport.ts, useBreakpoint.ts is SSR-safe fixed in Storybook
-  const GalleryCarouselDynamic = dynamic(
-    () => import("@components/ssrWrappers/GalleryCarouselWrapper"),
-    { ssr: false }
-  );
 
   return (
     <main>
@@ -61,7 +55,7 @@ export default function SensorLightLandingPage() {
         </GridContainer>
       </SectionContainer>
       <SectionContainer>
-        <GalleryCarouselDynamic
+        <GalleryCarousel
           desktopSlides={[
             {
               bigImagePosLeft: false,
@@ -189,12 +183,11 @@ export default function SensorLightLandingPage() {
           <GridItem columns={8}>
             <Typography component="intro">
               <span style={{ whiteSpace: "pre-line" }}>
-                {screenSize.width > 739 ?
-                  `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time. With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`
-                : `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time.
+                {screenSize.width > 739
+                  ? `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time. With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`
+                  : `The Thermomix® Sensor is so much more than an ordinary food thermometer. With the Thermomix® Sensor, we are extending the guaranteed success of our Guided Cooking recipes to your cooker, oven and grill for the first time.
 
-                With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`
-                }
+                With the right core temperature, you can achieve perfect results with cakes, breads, meat or fish. Discover the new possibilities for limitless enjoyment!`}
               </span>
             </Typography>
           </GridItem>
