@@ -170,7 +170,7 @@ export default function VOWCatalogueHomePage() {
                 </GridItem>
               </GridContainer>
               {mounted && (
-                <Carousel layout={{ xs: 1.5, m: 3, l: 3 }}>
+                <Carousel layout={{ xs: 1.5, m: 3, l: 3 }} preventTabFocus>
                   <ProductTile
                     ariaLabel="Product Tile"
                     background="primary"
@@ -341,7 +341,7 @@ export default function VOWCatalogueHomePage() {
                 </GridItem>
               </GridContainer>
               {mounted && (
-                <Carousel layout={{ xs: 1.5, m: 3, l: 3 }}>
+                <Carousel layout={{ xs: 1.5, m: 3, l: 3 }} preventTabFocus>
                   <ProductTile
                     ariaLabel="Kobold VR7 Vacuum Robot"
                     background="secondary"
@@ -433,7 +433,7 @@ export default function VOWCatalogueHomePage() {
               </GridItem>
             </GridContainer>
             {mounted && (
-              <Carousel layout={{ xs: 1.5, m: 3, l: 3 }}>
+              <Carousel layout={{ xs: 1.5, m: 3, l: 3 }} preventTabFocus>
                 <TeaserTile
                   title="Thermomix® products"
                   buttonText="Explore products"

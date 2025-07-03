@@ -300,7 +300,7 @@ export default function VOWDivisionLandingPageTM() {
                 </GridItem>
               </GridContainer>
               {mounted && (
-                <Carousel layout={{ xs: 1.5, m: 3, l: 3 }}>
+                <Carousel layout={{ xs: 1.5, m: 3, l: 3 }} preventTabFocus>
                   <ProductTile
                     ariaLabel="Product Tile"
                     background="primary"
