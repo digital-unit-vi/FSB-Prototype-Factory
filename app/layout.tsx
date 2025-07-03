@@ -90,6 +90,7 @@ export default function RootLayout({
     "/flagship/catalogue-division-section-page",
     "/flagship/catalogue-division-landing-page",
     "/flagship/division-landing-page",
+    "/flagship/division-landing-page-tm",
     "/flagship/catalogue-home-page",
   ];
 

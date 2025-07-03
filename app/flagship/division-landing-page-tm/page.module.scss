@@ -1,0 +1,25 @@
+.backgroundSection {
+  background-color: #f3f5f3;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainSectionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-04);
+
+  padding-top: var(--padding-05);
+  padding-bottom: var(--padding-06);
+}
+
+.gap02 {
+  gap: var(--gap-02);
+}
+
+.gap04 {
+  gap: var(--gap-04);
+}
