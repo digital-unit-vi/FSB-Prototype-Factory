@@ -204,7 +204,7 @@ export default function VOWDivisionLandingPageTM() {
                       image="/flagship/categoryTile/dlp_woman_handstanding.png"
                       imageAlt="A woman in athletic wear performs a handstand against an orange wall, next to a floating cookbook titled 'The Thermomix Diet' featuring a bowl of fresh berries"
                       imageTitle="A fit woman strikes a handstand pose beside a cookbook promoting 'The Thermomix Diet'"
-                      buttonText="learn more"
+                      buttonText="Learn more"
                       backgroundVariant="image"
                       url="#"
                     />
