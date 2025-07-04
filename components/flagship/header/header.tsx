@@ -27,6 +27,7 @@ export const Header = () => {
   const darkThemePaths = [
     "/flagship/home-page",
     "/flagship/division-landing-page",
+    "/flagship/division-landing-page-tm",
   ];
   const isBackgroundGradient = darkThemePaths.includes(pathname);
 
