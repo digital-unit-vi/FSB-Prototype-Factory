@@ -12,7 +12,9 @@ const MainImageWithThumbnails: FC<MainImageWithThumbnailsProps> = ({
   images,
 }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const onThumbClick = (index: number) => setSelectedIndex(index);
+  const onThumbClick = (index: number) => {
+    setSelectedIndex(index);
+  };
 
   return (
     <div className={styles.mediaContainer}>
@@ -20,7 +22,9 @@ const MainImageWithThumbnails: FC<MainImageWithThumbnailsProps> = ({
         {images.map((item, index) => (
           <Thumb
             key={`${item.url} - ${index.toString()}`}
-            onClick={() => onThumbClick(index)}
+            onClick={() => {
+              onThumbClick(index);
+            }}
             selected={index === selectedIndex}
             item={item}
             isAEM

@@ -50,7 +50,9 @@ const GalleryCarousel = ({
     handleResize();
 
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, [breakpoints]);
 
   const extractImages = (data: ImageLayoutProps[]): MobileCarouselProps[] => {
@@ -91,20 +93,19 @@ const GalleryCarousel = ({
     <div
       className={classNames(
         styles.galleryCarouselWrapper,
-        darkMode ? styles.darkMode : "",
+        darkMode ? styles.darkMode : ""
       )}
     >
-      {mobileSlider ? (
+      {mobileSlider ?
         <MobileCarousel
           mobileCarouselItems={mobileSlides[0].mobileCarouselItems}
         />
-      ) : (
-        <GridContainer>
+      : <GridContainer>
           <GridItem columns={12}>
             <DesktopCarousel slides={desktopSlides} darkMode={darkMode} />
           </GridItem>
         </GridContainer>
-      )}
+      }
     </div>
   );
 };

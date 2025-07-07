@@ -36,7 +36,9 @@ const AdvisorToggle: React.FC = () => {
                 `${styles.toggleBtn} ${styles.active}`
               : styles.toggleBtn
             }
-            onClick={() => handleTabChange("thermomix")}
+            onClick={() => {
+              handleTabChange("thermomix");
+            }}
             role="tab"
             aria-selected={activeTab === "thermomix"}
           >
@@ -48,7 +50,9 @@ const AdvisorToggle: React.FC = () => {
                 `${styles.toggleBtn} ${styles.active}`
               : styles.toggleBtn
             }
-            onClick={() => handleTabChange("kobold")}
+            onClick={() => {
+              handleTabChange("kobold");
+            }}
             role="tab"
             aria-selected={activeTab === "kobold"}
           >
@@ -145,13 +149,17 @@ const KoboldPanel: React.FC = () => {
               autoComplete="postal-code"
               required
               value={postalCode}
-              onChange={(e) => setPostalCode(e.target.value)}
+              onChange={(e) => {
+                setPostalCode(e.target.value);
+              }}
             />
             {postalCode && (
               <button
                 type="button"
                 className={styles.clearButton}
-                onClick={() => handleClearInput(setPostalCode)}
+                onClick={() => {
+                  handleClearInput(setPostalCode);
+                }}
                 aria-label="Clear postal code"
               >
                 <CloseCircleFilled />
@@ -169,13 +177,17 @@ const KoboldPanel: React.FC = () => {
               autoComplete="address-level2"
               required
               value={city}
-              onChange={(e) => setCity(e.target.value)}
+              onChange={(e) => {
+                setCity(e.target.value);
+              }}
             />
             {city && (
               <button
                 type="button"
                 className={styles.clearButton}
-                onClick={() => handleClearInput(setCity)}
+                onClick={() => {
+                  handleClearInput(setCity);
+                }}
                 aria-label="Clear city"
               >
                 <CloseCircleFilled />
@@ -192,13 +204,17 @@ const KoboldPanel: React.FC = () => {
               name="street"
               autoComplete="street-address"
               value={street}
-              onChange={(e) => setStreet(e.target.value)}
+              onChange={(e) => {
+                setStreet(e.target.value);
+              }}
             />
             {street && (
               <button
                 type="button"
                 className={styles.clearButton}
-                onClick={() => handleClearInput(setStreet)}
+                onClick={() => {
+                  handleClearInput(setStreet);
+                }}
                 aria-label="Clear street"
               >
                 <CloseCircleFilled />
@@ -215,13 +231,17 @@ const KoboldPanel: React.FC = () => {
               name="number"
               inputMode="numeric"
               value={number}
-              onChange={(e) => setNumber(e.target.value)}
+              onChange={(e) => {
+                setNumber(e.target.value);
+              }}
             />
             {number && (
               <button
                 type="button"
                 className={styles.clearButton}
-                onClick={() => handleClearInput(setNumber)}
+                onClick={() => {
+                  handleClearInput(setNumber);
+                }}
                 aria-label="Clear number"
               >
                 <CloseCircleFilled />

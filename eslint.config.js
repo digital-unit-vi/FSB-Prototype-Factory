@@ -1,4 +1,5 @@
 import pluginJs from "@eslint/js";
+import pluginNext from "@next/eslint-plugin-next";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import pluginReact from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -25,23 +26,22 @@ export default [
     },
   },
   {
-    ignores: ["out/", "node_modules/", ".next/"],
+    ignores: ["out/", "node_modules/", ".next/", "eslint.config.js"],
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
   pluginReact.configs.flat.recommended,
+  pluginReact.configs.flat["jsx-runtime"],
   reactHooks.configs["recommended-latest"],
-  eslintConfigPrettier,
   {
+    plugins: {
+      "@next/next": pluginNext,
+    },
     rules: {
-      "react/react-in-jsx-scope": "off",
-      "@typescript-eslint/no-confusing-void-expression": [
-        "error",
-        {
-          ignoreArrowShorthand: true,
-        },
-      ],
+      ...pluginNext.configs.recommended.rules,
+      ...pluginNext.configs["core-web-vitals"].rules,
     },
   },
+  eslintConfigPrettier,
 ];

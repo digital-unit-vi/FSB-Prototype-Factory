@@ -45,7 +45,9 @@ const Carousel: FC<CarouselProps> = ({ images, screenSize }) => {
 
     updateContainerWidth();
     window.addEventListener("resize", updateContainerWidth);
-    return () => window.removeEventListener("resize", updateContainerWidth);
+    return () => {
+      window.removeEventListener("resize", updateContainerWidth);
+    };
   }, [screenSize]);
 
   const calculateOffset = () => {

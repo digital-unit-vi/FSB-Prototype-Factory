@@ -47,7 +47,9 @@ export const DesktopCarousel = ({
 
     window.addEventListener("keyup", handleKeyUp);
 
-    return () => window.removeEventListener("keyup", handleKeyUp);
+    return () => {
+      window.removeEventListener("keyup", handleKeyUp);
+    };
   }, [scrollPrev, scrollNext]);
 
   return (

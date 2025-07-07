@@ -33,7 +33,7 @@ export const Header = () => {
 
   const [currentSearchValue, setCurrentSearchValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout>(undefined);
 
   return (
     <HeaderComponent
@@ -345,7 +345,9 @@ export const Header = () => {
         onValueChange: (value: string) => {
           setIsLoading(true);
           clearTimeout(timeoutRef.current);
-          timeoutRef.current = setTimeout(() => setIsLoading(false), 1000);
+          timeoutRef.current = setTimeout(() => {
+            setIsLoading(false);
+          }, 1000);
           setCurrentSearchValue(value);
         },
         placeholder: "Search",
@@ -359,17 +361,17 @@ export const Header = () => {
                 name: "Thermo<strong>mix TM6</strong>",
                 value: "Thermomix TM6",
                 onClick: () =>
-                  setTimeout(() => setCurrentSearchValue("Thermomix TM6"), 100),
+                  setTimeout(() => {
+                    setCurrentSearchValue("Thermomix TM6");
+                  }, 100),
               },
               {
                 name: "<strong>Cookbook “Fit with</strong> Thermo<strong>mix®”</strong>",
                 value: "Cookbook “Fit with Thermomix®”",
                 onClick: () =>
-                  setTimeout(
-                    () =>
-                      setCurrentSearchValue("Cookbook “Fit with Thermomix®”"),
-                    100
-                  ),
+                  setTimeout(() => {
+                    setCurrentSearchValue("Cookbook “Fit with Thermomix®”");
+                  }, 100),
               },
             ],
           },
@@ -380,21 +382,17 @@ export const Header = () => {
                 name: "<strong>Tips and tricks for</strong> Thermo<strong>mix®</strong>",
                 value: "Tips and tricks for Thermomix®",
                 onClick: () =>
-                  setTimeout(
-                    () =>
-                      setCurrentSearchValue("Tips and tricks for Thermomix®"),
-                    100
-                  ),
+                  setTimeout(() => {
+                    setCurrentSearchValue("Tips and tricks for Thermomix®");
+                  }, 100),
               },
               {
                 name: "<strong>How Star chefs use</strong> Thermo<strong>mix®</strong>",
                 value: "How Star chefs use Thermomix®",
                 onClick: () =>
-                  setTimeout(
-                    () =>
-                      setCurrentSearchValue("How Star chefs use Thermomix®"),
-                    100
-                  ),
+                  setTimeout(() => {
+                    setCurrentSearchValue("How Star chefs use Thermomix®");
+                  }, 100),
               },
             ],
           },
@@ -404,27 +402,37 @@ export const Header = () => {
           {
             label: "Thermomix TM6",
             onClick: () =>
-              setTimeout(() => setCurrentSearchValue("Thermomix TM6"), 100),
+              setTimeout(() => {
+                setCurrentSearchValue("Thermomix TM6");
+              }, 100),
           },
           {
             label: "Kobold VK7",
             onClick: () =>
-              setTimeout(() => setCurrentSearchValue("Kobold VK7"), 100),
+              setTimeout(() => {
+                setCurrentSearchValue("Kobold VK7");
+              }, 100),
           },
           {
             label: "Robot",
             onClick: () =>
-              setTimeout(() => setCurrentSearchValue("Robot"), 100),
+              setTimeout(() => {
+                setCurrentSearchValue("Robot");
+              }, 100),
           },
           {
             label: "Hotline",
             onClick: () =>
-              setTimeout(() => setCurrentSearchValue("Hotline"), 100),
+              setTimeout(() => {
+                setCurrentSearchValue("Hotline");
+              }, 100),
           },
           {
             label: "Accessories",
             onClick: () =>
-              setTimeout(() => setCurrentSearchValue("Accessories"), 100),
+              setTimeout(() => {
+                setCurrentSearchValue("Accessories");
+              }, 100),
           },
         ],
         loadingSkeleton: (

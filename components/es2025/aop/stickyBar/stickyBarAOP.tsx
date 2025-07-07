@@ -91,7 +91,9 @@ const StickyBarAOP = () => {
       setSlideDirection(null);
     }, 500);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [slideDirection]);
 
   const rootClasses = `${styles.stickyBarRoot} ${

@@ -23,7 +23,9 @@ const StandaloneSelect: FC<StandaloneSelectProps> = ({
   const handleToggle = () => {
     if (isOpen) {
       setAnimationState("fadeOut");
-      setTimeout(() => setOpen(false), 300);
+      setTimeout(() => {
+        setOpen(false);
+      }, 300);
     } else {
       setOpen(true);
       setAnimationState("fadeIn");

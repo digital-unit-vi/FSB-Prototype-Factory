@@ -312,7 +312,9 @@ const ImageGallery: React.FC<PropType> = ({
                                 background: `url(${slide.url}) 50% / contain no-repeat #F3F5F3`,
                               }}
                               key={slide.title}
-                              onClick={() => setModalOpen(true)}
+                              onClick={() => {
+                                setModalOpen(true);
+                              }}
                             ></div>
                           )}
                           {isGalleryItem(slide) && slide.type === "video" && (
@@ -360,7 +362,9 @@ const ImageGallery: React.FC<PropType> = ({
               {scrollSnaps.map((_, index) => (
                 <DotButton
                   key={index}
-                  onClick={() => onDotButtonClick(index)}
+                  onClick={() => {
+                    onDotButtonClick(index);
+                  }}
                   className={`${styles.imageGalleryDot} ${
                     index === selectedIndex ?
                       styles.imageGalleryDotSelected

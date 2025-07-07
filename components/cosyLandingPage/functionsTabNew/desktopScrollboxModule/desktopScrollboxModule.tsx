@@ -229,7 +229,9 @@ export default function DesktopScrollboxModule({
                     {item.media.type === "video" && (
                       <div className={styles.videoContainer}>
                         <video
-                          ref={(element) => handleVideoRef(element, index)}
+                          ref={(element) => {
+                            handleVideoRef(element, index);
+                          }}
                           preload={"metadata"}
                           controls={false}
                           playsInline={true}
@@ -253,14 +255,18 @@ export default function DesktopScrollboxModule({
                         {!isVideoPlaying(index) ?
                           <button
                             type="button"
-                            onClick={() => handlePlayVideo(index)}
+                            onClick={() => {
+                              handlePlayVideo(index);
+                            }}
                             aria-label="Play button"
                           >
                             <Play />
                           </button>
                         : <button
                             type="button"
-                            onClick={() => handlePauseVideo(index)}
+                            onClick={() => {
+                              handlePauseVideo(index);
+                            }}
                             aria-label="Pause button"
                           >
                             <Pause />
