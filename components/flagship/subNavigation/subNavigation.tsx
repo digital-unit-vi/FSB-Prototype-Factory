@@ -28,7 +28,9 @@ const SubNavigation: FC<SubNavigationProps> = ({ items, screenSizeWidth }) => {
               key={item}
               item={item}
               isActive={activeIndex === item}
-              onClick={() => handleItemClick(item)}
+              onClick={() => {
+                handleItemClick(item);
+              }}
             />
           ))}
           noControl
@@ -42,7 +44,9 @@ const SubNavigation: FC<SubNavigationProps> = ({ items, screenSizeWidth }) => {
               key={item}
               item={item}
               isActive={activeIndex === item}
-              onClick={() => handleItemClick(item)}
+              onClick={() => {
+                handleItemClick(item);
+              }}
             />
           ))}
         </div>

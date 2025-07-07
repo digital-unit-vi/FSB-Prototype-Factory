@@ -60,8 +60,12 @@ const StickyBarPhase1 = () => {
 
   useEffect(() => {
     if (!slideDirection) return;
-    const timer = setTimeout(() => setSlideDirection(null), 500);
-    return () => clearTimeout(timer);
+    const timer = setTimeout(() => {
+      setSlideDirection(null);
+    }, 500);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [slideDirection]);
 
   const rootClasses = `${styles.stickyBarRoot} ${

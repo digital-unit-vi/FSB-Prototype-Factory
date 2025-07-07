@@ -19,7 +19,9 @@ const Accordion: FC<AccordionProps> = ({ items }) => {
   const handleToggle = (index: number) => {
     if (openIndex === index) {
       setAnimationStates((prev) => ({ ...prev, [index]: "fadeOut" }));
-      setTimeout(() => setOpenIndex(null), 300);
+      setTimeout(() => {
+        setOpenIndex(null);
+      }, 300);
     } else {
       setOpenIndex(index);
       setAnimationStates((prev) => ({ ...prev, [index]: "fadeIn" }));
@@ -35,7 +37,9 @@ const Accordion: FC<AccordionProps> = ({ items }) => {
               animationStates[index] === "fadeIn" ? styles.clicked : ""
             }`}
             type="button"
-            onClick={() => handleToggle(index)}
+            onClick={() => {
+              handleToggle(index);
+            }}
             aria-haspopup="true"
             aria-expanded={openIndex === index}
             aria-controls={`accordion-content-${index.toString()}`}

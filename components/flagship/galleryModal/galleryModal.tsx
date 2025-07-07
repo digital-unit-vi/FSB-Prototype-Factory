@@ -32,7 +32,9 @@ const GalleryModal: FC<GalleryModalProps> = ({
             <div className={styles.galleryModalHeaderContent}>
               <button
                 className={selectedCategory === "all" ? styles.active : ""}
-                onClick={() => setSelectedCategory("all")}
+                onClick={() => {
+                  setSelectedCategory("all");
+                }}
               >
                 <Typography variant={"paragraph16"} fontWeight={"medium"}>
                   All
@@ -40,7 +42,9 @@ const GalleryModal: FC<GalleryModalProps> = ({
               </button>
               <button
                 className={selectedCategory === "images" ? styles.active : ""}
-                onClick={() => setSelectedCategory("images")}
+                onClick={() => {
+                  setSelectedCategory("images");
+                }}
               >
                 <Typography variant={"paragraph16"} fontWeight={"medium"}>
                   Images
@@ -48,7 +52,9 @@ const GalleryModal: FC<GalleryModalProps> = ({
               </button>
               <button
                 className={selectedCategory === "videos" ? styles.active : ""}
-                onClick={() => setSelectedCategory("videos")}
+                onClick={() => {
+                  setSelectedCategory("videos");
+                }}
               >
                 <Typography variant={"paragraph16"} fontWeight={"medium"}>
                   Videos

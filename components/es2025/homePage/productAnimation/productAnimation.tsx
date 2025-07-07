@@ -24,7 +24,7 @@ const ProductAnimation = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollTriggerRef = useRef<ScrollTrigger | null>(null);
   const imagesRef = useRef<HTMLImageElement[] | null>(null);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number>(undefined);
   const [error, setError] = useState<string | null>(null);
   const maxViewportHeightRef = useRef<number>(0);
 
@@ -109,9 +109,12 @@ const ProductAnimation = ({
           const loadPromises = Array.from({ length: frameCount }, (_, i) => {
             return new Promise<void>((resolve, reject) => {
               const img = new window.Image();
-              img.onload = () => resolve();
-              img.onerror = () =>
+              img.onload = () => {
+                resolve();
+              };
+              img.onerror = () => {
                 reject(new Error(`Failed to load image ${String(i)}`));
+              };
               img.src = currentFrame(i);
               images.push(img);
             });

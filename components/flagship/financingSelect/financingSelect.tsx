@@ -138,7 +138,9 @@ const FinancingSelect = ({
                 name="financingOption"
                 value={item.label}
                 checked={selectedOption === item.label}
-                onChange={() => handleSelectOption(item.label)}
+                onChange={() => {
+                  handleSelectOption(item.label);
+                }}
                 className={styles.radioInput}
               />
               <span className={styles.radioCustom}></span>

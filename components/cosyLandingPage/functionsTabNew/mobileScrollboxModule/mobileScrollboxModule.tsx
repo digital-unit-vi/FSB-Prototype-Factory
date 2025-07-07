@@ -45,7 +45,7 @@ const MotionProgress = ({
   const y = useTransform(
     scrollYProgress,
     [index / listItemsLength, (index + 1) / listItemsLength],
-    ["-100%", "0%"],
+    ["-100%", "0%"]
   );
 
   return <motion.div style={{ y }} />;
@@ -53,8 +53,8 @@ const MotionProgress = ({
 
 // Helper function to pause all videos except the current one
 const pauseOtherVideos = (
-  videoRefs: React.MutableRefObject<(HTMLVideoElement | null)[]>,
-  currentIndex: number,
+  videoRefs: React.RefObject<(HTMLVideoElement | null)[]>,
+  currentIndex: number
 ) => {
   videoRefs.current.forEach((v, i) => {
     if (i !== currentIndex && v) {
@@ -81,7 +81,7 @@ export default function MobileScrollboxModule({
       scrollMax: 0,
       isActive: false,
       isFolded: false,
-    })),
+    }))
   );
   const [initialVideoReady, setInitialVideoReady] = useState(false);
 
@@ -141,7 +141,7 @@ export default function MobileScrollboxModule({
         scrollMax: (index + 1) * (1 / numberOfItems),
         isActive: index === 0,
         isFolded: false,
-      })),
+      }))
     );
   }, [listItems.length]);
 
@@ -170,7 +170,7 @@ export default function MobileScrollboxModule({
         }
 
         return newState;
-      }),
+      })
     );
   });
 
@@ -200,7 +200,7 @@ export default function MobileScrollboxModule({
                     <div
                       className={classNames(
                         styles.mediaContainer,
-                        item.media.type,
+                        item.media.type
                       )}
                     >
                       <div className={styles.mobileScrollbox__progress}>
@@ -213,9 +213,9 @@ export default function MobileScrollboxModule({
                       {item.media.type === "image" && (
                         <img
                           src={
-                            typeof item.media.src === "string"
-                              ? item.media.src
-                              : ""
+                            typeof item.media.src === "string" ?
+                              item.media.src
+                            : ""
                           }
                           alt={item.media.alt}
                           title={item.media.title}
@@ -224,17 +224,18 @@ export default function MobileScrollboxModule({
                       {item.media.type === "video" && (
                         <div className={styles.videoContainer}>
                           <video
-                            ref={(element) => setVideoRef(element, index)}
+                            ref={(element) => {
+                              setVideoRef(element, index);
+                            }}
                             preload={"metadata"}
                             controls={false}
                             playsInline={true}
                             muted={true}
                             loop={true}
                           >
-                            {typeof item.media.src === "string" ? (
+                            {typeof item.media.src === "string" ?
                               <source src={item.media.src} />
-                            ) : (
-                              <>
+                            : <>
                                 <source
                                   src={item.media.src.webm}
                                   type="video/webm"
@@ -244,25 +245,28 @@ export default function MobileScrollboxModule({
                                   type="video/mp4"
                                 />
                               </>
-                            )}
+                            }
                           </video>
-                          {!isPlaying(index) ? (
+                          {!isPlaying(index) ?
                             <button
                               type="button"
-                              onClick={() => pressPlay(index)}
+                              onClick={() => {
+                                pressPlay(index);
+                              }}
                               aria-label="Play button"
                             >
                               <Play />
                             </button>
-                          ) : (
-                            <button
+                          : <button
                               type="button"
-                              onClick={() => pressPause(index)}
+                              onClick={() => {
+                                pressPause(index);
+                              }}
                               aria-label="Pause button"
                             >
                               <Pause />
                             </button>
-                          )}
+                          }
                         </div>
                       )}
                       <Typography

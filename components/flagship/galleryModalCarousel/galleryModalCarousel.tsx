@@ -114,7 +114,9 @@ const GalleryModalCarousel: React.FC<GalleryModalCarouselProps> = ({
           {slides.map((item, index) => (
             <Thumb
               key={index}
-              onClick={() => onThumbClick(index)}
+              onClick={() => {
+                onThumbClick(index);
+              }}
               selected={index === selectedIndex}
               item={item}
             />

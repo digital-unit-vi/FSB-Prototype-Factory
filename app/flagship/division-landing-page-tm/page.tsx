@@ -83,7 +83,10 @@ export default function VOWDivisionLandingPageTM() {
               >
                 <Typography component="h2">
                   <span>
-                    Culinary mastery {screenSize.width < 768 ? <br /> : ""}
+                    Culinary mastery{" "}
+                    {screenSize.width < 768 ?
+                      <br />
+                    : ""}
                     <strong>at your home</strong>.
                   </span>
                 </Typography>
@@ -133,7 +136,10 @@ export default function VOWDivisionLandingPageTM() {
                 >
                   <Typography component="h2">
                     <span>
-                      The new {screenSize.width < 768 ? <br /> : ""}
+                      The new{" "}
+                      {screenSize.width < 768 ?
+                        <br />
+                      : ""}
                       <strong>Thermomix® TM7</strong>.
                     </span>
                   </Typography>
@@ -173,14 +179,6 @@ export default function VOWDivisionLandingPageTM() {
                   >
                     <Button buttonStyle="primary" size="large">
                       View Thermomix® TM7
-                    </Button>
-                    <Button
-                      buttonStyle="tertiary"
-                      size="large"
-                      icon={<CaretRight />}
-                      iconPosition="right"
-                    >
-                      Secondary action
                     </Button>
                   </ButtonGroup>
                 }

@@ -35,7 +35,9 @@ export const Carousel = ({ items, screenSize }: CarouselProps) => {
 
     updateContainerWidth();
     window.addEventListener("resize", updateContainerWidth);
-    return () => window.removeEventListener("resize", updateContainerWidth);
+    return () => {
+      window.removeEventListener("resize", updateContainerWidth);
+    };
   }, [screenSize]);
 
   const calculateOffset = () => {

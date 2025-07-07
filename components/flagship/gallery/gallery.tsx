@@ -35,7 +35,9 @@ const Gallery: FC<GalleryImages> = ({ gallery }) => {
                 src={media.url}
                 alt={media.alt}
                 key={media.title}
-                onClick={() => setModalOpen(true)}
+                onClick={() => {
+                  setModalOpen(true);
+                }}
               ></img>
             : <video
                 src={media.url}
@@ -68,7 +70,9 @@ const Gallery: FC<GalleryImages> = ({ gallery }) => {
         <GalleryModal
           images={images}
           videos={videos}
-          onClose={() => setModalOpen(false)}
+          onClose={() => {
+            setModalOpen(false);
+          }}
         />
       )}
     </>
