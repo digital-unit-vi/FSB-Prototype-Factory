@@ -47,7 +47,10 @@ export default function VOWCatalogueHomePage() {
             >
               <Typography component="h1">
                 <span>
-                  Cook & clean {screenSize.width < 768 ? <br /> : ""}
+                  Cook & clean{" "}
+                  {screenSize.width < 768 ?
+                    <br />
+                  : ""}
                   <strong>like never before</strong>.
                 </span>
               </Typography>
@@ -92,7 +95,10 @@ export default function VOWCatalogueHomePage() {
                 >
                   <Typography component="h2">
                     <span>
-                      Everything about {screenSize.width < 768 ? <br /> : ""}
+                      Everything about{" "}
+                      {screenSize.width < 768 ?
+                        <br />
+                      : ""}
                       <strong>cooking</strong>.
                     </span>
                   </Typography>
@@ -108,7 +114,7 @@ export default function VOWCatalogueHomePage() {
                       image="/flagship/categoryTile/hp_tm7.png"
                       imageAlt="Front view of the Thermomix TM7 with touchscreen displaying recipe suggestions, including desserts and trending meals."
                       imageTitle="Thermomix TM7 Front View"
-                      buttonText="Discover products"
+                      buttonText="Discover the TM7"
                       backgroundVariant="solid"
                       backgroundColorVariant="white"
                       url="#"
@@ -118,7 +124,7 @@ export default function VOWCatalogueHomePage() {
                       image="/flagship/categoryTile/chp_tm7_accessories.png"
                       imageTitle="Thermomix TM7 accessories including mixing bowl, spatula, butterfly whisk, and Varoma steaming attachment, arranged in a row."
                       imageAlt="Thermomix TM7 accessory set"
-                      buttonText="Discover products"
+                      buttonText="View Thermomix® accessories"
                       backgroundVariant="solid"
                       backgroundColorVariant="white"
                       url="#"
@@ -134,17 +140,17 @@ export default function VOWCatalogueHomePage() {
                       image="/flagship/categoryTile/chp_specials.png"
                       imageAlt="Thermomix accessory bundle featuring a stainless steel bottle, navy ceramic baking dish with lid, white mixing bowl with lid, and black spoon."
                       imageTitle="Thermomix Kitchen Essentials Set"
-                      buttonText="Discover products"
+                      buttonText="View Thermomix® specials"
                       backgroundVariant="solid"
                       backgroundColorVariant="white"
                       url="#"
                     />
                     <CategoryTile
-                      title="Cooking books"
+                      title="Cookbooks"
                       image="/flagship/categoryTile/chp_books.png"
                       imageAlt="Stack of Thermomix cookbooks, with the top one titled 'Fit mit Intervallfasten' featuring fruits and vegetables on the cover."
-                      imageTitle="Thermomix Cooking Books"
-                      buttonText="Discover products"
+                      imageTitle="Thermomix Cookbooks"
+                      buttonText="View cookbooks"
                       backgroundVariant="solid"
                       backgroundColorVariant="white"
                       url="#"
@@ -267,7 +273,10 @@ export default function VOWCatalogueHomePage() {
                 >
                   <Typography component="h2">
                     <span>
-                      Everything about {screenSize.width < 768 ? <br /> : ""}
+                      Everything about{" "}
+                      {screenSize.width < 768 ?
+                        <br />
+                      : ""}
                       <strong>cleaning</strong>.
                     </span>
                   </Typography>
@@ -283,7 +292,7 @@ export default function VOWCatalogueHomePage() {
                       image="/flagship/categoryTile/chp_kobold_battery_vacuum.png"
                       imageTitle="Battery Vacuum Cleaner"
                       imageAlt="Battery Vacuum Cleaner"
-                      buttonText="Discover products"
+                      buttonText="Discover the VK7"
                       backgroundVariant="solid"
                       backgroundColorVariant="lightGrey"
                       url="#"
@@ -293,7 +302,7 @@ export default function VOWCatalogueHomePage() {
                       image="/flagship/categoryTile/chp_kobold_upright.png"
                       imageTitle="Upright Vacuum Cleaner"
                       imageAlt="Upright Vacuum Cleaner"
-                      buttonText="Discover products"
+                      buttonText="Discover the VT300"
                       backgroundVariant="solid"
                       backgroundColorVariant="lightGrey"
                       url="#"
@@ -309,7 +318,7 @@ export default function VOWCatalogueHomePage() {
                       image="/flagship/categoryTile/chp_kobold_robot.png"
                       imageTitle="Cleaning Robots"
                       imageAlt="Cleaning Robots"
-                      buttonText="Discover products"
+                      buttonText="Discover the VR7"
                       backgroundVariant="solid"
                       backgroundColorVariant="lightGrey"
                       url="#"
@@ -319,7 +328,7 @@ export default function VOWCatalogueHomePage() {
                       image="/flagship/categoryTile/hp_kobold_parts.png"
                       imageTitle="Kobold Accessories"
                       imageAlt="Kobold Accessories"
-                      buttonText="Discover products"
+                      buttonText="View Kobold accessories"
                       backgroundVariant="solid"
                       backgroundColorVariant="lightGrey"
                       url="#"
