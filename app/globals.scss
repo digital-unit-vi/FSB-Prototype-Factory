@@ -186,25 +186,22 @@ select {
   font: inherit;
 }
 
-/* 8. Avoid text overflows */
-p,
+/* 8. Improve line wrapping */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  word-break: normal !important;
-  overflow-wrap: break-word !important;
+  text-wrap: balance;
 }
 
-/* 9. Improve line wrapping */
 p {
   text-wrap: pretty;
 }
 
 /*
-  10. Create a root stacking context
+  9. Create a root stacking context
 */
 #root,
 /* stylelint-disable-next-line selector-id-pattern */
